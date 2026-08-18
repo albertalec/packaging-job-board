@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { parseState } from "../src/lib/states.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 const SEMICONDUCTOR =
@@ -118,6 +119,7 @@ export function toJob(
     title: input.title.trim(),
     department: input.department ?? null,
     location: input.location.trim() || "Location not listed",
+    state: parseState(input.location) ?? parseState(input.sourceId),
     remote: isRemote(input.location, input.description),
     postedAt: input.postedAt ?? null,
     applyUrl: input.applyUrl,

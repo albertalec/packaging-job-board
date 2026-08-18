@@ -66,12 +66,16 @@ classification, and depth in underserved sub-niches.
 
 ## 4. Monetization (in the order it typically unlocks)
 
-1. [ ] Featured / priority placement — easiest first dollar, no self-serve needed
-2. [ ] Paid job postings (anchor: $300–500/posting, per IoPP benchmark)
-3. [ ] Lead-gen / quote requests — often highest value once traffic is real
-4. [ ] Employer memberships / enhanced profiles
+1. [ ] **Sponsored job — $100, credit card** — employer pays $100 to sponsor a
+      listing (priority placement on the board). Checkout by card; no invoice
+      round-trip for the first dollar.
+2. [ ] Featured / priority placement beyond the $100 sponsor (upsell)
+3. [ ] Paid job postings at a higher tier (IoPP benchmark is $300–500/posting)
+4. [ ] Lead-gen / quote requests — often highest value once traffic is real
+5. [ ] Employer memberships / enhanced profiles
 - Early on, **aggregated listings** (not paid posts) make the board look full.
-  Paid revenue comes only after traffic exists.
+  Paid revenue comes only after traffic exists. First paid SKU is a **$100
+  sponsored job**, paid by credit card.
 
 ---
 
@@ -108,24 +112,34 @@ classification, and depth in underserved sub-niches.
 - [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
       plus filters on the index
 - [x] Flat data store (`data/jobs.json`); no auth/dashboards/payments yet
+- [x] Search / filter jobs by US state (in addition to title/company/city and
+      niche)
 - [ ] Job alerts (email) to build a return audience
 
 ### Phase 4 — Add sources
-- [ ] SuccessFactors public JSON still not exposed (Nestlé) — connector stub only
+- [ ] SuccessFactors public JSON still not exposed (Nestlé) — Aptar RSS works
 - [x] Amazon Jobs public `search.json`
 - [x] Greenhouse / Lever / Ashby GET layer (Greenhouse live; Lever/Ashby ready
       for board tokens). Phenom `/api/jobs` wired but current career sites
       do not expose it.
+- [x] Kenvue Workday (`kenvue.wd5` / `kenvue`)
+- [x] Silgan Containers + Silgan Dispensing Workday
+- [x] Aptar SuccessFactors RSS (`jobs.aptar.com`)
+- [x] Autoliv US Teamtailor (`careerunitedstates.autoliv.com/jobs.json`)
+- [x] International Paper Oracle CE API (packaging/corrugated roles)
+- [ ] Avery Dennison Springboard widget — no public JSON, not Workday
 
 ### Phase 5 — Monetize
-- [ ] Featured placement (manual/self-serve)
-- [ ] Self-serve paid postings + checkout
+- [ ] Self-serve **sponsor a job for $100** — employer pays by credit card
+      (Stripe or equivalent); sponsored listing is highlighted / ranked first
+- [ ] Featured placement (manual/self-serve) beyond the $100 sponsor
+- [ ] Higher-tier paid postings + checkout
 - [ ] Lead-gen / quote-request flow
 
 ## 6. Open Questions / Risks
 
 - [ ] **Chicken-and-egg:** need ~50–100 listings + some traffic before charging.
-      Aggregation seeds it so it looks alive first. Latest ingest: ~16 roles.
+      Aggregation seeds it so it looks alive first. Latest ingest: ~25 roles.
 - [x] **Title ambiguity** (v1 classifier in `ingest/classify.ts`) — keep iterating
       as semiconductor / warehouse false-positives show up.
 - [ ] **ATS drift:** platforms change schemas/deprecate endpoints without notice;
@@ -136,8 +150,7 @@ classification, and depth in underserved sub-niches.
 
 ## 7. Next Action
 
-1. Choose a launch wedge (section 1) and watch IoPP posting velocity.
-2. Find more live Workday tenants (Aptar, Autoliv, Avery Dennison, IP, Kenvue)
-   and/or reverse a Phenom job-search JSON for PepsiCo / P&G / Coca-Cola.
-3. Add a daily ingest schedule and a “new since last run” marker on the site.
-4. Job-alert emails once inventory is consistently above ~50.
+1. Put the site on a public URL (Vercel) and set `SITE_URL`.
+2. Add a daily ingest schedule so the board stays fresh.
+3. Keep adding Workday packaging manufacturers until inventory is ~50.
+4. $100 credit-card sponsored listing once the board is public.

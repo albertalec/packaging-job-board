@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
+import { jobState, US_STATES } from "@/lib/states";
 import { JobCard } from "./JobCard";
 
 const NICHES = [
@@ -16,19 +17,21 @@ const NICHES = [
 export function JobBoard({ jobs }: { jobs: NormalizedJob[] }) {
   const [query, setQuery] = useState("");
   const [niche, setNiche] = useState("");
+  const [state, setState] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return jobs.filter((job) => {
       if (niche && job.niche !== niche) return false;
+      if (state && jobState(job) !== state) return false;
       if (remoteOnly && !job.remote) return false;
       if (!needle) return true;
       return `${job.title} ${job.company} ${job.location}`
         .toLowerCase()
         .includes(needle);
     });
-  }, [jobs, query, niche, remoteOnly]);
+  }, [jobs, query, niche, state, remoteOnly]);
 
   return (
     <section>
@@ -41,12 +44,23 @@ export function JobBoard({ jobs }: { jobs: NormalizedJob[] }) {
             placeholder="Search title, company, city"
           />
         </label>
-        <label>
+        <label className="filter-select">
           <span className="sr-only">Niche</span>
           <select value={niche} onChange={(event) => setNiche(event.target.value)}>
             {NICHES.map((item) => (
               <option key={item.id} value={item.id}>
                 {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="filter-select">
+          <span className="sr-only">State</span>
+          <select value={state} onChange={(event) => setState(event.target.value)}>
+            <option value="">All states</option>
+            {US_STATES.map((item) => (
+              <option key={item.code} value={item.code}>
+                {item.name}
               </option>
             ))}
           </select>

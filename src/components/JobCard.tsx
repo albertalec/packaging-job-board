@@ -36,7 +36,12 @@ export function JobCard({ job }: { job: NormalizedJob }) {
         <Link className="ghost" href={`/jobs/${job.id}`}>
           Spec sheet
         </Link>
-        <a className="apply" href={job.applyUrl} rel="noreferrer">
+        <a
+          className="apply"
+          href={job.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Apply on employer site
         </a>
       </div>

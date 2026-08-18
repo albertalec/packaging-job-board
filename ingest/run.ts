@@ -6,9 +6,11 @@ import { ingestAmazon } from "./sources/amazon.ts";
 import { ingestAshby } from "./sources/ashby.ts";
 import { ingestGreenhouse } from "./sources/greenhouse.ts";
 import { ingestLever } from "./sources/lever.ts";
+import { ingestOracle } from "./sources/oracle.ts";
 import { ingestPhenom } from "./sources/phenom.ts";
 import { ingestSmartRecruiters } from "./sources/smartrecruiters.ts";
 import { ingestSuccessFactors } from "./sources/successfactors.ts";
+import { ingestTeamtailor } from "./sources/teamtailor.ts";
 import { ingestWorkday } from "./sources/workday.ts";
 
 export type SourceReport = {
@@ -33,8 +35,12 @@ async function ingestCompany(company: (typeof companies)[number]) {
       return ingestAmazon(company);
     case "phenom":
       return ingestPhenom(company);
+    case "oracle":
+      return ingestOracle(company);
     case "successfactors":
       return ingestSuccessFactors(company);
+    case "teamtailor":
+      return ingestTeamtailor(company);
     case "smartrecruiters":
       return ingestSmartRecruiters(company);
     default:

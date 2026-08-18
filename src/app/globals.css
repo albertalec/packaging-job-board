@@ -125,6 +125,11 @@ h1 {
   flex: 1 1 16rem;
 }
 
+.filter-select {
+  flex: 0 1 12rem;
+  min-width: 10rem;
+}
+
 input,
 select {
   width: 100%;

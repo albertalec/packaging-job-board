@@ -61,7 +61,12 @@ export default async function JobPage({ params }: Params) {
         {job.niche ? <li>{job.niche.replace("-", " / ")}</li> : null}
         {job.salary ? <li>{job.salary}</li> : null}
       </ul>
-      <a className="apply big" href={job.applyUrl} rel="noreferrer">
+      <a
+        className="apply big"
+        href={job.applyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Apply on {job.company} careers
       </a>
       <div className="description">

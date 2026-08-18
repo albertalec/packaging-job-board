@@ -13,7 +13,9 @@ export type Ats =
   | "amazon"
   | "phenom"
   | "successfactors"
-  | "smartrecruiters";
+  | "smartrecruiters"
+  | "teamtailor"
+  | "oracle";
 
 export type Company = {
   name: string;
@@ -38,6 +40,7 @@ export type NormalizedJob = {
   title: string;
   department: string | null;
   location: string;
+  state: string | null;
   remote: boolean;
   postedAt: string | null;
   applyUrl: string;

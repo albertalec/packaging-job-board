@@ -14,3 +14,11 @@ Nestlé,successfactors,successfactors,medium,https://www.nestlejobs.com,,,,food-
 Berlin Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/berlinpackaging,,,berlinpackaging,industrial,Public Job Board API
 Ernest Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/ernestpackagingsolutions,,,ernestpackagingsolutions,industrial,Public Job Board API; no packaging-titled roles in latest pull
 Amazon,amazon,amazon_search_json,high,https://www.amazon.jobs,,,,industrial,search.json; semiconductor packaging filtered out
+Kenvue,workday,workday_post,high,https://kenvue.wd5.myworkdayjobs.com/kenvue,kenvue,kenvue,,cpg,Live Workday site slug kenvue
+Silgan Containers,workday,workday_post,high,https://silgancontainers.wd1.myworkdayjobs.com/silgan,silgancontainers,silgan,,industrial,Live Workday packaging manufacturer
+Silgan Dispensing,workday,workday_post,high,https://silgandispensing.wd501.myworkdayjobs.com/silgan,silgandispensing,silgan,,industrial,Live Workday; wd501 host
+Aptar,successfactors,successfactors,high,https://jobs.aptar.com,,,,industrial,SuccessFactors RSS not Workday
+Autoliv,teamtailor,teamtailor_json,high,https://careerunitedstates.autoliv.com/jobs,,,,automotive,Teamtailor US board jobs.json; not Workday
+International Paper,oracle,oracle_ce,medium,https://iazbqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1,,CX_1,,industrial,Oracle Cloud HCM; jobs.internationalpaper.com redirects here
+Avery Dennison,unknown,none,low,https://www.averydennison.com/en/home/careers/search-jobs.html,,,,industrial,Springboard JS widget; no public JSON / not Workday
+

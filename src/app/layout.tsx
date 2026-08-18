@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://packagingjobs.local"),
+  metadataBase: new URL(siteUrl()),
   title: {
     default: "Packaging Job Board",
     template: "%s · Packaging Job Board",
