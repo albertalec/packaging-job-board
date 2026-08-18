@@ -7,10 +7,10 @@ import { JobCard } from "./JobCard";
 
 const NICHES = [
   { id: "", label: "All niches" },
+  { id: "cpg", label: "CPG (brand-side)" },
+  { id: "food-beverage", label: "Food & beverage" },
   { id: "automotive", label: "Automotive" },
   { id: "pharma", label: "Pharma" },
-  { id: "cpg", label: "CPG" },
-  { id: "food-beverage", label: "Food & beverage" },
   { id: "industrial", label: "Industrial" },
 ] as const;
 

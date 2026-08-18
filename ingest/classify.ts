@@ -22,6 +22,17 @@ export function classifyJob(input: {
   if (SEMICONDUCTOR.test(blob)) {
     return { keep: false, reason: "semiconductor/electronics packaging" };
   }
+  if (
+    /\b(application packaging|head-up display|\bhud\b)\b/i.test(input.title)
+  ) {
+    return { keep: false, reason: "software/electronics packaging" };
+  }
+  if (
+    /\bmechanical packaging\b/i.test(input.title) &&
+    !/\b(returnable|dunnage|container|corrugat)\b/i.test(input.title)
+  ) {
+    return { keep: false, reason: "electronics/mechanical packaging" };
+  }
   if (WAREHOUSE.test(input.title)) {
     return { keep: false, reason: "warehouse/ops title" };
   }
@@ -75,6 +86,25 @@ export function isRemote(location: string, description: string): boolean {
   return /\b(remote|hybrid|work from home|wfh)\b/i.test(
     `${location} ${description.slice(0, 400)}`,
   );
+}
+
+export function isUsOrRemote(job: {
+  state: string | null;
+  remote: boolean;
+  location: string;
+}): boolean {
+  const location = job.location;
+  const mentionsUs = /\b(united states|\bu\.s\.a\.\b|\bu\.s\.\b|\busa\b)\b/i.test(
+    location,
+  );
+  const mentionsAbroad =
+    /\b(canada|ontario|quebec|alberta|manitoba|saskatchewan|united kingdom|\buk\b|england|scotland|wales|ireland|philippines|india|(?<!\bnew )mexico|germany|france|china|brazil|australia|japan|poland|hungary|romania|slovakia|austria|spain|italy|netherlands|sweden|singapore)\b/i.test(
+      location,
+    );
+  if (mentionsAbroad && !mentionsUs) return false;
+  if (job.remote) return true;
+  if (job.state) return true;
+  return mentionsUs;
 }
 
 export function stripHtml(html: string): string {

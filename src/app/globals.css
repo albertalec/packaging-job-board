@@ -65,7 +65,7 @@ a {
 
 .tagline {
   margin: 0;
-  max-width: 14rem;
+  max-width: 16rem;
   text-align: right;
   font-size: 0.85rem;
 }
@@ -92,6 +92,24 @@ h1 {
   font-size: 1.05rem;
   max-width: 42rem;
   line-height: 1.5;
+}
+
+.contrast {
+  max-width: 42rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #4d4134;
+}
+
+.contrast li {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--rule);
+  background: var(--card);
 }
 
 .stats {

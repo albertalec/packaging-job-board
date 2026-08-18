@@ -27,6 +27,7 @@ public feed:
 | Phenom career sites | public `/api/jobs` (and fallbacks) |
 | SuccessFactors RMK | public search JSON when exposed |
 | SmartRecruiters | public company postings API |
+| CWS (m-cloud) | JSONP `GET /api/job` (`orgId` + facets) |
 
 Jobs are classified to keep product/transport packaging and drop semiconductor
 “packaging” plus warehouse/packer titles. Inventory is written to `data/jobs.json`.

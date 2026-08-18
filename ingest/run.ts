@@ -1,5 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
+import { isUsOrRemote } from "./classify.ts";
 import { companies } from "./companies.ts";
 import type { NormalizedJob } from "./types.ts";
 import { ingestAmazon } from "./sources/amazon.ts";
@@ -11,6 +12,7 @@ import { ingestPhenom } from "./sources/phenom.ts";
 import { ingestSmartRecruiters } from "./sources/smartrecruiters.ts";
 import { ingestSuccessFactors } from "./sources/successfactors.ts";
 import { ingestTeamtailor } from "./sources/teamtailor.ts";
+import { ingestCws } from "./sources/cws.ts";
 import { ingestWorkday } from "./sources/workday.ts";
 
 export type SourceReport = {
@@ -43,6 +45,8 @@ async function ingestCompany(company: (typeof companies)[number]) {
       return ingestTeamtailor(company);
     case "smartrecruiters":
       return ingestSmartRecruiters(company);
+    case "cws":
+      return ingestCws(company);
     default:
       throw new Error(`No connector for ${(company as { ats: string }).ats}`);
   }
@@ -59,6 +63,7 @@ export async function runIngest() {
       const raw = await ingestCompany(company);
       let kept = 0;
       for (const job of raw) {
+        if (!isUsOrRemote(job)) continue;
         if (seen.has(job.hash)) continue;
         seen.add(job.hash);
         jobs.push(job);

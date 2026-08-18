@@ -15,7 +15,8 @@ export type Ats =
   | "successfactors"
   | "smartrecruiters"
   | "teamtailor"
-  | "oracle";
+  | "oracle"
+  | "cws";
 
 export type Company = {
   name: string;
@@ -29,6 +30,8 @@ export type Company = {
   site?: string;
   boardToken?: string;
   country?: string;
+  orgId?: string;
+  facets?: string[];
 };
 
 export type NormalizedJob = {

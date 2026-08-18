@@ -23,10 +23,11 @@ export default function SponsorIndexPage() {
   return (
     <article className="sponsor-page">
       <p className="kicker">For employers & recruiters</p>
-      <h1>Sponsor a packaging role for ${SPONSOR_DURATION_DAYS} days</h1>
+      <h1>Pin a packaging-engineer listing for ${SPONSOR_DURATION_DAYS} days</h1>
       <p className="lede">
-        Already on the board via your ATS feed? Pay $100 by card to pin your listing at the
-        top with a sponsored badge. No sales call required.
+        Already hiring on your ATS? Pay $100 by card to pin that packaging R&amp;D
+        or packaging-engineer role at the top. No “post a job” round-trip — the
+        listing is already on the board from your career-site feed.
       </p>
       <ul className="sponsor-benefits">
         <li>First position on the homepage (above organic listings)</li>

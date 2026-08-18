@@ -59,6 +59,14 @@ export function parseState(location: string): string | null {
   if (!location) return null;
   const text = location.trim();
 
+  const segments = text.split(",").map((part) => part.trim()).filter(Boolean);
+  if (segments.length >= 3) {
+    const last = segments[segments.length - 1];
+    if (/^[A-Z]{2}$/i.test(last) && last.toUpperCase() !== "US") {
+      return null;
+    }
+  }
+
   const usa = text.match(/\bUSA?-([A-Z]{2})(?:-|,|\b)/i);
   if (usa && CODE_SET.has(usa[1].toUpperCase())) return usa[1].toUpperCase();
 

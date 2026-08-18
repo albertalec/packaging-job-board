@@ -5,7 +5,7 @@ Sonoco,workday,workday_post,high,https://sonoco.wd1.myworkdayjobs.com/CorporateC
 3M,workday,workday_post,high,https://3m.wd1.myworkdayjobs.com/Search,3m,Search,,industrial,Live
 PepsiCo,phenom,phenom_api,medium,https://www.pepsicojobs.com/main,,,,food-beverage,Career site is Phenom; public JSON not exposed
 Procter & Gamble,phenom,phenom_api,medium,https://www.pgcareers.com/us/en,,,,cpg,Phenom /us/en; public JSON not exposed
-The Coca-Cola Company,phenom,phenom_api,medium,https://careers.coca-colacompany.com,,,,food-beverage,Phenom; public JSON not exposed
+The Coca-Cola Company,cws,cws_mcloud_jsonp,high,https://careers.coca-colacompany.com,2110,,,food-beverage,CWS widget; jobsapi-internal.m-cloud.io org 2110; Workday-backed
 DuPont,phenom,phenom_api,medium,https://careers.dupont.com/us/en,,,,industrial,Phenom; public JSON not exposed
 Ball Corporation,phenom,phenom_api,medium,https://jobs.ball.com,,,,cpg,Phenom; public JSON not exposed
 Sealed Air,phenom,phenom_api,medium,https://jobs.sealedair.com,,,,industrial,jobs.sealedair.com
@@ -19,6 +19,9 @@ Silgan Containers,workday,workday_post,high,https://silgancontainers.wd1.myworkd
 Silgan Dispensing,workday,workday_post,high,https://silgandispensing.wd501.myworkdayjobs.com/silgan,silgandispensing,silgan,,industrial,Live Workday; wd501 host
 Aptar,successfactors,successfactors,high,https://jobs.aptar.com,,,,industrial,SuccessFactors RSS not Workday
 Autoliv,teamtailor,teamtailor_json,high,https://careerunitedstates.autoliv.com/jobs,,,,automotive,Teamtailor US board jobs.json; not Workday
+General Motors,workday,workday_post,high,https://generalmotors.wd5.myworkdayjobs.com/Careers_GM,generalmotors,Careers_GM,,automotive,US auto OEM; container/returnable packaging engineers
+Magna,workday,workday_post,high,https://magna.wd3.myworkdayjobs.com/Magna,magna,Magna,,automotive,US/Canada auto supplier; returnable packaging engineers
+Menasha,workday,workday_post,high,https://menasha.wd12.myworkdayjobs.com/MenashaCorp,menasha,MenashaCorp,,industrial,ORBIS parent; returnable/dunnage; Neenah WI HQ
 International Paper,oracle,oracle_ce,medium,https://iazbqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1,,CX_1,,industrial,Oracle Cloud HCM; jobs.internationalpaper.com redirects here
 Avery Dennison,unknown,none,low,https://www.averydennison.com/en/home/careers/search-jobs.html,,,,industrial,Springboard JS widget; no public JSON / not Workday
 

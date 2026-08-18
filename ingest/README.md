@@ -15,6 +15,7 @@ npm run ingest
 4. **Greenhouse / Lever / Ashby** — documented public job-board GET APIs
 5. **SuccessFactors** — public RMK search JSON when the career site exposes it
 6. **SmartRecruiters** — public company postings API
+7. **CWS / m-cloud** — JSONP `GET https://{host}/api/job` with `Organization` + search facets
 
 ## Normalized schema
 
