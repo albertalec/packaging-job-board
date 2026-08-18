@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getJob, loadJobs } from "@/lib/jobs";
+import { getSponsorshipForJob } from "@/lib/sponsorships";
 
 export const revalidate = 3600;
 
@@ -48,11 +49,14 @@ export default async function JobPage({ params }: Params) {
   const job = getJob(id);
   if (!job) notFound();
 
+  const sponsorship = await getSponsorshipForJob(job.id);
+
   return (
     <article className="spec">
       <p className="kicker">
         <Link href="/">All jobs</Link> / {job.company}
       </p>
+      {sponsorship ? <span className="stamp sponsor-stamp">Sponsored</span> : null}
       <h1>{job.title}</h1>
       <ul className="spec-meta">
         <li>{job.company}</li>
@@ -61,14 +65,21 @@ export default async function JobPage({ params }: Params) {
         {job.niche ? <li>{job.niche.replace("-", " / ")}</li> : null}
         {job.salary ? <li>{job.salary}</li> : null}
       </ul>
-      <a
-        className="apply big"
-        href={job.applyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Apply on {job.company} careers
-      </a>
+      <div className="spec-actions">
+        <a
+          className="apply big"
+          href={job.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apply on {job.company} careers
+        </a>
+        {!sponsorship ? (
+          <Link className="ghost big" href={`/sponsor/${job.id}`}>
+            Sponsor this listing — $100
+          </Link>
+        ) : null}
+      </div>
       <div className="description">
         {toParagraphs(job.description).map((paragraph, index) => (
           <p key={`${job.id}-${index}`}>{paragraph}</p>

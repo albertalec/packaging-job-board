@@ -66,9 +66,9 @@ classification, and depth in underserved sub-niches.
 
 ## 4. Monetization (in the order it typically unlocks)
 
-1. [ ] **Sponsored job — $100, credit card** — employer pays $100 to sponsor a
-      listing (priority placement on the board). Checkout by card; no invoice
-      round-trip for the first dollar.
+1. [x] **Sponsored job — $100, credit card** — Stripe Checkout at `/sponsor`;
+      30-day priority placement + badge. Local test payment succeeded.
+      Production still needs Vercel env vars, a Stripe webhook, and Blob.
 2. [ ] Featured / priority placement beyond the $100 sponsor (upsell)
 3. [ ] Paid job postings at a higher tier (IoPP benchmark is $300–500/posting)
 4. [ ] Lead-gen / quote requests — often highest value once traffic is real
@@ -95,13 +95,15 @@ classification, and depth in underserved sub-niches.
 
 ### Phase 1 — Ingestion engine (MVP core)
 - [x] Build the Workday connector (POST body, pagination, per-tenant subdomain)
-- [x] Seed with verified Workday companies (4 live) plus Phenom / Greenhouse /
-      Amazon / SuccessFactors rows in `ingest/companies.ts`
+- [x] Seed with verified Workday companies (Kimberly-Clark, General Mills,
+      Sonoco, 3M, Kenvue, Silgan) plus Phenom / Greenhouse / Amazon /
+      SuccessFactors / Teamtailor / Oracle rows in `ingest/companies.ts`
 - [x] Normalize to one schema: title, dept, location, remote flag, posted date,
       apply URL, description, salary (where available)
 - [x] Dedupe (hash per posting)
 - [ ] “New since last run” diff UI (hash is stored; product hook not shown yet)
-- [ ] Daily scheduled poll
+- [x] Daily scheduled poll — GitHub Action `.github/workflows/ingest.yml`
+      (12:00 UTC), commits `data/jobs.json`, Vercel redeploys
 
 ### Phase 2 — Role classification (critical data-quality step)
 - [x] Build a classifier/allow-list to separate PRODUCT/transport packaging from
@@ -111,10 +113,13 @@ classification, and depth in underserved sub-niches.
 ### Phase 3 — Site (SEO-first)
 - [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
       plus filters on the index
-- [x] Flat data store (`data/jobs.json`); no auth/dashboards/payments yet
+- [x] Flat data store (`data/jobs.json`); Stripe checkout for sponsorships
+      (no employer accounts / dashboards yet)
 - [x] Search / filter jobs by US state (in addition to title/company/city and
       niche)
+- [x] Public deploy: https://packaging-job-board.vercel.app (`SITE_URL` set)
 - [ ] Job alerts (email) to build a return audience
+- [ ] Custom domain (optional)
 
 ### Phase 4 — Add sources
 - [ ] SuccessFactors public JSON still not exposed (Nestlé) — Aptar RSS works
@@ -130,8 +135,12 @@ classification, and depth in underserved sub-niches.
 - [ ] Avery Dennison Springboard widget — no public JSON, not Workday
 
 ### Phase 5 — Monetize
-- [ ] Self-serve **sponsor a job for $100** — employer pays by credit card
-      (Stripe or equivalent); sponsored listing is highlighted / ranked first
+- [x] Self-serve **sponsor a job for $100** — Stripe Checkout; webhook activates
+      a 30-day sponsored listing (badge + ranked first). Local test mode works.
+      Production: add `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` / `SITE_URL`
+      on Vercel, webhook `https://packaging-job-board.vercel.app/api/webhooks/stripe`
+      (`checkout.session.completed`, `checkout.session.async_payment_succeeded`),
+      and Vercel Blob (`BLOB_READ_WRITE_TOKEN`) so sponsorships persist.
 - [ ] Featured placement (manual/self-serve) beyond the $100 sponsor
 - [ ] Higher-tier paid postings + checkout
 - [ ] Lead-gen / quote-request flow
@@ -150,7 +159,8 @@ classification, and depth in underserved sub-niches.
 
 ## 7. Next Action
 
-1. Put the site on a public URL (Vercel) and set `SITE_URL`.
-2. Add a daily ingest schedule so the board stays fresh.
-3. Keep adding Workday packaging manufacturers until inventory is ~50.
-4. $100 credit-card sponsored listing once the board is public.
+1. Finish **production Stripe**: Vercel env vars, dashboard webhook, Blob store.
+2. Grow inventory toward ~50 live packaging roles — more Workday packaging
+   manufacturers (Graphic Packaging, Smurfit Westrock, Crown, O-I, and similar).
+3. Submit the public URL to Google Search Console once inventory is denser.
+4. Job-alert emails once listings stay above ~50.

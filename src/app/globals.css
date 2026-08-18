@@ -207,6 +207,162 @@ select {
   transform: rotate(-6deg);
 }
 
+.sponsor-stamp {
+  border-color: #8a5a12;
+  color: #8a5a12;
+}
+
+.job-card-sponsored {
+  box-shadow: 4px 4px 0 #8a5a12;
+  border-color: #8a5a12;
+}
+
+.mast-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.sponsor-cta {
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+.sponsor-link {
+  border-color: #8a5a12;
+  color: #8a5a12;
+}
+
+.sponsor-page {
+  padding: 1rem 0 2rem;
+  max-width: 40rem;
+}
+
+.sponsor-benefits {
+  margin: 1.25rem 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+.sponsor-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.sponsor-price .price {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.sponsor-price .term {
+  color: #5c4c3c;
+  font-size: 0.9rem;
+}
+
+.sponsor-subhead {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.35rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.sponsor-pick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.sponsor-pick-list a {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  background: var(--card);
+  padding: 0.75rem 0.85rem;
+}
+
+.sponsor-pick-list a:hover {
+  border-color: var(--ink);
+}
+
+.pick-title {
+  display: block;
+  font-weight: 600;
+}
+
+.pick-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: #5c4c3c;
+}
+
+.sponsor-footnote {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #5c4c3c;
+}
+
+.sponsor-active {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid #8a5a12;
+  background: var(--card);
+}
+
+.notice {
+  margin: 1rem 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--rule);
+  background: var(--card);
+  font-size: 0.9rem;
+}
+
+.checkout-wrap {
+  margin: 1rem 0 1.5rem;
+}
+
+.checkout {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.checkout:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.checkout-error {
+  margin: 0.75rem 0 0;
+  color: var(--stamp);
+  font-size: 0.9rem;
+}
+
+.sponsor-actions,
+.spec-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+}
+
+.ghost.big {
+  display: inline-block;
+}
+
 .meta {
   color: #4d4134;
   font-size: 0.9rem;
@@ -277,6 +433,10 @@ footer {
 @media (max-width: 640px) {
   .mast {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mast-links {
     align-items: flex-start;
   }
 

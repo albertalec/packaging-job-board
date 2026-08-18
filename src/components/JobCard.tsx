@@ -14,15 +14,22 @@ function postedLabel(postedAt: string | null): string | null {
   });
 }
 
-export function JobCard({ job }: { job: NormalizedJob }) {
+export function JobCard({
+  job,
+  sponsored = false,
+}: {
+  job: NormalizedJob;
+  sponsored?: boolean;
+}) {
   const posted = postedLabel(job.postedAt);
   const fresh = posted === "Posted today" || (posted?.endsWith("d ago") && Number.parseInt(posted, 10) <= 3);
 
   return (
-    <article className="job-card">
+    <article className={`job-card${sponsored ? " job-card-sponsored" : ""}`}>
       <div className="job-card-top">
         <p className="company">{job.company}</p>
-        {fresh ? <span className="stamp">New</span> : null}
+        {sponsored ? <span className="stamp sponsor-stamp">Sponsored</span> : null}
+        {!sponsored && fresh ? <span className="stamp">New</span> : null}
       </div>
       <h2>
         <Link href={`/jobs/${job.id}`}>{job.title}</Link>
@@ -36,6 +43,11 @@ export function JobCard({ job }: { job: NormalizedJob }) {
         <Link className="ghost" href={`/jobs/${job.id}`}>
           Spec sheet
         </Link>
+        {!sponsored ? (
+          <Link className="ghost sponsor-link" href={`/sponsor/${job.id}`}>
+            Sponsor
+          </Link>
+        ) : null}
         <a
           className="apply"
           href={job.applyUrl}

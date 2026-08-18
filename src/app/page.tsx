@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { JobBoard } from "@/components/JobBoard";
 import { loadJobs } from "@/lib/jobs";
+import { getActiveSponsoredJobIds, sortJobsWithSponsors } from "@/lib/sponsorships";
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Packaging Job Board",
@@ -10,8 +12,10 @@ export const metadata: Metadata = {
     "Fresh packaging engineer and packaging manager roles, ingested from employer ATS feeds — not LinkedIn.",
 };
 
-export default function HomePage() {
+export default async function HomePage() {
   const { jobs, ingestedAt, total } = loadJobs();
+  const sponsoredIds = await getActiveSponsoredJobIds();
+  const sortedJobs = sortJobsWithSponsors(jobs, sponsoredIds);
   const ingestedLabel = ingestedAt
     ? new Date(ingestedAt).toLocaleString("en-US", {
         month: "short",
@@ -41,8 +45,13 @@ export default function HomePage() {
             <dd>{ingestedLabel}</dd>
           </div>
         </dl>
+        <p className="sponsor-cta">
+          Hiring?{" "}
+          <Link href="/sponsor">Sponsor a listing for $100</Link> — priority placement for
+          30 days.
+        </p>
       </section>
-      <JobBoard jobs={jobs} />
+      <JobBoard jobs={sortedJobs} sponsoredIds={[...sponsoredIds]} />
     </>
   );
 }
