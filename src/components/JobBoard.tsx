@@ -14,7 +14,14 @@ const NICHES = [
   { id: "industrial", label: "Industrial" },
 ] as const;
 
-export function JobBoard({ jobs }: { jobs: NormalizedJob[] }) {
+export function JobBoard({
+  jobs,
+  sponsoredIds,
+}: {
+  jobs: NormalizedJob[];
+  sponsoredIds: string[];
+}) {
+  const sponsoredSet = useMemo(() => new Set(sponsoredIds), [sponsoredIds]);
   const [query, setQuery] = useState("");
   const [niche, setNiche] = useState("");
   const [state, setState] = useState("");
@@ -84,7 +91,7 @@ export function JobBoard({ jobs }: { jobs: NormalizedJob[] }) {
         <ul className="job-list">
           {filtered.map((job) => (
             <li key={job.id}>
-              <JobCard job={job} />
+              <JobCard job={job} sponsored={sponsoredSet.has(job.id)} />
             </li>
           ))}
         </ul>

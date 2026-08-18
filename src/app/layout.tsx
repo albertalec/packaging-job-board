@@ -32,7 +32,12 @@ export default function RootLayout({
                 Job Board
               </span>
             </Link>
-            <p className="tagline">Product packaging roles. Fresh ATS inventory.</p>
+            <div className="mast-links">
+              <p className="tagline">Product packaging roles. Fresh ATS inventory.</p>
+              <Link className="nav-link" href="/sponsor">
+                Sponsor a job
+              </Link>
+            </div>
           </header>
           <main>{children}</main>
           <footer>
