@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap");
+
+:root {
+  --paper: #f3eadb;
+  --ink: #1d1712;
+  --kraft: #c4a484;
+  --stamp: #b42318;
+  --rule: #c9b79a;
+  --card: #fffaf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #d9cbb3;
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.sheet {
+  max-width: 980px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--paper);
+  padding: 2rem 1.5rem 4rem;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+
+.mast {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 1rem;
+}
+
+.mark {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.4rem;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.box {
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--kraft);
+}
+
+.tagline {
+  margin: 0;
+  max-width: 14rem;
+  text-align: right;
+  font-size: 0.85rem;
+}
+
+.hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.kicker {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #5c4c3c;
+}
+
+h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0.4rem 0 1rem;
+}
+
+.lede {
+  font-size: 1.05rem;
+  max-width: 42rem;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0 0;
+}
+
+.stats dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stats dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.search {
+  flex: 1 1 16rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--ink);
+  background: var(--card);
+  font: inherit;
+}
+
+.check {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.check input {
+  width: auto;
+}
+
+.count {
+  margin: 0 0 0 auto;
+  font-size: 0.85rem;
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.job-card {
+  background: var(--card);
+  padding: 1.1rem 1.2rem 1rem;
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--kraft);
+}
+
+.job-card h2 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.35rem;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.job-card h2 a {
+  text-decoration: none;
+}
+
+.job-card-top,
+.meta,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.company {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stamp {
+  border: 1.5px solid var(--stamp);
+  color: var(--stamp);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.35rem;
+  transform: rotate(-6deg);
+}
+
+.meta {
+  color: #4d4134;
+  font-size: 0.9rem;
+}
+
+.niche {
+  text-transform: capitalize;
+}
+
+.actions {
+  margin-top: 0.85rem;
+}
+
+.apply,
+.ghost {
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--ink);
+}
+
+.apply {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.apply.big {
+  display: inline-block;
+  margin: 1rem 0 1.5rem;
+}
+
+.ghost {
+  background: transparent;
+}
+
+.spec-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.description {
+  line-height: 1.55;
+  max-width: 44rem;
+}
+
+.empty {
+  padding: 2rem 0;
+}
+
+footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+  color: #5c4c3c;
+  font-size: 0.85rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (max-width: 640px) {
+  .mast {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tagline {
+    text-align: left;
+  }
+}

@@ -82,32 +82,40 @@ classification, and depth in underserved sub-niches.
       (new jobs/week) — the real demand signal
 - [ ] Confirm search demand: are people Googling packaging roles by niche/region?
 - [ ] Choose the launch wedge (section 1)
-- [ ] Careers-page pass: resolve every `verify` row in the seed CSV to a real
+- [x] Careers-page pass: resolve every `verify` row in the seed CSV to a real
       ATS + token/tenant (watch where each careers page redirects)
+      — Live Workday: General Mills (`genmills` / `GMI_External_Careers`),
+      Kimberly-Clark, Sonoco, 3M. PepsiCo / P&G / Coca-Cola / DuPont / Ball /
+      Sealed Air / Amcor are Phenom career sites without a public JSON feed.
+      Berry Global careers now redirect to Amcor.
 
 ### Phase 1 — Ingestion engine (MVP core)
-- [ ] Build the Workday connector (POST body, pagination, per-tenant subdomain)
-- [ ] Seed with the ~15 high/medium-confidence Workday companies
-- [ ] Normalize to one schema: title, dept, location, remote flag, posted date,
+- [x] Build the Workday connector (POST body, pagination, per-tenant subdomain)
+- [x] Seed with verified Workday companies (4 live) plus Phenom / Greenhouse /
+      Amazon / SuccessFactors rows in `ingest/companies.ts`
+- [x] Normalize to one schema: title, dept, location, remote flag, posted date,
       apply URL, description, salary (where available)
-- [ ] Dedupe + diff (hash per posting; "new since last run" = product hook)
+- [x] Dedupe (hash per posting)
+- [ ] “New since last run” diff UI (hash is stored; product hook not shown yet)
 - [ ] Daily scheduled poll
 
 ### Phase 2 — Role classification (critical data-quality step)
-- [ ] Build a classifier/allow-list to separate PRODUCT/transport packaging from
+- [x] Build a classifier/allow-list to separate PRODUCT/transport packaging from
       semiconductor & electronics "packaging" (major noise source, esp. West Coast)
-- [ ] Sub-niche tagging: automotive / pharma / CPG / food & beverage
+- [x] Sub-niche tagging: automotive / pharma / CPG / food & beverage / industrial
 
 ### Phase 3 — Site (SEO-first)
-- [ ] Server-rendered pages (Next.js/Astro; static/ISR) — one indexable page per
-      job and per category
-- [ ] Postgres or flat data store to start; no auth/dashboards/payments yet
+- [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
+      plus filters on the index
+- [x] Flat data store (`data/jobs.json`); no auth/dashboards/payments yet
 - [ ] Job alerts (email) to build a return audience
 
 ### Phase 4 — Add sources
-- [ ] SuccessFactors connector (Nestlé, Amcor)
-- [ ] Custom parsers (Amazon first — public API)
-- [ ] Greenhouse/Lever/Ashby GET layer for packaging startups
+- [ ] SuccessFactors public JSON still not exposed (Nestlé) — connector stub only
+- [x] Amazon Jobs public `search.json`
+- [x] Greenhouse / Lever / Ashby GET layer (Greenhouse live; Lever/Ashby ready
+      for board tokens). Phenom `/api/jobs` wired but current career sites
+      do not expose it.
 
 ### Phase 5 — Monetize
 - [ ] Featured placement (manual/self-serve)
@@ -117,8 +125,9 @@ classification, and depth in underserved sub-niches.
 ## 6. Open Questions / Risks
 
 - [ ] **Chicken-and-egg:** need ~50–100 listings + some traffic before charging.
-      Aggregation seeds it so it looks alive first. (Kills most directories.)
-- [ ] **Title ambiguity** is the #1 data-quality risk — must be solved in Phase 2.
+      Aggregation seeds it so it looks alive first. Latest ingest: ~16 roles.
+- [x] **Title ambiguity** (v1 classifier in `ingest/classify.ts`) — keep iterating
+      as semiconductor / warehouse false-positives show up.
 - [ ] **ATS drift:** platforms change schemas/deprecate endpoints without notice;
       companies switch ATS. Re-verify seed mapping ~quarterly.
 - [ ] **Traffic > build:** "simple to build" ≠ "simple to get traffic." Edge comes
@@ -127,6 +136,8 @@ classification, and depth in underserved sub-niches.
 
 ## 7. Next Action
 
-Verify ATS live for the high-value Workday candidates (General Mills,
-Kimberly-Clark, PepsiCo, Coca-Cola, Kenvue, Berry Global, Sealed Air) and fill
-in real tenant slugs + subdomains, so the Workday connector has confirmed targets.
+1. Choose a launch wedge (section 1) and watch IoPP posting velocity.
+2. Find more live Workday tenants (Aptar, Autoliv, Avery Dennison, IP, Kenvue)
+   and/or reverse a Phenom job-search JSON for PepsiCo / P&G / Coca-Cola.
+3. Add a daily ingest schedule and a “new since last run” marker on the site.
+4. Job-alert emails once inventory is consistently above ~50.

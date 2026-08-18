@@ -1,14 +1,16 @@
-company,ats,ingestion_method,confidence,career_url,tenant,site,notes
-General Mills,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Kimberly-Clark,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-PepsiCo,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Coca-Cola,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Kenvue,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Berry Global,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Sealed Air,workday,workday_post,high,,,,"Verify tenant/subdomain from careers redirect"
-Nestlé,successfactors,successfactors,medium,,,,"Phase 4; confirm careers-site API"
-Amcor,successfactors,successfactors,medium,,,,"Phase 4; confirm careers-site API"
-Amazon,custom,custom_scrape,medium,,,,"Public search API; custom parser"
-Procter & Gamble,custom,custom_scrape,medium,,,,"Proprietary careers front end"
-L'Oréal,custom,custom_scrape,low,,,,"Proprietary careers front end"
-Georgia-Pacific,custom,custom_scrape,low,,,,"Proprietary careers front end"
+company,ats,ingestion_method,confidence,career_url,tenant,site,board_token,niche,notes
+Kimberly-Clark,workday,workday_post,high,https://kimberlyclark.wd1.myworkdayjobs.com/GLOBAL,kimberlyclark,GLOBAL,,cpg,Live
+General Mills,workday,workday_post,high,https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers,genmills,GMI_External_Careers,,food-beverage,Host is genmills not generalmills
+Sonoco,workday,workday_post,high,https://sonoco.wd1.myworkdayjobs.com/CorporateCareers,sonoco,CorporateCareers,,industrial,Live
+3M,workday,workday_post,high,https://3m.wd1.myworkdayjobs.com/Search,3m,Search,,industrial,Live
+PepsiCo,phenom,phenom_api,medium,https://www.pepsicojobs.com/main,,,,food-beverage,Career site is Phenom; public JSON not exposed
+Procter & Gamble,phenom,phenom_api,medium,https://www.pgcareers.com/us/en,,,,cpg,Phenom /us/en; public JSON not exposed
+The Coca-Cola Company,phenom,phenom_api,medium,https://careers.coca-colacompany.com,,,,food-beverage,Phenom; public JSON not exposed
+DuPont,phenom,phenom_api,medium,https://careers.dupont.com/us/en,,,,industrial,Phenom; public JSON not exposed
+Ball Corporation,phenom,phenom_api,medium,https://jobs.ball.com,,,,cpg,Phenom; public JSON not exposed
+Sealed Air,phenom,phenom_api,medium,https://jobs.sealedair.com,,,,industrial,jobs.sealedair.com
+Amcor,phenom,phenom_api,medium,https://www.amcor.com/careers,,,,industrial,Berry Global careers now redirect here
+Nestlé,successfactors,successfactors,medium,https://www.nestlejobs.com,,,,food-beverage,No public RMK JSON
+Berlin Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/berlinpackaging,,,berlinpackaging,industrial,Public Job Board API
+Ernest Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/ernestpackagingsolutions,,,ernestpackagingsolutions,industrial,Public Job Board API; no packaging-titled roles in latest pull
+Amazon,amazon,amazon_search_json,high,https://www.amazon.jobs,,,,industrial,search.json; semiconductor packaging filtered out

@@ -1,30 +1,22 @@
 # Ingestion
 
-Connectors that pull jobs from employer ATS feeds and normalize them to one
-schema. Do not scrape LinkedIn.
+Connectors that pull jobs from employer ATS feeds and normalize them. Do not
+scrape LinkedIn.
 
-## Priority
+```bash
+npm run ingest
+```
 
-1. **Workday** (`workday_post`) — one POST integration reused across tenants.
-2. SAP SuccessFactors
-3. Custom parsers (Amazon public search API first)
-4. Greenhouse / Lever / Ashby public GET feeds (packaging startups only)
+## Sources
 
-## Normalized job schema
+1. **Workday** — paginated POST to `/wday/cxs/{tenant}/{site}/jobs`
+2. **Phenom** — public career-site JSON (`/api/jobs` and fallbacks)
+3. **Amazon Jobs** — `https://www.amazon.jobs/en/search.json`
+4. **Greenhouse / Lever / Ashby** — documented public job-board GET APIs
+5. **SuccessFactors** — public RMK search JSON when the career site exposes it
+6. **SmartRecruiters** — public company postings API
 
-| Field | Notes |
-| --- | --- |
-| title | Raw ATS title |
-| department | When the ATS exposes it |
-| location | City / region / country |
-| remote | Boolean when detectable |
-| posted_date | Prefer ATS `postedOn` / equivalent |
-| apply_url | Canonical apply / requisition URL |
-| description | HTML or text from the ATS |
-| salary | Only when the feed includes it |
-| source_company | `data/companies.csv` company name |
-| source_hash | Stable hash for dedupe + “new since last run” |
+## Normalized schema
 
-Workday jobs endpoint shape (per tenant):
-
-`https://{co}.wd{N}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs`
+title, department, location, remote, postedAt, applyUrl, description, salary,
+source company, source hash.
