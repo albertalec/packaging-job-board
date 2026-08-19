@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SponsorPicker } from "@/components/SponsorPicker";
 import { loadJobs } from "@/lib/jobs";
+import { compareJobsByPromise } from "@/lib/sponsorships";
 import { SPONSOR_DURATION_DAYS } from "@/lib/stripe";
 
 export const revalidate = 3600;
@@ -11,49 +12,34 @@ export const metadata: Metadata = {
 };
 
 export default function SponsorIndexPage() {
-  const { jobs } = loadJobs();
-  const sample = [...jobs]
-    .sort((left, right) => {
-      const leftPosted = left.postedAt ? Date.parse(left.postedAt) : 0;
-      const rightPosted = right.postedAt ? Date.parse(right.postedAt) : 0;
-      return rightPosted - leftPosted;
-    })
-    .slice(0, 12);
+  const picks = [...loadJobs().jobs].sort(compareJobsByPromise).map((job) => ({
+    id: job.id,
+    title: job.title,
+    company: job.company,
+    location: job.location,
+  }));
 
   return (
     <article className="sponsor-page">
       <p className="kicker">For employers & recruiters</p>
-      <h1>Pin a packaging-engineer listing for ${SPONSOR_DURATION_DAYS} days</h1>
+      <h1>
+        $100 to pin a listing for {SPONSOR_DURATION_DAYS} days
+      </h1>
       <p className="lede">
-        Already hiring a packaging engineer? Pay $100 by card to pin that
-        listing at the top. No “post a job” round-trip — the listing is already
-        on the board from your career site.
+        Packaging engineers and package-development candidates already use this
+        board. Pay $100 by card to pin a live career-site listing at the top —
+        no separate “post a job” round-trip.
       </p>
       <ul className="sponsor-benefits">
         <li>First position on the homepage (above organic listings)</li>
         <li>Sponsored stamp on the card and job detail page</li>
-        <li>{SPONSOR_DURATION_DAYS}-day run — flat fee, no recurring charge</li>
+        <li>{`${SPONSOR_DURATION_DAYS}-day run`} — flat fee, no recurring charge</li>
       </ul>
       <h2 className="sponsor-subhead">Pick a live listing</h2>
-      {sample.length === 0 ? (
-        <p className="empty">No live roles yet. Run ingest, then return here to sponsor.</p>
-      ) : (
-        <ul className="sponsor-pick-list">
-          {sample.map((job) => (
-            <li key={job.id}>
-              <Link href={`/sponsor/${job.id}`}>
-                <span className="pick-title">{job.title}</span>
-                <span className="pick-meta">
-                  {job.company} · {job.location}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <SponsorPicker jobs={picks} />
       <p className="sponsor-footnote">
-        Listing not here yet? It appears after the next daily ingest from your career-site
-        feed.
+        Listing not here yet? It appears after the next daily ingest from your
+        career-site feed.
       </p>
     </article>
   );

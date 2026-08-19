@@ -27,16 +27,19 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
   return (
     <article className="sponsor-page">
       <p className="kicker">Payment received</p>
-      <h1>Thank you — sponsorship is on the way</h1>
+      <h1>Thank you — this listing is being pinned</h1>
       <p className="lede">
-        Stripe confirmed your payment
         {jobTitle ? (
           <>
-            {" "}
-            for <strong>{jobTitle}</strong>
+            Stripe confirmed your payment for <strong>{jobTitle}</strong>. It
+            should appear at the top of the board within a minute.
           </>
-        ) : null}
-        . The listing should show as sponsored within a minute once the webhook runs.
+        ) : (
+          <>
+            Stripe confirmed your payment. It should appear at the top of the
+            board within a minute.
+          </>
+        )}
       </p>
       <div className="sponsor-actions">
         {jobId ? (

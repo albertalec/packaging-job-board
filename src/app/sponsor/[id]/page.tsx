@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JobCard } from "@/components/JobCard";
 import { SponsorCheckoutButton } from "@/components/SponsorCheckoutButton";
 import { getJob } from "@/lib/jobs";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
@@ -41,18 +42,23 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
   return (
     <article className="sponsor-page">
       <p className="kicker">
-        <Link href="/">All jobs</Link> /{" "}
-        <Link href={`/jobs/${job.id}`}>{job.title}</Link> / Sponsor
+        <Link href="/sponsor">All listings</Link> / {job.company}
       </p>
       <h1>Sponsor this listing</h1>
       <p className="lede">
-        Put <strong>{job.title}</strong> at {job.company} at the top of the board for{" "}
-        {SPONSOR_DURATION_DAYS} days. One flat payment — no invoice round-trip.
+        Pin <strong>{job.title}</strong> at {job.company} to the top of a board
+        used by packaging engineers and package-development candidates. One
+        flat payment for {SPONSOR_DURATION_DAYS} days — no invoice round-trip.
       </p>
 
       {canceled ? (
         <p className="notice">Checkout was canceled. You can try again when ready.</p>
       ) : null}
+
+      <h2 className="sponsor-subhead">How it looks on the board</h2>
+      <div className="sponsor-preview">
+        <JobCard job={job} sponsored compact />
+      </div>
 
       {sponsorship ? (
         <div className="sponsor-active">

@@ -2,16 +2,13 @@
 
 import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
+import { NICHE_LABELS } from "@/lib/niches";
 import { jobState, US_STATES } from "@/lib/states";
 import { JobCard } from "./JobCard";
 
 const NICHES = [
   { id: "", label: "All niches" },
-  { id: "cpg", label: "CPG" },
-  { id: "food-beverage", label: "Food & beverage" },
-  { id: "automotive", label: "Automotive" },
-  { id: "pharma", label: "Pharma" },
-  { id: "industrial", label: "Industrial" },
+  ...Object.entries(NICHE_LABELS).map(([id, label]) => ({ id, label })),
 ] as const;
 
 export function JobBoard({
@@ -27,6 +24,8 @@ export function JobBoard({
   const [state, setState] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
 
+  const hasFilters = Boolean(query.trim() || niche || state || remoteOnly);
+
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return jobs.filter((job) => {
@@ -39,6 +38,13 @@ export function JobBoard({
         .includes(needle);
     });
   }, [jobs, query, niche, state, remoteOnly]);
+
+  function clearFilters() {
+    setQuery("");
+    setNiche("");
+    setState("");
+    setRemoteOnly(false);
+  }
 
   return (
     <section>
@@ -84,8 +90,16 @@ export function JobBoard({
       </div>
       {filtered.length === 0 ? (
         <p className="empty">
-          No matching packaging roles in the latest ingest. Run{" "}
-          <code>npm run ingest</code> to refresh employer feeds.
+          {hasFilters ? (
+            <>
+              No packaging engineer roles match.{" "}
+              <button type="button" className="empty-clear" onClick={clearFilters}>
+                Clear filters
+              </button>
+            </>
+          ) : (
+            "No packaging engineer roles listed right now. Check back after the next daily update."
+          )}
         </p>
       ) : (
         <ul className="job-list">

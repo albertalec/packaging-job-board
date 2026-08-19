@@ -1,4 +1,5 @@
 import type { NormalizedJob } from "../../ingest/types";
+import { promiseRank } from "./rank";
 import {
   getActiveSponsoredJobIds,
   getSponsorshipForJob,
@@ -15,6 +16,17 @@ export {
   loadSponsorships,
 };
 
+export function compareJobsByPromise(
+  left: NormalizedJob,
+  right: NormalizedJob,
+): number {
+  const rank = promiseRank(right.title) - promiseRank(left.title);
+  if (rank !== 0) return rank;
+  const leftPosted = left.postedAt ? Date.parse(left.postedAt) : 0;
+  const rightPosted = right.postedAt ? Date.parse(right.postedAt) : 0;
+  return rightPosted - leftPosted;
+}
+
 export function sortJobsWithSponsors(
   jobs: NormalizedJob[],
   sponsoredIds: Set<string>,
@@ -23,9 +35,6 @@ export function sortJobsWithSponsors(
     const leftSponsored = sponsoredIds.has(left.id) ? 1 : 0;
     const rightSponsored = sponsoredIds.has(right.id) ? 1 : 0;
     if (leftSponsored !== rightSponsored) return rightSponsored - leftSponsored;
-
-    const leftPosted = left.postedAt ? Date.parse(left.postedAt) : 0;
-    const rightPosted = right.postedAt ? Date.parse(right.postedAt) : 0;
-    return rightPosted - leftPosted;
+    return compareJobsByPromise(left, right);
   });
 }

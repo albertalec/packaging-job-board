@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { JobBoard } from "@/components/JobBoard";
 import { loadJobs } from "@/lib/jobs";
 import { getActiveSponsoredJobIds, sortJobsWithSponsors } from "@/lib/sponsorships";
@@ -9,7 +8,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Packaging engineer jobs",
   description:
-    "Packaging engineer and package-development jobs at top employers. Updated daily. Apply on the company career site.",
+    "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily. Apply on the company career site.",
 };
 
 export default async function HomePage() {
@@ -32,9 +31,9 @@ export default async function HomePage() {
         <p className="kicker">Updated daily</p>
         <h1>Packaging engineer jobs at top employers.</h1>
         <p className="lede">
-          Open packaging engineer and package-development roles at companies
-          like Procter &amp; Gamble, 3M, Amazon, and General Mills. Apply on the
-          company&apos;s career site.
+          Packaging engineers and package development — not plant ops. Open
+          roles at companies like General Mills, Johnson &amp; Johnson, Mars,
+          and Clorox. Apply on the company&apos;s career site.
         </p>
         <dl className="stats">
           <div>
@@ -50,11 +49,6 @@ export default async function HomePage() {
             <dd>{ingestedLabel}</dd>
           </div>
         </dl>
-        <p className="sponsor-cta">
-          Hiring a packaging engineer?{" "}
-          <Link href="/sponsor">Sponsor the listing for $100</Link> — pin it for
-          30 days.
-        </p>
       </section>
       <JobBoard jobs={sortedJobs} sponsoredIds={[...sponsoredIds]} />
     </>

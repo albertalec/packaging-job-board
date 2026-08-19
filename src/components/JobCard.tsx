@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { NormalizedJob } from "../../ingest/types";
+import { formatNiche } from "@/lib/niches";
 
 function postedLabel(postedAt: string | null): string | null {
   if (!postedAt) return null;
@@ -17,15 +18,22 @@ function postedLabel(postedAt: string | null): string | null {
 export function JobCard({
   job,
   sponsored = false,
+  compact = false,
 }: {
   job: NormalizedJob;
   sponsored?: boolean;
+  compact?: boolean;
 }) {
   const posted = postedLabel(job.postedAt);
-  const fresh = posted === "Posted today" || (posted?.endsWith("d ago") && Number.parseInt(posted, 10) <= 3);
+  const fresh =
+    posted === "Posted today" ||
+    (posted?.endsWith("d ago") && Number.parseInt(posted, 10) <= 3);
+  const niche = formatNiche(job.niche);
 
   return (
-    <article className={`job-card${sponsored ? " job-card-sponsored" : ""}`}>
+    <article
+      className={`job-card${sponsored ? " job-card-sponsored" : ""}${compact ? " job-card-preview" : ""}`}
+    >
       <div className="job-card-top">
         <p className="company">{job.company}</p>
         {sponsored ? <span className="stamp sponsor-stamp">Sponsored</span> : null}
@@ -36,27 +44,21 @@ export function JobCard({
       </h2>
       <p className="meta">
         <span>{job.location}</span>
-        {job.niche ? <span className="niche">{job.niche.replace("-", " / ")}</span> : null}
+        {niche ? <span className="niche">{niche}</span> : null}
         {posted ? <span>{posted}</span> : null}
       </p>
-      <div className="actions">
-        <Link className="ghost" href={`/jobs/${job.id}`}>
-          Spec sheet
-        </Link>
-        {!sponsored ? (
-          <Link className="ghost sponsor-link" href={`/sponsor/${job.id}`}>
-            Sponsor
-          </Link>
-        ) : null}
-        <a
-          className="apply"
-          href={job.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply on employer site
-        </a>
-      </div>
+      {compact ? null : (
+        <div className="actions">
+          <a
+            className="apply"
+            href={job.applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply on employer site
+          </a>
+        </div>
+      )}
     </article>
   );
 }
