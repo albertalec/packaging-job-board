@@ -22,3 +22,9 @@ npm run ingest
 
 title, department, location, remote, postedAt, applyUrl, description, salary,
 source company, source hash.
+
+## Classifier
+
+Keep packaging engineer / package-development / packaging R&D titles. Drop
+semiconductor “packaging”, warehouse/packer titles, procurement, sales,
+converting-line supervision, and other non-engineer plant roles.

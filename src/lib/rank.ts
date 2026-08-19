@@ -2,15 +2,20 @@
 export function promiseRank(title: string): number {
   const t = title.toLowerCase();
   if (
-    /\b(procurement|category manager|account manager|sales)\b/.test(t) ||
-    /\b(corrugator supervisor|corrugated supervisor|corrugator specialist|fleet budget)\b/.test(
+    /\b(procurement|category manager|account manager|sales|sourcing)\b/.test(t) ||
+    /\b(corrugator|corrugated supervisor|fleet budget|creative director|art director)\b/.test(
       t,
-    )
+    ) ||
+    /\b(system user|delivery leader|packaging equipment|packaging machinery)\b/.test(
+      t,
+    ) ||
+    (/\bprocess engineer\b/.test(t) &&
+      !/\bpackag(?:e|ing) engineer/.test(t))
   ) {
     return 0;
   }
 
-  const intern = /\b(intern|co-op|coop|campus recruit)\b/.test(t);
+  const intern = /\b(intern(?:ship)?|co-op|coop|campus recruit)\b/.test(t);
   const core =
     /\b(packaging engineer|package engineer|package development|packaging development|packaging scientist|packaging technologist|package designer|structural packaging|packaging r&d|r&d packaging)\b/.test(
       t,

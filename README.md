@@ -30,8 +30,9 @@ public feed:
 | CWS (m-cloud) | JSONP `GET /api/job` (`orgId` + facets) |
 | Jibe | `GET /api/jobs?keywords=` (`jobs[].data`) |
 
-Jobs are classified to keep product/transport packaging and drop semiconductor
-“packaging” plus warehouse/packer titles. Inventory is written to `data/jobs.json`.
+Jobs are classified to keep packaging engineer / package-development titles
+and drop semiconductor “packaging”, warehouse/packer titles, procurement,
+sales, and converting-line supervision. Inventory is written to `data/jobs.json`.
 
 Build status and remaining to-dos live in `PLAN.md`.
 

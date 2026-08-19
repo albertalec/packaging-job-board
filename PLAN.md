@@ -270,12 +270,12 @@ like “jobs at GPI.”
       application packaging / HUD / mechanical-electronics packaging titles
 - [x] Sub-niche tagging: automotive / pharma / CPG / food & beverage /
       industrial
-- [ ] **Next: audit the live board for off-target titles and tighten
-      ingest/classifier rules.** Homepage sort only hides leaks (procurement,
-      corrugator supervisors, DuPont sales, plant ops). Drop them in
-      `ingest/classify.ts` (and company/search filters if needed) so the
-      58-role list matches packaging engineer / package-dev. Do this before
-      adding GPI / Pregis / Mondi.
+- [x] **Audit the live board for off-target titles and tighten
+      ingest/classifier rules.** Dropped procurement, corrugator
+      supervisors, DuPont sales, packaging-equipment, plant process, and
+      other non-engineer / non-package-dev titles in `ingest/classify.ts`.
+      Homepage sort remains a safety net. Do this before adding GPI /
+      Pregis / Mondi.
 - [ ] Optional later: material tags (corrugated / flexibles / folding
       carton / sustainability) **with filters**, not just hero copy
 
@@ -360,10 +360,9 @@ like “jobs at GPI.”
 
 - [ ] **Chicken-and-egg:** need enough *on-wedge* listings (engineer /
       package-dev, not 1,150 plant jobs) + traffic before charging feels
-      fair. Latest ingest (2026-08-18): **58 US roles** on the board.
-      Count is past the ~50 listing target; quality still mixes engineer /
-      package-dev with co-ops, procurement, and a DuPont sales leak. The
-      homepage sorts those leaks below; classifier still needs to drop them.
+      fair. Latest ingest (2026-08-19): **43 US roles** after dropping
+      procurement, sales, corrugator supervision, and other off-target
+      titles. Co-ops stay (sorted below experienced engineer / package-dev).
 - [ ] **Competing as a general packaging-industry board** — losing strategy.
       If inventory growth starts looking like MPC page 1, stop and retighten
       the classifier.
@@ -381,17 +380,18 @@ like “jobs at GPI.”
 
 1. [x] **Choose the wedge** — CPG brand-side packaging R&D — and rewrite
    homepage copy so we are not “another packaging job board.”
-2. [x] **Grow listing count toward ~50** — latest ingest **58 US roles**.
-   Remaining ingest wins are quality, not volume: UltiPro (Smithers) and
-   Rippling (Westpak) for test labs; recheck Gallo / Constellation / Colgate
-   when they post package-dev titles. GPI / Pregis / WestRock only with the
-   classifier on. Auto dunnage (Ford / Adient / CHEP) is expansion.
+2. [x] **Grow listing count toward ~50** — latest ingest **43 on-target
+   US roles** after the classifier audit. Remaining ingest wins are
+   quality, not volume: UltiPro (Smithers) and Rippling (Westpak) for test
+   labs; recheck Gallo / Constellation / Colgate when they post package-dev
+   titles. GPI / Pregis / WestRock only with the classifier on. Auto
+   dunnage (Ford / Adient / CHEP) is expansion.
 3. [x] **Posted date / New** on cards (freshness vs. MPC).
 4. [x] Homepage + sponsor UX pass 1–2 — audience split, $100 H1, full
    searchable picker, promise-ranked list.
-5. **Next priority: review off-target jobs on the live board and adjust
-   ingest/classifier rules** so procurement, plant supervision, sales, and
-   other non-engineer / non-package-dev titles do not stay in `jobs.json`.
+5. [x] **Review off-target jobs and tighten ingest/classifier rules** so
+   procurement, plant supervision, sales, and other non-engineer /
+   non-package-dev titles do not stay in `jobs.json`.
 6. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
 7. Google Search Console once that inventory is denser.
