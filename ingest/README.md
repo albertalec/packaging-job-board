@@ -28,3 +28,6 @@ source company, source hash.
 Keep packaging engineer / package-development / packaging R&D titles. Drop
 semiconductor “packaging”, warehouse/packer titles, procurement, sales,
 converting-line supervision, and other non-engineer plant roles.
+
+Descriptions are normalized to plain text: HTML entities decoded, section
+headings split, lists preserved. Do not store raw ATS HTML.

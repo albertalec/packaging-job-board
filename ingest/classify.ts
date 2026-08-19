@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { htmlToPlainText } from "../src/lib/description.ts";
 import { parseState } from "../src/lib/states.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
@@ -137,16 +138,7 @@ export function isUsOrRemote(
 }
 
 export function stripHtml(html: string): string {
-  return html
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/\s+/g, " ")
-    .trim();
+  return htmlToPlainText(html);
 }
 
 export function toJob(

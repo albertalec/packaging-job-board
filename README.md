@@ -32,7 +32,8 @@ public feed:
 
 Jobs are classified to keep packaging engineer / package-development titles
 and drop semiconductor “packaging”, warehouse/packer titles, procurement,
-sales, and converting-line supervision. Inventory is written to `data/jobs.json`.
+sales, and converting-line supervision. Descriptions are decoded and split
+into sections before they are written to `data/jobs.json`.
 
 Build status and remaining to-dos live in `PLAN.md`.
 
