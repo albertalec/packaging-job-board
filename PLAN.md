@@ -294,11 +294,47 @@ like “jobs at GPI.”
 - [x] Sponsor index: searchable picker of all live jobs (not newest 12);
       $100 / 30-day H1; employer mast copy; sponsored-card preview on
       checkout
+- [x] **Readable job descriptions (2026-08-19).** Decode HTML entities
+      (`&#39;` → `'`, `&#43;` → `+`), restore section breaks, and render
+      ATS labels as headings plus lists. See §3a. Do not store raw ATS
+      HTML (XSS).
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
 - [ ] **Job alerts (email) before profiles** — return audience; they have
       the full career-platform stack, we need this one loop
 - [ ] Custom domain (optional)
 - [ ] Google Search Console once engineer/package-dev inventory is denser
+
+### 3a. Job description readability
+
+Workday and other ATS feeds give HTML. Ingest used to flatten every tag to a
+space and only decode a few named entities, so seekers saw one wall of text
+with `Bachelor&#39;s` and `PREFERRED QUALIFICATIONS` jammed into the previous
+sentence.
+
+**What job seekers need on the listing page**
+1. Scan in 10 seconds: role summary, what you’ll do, qualifications.
+2. Trust the text: real apostrophes, plus signs, quotes — no entity codes.
+3. Apply without hunting: CTA at top and bottom; the rest is the employer’s
+   words, not a career-platform rewrite.
+
+**v1 (shipped)** — normalize at ingest, parse at render
+- Decode numeric and named entities (`&#39;`, `&#xa;`, `&amp;`, …).
+- Convert HTML blocks to paragraphs / `•` lists instead of one line.
+- Split known ATS labels (Company Overview, Preferred Qualifications, …)
+  into headings. Weak one-word labels (`experience`, `eligibility`) only
+  count when they are a real section, not running copy.
+- Render headings + lists in the kraft listing style. Repeat Apply at the
+  bottom. Keep plain text in `jobs.json` (not raw HTML).
+
+**Later, only if listings still feel noisy**
+- Collapse EEO / accommodation / visa boilerplate into a compact legal
+  footer or `<details>`.
+- Pull salary ranges out of description body into the meta row.
+- Optional “About the company” fold when the manifesto is longer than the
+  role. Do not hide qualifications.
+
+Do not reintroduce unsanitized ATS HTML. Connector HTML varies too much to
+style as-is, and it is an XSS surface.
 
 ### Phase 4 — Add sources (relevant roles only)
 - [ ] SuccessFactors public JSON still not exposed (Nestlé) — Aptar RSS works

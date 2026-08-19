@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JobDescription } from "@/components/JobDescription";
 import { getJob, loadJobs } from "@/lib/jobs";
 import { formatNiche } from "@/lib/niches";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
@@ -21,17 +22,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: `${job.title} at ${job.company}`,
     description: `${job.title} — ${job.location}. Apply on the employer ATS.`,
   };
-}
-
-function toParagraphs(description: string): string[] {
-  return description
-    .replace(/<[^>]+>/g, "\n")
-    .replace(/&amp;/g, "&")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#xa;/gi, "\n")
-    .split(/\n+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
 }
 
 function formatPosted(postedAt: string | null) {
@@ -82,10 +72,16 @@ export default async function JobPage({ params }: Params) {
           </Link>
         ) : null}
       </div>
-      <div className="description">
-        {toParagraphs(job.description).map((paragraph, index) => (
-          <p key={`${job.id}-${index}`}>{paragraph}</p>
-        ))}
+      <JobDescription text={job.description} />
+      <div className="spec-actions">
+        <a
+          className="apply big"
+          href={job.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apply on {job.company} careers
+        </a>
       </div>
     </article>
   );
