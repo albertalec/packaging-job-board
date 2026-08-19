@@ -358,18 +358,21 @@ the catalog into discoverable long-tail landing pages and measurable traffic.
 but these items make Google and shares work harder.
 
 **Phase A — ship before pushing traffic**
-- [ ] **`JobPosting` JSON-LD** on `/jobs/[id]` — Google for Jobs eligibility
+- [x] **`JobPosting` JSON-LD** on `/jobs/[id]` — Google for Jobs eligibility
       (`title`, `description`, `datePosted`, `hiringOrganization`, `jobLocation`,
       `directApply`, apply URL; `baseSalary` when present)
-- [ ] **Open Graph + Twitter cards** — title, description, URL on home and job
+- [x] **Open Graph + Twitter cards** — title, description, URL on home and job
       pages so LinkedIn/Slack shares show a rich preview (primary audience channel)
-- [ ] **`alternates.canonical`** on every indexable page — especially important
+- [x] **`alternates.canonical`** on every indexable page — especially important
       during vercel.app → custom domain migration
-- [ ] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
-      and SERP slots for candidate-intent pages only
-- [ ] **Analytics + apply-click events** — Plausible or GA4; track “Apply on
-      employer site” as the conversion that matters
-- [ ] **Search Console + sitemap submit** — monitor indexing, queries, and CTR
+- [x] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
+      and SERP slots for candidate-intent pages only; `/sponsor` disallowed in
+      `robots.txt`
+- [x] **Analytics + apply-click events** — Plausible (`NEXT_PUBLIC_PLAUSIBLE_DOMAIN`)
+      or GA4 (`NEXT_PUBLIC_GA_MEASUREMENT_ID`); `ApplyLink` fires apply_click /
+      Apply Click when configured
+- [ ] **Search Console + sitemap submit** — register property once domain is set;
+      `GOOGLE_SITE_VERIFICATION` env wired; submit sitemap manually in GSC
 
 **Phase B — after ~50+ on-wedge jobs (avoid thin pages)**
 - [ ] **Indexable filter routes** (server-rendered, not client-only):
@@ -537,7 +540,8 @@ style as-is, and it is an XSS surface.
 6. **Choose final name + domain** (§1d) — register, point DNS, set env vars,
    301 from vercel.app.
 7. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
-   Search Console, analytics.
+   Search Console (manual), analytics env vars. **Code shipped 2026-08-19**;
+   remaining: register GSC + set `GOOGLE_SITE_VERIFICATION` / Plausible domain.
 8. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
 9. **SEO Phase B** filter pages once inventory supports them without thin

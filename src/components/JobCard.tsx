@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { NormalizedJob } from "../../ingest/types";
+import { ApplyLink } from "@/components/ApplyLink";
 import { formatNiche } from "@/lib/niches";
 
 function postedLabel(postedAt: string | null): string | null {
@@ -49,14 +50,14 @@ export function JobCard({
       </p>
       {compact ? null : (
         <div className="actions">
-          <a
+          <ApplyLink
             className="apply"
             href={job.applyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            jobId={job.id}
+            company={job.company}
           >
             Apply on employer site
-          </a>
+          </ApplyLink>
         </div>
       )}
     </article>

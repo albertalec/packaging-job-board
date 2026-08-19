@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { SponsorPicker } from "@/components/SponsorPicker";
 import { loadJobs } from "@/lib/jobs";
+import { sponsorNoIndexMetadata } from "@/lib/seo";
 import { compareJobsByPromise } from "@/lib/sponsorships";
 import { SPONSOR_DURATION_DAYS } from "@/lib/stripe";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = sponsorNoIndexMetadata({
   title: "Sponsor a job",
   description: `Priority placement for $100 — ${SPONSOR_DURATION_DAYS} days at the top of the board.`,
-};
+});
 
 export default function SponsorIndexPage() {
   const picks = [...loadJobs().jobs].sort(compareJobsByPromise).map((job) => ({

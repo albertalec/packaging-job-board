@@ -6,6 +6,7 @@ import { SponsorCheckoutButton } from "@/components/SponsorCheckoutButton";
 import { getJob } from "@/lib/jobs";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
 import { contactEmail } from "@/lib/site";
+import { sponsorNoIndexMetadata } from "@/lib/seo";
 import { SPONSOR_DURATION_DAYS, stripeConfigured } from "@/lib/stripe";
 
 export const revalidate = 300;
@@ -16,11 +17,11 @@ type SearchParams = { searchParams: Promise<{ canceled?: string }> };
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { id } = await params;
   const job = getJob(id);
-  if (!job) return { title: "Sponsor a job" };
-  return {
+  if (!job) return sponsorNoIndexMetadata({ title: "Sponsor a job", description: "Sponsor a live listing." });
+  return sponsorNoIndexMetadata({
     title: `Sponsor ${job.title}`,
     description: `Priority placement for ${job.title} at ${job.company} — $100 for ${SPONSOR_DURATION_DAYS} days.`,
-  };
+  });
 }
 
 function formatExpiry(iso: string): string {

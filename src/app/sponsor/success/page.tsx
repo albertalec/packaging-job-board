@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { sponsorNoIndexMetadata } from "@/lib/seo";
 import { getStripe, stripeConfigured } from "@/lib/stripe";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = sponsorNoIndexMetadata({
   title: "Sponsorship confirmed",
   description: "Your sponsored job placement is being activated.",
-};
+});
 
 type SearchParams = { searchParams: Promise<{ session_id?: string }> };
 
