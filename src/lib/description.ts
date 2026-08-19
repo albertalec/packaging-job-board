@@ -223,7 +223,7 @@ function matchHeadingPrefix(
   HEADING_PATTERN.lastIndex = 0;
   const match = HEADING_PATTERN.exec(line);
   if (!match || match.index !== 0) return null;
-  if (!isPlausibleHeading(match[0], true)) return null;
+  if (!isPlausibleHeading(match[0], true, "")) return null;
   const rest = line.slice(match[0].length).trim();
   return { label: displayHeading(match[1]), rest };
 }
@@ -233,8 +233,9 @@ function insertHeadingBreaks(text: string): string {
   HEADING_PATTERN.lastIndex = 0;
   let match: RegExpExecArray | null;
   while ((match = HEADING_PATTERN.exec(text))) {
-    const atStart = match.index === 0 || /\n\s*$/.test(text.slice(0, match.index));
-    if (!isPlausibleHeading(match[0], atStart)) continue;
+    const before = text.slice(0, match.index);
+    const atStart = match.index === 0 || /\n\s*$/.test(before);
+    if (!isPlausibleHeading(match[0], atStart, before)) continue;
     matches.push({
       start: match.index,
       end: match.index + match[0].length,
@@ -255,11 +256,23 @@ function insertHeadingBreaks(text: string): string {
   return output;
 }
 
-function isPlausibleHeading(raw: string, atStart: boolean): boolean {
+function isPlausibleHeading(
+  raw: string,
+  atStart: boolean,
+  before: string,
+): boolean {
   const label = raw.replace(/:$/, "").trim();
   if (isMostlyUppercase(label)) return true;
   if (atStart && /^[A-Z]/.test(label)) return true;
-  return !WEAK_HEADINGS.has(label.toLowerCase());
+  const afterSentence = /(?:^|[.!?])["'”’)]*\s*$/.test(before);
+  if (
+    afterSentence &&
+    /^[A-Z]/.test(label) &&
+    !WEAK_HEADINGS.has(label.toLowerCase())
+  ) {
+    return true;
+  }
+  return false;
 }
 
 function isMostlyUppercase(label: string): boolean {

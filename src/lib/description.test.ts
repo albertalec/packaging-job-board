@@ -61,6 +61,25 @@ describe("normalizeDescription", () => {
     assert.equal(blocks[1]?.type === "heading" && blocks[1].text, "Your role at Clorox");
   });
 
+  it("does not split 'salary range' inside compensation copy", () => {
+    const input =
+      "General Mills will not sponsor applicants for this position for work visas. SALARY RANGE The salary range for this position is: $95,300 - $143,200 Annual At General Mills we strive for each employee's pay to reflect their experience. The salary range for this role represents skills, work experience, and certifications.";
+    const blocks = parseJobDescription(input);
+    const salaryHeadings = blocks.filter(
+      (block) =>
+        block.type === "heading" && /salary range/i.test(block.text),
+    );
+    assert.equal(salaryHeadings.length, 1);
+    assert.equal(salaryHeadings[0]?.type === "heading" && salaryHeadings[0].text, "SALARY RANGE");
+    const body = blocks
+      .filter((block) => block.type === "paragraph")
+      .map((block) => (block.type === "paragraph" ? block.text : ""))
+      .join(" ");
+    assert.match(body, /The salary range for this position is: \$95,300/);
+    assert.match(body, /The salary range for this role represents/);
+    assert.doesNotMatch(body, /^salary range$/m);
+  });
+
   it("is safe to run more than once", () => {
     const once = normalizeDescription(
       "COMPANY OVERVIEW We exist to make food. MINIMUM QUALIFICATIONS Bachelor&#39;s degree",
