@@ -86,6 +86,36 @@ describe("normalizeDescription", () => {
     );
     assert.equal(normalizeDescription(once), once);
   });
+
+  it("turns Autoliv perks and EEO into a list plus a legal section", () => {
+    const input =
+      "What is required: Bachelor’s degree in Packaging Engineering. 10+ years of packaging engineering experience. What’s in it for you: •Attractive compensation package •Recognition awards, company events, university discount options and many more perks. •Gender Pay Equality Autoliv is proud to be an equal opportunity employer. Autoliv does not discriminate in any aspect of employment based on race, color, religion, national origin, ancestry, gender, sexual orientation, gender identify and/or expression, age, disability, or any other characteristic protected by federal, state, or local employment discrimination laws where Autoliv does business.";
+    const blocks = parseJobDescription(input);
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, [
+      "What is required",
+      "What’s in it for you",
+      "Equal opportunity employer",
+    ]);
+    const perks = blocks.find((block) => block.type === "list");
+    assert.equal(perks?.type, "list");
+    if (perks?.type === "list") {
+      assert.equal(perks.items.length, 3);
+      assert.ok(perks.items.some((item) => /Attractive compensation package/i.test(item)));
+      assert.ok(perks.items.some((item) => /Gender Pay Equality/i.test(item)));
+      assert.ok(perks.items.every((item) => !/does not discriminate/i.test(item)));
+    }
+    const eeo = blocks.find(
+      (block) =>
+        block.type === "paragraph" && /does not discriminate/i.test(block.text),
+    );
+    assert.equal(eeo?.type, "paragraph");
+    if (eeo?.type === "paragraph") {
+      assert.match(eeo.text, /Autoliv is proud to be an equal opportunity employer/);
+    }
+  });
 });
 
 describe("htmlToPlainText", () => {
