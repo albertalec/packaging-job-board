@@ -3,18 +3,28 @@ Kimberly-Clark,workday,workday_post,high,https://kimberlyclark.wd1.myworkdayjobs
 General Mills,workday,workday_post,high,https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers,genmills,GMI_External_Careers,,food-beverage,Host is genmills not generalmills
 Sonoco,workday,workday_post,high,https://sonoco.wd1.myworkdayjobs.com/CorporateCareers,sonoco,CorporateCareers,,industrial,Live
 3M,workday,workday_post,high,https://3m.wd1.myworkdayjobs.com/Search,3m,Search,,industrial,Live
-PepsiCo,phenom,phenom_api,medium,https://www.pepsicojobs.com/main,,,,food-beverage,Career site is Phenom; public JSON not exposed
-Procter & Gamble,phenom,phenom_api,medium,https://www.pgcareers.com/us/en,,,,cpg,Phenom /us/en; public JSON not exposed
+PepsiCo,jibe,jibe_jobs_json,high,https://www.pepsicojobs.com/main,,,,food-beverage,Jibe /api/jobs; unwrap jobs[].data; iCIMS apply backend
+Procter & Gamble,phenom,phenom_widgets,high,https://www.pgcareers.com/us/en,PGBPGNGLOBAL,,,cpg,POST /widgets refineSearch; refNum PGBPGNGLOBAL
 The Coca-Cola Company,cws,cws_mcloud_jsonp,high,https://careers.coca-colacompany.com,2110,,,food-beverage,CWS widget; jobsapi-internal.m-cloud.io org 2110; Workday-backed
-DuPont,phenom,phenom_api,medium,https://careers.dupont.com/us/en,,,,industrial,Phenom; public JSON not exposed
-Ball Corporation,phenom,phenom_api,medium,https://jobs.ball.com,,,,cpg,Phenom; public JSON not exposed
-Sealed Air,phenom,phenom_api,medium,https://jobs.sealedair.com,,,,industrial,jobs.sealedair.com
-Amcor,phenom,phenom_api,medium,https://www.amcor.com/careers,,,,industrial,Berry Global careers now redirect here
+DuPont,phenom,phenom_widgets,high,https://careers.dupont.com/us/en,DUPOUS,,,industrial,POST /widgets refineSearch; refNum DUPOUS
 Nestlé,successfactors,successfactors,medium,https://www.nestlejobs.com,,,,food-beverage,No public RMK JSON
 Berlin Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/berlinpackaging,,,berlinpackaging,industrial,Public Job Board API
 Ernest Packaging,greenhouse,greenhouse_get,high,https://job-boards.greenhouse.io/ernestpackagingsolutions,,,ernestpackagingsolutions,industrial,Public Job Board API; no packaging-titled roles in latest pull
 Amazon,amazon,amazon_search_json,high,https://www.amazon.jobs,,,,industrial,search.json; semiconductor packaging filtered out
 Kenvue,workday,workday_post,high,https://kenvue.wd5.myworkdayjobs.com/kenvue,kenvue,kenvue,,cpg,Live Workday site slug kenvue
+Clorox,workday,workday_post,high,https://clorox.wd1.myworkdayjobs.com/Clorox,clorox,Clorox,,cpg,Live Workday; drop packer/operator titles
+Conagra Brands,workday,workday_post,high,https://conagrabrands.wd1.myworkdayjobs.com/Careers_US,conagrabrands,Careers_US,,food-beverage,Live Workday Careers_US; packaging engineer titles on board
+Campbell's,workday,workday_post,high,https://campbellsoup.wd5.myworkdayjobs.com/ExternalCareers_GlobalSite,campbellsoup,ExternalCareers_GlobalSite,,food-beverage,Live Workday; drop plant operators/techs; CPG package designer
+Church & Dwight,workday,workday_post,high,https://churchdwight.wd1.myworkdayjobs.com/chdcareers,churchdwight,chdcareers,,cpg,Live Workday US site chdcareers; Princeton packaging engineers
+SC Johnson,workday,workday_post,high,https://scj.wd5.myworkdayjobs.com/External_Career_Site,scj,External_Career_Site,,cpg,Live Workday; Racine packaging engineer; TalentBrew front end
+J.M. Smucker,workday,workday_post,high,https://smucker.wd5.myworkdayjobs.com/US_External_Careers,smucker,US_External_Careers,,food-beverage,Live Workday; Orrville packaging R&D
+Unilever,workday,workday_post,high,https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals,unilever,Unilever_Experienced_Professionals,,cpg,Live Workday; US packaging hits are plant operators
+Johnson & Johnson,workday,workday_post,high,https://jj.wd5.myworkdayjobs.com/JJ,jj,JJ,,pharma,Live Workday; medical/pharma package engineers
+Mars,phenom,phenom_widgets,high,https://careers.mars.com/us/en,MARSGLOBAL,,,food-beverage,Phenom widgets; Engineer Packaging Development Franklin TN
+Ball Corporation,successfactors,successfactors,high,https://jobs.ball.com,,,,cpg,SF RMK RSS; retagged from Phenom
+Sealed Air,successfactors,successfactors,high,https://jobs.sealedair.com,,,,industrial,SF RMK RSS; Cryovac Duncan; retagged from Phenom
+Amcor,successfactors,successfactors,high,https://jobs-sf.amcor.com,,,,industrial,SF RMK at jobs-sf.amcor.com not amcor.com/careers
+WK Kellogg Co,phenom,phenom_widgets,high,https://jobs.wkkellogg.com/us/en/search-results,WKNWKIUS,,,food-beverage,Phenom CareerConnect; Battle Creek packaging engineer
 Silgan Containers,workday,workday_post,high,https://silgancontainers.wd1.myworkdayjobs.com/silgan,silgancontainers,silgan,,industrial,Live Workday packaging manufacturer
 Silgan Dispensing,workday,workday_post,high,https://silgandispensing.wd501.myworkdayjobs.com/silgan,silgandispensing,silgan,,industrial,Live Workday; wd501 host
 Aptar,successfactors,successfactors,high,https://jobs.aptar.com,,,,industrial,SuccessFactors RSS not Workday
@@ -24,4 +34,35 @@ Magna,workday,workday_post,high,https://magna.wd3.myworkdayjobs.com/Magna,magna,
 Menasha,workday,workday_post,high,https://menasha.wd12.myworkdayjobs.com/MenashaCorp,menasha,MenashaCorp,,industrial,ORBIS parent; returnable/dunnage; Neenah WI HQ
 International Paper,oracle,oracle_ce,medium,https://iazbqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1,,CX_1,,industrial,Oracle Cloud HCM; jobs.internationalpaper.com redirects here
 Avery Dennison,unknown,none,low,https://www.averydennison.com/en/home/careers/search-jobs.html,,,,industrial,Springboard JS widget; no public JSON / not Workday
+Amway,unknown,none,low,https://www.amway.com/careers,,,,cpg,MSU gap; Ada MI; verify ATS
+Perrigo,unknown,none,low,https://www.perrigo.com/careers,,,,pharma,MSU gap; Allegan MI OTC/pharma packaging
+Ford,unknown,none,low,https://corporate.ford.com/careers.html,,,,automotive,MSU auto dunnage expansion; electronics-packaging leak risk
+Adient,unknown,none,low,https://www.adient.com/careers,,,,automotive,MSU auto returnable/dunnage expansion
+CHEP,unknown,none,low,https://www.chep.com/careers,,,,industrial,VT unit-load/pallet gap
+Eastman,unknown,none,low,https://www.eastman.com/careers,,,,industrial,VT radius materials; packaging R&D if titled
+Altria,unknown,none,low,https://www.altria.com/careers,,,,cpg,VT/Richmond packaging R&D
+Colgate-Palmolive,successfactors,successfactors,medium,https://jobs.colgate.com,,,,cpg,SF RMK; packaging search currently operators only; skip ingest until engineer titles
+Green Bay Packaging,unknown,none,low,https://www.gbp.com/careers,,,,industrial,Stout corrugated; classifier on
+Sargento,unknown,none,low,https://www.sargento.com/careers,,,,food-beverage,Stout Wisconsin CPG
+Constellation Brands,unknown,none,low,https://www.cbrands.com/careers,,,,food-beverage,RIT gap; Victor NY package-dev
+LiDestri,unknown,none,low,https://lidestri.com/careers,,,,food-beverage,RIT Finger Lakes food packaging
+Wegmans,unknown,none,low,https://jobs.wegmans.com,,,,food-beverage,RIT; brand packaging only not store ops
+E&J Gallo,unknown,none,low,https://careers.gallo.com,,,,food-beverage,Cal Poly gap; Modesto wine/spirits package-dev
+The Wonderful Company,unknown,none,low,https://www.wonderful.com/careers,,,,food-beverage,Cal Poly Central Valley food CPG
+Driscoll's,unknown,none,low,https://www.driscolls.com/careers,,,,food-beverage,Cal Poly produce packaging
+ISOFlex,unknown,none,low,https://www.isoflexpackaging.com/careers,,,,industrial,Clemson flexibles; classifier on
+Smithers,unknown,none,low,https://www.smithers.com/careers,,,,industrial,ISTA/distribution lab; Akron OH + Lansing MI; MSU-adjacent
+TEN-E Packaging Services,unknown,none,low,https://www.ten-e.com/careers,,,,industrial,ISTA/DG/medical lab; Newport MN + NC; Stout/Twin Cities
+Westpak,unknown,none,low,https://westpak.com/careers,,,,industrial,ISTA/medical/APASS lab; San Jose + San Diego; Cal Poly
+Packaging Compliance Labs,unknown,none,low,https://pkgcompliance.com/careers-internships/,,,,pharma,Medical ISO 11607 lab; Grand Rapids; MSU intern pipeline
+DDL,unknown,none,low,https://www.ddltesting.com/careers,,,,pharma,Medical device package validation; Eden Prairie MN / Fountain Valley CA
+Gaynes Labs,unknown,none,low,https://go.gaynestesting.com,,,,industrial,Independent ISTA lab; Bridgeview IL
+Purple Diamond,unknown,none,low,https://purple-diamond.com/careers,,,,industrial,ISTA/cold-chain/e-comm lab; Bethlehem PA; Rutgers
+Advanced Packaging Technology Laboratories,unknown,none,low,https://advanced-labs.com/careers,,,,industrial,ISTA/APASS lab; Buffalo Grove IL
+Applus+ Keystone,unknown,none,low,https://keystonecompliance.com/careers,,,,industrial,ISTA/APASS; New Castle PA + Durham NC; ex-Keystone Compliance
+Modality Solutions,unknown,none,low,https://www.modality-solutions.com/careers,,,,pharma,Pharma cold-chain transport simulation; Bloomington IN
+Nelson Labs,unknown,none,low,https://www.nelsonlabs.com/careers,,,,pharma,Sterile barrier / ISO 11607; keyword packaging only
+Intertek,unknown,none,low,https://www.intertek.com/careers,,,,industrial,TIC with packaging practice; do not ingest whole board
+SGS,unknown,none,low,https://www.sgs.com/careers,,,,industrial,TIC with packaging practice; do not ingest whole board
+Element Materials Technology,unknown,none,low,https://www.element.com/careers,,,,industrial,TIC with packaging practice; do not ingest whole board
 

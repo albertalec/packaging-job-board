@@ -6,7 +6,7 @@ const SEMICONDUCTOR =
   /\b(semiconductor|wafer|osat|flip[ -]?chip|wirebond|chiplet|\bsip\b|\bsoc\b|advanced packaging|ic packaging|soc packaging|electronics packaging|avionics (mechanical|packaging)|package[- ]level|integrated circuit|silicon up)\b/i;
 
 const WAREHOUSE =
-  /\b(forklift|warehouse associate|warehouse lead|package handler|order picker|packer|material handler|production associate|packaging operator|machine operator)\b/i;
+  /\b(forklift|warehouse associate|warehouse lead|package handler|order picker|packer|material handler|production associate|packaging associate|packaging operator|packaging inspector|packaging technician|packaging tech|packaging mechanic|packaging apprentice|packaging machinist|process operator|machine operator|general entry|production supervisor|manufacturing supervisor|technical support representative)\b/i;
 
 const ROLE =
   /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|specialist|designer|design|developer|development|technologist|technician|coordinator|supervisor|lead|director|r&d|innovation)|package development|structural packaging|flexible packaging|rigid packaging|primary packaging|secondary packaging|returnable packaging|dunnage|converting engineer|corrugat(?:ed|or)|package engineering)\b/i;
@@ -88,11 +88,14 @@ export function isRemote(location: string, description: string): boolean {
   );
 }
 
-export function isUsOrRemote(job: {
-  state: string | null;
-  remote: boolean;
-  location: string;
-}): boolean {
+export function isUsOrRemote(
+  job: {
+    state: string | null;
+    remote: boolean;
+    location: string;
+  },
+  opts?: { homeCountry?: string },
+): boolean {
   const location = job.location;
   const mentionsUs = /\b(united states|\bu\.s\.a\.\b|\bu\.s\.\b|\busa\b)\b/i.test(
     location,
@@ -104,7 +107,15 @@ export function isUsOrRemote(job: {
   if (mentionsAbroad && !mentionsUs) return false;
   if (job.remote) return true;
   if (job.state) return true;
-  return mentionsUs;
+  if (mentionsUs) return true;
+  // Workday collapses multi-site US postings to "4 Locations"
+  if (
+    opts?.homeCountry === "USA" &&
+    /^\d+\s+Locations$/i.test(location.trim())
+  ) {
+    return true;
+  }
+  return false;
 }
 
 export function stripHtml(html: string): string {

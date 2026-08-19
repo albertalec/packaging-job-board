@@ -3,117 +3,132 @@ import type { Company, NormalizedJob } from "../types.ts";
 
 type PhenomJob = {
   jobId?: string;
-  id?: string;
+  jobSeqNo?: string;
+  reqId?: string;
   title?: string;
-  jobTitle?: string;
   location?: string;
-  locations?: Array<string | { city?: string; state?: string; country?: string }>;
   city?: string;
   state?: string;
+  country?: string;
+  cityStateCountry?: string;
   postedDate?: string;
-  postedOn?: string;
-  datePosted?: string;
-  url?: string;
-  jobUrl?: string;
   applyUrl?: string;
   category?: string;
-  department?: string;
-  description?: string;
-  jobDescription?: string;
+  descriptionTeaser?: string;
+  ml_job_parser?: { descriptionTeaser?: string };
+};
+
+type PhenomPage = {
+  refineSearch?: {
+    totalHits?: number;
+    data?: { jobs?: PhenomJob[] };
+  };
 };
 
 function originFrom(url: string): string {
   return new URL(url).origin;
 }
 
-function flattenLocations(job: PhenomJob): string {
-  if (typeof job.location === "string" && job.location) return job.location;
-  if (job.city || job.state) return [job.city, job.state].filter(Boolean).join(", ");
-  if (!job.locations?.length) return "";
-  return job.locations
-    .map((item) =>
-      typeof item === "string"
-        ? item
-        : [item.city, item.state, item.country].filter(Boolean).join(", "),
-    )
-    .filter(Boolean)
-    .join(" · ");
+function locationOf(job: PhenomJob): string {
+  if (job.cityStateCountry) return job.cityStateCountry;
+  if (job.location) return job.location;
+  return [job.city, job.state, job.country].filter(Boolean).join(", ");
 }
 
-function pickJobs(payload: unknown): PhenomJob[] {
-  if (!payload || typeof payload !== "object") return [];
-  const data = payload as Record<string, unknown>;
-  for (const key of ["jobs", "jobList", "data", "items", "results"]) {
-    const value = data[key];
-    if (Array.isArray(value)) return value as PhenomJob[];
-    if (value && typeof value === "object" && Array.isArray((value as { jobs?: unknown }).jobs)) {
-      return (value as { jobs: PhenomJob[] }).jobs;
-    }
-  }
-  return [];
+function refNumFromHtml(html: string): string | null {
+  const match = html.match(/"refNum"\s*:\s*"([^"]+)"/);
+  return match?.[1] ?? null;
 }
 
-async function tryJson(url: string): Promise<PhenomJob[] | null> {
-  const res = await fetch(url, { headers: BROWSER_HEADERS, redirect: "follow" });
-  if (!res.ok) return null;
-  const text = await res.text();
-  try {
-    const jobs = pickJobs(JSON.parse(text));
-    return jobs.length ? jobs : null;
-  } catch {
-    const embedded = text.match(/https?:\/\/[^"'\s]+(?:jobs-api|api\/jobs)[^"'\s]*/i);
-    if (embedded) return tryJson(embedded[0]);
-    const widget = text.match(/"jobSearchUrl"\s*:\s*"([^"]+)"/);
-    if (widget) return tryJson(widget[1].replace(/\\u002F/g, "/"));
-    return null;
-  }
+async function openSite(careerUrl: string): Promise<{ origin: string; cookies: string; html: string }> {
+  const res = await fetch(careerUrl, {
+    headers: { ...BROWSER_HEADERS, Accept: "text/html,application/json" },
+    redirect: "follow",
+  });
+  const cookies = res.headers.getSetCookie().map((cookie) => cookie.split(";")[0]).join("; ");
+  const html = await res.text();
+  return { origin: new URL(res.url).origin, cookies, html };
 }
 
 export async function ingestPhenom(company: Company): Promise<NormalizedJob[]> {
+  const opened = await openSite(company.careerUrl);
   const origin = originFrom(company.careerUrl);
-  const query = encodeURIComponent(company.searchText ?? "packaging");
-  const candidates = [
-    `${origin}/api/jobs?page=1&limit=50&keywords=${query}&sortBy=relevancy`,
-    `${origin}/api/jobs?keyword=${query}&page=1`,
-    `${origin}/widgets/api/jobs?keyword=${query}`,
-    `${origin}/en-us/search-jobs/results?Keywords=${query}&CurrentPage=1`,
-    company.careerUrl,
-  ];
-
-  let raw: PhenomJob[] | null = null;
-  let lastError = "no Phenom JSON endpoint responded";
-  for (const url of candidates) {
-    try {
-      const found = await tryJson(url);
-      if (found?.length) {
-        raw = found;
-        break;
-      }
-    } catch (error) {
-      lastError = String(error);
-    }
+  const refNum = company.refNum || refNumFromHtml(opened.html);
+  if (!refNum) {
+    throw new Error(`Phenom ${company.name}: refNum not found`);
   }
-  if (!raw) throw new Error(`Phenom ${company.name}: ${lastError}`);
 
   const jobs: NormalizedJob[] = [];
-  for (const job of raw) {
-    const title = job.title || job.jobTitle || "";
-    const sourceId = job.jobId || job.id || title;
-    const applyUrl =
-      job.applyUrl ||
-      job.jobUrl ||
-      job.url ||
-      `${origin}/jobs/${sourceId}`;
-    const normalized = toJob(company, {
-      sourceId: String(sourceId),
-      title,
-      department: job.department || job.category || null,
-      location: flattenLocations(job),
-      postedAt: job.postedDate || job.postedOn || job.datePosted || null,
-      applyUrl,
-      description: stripHtml(job.description || job.jobDescription || title),
+  const size = 50;
+  let from = 0;
+  let total = Infinity;
+  const keywords = company.searchText ?? "packaging";
+
+  while (from < total && from < 400) {
+    const res = await fetch(`${origin}/widgets`, {
+      method: "POST",
+      headers: {
+        ...BROWSER_HEADERS,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Cookie: opened.cookies,
+        Referer: company.careerUrl,
+        Origin: origin,
+      },
+      body: JSON.stringify({
+        lang: "en_us",
+        deviceType: "desktop",
+        country: "us",
+        pageName: "search-results",
+        size,
+        from,
+        jobs: true,
+        counts: true,
+        all_fields: ["category", "country", "city", "type", "state"],
+        clearAll: false,
+        jdsource: "facets",
+        isSliderEnable: false,
+        pageId: "page20",
+        siteType: "external",
+        keywords,
+        global: true,
+        selected_fields: {},
+        sort: { order: "desc", field: "postedDate" },
+        locationData: {},
+        refNum,
+        ddoKey: "refineSearch",
+      }),
     });
-    if (normalized) jobs.push(normalized);
+    const contentType = res.headers.get("content-type") ?? "";
+    if (!res.ok || !contentType.includes("json")) {
+      throw new Error(`Phenom ${company.name} ${res.status} ${origin}/widgets`);
+    }
+    const page = (await res.json()) as PhenomPage;
+    const postings = page.refineSearch?.data?.jobs ?? [];
+    total = page.refineSearch?.totalHits ?? 0;
+    for (const posting of postings) {
+      const title = posting.title ?? "";
+      const sourceId = posting.jobSeqNo || posting.jobId || posting.reqId || title;
+      const applyUrl =
+        posting.applyUrl ||
+        (posting.jobSeqNo ? `${origin}/us/en/job/${posting.jobSeqNo}` : company.careerUrl);
+      const description =
+        posting.descriptionTeaser ||
+        posting.ml_job_parser?.descriptionTeaser ||
+        title;
+      const normalized = toJob(company, {
+        sourceId: String(sourceId),
+        title,
+        department: posting.category ?? null,
+        location: locationOf(posting),
+        postedAt: posting.postedDate ?? null,
+        applyUrl,
+        description,
+      });
+      if (normalized) jobs.push(normalized);
+    }
+    if (postings.length === 0) break;
+    from += size;
   }
   return jobs;
 }

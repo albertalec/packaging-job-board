@@ -60,14 +60,20 @@ export function parseState(location: string): string | null {
   const text = location.trim();
 
   const segments = text.split(",").map((part) => part.trim()).filter(Boolean);
-  if (segments.length >= 3) {
-    const last = segments[segments.length - 1];
-    if (/^[A-Z]{2}$/i.test(last) && last.toUpperCase() !== "US") {
-      return null;
-    }
+  const first = segments[0] ?? "";
+  const last = segments[segments.length - 1] ?? "";
+  const usFirst = /^(united states|u\.s\.a\.|u\.s\.|usa)$/i.test(first);
+  // Trailing ISO country (`Toronto, ON, CA`) is not a US state. `USA, Princeton, NJ` is.
+  if (
+    segments.length >= 3 &&
+    /^[A-Z]{2}$/i.test(last) &&
+    last.toUpperCase() !== "US" &&
+    !usFirst
+  ) {
+    return null;
   }
 
-  const usa = text.match(/\bUSA?-([A-Z]{2})(?:-|,|\b)/i);
+  const usa = text.match(/\bUSA?\s*-+\s*([A-Z]{2})(?:\s*-|,|\b)/i);
   if (usa && CODE_SET.has(usa[1].toUpperCase())) return usa[1].toUpperCase();
 
   for (const { code, name } of NAMED_STATES) {
@@ -82,7 +88,7 @@ export function parseState(location: string): string | null {
     return abbrev[1].toUpperCase();
   }
 
-  const zip = text.match(/\b(\d{5})(?:-\d{4})?\b/);
+  const zip = text.match(/(?:^|[\s,])(\d{5})(?:-\d{4})?(?:\s|$|,)/);
   if (zip) return zipToState(zip[1]);
 
   return null;

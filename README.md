@@ -24,10 +24,11 @@ public feed:
 | Lever | `GET /v0/postings/{token}` |
 | Ashby | posting-api job board GET |
 | Amazon Jobs | `search.json` |
-| Phenom career sites | public `/api/jobs` (and fallbacks) |
+| Phenom career sites | `POST /widgets` (`ddoKey: refineSearch` + `refNum`) |
 | SuccessFactors RMK | public search JSON when exposed |
 | SmartRecruiters | public company postings API |
 | CWS (m-cloud) | JSONP `GET /api/job` (`orgId` + facets) |
+| Jibe | `GET /api/jobs?keywords=` (`jobs[].data`) |
 
 Jobs are classified to keep product/transport packaging and drop semiconductor
 “packaging” plus warehouse/packer titles. Inventory is written to `data/jobs.json`.

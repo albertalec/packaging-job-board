@@ -16,7 +16,8 @@ export type Ats =
   | "smartrecruiters"
   | "teamtailor"
   | "oracle"
-  | "cws";
+  | "cws"
+  | "jibe";
 
 export type Company = {
   name: string;
@@ -31,6 +32,7 @@ export type Company = {
   boardToken?: string;
   country?: string;
   orgId?: string;
+  refNum?: string;
   facets?: string[];
 };
 

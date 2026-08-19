@@ -114,23 +114,89 @@ Reviewed 2026-08-18 (`/job-listings/`, about, post-a-job). This is the
    widgets (Coca-Cola org `2110`, Workday-backed). Public search JSON, not
    HTML scrape.
 3. **SAP SuccessFactors** (`successfactors`) — RSS/search JSON when the RMK
-   site exposes it (Aptar live; Ball / Sealed Air / Amcor `jobs-sf.amcor.com`
-   are SF but still tagged Phenom — retag next). Nestlé still closed.
-4. **Phenom CareerConnect** — not `/api/jobs`. Real path is
-   `POST {origin}/widgets` with `ddoKey: refineSearch` + tenant `refNum`
-   (P&G `PGBPGNGLOBAL`, DuPont `DUPOUS`). PepsiCo is Jibe JSON at
-   `/api/jobs` (`jobs[].data.title`), not Phenom.
-5. **Public GET feeds** (Greenhouse/Lever/Ashby) — thin supplementary layer
+   site exposes it. Aptar live; Ball / Sealed Air / Amcor
+   (`jobs-sf.amcor.com`) retagged and live (0 packaging-engineer titles in
+   the latest pull). Nestlé still closed.
+4. **Phenom CareerConnect** — `POST {origin}/widgets` with `ddoKey:
+   refineSearch` + tenant `refNum`. Live: P&G `PGBPGNGLOBAL`, DuPont
+   `DUPOUS`, WK Kellogg `WKNWKIUS`, Mars `MARSGLOBAL`. PepsiCo is Jibe JSON
+   at `/api/jobs` (`jobs[].data.title`), not Phenom.
+5. **Jibe** — `GET /api/jobs?keywords=` unwrap `jobs[].data` (PepsiCo).
+6. **Public GET feeds** (Greenhouse/Lever/Ashby) — thin supplementary layer
    for packaging startups only. Amazon `search.json` is live.
 
 ### Seed data
 - Seed file created: `data/companies.csv` (starter list tagged with
   likely ATS, ingestion method, confidence).
 - The asset is the **company list + ATS mapping**, maintained over time.
-- **Next employers to add (from incumbent coverage, packaging-role
-  ingest only):** Graphic Packaging, Pregis, Mondi, Cascades, Plastipak,
-  ProAmpac, Ardagh, Smurfit Westrock, Crown, O-I. Avery Dennison still
-  blocked (Springboard widget, no public JSON).
+- School-adjacent gaps and packaging test labs are listed below. Converter
+  names (GPI, Pregis, Mondi, etc.) stay on the list **only** with the
+  classifier on — they are how this board becomes My Packaging Career.
+
+### School-adjacent employer gaps
+Talent map: MSU 180, Clemson 56, RIT 43, UW-Stout 26, Virginia Tech 17,
+Cal Poly 13, Rutgers 6 (IPEDS 2023–24). Proximity is a pipeline signal,
+not a license to ingest every plant near campus. VT is unit-load / pallet
+/ protective, not CPG carton R&D.
+
+**Now on the board (by cluster)**
+- MSU / Midwest: Autoliv, Magna, Menasha, GM (0 kept), General Mills,
+  Kimberly-Clark, Clorox, Conagra, Pepsi, WK Kellogg, SC Johnson, Smucker
+- Rutgers / NJ CPG: Kenvue, Campbell's, Church & Dwight, P&G, J&J, Mars
+  (Unilever ingested; US packaging hits were operators, kept 0)
+- Cal Poly: Clorox (Pleasanton / Oakland)
+- Clemson / VT: International Paper, Menasha co-ops, Pepsi/Sabra
+  (Chesterfield). Sealed Air retagged to SuccessFactors; 0 engineer titles
+  this pull.
+
+**Still missing (ingest these, not GPI plant oilers)**
+
+| Cluster | Gap employers | Notes |
+| --- | --- | --- |
+| MSU | Amway, Perrigo; Ford / Adient as expansion | Ada / Allegan CPG; auto dunnage is not the headline |
+| Virginia Tech | CHEP, WestRock, Graphic Packaging, Eastman, Altria R&D | I-81 / Richmond / Carolinas; unit-load + protective |
+| Clemson | Graphic Packaging, Pregis, ISOFlex | Sealed Air is wired; converter plant titles stay filtered |
+| Rutgers | Colgate | SF RMK; operators only this pull |
+| UW-Stout | Green Bay Packaging, Sargento | Corrugated + Wisconsin CPG; GPI only with tight filter |
+| RIT | Constellation Brands, LiDestri, Wegmans brand packaging | No packaging-titled roles this pull; recheck |
+| Cal Poly | E&J Gallo, The Wonderful Company, Driscoll’s | No packaging-titled roles this pull; recheck |
+
+**Do next (existing connectors, on-wedge titles)**
+1. [x] SC Johnson, J.M. Smucker — Midwest CPG Workday
+2. [x] Sealed Air / Ball / Amcor SuccessFactors retag
+3. [x] J&J Workday, Mars Phenom (`MARSGLOBAL`), Unilever Workday
+4. Gallo / Constellation — no packaging-titled roles this pull; recheck
+5. Colgate SF — operators only; skip until engineer titles appear
+6. Packaging test labs — UltiPro (Smithers) / Rippling (Westpak) need
+   connectors; others are resume inboxes
+
+### Packaging testing labs
+Independent ISTA / ISO 17025 / Amazon APASS labs hire packaging
+engineers, package-development, and validation roles — same talent pool
+as the schools (Smithers Lansing ↔ MSU; PCL Grand Rapids ↔ MSU; TEN-E
+Newport ↔ Stout / Twin Cities; Westpak ↔ Cal Poly). This is **not**
+converter plant ops. Keep titles like packaging engineer / package
+testing / ISTA / ISO 11607 validation; drop generic lab techs.
+
+**Specialist packaging labs (add first — they are the Smithers / TEN-E class)**
+- **Smithers** (ex-Pira) — Akron OH, Lansing MI; distribution + materials
+- **TEN-E Packaging Services** — Newport MN, plus NC; DG + medical + ISTA
+- **Westpak** — San Jose / San Diego; ISTA + medical + APASS
+- **Packaging Compliance Labs** — Grand Rapids / Billerica; medical ISO 11607
+- **DDL** — Eden Prairie MN / Fountain Valley CA; medical device packaging
+- **Gaynes Labs** — Bridgeview IL; ISTA 1–6 including Amazon SIOC
+- **Purple Diamond** — Bethlehem PA; ISTA + cold chain + e-commerce
+- **Advanced Packaging Technology Laboratories** — Buffalo Grove IL; ISTA + APASS
+- **Applus+ Keystone** — New Castle PA / Durham NC; ISTA + APASS (ex-Keystone Compliance)
+- **Modality Solutions** — Bloomington IN; pharma / cold-chain transport simulation
+
+**Larger TIC firms with a packaging-test practice (search `packaging` only)**
+Nelson Labs (sterile barrier / ISO 11607), Intertek, SGS, Bureau Veritas,
+Element, UL Solutions, TÜV SÜD. Huge boards — do not ingest the whole
+company; keyword + classifier or skip.
+
+Lansmont (Monterey) is test-equipment, not a commercial ISTA lab. MSU /
+VT / RIT campus labs are not employers for this board.
 
 ## 4. Monetization (in the order it typically unlocks)
 
@@ -168,11 +234,14 @@ that is already live** vs. $149–299/month to post on their board. Sell
 - [x] Careers-page pass: resolve every `verify` row in the seed CSV to a
       real ATS + token/tenant (watch where each careers page redirects)
       — Live Workday: General Mills (`genmills` / `GMI_External_Careers`),
-      Kimberly-Clark, Sonoco, 3M, Kenvue, Silgan, GM, Magna, Menasha.
+      Kimberly-Clark, Sonoco, 3M, Kenvue, Silgan, Clorox, Conagra,
+      Campbell's, Church & Dwight, SC Johnson, Smucker, Unilever, J&J,
+      GM, Magna, Menasha.
       Coca-Cola is CWS/m-cloud (not Phenom). PepsiCo is Jibe `/api/jobs`.
-      P&G / DuPont are Phenom widgets (`refNum` known). Ball / Sealed Air /
-      Amcor (`jobs-sf.amcor.com`) are SuccessFactors. `amcor.com/careers` is
-      marketing only. Berry Global careers redirect to Amcor.
+      P&G / DuPont / WK Kellogg / Mars are Phenom widgets (`refNum` known).
+      Ball / Sealed Air / Amcor (`jobs-sf.amcor.com`) are SuccessFactors.
+      `amcor.com/careers` is marketing only. Berry Global careers redirect
+      to Amcor.
 
 ### Phase 1 — Ingestion engine (MVP core)
 - [x] Build the Workday connector (POST body, pagination, per-tenant subdomain)
@@ -188,6 +257,8 @@ that is already live** vs. $149–299/month to post on their board. Sell
       (12:00 UTC), commits `data/jobs.json`, Vercel redeploys
 - [x] US-only ingest — keep US-located or remote; drop Canada/UK/PH.
       Trailing Workday country codes like `, CA` are not treated as California.
+      Workday “N Locations” on a USA-home-country employer is kept (Smucker
+      multi-site R&D was being dropped). Req IDs are not parsed as ZIP codes.
 
 ### Phase 2 — Role classification (the product, not just data quality)
 This is the hole in My Packaging Career. Keep tightening so we never look
@@ -233,14 +304,28 @@ like “jobs at GPI.”
 - [x] Aptar SuccessFactors RSS (`jobs.aptar.com`)
 - [x] Autoliv US Teamtailor (`careerunitedstates.autoliv.com/jobs.json`)
 - [x] International Paper Oracle CE API (packaging/corrugated roles)
-- [ ] Phenom widgets connector — P&G `PGBPGNGLOBAL`, DuPont `DUPOUS`
-      (`POST /widgets`, `ddoKey: refineSearch`)
-- [ ] PepsiCo Jibe parser — `/api/jobs?keywords=packaging` already returns
-      packaging R&D titles; unwrap `jobs[].data` (current Phenom client keeps 0)
-- [ ] Retag Ball / Sealed Air / Amcor (`jobs-sf.amcor.com`) as SuccessFactors
+- [x] Phenom widgets connector (`POST /widgets`, `ddoKey: refineSearch`) —
+      P&G `PGBPGNGLOBAL`, DuPont `DUPOUS`, WK Kellogg `WKNWKIUS`
+- [x] PepsiCo Jibe parser — `/api/jobs?keywords=packaging`; unwrap
+      `jobs[].data`
+- [x] Campbell's Workday (`campbellsoup` / `ExternalCareers_GlobalSite`)
+- [x] Church & Dwight Workday (`churchdwight` / `chdcareers`)
+- [x] WK Kellogg Phenom widgets (`jobs.wkkellogg.com`, `WKNWKIUS`)
+- [x] SC Johnson Workday (`scj` / `External_Career_Site`)
+- [x] J.M. Smucker Workday (`smucker` / `US_External_Careers`)
+- [x] Johnson & Johnson Workday (`jj` / `JJ`)
+- [x] Mars Phenom widgets (`MARSGLOBAL`)
+- [x] Unilever Workday (`Unilever_Experienced_Professionals`) — US
+      packaging hits are plant operators
+- [ ] School-gap CPG still dark: Gallo / Constellation (no packaging titles
+      this pull); Colgate SF is operators only
+- [ ] Packaging test labs: Smithers (UltiPro), Westpak (Rippling), TEN-E /
+      PCL / DDL / Gaynes / Purple Diamond / APTL / Keystone / Modality —
+      no public JSON on the connectors we have; resume/email boards
+- [x] Retag Ball / Sealed Air / Amcor (`jobs-sf.amcor.com`) as SuccessFactors
 - [ ] Graphic Packaging, Pregis, Mondi, Cascades, Plastipak, ProAmpac,
       Ardagh — ATS map + classifier (do not ingest plant oilers)
-- [ ] Smurfit Westrock, Crown, O-I — same rule
+- [ ] Smurfit Westrock, Crown, O-I, CHEP, Eastman, Altria R&D — same rule
 - [ ] Avery Dennison Springboard widget — no public JSON, not Workday
 
 ### Phase 5 — Monetize
@@ -262,8 +347,9 @@ like “jobs at GPI.”
 
 - [ ] **Chicken-and-egg:** need enough *on-wedge* listings (engineer /
       package-dev, not 1,150 plant jobs) + traffic before charging feels
-      fair. Latest ingest (2026-08-18): **~30 relevant US roles**. Target
-      ~50 **relevant** roles, not ~50 of anything.
+      fair. Latest ingest (2026-08-18): **58 US roles** on the board.
+      Count is past the ~50 listing target; quality still mixes engineer /
+      package-dev with co-ops, procurement, and a DuPont sales leak.
 - [ ] **Competing as a general packaging-industry board** — losing strategy.
       If inventory growth starts looking like MPC page 1, stop and retighten
       the classifier.
@@ -281,11 +367,11 @@ like “jobs at GPI.”
 
 1. [x] **Choose the wedge** — CPG brand-side packaging R&D — and rewrite
    homepage copy so we are not “another packaging job board.”
-2. **Grow relevant inventory toward ~50 packaging-engineer / package-dev
-   roles** — next ingest wins: PepsiCo Jibe parser, Phenom widgets (P&G /
-   DuPont), retag Ball / Sealed Air / Amcor as SuccessFactors. Then GPI,
-   Pregis, Mondi, Cascades, Plastipak, ProAmpac, Ardagh (classifier on; no
-   plant-ops dump). Deepen automotive (dunnage / returnable) as expansion.
+2. [x] **Grow listing count toward ~50** — latest ingest **58 US roles**.
+   Remaining ingest wins are quality, not volume: UltiPro (Smithers) and
+   Rippling (Westpak) for test labs; recheck Gallo / Constellation / Colgate
+   when they post package-dev titles. GPI / Pregis / WestRock only with the
+   classifier on. Auto dunnage (Ford / Adient / CHEP) is expansion.
 3. Show **posted date / new** on cards (freshness vs. MPC).
 4. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
