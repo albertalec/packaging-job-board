@@ -25,9 +25,9 @@ export default function SponsorIndexPage() {
       <p className="kicker">For employers & recruiters</p>
       <h1>Pin a packaging-engineer listing for ${SPONSOR_DURATION_DAYS} days</h1>
       <p className="lede">
-        Already hiring on your ATS? Pay $100 by card to pin that packaging R&amp;D
-        or packaging-engineer role at the top. No “post a job” round-trip — the
-        listing is already on the board from your career-site feed.
+        Already hiring a packaging engineer? Pay $100 by card to pin that
+        listing at the top. No “post a job” round-trip — the listing is already
+        on the board from your career site.
       </p>
       <ul className="sponsor-benefits">
         <li>First position on the homepage (above organic listings)</li>

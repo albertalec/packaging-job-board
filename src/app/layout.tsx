@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s · Packaging Job Board",
   },
   description:
-    "Brand-side CPG packaging R&D and packaging engineer roles, ingested from employer ATS feeds. Apply on the source career site.",
+    "Packaging engineer and package-development jobs at top employers. Updated daily. Apply on the company career site.",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
             </Link>
             <div className="mast-links">
               <p className="tagline">
-                CPG packaging R&amp;D. Engineers, not plant oilers.
+                Packaging engineer jobs at top employers.
               </p>
               <Link className="nav-link" href="/sponsor">
                 Sponsor a job
@@ -44,9 +44,8 @@ export default function RootLayout({
           <main>{children}</main>
           <footer>
             <p>
-              Packaging engineer and package-development roles from employer
-              career-site APIs. Applications stay on the source ATS. LinkedIn is
-              not scraped. This is not a dump of every job at a converter.
+              Packaging engineer roles from employer career sites. Apply on the
+              source listing.
             </p>
           </footer>
         </div>

@@ -94,24 +94,6 @@ h1 {
   line-height: 1.5;
 }
 
-.contrast {
-  max-width: 42rem;
-  margin: 1.25rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.65rem;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  color: #4d4134;
-}
-
-.contrast li {
-  padding: 0.7rem 0.85rem;
-  border: 1px solid var(--rule);
-  background: var(--card);
-}
-
 .stats {
   display: flex;
   gap: 2rem;
