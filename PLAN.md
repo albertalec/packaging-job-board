@@ -321,8 +321,9 @@ sentence.
 - Decode numeric and named entities (`&#39;`, `&#xa;`, `&amp;`, …).
 - Convert HTML blocks to paragraphs / `•` lists instead of one line.
 - Split known ATS labels (Company Overview, Preferred Qualifications, …)
-  into headings. Weak one-word labels (`experience`, `eligibility`) only
-  count when they are a real section, not running copy.
+  into headings. Only ALL-CAPS labels, line-start titles, or labels after a
+  sentence break count — so “The salary range for this role” stays a
+  sentence, not a second SALARY RANGE heading.
 - Render headings + lists in the kraft listing style. Repeat Apply at the
   bottom. Keep plain text in `jobs.json` (not raw HTML).
 
