@@ -8,8 +8,15 @@ const SEMICONDUCTOR =
 const WAREHOUSE =
   /\b(forklift|warehouse associate|warehouse lead|package handler|order picker|packer|material handler|production associate|packaging associate|packaging operator|packaging inspector|packaging technician|packaging tech|packaging mechanic|packaging apprentice|packaging machinist|process operator|machine operator|general entry|production supervisor|manufacturing supervisor|technical support representative)\b/i;
 
+/** Buying, selling, or running a converting line — not package design / R&D. */
+const OFF_TARGET =
+  /\b(procurement|category manager|account manager|\bsales\b|business development|commodity manager|\bbuyer\b|\bsourcing\b|corrugator|corrugated supervisor|fleet budget|creative director|art director|graphic designer|system user|delivery leader|packaging equipment|packaging machinery|plant electrician|\boiler\b|hris|\behs\b)\b/i;
+
 const ROLE =
-  /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|specialist|designer|design|developer|development|technologist|technician|coordinator|supervisor|lead|director|r&d|innovation)|package development|structural packaging|flexible packaging|rigid packaging|primary packaging|secondary packaging|returnable packaging|dunnage|converting engineer|corrugat(?:ed|or)|package engineering)\b/i;
+  /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|designer|design|developer|development|technologist|lead|director|r&d|innovation)|package development|r&d packaging|research(?: and | ?& ?)development packaging|structural packaging|returnable packaging|dunnage|converting engineer|package engineering|custom packaging design)\b/i;
+
+const CORE_FUNCTION =
+  /\b(engineer|\beng\b|scientist|technologist|designer|design|developer|development|r&d|research|manager|management|director|intern|co-?op)\b/i;
 
 const AMBIGUOUS_PACKAGING = /\bpackag/i;
 
@@ -19,6 +26,7 @@ export function classifyJob(input: {
   department?: string | null;
 }): { keep: boolean; reason: string } {
   const blob = `${input.title}\n${input.department ?? ""}\n${input.description}`;
+  const titleAndDept = `${input.title}\n${input.department ?? ""}`;
   if (SEMICONDUCTOR.test(blob)) {
     return { keep: false, reason: "semiconductor/electronics packaging" };
   }
@@ -36,12 +44,22 @@ export function classifyJob(input: {
   if (WAREHOUSE.test(input.title)) {
     return { keep: false, reason: "warehouse/ops title" };
   }
+  if (OFF_TARGET.test(titleAndDept)) {
+    return { keep: false, reason: "off-target function" };
+  }
+  if (
+    /\bprocess engineer\b/i.test(input.title) &&
+    !/\bpackag(?:e|ing) (?:engineer|engineering)\b/i.test(input.title)
+  ) {
+    return { keep: false, reason: "plant process engineering" };
+  }
   if (ROLE.test(input.title)) {
     return { keep: true, reason: "packaging role match" };
   }
   if (
     AMBIGUOUS_PACKAGING.test(input.title) &&
-    !/\b(robotics|fulfillment|electronics|avionics|ic\/soc|optical|optics|operator|technician|cloud hardware)\b/i.test(
+    CORE_FUNCTION.test(input.title) &&
+    !/\b(fulfillment|electronics|avionics|ic\/soc|optical|optics|operator|technician|cloud hardware)\b/i.test(
       input.title,
     )
   ) {
