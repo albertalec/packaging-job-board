@@ -5,6 +5,7 @@ import { JobCard } from "@/components/JobCard";
 import { SponsorCheckoutButton } from "@/components/SponsorCheckoutButton";
 import { getJob } from "@/lib/jobs";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
+import { contactEmail } from "@/lib/site";
 import { SPONSOR_DURATION_DAYS, stripeConfigured } from "@/lib/stripe";
 
 export const revalidate = 300;
@@ -95,7 +96,7 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
 
       <p className="sponsor-footnote">
         Questions? Email{" "}
-        <a href="mailto:hello@packagingjobboard.com">hello@packagingjobboard.com</a>.
+        <a href={`mailto:${contactEmail()}`}>{contactEmail()}</a>.
       </p>
     </article>
   );

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getJob } from "@/lib/jobs";
-import { siteUrl } from "@/lib/site";
+import { siteName, siteUrl } from "@/lib/site";
 import {
   getStripe,
   SPONSOR_DURATION_DAYS,
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
           unit_amount: SPONSOR_PRICE_CENTS,
           product_data: {
             name: `Sponsor: ${job.title}`,
-            description: `${SPONSOR_DURATION_DAYS}-day priority placement for ${job.company} on Packaging Job Board`,
+            description: `${SPONSOR_DURATION_DAYS}-day priority placement for ${job.company} on ${siteName()}`,
           },
         },
         quantity: 1,

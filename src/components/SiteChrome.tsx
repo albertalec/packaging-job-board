@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { brand } from "@/lib/brand";
 
 export function SiteChrome({ children }: { children: ReactNode }) {
   const employer = usePathname().startsWith("/sponsor");
@@ -13,9 +14,13 @@ export function SiteChrome({ children }: { children: ReactNode }) {
         <Link href="/" className="mark">
           <span className="box" aria-hidden="true" />
           <span>
-            Packaging
-            <br />
-            Job Board
+            {brand.markLine1}
+            {brand.markLine2 ? (
+              <>
+                <br />
+                {brand.markLine2}
+              </>
+            ) : null}
           </span>
         </Link>
         <div className="mast-links">
