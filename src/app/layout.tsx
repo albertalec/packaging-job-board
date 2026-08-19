@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { SiteChrome } from "@/components/SiteChrome";
-import { siteUrl } from "@/lib/site";
+import { siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
+
+const name = siteName();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
-    default: "Packaging Job Board",
-    template: "%s · Packaging Job Board",
+    default: name,
+    template: `%s · ${name}`,
   },
   description:
     "Packaging engineer and package-development jobs at top employers. Updated daily. Apply on the company career site.",

@@ -48,6 +48,7 @@ jobs rank first and show a badge.
    - `STRIPE_SECRET_KEY` — from [Stripe Dashboard → API keys](https://dashboard.stripe.com/test/apikeys)
    - `STRIPE_WEBHOOK_SECRET` — from a webhook endpoint (see below)
    - `SITE_URL` — e.g. `http://localhost:3000` or your production URL
+   - `SITE_NAME`, `SITE_DOMAIN`, `CONTACT_EMAIL` — brand and custom domain (see `PLAN.md` §1d); set matching `NEXT_PUBLIC_*` vars for the masthead
 2. **Local webhook testing** (Stripe CLI):
 
 ```bash

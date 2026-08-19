@@ -47,6 +47,50 @@ development — not plant ops. Candidate list vs. employer pin are split:
 Apply on cards, Sponsor in the mast and on `/sponsor`. Their noisy page-1
 is the contrast.
 
+### 1d. Brand & custom domain
+
+Working title today is **Packaging Job Board** on
+`packaging-job-board.vercel.app`. That reads like a side project, not the
+default board for packaging engineers. A recognizable name + custom domain
+are prerequisites for SEO trust, LinkedIn shares, university outreach, and
+employer sponsorship.
+
+**Provisional defaults (until a final name is chosen)**
+- Display name: `Packaging Job Board` (`SITE_NAME`)
+- Domain candidate: `packagingjobboard.com` (`SITE_DOMAIN`) — matches the
+  contact email already on `/sponsor`
+- Contact: `hello@packagingjobboard.com` (`CONTACT_EMAIL`)
+
+**Name criteria (pick one, then buy the domain)**
+1. Says **packaging engineer / package development**, not generic
+   “packaging jobs” (My Packaging Career owns that head term).
+2. Short enough for a two-line masthead and email (`hello@…`).
+3. `.com` available; avoid names that collide with converters or IoPP.
+4. Works in a title tag: `{Job title} at {Company} · {Brand}`.
+
+**Candidates to evaluate**
+
+| Name | Example domain | Pros | Cons |
+| --- | --- | --- | --- |
+| **Packaging Job Board** | packagingjobboard.com | Descriptive; email already wired | Generic; long |
+| **PackageDev Jobs** | packagedevjobs.com | Matches CPG wedge; distinct from MPC | Less obvious to cold traffic |
+| **PackEngineer** | packengineer.com | Short; role-specific | May read as individual brand, not a board |
+| **The Package Board** | packageboard.com | Brandable; memorable | “Package” alone is ambiguous |
+| **Engineered Packaging** | engineeredpackaging.com | Premium / specialist tone | Long; less “job board” obvious |
+
+- [ ] **Choose final name + domain** — lock one row above; register `.com`.
+- [ ] **Point DNS** — Vercel project → custom domain; set `SITE_URL=https://{domain}`.
+- [ ] **Set brand env vars** — `SITE_NAME`, `SITE_DOMAIN`, `CONTACT_EMAIL`, and
+      matching `NEXT_PUBLIC_*` copies (masthead is a client component). See
+      `.env.example` and `src/lib/site.ts`.
+- [ ] **301 from vercel.app** — keep old URL redirecting after cutover so any
+      early links and Stripe webhook docs do not break.
+- [ ] **Update Stripe webhook + Checkout** — success/cancel URLs follow
+      `SITE_URL`; re-verify after domain switch.
+
+Code is provisioned: one env change renames the site everywhere titles,
+Stripe copy, masthead, and contact email render.
+
 ---
 
 ## 2. Competitive Baseline
@@ -301,10 +345,66 @@ like “jobs at GPI.”
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
 - [ ] **Job alerts (email) before profiles** — return audience; they have
       the full career-platform stack, we need this one loop
-- [ ] Custom domain (optional)
-- [ ] Google Search Console once engineer/package-dev inventory is denser
+- [ ] **Custom domain** — see §1d; env-driven rename is wired; DNS + Stripe
+      cutover remain
+- [ ] **Google Search Console** — register property once domain is set (or
+      vercel.app now to start indexing data); submit sitemap
 
-### 3a. Job description readability
+### Phase 3b — SEO & traffic (technical)
+
+Foundation is shipped (SSR job pages, sitemap, robots). These layers turn
+the catalog into discoverable long-tail landing pages and measurable traffic.
+**Traffic > build:** edge comes from the niche and distribution, not the code —
+but these items make Google and shares work harder.
+
+**Phase A — ship before pushing traffic**
+- [ ] **`JobPosting` JSON-LD** on `/jobs/[id]` — Google for Jobs eligibility
+      (`title`, `description`, `datePosted`, `hiringOrganization`, `jobLocation`,
+      `directApply`, apply URL; `baseSalary` when present)
+- [ ] **Open Graph + Twitter cards** — title, description, URL on home and job
+      pages so LinkedIn/Slack shares show a rich preview (primary audience channel)
+- [ ] **`alternates.canonical`** on every indexable page — especially important
+      during vercel.app → custom domain migration
+- [ ] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
+      and SERP slots for candidate-intent pages only
+- [ ] **Analytics + apply-click events** — Plausible or GA4; track “Apply on
+      employer site” as the conversion that matters
+- [ ] **Search Console + sitemap submit** — monitor indexing, queries, and CTR
+
+**Phase B — after ~50+ on-wedge jobs (avoid thin pages)**
+- [ ] **Indexable filter routes** (server-rendered, not client-only):
+      `/jobs/state/[code]`, `/jobs/niche/[slug]`, `/jobs/company/[slug]`,
+      `/jobs/remote` — each with unique H1, intro, job count, internal links;
+      `noindex` when fewer than ~3 listings in a group
+- [ ] **Expand sitemap** to include filter/company pages with `lastModified`
+      from the newest job in each group
+- [ ] **Site-generated intro** above ATS description on job pages — one sentence
+      (“Packaging engineer role at {Co} in {City} — apply on their careers site”)
+      to reduce near-duplicate boilerplate across employers
+
+**Phase C — distribution (parallel, not sequential)**
+- [ ] **Job-alert email** — weekly or daily digest when new roles appear; best
+      return-traffic loop before profiles exist
+- [ ] **LinkedIn sharing** — 2–3 fresh listings/week with OG preview; packaging
+      engineer groups and company tags
+- [ ] **University outreach** — MSU School of Packaging, Clemson, RIT: “curated
+      engineer/package-dev roles, not plant ops” + link to filtered pages
+- [ ] **RSS feed** (`/feed.xml`) — optional; syndication and alert services
+
+**Phase D — scale (100+ jobs)**
+- [ ] **Evergreen content** — e.g. packaging engineer salary by company (from
+      listings), “engineer vs plant operator” explainer (reinforces classifier)
+- [ ] **Salary extraction** into meta row + structured data where ATS text
+      includes ranges
+- [ ] **Collapse EEO / visa boilerplate** into `<details>` if listings still
+      feel noisy (see §3a)
+
+**Keyword strategy (do not chase MPC head terms)**
+- Win: `{company} packaging engineer`, `packaging engineer jobs {state}`,
+  `CPG packaging engineer`, `package development jobs`
+- Avoid head-on: generic “packaging jobs”, material sectors without filters
+
+---
 
 Workday and other ATS feeds give HTML. Ingest used to flatten every tag to a
 space and only decode a few named entities, so seekers saw one wall of text
@@ -411,7 +511,10 @@ style as-is, and it is an XSS surface.
 - [ ] **ATS drift:** platforms change schemas/deprecate endpoints without
       notice; companies switch ATS. Re-verify seed mapping ~quarterly.
 - [ ] **Traffic > build:** "simple to build" ≠ "simple to get traffic."
-      Edge comes from the niche and SEO, not the code.
+      Edge comes from the niche, SEO layers (§3b), and distribution — not
+      the code alone.
+- [ ] **Brand/domain unset** — vercel.app subdomain limits SERP click-through
+      and employer trust until §1d is closed.
 - [ ] Confirm the chosen wedge has both enough open roles AND employers
       who will pay $100 to pin.
 
@@ -431,8 +534,14 @@ style as-is, and it is an XSS surface.
 5. [x] **Review off-target jobs and tighten ingest/classifier rules** so
    procurement, plant supervision, sales, and other non-engineer /
    non-package-dev titles do not stay in `jobs.json`.
-6. **Job-alert emails** once the relevant list stays above ~50 — before
+6. **Choose final name + domain** (§1d) — register, point DNS, set env vars,
+   301 from vercel.app.
+7. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
+   Search Console, analytics.
+8. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
-7. Google Search Console once that inventory is denser.
-8. Live-mode Stripe when a real employer is ready to pay.
-9. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
+9. **SEO Phase B** filter pages once inventory supports them without thin
+   content.
+10. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
+11. Live-mode Stripe when a real employer is ready to pay.
+12. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
