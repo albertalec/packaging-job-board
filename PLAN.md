@@ -270,8 +270,12 @@ like “jobs at GPI.”
       application packaging / HUD / mechanical-electronics packaging titles
 - [x] Sub-niche tagging: automotive / pharma / CPG / food & beverage /
       industrial
-- [ ] Tighten so plant ops / HR / sales-at-a-converter do not leak in as
-      we add GPI, Pregis, Mondi, etc.
+- [ ] **Next: audit the live board for off-target titles and tighten
+      ingest/classifier rules.** Homepage sort only hides leaks (procurement,
+      corrugator supervisors, DuPont sales, plant ops). Drop them in
+      `ingest/classify.ts` (and company/search filters if needed) so the
+      58-role list matches packaging engineer / package-dev. Do this before
+      adding GPI / Pregis / Mondi.
 - [ ] Optional later: material tags (corrugated / flexibles / folding
       carton / sustainability) **with filters**, not just hero copy
 
@@ -385,8 +389,11 @@ like “jobs at GPI.”
 3. [x] **Posted date / New** on cards (freshness vs. MPC).
 4. [x] Homepage + sponsor UX pass 1–2 — audience split, $100 H1, full
    searchable picker, promise-ranked list.
-5. **Job-alert emails** once the relevant list stays above ~50 — before
+5. **Next priority: review off-target jobs on the live board and adjust
+   ingest/classifier rules** so procurement, plant supervision, sales, and
+   other non-engineer / non-package-dev titles do not stay in `jobs.json`.
+6. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
-6. Google Search Console once that inventory is denser.
-7. Live-mode Stripe when a real employer is ready to pay.
-8. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
+7. Google Search Console once that inventory is denser.
+8. Live-mode Stripe when a real employer is ready to pay.
+9. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
