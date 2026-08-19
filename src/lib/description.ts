@@ -38,6 +38,10 @@ const SECTION_HEADINGS = [
   "additional considerations",
   "preferred qualifications",
   "what we look for",
+  "what's in it for you",
+  "what’s in it for you",
+  "what is required",
+  "preferred experience",
   "minimum qualifications",
   "equal opportunity employer",
   "key accountabilities",
@@ -137,8 +141,10 @@ export function normalizeDescription(input: string): string {
   const decoded = decodeHtmlEntities(input)
     .replace(/\u00a0/g, " ")
     .replace(/\r\n?/g, "\n")
-    .replace(/\u200b/g, "");
-  const withHeadings = insertHeadingBreaks(decoded);
+    .replace(/\u200b/g, "")
+    .replace(/[•·●▪‣]\s*/g, "• ");
+  const withEeo = splitEqualOpportunity(decoded);
+  const withHeadings = insertHeadingBreaks(withEeo);
   return withHeadings
     .split("\n")
     .map((line) => line.replace(/[ \t\f\v]+/g, " ").trim())
@@ -182,25 +188,20 @@ function chunkToBlocks(chunk: string): DescriptionBlock[] {
 
 function linesToContent(lines: string[]): DescriptionBlock[] {
   if (lines.length === 0) return [];
-  const bulletLines = lines.filter((line) => /^[•·●▪‣*-]\s+/.test(line));
-  if (bulletLines.length === lines.length && lines.length > 0) {
-    return [{ type: "list", items: lines.map(stripBullet) }];
-  }
-
   const joined = lines.join(" ");
-  const inlineParts = joined.split(/\s+[•·●▪‣]\s+/);
-  if (inlineParts.length > 1) {
-    const lead = inlineParts[0]?.trim() ?? "";
-    const items = inlineParts
-      .slice(1)
-      .map((item) => item.trim())
-      .filter(Boolean);
+  const parts = joined
+    .split(/(?:^|\s+)[•·●▪‣]\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const startsWithBullet = /^\s*[•·●▪‣]/.test(joined);
+  if (parts.length > 1 || startsWithBullet) {
+    const lead = startsWithBullet ? "" : (parts[0] ?? "");
+    const items = startsWithBullet ? parts : parts.slice(1);
     const blocks: DescriptionBlock[] = [];
     if (lead) blocks.push({ type: "paragraph", text: lead });
     if (items.length) blocks.push({ type: "list", items });
     return blocks;
   }
-
   return [{ type: "paragraph", text: joined }];
 }
 
@@ -223,7 +224,7 @@ function matchHeadingPrefix(
   HEADING_PATTERN.lastIndex = 0;
   const match = HEADING_PATTERN.exec(line);
   if (!match || match.index !== 0) return null;
-  if (!isPlausibleHeading(match[0], true)) return null;
+  if (!isPlausibleHeading(match[0], true, "")) return null;
   const rest = line.slice(match[0].length).trim();
   return { label: displayHeading(match[1]), rest };
 }
@@ -233,8 +234,9 @@ function insertHeadingBreaks(text: string): string {
   HEADING_PATTERN.lastIndex = 0;
   let match: RegExpExecArray | null;
   while ((match = HEADING_PATTERN.exec(text))) {
-    const atStart = match.index === 0 || /\n\s*$/.test(text.slice(0, match.index));
-    if (!isPlausibleHeading(match[0], atStart)) continue;
+    const before = text.slice(0, match.index);
+    const atStart = match.index === 0 || /\n\s*$/.test(before);
+    if (!isPlausibleHeading(match[0], atStart, before)) continue;
     matches.push({
       start: match.index,
       end: match.index + match[0].length,
@@ -255,11 +257,38 @@ function insertHeadingBreaks(text: string): string {
   return output;
 }
 
-function isPlausibleHeading(raw: string, atStart: boolean): boolean {
+function isPlausibleHeading(
+  raw: string,
+  atStart: boolean,
+  before: string,
+): boolean {
+  const hasColon = /:$/.test(raw.trim());
   const label = raw.replace(/:$/, "").trim();
   if (isMostlyUppercase(label)) return true;
   if (atStart && /^[A-Z]/.test(label)) return true;
-  return !WEAK_HEADINGS.has(label.toLowerCase());
+  if (
+    hasColon &&
+    /^[A-Z]/.test(label) &&
+    !WEAK_HEADINGS.has(label.toLowerCase())
+  ) {
+    return true;
+  }
+  const afterSentence = /(?:^|[.!?])["'”’)]*\s*$/.test(before);
+  if (
+    afterSentence &&
+    /^[A-Z]/.test(label) &&
+    !WEAK_HEADINGS.has(label.toLowerCase())
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function splitEqualOpportunity(text: string): string {
+  return text.replace(
+    /(?<!Equal opportunity employer\n{0,2})(?<=\S)\s+(?=[A-Z][\w&.'’-]+ is proud to be an equal opportunity employer\b)/g,
+    "\n\nEqual opportunity employer\n\n",
+  );
 }
 
 function isMostlyUppercase(label: string): boolean {
@@ -273,10 +302,6 @@ function displayHeading(label: string): string {
   const trimmed = label.replace(/:$/, "").trim();
   if (isMostlyUppercase(trimmed)) return trimmed.toUpperCase();
   return trimmed.replace(/\s+/g, " ");
-}
-
-function stripBullet(line: string): string {
-  return line.replace(/^[•·●▪‣*-]\s+/, "").trim();
 }
 
 function escapeRegExp(value: string): string {

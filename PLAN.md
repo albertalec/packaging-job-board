@@ -320,9 +320,12 @@ sentence.
 **v1 (shipped)** — normalize at ingest, parse at render
 - Decode numeric and named entities (`&#39;`, `&#xa;`, `&amp;`, …).
 - Convert HTML blocks to paragraphs / `•` lists instead of one line.
-- Split known ATS labels (Company Overview, Preferred Qualifications, …)
-  into headings. Weak one-word labels (`experience`, `eligibility`) only
-  count when they are a real section, not running copy.
+- Split known ATS labels (Company Overview, Preferred Qualifications,
+  What’s in it for you, …) into headings. Only ALL-CAPS labels, line-start
+  titles, colon labels, or labels after a sentence break count — so “The
+  salary range for this role” stays a sentence. Teamtailor bullets without
+  a space (`•Attractive`) become a real list. EEO copy after Autoliv perks
+  becomes its own section.
 - Render headings + lists in the kraft listing style. Repeat Apply at the
   bottom. Keep plain text in `jobs.json` (not raw HTML).
 
