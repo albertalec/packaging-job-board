@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getJob, loadJobs } from "@/lib/jobs";
+import { formatNiche } from "@/lib/niches";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
 
 export const revalidate = 3600;
@@ -50,6 +51,7 @@ export default async function JobPage({ params }: Params) {
   if (!job) notFound();
 
   const sponsorship = await getSponsorshipForJob(job.id);
+  const niche = formatNiche(job.niche);
 
   return (
     <article className="spec">
@@ -62,7 +64,7 @@ export default async function JobPage({ params }: Params) {
         <li>{job.company}</li>
         <li>{job.location}</li>
         <li>Posted {formatPosted(job.postedAt)}</li>
-        {job.niche ? <li>{job.niche.replace("-", " / ")}</li> : null}
+        {niche ? <li>{niche}</li> : null}
         {job.salary ? <li>{job.salary}</li> : null}
       </ul>
       <div className="spec-actions">

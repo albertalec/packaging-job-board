@@ -42,8 +42,10 @@ sponsor SKU — not on matching industry-board volume.
   5. **Price** — $100 to pin a listing that already exists vs. $149–299/mo
      to post it on their board.
 
-**Homepage copy should say packaging engineers / package development**, not
-generic “packaging jobs.” Their noisy page-1 is the contrast.
+**Homepage copy (live, 2026-08-18):** packaging engineers / package
+development — not plant ops. Candidate list vs. employer pin are split:
+Apply on cards, Sponsor in the mast and on `/sponsor`. Their noisy page-1
+is the contrast.
 
 ---
 
@@ -251,8 +253,8 @@ that is already live** vs. $149–299/month to post on their board. Sell
 - [x] Normalize to one schema: title, dept, location, remote flag, posted date,
       apply URL, description, salary (where available)
 - [x] Dedupe (hash per posting)
-- [ ] “New since last run” / posted-date on cards — **freshness is a
-      differentiator vs. MPC**; hash is stored, product hook not shown yet
+- [x] Posted date / “New” stamp on cards — **freshness vs. MPC**; hash is
+      stored. Optional later: a “new since last run” digest, not just dates.
 - [x] Daily scheduled poll — GitHub Action `.github/workflows/ingest.yml`
       (12:00 UTC), commits `data/jobs.json`, Vercel redeploys
 - [x] US-only ingest — keep US-located or remote; drop Canada/UK/PH.
@@ -268,8 +270,12 @@ like “jobs at GPI.”
       application packaging / HUD / mechanical-electronics packaging titles
 - [x] Sub-niche tagging: automotive / pharma / CPG / food & beverage /
       industrial
-- [ ] Tighten so plant ops / HR / sales-at-a-converter do not leak in as
-      we add GPI, Pregis, Mondi, etc.
+- [ ] **Next: audit the live board for off-target titles and tighten
+      ingest/classifier rules.** Homepage sort only hides leaks (procurement,
+      corrugator supervisors, DuPont sales, plant ops). Drop them in
+      `ingest/classify.ts` (and company/search filters if needed) so the
+      58-role list matches packaging engineer / package-dev. Do this before
+      adding GPI / Pregis / Mondi.
 - [ ] Optional later: material tags (corrugated / flexibles / folding
       carton / sustainability) **with filters**, not just hero copy
 
@@ -282,7 +288,13 @@ like “jobs at GPI.”
       niche)
 - [x] Public deploy: https://packaging-job-board.vercel.app (`SITE_URL` set)
 - [x] **Rewrite homepage positioning** to packaging engineer / package
-      development + CPG brand-side wedge
+      development + CPG brand-side wedge (contrast line live; cards Apply-
+      only; engineer / package-dev titles sorted above procurement / plant
+      / sales)
+- [x] Sponsor index: searchable picker of all live jobs (not newest 12);
+      $100 / 30-day H1; employer mast copy; sponsored-card preview on
+      checkout
+- [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
 - [ ] **Job alerts (email) before profiles** — return audience; they have
       the full career-platform stack, we need this one loop
 - [ ] Custom domain (optional)
@@ -331,7 +343,8 @@ like “jobs at GPI.”
 ### Phase 5 — Monetize
 - [x] Self-serve **sponsor a job for $100** — Stripe Checkout; webhook
       activates a 30-day sponsored listing (badge + ranked first).
-      Production: Vercel env + webhook
+      Employers search any live listing to pin; checkout shows a card
+      preview. Production: Vercel env + webhook
       `https://packaging-job-board.vercel.app/api/webhooks/stripe` + Blob.
       Still test-mode keys until going live.
 - [ ] One live-URL test payment (card `4242…`) then switch to `sk_live_`
@@ -349,7 +362,8 @@ like “jobs at GPI.”
       package-dev, not 1,150 plant jobs) + traffic before charging feels
       fair. Latest ingest (2026-08-18): **58 US roles** on the board.
       Count is past the ~50 listing target; quality still mixes engineer /
-      package-dev with co-ops, procurement, and a DuPont sales leak.
+      package-dev with co-ops, procurement, and a DuPont sales leak. The
+      homepage sorts those leaks below; classifier still needs to drop them.
 - [ ] **Competing as a general packaging-industry board** — losing strategy.
       If inventory growth starts looking like MPC page 1, stop and retighten
       the classifier.
@@ -372,8 +386,14 @@ like “jobs at GPI.”
    Rippling (Westpak) for test labs; recheck Gallo / Constellation / Colgate
    when they post package-dev titles. GPI / Pregis / WestRock only with the
    classifier on. Auto dunnage (Ford / Adient / CHEP) is expansion.
-3. Show **posted date / new** on cards (freshness vs. MPC).
-4. **Job-alert emails** once the relevant list stays above ~50 — before
+3. [x] **Posted date / New** on cards (freshness vs. MPC).
+4. [x] Homepage + sponsor UX pass 1–2 — audience split, $100 H1, full
+   searchable picker, promise-ranked list.
+5. **Next priority: review off-target jobs on the live board and adjust
+   ingest/classifier rules** so procurement, plant supervision, sales, and
+   other non-engineer / non-package-dev titles do not stay in `jobs.json`.
+6. **Job-alert emails** once the relevant list stays above ~50 — before
    profiles or an employer dashboard.
-5. Google Search Console once that inventory is denser.
-6. Live-mode Stripe when a real employer is ready to pay.
+7. Google Search Console once that inventory is denser.
+8. Live-mode Stripe when a real employer is ready to pay.
+9. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
