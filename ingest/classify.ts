@@ -9,12 +9,12 @@ const SEMICONDUCTOR =
 const WAREHOUSE =
   /\b(forklift|warehouse associate|warehouse lead|package handler|order picker|packer|material handler|production associate|packaging associate|packaging operator|packaging inspector|packaging technician|packaging tech|packaging mechanic|packaging apprentice|packaging machinist|process operator|machine operator|general entry|production supervisor|manufacturing supervisor|technical support representative)\b/i;
 
-/** Buying, selling, or running a converting line — not package design / R&D. */
+/** Buying, selling, plant ops, or running a converting line — not package design / R&D. */
 const OFF_TARGET =
-  /\b(procurement|category manager|account manager|\bsales\b|business development|commodity manager|\bbuyer\b|\bsourcing\b|corrugator|corrugated supervisor|fleet budget|creative director|art director|graphic designer|system user|delivery leader|packaging equipment|packaging machinery|plant electrician|\boiler\b|hris|\behs\b)\b/i;
+  /\b(procurement|category manager|category management|account manager|\bsales\b|business development|commodity manager|\bbuyer\b|\bsourcing\b|corrugator|corrugated supervisor|fleet budget|creative director|art director|graphic designer|system user|delivery leader|packaging equipment|packaging machinery|plant electrician|\boiler\b|hris|\behs\b|process lead|packaging production|artwork coordinator|brand applications|packaging operation|aseptic packaging operation|label packaging|operations manager|manufacturing packaging|manufacturing process.{0,40}packaging|manufacturing\s*(?:&|and)\s*packaging)\b/i;
 
 const ROLE =
-  /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|designer|design|developer|development|technologist|lead|director|r&d|innovation)|package development|r&d packaging|research(?: and | ?& ?)development packaging|structural packaging|returnable packaging|dunnage|converting engineer|package engineering|custom packaging design)\b/i;
+  /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|sciences|designer|design|developer|development|technologist|lead|director|r&d|innovation|compliance|systems)|package development|r&d packaging|research(?: and | ?& ?)development packaging|structural packaging|returnable packaging|dunnage|converting engineer|package engineering|custom packaging design|packaging innovation|engineer(?:\s*ii|\s*iii|\s*2|\s*3)?, packaging)\b/i;
 
 const CORE_FUNCTION =
   /\b(engineer|\beng\b|scientist|technologist|designer|design|developer|development|r&d|research|manager|management|director|intern|co-?op)\b/i;

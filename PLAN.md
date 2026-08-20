@@ -586,14 +586,24 @@ style as-is, and it is an XSS surface.
 - [x] Unilever Workday (`Unilever_Experienced_Professionals`) — US
       packaging hits are plant operators
 - [ ] School-gap CPG still dark: Gallo / Constellation (no packaging titles
-      this pull); Colgate SF is operators only
+      this pull); Colgate SF is operators only; Sargento Phenom wired
+      (`SFINUS`) but no engineer titles this pull
 - [ ] Packaging test labs: Smithers (UltiPro), Westpak (Rippling), TEN-E /
       PCL / DDL / Gaynes / Purple Diamond / APTL / Keystone / Modality —
       no public JSON on the connectors we have; resume/email boards
 - [x] Retag Ball / Sealed Air / Amcor (`jobs-sf.amcor.com`) as SuccessFactors
+- [x] Moonshot employer expansion (2026-08-20) — Abbott, Pfizer, Baxter,
+      Stryker, Catalent, BD, Thermo Fisher (Workday), Tyson, Target, CHEP,
+      Edwards, Medtronic, Zimmer Biomet, GSK; SF seeds Hershey / Eastman /
+      Molson / Reckitt / Gallo / Colgate / Perrigo. Multi-query Workday /
+      Phenom / SF search (`searchTexts`). Classifier drops plant
+      “Manufacturing Packaging / Process & Packaging” and category-
+      management titles.
 - [ ] Graphic Packaging, Pregis, Mondi, Cascades, Plastipak, ProAmpac,
       Ardagh — ATS map + classifier (do not ingest plant oilers)
-- [ ] Smurfit Westrock, Crown, O-I, CHEP, Eastman, Altria R&D — same rule
+- [x] CHEP Workday wired (`brambles` / `Brambles_Careers`) — 0 returnable /
+      packaging engineer titles this pull
+- [ ] Smurfit Westrock, Crown, O-I, Eastman, Altria R&D — same rule
 - [ ] Avery Dennison Springboard widget — no public JSON, not Workday
 
 ### Phase 5 — Monetize (vertical-scoped)
@@ -632,8 +642,9 @@ style as-is, and it is an XSS surface.
 
 - [ ] **Chicken-and-egg:** need enough *on-wedge* listings (engineer /
       package-dev, not 1,150 plant jobs) + traffic before charging feels
-      fair. Latest ingest (2026-08-19): **43 US roles** after dropping
-      procurement, sales, corrugator supervision, and other off-target
+      fair. Moonshot ingest (2026-08-20): **53 US on-wedge roles** after
+      dropping plant manufacturing-packaging, procurement/category-
+      management, sales, corrugator supervision, and other off-target
       titles. Co-ops stay (sorted below experienced engineer / package-dev).
 - [ ] **Competing as a general packaging-industry board** — losing strategy.
       If inventory growth starts looking like MPC page 1, stop and retighten
@@ -658,12 +669,13 @@ style as-is, and it is an XSS surface.
 
 1. [x] **Choose the wedge** — CPG brand-side packaging R&D — and rewrite
    homepage copy so we are not “another packaging job board.”
-2. [x] **Grow listing count toward ~50** — latest ingest **43 on-target
-   US roles** after the classifier audit. Remaining ingest wins are
+2. [x] **Grow listing count toward ~50** — moonshot ingest cleared the
+   bar with on-wedge CPG + medtech adds (Target, Abbott, Stryker, BD,
+   Edwards, Thermo Fisher, Silgan, Tyson systems). Remaining wins are
    quality, not volume: UltiPro (Smithers) and Rippling (Westpak) for test
-   labs; recheck Gallo / Constellation / Colgate when they post package-dev
-   titles. GPI / Pregis / WestRock only with the classifier on. Auto
-   dunnage (Ford / Adient / CHEP) is expansion.
+   labs; recheck Gallo / Constellation / Colgate / Sargento / Medtronic US
+   when they post package-dev titles. GPI / Pregis / WestRock only with
+   the classifier on. Auto dunnage (Ford / Adient / CHEP) is expansion.
 3. [x] **Posted date / New** on cards (freshness vs. MPC).
 4. [x] Homepage + sponsor UX pass 1–2 — audience split, $100 H1, full
    searchable picker, promise-ranked list.

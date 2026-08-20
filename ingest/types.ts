@@ -25,7 +25,10 @@ export type Company = {
   ats: Ats;
   careerUrl: string;
   niche?: Niche;
+  /** Primary ATS keyword search. Prefer searchTexts when multiple queries help. */
   searchText?: string;
+  /** Extra ATS keyword searches (unioned + deduped). Use for “packaging engineer” + “package development”. */
+  searchTexts?: string[];
   host?: string;
   tenant?: string;
   site?: string;

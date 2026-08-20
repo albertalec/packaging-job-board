@@ -1,4 +1,5 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
+import { companySearchTexts } from "../search.ts";
 import type { Company, NormalizedJob } from "../types.ts";
 
 type SfJob = {
@@ -82,23 +83,34 @@ async function fromRss(origin: string, query: string): Promise<SfJob[]> {
 export async function ingestSuccessFactors(
   company: Company,
 ): Promise<NormalizedJob[]> {
-  const query = company.searchText ?? "packaging";
   const origin = new URL(company.careerUrl).origin;
-  const urls = [
-    `${origin}/search-jobs/results?Keywords=${encodeURIComponent(query)}`,
-    `${company.careerUrl.replace(/\/$/, "")}/search-jobs/results?Keywords=${encodeURIComponent(query)}`,
-  ];
+  const seenRaw = new Set<string>();
   let raw: SfJob[] = [];
-  for (const url of urls) {
-    const res = await fetch(url, { headers: BROWSER_HEADERS });
-    if (!res.ok) continue;
-    const type = res.headers.get("content-type") ?? "";
-    if (type.includes("json")) {
-      raw = pickJobs(await res.json());
-      if (raw.length) break;
+
+  for (const query of companySearchTexts(company)) {
+    const urls = [
+      `${origin}/search-jobs/results?Keywords=${encodeURIComponent(query)}`,
+      `${company.careerUrl.replace(/\/$/, "")}/search-jobs/results?Keywords=${encodeURIComponent(query)}`,
+    ];
+    let pageJobs: SfJob[] = [];
+    for (const url of urls) {
+      const res = await fetch(url, { headers: BROWSER_HEADERS });
+      if (!res.ok) continue;
+      const type = res.headers.get("content-type") ?? "";
+      if (type.includes("json")) {
+        pageJobs = pickJobs(await res.json());
+        if (pageJobs.length) break;
+      }
+    }
+    if (!pageJobs.length) pageJobs = await fromRss(origin, query);
+    for (const job of pageJobs) {
+      const key = job.id || job.url || job.title || "";
+      if (!key || seenRaw.has(key)) continue;
+      seenRaw.add(key);
+      raw.push(job);
     }
   }
-  if (!raw.length) raw = await fromRss(origin, query);
+
   if (!raw.length) {
     throw new Error(
       `SuccessFactors public JSON not available for ${company.name}`,

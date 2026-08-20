@@ -1,4 +1,5 @@
 import { BROWSER_HEADERS, toJob } from "../classify.ts";
+import { companySearchTexts } from "../search.ts";
 import type { Company, NormalizedJob } from "../types.ts";
 
 type WorkdayJob = {
@@ -84,62 +85,67 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
   }
 
   const jobs: NormalizedJob[] = [];
+  const seen = new Set<string>();
   const limit = 20;
-  let offset = 0;
-  let total = Infinity;
-  const searchText = company.searchText ?? "packaging";
 
-  while (offset < total && offset < 400) {
-    const url = `https://${board.host}/wday/cxs/${board.tenant}/${board.site}/jobs`;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        ...BROWSER_HEADERS,
-        "Content-Type": "application/json",
-        Cookie: cookies,
-        Referer: `https://${board.host}/${board.site}`,
-      },
-      body: JSON.stringify({
-        appliedFacets: {},
-        limit,
-        offset,
-        searchText,
-      }),
-    });
-    if (!res.ok) {
-      throw new Error(`Workday ${company.name} ${res.status} ${url}`);
-    }
-    const page = (await res.json()) as WorkdayPage;
-    total = page.total ?? 0;
-    const postings = page.jobPostings ?? [];
-    for (const posting of postings) {
-      const title = posting.title ?? "";
-      const path = posting.externalPath ?? "";
-      const applyUrl = path.startsWith("http")
-        ? path
-        : `https://${board.host}/${board.site}${path}`;
-      const preview = toJob(company, {
-        sourceId: path || title,
-        title,
-        location: posting.locationsText ?? "",
-        postedAt: posting.postedOn ?? null,
-        applyUrl,
-        description: title,
+  for (const searchText of companySearchTexts(company)) {
+    let offset = 0;
+    let total = Infinity;
+    while (offset < total && offset < 400) {
+      const url = `https://${board.host}/wday/cxs/${board.tenant}/${board.site}/jobs`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          ...BROWSER_HEADERS,
+          "Content-Type": "application/json",
+          Cookie: cookies,
+          Referer: `https://${board.host}/${board.site}`,
+        },
+        body: JSON.stringify({
+          appliedFacets: {},
+          limit,
+          offset,
+          searchText,
+        }),
       });
-      if (!preview) continue;
-      const description = path ? await fetchDetail(board, cookies, path) : title;
-      const normalized = toJob(company, {
-        sourceId: path || title,
-        title,
-        location: posting.locationsText ?? "",
-        postedAt: posting.postedOn ?? null,
-        applyUrl,
-        description: description || title,
-      });
-      if (normalized) jobs.push(normalized);
+      if (!res.ok) {
+        throw new Error(`Workday ${company.name} ${res.status} ${url}`);
+      }
+      const page = (await res.json()) as WorkdayPage;
+      total = page.total ?? 0;
+      const postings = page.jobPostings ?? [];
+      for (const posting of postings) {
+        const title = posting.title ?? "";
+        const path = posting.externalPath ?? "";
+        const sourceId = path || title;
+        if (seen.has(sourceId)) continue;
+        const applyUrl = path.startsWith("http")
+          ? path
+          : `https://${board.host}/${board.site}${path}`;
+        const preview = toJob(company, {
+          sourceId,
+          title,
+          location: posting.locationsText ?? "",
+          postedAt: posting.postedOn ?? null,
+          applyUrl,
+          description: title,
+        });
+        if (!preview) continue;
+        seen.add(sourceId);
+        const description = path ? await fetchDetail(board, cookies, path) : title;
+        const normalized = toJob(company, {
+          sourceId,
+          title,
+          location: posting.locationsText ?? "",
+          postedAt: posting.postedOn ?? null,
+          applyUrl,
+          description: description || title,
+        });
+        if (normalized) jobs.push(normalized);
+      }
+      if (postings.length === 0) break;
+      offset += limit;
     }
-    if (postings.length === 0) break;
-    offset += limit;
   }
   return jobs;
 }
