@@ -17,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const { hostHeader, proto } = await requestHostAndProto();
   const origin = requestOrigin({ hostHeader, proto });
   const canonical = `https://${tenant.canonicalHost}`;
+  const verification = googleSiteVerification(tenant.id);
 
   return {
     metadataBase: new URL(origin),
@@ -41,7 +42,30 @@ export async function generateMetadata(): Promise<Metadata> {
       title: tenant.brand.name,
       description: tenant.copy.metaDescription,
     },
+    ...(verification
+      ? { verification: { google: verification } }
+      : {}),
   };
+}
+
+/** Per-tenant Google Search Console HTML-tag tokens (content= value only). */
+function googleSiteVerification(tenantId: string): string | undefined {
+  if (tenantId === "packaging") {
+    return (
+      process.env.GOOGLE_SITE_VERIFICATION_PACKAGING?.trim() ||
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_PACKAGING?.trim()
+    );
+  }
+  if (tenantId === "hub") {
+    return (
+      process.env.GOOGLE_SITE_VERIFICATION_HUB?.trim() ||
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_HUB?.trim()
+    );
+  }
+  return (
+    process.env.GOOGLE_SITE_VERIFICATION?.trim() ||
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim()
+  );
 }
 
 export default async function RootLayout({

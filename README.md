@@ -98,9 +98,12 @@ canonical URLs on the production hosts. Sponsor routes are `noindex`.
 **Vercel Web Analytics:** enable under the project **Analytics** tab (no env
 var). Page views are automatic; Apply clicks send a custom `Apply` event.
 
-**Search Console (after deploy):** add both hosts as properties and submit
-`https://packaging.nicheboardjobs.com/sitemap.xml` and
-`https://nicheboardjobs.com/sitemap.xml`.
+**Search Console:** use the **HTML tag** method (no DNS). Set in Vercel:
+
+- `GOOGLE_SITE_VERIFICATION_PACKAGING` — token for `packaging.nicheboardjobs.com`
+- `GOOGLE_SITE_VERIFICATION_HUB` — token for `nicheboardjobs.com`
+
+Redeploy, then Verify in Search Console. Submit each host’s `sitemap.xml`.
 
 ## Layout
 
