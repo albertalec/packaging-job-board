@@ -3,16 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { verticals } from "@config/tenants";
 import { loadJobs } from "@/lib/jobs";
+import { buildPageMetadata } from "@/lib/seo";
 import { getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tenant = await getRequestTenant();
-  return {
+  return buildPageMetadata({
+    tenant,
     title: "Niche job boards",
     description: tenant.copy.metaDescription,
-  };
+    path: "/",
+  });
 }
 
 export default async function HubHomePage() {

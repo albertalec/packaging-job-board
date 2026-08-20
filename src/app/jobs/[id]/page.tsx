@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ApplyLink } from "@/components/ApplyLink";
 import { JobDescription } from "@/components/JobDescription";
+import { JsonLd } from "@/components/JsonLd";
 import { getJob, loadJobs } from "@/lib/jobs";
 import { formatNiche } from "@/lib/niches";
+import { absoluteUrl, buildJobPostingJsonLd, buildPageMetadata } from "@/lib/seo";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
 import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
@@ -20,11 +23,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (tenant.kind !== "vertical") return { title: "Job not found" };
   const { id } = await params;
   const job = getJob(id, tenant.id);
-  if (!job) return { title: "Job not found" };
-  return {
+  if (!job) return { title: "Job not found", robots: { index: false } };
+  return buildPageMetadata({
+    tenant,
     title: `${job.title} at ${job.company}`,
     description: `${job.title} — ${job.location}. Apply on the employer ATS.`,
-  };
+    path: `/jobs/${job.id}`,
+  });
 }
 
 function formatPosted(postedAt: string | null) {
@@ -49,9 +54,12 @@ export default async function JobPage({ params }: Params) {
   const sponsorship = await getSponsorshipForJob(job.id, tenant.id);
   const niche = formatNiche(job.niche);
   const price = formatUsd(tenant.sponsor.priceCents);
+  const pageUrl = await absoluteUrl(tenant, `/jobs/${job.id}`);
+  const jsonLd = buildJobPostingJsonLd(job, pageUrl);
 
   return (
     <article className="spec">
+      <JsonLd data={jsonLd} />
       <p className="kicker">
         <Link href="/">All jobs</Link> / {job.company}
       </p>
@@ -65,14 +73,9 @@ export default async function JobPage({ params }: Params) {
         {job.salary ? <li>{job.salary}</li> : null}
       </ul>
       <div className="spec-actions">
-        <a
-          className="apply big"
-          href={job.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ApplyLink className="apply big" href={job.applyUrl} company={job.company}>
           Apply on {job.company} careers
-        </a>
+        </ApplyLink>
         {!sponsorship ? (
           <Link className="ghost big" href={`/sponsor/${job.id}`}>
             Sponsor this listing — {price}
@@ -81,14 +84,9 @@ export default async function JobPage({ params }: Params) {
       </div>
       <JobDescription text={job.description} />
       <div className="spec-actions">
-        <a
-          className="apply big"
-          href={job.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ApplyLink className="apply big" href={job.applyUrl} company={job.company}>
           Apply on {job.company} careers
-        </a>
+        </ApplyLink>
       </div>
     </article>
   );

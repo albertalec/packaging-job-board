@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { packaging } from "@config/packaging";
+import { buildPageMetadata } from "@/lib/seo";
 import { formatUsd, getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Employers",
-  description:
-    "Pin an ATS listing on a specialist Niche Board. Audience precision, not a slot on a generic board.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  return buildPageMetadata({
+    tenant,
+    title: "Employers",
+    description:
+      "Pin an ATS listing on a specialist Niche Board. Audience precision, not a slot on a generic board.",
+    path: "/employers",
+  });
+}
 
 export default async function EmployersPage() {
   const tenant = await getRequestTenant();

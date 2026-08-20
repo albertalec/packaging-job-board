@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JobBoard } from "@/components/JobBoard";
 import { loadJobs } from "@/lib/jobs";
+import { buildPageMetadata } from "@/lib/seo";
 import { getActiveSponsoredJobIds, sortJobsWithSponsors } from "@/lib/sponsorships";
 import { getRequestTenant } from "@/lib/tenant";
 
@@ -9,11 +10,20 @@ export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   const tenant = await getRequestTenant();
-  if (tenant.kind !== "vertical") return { title: tenant.brand.name };
-  return {
+  if (tenant.kind !== "vertical") {
+    return buildPageMetadata({
+      tenant,
+      title: tenant.brand.name,
+      description: tenant.copy.metaDescription,
+      path: "/",
+    });
+  }
+  return buildPageMetadata({
+    tenant,
     title: tenant.copy.hero.replace(/\.$/, ""),
     description: tenant.copy.metaDescription,
-  };
+    path: "/",
+  });
 }
 
 export default async function HomePage() {

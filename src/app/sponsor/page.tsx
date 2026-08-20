@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SponsorPicker } from "@/components/SponsorPicker";
 import { loadJobs } from "@/lib/jobs";
+import { buildPageMetadata } from "@/lib/seo";
 import { compareJobsByPromise } from "@/lib/sponsorships";
 import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
@@ -11,10 +12,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const tenant = await getRequestTenant();
   if (tenant.kind !== "vertical") return { title: "Sponsor a job" };
   const price = formatUsd(tenant.sponsor.priceCents);
-  return {
+  return buildPageMetadata({
+    tenant,
     title: "Sponsor a job",
     description: `Priority placement for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
-  };
+    path: "/sponsor",
+    index: false,
+  });
 }
 
 export default async function SponsorIndexPage() {
