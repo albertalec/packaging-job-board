@@ -65,7 +65,7 @@ export default async function RootLayout({
             <SiteChrome>{children}</SiteChrome>
           </TenantProvider>
         </div>
-        <Analytics domain={tenant.canonicalHost} />
+        <Analytics />
       </body>
     </html>
   );

@@ -95,9 +95,8 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
 Job pages include `JobPosting` JSON-LD, Open Graph / Twitter cards, and
 canonical URLs on the production hosts. Sponsor routes are `noindex`.
 
-**Plausible:** set `NEXT_PUBLIC_PLAUSIBLE=1` in Vercel. Register
-`packaging.nicheboardjobs.com` and `nicheboardjobs.com` (or set
-`NEXT_PUBLIC_PLAUSIBLE_DOMAIN`). Apply clicks fire a tagged `Apply` event.
+**Vercel Web Analytics:** enable under the project **Analytics** tab (no env
+var). Page views are automatic; Apply clicks send a custom `Apply` event.
 
 **Search Console (after deploy):** add both hosts as properties and submit
 `https://packaging.nicheboardjobs.com/sitemap.xml` and
