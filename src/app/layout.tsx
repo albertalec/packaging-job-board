@@ -50,22 +50,32 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /** Per-tenant Google Search Console HTML-tag tokens (content= value only). */
 function googleSiteVerification(tenantId: string): string | undefined {
+  const fromEnv = (value: string | undefined) => normalizeVerificationToken(value);
+
   if (tenantId === "packaging") {
     return (
-      process.env.GOOGLE_SITE_VERIFICATION_PACKAGING?.trim() ||
-      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_PACKAGING?.trim()
+      fromEnv(process.env.GOOGLE_SITE_VERIFICATION_PACKAGING) ||
+      fromEnv(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_PACKAGING) ||
+      // Public meta token for packaging.nicheboardjobs.com (HTML tag verify).
+      "b1Ejt9D03qRU4J5VjoW9iQOJuHYwW8n-P21JO7hcF-s"
     );
   }
   if (tenantId === "hub") {
     return (
-      process.env.GOOGLE_SITE_VERIFICATION_HUB?.trim() ||
-      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_HUB?.trim()
+      fromEnv(process.env.GOOGLE_SITE_VERIFICATION_HUB) ||
+      fromEnv(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_HUB)
     );
   }
   return (
-    process.env.GOOGLE_SITE_VERIFICATION?.trim() ||
-    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim()
+    fromEnv(process.env.GOOGLE_SITE_VERIFICATION) ||
+    fromEnv(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION)
   );
+}
+
+function normalizeVerificationToken(value: string | undefined): string | undefined {
+  const trimmed = value?.trim();
+  if (!trimmed) return undefined;
+  return trimmed.replace(/^google-site-verification=/i, "");
 }
 
 export default async function RootLayout({
