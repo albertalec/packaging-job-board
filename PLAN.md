@@ -480,8 +480,8 @@ but these items make Google and shares work harder.
       during vercel.app → custom domain migration
 - [x] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
       and SERP slots for candidate-intent pages only
-- [x] **Analytics + apply-click events** — Plausible tagged `Apply` events on
-      outbound apply links (`NEXT_PUBLIC_PLAUSIBLE=1`)
+- [x] **Analytics + apply-click events** — Vercel Web Analytics page views +
+      custom `Apply` event on outbound apply links (enable in project Analytics)
 - [ ] **Search Console + sitemap submit** — add properties for
       `nicheboardjobs.com` and `packaging.nicheboardjobs.com`; submit
       `/sitemap.xml` on each (human step after deploy)
@@ -678,8 +678,8 @@ style as-is, and it is an XSS surface.
 8. [x] **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
    from config (§4).
 9. [x] **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
-   analytics wired. **Still human:** Search Console (parent + packaging) +
-   sitemap submit.
+   Vercel Analytics. **Still human:** Search Console (parent + packaging) +
+   sitemap submit; enable Analytics in the Vercel project.
 10. **Job-alert emails** on packaging subdomain once list stays above ~50.
 11. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
 12. Live-mode Stripe on `packaging.nicheboardjobs.com` when an employer is ready.
