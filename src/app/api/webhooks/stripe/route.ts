@@ -1,18 +1,15 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { getVertical } from "@config/tenants";
 import { addSponsorship } from "@/lib/sponsorship-store";
-import {
-  getStripe,
-  SPONSOR_DURATION_DAYS,
-  stripeConfigured,
-} from "@/lib/stripe";
+import { getStripe, stripeConfigured } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 
-function sponsorshipWindow(now = new Date()) {
+function sponsorshipWindow(durationDays: number, now = new Date()) {
   const sponsoredAt = now.toISOString();
   const expiresAt = new Date(now);
-  expiresAt.setUTCDate(expiresAt.getUTCDate() + SPONSOR_DURATION_DAYS);
+  expiresAt.setUTCDate(expiresAt.getUTCDate() + durationDays);
   return { sponsoredAt, expiresAt: expiresAt.toISOString() };
 }
 
@@ -20,14 +17,19 @@ async function activateFromSession(session: Stripe.Checkout.Session) {
   const jobId = session.metadata?.jobId;
   if (!jobId || session.payment_status !== "paid") return;
 
-  const { sponsoredAt, expiresAt } = sponsorshipWindow();
+  const vertical = session.metadata?.vertical || "packaging";
+  const tenant = getVertical(vertical);
+  const { sponsoredAt, expiresAt } = sponsorshipWindow(tenant.sponsor.durationDays);
 
   await addSponsorship({
     jobId,
+    vertical: tenant.id,
     sponsoredAt,
     expiresAt,
     stripeSessionId: session.id,
     payerEmail: session.customer_details?.email ?? session.customer_email,
+    host: session.metadata?.host ?? null,
+    tier: session.metadata?.tier || "sponsor",
   });
 }
 

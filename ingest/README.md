@@ -4,8 +4,11 @@ Connectors that pull jobs from employer ATS feeds and normalize them. Do not
 scrape LinkedIn.
 
 ```bash
-npm run ingest
+npm run ingest -- --vertical=packaging
 ```
+
+Writes `data/{vertical}/jobs.json`. Packaging companies live in
+`ingest/verticals/packaging/companies.ts`.
 
 ## Sources
 

@@ -32,11 +32,11 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
         {jobTitle ? (
           <>
             Stripe confirmed your payment for <strong>{jobTitle}</strong>. It
-            should appear at the top of the board within a minute.
+            should appear at the top of this board within a minute.
           </>
         ) : (
           <>
-            Stripe confirmed your payment. It should appear at the top of the
+            Stripe confirmed your payment. It should appear at the top of this
             board within a minute.
           </>
         )}

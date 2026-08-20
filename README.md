@@ -1,21 +1,31 @@
-# Packaging Job Board
+# Niche Board
 
-A focused job board for packaging engineers, packaging managers, and adjacent
-roles. Listings are ingested from employer ATS feeds rather than scraped from
-LinkedIn.
+A multi-niche specialist job platform: one Next.js app, one Stripe account,
+one subdomain per vertical. The first live board is **packaging engineers /
+package development**.
+
+Listings are ingested from employer ATS feeds rather than scraped from
+LinkedIn. Candidates apply on the source career site.
 
 ## Develop
 
 ```bash
 npm install
-npm run ingest
+npm run ingest -- --vertical=packaging
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) for the packaging board.
 
-`npm run ingest` polls every company in `ingest/companies.ts` through the matching
-public feed:
+Parent hub (after `/etc/hosts` or `.localhost`):
+
+- [http://packaging.localhost:3000](http://packaging.localhost:3000) — packaging jobs
+- [http://nicheboard.localhost:3000](http://nicheboard.localhost:3000) — Niche Board hub
+
+Or preview the hub on localhost with `TENANT_HOST=nicheboardjobs.com npm run dev`.
+
+`npm run ingest -- --vertical=packaging` polls every company in
+`ingest/verticals/packaging/companies.ts` through the matching public feed:
 
 | ATS | Connector |
 | --- | --- |
@@ -33,22 +43,26 @@ public feed:
 Jobs are classified to keep packaging engineer / package-development titles
 and drop semiconductor “packaging”, warehouse/packer titles, procurement,
 sales, and converting-line supervision. Descriptions are decoded and split
-into sections before they are written to `data/jobs.json`.
+into sections before they are written to `data/packaging/jobs.json`.
 
-Build status and remaining to-dos live in `PLAN.md`.
+Build status and remaining to-dos live in `PLAN.md`. Tenant config lives in
+`config/`.
 
 ## Sponsorship (Stripe)
 
-Employers can sponsor a live listing for **$100** (30 days, credit card). Sponsored
-jobs rank first and show a badge.
+Employers can sponsor a live listing on **one vertical** (packaging is $100 /
+30 days). Sponsored jobs rank first on that subdomain only.
+
+Checkout metadata includes `jobId`, `vertical`, `tier`, and `host`. The
+webhook writes to `sponsorships/{vertical}.json` (Vercel Blob in production).
 
 ### Configure Stripe
 
 1. Copy `.env.example` to `.env.local` and set:
-   - `STRIPE_SECRET_KEY` — from [Stripe Dashboard → API keys](https://dashboard.stripe.com/test/apikeys)
+   - `STRIPE_SECRET_KEY` — from [Stripe Dashboard → API keys](https://dashboard.stripe.com/apikeys)
    - `STRIPE_WEBHOOK_SECRET` — from a webhook endpoint (see below)
-   - `SITE_URL` — e.g. `http://localhost:3000` or your production URL
-   - `SITE_NAME`, `SITE_DOMAIN`, `CONTACT_EMAIL` — brand and custom domain (see `PLAN.md` §1d); set matching `NEXT_PUBLIC_*` vars for the masthead
+   - `SITE_URL` — local fallback origin (`http://localhost:3000`). Production
+     success/cancel URLs use the request host.
 2. **Local webhook testing** (Stripe CLI):
 
 ```bash
@@ -61,24 +75,29 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
    - Add the same env vars in the Vercel project settings.
    - Create a Stripe webhook for `https://your-domain/api/webhooks/stripe` listening to
      `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
+     One webhook URL serves every subdomain.
    - Add a **Vercel Blob** store and set `BLOB_READ_WRITE_TOKEN` so sponsorships persist
      (the serverless filesystem is read-only). Without Blob, local dev writes to
-     `data/sponsorships.json` instead.
+     `data/sponsorships/{vertical}.json` instead.
 
 ### Routes
 
 | Path | Purpose |
 | --- | --- |
-| `/sponsor` | Pick a listing to sponsor |
-| `/sponsor/[jobId]` | Checkout landing ($100) |
+| `/sponsor` | Pick a listing to sponsor (vertical hosts) |
+| `/sponsor/[jobId]` | Checkout landing |
 | `/api/checkout` | Creates Stripe Checkout session |
 | `/api/webhooks/stripe` | Activates sponsorship after payment |
+| `/` `/niches` `/employers` | Parent hub (on `nicheboardjobs.com`) |
 
 ## Layout
 
 | Path | Purpose |
 | --- | --- |
 | `PLAN.md` | Product plan and phased to-do |
+| `config/` | Tenant registry (hosts, brand, theme, sponsor SKU) |
 | `data/companies.csv` | Company → ATS map |
+| `data/packaging/jobs.json` | Packaging listings |
 | `ingest/` | Connectors, classifier, ingest CLI |
 | `src/app/` | SEO-first Next.js site |
+| `src/middleware.ts` | Host → tenant |

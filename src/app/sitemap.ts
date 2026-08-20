@@ -1,10 +1,22 @@
 import type { MetadataRoute } from "next";
 import { loadJobs } from "@/lib/jobs";
-import { siteUrl } from "@/lib/site";
+import { getRequestTenant, requestHostAndProto } from "@/lib/tenant";
+import { requestOrigin } from "@config/tenants";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const origin = siteUrl();
-  const { jobs } = loadJobs();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const tenant = await getRequestTenant();
+  const { hostHeader, proto } = await requestHostAndProto();
+  const origin = requestOrigin({ hostHeader, proto });
+
+  if (tenant.kind === "hub") {
+    return [
+      { url: `${origin}/`, lastModified: new Date() },
+      { url: `${origin}/niches`, lastModified: new Date() },
+      { url: `${origin}/employers`, lastModified: new Date() },
+    ];
+  }
+
+  const { jobs } = loadJobs(tenant.id);
   return [
     { url: `${origin}/`, lastModified: new Date() },
     ...jobs.map((job) => {

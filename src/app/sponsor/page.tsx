@@ -1,39 +1,49 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SponsorPicker } from "@/components/SponsorPicker";
 import { loadJobs } from "@/lib/jobs";
 import { compareJobsByPromise } from "@/lib/sponsorships";
-import { SPONSOR_DURATION_DAYS } from "@/lib/stripe";
+import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: "Sponsor a job",
-  description: `Priority placement for $100 — ${SPONSOR_DURATION_DAYS} days at the top of the board.`,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") return { title: "Sponsor a job" };
+  const price = formatUsd(tenant.sponsor.priceCents);
+  return {
+    title: "Sponsor a job",
+    description: `Priority placement for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
+  };
+}
 
-export default function SponsorIndexPage() {
-  const picks = [...loadJobs().jobs].sort(compareJobsByPromise).map((job) => ({
-    id: job.id,
-    title: job.title,
-    company: job.company,
-    location: job.location,
-  }));
+export default async function SponsorIndexPage() {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") notFound();
+
+  const price = formatUsd(tenant.sponsor.priceCents);
+  const days = tenant.sponsor.durationDays;
+  const picks = [...loadJobs(tenant.id).jobs]
+    .sort(compareJobsByPromise)
+    .map((job) => ({
+      id: job.id,
+      title: job.title,
+      company: job.company,
+      location: job.location,
+    }));
 
   return (
     <article className="sponsor-page">
       <p className="kicker">For employers & recruiters</p>
       <h1>
-        $100 to pin a listing for {SPONSOR_DURATION_DAYS} days
+        {price} {tenant.copy.sponsorHeadline} {days} days
       </h1>
-      <p className="lede">
-        Packaging engineers and package-development candidates already use this
-        board. Pay $100 by card to pin a live career-site listing at the top —
-        no separate “post a job” round-trip.
-      </p>
+      <p className="lede">{tenant.copy.sponsorLede}</p>
       <ul className="sponsor-benefits">
         <li>First position on the homepage (above organic listings)</li>
         <li>Sponsored stamp on the card and job detail page</li>
-        <li>{`${SPONSOR_DURATION_DAYS}-day run`} — flat fee, no recurring charge</li>
+        <li>{`${days}-day run`} — flat fee, no recurring charge</li>
+        <li>Ranks on this board only — not the rest of the network</li>
       </ul>
       <h2 className="sponsor-subhead">Pick a live listing</h2>
       <SponsorPicker jobs={picks} />

@@ -3,10 +3,13 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { brand } from "@/lib/brand";
+import { useTenant } from "./TenantProvider";
 
 export function SiteChrome({ children }: { children: ReactNode }) {
-  const employer = usePathname().startsWith("/sponsor");
+  const tenant = useTenant();
+  const pathname = usePathname();
+  const employer = pathname.startsWith("/sponsor") || pathname.startsWith("/employers");
+  const hub = tenant.kind === "hub";
 
   return (
     <>
@@ -14,33 +17,38 @@ export function SiteChrome({ children }: { children: ReactNode }) {
         <Link href="/" className="mark">
           <span className="box" aria-hidden="true" />
           <span>
-            {brand.markLine1}
-            {brand.markLine2 ? (
+            {tenant.brand.markLine1}
+            {tenant.brand.markLine2 ? (
               <>
                 <br />
-                {brand.markLine2}
+                {tenant.brand.markLine2}
               </>
             ) : null}
           </span>
         </Link>
         <div className="mast-links">
           <p className="tagline">
-            {employer
-              ? "Pin an existing listing at the top of the board."
-              : "Packaging engineer jobs at top employers."}
+            {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
           </p>
-          <Link className="nav-link" href="/sponsor">
-            Sponsor a job
-          </Link>
+          {hub ? (
+            <nav className="mast-nav">
+              <Link className="nav-link" href="/niches">
+                Niches
+              </Link>
+              <Link className="nav-link" href="/employers">
+                Employers
+              </Link>
+            </nav>
+          ) : (
+            <Link className="nav-link" href="/sponsor">
+              Sponsor a job
+            </Link>
+          )}
         </div>
       </header>
       <main>{children}</main>
       <footer>
-        <p>
-          {employer
-            ? "Pin a live career-site listing. Candidates apply on the employer ATS."
-            : "Packaging engineer roles from employer career sites. Apply on the source listing."}
-        </p>
+        <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
       </footer>
     </>
   );
