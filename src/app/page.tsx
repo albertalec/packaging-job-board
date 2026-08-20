@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { JobBoard } from "@/components/JobBoard";
 import { loadJobs } from "@/lib/jobs";
 import { getActiveSponsoredJobIds, sortJobsWithSponsors } from "@/lib/sponsorships";
+import { getRequestTenant } from "@/lib/tenant";
 
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Packaging engineer jobs",
-  description:
-    "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily. Apply on the company career site.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") return { title: tenant.brand.name };
+  return {
+    title: tenant.copy.hero.replace(/\.$/, ""),
+    description: tenant.copy.metaDescription,
+  };
+}
 
 export default async function HomePage() {
-  const { jobs, ingestedAt, total } = loadJobs();
-  const sponsoredIds = await getActiveSponsoredJobIds();
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") notFound();
+
+  const { jobs, ingestedAt, total } = loadJobs(tenant.id);
+  const sponsoredIds = await getActiveSponsoredJobIds(tenant.id);
   const sortedJobs = sortJobsWithSponsors(jobs, sponsoredIds);
   const employersHiring = new Set(jobs.map((job) => job.company)).size;
   const ingestedLabel = ingestedAt
@@ -28,13 +36,9 @@ export default async function HomePage() {
   return (
     <>
       <section className="hero">
-        <p className="kicker">Updated daily</p>
-        <h1>Packaging engineer jobs at top employers.</h1>
-        <p className="lede">
-          Packaging engineers and package development — not plant ops. Open
-          roles at companies like General Mills, Johnson &amp; Johnson, Mars,
-          and Clorox. Apply on the company&apos;s career site.
-        </p>
+        <p className="kicker">{tenant.copy.kicker}</p>
+        <h1>{tenant.copy.hero}</h1>
+        <p className="lede">{tenant.copy.lede}</p>
         <dl className="stats">
           <div>
             <dt>Live roles</dt>
@@ -50,7 +54,12 @@ export default async function HomePage() {
           </div>
         </dl>
       </section>
-      <JobBoard jobs={sortedJobs} sponsoredIds={[...sponsoredIds]} />
+      <JobBoard
+        jobs={sortedJobs}
+        sponsoredIds={[...sponsoredIds]}
+        empty={tenant.copy.empty}
+        emptyFiltered={tenant.copy.emptyFiltered}
+      />
     </>
   );
 }

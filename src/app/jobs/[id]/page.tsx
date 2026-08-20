@@ -5,18 +5,21 @@ import { JobDescription } from "@/components/JobDescription";
 import { getJob, loadJobs } from "@/lib/jobs";
 import { formatNiche } from "@/lib/niches";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
+import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
 export const revalidate = 3600;
 
 type Params = { params: Promise<{ id: string }> };
 
 export async function generateStaticParams() {
-  return loadJobs().jobs.map((job) => ({ id: job.id }));
+  return loadJobs("packaging").jobs.map((job) => ({ id: job.id }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") return { title: "Job not found" };
   const { id } = await params;
-  const job = getJob(id);
+  const job = getJob(id, tenant.id);
   if (!job) return { title: "Job not found" };
   return {
     title: `${job.title} at ${job.company}`,
@@ -36,12 +39,16 @@ function formatPosted(postedAt: string | null) {
 }
 
 export default async function JobPage({ params }: Params) {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") notFound();
+
   const { id } = await params;
-  const job = getJob(id);
+  const job = getJob(id, tenant.id);
   if (!job) notFound();
 
-  const sponsorship = await getSponsorshipForJob(job.id);
+  const sponsorship = await getSponsorshipForJob(job.id, tenant.id);
   const niche = formatNiche(job.niche);
+  const price = formatUsd(tenant.sponsor.priceCents);
 
   return (
     <article className="spec">
@@ -68,7 +75,7 @@ export default async function JobPage({ params }: Params) {
         </a>
         {!sponsorship ? (
           <Link className="ghost big" href={`/sponsor/${job.id}`}>
-            Sponsor this listing — $100
+            Sponsor this listing — {price}
           </Link>
         ) : null}
       </div>

@@ -92,8 +92,8 @@ describe("classifyJob", () => {
     assert.equal(result.reason, "off-target function");
   });
 
-  it("keeps every title currently stored in jobs.json", () => {
-    const data = JSON.parse(readFileSync("data/jobs.json", "utf8")) as {
+  it("keeps every title currently stored in packaging jobs.json", () => {
+    const data = JSON.parse(readFileSync("data/packaging/jobs.json", "utf8")) as {
       jobs: Array<{
         title: string;
         description: string;

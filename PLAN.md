@@ -142,26 +142,26 @@ Middleware reads `Host` and loads a vertical config:
 }
 ```
 
-- [ ] **`config/verticals/`** — one module per niche (brand, theme, ingest,
+- [x] **`config/verticals/`** — one module per niche (brand, theme, ingest,
       classifier key, data path, sponsor pricing, copy, filters)
-- [ ] **Middleware** — `Host` → vertical id; 404 unknown hosts
-- [ ] **Per-vertical job data** — `data/{vertical}/jobs.json` (ingest writes
-      per vertical; packaging migrates from `data/jobs.json`)
-- [ ] **Per-vertical ingest** — `ingest/run.ts` accepts `--vertical=packaging`;
+- [x] **Middleware** — `Host` → vertical id; 404 unknown hosts
+- [x] **Per-vertical job data** — `data/{vertical}/jobs.json` (ingest writes
+      per vertical; packaging migrated from `data/jobs.json`)
+- [x] **Per-vertical ingest** — `ingest/run.ts` accepts `--vertical=packaging`;
       GitHub Action runs one job per live vertical
-- [ ] **Theme via CSS variables** — set on `<html data-vertical="packaging">`
+- [x] **Theme via CSS variables** — set on `<html data-vertical="packaging">`
       from tenant config; shared `globals.css`, different accent/kraft per site
-- [ ] **Scoped sponsorship store** — Blob key `sponsorships/{vertical}.json`
+- [x] **Scoped sponsorship store** — Blob key `sponsorships/{vertical}.json`
       or single file with `vertical` field; sponsor boosts **only that subdomain**
 
 **Env vars during migration**
 
-Today’s `SITE_NAME` / `SITE_URL` env pattern stays for local dev; production
+Today’s `SITE_URL` env pattern stays as a local fallback; production
 resolves from hostname + vertical config. Optional `DEFAULT_VERTICAL=packaging`
-for localhost.
+for localhost. `TENANT_HOST=nicheboard.com` previews the parent hub.
 
 - [ ] Cut over packaging tenant env + DNS
-- [ ] Re-verify Stripe success/cancel URLs use request host (`siteUrl()` per tenant)
+- [x] Re-verify Stripe success/cancel URLs use request host (`siteUrl()` per tenant)
 - [ ] Search Console: separate properties per subdomain + parent
 
 ---
@@ -363,9 +363,9 @@ already hiring; we put you first **on the board packaging engineers use**.”
 
 **Stripe implementation to-do**
 - [x] Checkout + webhook for packaging (test mode)
-- [ ] Add `vertical` (+ optional `tier`) to session metadata and sponsorship records
-- [ ] Scope `getActiveSponsoredJobIds()` to current tenant vertical
-- [ ] `unit_amount` from tenant config, not global constant
+- [x] Add `vertical` (+ optional `tier`) to session metadata and sponsorship records
+- [x] Scope `getActiveSponsoredJobIds()` to current tenant vertical
+- [x] `unit_amount` from tenant config, not global constant
 - [ ] Bundle checkout (multi-vertical metadata) when vertical #2 ships
 - [ ] One live payment test per vertical; then `sk_live_`
 
@@ -398,15 +398,15 @@ already hiring; we put you first **on the board packaging engineers use**.”
 - [x] Build the Workday connector (POST body, pagination, per-tenant subdomain)
 - [x] Seed with verified Workday companies (Kimberly-Clark, General Mills,
       Sonoco, 3M, Kenvue, Silgan) plus Phenom / Greenhouse / Amazon /
-      SuccessFactors / Teamtailor / Oracle rows in `ingest/companies.ts`
+      SuccessFactors / Teamtailor / Oracle rows in `ingest/verticals/packaging/companies.ts`
 - [x] Normalize to one schema: title, dept, location, remote flag, posted date,
       apply URL, description, salary (where available)
 - [x] Dedupe (hash per posting)
 - [x] Posted date / “New” stamp on cards — **freshness vs. MPC**; hash is
       stored. Optional later: a “new since last run” digest, not just dates.
 - [x] Daily scheduled poll — GitHub Action `.github/workflows/ingest.yml`
-      (12:00 UTC), commits `data/jobs.json`, Vercel redeploys
-- [ ] **Per-vertical ingest** — `--vertical=packaging` writes
+      (12:00 UTC), commits `data/packaging/jobs.json`, Vercel redeploys
+- [x] **Per-vertical ingest** — `--vertical=packaging` writes
       `data/packaging/jobs.json`; Action matrix one job per live vertical
 - [x] US-only ingest — keep US-located or remote; drop Canada/UK/PH.
       Trailing Workday country codes like `, CA` are not treated as California.
@@ -432,12 +432,12 @@ like “jobs at GPI.”
 
 ### Phase 3 — Site (SEO-first, apply-out)
 
-**Today:** single-tenant packaging site on vercel.app. **Target:** multi-tenant
-subdomains with shared Next.js app.
+**Today:** multi-tenant Next.js app; vercel.app still serves the packaging
+tenant until DNS cutover. **Target:** `packaging.nicheboard.com` + parent hub.
 
 - [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
       plus filters on the index
-- [x] Flat data store (`data/jobs.json`); Stripe checkout for sponsorships
+- [x] Flat data store (`data/{vertical}/jobs.json`); Stripe checkout for sponsorships
       (no employer accounts / dashboards — **intentional**, not a gap vs. MPC)
 - [x] Search / filter jobs by US state (in addition to title/company/city and
       niche)
@@ -453,9 +453,9 @@ subdomains with shared Next.js app.
       (`&#39;` → `'`, `&#43;` → `+`), restore section breaks, and render
       ATS labels as headings plus lists. See §3a. Do not store raw ATS
       HTML (XSS).
-- [ ] **Multi-tenant platform (§1d)** — middleware, vertical config, per-vertical
+- [x] **Multi-tenant platform (§1d)** — middleware, vertical config, per-vertical
       data + sponsorship scope, theme vars, hostname-aware `siteUrl()`
-- [ ] **`nicheboard.com` parent pages** — `/`, `/niches`, `/employers` (bundle
+- [x] **`nicheboard.com` parent pages** — `/`, `/niches`, `/employers` (bundle
       pricing, network pitch); no competing packaging SEO on apex
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
 - [ ] **Job alerts (email) before profiles** — per-vertical lists; optional
@@ -602,13 +602,13 @@ style as-is, and it is an XSS surface.
       preview. Production: Vercel env + webhook
       `https://packaging-job-board.vercel.app/api/webhooks/stripe` + Blob.
       Still test-mode keys until going live.
-- [ ] **Vertical-scoped sponsorships** — metadata + store partition; sponsor
+- [x] **Vertical-scoped sponsorships** — metadata + store partition; sponsor
       only ranks on checkout subdomain (§4)
-- [ ] **Tenant-aware pricing** — `unit_amount` from vertical config
+- [x] **Tenant-aware pricing** — `unit_amount` from vertical config
 - [ ] One live-URL test payment on `packaging.nicheboard.com` then `sk_live_`
 - [ ] Featured tier (top 3 cap per vertical) — after renewals exist
 - [ ] Dual / network bundle SKUs — when vertical #2 is live
-- [ ] `nicheboard.com/employers` — bundle landing + contact
+- [x] `nicheboard.com/employers` — bundle landing + contact (page shipped; DNS pending)
 - [ ] Lead-gen / quote-request flow — per vertical with traffic
 - [ ] Do **not** prioritize employer dashboard / candidate profiles
 
@@ -643,8 +643,8 @@ style as-is, and it is an XSS surface.
       notice; companies switch ATS. Re-verify seed mapping ~quarterly.
 - [ ] **Traffic > build:** edge comes from the niche, SEO layers (§3b), and
       distribution — not the code alone.
-- [ ] **Platform cutover** — vercel.app + single-tenant env until multi-tenant
-      middleware ships; register `nicheboard.com` and cut packaging to subdomain
+- [ ] **Platform cutover** — vercel.app still serves packaging until
+      `nicheboard.com` is registered and `packaging.` is cut over
 - [ ] **Multi-tenant complexity** — keep vertical configs declarative; do not
       fork the app per niche
 - [ ] **Sponsor scope bugs** — global sponsor pool would destroy bundle leverage
@@ -668,12 +668,12 @@ style as-is, and it is an XSS surface.
 5. [x] **Review off-target jobs and tighten ingest/classifier rules** so
    procurement, plant supervision, sales, and other non-engineer /
    non-package-dev titles do not stay in `jobs.json`.
-6. **Multi-tenant platform (§1d)** — `config/verticals/`, middleware,
+6. [x] **Multi-tenant platform (§1d)** — `config/verticals/`, middleware,
    per-vertical data path, theme CSS vars, vertical-scoped sponsorship store,
    hostname-aware Stripe URLs.
 7. **Register `nicheboard.com` + DNS** — apex, `packaging.` subdomain, 301
-   from vercel.app; parent hub pages (`/`, `/employers`).
-8. **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
+   from vercel.app; parent hub pages (`/`, `/employers`) are in the app.
+8. [x] **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
    from config (§4).
 9. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
    Search Console (parent + packaging subdomain), analytics.

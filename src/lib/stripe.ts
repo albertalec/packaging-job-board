@@ -1,8 +1,5 @@
 import Stripe from "stripe";
 
-export const SPONSOR_PRICE_CENTS = 10_000;
-export const SPONSOR_DURATION_DAYS = 30;
-
 let client: Stripe | null = null;
 
 export function getStripe(): Stripe {

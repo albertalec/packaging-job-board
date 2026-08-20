@@ -1,4 +1,4 @@
-import type { Company } from "./types.ts";
+import type { Company } from "../../types.ts";
 
 const PACKAGING_QUERY = "packaging";
 

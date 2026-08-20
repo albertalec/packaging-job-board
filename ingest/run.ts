@@ -1,8 +1,9 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { getVertical } from "../config/tenants.ts";
+import { parseVerticalArg } from "./args.ts";
 import { isUsOrRemote } from "./classify.ts";
-import { companies } from "./companies.ts";
-import type { NormalizedJob } from "./types.ts";
+import type { Company, NormalizedJob } from "./types.ts";
 import { ingestAmazon } from "./sources/amazon.ts";
 import { ingestAshby } from "./sources/ashby.ts";
 import { ingestGreenhouse } from "./sources/greenhouse.ts";
@@ -24,7 +25,20 @@ export type SourceReport = {
   error?: string;
 };
 
-async function ingestCompany(company: (typeof companies)[number]) {
+const COMPANY_LOADERS: Record<string, () => Promise<Company[]>> = {
+  packaging: async () =>
+    (await import("./verticals/packaging/companies.ts")).companies,
+};
+
+async function loadCompanies(verticalId: string): Promise<Company[]> {
+  const loader = COMPANY_LOADERS[verticalId];
+  if (!loader) {
+    throw new Error(`No company list for vertical: ${verticalId}`);
+  }
+  return loader();
+}
+
+async function ingestCompany(company: Company) {
   switch (company.ats) {
     case "workday":
       return ingestWorkday(company);
@@ -55,7 +69,13 @@ async function ingestCompany(company: (typeof companies)[number]) {
   }
 }
 
-export async function runIngest() {
+export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
+  const vertical = getVertical(verticalId);
+  if (vertical.ingest.classifier !== "packaging") {
+    throw new Error(`No classifier wired for vertical: ${vertical.id}`);
+  }
+
+  const companies = await loadCompanies(vertical.id);
   const reports: SourceReport[] = [];
   const seen = new Set<string>();
   const jobs: NormalizedJob[] = [];
@@ -105,9 +125,10 @@ export async function runIngest() {
     reports,
   };
 
-  const jobsPath = path.join(process.cwd(), "data", "jobs.json");
+  const jobsPath = path.join(process.cwd(), vertical.dataFile);
+  await mkdir(path.dirname(jobsPath), { recursive: true });
   await writeFile(jobsPath, JSON.stringify(payload, null, 2));
-  console.log(`\nWrote ${jobs.length} jobs to data/jobs.json`);
+  console.log(`\nWrote ${jobs.length} jobs to ${vertical.dataFile}`);
   return payload;
 }
 

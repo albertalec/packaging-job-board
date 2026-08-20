@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export function SponsorCheckoutButton({ jobId }: { jobId: string }) {
+export function SponsorCheckoutButton({
+  jobId,
+  priceLabel,
+}: {
+  jobId: string;
+  priceLabel: string;
+}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,7 +45,7 @@ export function SponsorCheckoutButton({ jobId }: { jobId: string }) {
         onClick={startCheckout}
         disabled={loading}
       >
-        {loading ? "Redirecting to Stripe…" : "Pay $100 with card"}
+        {loading ? "Redirecting to Stripe…" : `Pay ${priceLabel} with card`}
       </button>
       {error ? <p className="checkout-error">{error}</p> : null}
     </div>

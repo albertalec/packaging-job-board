@@ -228,6 +228,34 @@ select {
   gap: 0.5rem;
 }
 
+.mast-nav {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.niche-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.niche-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  background: var(--card);
+  padding: 1rem 1.1rem;
+  box-shadow: 3px 3px 0 var(--kraft);
+}
+
+.niche-card.coming-soon {
+  box-shadow: none;
+  border-style: dashed;
+  opacity: 0.85;
+}
+
 .nav-link {
   font-size: 0.85rem;
   text-decoration: none;
@@ -478,6 +506,10 @@ footer {
 
   .mast-links {
     align-items: flex-start;
+  }
+
+  .mast-nav {
+    justify-content: flex-start;
   }
 
   .tagline {

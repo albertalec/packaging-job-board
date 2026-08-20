@@ -14,9 +14,13 @@ const NICHES = [
 export function JobBoard({
   jobs,
   sponsoredIds,
+  empty,
+  emptyFiltered,
 }: {
   jobs: NormalizedJob[];
   sponsoredIds: string[];
+  empty: string;
+  emptyFiltered: string;
 }) {
   const sponsoredSet = useMemo(() => new Set(sponsoredIds), [sponsoredIds]);
   const [query, setQuery] = useState("");
@@ -92,13 +96,13 @@ export function JobBoard({
         <p className="empty">
           {hasFilters ? (
             <>
-              No packaging engineer roles match.{" "}
+              {emptyFiltered}{" "}
               <button type="button" className="empty-clear" onClick={clearFilters}>
                 Clear filters
               </button>
             </>
           ) : (
-            "No packaging engineer roles listed right now. Check back after the next daily update."
+            empty
           )}
         </p>
       ) : (

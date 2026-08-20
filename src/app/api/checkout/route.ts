@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { getJob } from "@/lib/jobs";
-import { siteName, siteUrl } from "@/lib/site";
+import { getStripe, stripeConfigured } from "@/lib/stripe";
 import {
-  getStripe,
-  SPONSOR_DURATION_DAYS,
-  SPONSOR_PRICE_CENTS,
-  stripeConfigured,
-} from "@/lib/stripe";
+  formatUsd,
+  originFromRequest,
+  tenantFromRequest,
+} from "@/lib/tenant";
 
 export const runtime = "nodejs";
 
@@ -22,6 +21,20 @@ export async function POST(request: Request) {
     );
   }
 
+  let tenant;
+  try {
+    tenant = tenantFromRequest(request);
+  } catch {
+    return NextResponse.json({ error: "Unknown host." }, { status: 404 });
+  }
+
+  if (tenant.kind !== "vertical") {
+    return NextResponse.json(
+      { error: "Sponsorship checkout is only available on a vertical board." },
+      { status: 400 },
+    );
+  }
+
   let body: CheckoutBody;
   try {
     body = (await request.json()) as CheckoutBody;
@@ -34,13 +47,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "jobId is required." }, { status: 400 });
   }
 
-  const job = getJob(jobId);
+  const job = getJob(jobId, tenant.id);
   if (!job) {
     return NextResponse.json({ error: "Job not found." }, { status: 404 });
   }
 
-  const origin = siteUrl();
+  const origin = originFromRequest(request);
+  const host =
+    request.headers.get("x-tenant-host") ??
+    request.headers.get("x-forwarded-host") ??
+    request.headers.get("host") ??
+    tenant.canonicalHost;
   const stripe = getStripe();
+  const { priceCents, durationDays } = tenant.sponsor;
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
@@ -48,10 +67,10 @@ export async function POST(request: Request) {
       {
         price_data: {
           currency: "usd",
-          unit_amount: SPONSOR_PRICE_CENTS,
+          unit_amount: priceCents,
           product_data: {
             name: `Sponsor: ${job.title}`,
-            description: `${SPONSOR_DURATION_DAYS}-day priority placement for ${job.company} on ${siteName()}`,
+            description: `${durationDays}-day priority placement for ${job.company} on ${tenant.brand.name}`,
           },
         },
         quantity: 1,
@@ -61,8 +80,10 @@ export async function POST(request: Request) {
       jobId: job.id,
       jobTitle: job.title,
       company: job.company,
+      vertical: tenant.id,
+      tier: "sponsor",
+      host,
     },
-    customer_email: undefined,
     success_url: `${origin}/sponsor/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/sponsor/${job.id}?canceled=1`,
   });
@@ -74,5 +95,5 @@ export async function POST(request: Request) {
     );
   }
 
-  return NextResponse.json({ url: session.url });
+  return NextResponse.json({ url: session.url, price: formatUsd(priceCents) });
 }

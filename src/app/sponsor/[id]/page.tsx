@@ -5,8 +5,8 @@ import { JobCard } from "@/components/JobCard";
 import { SponsorCheckoutButton } from "@/components/SponsorCheckoutButton";
 import { getJob } from "@/lib/jobs";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
-import { contactEmail } from "@/lib/site";
-import { SPONSOR_DURATION_DAYS, stripeConfigured } from "@/lib/stripe";
+import { stripeConfigured } from "@/lib/stripe";
+import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
 export const revalidate = 300;
 
@@ -14,12 +14,15 @@ type Params = { params: Promise<{ id: string }> };
 type SearchParams = { searchParams: Promise<{ canceled?: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") return { title: "Sponsor a job" };
   const { id } = await params;
-  const job = getJob(id);
+  const job = getJob(id, tenant.id);
   if (!job) return { title: "Sponsor a job" };
+  const price = formatUsd(tenant.sponsor.priceCents);
   return {
     title: `Sponsor ${job.title}`,
-    description: `Priority placement for ${job.title} at ${job.company} — $100 for ${SPONSOR_DURATION_DAYS} days.`,
+    description: `Priority placement for ${job.title} at ${job.company} — ${price} for ${tenant.sponsor.durationDays} days.`,
   };
 }
 
@@ -32,13 +35,18 @@ function formatExpiry(iso: string): string {
 }
 
 export default async function SponsorJobPage({ params, searchParams }: Params & SearchParams) {
+  const tenant = await getRequestTenant();
+  if (tenant.kind !== "vertical") notFound();
+
   const { id } = await params;
   const { canceled } = await searchParams;
-  const job = getJob(id);
+  const job = getJob(id, tenant.id);
   if (!job) notFound();
 
-  const sponsorship = await getSponsorshipForJob(job.id);
+  const sponsorship = await getSponsorshipForJob(job.id, tenant.id);
   const paymentsReady = stripeConfigured();
+  const price = formatUsd(tenant.sponsor.priceCents);
+  const days = tenant.sponsor.durationDays;
 
   return (
     <article className="sponsor-page">
@@ -47,9 +55,9 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
       </p>
       <h1>Sponsor this listing</h1>
       <p className="lede">
-        Pin <strong>{job.title}</strong> at {job.company} to the top of a board
-        used by packaging engineers and package-development candidates. One
-        flat payment for {SPONSOR_DURATION_DAYS} days — no invoice round-trip.
+        Pin <strong>{job.title}</strong> at {job.company} to the top of{" "}
+        {tenant.brand.name}. One flat payment for {days} days — no invoice
+        round-trip. The pin stays on this board only.
       </p>
 
       {canceled ? (
@@ -76,15 +84,15 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
           <ul className="sponsor-benefits">
             <li>Ranked first on the homepage job list</li>
             <li>Sponsored badge on the card and detail page</li>
-            <li>{SPONSOR_DURATION_DAYS} days of priority placement</li>
+            <li>{days} days of priority placement</li>
             <li>Self-serve checkout by credit card</li>
           </ul>
           <p className="sponsor-price">
-            <span className="price">$100</span>
-            <span className="term">one-time · {SPONSOR_DURATION_DAYS} days</span>
+            <span className="price">{price}</span>
+            <span className="term">one-time · {days} days</span>
           </p>
           {paymentsReady ? (
-            <SponsorCheckoutButton jobId={job.id} />
+            <SponsorCheckoutButton jobId={job.id} priceLabel={price} />
           ) : (
             <p className="notice">
               Stripe is not configured yet. Add <code>STRIPE_SECRET_KEY</code> to enable
@@ -96,7 +104,7 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
 
       <p className="sponsor-footnote">
         Questions? Email{" "}
-        <a href={`mailto:${contactEmail()}`}>{contactEmail()}</a>.
+        <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>.
       </p>
     </article>
   );
