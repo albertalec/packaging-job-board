@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { getStripe, stripeConfigured } from "@/lib/stripe";
-
-export const metadata: Metadata = {
-  title: "Sponsorship confirmed",
-  description: "Your sponsored job placement is being activated.",
-};
+import { getRequestTenant } from "@/lib/tenant";
 
 type SearchParams = { searchParams: Promise<{ session_id?: string }> };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  return buildPageMetadata({
+    tenant,
+    title: "Sponsorship confirmed",
+    description: "Your sponsored job placement is being activated.",
+    path: "/sponsor/success",
+    index: false,
+  });
+}
 
 export default async function SponsorSuccessPage({ searchParams }: SearchParams) {
   const { session_id: sessionId } = await searchParams;

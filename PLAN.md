@@ -471,18 +471,20 @@ the catalog into discoverable long-tail landing pages and measurable traffic.
 but these items make Google and shares work harder.
 
 **Phase A — ship before pushing traffic**
-- [ ] **`JobPosting` JSON-LD** on `/jobs/[id]` — Google for Jobs eligibility
+- [x] **`JobPosting` JSON-LD** on `/jobs/[id]` — Google for Jobs eligibility
       (`title`, `description`, `datePosted`, `hiringOrganization`, `jobLocation`,
       `directApply`, apply URL; `baseSalary` when present)
-- [ ] **Open Graph + Twitter cards** — title, description, URL on home and job
+- [x] **Open Graph + Twitter cards** — title, description, URL on home and job
       pages so LinkedIn/Slack shares show a rich preview (primary audience channel)
-- [ ] **`alternates.canonical`** on every indexable page — especially important
+- [x] **`alternates.canonical`** on every indexable page — especially important
       during vercel.app → custom domain migration
-- [ ] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
+- [x] **`noindex` sponsor routes** (`/sponsor`, `/sponsor/*`) — crawl budget
       and SERP slots for candidate-intent pages only
-- [ ] **Analytics + apply-click events** — Plausible or GA4; track “Apply on
-      employer site” as the conversion that matters
-- [ ] **Search Console + sitemap submit** — monitor indexing, queries, and CTR
+- [x] **Analytics + apply-click events** — Plausible tagged `Apply` events on
+      outbound apply links (`NEXT_PUBLIC_PLAUSIBLE=1`)
+- [ ] **Search Console + sitemap submit** — add properties for
+      `nicheboardjobs.com` and `packaging.nicheboardjobs.com`; submit
+      `/sitemap.xml` on each (human step after deploy)
 
 **Phase B — after ~50+ on-wedge jobs (avoid thin pages)**
 - [ ] **Indexable filter routes** (server-rendered, not client-only):
@@ -675,8 +677,9 @@ style as-is, and it is an XSS surface.
    from vercel.app; apex hub pages (`/`, `/employers`) are already in the app.
 8. [x] **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
    from config (§4).
-9. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
-   Search Console (parent + packaging subdomain), analytics.
+9. [x] **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
+   analytics wired. **Still human:** Search Console (parent + packaging) +
+   sitemap submit.
 10. **Job-alert emails** on packaging subdomain once list stays above ~50.
 11. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
 12. Live-mode Stripe on `packaging.nicheboardjobs.com` when an employer is ready.

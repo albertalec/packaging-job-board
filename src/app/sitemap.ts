@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
 import { loadJobs } from "@/lib/jobs";
-import { getRequestTenant, requestHostAndProto } from "@/lib/tenant";
-import { requestOrigin } from "@config/tenants";
+import { toIsoDate } from "@/lib/seo";
+import { getRequestTenant } from "@/lib/tenant";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const tenant = await getRequestTenant();
-  const { hostHeader, proto } = await requestHostAndProto();
-  const origin = requestOrigin({ hostHeader, proto });
+  const origin = `https://${tenant.canonicalHost}`;
 
   if (tenant.kind === "hub") {
     return [
@@ -16,14 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ];
   }
 
-  const { jobs } = loadJobs(tenant.id);
+  const { jobs, ingestedAt } = loadJobs(tenant.id);
+  const homeModified = ingestedAt ? new Date(ingestedAt) : new Date();
+
   return [
-    { url: `${origin}/`, lastModified: new Date() },
+    { url: `${origin}/`, lastModified: homeModified },
     ...jobs.map((job) => {
-      const parsed = job.postedAt ? Date.parse(job.postedAt) : Number.NaN;
+      const iso = toIsoDate(job.postedAt);
       return {
         url: `${origin}/jobs/${job.id}`,
-        lastModified: Number.isNaN(parsed) ? new Date() : new Date(parsed),
+        lastModified: iso ? new Date(iso) : homeModified,
       };
     }),
   ];

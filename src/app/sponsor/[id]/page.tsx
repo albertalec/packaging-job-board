@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { JobCard } from "@/components/JobCard";
 import { SponsorCheckoutButton } from "@/components/SponsorCheckoutButton";
 import { getJob } from "@/lib/jobs";
+import { buildPageMetadata } from "@/lib/seo";
 import { getSponsorshipForJob } from "@/lib/sponsorships";
 import { stripeConfigured } from "@/lib/stripe";
 import { formatUsd, getRequestTenant } from "@/lib/tenant";
@@ -18,12 +19,23 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (tenant.kind !== "vertical") return { title: "Sponsor a job" };
   const { id } = await params;
   const job = getJob(id, tenant.id);
-  if (!job) return { title: "Sponsor a job" };
+  if (!job) {
+    return buildPageMetadata({
+      tenant,
+      title: "Sponsor a job",
+      description: "Priority placement for a live listing.",
+      path: "/sponsor",
+      index: false,
+    });
+  }
   const price = formatUsd(tenant.sponsor.priceCents);
-  return {
+  return buildPageMetadata({
+    tenant,
     title: `Sponsor ${job.title}`,
     description: `Priority placement for ${job.title} at ${job.company} — ${price} for ${tenant.sponsor.durationDays} days.`,
-  };
+    path: `/sponsor/${job.id}`,
+    index: false,
+  });
 }
 
 function formatExpiry(iso: string): string {

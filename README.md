@@ -90,6 +90,19 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
 | `/api/webhooks/stripe` | Activates sponsorship after payment |
 | `/` `/niches` `/employers` | Parent hub (on `nicheboardjobs.com`) |
 
+## SEO & analytics
+
+Job pages include `JobPosting` JSON-LD, Open Graph / Twitter cards, and
+canonical URLs on the production hosts. Sponsor routes are `noindex`.
+
+**Plausible:** set `NEXT_PUBLIC_PLAUSIBLE=1` in Vercel. Register
+`packaging.nicheboardjobs.com` and `nicheboardjobs.com` (or set
+`NEXT_PUBLIC_PLAUSIBLE_DOMAIN`). Apply clicks fire a tagged `Apply` event.
+
+**Search Console (after deploy):** add both hosts as properties and submit
+`https://packaging.nicheboardjobs.com/sitemap.xml` and
+`https://nicheboardjobs.com/sitemap.xml`.
+
 ## Layout
 
 | Path | Purpose |

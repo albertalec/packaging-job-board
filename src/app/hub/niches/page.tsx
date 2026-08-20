@@ -2,15 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { verticals } from "@config/tenants";
 import { loadJobs } from "@/lib/jobs";
+import { buildPageMetadata } from "@/lib/seo";
 import { getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Niches",
-  description:
-    "Specialist job boards on Niche Board. Only live verticals with inventory are listed.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  return buildPageMetadata({
+    tenant,
+    title: "Niches",
+    description:
+      "Specialist job boards on Niche Board. Only live verticals with inventory are listed.",
+    path: "/niches",
+  });
+}
 
 const UPCOMING = [
   {
