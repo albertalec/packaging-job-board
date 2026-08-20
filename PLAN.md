@@ -115,8 +115,8 @@ Packaging subdomain owns packaging-engineer SEO; parent owns “niche job
 boards” and bundle sales. Do not put packaging-only copy on `nicheboardjobs.com`.
 
 **DNS (one Vercel project)**
-- [ ] Register `nicheboardjobs.com`
-- [ ] Add apex + wildcard (`*.nicheboardjobs.com`) or explicit subdomains in Vercel
+- [x] Register `nicheboardjobs.com` (apex + www live on Vercel)
+- [ ] Add `packaging.nicheboardjobs.com` in Vercel → Production
 - [ ] `packaging.nicheboardjobs.com` → packaging tenant (first cutover)
 - [ ] 301 `packaging-job-board.vercel.app` → packaging subdomain
 - [ ] Stripe webhook stays at one URL, e.g.
@@ -671,8 +671,8 @@ style as-is, and it is an XSS surface.
 6. [x] **Multi-tenant platform (§1d)** — `config/verticals/`, middleware,
    per-vertical data path, theme CSS vars, vertical-scoped sponsorship store,
    hostname-aware Stripe URLs.
-7. **Register `nicheboardjobs.com` + DNS** — apex, `packaging.` subdomain, 301
-   from vercel.app; parent hub pages (`/`, `/employers`) are in the app.
+7. **Add `packaging.nicheboardjobs.com` in Vercel** — Production; then 301
+   from vercel.app; apex hub pages (`/`, `/employers`) are already in the app.
 8. [x] **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
    from config (§4).
 9. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
