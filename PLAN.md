@@ -1,14 +1,45 @@
-# Packaging Job Board — Project Plan & To-Do
+# Niche Board — Project Plan & To-Do
 
-A niche job board for **packaging engineers and package development**
-(not “any job at a packaging company”), built as a cashflow side project.
-Aggregates listings automatically from employers' own ATS feeds.
-Differentiate on classification, freshness, apply-on-ATS, and a cheap
-sponsor SKU — not on matching industry-board volume.
+A **multi-niche specialist job platform**: one codebase, one Stripe account,
+subdomain per vertical (e.g. `packaging.nicheboard.com`,
+`disasterrecovery.nicheboard.com`). Each vertical has its own ingest rules,
+classifier, filters, theme, and sponsorship pool. Parent site
+(`nicheboard.com`) is the employer hub and bundle-sales surface.
+
+**Launch vertical:** packaging engineers / package development (CPG wedge).
+**Platform wedge:** jobs in professional slices too narrow for LinkedIn —
+classified daily from employer ATS feeds, apply on the source listing.
+
+Differentiate on **classification, freshness, apply-out, and vertical-scoped
+sponsor SKUs** — not on matching industry-board volume.
 
 ---
 
 ## 1. Concept & Positioning
+
+### 1a. Platform (what we are building)
+
+- **What it is:** A network of **precision job boards** — one subdomain per
+  niche — backed by shared ingest, classification, and Stripe infrastructure.
+  Candidates discover via subdomain SEO; employers pin listings they already
+  have on Workday/Greenhouse.
+- **What it is not:** A generic job aggregator, a career platform with
+  profiles/employer dashboards, or a single site with niche as a filter
+  dropdown.
+- **Why the platform model:** Employers buy **audience precision** (“packaging
+  engineers,” not “jobs”). Subdomains sell that without separate codebases.
+  One Stripe account + vertical metadata enables per-niche pricing and
+  multi-vertical bundle upsells.
+- **Parent vs subdomain roles:**
+
+| Surface | Audience | Purpose |
+| --- | --- | --- |
+| `nicheboard.com` | Employers | Network story, bundle pricing, `/employers` |
+| `packaging.nicheboard.com` | Candidates + sponsors | SEO, listings, checkout |
+| `disasterrecovery.nicheboard.com` | Candidates + sponsors | Same pattern, phase 3 |
+| `supplychain.nicheboard.com` | Candidates + sponsors | Same pattern, phase 2 |
+
+### 1b. Vertical #1 — Packaging (live)
 
 - **What it is:** The board for people who **design and engineer packages**
   (packaging engineer, package development, packaging R&D / manager). Seeded
@@ -47,49 +78,91 @@ development — not plant ops. Candidate list vs. employer pin are split:
 Apply on cards, Sponsor in the mast and on `/sponsor`. Their noisy page-1
 is the contrast.
 
-### 1d. Brand & custom domain
+### 1c. Vertical rollout (sequence)
 
-Working title today is **Packaging Job Board** on
-`packaging-job-board.vercel.app`. That reads like a side project, not the
-default board for packaging engineers. A recognizable name + custom domain
-are prerequisites for SEO trust, LinkedIn shares, university outreach, and
-employer sponsorship.
+Only show niches with live inventory on the parent hub. Hard gate: **~30+
+classified roles** before public launch of a new subdomain.
 
-**Provisional defaults (until a final name is chosen)**
-- Display name: `Packaging Job Board` (`SITE_NAME`)
-- Domain candidate: `packagingjobboard.com` (`SITE_DOMAIN`) — matches the
-  contact email already on `/sponsor`
-- Contact: `hello@packagingjobboard.com` (`CONTACT_EMAIL`)
+| Phase | Vertical | Subdomain | Wedge | Sponsor price |
+| --- | --- | --- | --- | --- |
+| **1 (now)** | Packaging | `packaging.nicheboard.com` | CPG brand-side package dev | $100 / 30d |
+| **2** | Supply chain / S&OP | `supplychain.nicheboard.com` | Demand planning, S&OP — not warehouse | $125 / 30d |
+| **3** | Disaster recovery / BCM | `disasterrecovery.nicheboard.com` | DR architect, BCM manager, resilience | $150–200 / 30d |
 
-**Name criteria (pick one, then buy the domain)**
-1. Says **packaging engineer / package development**, not generic
-   “packaging jobs” (My Packaging Career owns that head term).
-2. Short enough for a two-line masthead and email (`hello@…`).
-3. `.com` available; avoid names that collide with converters or IoPP.
-4. Works in a title tag: `{Job title} at {Company} · {Brand}`.
+Scorecard for vertical #4+: classification moat, ATS coverage, ~30+ roles
+at launch, long-tail search demand, weak/stale incumbent, sponsor WTP,
+distribution channel (LinkedIn groups, associations).
 
-**Candidates to evaluate**
+### 1d. Brand & domain architecture
 
-| Name | Example domain | Pros | Cons |
-| --- | --- | --- | --- |
-| **Packaging Job Board** | packagingjobboard.com | Descriptive; email already wired | Generic; long |
-| **PackageDev Jobs** | packagedevjobs.com | Matches CPG wedge; distinct from MPC | Less obvious to cold traffic |
-| **PackEngineer** | packengineer.com | Short; role-specific | May read as individual brand, not a board |
-| **The Package Board** | packageboard.com | Brandable; memorable | “Package” alone is ambiguous |
-| **Engineered Packaging** | engineeredpackaging.com | Premium / specialist tone | Long; less “job board” obvious |
+**Parent brand (locked):** **Niche Board** — `nicheboard.com`
 
-- [ ] **Choose final name + domain** — lock one row above; register `.com`.
-- [ ] **Point DNS** — Vercel project → custom domain; set `SITE_URL=https://{domain}`.
-- [ ] **Set brand env vars** — `SITE_NAME`, `SITE_DOMAIN`, `CONTACT_EMAIL`, and
-      matching `NEXT_PUBLIC_*` copies (masthead is a client component). See
-      `.env.example` and `src/lib/site.ts`.
-- [ ] **301 from vercel.app** — keep old URL redirecting after cutover so any
-      early links and Stripe webhook docs do not break.
-- [ ] **Update Stripe webhook + Checkout** — success/cancel URLs follow
-      `SITE_URL`; re-verify after domain switch.
+- Tagline: *Jobs in niches too narrow for LinkedIn.*
+- Employer pitch: *Specialist boards for roles generic sites bury — pin the
+  listing you already have on your ATS.*
+- Contact: `hello@nicheboard.com` (parent); `hello@packaging.nicheboard.com`
+  (vertical — or `hello@nicheboard.com` with vertical in reply-to)
 
-Code is provisioned: one env change renames the site everywhere titles,
-Stripe copy, masthead, and contact email render.
+**Vertical brands (subdomain mastheads)**
+
+| Vertical | Masthead | Example tagline |
+| --- | --- | --- |
+| Packaging | **Packaging** / **Jobs** | Packaging engineer jobs at top employers. |
+| Supply chain | **Supply Chain** / **Jobs** | Demand planning & S&OP — not warehouse ops. |
+| Disaster recovery | **Resilience** / **Jobs** | BCM & disaster recovery — not generic IT. |
+
+Packaging subdomain owns packaging-engineer SEO; parent owns “niche job
+boards” and bundle sales. Do not put packaging-only copy on `nicheboard.com`.
+
+**DNS (one Vercel project)**
+- [ ] Register `nicheboard.com`
+- [ ] Add apex + wildcard (`*.nicheboard.com`) or explicit subdomains in Vercel
+- [ ] `packaging.nicheboard.com` → packaging tenant (first cutover)
+- [ ] 301 `packaging-job-board.vercel.app` → packaging subdomain
+- [ ] Stripe webhook stays at one URL, e.g.
+      `https://nicheboard.com/api/webhooks/stripe` (or any subdomain — same app)
+
+**Tenant resolution (hostname → config)**
+
+Middleware reads `Host` and loads a vertical config:
+
+```ts
+// config/verticals/packaging.ts (shape)
+{
+  id: "packaging",
+  host: "packaging.nicheboard.com",
+  brand: { markLine1: "Packaging", markLine2: "Jobs" },
+  theme: { accent: "#b42318", kraft: "#c4a484", paper: "#f3eadb" },
+  ingest: { companies: "ingest/verticals/packaging/companies.ts",
+            classifier: "packaging" },
+  dataFile: "data/packaging/jobs.json",
+  sponsor: { priceCents: 10_000, durationDays: 30, maxFeatured: 3 },
+  filters: ["cpg", "pharma", "automotive", "state", "remote"],
+  copy: { hero: "...", contrast: "Package development — not plant ops." },
+}
+```
+
+- [ ] **`config/verticals/`** — one module per niche (brand, theme, ingest,
+      classifier key, data path, sponsor pricing, copy, filters)
+- [ ] **Middleware** — `Host` → vertical id; 404 unknown hosts
+- [ ] **Per-vertical job data** — `data/{vertical}/jobs.json` (ingest writes
+      per vertical; packaging migrates from `data/jobs.json`)
+- [ ] **Per-vertical ingest** — `ingest/run.ts` accepts `--vertical=packaging`;
+      GitHub Action runs one job per live vertical
+- [ ] **Theme via CSS variables** — set on `<html data-vertical="packaging">`
+      from tenant config; shared `globals.css`, different accent/kraft per site
+- [ ] **Scoped sponsorship store** — Blob key `sponsorships/{vertical}.json`
+      or single file with `vertical` field; sponsor boosts **only that subdomain**
+
+**Env vars during migration**
+
+Today’s `SITE_NAME` / `SITE_URL` env pattern stays for local dev; production
+resolves from hostname + vertical config. Optional `DEFAULT_VERTICAL=packaging`
+for localhost.
+
+- [ ] Cut over packaging tenant env + DNS
+- [ ] Re-verify Stripe success/cancel URLs use request host (`siteUrl()` per tenant)
+- [ ] Search Console: separate properties per subdomain + parent
 
 ---
 
@@ -117,9 +190,10 @@ Reviewed 2026-08-18 (`/job-listings/`, about, post-a-job). This is the
 - **Do not copy their IA or career-platform stack** (profiles, employer
   dashboard, “post a job” as the first SKU). Steal **employer names for
   ATS ingest**, not their product shape.
-- **Takeaway:** They are the default *packaging-industry* board. We should
-  be the default board for **people who design and engineer packages.**
-  Their homepage is the ad for why we exist — if we stay narrow.
+- **Takeaway:** They are the default *packaging-industry* board. Packaging
+  vertical should be the default board for **people who design and engineer
+  packages.** Platform play: repeat that “narrow slice” model on other
+  subdomains (supply chain, DR) under Niche Board.
 
 ### 2b. Secondary — IoPP Career Center
 
@@ -135,6 +209,8 @@ Reviewed 2026-08-18 (`/job-listings/`, about, post-a-job). This is the
 - Candidate profiles, employer accounts, “post a job” as the primary SKU
 - Matching 1,150-role volume by ingesting every plant/ops title
 - Material-sector marketing copy without matching filters
+- Separate Stripe accounts or codebases per vertical
+- A single mega-site where niche is only a filter (kills sponsor pricing power)
 
 ---
 
@@ -244,25 +320,54 @@ company; keyword + classifier or skip.
 Lansmont (Monterey) is test-equipment, not a commercial ISTA lab. MSU /
 VT / RIT campus labs are not employers for this board.
 
-## 4. Monetization (in the order it typically unlocks)
+## 4. Monetization (vertical-scoped, one Stripe)
 
-Price wedge vs. My Packaging Career: **$100 one-time to pin an ATS listing
-that is already live** vs. $149–299/month to post on their board. Sell
-“you’re already hiring; we put you first.”
+**Principle:** Employers buy **audience precision on a subdomain**, not a
+slot on a generic board. Sponsorships are scoped to the vertical where checkout
+happens. Cross-vertical visibility is a **paid bundle**, not a free side effect.
 
-1. [x] **Sponsored job — $100, credit card** — Stripe Checkout at `/sponsor`;
-      30-day priority placement + badge. Test payment succeeded locally and
-      production is wired (Vercel env vars, webhook, Blob). Still Stripe
-      **test mode** until live keys are switched on.
-2. [ ] Featured / priority placement beyond the $100 sponsor (upsell) —
-      only after the engineer/package-dev inventory looks full
-3. [ ] Paid job postings at a higher tier (IoPP $300–500; MPC $149–299/mo)
-      — **after** sponsor SKU has demand; do not lead with “post a job”
-4. [ ] Lead-gen / quote requests — often highest value once traffic is real
-5. [ ] Employer memberships / enhanced profiles — **not** a near-term copy
-      of their dashboard
-- Early on, **aggregated listings** (not paid posts) make the board look
-  full. Paid revenue comes only after traffic exists.
+**One Stripe account.** Checkout metadata: `{ jobId, vertical, tier, host }`.
+Webhook writes to vertical-scoped sponsorship store. Report revenue by
+`vertical` in Stripe Dashboard.
+
+Price wedge vs. My Packaging Career (packaging vertical): **$100 one-time to
+pin an ATS listing** vs. $149–299/month to post on their board. Sell “you’re
+already hiring; we put you first **on the board packaging engineers use**.”
+
+### SKU ladder (in unlock order)
+
+| # | SKU | Price | Status | Notes |
+| --- | --- | --- | --- | --- |
+| 1 | **Sponsor (single vertical)** | $100–200 / 30d | [x] packaging wired | Price from tenant config; badge + rank first on **that subdomain only** |
+| 2 | **Featured (top 3)** | +$99 or $199 flat | [ ] | Cap ~3 active featured per vertical — scarcity on small boards |
+| 3 | **Dual pin (2 verticals)** | $175 | [ ] | After vertical #2 live; same employer, one invoice |
+| 4 | **Network pin (all live verticals)** | $299 | [ ] | Upsell on `nicheboard.com/employers` |
+| 5 | **Lead-gen / intro requests** | Highest $/deal | [ ] | After ~500 organic visits/mo per subdomain |
+| 6 | **Paid job postings** | $200–500 | [ ] | Only when role isn’t on ATS; do not lead with this |
+| 7 | **Employer memberships / profiles** | — | **not near-term** | MPC owns this stack |
+
+**Per-vertical sponsor pricing (suggested)**
+
+| Vertical | Price / 30d | Rationale |
+| --- | --- | --- |
+| Packaging | $100 | Wedge; undercut MPC ($149+) |
+| Supply chain / S&OP | $125 | Same CPG buyer graph; slightly broader titles |
+| Disaster recovery / BCM | $150–200 | Enterprise IT; higher cost-to-fill |
+
+**Monetization rules**
+- Cap visible sponsored slots at **~5 per vertical homepage** — drives renewals
+  and future Featured tier.
+- **Renewal rate** is the success metric for SKU #1, not first purchase alone.
+- Aggregated ATS listings stay free — they fill the board and make sponsor credible.
+- Classification quality is a **revenue feature** — noise kills sponsor renewals.
+
+**Stripe implementation to-do**
+- [x] Checkout + webhook for packaging (test mode)
+- [ ] Add `vertical` (+ optional `tier`) to session metadata and sponsorship records
+- [ ] Scope `getActiveSponsoredJobIds()` to current tenant vertical
+- [ ] `unit_amount` from tenant config, not global constant
+- [ ] Bundle checkout (multi-vertical metadata) when vertical #2 ships
+- [ ] One live payment test per vertical; then `sk_live_`
 
 ---
 
@@ -301,6 +406,8 @@ that is already live** vs. $149–299/month to post on their board. Sell
       stored. Optional later: a “new since last run” digest, not just dates.
 - [x] Daily scheduled poll — GitHub Action `.github/workflows/ingest.yml`
       (12:00 UTC), commits `data/jobs.json`, Vercel redeploys
+- [ ] **Per-vertical ingest** — `--vertical=packaging` writes
+      `data/packaging/jobs.json`; Action matrix one job per live vertical
 - [x] US-only ingest — keep US-located or remote; drop Canada/UK/PH.
       Trailing Workday country codes like `, CA` are not treated as California.
       Workday “N Locations” on a USA-home-country employer is kept (Smucker
@@ -324,6 +431,10 @@ like “jobs at GPI.”
       carton / sustainability) **with filters**, not just hero copy
 
 ### Phase 3 — Site (SEO-first, apply-out)
+
+**Today:** single-tenant packaging site on vercel.app. **Target:** multi-tenant
+subdomains with shared Next.js app.
+
 - [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
       plus filters on the index
 - [x] Flat data store (`data/jobs.json`); Stripe checkout for sponsorships
@@ -342,13 +453,15 @@ like “jobs at GPI.”
       (`&#39;` → `'`, `&#43;` → `+`), restore section breaks, and render
       ATS labels as headings plus lists. See §3a. Do not store raw ATS
       HTML (XSS).
+- [ ] **Multi-tenant platform (§1d)** — middleware, vertical config, per-vertical
+      data + sponsorship scope, theme vars, hostname-aware `siteUrl()`
+- [ ] **`nicheboard.com` parent pages** — `/`, `/niches`, `/employers` (bundle
+      pricing, network pitch); no competing packaging SEO on apex
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
-- [ ] **Job alerts (email) before profiles** — return audience; they have
-      the full career-platform stack, we need this one loop
-- [ ] **Custom domain** — see §1d; env-driven rename is wired; DNS + Stripe
-      cutover remain
-- [ ] **Google Search Console** — register property once domain is set (or
-      vercel.app now to start indexing data); submit sitemap
+- [ ] **Job alerts (email) before profiles** — per-vertical lists; optional
+      “all niches” on parent later
+- [ ] **DNS cutover** — `packaging.nicheboard.com` + 301 from vercel.app
+- [ ] **Google Search Console** — parent + packaging subdomain; submit sitemaps
 
 ### Phase 3b — SEO & traffic (technical)
 
@@ -399,10 +512,12 @@ but these items make Google and shares work harder.
 - [ ] **Collapse EEO / visa boilerplate** into `<details>` if listings still
       feel noisy (see §3a)
 
-**Keyword strategy (do not chase MPC head terms)**
+**Keyword strategy (packaging subdomain — do not chase MPC head terms)**
 - Win: `{company} packaging engineer`, `packaging engineer jobs {state}`,
   `CPG packaging engineer`, `package development jobs`
 - Avoid head-on: generic “packaging jobs”, material sectors without filters
+- Parent (`nicheboard.com`): “niche job boards”, “specialist jobs”, employer
+  intent only — not packaging head terms
 
 ---
 
@@ -479,21 +594,37 @@ style as-is, and it is an XSS surface.
 - [ ] Smurfit Westrock, Crown, O-I, CHEP, Eastman, Altria R&D — same rule
 - [ ] Avery Dennison Springboard widget — no public JSON, not Workday
 
-### Phase 5 — Monetize
+### Phase 5 — Monetize (vertical-scoped)
+
 - [x] Self-serve **sponsor a job for $100** — Stripe Checkout; webhook
       activates a 30-day sponsored listing (badge + ranked first).
       Employers search any live listing to pin; checkout shows a card
       preview. Production: Vercel env + webhook
       `https://packaging-job-board.vercel.app/api/webhooks/stripe` + Blob.
       Still test-mode keys until going live.
-- [ ] One live-URL test payment (card `4242…`) then switch to `sk_live_`
-      when ready for real charges
-- [ ] Featured placement beyond the $100 sponsor — after inventory looks
-      like an engineer board, not an empty board
-- [ ] Higher-tier paid postings + checkout — lag this; sponsor-an-ATS-job
-      is the wedge vs. their post-to-list SKU
-- [ ] Lead-gen / quote-request flow
+- [ ] **Vertical-scoped sponsorships** — metadata + store partition; sponsor
+      only ranks on checkout subdomain (§4)
+- [ ] **Tenant-aware pricing** — `unit_amount` from vertical config
+- [ ] One live-URL test payment on `packaging.nicheboard.com` then `sk_live_`
+- [ ] Featured tier (top 3 cap per vertical) — after renewals exist
+- [ ] Dual / network bundle SKUs — when vertical #2 is live
+- [ ] `nicheboard.com/employers` — bundle landing + contact
+- [ ] Lead-gen / quote-request flow — per vertical with traffic
 - [ ] Do **not** prioritize employer dashboard / candidate profiles
+
+### Phase 6 — Additional verticals
+
+**After packaging sponsor renewals + DNS cutover.**
+
+- [ ] **Supply chain vertical** — `supplychain.nicheboard.com`; demand-planning
+      / S&OP classifier; overlap CPG employer graph for bundle upsell
+- [ ] **Disaster recovery vertical** — `disasterrecovery.nicheboard.com`; BCM /
+      DR / resilience classifier; finance + healthcare employer seed
+- [ ] Per-vertical: companies module, classifier, ingest Action job, GSC property,
+      sponsor price, theme tint
+- [ ] Parent `/niches` lists only verticals above inventory gate
+
+---
 
 ## 6. Open Questions / Risks
 
@@ -510,13 +641,16 @@ style as-is, and it is an XSS surface.
       show up (worse as we add converters).
 - [ ] **ATS drift:** platforms change schemas/deprecate endpoints without
       notice; companies switch ATS. Re-verify seed mapping ~quarterly.
-- [ ] **Traffic > build:** "simple to build" ≠ "simple to get traffic."
-      Edge comes from the niche, SEO layers (§3b), and distribution — not
-      the code alone.
-- [ ] **Brand/domain unset** — vercel.app subdomain limits SERP click-through
-      and employer trust until §1d is closed.
-- [ ] Confirm the chosen wedge has both enough open roles AND employers
-      who will pay $100 to pin.
+- [ ] **Traffic > build:** edge comes from the niche, SEO layers (§3b), and
+      distribution — not the code alone.
+- [ ] **Platform cutover** — vercel.app + single-tenant env until multi-tenant
+      middleware ships; register `nicheboard.com` and cut packaging to subdomain
+- [ ] **Multi-tenant complexity** — keep vertical configs declarative; do not
+      fork the app per niche
+- [ ] **Sponsor scope bugs** — global sponsor pool would destroy bundle leverage
+      and vertical trust; test cross-host isolation
+- [ ] Confirm packaging vertical has both enough on-wedge roles AND employers
+      who will pay $100 to pin before launching vertical #2
 
 ## 7. Next Action
 
@@ -534,14 +668,18 @@ style as-is, and it is an XSS surface.
 5. [x] **Review off-target jobs and tighten ingest/classifier rules** so
    procurement, plant supervision, sales, and other non-engineer /
    non-package-dev titles do not stay in `jobs.json`.
-6. **Choose final name + domain** (§1d) — register, point DNS, set env vars,
-   301 from vercel.app.
-7. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
-   Search Console, analytics.
-8. **Job-alert emails** once the relevant list stays above ~50 — before
-   profiles or an employer dashboard.
-9. **SEO Phase B** filter pages once inventory supports them without thin
-   content.
-10. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
-11. Live-mode Stripe when a real employer is ready to pay.
-12. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
+6. **Multi-tenant platform (§1d)** — `config/verticals/`, middleware,
+   per-vertical data path, theme CSS vars, vertical-scoped sponsorship store,
+   hostname-aware Stripe URLs.
+7. **Register `nicheboard.com` + DNS** — apex, `packaging.` subdomain, 301
+   from vercel.app; parent hub pages (`/`, `/employers`).
+8. **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
+   from config (§4).
+9. **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
+   Search Console (parent + packaging subdomain), analytics.
+10. **Job-alert emails** on packaging subdomain once list stays above ~50.
+11. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
+12. Live-mode Stripe on `packaging.nicheboard.com` when an employer is ready.
+13. **Vertical #2 (supply chain)** — only after packaging sponsor renewals;
+    bundle SKU on parent.
+14. UX pass 3 (later): niche/state counts, shorter locations, a real 404.
