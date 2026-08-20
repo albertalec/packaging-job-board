@@ -22,7 +22,7 @@ Parent hub (after `/etc/hosts` or `.localhost`):
 - [http://packaging.localhost:3000](http://packaging.localhost:3000) — packaging jobs
 - [http://nicheboard.localhost:3000](http://nicheboard.localhost:3000) — Niche Board hub
 
-Or preview the hub on localhost with `TENANT_HOST=nicheboard.com npm run dev`.
+Or preview the hub on localhost with `TENANT_HOST=nicheboardjobs.com npm run dev`.
 
 `npm run ingest -- --vertical=packaging` polls every company in
 `ingest/verticals/packaging/companies.ts` through the matching public feed:
@@ -88,7 +88,7 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
 | `/sponsor/[jobId]` | Checkout landing |
 | `/api/checkout` | Creates Stripe Checkout session |
 | `/api/webhooks/stripe` | Activates sponsorship after payment |
-| `/` `/niches` `/employers` | Parent hub (on `nicheboard.com`) |
+| `/` `/niches` `/employers` | Parent hub (on `nicheboardjobs.com`) |
 
 ## Layout
 

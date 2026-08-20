@@ -1,10 +1,10 @@
 # Niche Board — Project Plan & To-Do
 
 A **multi-niche specialist job platform**: one codebase, one Stripe account,
-subdomain per vertical (e.g. `packaging.nicheboard.com`,
-`disasterrecovery.nicheboard.com`). Each vertical has its own ingest rules,
+subdomain per vertical (e.g. `packaging.nicheboardjobs.com`,
+`disasterrecovery.nicheboardjobs.com`). Each vertical has its own ingest rules,
 classifier, filters, theme, and sponsorship pool. Parent site
-(`nicheboard.com`) is the employer hub and bundle-sales surface.
+(`nicheboardjobs.com`) is the employer hub and bundle-sales surface.
 
 **Launch vertical:** packaging engineers / package development (CPG wedge).
 **Platform wedge:** jobs in professional slices too narrow for LinkedIn —
@@ -34,10 +34,10 @@ sponsor SKUs** — not on matching industry-board volume.
 
 | Surface | Audience | Purpose |
 | --- | --- | --- |
-| `nicheboard.com` | Employers | Network story, bundle pricing, `/employers` |
-| `packaging.nicheboard.com` | Candidates + sponsors | SEO, listings, checkout |
-| `disasterrecovery.nicheboard.com` | Candidates + sponsors | Same pattern, phase 3 |
-| `supplychain.nicheboard.com` | Candidates + sponsors | Same pattern, phase 2 |
+| `nicheboardjobs.com` | Employers | Network story, bundle pricing, `/employers` |
+| `packaging.nicheboardjobs.com` | Candidates + sponsors | SEO, listings, checkout |
+| `disasterrecovery.nicheboardjobs.com` | Candidates + sponsors | Same pattern, phase 3 |
+| `supplychain.nicheboardjobs.com` | Candidates + sponsors | Same pattern, phase 2 |
 
 ### 1b. Vertical #1 — Packaging (live)
 
@@ -85,9 +85,9 @@ classified roles** before public launch of a new subdomain.
 
 | Phase | Vertical | Subdomain | Wedge | Sponsor price |
 | --- | --- | --- | --- | --- |
-| **1 (now)** | Packaging | `packaging.nicheboard.com` | CPG brand-side package dev | $100 / 30d |
-| **2** | Supply chain / S&OP | `supplychain.nicheboard.com` | Demand planning, S&OP — not warehouse | $125 / 30d |
-| **3** | Disaster recovery / BCM | `disasterrecovery.nicheboard.com` | DR architect, BCM manager, resilience | $150–200 / 30d |
+| **1 (now)** | Packaging | `packaging.nicheboardjobs.com` | CPG brand-side package dev | $100 / 30d |
+| **2** | Supply chain / S&OP | `supplychain.nicheboardjobs.com` | Demand planning, S&OP — not warehouse | $125 / 30d |
+| **3** | Disaster recovery / BCM | `disasterrecovery.nicheboardjobs.com` | DR architect, BCM manager, resilience | $150–200 / 30d |
 
 Scorecard for vertical #4+: classification moat, ATS coverage, ~30+ roles
 at launch, long-tail search demand, weak/stale incumbent, sponsor WTP,
@@ -95,13 +95,13 @@ distribution channel (LinkedIn groups, associations).
 
 ### 1d. Brand & domain architecture
 
-**Parent brand (locked):** **Niche Board** — `nicheboard.com`
+**Parent brand (locked):** **Niche Board** — `nicheboardjobs.com`
 
 - Tagline: *Jobs in niches too narrow for LinkedIn.*
 - Employer pitch: *Specialist boards for roles generic sites bury — pin the
   listing you already have on your ATS.*
-- Contact: `hello@nicheboard.com` (parent); `hello@packaging.nicheboard.com`
-  (vertical — or `hello@nicheboard.com` with vertical in reply-to)
+- Contact: `hello@nicheboardjobs.com` (parent); `hello@packaging.nicheboardjobs.com`
+  (vertical — or `hello@nicheboardjobs.com` with vertical in reply-to)
 
 **Vertical brands (subdomain mastheads)**
 
@@ -112,15 +112,15 @@ distribution channel (LinkedIn groups, associations).
 | Disaster recovery | **Resilience** / **Jobs** | BCM & disaster recovery — not generic IT. |
 
 Packaging subdomain owns packaging-engineer SEO; parent owns “niche job
-boards” and bundle sales. Do not put packaging-only copy on `nicheboard.com`.
+boards” and bundle sales. Do not put packaging-only copy on `nicheboardjobs.com`.
 
 **DNS (one Vercel project)**
-- [ ] Register `nicheboard.com`
-- [ ] Add apex + wildcard (`*.nicheboard.com`) or explicit subdomains in Vercel
-- [ ] `packaging.nicheboard.com` → packaging tenant (first cutover)
+- [ ] Register `nicheboardjobs.com`
+- [ ] Add apex + wildcard (`*.nicheboardjobs.com`) or explicit subdomains in Vercel
+- [ ] `packaging.nicheboardjobs.com` → packaging tenant (first cutover)
 - [ ] 301 `packaging-job-board.vercel.app` → packaging subdomain
 - [ ] Stripe webhook stays at one URL, e.g.
-      `https://nicheboard.com/api/webhooks/stripe` (or any subdomain — same app)
+      `https://nicheboardjobs.com/api/webhooks/stripe` (or any subdomain — same app)
 
 **Tenant resolution (hostname → config)**
 
@@ -130,7 +130,7 @@ Middleware reads `Host` and loads a vertical config:
 // config/verticals/packaging.ts (shape)
 {
   id: "packaging",
-  host: "packaging.nicheboard.com",
+  host: "packaging.nicheboardjobs.com",
   brand: { markLine1: "Packaging", markLine2: "Jobs" },
   theme: { accent: "#b42318", kraft: "#c4a484", paper: "#f3eadb" },
   ingest: { companies: "ingest/verticals/packaging/companies.ts",
@@ -158,7 +158,7 @@ Middleware reads `Host` and loads a vertical config:
 
 Today’s `SITE_URL` env pattern stays as a local fallback; production
 resolves from hostname + vertical config. Optional `DEFAULT_VERTICAL=packaging`
-for localhost. `TENANT_HOST=nicheboard.com` previews the parent hub.
+for localhost. `TENANT_HOST=nicheboardjobs.com` previews the parent hub.
 
 - [ ] Cut over packaging tenant env + DNS
 - [x] Re-verify Stripe success/cancel URLs use request host (`siteUrl()` per tenant)
@@ -341,7 +341,7 @@ already hiring; we put you first **on the board packaging engineers use**.”
 | 1 | **Sponsor (single vertical)** | $100–200 / 30d | [x] packaging wired | Price from tenant config; badge + rank first on **that subdomain only** |
 | 2 | **Featured (top 3)** | +$99 or $199 flat | [ ] | Cap ~3 active featured per vertical — scarcity on small boards |
 | 3 | **Dual pin (2 verticals)** | $175 | [ ] | After vertical #2 live; same employer, one invoice |
-| 4 | **Network pin (all live verticals)** | $299 | [ ] | Upsell on `nicheboard.com/employers` |
+| 4 | **Network pin (all live verticals)** | $299 | [ ] | Upsell on `nicheboardjobs.com/employers` |
 | 5 | **Lead-gen / intro requests** | Highest $/deal | [ ] | After ~500 organic visits/mo per subdomain |
 | 6 | **Paid job postings** | $200–500 | [ ] | Only when role isn’t on ATS; do not lead with this |
 | 7 | **Employer memberships / profiles** | — | **not near-term** | MPC owns this stack |
@@ -433,7 +433,7 @@ like “jobs at GPI.”
 ### Phase 3 — Site (SEO-first, apply-out)
 
 **Today:** multi-tenant Next.js app; vercel.app still serves the packaging
-tenant until DNS cutover. **Target:** `packaging.nicheboard.com` + parent hub.
+tenant until DNS cutover. **Target:** `packaging.nicheboardjobs.com` + parent hub.
 
 - [x] Server-rendered pages (Next.js static/ISR) — one indexable page per job
       plus filters on the index
@@ -455,12 +455,12 @@ tenant until DNS cutover. **Target:** `packaging.nicheboard.com` + parent hub.
       HTML (XSS).
 - [x] **Multi-tenant platform (§1d)** — middleware, vertical config, per-vertical
       data + sponsorship scope, theme vars, hostname-aware `siteUrl()`
-- [x] **`nicheboard.com` parent pages** — `/`, `/niches`, `/employers` (bundle
+- [x] **`nicheboardjobs.com` parent pages** — `/`, `/niches`, `/employers` (bundle
       pricing, network pitch); no competing packaging SEO on apex
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
 - [ ] **Job alerts (email) before profiles** — per-vertical lists; optional
       “all niches” on parent later
-- [ ] **DNS cutover** — `packaging.nicheboard.com` + 301 from vercel.app
+- [ ] **DNS cutover** — `packaging.nicheboardjobs.com` + 301 from vercel.app
 - [ ] **Google Search Console** — parent + packaging subdomain; submit sitemaps
 
 ### Phase 3b — SEO & traffic (technical)
@@ -516,7 +516,7 @@ but these items make Google and shares work harder.
 - Win: `{company} packaging engineer`, `packaging engineer jobs {state}`,
   `CPG packaging engineer`, `package development jobs`
 - Avoid head-on: generic “packaging jobs”, material sectors without filters
-- Parent (`nicheboard.com`): “niche job boards”, “specialist jobs”, employer
+- Parent (`nicheboardjobs.com`): “niche job boards”, “specialist jobs”, employer
   intent only — not packaging head terms
 
 ---
@@ -605,10 +605,10 @@ style as-is, and it is an XSS surface.
 - [x] **Vertical-scoped sponsorships** — metadata + store partition; sponsor
       only ranks on checkout subdomain (§4)
 - [x] **Tenant-aware pricing** — `unit_amount` from vertical config
-- [ ] One live-URL test payment on `packaging.nicheboard.com` then `sk_live_`
+- [ ] One live-URL test payment on `packaging.nicheboardjobs.com` then `sk_live_`
 - [ ] Featured tier (top 3 cap per vertical) — after renewals exist
 - [ ] Dual / network bundle SKUs — when vertical #2 is live
-- [x] `nicheboard.com/employers` — bundle landing + contact (page shipped; DNS pending)
+- [x] `nicheboardjobs.com/employers` — bundle landing + contact (page shipped; DNS pending)
 - [ ] Lead-gen / quote-request flow — per vertical with traffic
 - [ ] Do **not** prioritize employer dashboard / candidate profiles
 
@@ -616,9 +616,9 @@ style as-is, and it is an XSS surface.
 
 **After packaging sponsor renewals + DNS cutover.**
 
-- [ ] **Supply chain vertical** — `supplychain.nicheboard.com`; demand-planning
+- [ ] **Supply chain vertical** — `supplychain.nicheboardjobs.com`; demand-planning
       / S&OP classifier; overlap CPG employer graph for bundle upsell
-- [ ] **Disaster recovery vertical** — `disasterrecovery.nicheboard.com`; BCM /
+- [ ] **Disaster recovery vertical** — `disasterrecovery.nicheboardjobs.com`; BCM /
       DR / resilience classifier; finance + healthcare employer seed
 - [ ] Per-vertical: companies module, classifier, ingest Action job, GSC property,
       sponsor price, theme tint
@@ -644,7 +644,7 @@ style as-is, and it is an XSS surface.
 - [ ] **Traffic > build:** edge comes from the niche, SEO layers (§3b), and
       distribution — not the code alone.
 - [ ] **Platform cutover** — vercel.app still serves packaging until
-      `nicheboard.com` is registered and `packaging.` is cut over
+      `nicheboardjobs.com` is registered and `packaging.` is cut over
 - [ ] **Multi-tenant complexity** — keep vertical configs declarative; do not
       fork the app per niche
 - [ ] **Sponsor scope bugs** — global sponsor pool would destroy bundle leverage
@@ -671,7 +671,7 @@ style as-is, and it is an XSS surface.
 6. [x] **Multi-tenant platform (§1d)** — `config/verticals/`, middleware,
    per-vertical data path, theme CSS vars, vertical-scoped sponsorship store,
    hostname-aware Stripe URLs.
-7. **Register `nicheboard.com` + DNS** — apex, `packaging.` subdomain, 301
+7. **Register `nicheboardjobs.com` + DNS** — apex, `packaging.` subdomain, 301
    from vercel.app; parent hub pages (`/`, `/employers`) are in the app.
 8. [x] **Stripe vertical metadata** — scope sponsors to subdomain; tenant pricing
    from config (§4).
@@ -679,7 +679,7 @@ style as-is, and it is an XSS surface.
    Search Console (parent + packaging subdomain), analytics.
 10. **Job-alert emails** on packaging subdomain once list stays above ~50.
 11. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
-12. Live-mode Stripe on `packaging.nicheboard.com` when an employer is ready.
+12. Live-mode Stripe on `packaging.nicheboardjobs.com` when an employer is ready.
 13. **Vertical #2 (supply chain)** — only after packaging sponsor renewals;
     bundle SKU on parent.
 14. UX pass 3 (later): niche/state counts, shorter locations, a real 404.

@@ -14,9 +14,9 @@ import { sponsorshipBlobName } from "./sponsorship-store.ts";
 
 describe("resolveTenantId", () => {
   it("maps packaging and hub hosts", () => {
-    assert.equal(resolveTenantId("packaging.nicheboard.com"), "packaging");
-    assert.equal(resolveTenantId("nicheboard.com"), "hub");
-    assert.equal(resolveTenantId("www.nicheboard.com"), "hub");
+    assert.equal(resolveTenantId("packaging.nicheboardjobs.com"), "packaging");
+    assert.equal(resolveTenantId("nicheboardjobs.com"), "hub");
+    assert.equal(resolveTenantId("www.nicheboardjobs.com"), "hub");
     assert.equal(resolveTenantId("packaging.localhost:3000"), "packaging");
     assert.equal(resolveTenantId("nicheboard.localhost:3000"), "hub");
   });
@@ -32,7 +32,9 @@ describe("resolveTenantId", () => {
 
   it("honors TENANT_HOST and DEFAULT_VERTICAL", () => {
     assert.equal(
-      resolveTenantId("localhost:3000", { TENANT_HOST: "nicheboard.com" }),
+      resolveTenantId("localhost:3000", {
+        TENANT_HOST: "nicheboardjobs.com",
+      }),
       "hub",
     );
     assert.equal(
@@ -80,17 +82,17 @@ describe("tenantOrigin", () => {
   it("uses canonical hosts in production", () => {
     assert.equal(
       tenantOrigin(getTenant("packaging"), {
-        hostHeader: "packaging.nicheboard.com",
+        hostHeader: "packaging.nicheboardjobs.com",
         proto: "https",
       }),
-      "https://packaging.nicheboard.com",
+      "https://packaging.nicheboardjobs.com",
     );
     assert.equal(
       tenantOrigin(getTenant("hub"), {
-        hostHeader: "www.nicheboard.com",
+        hostHeader: "www.nicheboardjobs.com",
         proto: "https",
       }),
-      "https://nicheboard.com",
+      "https://nicheboardjobs.com",
     );
   });
 });
@@ -129,7 +131,7 @@ describe("helpers", () => {
   it("treats localhost aliases as local", () => {
     assert.equal(isLocalHost("localhost"), true);
     assert.equal(isLocalHost("packaging.localhost"), true);
-    assert.equal(isLocalHost("packaging.nicheboard.com"), false);
+    assert.equal(isLocalHost("packaging.nicheboardjobs.com"), false);
   });
 });
 

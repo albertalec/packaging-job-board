@@ -3,8 +3,8 @@ import type { VerticalTenant } from "./types";
 export const packaging: VerticalTenant = {
   kind: "vertical",
   id: "packaging",
-  hosts: ["packaging.nicheboard.com", "packaging.localhost"],
-  canonicalHost: "packaging.nicheboard.com",
+  hosts: ["packaging.nicheboardjobs.com", "packaging.localhost"],
+  canonicalHost: "packaging.nicheboardjobs.com",
   localHost: "packaging.localhost",
   brand: {
     name: "Packaging Jobs",
@@ -22,7 +22,7 @@ export const packaging: VerticalTenant = {
     kraft: "#c4a484",
     paper: "#f3eadb",
   },
-  contactEmail: "hello@packaging.nicheboard.com",
+  contactEmail: "hello@packaging.nicheboardjobs.com",
   copy: {
     kicker: "Updated daily",
     hero: "Packaging engineer jobs at top employers.",

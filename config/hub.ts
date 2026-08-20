@@ -3,8 +3,12 @@ import type { HubTenant } from "./types";
 export const hub: HubTenant = {
   kind: "hub",
   id: "hub",
-  hosts: ["nicheboard.com", "www.nicheboard.com", "nicheboard.localhost"],
-  canonicalHost: "nicheboard.com",
+  hosts: [
+    "nicheboardjobs.com",
+    "www.nicheboardjobs.com",
+    "nicheboard.localhost",
+  ],
+  canonicalHost: "nicheboardjobs.com",
   localHost: "nicheboard.localhost",
   brand: {
     name: "Niche Board",
@@ -22,7 +26,7 @@ export const hub: HubTenant = {
     kraft: "#8a9bb0",
     paper: "#f4f1ea",
   },
-  contactEmail: "hello@nicheboard.com",
+  contactEmail: "hello@nicheboardjobs.com",
   copy: {
     hero: "Jobs in niches too narrow for LinkedIn.",
     lede: "Specialist boards for roles generic sites bury. Candidates apply on the employer career site. Employers pin a listing they already have.",
