@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
 import { NICHE_LABELS } from "@/lib/niches";
+import { isRemote } from "@/lib/remote";
 import { jobState, US_STATES } from "@/lib/states";
 import { JobCard } from "./JobCard";
 
@@ -35,7 +36,9 @@ export function JobBoard({
     return jobs.filter((job) => {
       if (niche && job.niche !== niche) return false;
       if (state && jobState(job) !== state) return false;
-      if (remoteOnly && !job.remote) return false;
+      if (remoteOnly && !job.remote && !isRemote(job.location, job.description)) {
+        return false;
+      }
       if (!needle) return true;
       return `${job.title} ${job.company} ${job.location}`
         .toLowerCase()
