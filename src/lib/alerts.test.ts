@@ -112,9 +112,11 @@ test("branded welcome email uses tenant theme and mark", () => {
       "https://packaging.nicheboardjobs.com/alerts/unsubscribe?token=abc",
   });
 
-  assert.match(message.subject, /subscribed/i);
+  assert.match(message.subject, /Packaging Job Alerts/);
   assert.match(message.html, /Source Serif 4/);
   assert.match(message.html, /You’re subscribed/);
+  assert.match(message.html, /powered by Niche Board/);
+  assert.match(message.html, /not general plant operations/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
@@ -125,6 +127,7 @@ test("branded welcome email uses tenant theme and mark", () => {
     /href="https:\/\/packaging\.nicheboardjobs\.com\/alerts\/unsubscribe\?token=abc"/,
   );
   assert.doesNotMatch(message.html, /Didn’t mean to subscribe/);
+  assert.doesNotMatch(message.html, /Free job alerts/);
   assert.match(message.html, /Unsubscribe/);
   assert.match(message.html, /color:#5c4c3c/);
 });

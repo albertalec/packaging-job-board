@@ -39,6 +39,12 @@ export const packaging: VerticalTenant = {
     alertsTitle: "Get new packaging engineer roles by email",
     alertsLede:
       "No paywall. Enter your email and you’re on the list — we’ll send a short digest when fresh package-development jobs appear.",
+    alertsWelcomeSubject: "You’re subscribed to Packaging Job Alerts",
+    alertsWelcomeTitle: "You’re subscribed",
+    alertsWelcomeIntro:
+      "You’re subscribed to Packaging Jobs alerts, powered by Niche Board.",
+    alertsWelcomeBody:
+      "We’ll send you new packaging engineering opportunities from selected employers. We focus specifically on packaging engineering and package development roles—not general plant operations.",
   },
   ingest: {
     classifier: "packaging",

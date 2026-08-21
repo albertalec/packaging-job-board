@@ -33,6 +33,10 @@ export type VerticalCopy = {
   kicker: string;
   alertsTitle: string;
   alertsLede: string;
+  alertsWelcomeSubject: string;
+  alertsWelcomeTitle: string;
+  alertsWelcomeIntro: string;
+  alertsWelcomeBody: string;
 };
 
 export type VerticalTenant = {

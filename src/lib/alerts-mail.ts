@@ -290,25 +290,27 @@ export function buildWelcomeEmail(input: {
 }): { subject: string; html: string; text: string } {
   const ink = "#1d1712";
   const boardUrl = `${input.origin.replace(/\/$/, "")}/`;
+  const { copy } = input.tenant;
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
-      You’re subscribed to free alerts for
-      <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
-      We’ll email you when new roles appear — apply on the employer career site.
+      ${escapeHtml(copy.alertsWelcomeIntro)}
+    </p>
+    <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
+      ${escapeHtml(copy.alertsWelcomeBody)}
     </p>
     ${ctaButton(boardUrl, "Browse open roles", ink, input.tenant.theme.paper)}
   `;
   const shell = brandShell({
     tenant: input.tenant,
     origin: input.origin,
-    preheader: `You’re on the ${input.tenant.brand.name} alert list.`,
-    title: "You’re subscribed",
+    preheader: copy.alertsWelcomeIntro,
+    title: copy.alertsWelcomeTitle,
     bodyHtml,
     footerNote: input.tenant.brand.footer,
     unsubscribeUrl: input.unsubscribeUrl,
   });
   return {
-    subject: `You’re subscribed to ${input.tenant.brand.name} alerts`,
+    subject: copy.alertsWelcomeSubject,
     ...shell,
   };
 }
