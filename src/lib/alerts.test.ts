@@ -5,7 +5,7 @@ import path from "node:path";
 import test from "node:test";
 import type { NormalizedJob } from "../../ingest/types";
 import { packaging } from "@config/packaging";
-import { jobsForSubscriber, normalizeAlertFilters } from "./alerts";
+import { emailLinkOrigin, jobsForSubscriber, normalizeAlertFilters } from "./alerts";
 import {
   buildConfirmEmail,
   buildDigestEmail,
@@ -89,6 +89,21 @@ test("jobsForSubscriber skips notified and respects filters", () => {
   assert.equal(afterNotify.length, 0);
 });
 
+test("emailLinkOrigin prefers canonical host in production", () => {
+  assert.equal(
+    emailLinkOrigin(packaging, "https://packaging.nicheboardjobs.com"),
+    "https://packaging.nicheboardjobs.com",
+  );
+  assert.equal(
+    emailLinkOrigin(packaging, "https://nicheboardjobs.com"),
+    "https://packaging.nicheboardjobs.com",
+  );
+  assert.equal(
+    emailLinkOrigin(packaging, "http://packaging.localhost:3000"),
+    "http://packaging.localhost:3000",
+  );
+});
+
 test("branded welcome email uses tenant theme and mark", () => {
   const message = buildWelcomeEmail({
     tenant: packaging,
@@ -101,7 +116,17 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /Source Serif 4/);
   assert.match(message.html, /You’re subscribed/);
   assert.ok(message.html.includes(packaging.theme.paper));
+  assert.match(
+    message.html,
+    /href="https:\/\/packaging\.nicheboardjobs\.com\/"/,
+  );
+  assert.match(
+    message.html,
+    /href="https:\/\/packaging\.nicheboardjobs\.com\/alerts\/unsubscribe\?token=abc"/,
+  );
+  assert.doesNotMatch(message.html, /Didn’t mean to subscribe/);
   assert.match(message.html, /Unsubscribe/);
+  assert.match(message.html, /color:#5c4c3c/);
 });
 
 test("branded confirm email uses tenant theme and mark", () => {
@@ -118,9 +143,13 @@ test("branded confirm email uses tenant theme and mark", () => {
   assert.match(message.html, /IBM Plex Sans/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.ok(message.html.includes(packaging.theme.kraft));
-  assert.ok(message.html.includes(packaging.theme.accent));
+  assert.match(message.html, /color:#5c4c3c/);
   assert.match(message.html, /Packaging/);
   assert.match(message.html, /Confirm alerts/);
+  assert.match(
+    message.html,
+    /href="https:\/\/packaging\.nicheboardjobs\.com\/alerts\/unsubscribe\?token=abc"/,
+  );
   assert.match(message.html, /Unsubscribe/);
   assert.match(message.text, /Unsubscribe/);
 });

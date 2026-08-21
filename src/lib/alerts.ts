@@ -1,6 +1,12 @@
 import { randomBytes } from "node:crypto";
 import type { Niche } from "../../ingest/types";
-import { getVertical, tenantOrigin, type VerticalTenant } from "@config/tenants";
+import {
+  getVertical,
+  isLocalHost,
+  isPreviewHost,
+  tenantOrigin,
+  type VerticalTenant,
+} from "@config/tenants";
 import { loadJobs } from "./jobs";
 import { jobState } from "./states";
 import {
@@ -46,10 +52,28 @@ export function normalizeAlertFilters(input: {
   return { niche, state };
 }
 
+/** Stable https links for email (avoid broken apex/preview hosts in CTAs). */
+export function emailLinkOrigin(
+  tenant: VerticalTenant,
+  requestOrigin: string,
+): string {
+  try {
+    const url = new URL(requestOrigin);
+    if (isLocalHost(url.hostname) || isPreviewHost(url.hostname)) {
+      return requestOrigin.replace(/\/$/, "");
+    }
+  } catch {
+    // Fall through to canonical.
+  }
+  return `https://${tenant.canonicalHost}`;
+}
+
 function alertUrls(tenant: VerticalTenant, token: string, origin: string) {
+  const base = origin.replace(/\/$/, "");
   return {
-    confirmUrl: `${origin}/alerts/confirm?token=${encodeURIComponent(token)}`,
-    unsubscribeUrl: `${origin}/alerts/unsubscribe?token=${encodeURIComponent(token)}`,
+    confirmUrl: `${base}/alerts/confirm?token=${encodeURIComponent(token)}`,
+    unsubscribeUrl: `${base}/alerts/unsubscribe?token=${encodeURIComponent(token)}`,
+    boardUrl: `${base}/`,
   };
 }
 
@@ -91,11 +115,12 @@ export async function subscribeToAlerts(input: {
     .map((job) => job.id);
   await markJobsNotified(tenant.id, subscriber.token, baseline);
 
-  const urls = alertUrls(tenant, subscriber.token, input.origin);
+  const linkOrigin = emailLinkOrigin(tenant, input.origin);
+  const urls = alertUrls(tenant, subscriber.token, linkOrigin);
   const sent = await sendWelcomeEmail({
     tenant,
     to: subscriber.email,
-    origin: input.origin,
+    origin: linkOrigin,
     unsubscribeUrl: urls.unsubscribeUrl,
   });
 
@@ -200,9 +225,11 @@ export async function runAlertDigest(input: {
   maxJobsPerEmail?: number;
 }): Promise<DigestRunResult> {
   const tenant = getVertical(input.verticalId);
-  const origin =
+  const origin = emailLinkOrigin(
+    tenant,
     input.origin ??
-    tenantOrigin(tenant, { hostHeader: tenant.canonicalHost, proto: "https" });
+      tenantOrigin(tenant, { hostHeader: tenant.canonicalHost, proto: "https" }),
+  );
   const maxJobs = input.maxJobsPerEmail ?? 12;
   const { jobs } = loadJobs(tenant.id);
   const active = await listActiveSubscribers(tenant.id);

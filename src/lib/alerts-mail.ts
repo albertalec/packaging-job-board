@@ -56,11 +56,12 @@ function brandShell(input: {
     input;
   const paper = tenant.theme.paper;
   const kraft = tenant.theme.kraft;
-  const stamp = tenant.theme.accent;
   const ink = "#1d1712";
   const rule = "#c9b79a";
   const muted = "#5c4c3c";
   const outer = "#d9cbb3";
+  const boardUrl = escapeHtml(origin.replace(/\/$/, "") + "/");
+  const unsubUrl = escapeHtml(unsubscribeUrl);
   const mark2 = tenant.brand.markLine2
     ? `<br />${escapeHtml(tenant.brand.markLine2)}`
     : "";
@@ -86,16 +87,14 @@ function brandShell(input: {
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align:middle;">
-                    <a href="${escapeHtml(origin)}" style="text-decoration:none;color:${ink};">
-                      <table role="presentation" cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td style="width:28px;height:28px;border:2px solid ${ink};box-shadow:4px 4px 0 ${kraft};"></td>
-                          <td style="padding-left:12px;font-family:'Source Serif 4',Georgia,serif;font-size:22px;line-height:1.1;font-weight:600;">
-                            ${escapeHtml(tenant.brand.markLine1)}${mark2}
-                          </td>
-                        </tr>
-                      </table>
-                    </a>
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:28px;height:28px;border:2px solid ${ink};box-shadow:4px 4px 0 ${kraft};"></td>
+                        <td style="padding-left:12px;font-family:'Source Serif 4',Georgia,serif;font-size:22px;line-height:1.1;font-weight:600;">
+                          <a href="${boardUrl}" style="text-decoration:none;color:${ink};">${escapeHtml(tenant.brand.markLine1)}${mark2}</a>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                   <td align="right" style="font-size:12px;line-height:1.35;color:${muted};max-width:160px;">
                     ${escapeHtml(tenant.brand.tagline)}
@@ -121,9 +120,9 @@ function brandShell(input: {
                 ${escapeHtml(footerNote)}
               </p>
               <p style="margin:0;font-size:13px;line-height:1.5;color:${muted};">
-                <a href="${escapeHtml(unsubscribeUrl)}" style="color:${stamp};">Unsubscribe</a>
+                <a href="${unsubUrl}" style="color:${muted};">Unsubscribe</a>
                 ·
-                <a href="${escapeHtml(origin)}" style="color:${ink};">${escapeHtml(tenant.brand.name)}</a>
+                <a href="${boardUrl}" style="color:${ink};">${escapeHtml(tenant.brand.name)}</a>
               </p>
             </td>
           </tr>
@@ -140,8 +139,8 @@ function brandShell(input: {
     preheader,
     "",
     footerNote,
+    `Browse roles: ${origin.replace(/\/$/, "")}/`,
     `Unsubscribe: ${unsubscribeUrl}`,
-    origin,
   ].join("\n");
 
   return { html, text };
@@ -195,6 +194,7 @@ async function sendMail(input: {
   subject: string;
   html: string;
   text: string;
+  unsubscribeUrl?: string;
 }): Promise<MailResult> {
   if (!resendConfigured()) {
     console.info(
@@ -212,6 +212,7 @@ async function sendMail(input: {
       html: string;
       text: string;
       replyTo?: string;
+      headers?: Record<string, string>;
     } = {
       from: fromAddress(input.tenant),
       to: input.to,
@@ -232,6 +233,12 @@ async function sendMail(input: {
       ) {
         payload.replyTo = reply;
       }
+    }
+    if (input.unsubscribeUrl) {
+      payload.headers = {
+        "List-Unsubscribe": `<${input.unsubscribeUrl}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      };
     }
     const { data, error } = await resend.emails.send(payload);
     if (error) {
@@ -261,7 +268,7 @@ export function buildConfirmEmail(input: {
     ${ctaButton(input.confirmUrl, "Confirm alerts", ink, input.tenant.theme.paper)}
     <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
       If you did not request this, you can ignore the message or
-      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:${input.tenant.theme.accent};">unsubscribe</a>.
+      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:#5c4c3c;">unsubscribe</a>.
     </p>
   `;
   const shell = brandShell({
@@ -285,17 +292,14 @@ export function buildWelcomeEmail(input: {
   unsubscribeUrl: string;
 }): { subject: string; html: string; text: string } {
   const ink = "#1d1712";
+  const boardUrl = `${input.origin.replace(/\/$/, "")}/`;
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
       You’re subscribed to free alerts for
       <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
       We’ll email you when new roles appear — apply on the employer career site.
     </p>
-    ${ctaButton(input.origin, "Browse open roles", ink, input.tenant.theme.paper)}
-    <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
-      Didn’t mean to subscribe?
-      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:${input.tenant.theme.accent};">Unsubscribe</a>.
-    </p>
+    ${ctaButton(boardUrl, "Browse open roles", ink, input.tenant.theme.paper)}
   `;
   const shell = brandShell({
     tenant: input.tenant,
@@ -330,7 +334,7 @@ export function buildDigestEmail(input: {
       Apply on the company career site.
     </p>
     ${jobCardsHtml(input.jobs, input.tenant.theme)}
-    ${ctaButton(input.origin, "Browse the full board", ink, input.tenant.theme.paper)}
+    ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, "Browse the full board", ink, input.tenant.theme.paper)}
   `;
   const textJobs = input.jobs
     .map(
@@ -387,6 +391,7 @@ export async function sendWelcomeEmail(input: {
     subject: message.subject,
     html: message.html,
     text: message.text,
+    unsubscribeUrl: input.unsubscribeUrl,
   });
 }
 
@@ -404,6 +409,7 @@ export async function sendDigestEmail(input: {
     subject: message.subject,
     html: message.html,
     text: message.text,
+    unsubscribeUrl: input.unsubscribeUrl,
   });
 }
 
