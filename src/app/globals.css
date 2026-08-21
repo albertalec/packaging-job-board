@@ -104,8 +104,7 @@ a {
   animation: rise-in 0.55s ease-out 0.18s both;
 }
 
-.hero .lede,
-.hero-actions {
+.hero .lede {
   animation: rise-in 0.55s ease-out 0.26s both;
 }
 
@@ -144,19 +143,6 @@ h1 {
   color: var(--stamp);
   border-left: 3px solid var(--stamp);
   padding-left: 0.75rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  align-items: center;
-  margin: 1.35rem 0 0;
-}
-
-.hero-actions .apply,
-.hero-actions .ghost {
-  margin: 0;
 }
 
 .board-meta {
@@ -685,8 +671,7 @@ footer {
   .hero .kicker,
   .hero h1,
   .hero .contrast,
-  .hero .lede,
-  .hero-actions {
+  .hero .lede {
     animation: none;
   }
 

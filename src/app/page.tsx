@@ -51,14 +51,6 @@ export default async function HomePage() {
         <h1>{tenant.copy.hero}</h1>
         <p className="contrast">{tenant.copy.contrast}</p>
         <p className="lede">{tenant.copy.lede}</p>
-        <div className="hero-actions">
-          <a className="apply" href="#board">
-            Browse open roles
-          </a>
-          <a className="ghost" href="#alerts">
-            Get alerts
-          </a>
-        </div>
       </section>
 
       <p className="board-meta" aria-label="Board status">
