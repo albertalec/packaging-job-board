@@ -6,7 +6,11 @@ import test from "node:test";
 import type { NormalizedJob } from "../../ingest/types";
 import { packaging } from "@config/packaging";
 import { jobsForSubscriber, normalizeAlertFilters } from "./alerts";
-import { buildConfirmEmail, buildDigestEmail } from "./alerts-mail";
+import {
+  buildConfirmEmail,
+  buildDigestEmail,
+  buildWelcomeEmail,
+} from "./alerts-mail";
 
 test("normalizeAlertFilters accepts niche and state", () => {
   assert.deepEqual(normalizeAlertFilters({ niche: "CPG", state: "mn" }), {
@@ -83,6 +87,21 @@ test("jobsForSubscriber skips notified and respects filters", () => {
     notifiedJobIds: ["a", "b"],
   });
   assert.equal(afterNotify.length, 0);
+});
+
+test("branded welcome email uses tenant theme and mark", () => {
+  const message = buildWelcomeEmail({
+    tenant: packaging,
+    origin: "https://packaging.nicheboardjobs.com",
+    unsubscribeUrl:
+      "https://packaging.nicheboardjobs.com/alerts/unsubscribe?token=abc",
+  });
+
+  assert.match(message.subject, /subscribed/i);
+  assert.match(message.html, /Source Serif 4/);
+  assert.match(message.html, /You’re subscribed/);
+  assert.ok(message.html.includes(packaging.theme.paper));
+  assert.match(message.html, /Unsubscribe/);
 });
 
 test("branded confirm email uses tenant theme and mark", () => {

@@ -10,12 +10,12 @@ import {
   listActiveSubscribers,
   markJobsNotified,
   removeSubscriber,
-  upsertPendingSubscriber,
+  upsertActiveSubscriber,
   type AlertSubscriber,
 } from "./alerts-store";
 import {
-  sendConfirmEmail,
   sendDigestEmail,
+  sendWelcomeEmail,
   type DigestJob,
 } from "./alerts-mail";
 
@@ -60,7 +60,7 @@ export async function subscribeToAlerts(input: {
   state?: string | null;
   origin: string;
 }): Promise<
-  | { ok: true; status: "pending" | "already_active"; email: string }
+  | { ok: true; status: "subscribed" | "already_active"; email: string }
   | { ok: false; error: string }
 > {
   if (!isValidEmail(input.email)) {
@@ -76,7 +76,7 @@ export async function subscribeToAlerts(input: {
   }
 
   const token = existing?.token ?? newAlertToken();
-  const subscriber = await upsertPendingSubscriber({
+  const subscriber = await upsertActiveSubscriber({
     vertical: tenant.id,
     email: input.email,
     token,
@@ -84,19 +84,25 @@ export async function subscribeToAlerts(input: {
     state: filters.state,
   });
 
+  // Baseline so the first digest is only roles posted after subscribe.
+  const { jobs } = loadJobs(tenant.id);
+  const baseline = jobs
+    .filter((job) => matchesFilters(job, subscriber))
+    .map((job) => job.id);
+  await markJobsNotified(tenant.id, subscriber.token, baseline);
+
   const urls = alertUrls(tenant, subscriber.token, input.origin);
-  const sent = await sendConfirmEmail({
+  const sent = await sendWelcomeEmail({
     tenant,
     to: subscriber.email,
     origin: input.origin,
-    confirmUrl: urls.confirmUrl,
     unsubscribeUrl: urls.unsubscribeUrl,
   });
 
   if (!sent.ok) {
     return {
       ok: false,
-      error: sent.error || "Could not send the confirmation email.",
+      error: sent.error || "Could not send the welcome email.",
     };
   }
 
@@ -107,7 +113,7 @@ export async function subscribeToAlerts(input: {
     };
   }
 
-  return { ok: true, status: "pending", email: subscriber.email };
+  return { ok: true, status: "subscribed", email: subscriber.email };
 }
 
 export async function confirmAlertSubscription(input: {
