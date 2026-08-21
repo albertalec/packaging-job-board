@@ -33,19 +33,66 @@ Homepage contrast line (keep visible in every packaging surface):
 
 ---
 
-## 2. Brand hierarchy
+## 2. Brand hierarchy (locked)
 
-Use the right brand for the surface. Never blur them in a single headline.
+### The answer
 
-| Brand | Surfaces | Role |
+| Layer | Official name | Never call it |
 | --- | --- | --- |
-| **Niche Board** | `nicheboardjobs.com`, hub pages, platform email footer, employer bundles | Network story: “niches too narrow for LinkedIn.” |
-| **Packaging Jobs** | `packaging.nicheboardjobs.com`, packaging SEO, alerts, sponsor checkout | Vertical product candidates and sponsors actually use. |
+| **Platform / company** | **Niche Board** (two words) | Nicheboard, Nicheboard Jobs, Niche Board Jobs, NB |
+| **This vertical product** | **Packaging Jobs** | Packaging Nicheboard, Niche Board Packaging, Packaging Niche Board |
+| **Domain (URL only)** | `nicheboardjobs.com` / `packaging.nicheboardjobs.com` | Spoken as the brand name |
 
-**Rules**
-- Vertical hero / subject lines lead with **Packaging Jobs** (or the niche name), not Niche Board.
-- Niche Board may appear as powered-by / network context (e.g. welcome email: “Packaging Jobs alerts, powered by Niche Board”).
-- Hub employer pages lead with Niche Board; link out to vertical boards for proof.
+**Packaging Jobs is the product people use.**  
+**Niche Board is the network behind it.**
+
+It is **not** “the Packaging Nicheboard.”  
+It is **not** “Nicheboard Jobs.”  
+It is **not** primarily “launch your next career move” branding — that is generic career fluff and fights our specialist wedge.
+
+### How they relate (use this line)
+
+> **Packaging Jobs** — packaging engineer roles, powered by **Niche Board**.
+
+Shorter footer / email form:
+
+> Packaging Jobs, powered by Niche Board.
+
+Optional one-liner under the mark on packaging (when we want network credit without stealing the hero):
+
+> A Niche Board specialty board.
+
+### Who leads where
+
+| Surface | Lead brand | Supporting line |
+| --- | --- | --- |
+| `packaging.nicheboardjobs.com` mast, hero, SEO title | **Packaging Jobs** | Niche Board only as powered-by / footer credit |
+| Alerts subject + body | **Packaging Jobs** / Packaging Job Alerts | “powered by Niche Board” once |
+| Sponsor / employer on packaging | **Packaging Jobs** | Niche Board if explaining the network |
+| `nicheboardjobs.com` hub | **Niche Board** | Link out to Packaging Jobs as proof |
+| Legal / from-email / DNS | nicheboardjobs.com | Display name still “Niche Board” or “Packaging Jobs” |
+
+### Why this split
+
+- Candidates search and remember **specialty + jobs** (“Packaging Jobs”), not a platform coined term.
+- Employers buy **precision on a named board**; “Niche Board” alone does not say who they’ll reach.
+- When you add Supply Chain Jobs or Disaster Recovery Jobs, the pattern stays `{Specialty} Jobs`, powered by Niche Board — no rename tax.
+- “Career move / next chapter” language is what LinkedIn and Indeed already own; we own the niche contrast instead.
+
+### Banned / discouraged names
+
+- Nicheboard (one word) in any customer-facing copy  
+- Nicheboard Jobs / Niche Board Jobs as the product name  
+- Packaging Nicheboard / The Packaging Niche Board  
+- “Launch your next career move” as a brand or hero promise  
+- Leading a packaging page with “Niche Board” in the H1
+
+### Mast mark (already in product)
+
+- Packaging: **Packaging** / **Jobs** (`markLine1` / `markLine2`)
+- Hub: **Niche** / **Board**
+
+Keep that. Do not change the packaging mark to “Niche Board.”
 
 ---
 
