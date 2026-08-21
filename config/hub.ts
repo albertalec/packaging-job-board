@@ -29,7 +29,7 @@ export const hub: HubTenant = {
   contactEmail: "hello@nicheboardjobs.com",
   copy: {
     hero: "Jobs in niches too narrow for LinkedIn.",
-    lede: "Specialist boards for roles generic sites bury. Candidates apply on the employer career site. Employers pin a listing they already have.",
+    lede: "Specialist boards for roles generic sites bury — with a little more signal and a lot less noise. Candidates apply on the employer career site. Employers pin a listing they already have.",
     metaDescription:
       "Niche Board is a network of specialist job boards. Pin an ATS listing on the board that actually reaches the role you are hiring.",
   },
