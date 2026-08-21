@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
     // Honeypot — bots fill hidden "website" fields.
     if (body.website?.trim()) {
-      return NextResponse.json({ ok: true, status: "pending" });
+      return NextResponse.json({ ok: true, status: "subscribed" });
     }
 
     const result = await subscribeToAlerts({

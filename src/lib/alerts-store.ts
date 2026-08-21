@@ -137,6 +137,48 @@ export async function upsertPendingSubscriber(input: {
   return next;
 }
 
+/** Single opt-in: subscribe is active immediately (no confirm click). */
+export async function upsertActiveSubscriber(input: {
+  vertical: string;
+  email: string;
+  token: string;
+  niche?: Niche | null;
+  state?: string | null;
+}): Promise<AlertSubscriber> {
+  const email = normalizeEmail(input.email);
+  const store = await readStore(input.vertical);
+  const existing = store.subscribers.find(
+    (entry) => entry.email === email && entry.vertical === input.vertical,
+  );
+
+  if (existing?.status === "active") {
+    return {
+      ...existing,
+      niche: input.niche ?? existing.niche ?? null,
+      state: input.state ?? existing.state ?? null,
+    };
+  }
+
+  const next: AlertSubscriber = {
+    email,
+    token: existing?.token ?? input.token,
+    vertical: input.vertical,
+    status: "active",
+    createdAt: existing?.createdAt ?? new Date().toISOString(),
+    confirmedAt: new Date().toISOString(),
+    niche: input.niche ?? null,
+    state: input.state ?? null,
+    notifiedJobIds: existing?.notifiedJobIds ?? [],
+  };
+
+  const others = store.subscribers.filter(
+    (entry) => !(entry.email === email && entry.vertical === input.vertical),
+  );
+  others.push(next);
+  await writeStore(input.vertical, { subscribers: others });
+  return next;
+}
+
 export async function confirmSubscriber(
   vertical: string,
   token: string,

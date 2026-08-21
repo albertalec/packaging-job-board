@@ -109,9 +109,10 @@ Homepage sponsor reads are cached in-memory for ~30s to keep Redis traffic low.
 
 Candidates can subscribe on a vertical homepage (`/#alerts`). Flow:
 
-1. Double opt-in email (Resend) → `/alerts/confirm`
+1. Subscribe activates immediately; welcome email via Resend
 2. Daily digest when new roles appear (`/api/alerts/digest`, Vercel Cron 14:00 UTC)
 3. One-click unsubscribe → `/alerts/unsubscribe`
+   (legacy `/alerts/confirm` links still work for older pending signups)
 
 Optional niche/state filters. Subscribers are stored in
 `data/alerts/{vertical}.json` locally, or **Upstash Redis**

@@ -9,7 +9,7 @@ const NICHES = [
   ...Object.entries(NICHE_LABELS).map(([id, label]) => ({ id, label })),
 ] as const;
 
-type Status = "idle" | "submitting" | "pending" | "already_active" | "error";
+type Status = "idle" | "submitting" | "subscribed" | "already_active" | "error";
 
 export function JobAlertsSignup({
   title,
@@ -44,7 +44,7 @@ export function JobAlertsSignup({
       const raw = await response.text();
       let data: {
         ok?: boolean;
-        status?: "pending" | "already_active";
+        status?: "subscribed" | "already_active" | "pending";
         error?: string;
       } = {};
       try {
@@ -65,8 +65,8 @@ export function JobAlertsSignup({
         return;
       }
 
-      setStatus(data.status === "already_active" ? "already_active" : "pending");
-      if (data.status === "pending") setEmail("");
+      setStatus(data.status === "already_active" ? "already_active" : "subscribed");
+      if (data.status !== "already_active") setEmail("");
     } catch {
       setStatus("error");
       setError("Network error. Try again.");
@@ -81,9 +81,9 @@ export function JobAlertsSignup({
         <p className="alerts-lede">{lede}</p>
       </div>
 
-      {status === "pending" ? (
+      {status === "subscribed" ? (
         <p className="notice" role="status">
-          Check your inbox and confirm the link to activate alerts.
+          You’re subscribed. We’ll email you when new matching roles appear.
         </p>
       ) : null}
       {status === "already_active" ? (

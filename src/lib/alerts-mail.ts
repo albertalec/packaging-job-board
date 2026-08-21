@@ -279,6 +279,39 @@ export function buildConfirmEmail(input: {
   };
 }
 
+export function buildWelcomeEmail(input: {
+  tenant: VerticalTenant;
+  origin: string;
+  unsubscribeUrl: string;
+}): { subject: string; html: string; text: string } {
+  const ink = "#1d1712";
+  const bodyHtml = `
+    <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
+      You’re subscribed to free alerts for
+      <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
+      We’ll email you when new roles appear — apply on the employer career site.
+    </p>
+    ${ctaButton(input.origin, "Browse open roles", ink, input.tenant.theme.paper)}
+    <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
+      Didn’t mean to subscribe?
+      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:${input.tenant.theme.accent};">Unsubscribe</a>.
+    </p>
+  `;
+  const shell = brandShell({
+    tenant: input.tenant,
+    origin: input.origin,
+    preheader: `You’re on the ${input.tenant.brand.name} alert list.`,
+    title: "You’re subscribed",
+    bodyHtml,
+    footerNote: input.tenant.brand.footer,
+    unsubscribeUrl: input.unsubscribeUrl,
+  });
+  return {
+    subject: `You’re subscribed to ${input.tenant.brand.name} alerts`,
+    ...shell,
+  };
+}
+
 export function buildDigestEmail(input: {
   tenant: VerticalTenant;
   origin: string;
@@ -332,6 +365,22 @@ export async function sendConfirmEmail(input: {
   unsubscribeUrl: string;
 }): Promise<MailResult> {
   const message = buildConfirmEmail(input);
+  return sendMail({
+    tenant: input.tenant,
+    to: input.to,
+    subject: message.subject,
+    html: message.html,
+    text: message.text,
+  });
+}
+
+export async function sendWelcomeEmail(input: {
+  tenant: VerticalTenant;
+  to: string;
+  origin: string;
+  unsubscribeUrl: string;
+}): Promise<MailResult> {
+  const message = buildWelcomeEmail(input);
   return sendMail({
     tenant: input.tenant,
     to: input.to,
