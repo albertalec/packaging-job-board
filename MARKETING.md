@@ -8,7 +8,7 @@ If a draft feels breathless, salesy, or flatly corporate, rewrite it.
 ## 1. Strategy in one page
 
 ### What we sell
-**Audience precision.** Employers pay to put a live ATS listing in front of a narrow professional slice. Candidates get a clean board and free alerts. We do not sell candidate subscriptions, resume databases, or “post a job from scratch” workflows.
+**Audience precision.** Employers pay to put a live ATS listing in front of a narrow professional slice. Candidates get a clean board and email alerts at no charge — we don’t sell candidate subscriptions, resume databases, or “post a job from scratch” workflows.
 
 ### What we are
 A **network of precision job boards** — one subdomain per niche — fed by daily employer ATS ingest. Candidates apply on the company’s career site.
@@ -151,7 +151,7 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 | Social / LinkedIn | Same claims as the site; lightly fun; no growth-hack energy. |
 
 ### Words we use
-packaging engineer · package development · package-development · specialist board · pin · live listing · career site / ATS · updated daily · free alerts · Niche Board (network only)
+packaging engineer · package development · package-development · specialist board · pin · live listing · career site / ATS · updated daily · job alerts · Niche Board (network only)
 
 ### Words we avoid
 dream job · passion · disrupt · AI-powered matching · #1 board · thousands of jobs · easy apply (unless meaning ATS) · resume database · talent pool unlock · limited-time hype · plant ops listed as a feature
@@ -174,16 +174,29 @@ dream job · passion · disrupt · AI-powered matching · #1 board · thousands 
 - **Headline pattern:** Packaging engineer jobs at top employers.
 - **Support:** Packaging engineers and package development — not plant ops. Named example employers when true (e.g. General Mills, J&J, Mars, Clorox). Apply on the company’s career site.
 - **Contrast:** Package development — not plant ops.
-- **Candidate CTA:** Browse roles · Get free alerts
+- **Candidate CTA:** Browse roles · Get alerts / Email me new roles
 - **Employer CTA:** Sponsor / pin a listing · $100 for 30 days
 
 ### Proof we can cite today
 - Listings from employer career sites / ATS feeds (not LinkedIn scrapes)
 - Updated daily
 - Apply on source listing
-- Free candidate alerts (single opt-in, unsubscribe always visible)
+- Candidate alerts with one-click unsubscribe (single opt-in)
 - Sponsor pin without re-posting the job
 
+### “Free” — use sparingly
+Candidates are always free to browse, apply, and get alerts. That is strategy, not a slogan.
+
+**Do not lead with “free”** on Packaging Jobs. It sounds defensive, a little salesy, and trains people to hear price instead of specialty. Most job alerts are expected to be free; repeating it cheapens the board.
+
+| Surface | Prefer | Avoid |
+| --- | --- | --- |
+| Nav / signup kicker / button | Job alerts · Get alerts · Email me new roles | Free alerts · Get free alerts |
+| Signup lede | What they’ll get (short digest, package-development focus) | “No paywall” as the opener |
+| Welcome / digest email | Specialty + what happens next | “Free alerts from…” |
+| Employer / hub copy | “Candidates stay free; employers fund precision” (ok once, competitively) | Calling the product “Free Alerts” |
+
+Mention free only when contrasting a competitor that charges candidates — and then say it once, quietly, not as the brand.
 ---
 
 ## 7. Content system (what “all content” means)
@@ -249,8 +262,8 @@ Out of scope until inventory and renewals prove out: paid candidate acquisition,
 
 | Offer | Audience | How we say it |
 | --- | --- | --- |
-| Free board | Candidates | Always free to browse and apply. |
-| Free alerts | Candidates | No paywall. Short digest when new package-development jobs appear. |
+| Free board | Candidates | Always free to browse and apply — say it rarely; show it by never charging. |
+| Job alerts | Candidates | Short digest when new package-development jobs appear. Don’t lead with “free.” |
 | Pin / sponsor | Employers | $100 to pin a live career-site listing for 30 days at the top of Packaging Jobs. |
 | Bundles (later) | Employers | Multi-vertical pins — message only when a second vertical is live. |
 
@@ -302,6 +315,10 @@ Before publishing any copy (site, email, social, outreach):
 - Apply on the company’s career site.
 - Get new packaging engineer roles by email.
 - You’re subscribed to Packaging Jobs alerts, powered by Niche Board.
+- Welcome subject: You’re subscribed to Packaging Jobs alerts.
+- Welcome title: You’re on the list.
+- Welcome CTA: Browse Packaging Jobs.
+- Welcome preheader: Package development — not plant ops. Short digests when new roles appear.
 
 Config source for live UI strings: `config/hub.ts`, `config/packaging.ts`.  
 Product roadmap context: `PLAN.md`. Update this file when positioning changes.

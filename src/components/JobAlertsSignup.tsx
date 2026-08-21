@@ -78,7 +78,7 @@ export function JobAlertsSignup({
   return (
     <section className="alerts" id="alerts">
       <div className="alerts-copy">
-        <p className="kicker">Free alerts</p>
+        <p className="kicker">Job alerts</p>
         <h2 className="alerts-title">{title}</h2>
         <p className="alerts-lede">{lede}</p>
       </div>
@@ -153,7 +153,7 @@ export function JobAlertsSignup({
           type="submit"
           disabled={status === "submitting"}
         >
-          {status === "submitting" ? "Sending…" : "Get free alerts"}
+          {status === "submitting" ? "Sending…" : "Get alerts"}
         </button>
       </form>
       {error ? <p className="checkout-error">{error}</p> : null}
