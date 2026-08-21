@@ -354,139 +354,51 @@ Ignore as primary goals: raw pageviews, social likes, email list size without en
 
 ---
 
-## 14. Logo design prompt (copy-paste)
+## 14. Logo design prompt
 
-Write from **identity and value proposition**, not from the live site glyph, type stack, or color tokens. Do not ask the designer to evolve, nest, or “refine” an existing square/stamp. Propose original directions.
+Source: identity, voice, and value proposition in §§1–6. Do not use live-site glyphs, type, or color tokens as the starting point.
 
-### Brand review (what the mark has to mean)
-
-**Identity.** Niche Board is the **network behind named specialty boards**. Packaging Jobs is the product people use; Niche Board is the maker. The name is two words. The voice is friendly but not eager, trustworthy and uplifting, a little fun — a dry smile, never hype. We sound like a sharp specialist, not a career coach and not a growth-hack SaaS.
-
-**Value proposition.** We sell **audience precision**. Candidates get roles in *their* specialty, updated daily, and finish on the employer’s real listing. Employers reach the specialists generic sites bury, and pin a live ATS posting instead of filling out another “post a job” form. The north-star line: *Jobs in niches too narrow for LinkedIn.*
-
-**Positioning to encode (pick a metaphor; don’t illustrate all five):**
-1. Classification — we keep the specialist slice and drop the noise.
-2. Freshness — the board is alive, not a stale 45-day posting wall.
-3. Apply-out — honest; we are not a fake apply.
-4. Precision buy — employers buy a niche audience, not “jobs traffic.”
-5. Simple commerce — pin what’s already live.
-
-**What it must not feel like:** a LinkedIn/Indeed clone, a catch-all industry board, a scrape aggregator, a profile-and-messaging network, or “launch your next career move.”
-
-### A. Designer brief
+### Logo design prompt (copy-paste)
 
 ```
-Design a professional logo for Niche Board.
+Design a logo for Niche Board.
 
-WHO THEY ARE
-A network of precision job boards — one named board per professional niche —
-not a generic job site with “niche” as a filter. First proof is Packaging Jobs;
-later boards follow the same pattern (e.g. Supply Chain Jobs, Resilience Jobs).
-Candidates apply on the company’s career site. Employers pin a listing they
-already have. The brand people remember on a vertical is the specialty
-(“Packaging Jobs”); Niche Board is the quiet network behind it.
+Niche Board is a network of precision job boards — one named board per
+professional niche — for roles too narrow for LinkedIn. It is the maker
+behind products like Packaging Jobs, not a generic job site with “niche”
+as a filter, not a career network, and not a scrape aggregator. Candidates
+find jobs in their exact specialty, updated daily, and apply on the
+employer’s real career site. Employers reach specialists that big boards
+bury, and pin a listing they already posted. We sell audience precision,
+not volume and not “launch your next career move.”
 
-WHAT THEY PROMISE
-“Jobs in niches too narrow for LinkedIn.”
-Specialists get a clean board instead of being buried in keyword search.
-Employers buy precision — the right slice — not volume.
+Brand identity: friendly but not eager; trustworthy and uplifting; a little
+fun (clever, not cute). Quietly confident. Warm and human. Short, concrete,
+specialist. If the mark feels breathless, salesy, corporate, or like a
+startup app icon, start over.
 
-PERSONALITY
-Friendly, not eager. Trustworthy and uplifting. A little fun (clever, not cute).
-Quietly confident. Short and concrete. Human. Leave people feeling sharper,
-not hyped. If a mark feels breathless, salesy, or flatly corporate, start over.
+The logo should express one idea: a distinct professional slice — signal
+kept, noise dropped — a named place for a narrow field. Not a social graph,
+not a feed, not the whole market.
 
-VALUE TO VISUALIZE (choose one clear idea, not a collage)
-- Precision: one exact professional slice, not the whole market
-- Signal over noise: the specialist role kept; the plant-ops clutter gone
-- A named place for a narrow field (a board), not a feed or a social graph
-- A network of distinct specialties behind one maker
-
-WORDMARK
-“Niche Board” as two words. Never “Nicheboard”, never “NB”, never “Niche Board Jobs”.
-The wordmark may stack or sit on one line. Optional tagline, set smaller and quieter:
+Wordmark: “Niche Board” as two words. Never “Nicheboard”. Never “NB”.
+Never “Niche Board Jobs”. Optional quiet tagline:
 “Jobs in niches too narrow for LinkedIn.”
 
-CONSTRAINTS FROM HOW THE BRAND IS USED
-- This is the platform mark. It must still make sense when the live product is
-  Packaging Jobs, Supply Chain Jobs, or Resilience Jobs — no industry object.
-- It must work as a tiny “powered by Niche Board” credit under a louder
-  vertical mast, and as the hero mark on nicheboardjobs.com.
-- Icon should read at favicon size. Prefer a simple, ownable glyph plus type
-  over a scene.
+This is the platform mark. It must work as the hero on the Niche Board hub
+and as a small “powered by Niche Board” credit under a louder vertical name.
+It must still make sense when the live product is Packaging Jobs, Supply
+Chain Jobs, or Resilience Jobs — no industry object.
 
-TONE IN FORM
-Warm and human, not sterile. Restrained, not decorative. One distinctive idea.
-A small amount of wit is welcome if it does not undercut competence.
-Not rounded-app-icon SaaS. Not luxury-bank cold. Not startup-gradient hype.
+Simple original glyph + wordmark. Vector, high contrast, favicon-legible.
+One distinctive idea. A little wit is welcome if it does not undercut
+competence. Explore at least two directions, then recommend one.
 
-EXPLORE AT LEAST TWO DISTINCT DIRECTIONS
-Do not converge on the first clever shape. Show how each direction expresses
-precision and specialist trust. Then recommend one.
-
-DELIVERABLES
-1) Icon / glyph only
-2) Icon + wordmark lockup
-3) Wordmark-only (for tight footers)
-4) 16px and 32px tests of the icon
-5) A small, quiet “powered by Niche Board” lockup
-Vector, production-ready, recolorable. Light and dark versions.
-
-DO NOT
-- Start from, copy, or “evolve” any existing site icon, stamp, or CSS shape
-- Packaging, cartons, tape, corrugate, factories, warehouses, plants, servers
-- People, briefcases, rockets, ladders, “career journey”, location pins
-- LinkedIn blue, Indeed green, AI purple, neon, glass, gradients, 3D chrome
-- Letter-N-in-a-circle, NB monogram, one-word Nicheboard
-- Volume cues (thousands of dots, crowded grids, world maps)
-- Matching / AI / resume-database imagery
-- Anything that needs a caption to explain the joke
-```
-
-### B. Image-model prompt (Ideogram, Recraft, GPT-image)
-
-```
-Original professional logo for “Niche Board” (two words), a network of
-specialist job boards. Promise: jobs in niches too narrow for LinkedIn —
-precision for specialists, not a generic careers marketplace.
-
-Brand feeling: friendly but not eager, trustworthy, quietly confident, a
-little dry wit. Warm human specialist, not corporate SaaS, not a career coach.
-
-Invent a simple, ownable glyph that reads as precision / a distinct slice /
-signal over noise / a named place for a narrow field. Pair with a confident
-wordmark “Niche Board”. Optional quiet tagline: “Jobs in niches too narrow
-for LinkedIn.”
-
-Clean vector, high contrast, centered, generous margin. Icon + lockup.
-Must work tiny. Must not belong to one industry.
-
-No existing-app-icon copy, no cardboard, no packing tape, no factory, no
-people, no briefcase, no rocket, no ladder, no location pin, no NB monogram,
-no letter N in a circle, never “Nicheboard”, no LinkedIn blue, no Indeed
-green, no purple AI glow, no gradient, no glassmorphism, no 3D, no crowded
-dot grid, no photorealistic mockup.
-```
-
-### C. Shorter model prompt (character-limited tools)
-
-```
-Logo for “Niche Board” (two words): network of precision job boards.
-Promise: jobs in niches too narrow for LinkedIn. Identity: friendly, not
-eager; trustworthy; a little fun. Visualize specialist precision and
-signal-over-noise, not volume. Simple original glyph + wordmark. Vector,
-tiny-favicon-legible. No carton, no NB, no LinkedIn/Indeed clone, no career-
-journey, no gradient SaaS, no existing site icon.
-```
-
-### D. Negative prompt (append to any model)
-
-```
-existing app icon, stamp square copy, cardboard box, packing tape, factory,
-warehouse, plant, server, people, briefcase, rocket, ladder, career journey,
-location pin, LinkedIn blue, Indeed green, neon, purple gradient,
-glassmorphism, rounded squircle, 3D chrome, script font, monogram NB,
-letter N in a circle, Nicheboard as one word, photorealistic mockup,
-crowded grid, world map, resume, AI sparkle, emoji
+Do not: copy or evolve any existing site icon; cardboard, packing tape,
+factories, warehouses, plants, servers; people, briefcases, rockets,
+ladders, career-journey metaphors, location pins; LinkedIn blue, Indeed
+green, AI purple, neon, gradients, glass, 3D; letter N in a circle;
+crowded grids or world maps; resume / matching / AI imagery; anything that
+needs a caption to explain the joke.
 ```
 
