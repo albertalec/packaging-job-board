@@ -19,6 +19,8 @@ export type PublicTenant = {
   brand: Tenant["brand"];
   contactEmail: string;
   origin: string;
+  /** Hub home URL for vertical “powered by Niche Board” links; null on the hub itself. */
+  hubOrigin: string | null;
   sponsor: VerticalTenant["sponsor"] | null;
 };
 
@@ -107,6 +109,10 @@ export async function toPublicTenant(tenant?: Tenant): Promise<PublicTenant> {
     brand: resolved.brand,
     contactEmail: resolved.contactEmail,
     origin: requestOrigin({ hostHeader, proto }),
+    hubOrigin:
+      resolved.kind === "vertical"
+        ? tenantOrigin(getTenant("hub"), { hostHeader, proto })
+        : null,
     sponsor: resolved.kind === "vertical" ? resolved.sponsor : null,
   };
 }
