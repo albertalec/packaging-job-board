@@ -84,17 +84,27 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 ## 5. Voice & tone
 
 ### Voice
-- Direct, specialist, slightly dry. Confident about the niche; never hype-y.
+- **Friendly, not eager.** Warm and human; never salesy, breathless, or “we’re so excited!!!”
+- **Trustworthy and uplifting.** Clear, honest, and quietly confident — leave people feeling sharper about their next step, not hyped.
+- **A little fun.** Light wit is welcome (especially the plant-ops contrast). Clever > cutesy. No jokes that undercut competence.
 - Prefer concrete nouns: *packaging engineer*, *package development*, *Workday*, *pin*, *digest*.
 - Short sentences. One idea per section.
+
+### Tone dial
+| More of this | Less of this |
+| --- | --- |
+| “You’re on the list — we’ll send a short digest when new roles appear.” | “We’re THRILLED to have you on this journey!!!” |
+| “Package development — not plant ops.” | “The #1 revolutionary packaging careers platform.” |
+| “Pin a listing you already have.” | “Unlock premium talent today.” |
+| A dry smile in the contrast line | Emojis, exclamation piles, faux-urgency |
 
 ### Tone by channel
 | Channel | Tone |
 | --- | --- |
-| Site hero / SEO | Clear specialty + contrast. Minimal ornament. |
-| Alerts / digests | Helpful, brief, scannable. Zero guilt. |
-| Employer / sponsor | Practical ROI: who sees it, what you pin, what it costs. |
-| Social / LinkedIn | Same claims as the site; no growth-hack energy. |
+| Site hero / SEO | Clear specialty + contrast. Friendly precision; minimal ornament. |
+| Alerts / digests | Warm, brief, scannable. Helpful without guilt or pep-talk. |
+| Employer / sponsor | Practical and upbeat: who sees it, what you pin, what it costs. |
+| Social / LinkedIn | Same claims as the site; lightly fun; no growth-hack energy. |
 
 ### Words we use
 packaging engineer · package development · package-development · specialist board · pin · live listing · career site / ATS · updated daily · free alerts · Niche Board (network only)
