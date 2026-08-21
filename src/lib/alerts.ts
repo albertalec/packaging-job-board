@@ -96,6 +96,26 @@ export async function subscribeToAlerts(input: {
   const existing = await findSubscriberByEmail(tenant.id, input.email);
 
   if (existing?.status === "active") {
+    const linkOrigin = emailLinkOrigin(tenant, input.origin);
+    const urls = alertUrls(tenant, existing.token, linkOrigin);
+    const resent = await sendWelcomeEmail({
+      tenant,
+      to: existing.email,
+      origin: linkOrigin,
+      unsubscribeUrl: urls.unsubscribeUrl,
+    });
+    if (!resent.ok) {
+      return {
+        ok: false,
+        error: resent.error || "Could not send the welcome email.",
+      };
+    }
+    if (resent.skipped && process.env.VERCEL) {
+      return {
+        ok: false,
+        error: "Email delivery is not configured yet. Try again soon.",
+      };
+    }
     return { ok: true, status: "already_active", email: existing.email };
   }
 

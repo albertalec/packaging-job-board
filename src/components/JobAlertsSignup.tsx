@@ -88,7 +88,8 @@ export function JobAlertsSignup({
       ) : null}
       {status === "already_active" ? (
         <p className="notice" role="status">
-          That address is already subscribed. New roles will land in your inbox.
+          That address is already subscribed. We sent another welcome email —
+          check inbox and spam.
         </p>
       ) : null}
 
