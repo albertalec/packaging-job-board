@@ -302,6 +302,9 @@ Before publishing any copy (site, email, social, outreach):
 - Apply on the company’s career site.
 - Get new packaging engineer roles by email.
 - You’re subscribed to Packaging Jobs alerts, powered by Niche Board.
+- Welcome subject: You’re subscribed to Packaging Jobs alerts.
+- Welcome title: You’re on the list.
+- Welcome CTA: Browse Packaging Jobs.
 
 Config source for live UI strings: `config/hub.ts`, `config/packaging.ts`.  
 Product roadmap context: `PLAN.md`. Update this file when positioning changes.

@@ -112,14 +112,17 @@ test("branded welcome email uses tenant theme and mark", () => {
       "https://packaging.nicheboardjobs.com/alerts/unsubscribe?token=abc",
   });
 
-  assert.match(message.subject, /Packaging Job Alerts/);
+  assert.match(message.subject, /Packaging Jobs alerts/);
   assert.match(message.html, /Source Serif 4/);
-  assert.match(message.html, /You’re subscribed/);
+  assert.match(message.html, /You’re on the list/);
   assert.match(message.html, /powered by Niche Board/);
-  assert.match(message.html, /not general plant ops/);
-  assert.match(message.html, /Browse anytime/);
+  assert.match(message.html, /packaging engineer and package-development/);
   assert.match(message.html, /Package development — not plant ops/);
+  assert.match(message.html, /Browse Packaging Jobs/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
+  assert.match(message.html, /apply on the company.+career site/i);
+  assert.doesNotMatch(message.html, /packaging engineering opportunities/);
+  assert.doesNotMatch(message.html, /the specialist stuff/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
@@ -133,6 +136,7 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.doesNotMatch(message.html, /Free job alerts/);
   assert.match(message.html, /Unsubscribe/);
   assert.match(message.html, /color:#5c4c3c/);
+  assert.match(message.text, /powered by Niche Board/);
 });
 
 test("branded confirm email uses tenant theme and mark", () => {
