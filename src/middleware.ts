@@ -57,7 +57,9 @@ export function middleware(request: NextRequest) {
     if (
       pathname.startsWith("/jobs") ||
       pathname.startsWith("/sponsor") ||
-      pathname.startsWith("/api/checkout")
+      pathname.startsWith("/alerts") ||
+      pathname.startsWith("/api/checkout") ||
+      pathname.startsWith("/api/alerts")
     ) {
       const dest = new URL(
         `${pathname}${request.nextUrl.search}`,
