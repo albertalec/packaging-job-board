@@ -1,7 +1,10 @@
 import { createHash } from "node:crypto";
 import { htmlToPlainText } from "../src/lib/description.ts";
+import { isRemote } from "../src/lib/remote.ts";
 import { parseState } from "../src/lib/states.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
+
+export { isRemote };
 
 const SEMICONDUCTOR =
   /\b(semiconductor|wafer|osat|flip[ -]?chip|wirebond|chiplet|\bsip\b|\bsoc\b|advanced packaging|ic packaging|soc packaging|electronics packaging|avionics (mechanical|packaging)|package[- ]level|integrated circuit|silicon up)\b/i;
@@ -101,12 +104,6 @@ export function slugify(value: string): string {
     .slice(0, 72);
 }
 
-export function isRemote(location: string, description: string): boolean {
-  return /\b(remote|hybrid|work from home|wfh)\b/i.test(
-    `${location} ${description.slice(0, 400)}`,
-  );
-}
-
 export function isUsOrRemote(
   job: {
     state: string | null;
@@ -160,6 +157,7 @@ export function toJob(
     department: input.department,
   });
   if (!verdict.keep) return null;
+  const plain = stripHtml(input.description) || input.title.trim();
   const hash = jobHash(company.slug, input.sourceId, input.title);
   return {
     id: `${company.slug}-${hash}`,
@@ -171,14 +169,14 @@ export function toJob(
     department: input.department ?? null,
     location: input.location.trim() || "Location not listed",
     state: parseState(input.location) ?? parseState(input.sourceId),
-    remote: isRemote(input.location, input.description),
+    remote: isRemote(input.location, plain),
     postedAt: input.postedAt ?? null,
     applyUrl: input.applyUrl,
-    description: stripHtml(input.description) || input.title.trim(),
+    description: plain,
     salary: input.salary ?? null,
     niche: inferNiche(
       company.niche,
-      `${input.title} ${input.department ?? ""} ${input.description}`,
+      `${input.title} ${input.department ?? ""} ${plain}`,
     ),
     source: company.ats,
   };
