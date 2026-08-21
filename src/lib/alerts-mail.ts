@@ -205,16 +205,37 @@ async function sendMail(input: {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { data, error } = await resend.emails.send({
+    const payload: {
+      from: string;
+      to: string;
+      subject: string;
+      html: string;
+      text: string;
+      replyTo?: string;
+    } = {
       from: fromAddress(input.tenant),
       to: input.to,
       subject: input.subject,
       html: input.html,
       text: input.text,
-      replyTo: input.tenant.contactEmail,
-    });
+    };
+    // Only set reply-to when it shares a likely-verified apex with the from address.
+    const from = payload.from;
+    const reply = input.tenant.contactEmail;
+    if (reply && from.includes("@") && reply.includes("@")) {
+      const fromDomain = from.slice(from.lastIndexOf("@") + 1).replace(/>$/, "");
+      const replyDomain = reply.slice(reply.lastIndexOf("@") + 1);
+      if (
+        fromDomain === replyDomain ||
+        replyDomain.endsWith(`.${fromDomain}`) ||
+        fromDomain.endsWith(`.${replyDomain}`)
+      ) {
+        payload.replyTo = reply;
+      }
+    }
+    const { data, error } = await resend.emails.send(payload);
     if (error) {
-      return { ok: false, error: error.message };
+      return { ok: false, error: error.message || "Email provider rejected the send." };
     }
     return { ok: true, id: data?.id };
   } catch (error) {

@@ -41,11 +41,23 @@ export function JobAlertsSignup({
           website,
         }),
       });
-      const data = (await response.json()) as {
+      const raw = await response.text();
+      let data: {
         ok?: boolean;
         status?: "pending" | "already_active";
         error?: string;
-      };
+      } = {};
+      try {
+        data = raw ? (JSON.parse(raw) as typeof data) : {};
+      } catch {
+        setStatus("error");
+        setError(
+          response.ok
+            ? "Unexpected response from server."
+            : `Server error (${response.status}). Try again.`,
+        );
+        return;
+      }
 
       if (!response.ok || !data.ok) {
         setStatus("error");
