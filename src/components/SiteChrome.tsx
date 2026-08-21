@@ -5,6 +5,35 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTenant } from "./TenantProvider";
 
+const NETWORK_NAME = "Niche Board";
+
+function NetworkCredit({
+  credit,
+  href,
+}: {
+  credit: string;
+  href: string | null;
+}) {
+  if (!href) return credit;
+  const at = credit.lastIndexOf(NETWORK_NAME);
+  if (at < 0) {
+    return (
+      <a className="network-link" href={href}>
+        {credit}
+      </a>
+    );
+  }
+  return (
+    <>
+      {credit.slice(0, at)}
+      <a className="network-link" href={href}>
+        {NETWORK_NAME}
+      </a>
+      {credit.slice(at + NETWORK_NAME.length)}
+    </>
+  );
+}
+
 export function SiteChrome({ children }: { children: ReactNode }) {
   const tenant = useTenant();
   const pathname = usePathname();
@@ -55,7 +84,11 @@ export function SiteChrome({ children }: { children: ReactNode }) {
       <footer>
         {tenant.brand.networkCredit ? (
           <p className="network-credit">
-            {tenant.brand.name}, {tenant.brand.networkCredit}
+            {tenant.brand.name},{" "}
+            <NetworkCredit
+              credit={tenant.brand.networkCredit}
+              href={tenant.hubOrigin}
+            />
           </p>
         ) : null}
         <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
