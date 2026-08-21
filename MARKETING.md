@@ -318,7 +318,7 @@ Before publishing any copy (site, email, social, outreach):
 - Welcome subject: You’re subscribed to Packaging Jobs alerts.
 - Welcome title: You’re on the list.
 - Welcome CTA: Browse Packaging Jobs.
-- Welcome preheader: Package development — not plant ops. Alerts from Packaging Jobs.
+- Welcome preheader: Package development — not plant ops. Short digests when new roles appear.
 
 Config source for live UI strings: `config/hub.ts`, `config/packaging.ts`.  
 Product roadmap context: `PLAN.md`. Update this file when positioning changes.

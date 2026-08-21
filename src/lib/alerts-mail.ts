@@ -313,7 +313,7 @@ export function buildWelcomeEmail(input: {
   const shell = brandShell({
     tenant: input.tenant,
     origin: input.origin,
-    preheader: `${copy.contrast} Alerts from ${brand.name}.`,
+    preheader: `${copy.contrast} Short digests when new roles appear.`,
     title: copy.alertsWelcomeTitle,
     bodyHtml,
     footerNote: brand.footer,
