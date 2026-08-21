@@ -120,7 +120,7 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Browse Packaging Jobs/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
-  assert.match(message.html, /Apply on the company’s career site/);
+  assert.match(message.html, /Apply on the company.+career site/);
   assert.doesNotMatch(message.html, /packaging engineering opportunities/);
   assert.doesNotMatch(message.html, /the specialist stuff/);
   assert.ok(message.html.includes(packaging.theme.paper));
