@@ -105,9 +105,6 @@ function brandShell(input: {
           </tr>
           <tr>
             <td style="padding:28px;">
-              <p style="margin:0 0 8px;letter-spacing:0.08em;text-transform:uppercase;font-size:12px;color:${muted};">
-                Free job alerts
-              </p>
               <h1 style="margin:0 0 16px;font-family:'Source Serif 4',Georgia,serif;font-size:28px;line-height:1.15;font-weight:600;color:${ink};">
                 ${escapeHtml(title)}
               </h1>
