@@ -1,6 +1,11 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { list, put } from "@vercel/blob";
+import {
+  kvGetJson,
+  kvSetJson,
+  redisConfigured,
+  sponsorshipRedisKey,
+} from "./kv";
 
 export type Sponsorship = {
   jobId: string;
@@ -18,8 +23,8 @@ type SponsorshipFile = {
 };
 
 const LEGACY_LOCAL_FILE = path.join(process.cwd(), "data", "sponsorships.json");
-const LEGACY_BLOB_NAME = "sponsorships.json";
 
+/** @deprecated Blob path name — kept for tests/docs only. */
 export function sponsorshipBlobName(vertical: string): string {
   return `sponsorships/${vertical}.json`;
 }
@@ -36,6 +41,10 @@ function withVertical(entry: Sponsorship, vertical: string): Sponsorship {
   };
 }
 
+function emptyStore(): SponsorshipFile {
+  return { sponsorships: [] };
+}
+
 function readLocalFile(vertical: string): SponsorshipFile {
   const modern = sponsorshipLocalFile(vertical);
   try {
@@ -45,10 +54,10 @@ function readLocalFile(vertical: string): SponsorshipFile {
       try {
         return JSON.parse(readFileSync(LEGACY_LOCAL_FILE, "utf8")) as SponsorshipFile;
       } catch {
-        return { sponsorships: [] };
+        return emptyStore();
       }
     }
-    return { sponsorships: [] };
+    return emptyStore();
   }
 }
 
@@ -58,57 +67,40 @@ function writeLocalFile(vertical: string, data: SponsorshipFile): void {
   writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 }
 
-async function readNamedBlob(name: string): Promise<SponsorshipFile | null> {
-  const { blobs } = await list({ prefix: name, limit: 1 });
-  if (blobs.length === 0) return null;
-  const response = await fetch(blobs[0].downloadUrl);
-  if (!response.ok) return null;
-  return (await response.json()) as SponsorshipFile;
+async function readRedisFile(vertical: string): Promise<SponsorshipFile> {
+  const stored = await kvGetJson<SponsorshipFile>(sponsorshipRedisKey(vertical));
+  if (!stored) return emptyStore();
+  return {
+    sponsorships: (stored.sponsorships ?? []).map((entry) =>
+      withVertical(entry, vertical),
+    ),
+  };
 }
 
-async function readBlobFile(vertical: string): Promise<SponsorshipFile> {
-  const modern = await readNamedBlob(sponsorshipBlobName(vertical));
-  if (modern) {
-    return {
-      sponsorships: modern.sponsorships.map((entry) =>
-        withVertical(entry, vertical),
-      ),
-    };
-  }
-  if (vertical === "packaging") {
-    const legacy = await readNamedBlob(LEGACY_BLOB_NAME);
-    if (legacy) {
-      return {
-        sponsorships: legacy.sponsorships.map((entry) =>
-          withVertical(entry, "packaging"),
-        ),
-      };
-    }
-  }
-  return { sponsorships: [] };
+async function writeRedisFile(vertical: string, data: SponsorshipFile): Promise<void> {
+  await kvSetJson(sponsorshipRedisKey(vertical), data);
+  // Invalidate short-lived cache after writes.
+  cache.delete(vertical);
 }
 
-async function writeBlobFile(vertical: string, data: SponsorshipFile): Promise<void> {
-  await put(sponsorshipBlobName(vertical), JSON.stringify(data, null, 2), {
-    access: "public",
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "application/json",
-  });
-}
-
-function useBlobStore(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
-}
+/** Short in-memory cache so homepage reads don't hammer Redis on every request. */
+const cache = new Map<string, { expiresAt: number; data: SponsorshipFile }>();
+const CACHE_TTL_MS = 30_000;
 
 async function readStore(vertical: string): Promise<SponsorshipFile> {
-  if (useBlobStore()) return readBlobFile(vertical);
+  if (redisConfigured()) {
+    const hit = cache.get(vertical);
+    if (hit && hit.expiresAt > Date.now()) return hit.data;
+    const data = await readRedisFile(vertical);
+    cache.set(vertical, { data, expiresAt: Date.now() + CACHE_TTL_MS });
+    return data;
+  }
   return readLocalFile(vertical);
 }
 
 async function writeStore(vertical: string, data: SponsorshipFile): Promise<void> {
-  if (useBlobStore()) {
-    await writeBlobFile(vertical, data);
+  if (redisConfigured()) {
+    await writeRedisFile(vertical, data);
     return;
   }
   writeLocalFile(vertical, data);

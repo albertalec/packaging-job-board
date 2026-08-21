@@ -76,8 +76,9 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
    - Create a Stripe webhook for `https://your-domain/api/webhooks/stripe` listening to
      `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
      One webhook URL serves every subdomain.
-   - Add a **Vercel Blob** store and set `BLOB_READ_WRITE_TOKEN` so sponsorships persist
-     (the serverless filesystem is read-only). Without Blob, local dev writes to
+   - Add **Upstash Redis** and set `UPSTASH_REDIS_REST_URL` +
+     `UPSTASH_REDIS_REST_TOKEN` so sponsorships persist (Vercel serverless
+     filesystem is read-only). Without Redis, local dev writes to
      `data/sponsorships/{vertical}.json` instead.
 
 ### Routes
@@ -90,6 +91,20 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
 | `/api/webhooks/stripe` | Activates sponsorship after payment |
 | `/` `/niches` `/employers` | Parent hub (on `nicheboardjobs.com`) |
 
+## Persistence (Upstash Redis)
+
+Sponsorships and job-alert subscribers need durable storage on Vercel.
+
+1. Create a free Redis DB at [console.upstash.com](https://console.upstash.com)
+2. Open the database → **REST API** → copy `UPSTASH_REDIS_REST_URL` and
+   `UPSTASH_REDIS_REST_TOKEN`
+3. Add both to the Vercel project env (Production + Preview)
+4. Redeploy
+5. You can remove `BLOB_READ_WRITE_TOKEN` — Blob is no longer used
+
+Keys: `nicheboard:sponsorships:{vertical}`, `nicheboard:alerts:{vertical}`.
+Homepage sponsor reads are cached in-memory for ~30s to keep Redis traffic low.
+
 ## Job alerts (free)
 
 Candidates can subscribe on a vertical homepage (`/#alerts`). Flow:
@@ -99,12 +114,13 @@ Candidates can subscribe on a vertical homepage (`/#alerts`). Flow:
 3. One-click unsubscribe → `/alerts/unsubscribe`
 
 Optional niche/state filters. Subscribers are stored in
-`data/alerts/{vertical}.json` locally, or Vercel Blob
-`alerts/{vertical}.json` in production.
+`data/alerts/{vertical}.json` locally, or **Upstash Redis**
+(`nicheboard:alerts:{vertical}`) in production.
 
-Set `RESEND_API_KEY`, optional `ALERTS_FROM_EMAIL`, and `ALERTS_CRON_SECRET`
-(or Vercel `CRON_SECRET`). After ingest changes, GitHub Actions can POST the
-digest URL via repo secrets `ALERTS_DIGEST_URL` + `ALERTS_CRON_SECRET`.
+Set `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`, plus `RESEND_API_KEY`,
+optional `ALERTS_FROM_EMAIL`, and `ALERTS_CRON_SECRET` (or Vercel `CRON_SECRET`).
+After ingest changes, GitHub Actions can POST the digest URL via repo secrets
+`ALERTS_DIGEST_URL` + `ALERTS_CRON_SECRET`.
 
 ## SEO & analytics
 

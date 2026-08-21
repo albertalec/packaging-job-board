@@ -1,13 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import {
-  BlobAccessError,
-  get,
-  list,
-  put,
-  type BlobAccessType,
-} from "@vercel/blob";
 import type { Niche } from "../../ingest/types";
+import { alertsRedisKey, kvGetJson, kvSetJson, redisConfigured } from "./kv";
 
 export type AlertSubscriber = {
   email: string;
@@ -26,16 +20,13 @@ type AlertsFile = {
   subscribers: AlertSubscriber[];
 };
 
+/** @deprecated Blob path name — kept for tests/docs only. */
 export function alertsBlobName(vertical: string): string {
   return `alerts/${vertical}.json`;
 }
 
 export function alertsLocalFile(vertical: string): string {
   return path.join(process.cwd(), "data", "alerts", `${vertical}.json`);
-}
-
-function useBlobStore(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 }
 
 function emptyStore(): AlertsFile {
@@ -56,102 +47,24 @@ function writeLocalFile(vertical: string, data: AlertsFile): void {
   writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 }
 
-async function streamToText(stream: ReadableStream<Uint8Array>): Promise<string> {
-  return new Response(stream).text();
+async function readRedisFile(vertical: string): Promise<AlertsFile> {
+  const stored = await kvGetJson<AlertsFile>(alertsRedisKey(vertical));
+  if (!stored) return emptyStore();
+  return { subscribers: stored.subscribers ?? [] };
 }
 
-function preferredAccess(): BlobAccessType | null {
-  const raw = process.env.BLOB_ACCESS?.trim().toLowerCase();
-  if (raw === "public" || raw === "private") return raw;
-  return null;
-}
-
-async function readViaGet(name: string, access: BlobAccessType): Promise<AlertsFile | null> {
-  const result = await get(name, { access });
-  if (!result || !result.stream) return null;
-  const text = await streamToText(result.stream);
-  if (!text.trim()) return emptyStore();
-  const parsed = JSON.parse(text) as AlertsFile;
-  return { subscribers: parsed.subscribers ?? [] };
-}
-
-async function readViaList(name: string): Promise<AlertsFile | null> {
-  const { blobs } = await list({ prefix: name, limit: 1 });
-  const match = blobs.find((blob) => blob.pathname === name) ?? blobs[0];
-  if (!match) return null;
-  const response = await fetch(match.downloadUrl);
-  if (!response.ok) return emptyStore();
-  const text = await response.text();
-  if (!text.trim()) return emptyStore();
-  try {
-    const parsed = JSON.parse(text) as AlertsFile;
-    return { subscribers: parsed.subscribers ?? [] };
-  } catch {
-    return emptyStore();
-  }
-}
-
-async function readBlobFile(vertical: string): Promise<AlertsFile> {
-  const name = alertsBlobName(vertical);
-  const forced = preferredAccess();
-  const order: BlobAccessType[] = forced
-    ? [forced]
-    : ["private", "public"];
-
-  for (const access of order) {
-    try {
-      const parsed = await readViaGet(name, access);
-      if (parsed) return parsed;
-    } catch {
-      // Try the next access mode / fallback.
-    }
-  }
-
-  try {
-    const listed = await readViaList(name);
-    if (listed) return listed;
-  } catch {
-    // Fall through to empty store.
-  }
-
-  return emptyStore();
-}
-
-async function writeBlobFile(vertical: string, data: AlertsFile): Promise<void> {
-  const name = alertsBlobName(vertical);
-  const body = JSON.stringify(data, null, 2);
-  const base = {
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "application/json",
-  } as const;
-
-  const forced = preferredAccess();
-  if (forced) {
-    await put(name, body, { ...base, access: forced });
-    return;
-  }
-
-  // Newer stores are often private; older sponsorship stores may be public.
-  try {
-    await put(name, body, { ...base, access: "private" });
-  } catch (error) {
-    if (error instanceof BlobAccessError) {
-      await put(name, body, { ...base, access: "public" });
-      return;
-    }
-    throw error;
-  }
+async function writeRedisFile(vertical: string, data: AlertsFile): Promise<void> {
+  await kvSetJson(alertsRedisKey(vertical), data);
 }
 
 async function readStore(vertical: string): Promise<AlertsFile> {
-  if (useBlobStore()) return readBlobFile(vertical);
+  if (redisConfigured()) return readRedisFile(vertical);
   return readLocalFile(vertical);
 }
 
 async function writeStore(vertical: string, data: AlertsFile): Promise<void> {
-  if (useBlobStore()) {
-    await writeBlobFile(vertical, data);
+  if (redisConfigured()) {
+    await writeRedisFile(vertical, data);
     return;
   }
   writeLocalFile(vertical, data);
@@ -276,7 +189,6 @@ export async function markJobsNotified(
 
   const current = store.subscribers[index];
   const merged = new Set([...current.notifiedJobIds, ...jobIds]);
-  // Cap history so the Blob JSON stays bounded on long-running boards.
   const notifiedJobIds = [...merged].slice(-500);
   store.subscribers[index] = { ...current, notifiedJobIds };
   await writeStore(vertical, store);
