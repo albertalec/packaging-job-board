@@ -45,7 +45,8 @@ and drop semiconductor “packaging”, warehouse/packer titles, procurement,
 sales, and converting-line supervision. Descriptions are decoded and split
 into sections before they are written to `data/packaging/jobs.json`.
 
-Build status and remaining to-dos live in `PLAN.md`. Tenant config lives in
+Build status and remaining to-dos live in `PLAN.md`. Positioning, voice, and
+content rules for site/email/SEO live in `MARKETING.md`. Tenant config lives in
 `config/`.
 
 ## Sponsorship (Stripe)
