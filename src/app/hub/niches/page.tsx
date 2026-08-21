@@ -52,9 +52,9 @@ export default async function NichesPage() {
       <p className="kicker">Verticals</p>
       <h1>Boards too narrow for LinkedIn</h1>
       <p className="lede">
-        Each subdomain is its own board — its own classifier, filters, and
-        sponsorship pool. We only launch a niche once it has enough on-target
-        roles.
+        Each subdomain is its own specialty board — its own classifier, filters,
+        and sponsorship pool — on Niche Board. We only launch a niche once it
+        has enough on-target roles.
       </p>
       <h2 className="sponsor-subhead">Live</h2>
       <ul className="niche-grid">

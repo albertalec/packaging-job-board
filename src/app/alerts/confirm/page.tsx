@@ -36,7 +36,7 @@ export default async function AlertConfirmPage({ searchParams }: Props) {
           <p className="lede">
             Free alerts for <strong>{tenant.copy.contrast}</strong> will go to{" "}
             <strong>{subscriber.email}</strong>. We’ll email you when new roles
-            appear — apply on the employer career site.
+            appear on {tenant.brand.name} — apply on the employer career site.
           </p>
         </>
       ) : (

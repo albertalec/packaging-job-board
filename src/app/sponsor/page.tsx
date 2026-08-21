@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     tenant,
     title: "Sponsor a job",
-    description: `Priority placement for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
+    description: `Pin a live listing on ${tenant.brand.name} for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
     path: "/sponsor",
     index: false,
   });
@@ -44,10 +44,10 @@ export default async function SponsorIndexPage() {
       </h1>
       <p className="lede">{tenant.copy.sponsorLede}</p>
       <ul className="sponsor-benefits">
-        <li>First position on the homepage (above organic listings)</li>
+        <li>First on the {tenant.brand.name} homepage (above organic listings)</li>
         <li>Sponsored stamp on the card and job detail page</li>
         <li>{`${days}-day run`} — flat fee, no recurring charge</li>
-        <li>Ranks on this board only — not the rest of the network</li>
+        <li>Ranks on this specialty board only — not the rest of Niche Board</li>
       </ul>
       <h2 className="sponsor-subhead">Pick a live listing</h2>
       <SponsorPicker jobs={picks} />

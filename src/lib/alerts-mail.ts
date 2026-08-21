@@ -96,8 +96,8 @@ function brandShell(input: {
                       </tr>
                     </table>
                   </td>
-                  <td align="right" style="font-size:12px;line-height:1.35;color:${muted};max-width:160px;">
-                    ${escapeHtml(tenant.brand.tagline)}
+                  <td align="right" style="font-size:12px;line-height:1.35;color:${muted};max-width:180px;">
+                    ${escapeHtml(tenant.copy.contrast)}
                   </td>
                 </tr>
               </table>
@@ -115,6 +115,13 @@ function brandShell(input: {
             <td style="padding:0 28px 28px;border-top:1px solid ${rule};">
               <p style="margin:18px 0 8px;font-size:13px;line-height:1.5;color:${muted};">
                 ${escapeHtml(footerNote)}
+              </p>
+              <p style="margin:0 0 8px;font-size:13px;line-height:1.5;color:${muted};">
+                ${escapeHtml(tenant.brand.name)}${
+                  tenant.brand.networkCredit
+                    ? `, ${escapeHtml(tenant.brand.networkCredit)}`
+                    : ""
+                }
               </p>
               <p style="margin:0;font-size:13px;line-height:1.5;color:${muted};">
                 <a href="${unsubUrl}" style="color:${muted};">Unsubscribe</a>
@@ -136,6 +143,9 @@ function brandShell(input: {
     preheader,
     "",
     footerNote,
+    tenant.brand.networkCredit
+      ? `${tenant.brand.name}, ${tenant.brand.networkCredit}`
+      : tenant.brand.name,
     `Browse roles: ${origin.replace(/\/$/, "")}/`,
     `Unsubscribe: ${unsubscribeUrl}`,
   ].join("\n");
@@ -260,11 +270,11 @@ export function buildConfirmEmail(input: {
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
       Confirm your free alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
-      Open roles land in your inbox when they appear — apply on the employer career site.
+      We’ll email you when matching roles appear — apply on the employer career site.
     </p>
     ${ctaButton(input.confirmUrl, "Confirm alerts", ink, input.tenant.theme.paper)}
     <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
-      If you did not request this, you can ignore the message or
+      If you did not request this, ignore the message or
       <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:#5c4c3c;">unsubscribe</a>.
     </p>
   `;
@@ -330,10 +340,10 @@ export function buildDigestEmail(input: {
   const bodyHtml = `
     <p style="margin:0 0 18px;font-size:16px;line-height:1.5;">
       Fresh roles for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
-      Apply on the company career site.
+      Apply on the company career site — we’ll keep it short.
     </p>
     ${jobCardsHtml(input.jobs, input.tenant.theme)}
-    ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, "Browse the full board", ink, input.tenant.theme.paper)}
+    ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, `Browse ${input.tenant.brand.name}`, ink, input.tenant.theme.paper)}
   `;
   const textJobs = input.jobs
     .map(

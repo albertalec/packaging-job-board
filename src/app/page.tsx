@@ -49,6 +49,7 @@ export default async function HomePage() {
       <section className="hero">
         <p className="kicker">{tenant.copy.kicker}</p>
         <h1>{tenant.copy.hero}</h1>
+        <p className="contrast">{tenant.copy.contrast}</p>
         <p className="lede">{tenant.copy.lede}</p>
         <dl className="stats">
           <div>

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     tenant,
     title: "Employers",
     description:
-      "Pin an ATS listing on a specialist Niche Board. Audience precision, not a slot on a generic board.",
+      "Pin an ATS listing on a Niche Board specialty board. Audience precision — not a slot on a generic job site.",
     path: "/employers",
   });
 }
@@ -28,7 +28,10 @@ export default async function EmployersPage() {
     <article className="sponsor-page">
       <p className="kicker">For employers</p>
       <h1>Pin the listing you already have</h1>
-      <p className="lede">{tenant.brand.employerTagline}</p>
+      <p className="lede">
+        {tenant.brand.employerTagline} Start with Packaging Jobs — packaging
+        engineers and package development, not plant ops.
+      </p>
       <ul className="sponsor-benefits">
         <li>
           Candidates apply on your Workday, Greenhouse, or other ATS — no fake

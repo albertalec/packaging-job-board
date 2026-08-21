@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const tenant = await getRequestTenant();
   return buildPageMetadata({
     tenant,
-    title: "Niche job boards",
+    title: "Niche Board",
     description: tenant.copy.metaDescription,
     path: "/",
   });
@@ -38,7 +38,7 @@ export default async function HubHomePage() {
   return (
     <>
       <section className="hero">
-        <p className="kicker">A network of specialist boards</p>
+        <p className="kicker">A Niche Board network</p>
         <h1>{tenant.copy.hero}</h1>
         <p className="lede">{tenant.copy.lede}</p>
         <div className="sponsor-actions">
