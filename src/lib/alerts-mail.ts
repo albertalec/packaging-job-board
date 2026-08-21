@@ -300,7 +300,7 @@ export function buildWelcomeEmail(input: {
 }): { subject: string; html: string; text: string } {
   const ink = "#1d1712";
   const boardUrl = `${input.origin.replace(/\/$/, "")}/`;
-  const { copy } = input.tenant;
+  const { brand, copy } = input.tenant;
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
       ${escapeHtml(copy.alertsWelcomeIntro)}
@@ -308,15 +308,15 @@ export function buildWelcomeEmail(input: {
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
       ${escapeHtml(copy.alertsWelcomeBody)}
     </p>
-    ${ctaButton(boardUrl, "Browse open roles", ink, input.tenant.theme.paper)}
+    ${ctaButton(boardUrl, `Browse ${brand.name}`, ink, input.tenant.theme.paper)}
   `;
   const shell = brandShell({
     tenant: input.tenant,
     origin: input.origin,
-    preheader: copy.alertsWelcomeIntro,
+    preheader: `${copy.contrast} Free alerts from ${brand.name}.`,
     title: copy.alertsWelcomeTitle,
     bodyHtml,
-    footerNote: input.tenant.brand.footer,
+    footerNote: brand.footer,
     unsubscribeUrl: input.unsubscribeUrl,
   });
   return {
