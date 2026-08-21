@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     tenant,
     title: "Alert confirmed",
-    description: "Your free job alerts are active.",
+    description: "Your job alerts are active.",
     path: "/alerts/confirm",
     index: false,
   });
@@ -34,7 +34,7 @@ export default async function AlertConfirmPage({ searchParams }: Props) {
         <>
           <h1>You’re on the list</h1>
           <p className="lede">
-            Free alerts for <strong>{tenant.copy.contrast}</strong> will go to{" "}
+            Alerts for <strong>{tenant.copy.contrast}</strong> will go to{" "}
             <strong>{subscriber.email}</strong>. We’ll email you when new roles
             appear on {tenant.brand.name} — apply on the employer career site.
           </p>

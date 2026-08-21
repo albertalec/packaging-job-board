@@ -190,10 +190,14 @@ dream job · passion · disrupt · AI-powered matching · #1 board · thousands 
 
 Every asset is one of these types. Stay inside the template.
 
-### 7.1 Site UI copy
+### 7.1 Site UI copy & visual system
 - One job per block: hero, board empty states, alerts module, sponsor lede.
-- Hero budget: brand/mark, one headline, one lede, primary actions — no promo stickers.
-- Keep candidate path (Apply) and employer path (Sponsor) visually separate.
+- **Hero budget:** Packaging Jobs mark (hero-level), one headline, contrast wedge, one short lede, one CTA pair. No stats strip, promo stickers, or secondary marketing in the first viewport.
+- Contrast line is visual + verbal: stamp-accent, left rule — *Package development — not plant ops.*
+- Board counts and “last updated” sit *below* the hero as quiet meta, not in the hero.
+- Keep candidate path (Apply / Browse / Alerts) and employer path (Sponsor) visually separate.
+- **Visual brand (Packaging):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only.
+- Motion is presence, not noise: mark settle, hero rise-in, card hover offset. Respect `prefers-reduced-motion`.
 
 ### 7.2 SEO / metadata
 - Title ≈ specialty + “jobs” + employer framing; do not keyword-stuff plant/ops terms.
