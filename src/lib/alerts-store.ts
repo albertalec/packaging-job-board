@@ -1,6 +1,12 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { list, put } from "@vercel/blob";
+import {
+  BlobAccessError,
+  get,
+  list,
+  put,
+  type BlobAccessType,
+} from "@vercel/blob";
 import type { Niche } from "../../ingest/types";
 
 export type AlertSubscriber = {
@@ -50,23 +56,92 @@ function writeLocalFile(vertical: string, data: AlertsFile): void {
   writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 }
 
-async function readBlobFile(vertical: string): Promise<AlertsFile> {
-  const name = alertsBlobName(vertical);
-  const { blobs } = await list({ prefix: name, limit: 1 });
-  if (blobs.length === 0) return emptyStore();
-  const response = await fetch(blobs[0].downloadUrl);
-  if (!response.ok) return emptyStore();
-  const parsed = (await response.json()) as AlertsFile;
+async function streamToText(stream: ReadableStream<Uint8Array>): Promise<string> {
+  return new Response(stream).text();
+}
+
+function preferredAccess(): BlobAccessType | null {
+  const raw = process.env.BLOB_ACCESS?.trim().toLowerCase();
+  if (raw === "public" || raw === "private") return raw;
+  return null;
+}
+
+async function readViaGet(name: string, access: BlobAccessType): Promise<AlertsFile | null> {
+  const result = await get(name, { access });
+  if (!result || !result.stream) return null;
+  const text = await streamToText(result.stream);
+  if (!text.trim()) return emptyStore();
+  const parsed = JSON.parse(text) as AlertsFile;
   return { subscribers: parsed.subscribers ?? [] };
 }
 
+async function readViaList(name: string): Promise<AlertsFile | null> {
+  const { blobs } = await list({ prefix: name, limit: 1 });
+  const match = blobs.find((blob) => blob.pathname === name) ?? blobs[0];
+  if (!match) return null;
+  const response = await fetch(match.downloadUrl);
+  if (!response.ok) return emptyStore();
+  const text = await response.text();
+  if (!text.trim()) return emptyStore();
+  try {
+    const parsed = JSON.parse(text) as AlertsFile;
+    return { subscribers: parsed.subscribers ?? [] };
+  } catch {
+    return emptyStore();
+  }
+}
+
+async function readBlobFile(vertical: string): Promise<AlertsFile> {
+  const name = alertsBlobName(vertical);
+  const forced = preferredAccess();
+  const order: BlobAccessType[] = forced
+    ? [forced]
+    : ["private", "public"];
+
+  for (const access of order) {
+    try {
+      const parsed = await readViaGet(name, access);
+      if (parsed) return parsed;
+    } catch {
+      // Try the next access mode / fallback.
+    }
+  }
+
+  try {
+    const listed = await readViaList(name);
+    if (listed) return listed;
+  } catch {
+    // Fall through to empty store.
+  }
+
+  return emptyStore();
+}
+
 async function writeBlobFile(vertical: string, data: AlertsFile): Promise<void> {
-  await put(alertsBlobName(vertical), JSON.stringify(data, null, 2), {
-    access: "public",
+  const name = alertsBlobName(vertical);
+  const body = JSON.stringify(data, null, 2);
+  const base = {
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
-  });
+  } as const;
+
+  const forced = preferredAccess();
+  if (forced) {
+    await put(name, body, { ...base, access: forced });
+    return;
+  }
+
+  // Newer stores are often private; older sponsorship stores may be public.
+  try {
+    await put(name, body, { ...base, access: "private" });
+  } catch (error) {
+    if (error instanceof BlobAccessError) {
+      await put(name, body, { ...base, access: "public" });
+      return;
+    }
+    throw error;
+  }
 }
 
 async function readStore(vertical: string): Promise<AlertsFile> {
