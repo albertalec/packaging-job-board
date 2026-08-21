@@ -31,20 +31,20 @@ export const packaging: VerticalTenant = {
     metaDescription:
       "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily. Apply on the company career site.",
     empty:
-      "No packaging engineer roles listed right now. Check back after the next daily update.",
-    emptyFiltered: "No packaging engineer roles match.",
+      "No packaging engineer roles listed right now. We’ll have more after the next daily update — hang tight.",
+    emptyFiltered: "No packaging engineer roles match those filters. Try widening them a bit.",
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
-      "Packaging engineers and package-development candidates already use this board. Pay by card to pin a live career-site listing at the top — no separate \"post a job\" round-trip.",
+      "Packaging engineers and package-development folks already browse here. Pin a live career-site listing at the top for 30 days — no separate “post a job” round-trip.",
     alertsTitle: "Get new packaging engineer roles by email",
     alertsLede:
-      "No paywall. Enter your email and you’re on the list — we’ll send a short digest when fresh package-development jobs appear.",
+      "No paywall. Drop in your email and you’re on the list — we’ll send a short digest when fresh package-development jobs show up.",
     alertsWelcomeSubject: "You’re subscribed to Packaging Job Alerts",
     alertsWelcomeTitle: "You’re subscribed",
     alertsWelcomeIntro:
       "You’re subscribed to Packaging Jobs alerts, powered by Niche Board.",
     alertsWelcomeBody:
-      "We’ll send you new packaging engineering opportunities from selected employers. We focus specifically on packaging engineering and package development roles—not general plant operations.",
+      "We’ll email you when new packaging engineering and package-development roles appear — the specialist stuff, not general plant ops. Browse anytime, apply on the employer’s career site.",
   },
   ingest: {
     classifier: "packaging",

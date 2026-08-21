@@ -1,10 +1,7 @@
 # Niche Board — Marketing & Content Plan
 
-**Status:** Living source of truth for site copy, email, SEO, social, and employer outreach.  
-**Launch vertical:** Packaging Jobs (`packaging.nicheboardjobs.com`)  
-**Platform:** Niche Board (`nicheboardjobs.com`)
-
-If a draft conflicts with this document, change the draft — or update this plan deliberately and note why.
+**Tone (locked):** friendly but not eager · trustworthy and uplifting · a little fun  
+If a draft feels breathless, salesy, or flatly corporate, rewrite it.
 
 ---
 
@@ -231,6 +228,7 @@ Do not name-call competitors in product UI. Fine in private outreach if factual 
 
 Before publishing any copy (site, email, social, outreach):
 
+- [ ] Tone: friendly + trustworthy + lightly fun — not eager or hype-y
 - [ ] Correct brand for the surface (Niche Board vs Packaging Jobs)
 - [ ] Maps to ≥1 positioning pillar
 - [ ] Specialty is explicit; contrast (“not …”) present where packaging is the topic

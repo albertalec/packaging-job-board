@@ -116,7 +116,8 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /Source Serif 4/);
   assert.match(message.html, /You’re subscribed/);
   assert.match(message.html, /powered by Niche Board/);
-  assert.match(message.html, /not general plant operations/);
+  assert.match(message.html, /not general plant ops/);
+  assert.match(message.html, /Browse anytime/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
