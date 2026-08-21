@@ -31,6 +31,8 @@ export type VerticalCopy = {
   sponsorHeadline: string;
   sponsorLede: string;
   kicker: string;
+  alertsTitle: string;
+  alertsLede: string;
 };
 
 export type VerticalTenant = {

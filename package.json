@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "ingest": "tsx ingest/run.ts",
-    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts"
+    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts src/lib/alerts.test.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -16,6 +16,7 @@
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "resend": "^6.21.0",
     "stripe": "^22.5.0"
   },
   "devDependencies": {

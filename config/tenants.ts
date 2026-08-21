@@ -29,6 +29,10 @@ export function getVertical(id: string): VerticalTenant {
   return tenant;
 }
 
+export function listVerticalIds(): string[] {
+  return verticals.map((vertical) => vertical.id);
+}
+
 export function formatUsd(cents: number): string {
   const dollars = cents / 100;
   if (Number.isInteger(dollars)) return `$${dollars}`;

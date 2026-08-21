@@ -40,9 +40,14 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </Link>
             </nav>
           ) : (
-            <Link className="nav-link" href="/sponsor">
-              Sponsor a job
-            </Link>
+            <nav className="mast-nav">
+              <Link className="nav-link" href="/#alerts">
+                Free alerts
+              </Link>
+              <Link className="nav-link" href="/sponsor">
+                Sponsor a job
+              </Link>
+            </nav>
           )}
         </div>
       </header>

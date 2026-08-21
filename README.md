@@ -90,6 +90,22 @@ Use the signing secret printed by `stripe listen` as `STRIPE_WEBHOOK_SECRET`.
 | `/api/webhooks/stripe` | Activates sponsorship after payment |
 | `/` `/niches` `/employers` | Parent hub (on `nicheboardjobs.com`) |
 
+## Job alerts (free)
+
+Candidates can subscribe on a vertical homepage (`/#alerts`). Flow:
+
+1. Double opt-in email (Resend) → `/alerts/confirm`
+2. Daily digest when new roles appear (`/api/alerts/digest`, Vercel Cron 14:00 UTC)
+3. One-click unsubscribe → `/alerts/unsubscribe`
+
+Optional niche/state filters. Subscribers are stored in
+`data/alerts/{vertical}.json` locally, or Vercel Blob
+`alerts/{vertical}.json` in production.
+
+Set `RESEND_API_KEY`, optional `ALERTS_FROM_EMAIL`, and `ALERTS_CRON_SECRET`
+(or Vercel `CRON_SECRET`). After ingest changes, GitHub Actions can POST the
+digest URL via repo secrets `ALERTS_DIGEST_URL` + `ALERTS_CRON_SECRET`.
+
 ## SEO & analytics
 
 Job pages include `JobPosting` JSON-LD, Open Graph / Twitter cards, and

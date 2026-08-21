@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JobAlertsSignup } from "@/components/JobAlertsSignup";
 import { JobBoard } from "@/components/JobBoard";
 import { loadJobs } from "@/lib/jobs";
 import { buildPageMetadata } from "@/lib/seo";
@@ -69,6 +70,10 @@ export default async function HomePage() {
         sponsoredIds={[...sponsoredIds]}
         empty={tenant.copy.empty}
         emptyFiltered={tenant.copy.emptyFiltered}
+      />
+      <JobAlertsSignup
+        title={tenant.copy.alertsTitle}
+        lede={tenant.copy.alertsLede}
       />
     </>
   );
