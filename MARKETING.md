@@ -94,6 +94,18 @@ Optional one-liner under the mark on packaging (when we want network credit with
 
 Keep that. Do not change the packaging mark to “Niche Board.”
 
+### Logo (platform)
+
+Design from brand identity and value proposition — not from whatever glyph is currently on the site. The mark is for **Niche Board the network**, so it must outlive Packaging Jobs and still make sense on Supply Chain Jobs or Resilience Jobs.
+
+**Rules**
+- Two words on the wordmark: **Niche Board**. Never Nicheboard, never **NB**.
+- Personality: friendly, trustworthy, a little fun — quietly confident, not eager, not hype, not LinkedIn-blue SaaS.
+- On vertical sites the Niche Board mark is supporting type only. It must stay quiet under **Packaging Jobs** (and later Supply Chain Jobs / Resilience Jobs).
+- Do not encode a single industry (cartons, warehouses, servers). The platform is the specialist *pattern*, not one vertical.
+
+Copy-paste brief for a designer or image model: §14.
+
 ---
 
 ## 3. Audiences & jobs-to-be-done
@@ -210,6 +222,7 @@ Every asset is one of these types. Stay inside the template.
 - Board counts and “last updated” sit *below* the hero as quiet meta, not in the hero.
 - Keep candidate path (Apply / Browse / Alerts) and employer path (Sponsor) visually separate.
 - **Visual brand (Packaging):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only.
+- **Platform mark:** Niche Board’s identity, not a Packaging Jobs icon. See §14.
 - Motion is presence, not noise: mark settle, hero rise-in, card hover offset. Respect `prefers-reduced-motion`.
 
 ### 7.2 SEO / metadata
@@ -338,3 +351,54 @@ Product roadmap context: `PLAN.md`. Update this file when positioning changes.
 - Qualitative: employers say “these are the right people”
 
 Ignore as primary goals: raw pageviews, social likes, email list size without engagement.
+
+---
+
+## 14. Logo design prompt
+
+Source: identity, voice, and value proposition in §§1–6. Do not use live-site glyphs, type, or color tokens as the starting point.
+
+### Logo design prompt (copy-paste)
+
+```
+Design a logo for Niche Board.
+
+Niche Board is a network of precision job boards — one named board per
+professional niche — for roles too narrow for LinkedIn. It is the maker
+behind products like Packaging Jobs, not a generic job site with “niche”
+as a filter, not a career network, and not a scrape aggregator. Candidates
+find jobs in their exact specialty, updated daily, and apply on the
+employer’s real career site. Employers reach specialists that big boards
+bury, and pin a listing they already posted. We sell audience precision,
+not volume and not “launch your next career move.”
+
+Brand identity: friendly but not eager; trustworthy and uplifting; a little
+fun (clever, not cute). Quietly confident. Warm and human. Short, concrete,
+specialist. If the mark feels breathless, salesy, corporate, or like a
+startup app icon, start over.
+
+The logo should express one idea: a distinct professional slice — signal
+kept, noise dropped — a named place for a narrow field. Not a social graph,
+not a feed, not the whole market.
+
+Wordmark: “Niche Board” as two words. Never “Nicheboard”. Never “NB”.
+Never “Niche Board Jobs”. Optional quiet tagline:
+“Jobs in niches too narrow for LinkedIn.”
+
+This is the platform mark. It must work as the hero on the Niche Board hub
+and as a small “powered by Niche Board” credit under a louder vertical name.
+It must still make sense when the live product is Packaging Jobs, Supply
+Chain Jobs, or Resilience Jobs — no industry object.
+
+Simple original glyph + wordmark. Vector, high contrast, favicon-legible.
+One distinctive idea. A little wit is welcome if it does not undercut
+competence. Explore at least two directions, then recommend one.
+
+Do not: copy or evolve any existing site icon; cardboard, packing tape,
+factories, warehouses, plants, servers; people, briefcases, rockets,
+ladders, career-journey metaphors, location pins; LinkedIn blue, Indeed
+green, AI purple, neon, gradients, glass, 3D; letter N in a circle;
+crowded grids or world maps; resume / matching / AI imagery; anything that
+needs a caption to explain the joke.
+```
+
