@@ -118,6 +118,8 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /powered by Niche Board/);
   assert.match(message.html, /not general plant ops/);
   assert.match(message.html, /Browse anytime/);
+  assert.match(message.html, /Package development — not plant ops/);
+  assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
@@ -150,6 +152,8 @@ test("branded confirm email uses tenant theme and mark", () => {
   assert.match(message.html, /color:#5c4c3c/);
   assert.match(message.html, /Packaging/);
   assert.match(message.html, /Confirm alerts/);
+  assert.match(message.html, /Package development — not plant ops/);
+  assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(
     message.html,
     /href="https:\/\/packaging\.nicheboardjobs\.com\/alerts\/unsubscribe\?token=abc"/,
@@ -182,8 +186,12 @@ test("branded digest email renders job cards", () => {
   assert.match(message.html, /Senior Packaging Engineer/);
   assert.match(message.html, /General Mills/);
   assert.match(message.html, /Apply on career site/);
+  assert.match(message.html, /Browse Packaging Jobs/);
+  assert.match(message.html, /Package development — not plant ops/);
+  assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(message.html, /box-shadow:3px 3px 0/);
   assert.match(message.text, /Senior Packaging Engineer/);
+  assert.match(message.text, /powered by Niche Board/);
 });
 
 test("alerts local store round-trips pending → active → remove", async () => {

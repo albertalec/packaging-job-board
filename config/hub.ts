@@ -19,7 +19,7 @@ export const hub: HubTenant = {
     footer:
       "A network of precision job boards. Candidates apply on the employer ATS.",
     employerFooter:
-      "Pin a listing you already have on Workday or Greenhouse — scoped to one specialist board.",
+      "Pin a listing you already have on Workday or Greenhouse — scoped to one specialty board.",
   },
   theme: {
     accent: "#1d4e89",
@@ -31,6 +31,6 @@ export const hub: HubTenant = {
     hero: "Jobs in niches too narrow for LinkedIn.",
     lede: "Specialist boards for roles generic sites bury — with a little more signal and a lot less noise. Candidates apply on the employer career site. Employers pin a listing they already have.",
     metaDescription:
-      "Niche Board is a network of specialist job boards. Pin an ATS listing on the board that actually reaches the role you are hiring.",
+      "Niche Board is a network of specialist job boards. Pin an ATS listing on the board that actually reaches the role you are hiring — starting with Packaging Jobs.",
   },
 };

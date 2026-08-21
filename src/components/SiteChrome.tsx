@@ -53,6 +53,11 @@ export function SiteChrome({ children }: { children: ReactNode }) {
       </header>
       <main>{children}</main>
       <footer>
+        {tenant.brand.networkCredit ? (
+          <p className="network-credit">
+            {tenant.brand.name}, {tenant.brand.networkCredit}
+          </p>
+        ) : null}
         <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
       </footer>
     </>

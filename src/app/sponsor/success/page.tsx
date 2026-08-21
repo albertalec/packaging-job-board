@@ -18,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SponsorSuccessPage({ searchParams }: SearchParams) {
+  const tenant = await getRequestTenant();
   const { session_id: sessionId } = await searchParams;
   let jobId: string | undefined;
   let jobTitle: string | undefined;
@@ -32,6 +33,8 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
     }
   }
 
+  const boardName = tenant.kind === "vertical" ? tenant.brand.name : "the board";
+
   return (
     <article className="sponsor-page">
       <p className="kicker">Payment received</p>
@@ -39,13 +42,13 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
       <p className="lede">
         {jobTitle ? (
           <>
-            Stripe confirmed your payment for <strong>{jobTitle}</strong>. It
-            should appear at the top of this board within a minute.
+            Payment confirmed for <strong>{jobTitle}</strong>. It should appear
+            at the top of {boardName} within a minute.
           </>
         ) : (
           <>
-            Stripe confirmed your payment. It should appear at the top of this
-            board within a minute.
+            Payment confirmed. It should appear at the top of {boardName} within
+            a minute.
           </>
         )}
       </p>
@@ -56,7 +59,7 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
           </Link>
         ) : null}
         <Link className="ghost" href="/">
-          Back to job board
+          Back to {boardName}
         </Link>
       </div>
     </article>

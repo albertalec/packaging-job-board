@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { NICHE_LABELS } from "@/lib/niches";
 import { US_STATES } from "@/lib/states";
+import { useTenant } from "./TenantProvider";
 
 const NICHES = [
   { id: "", label: "All niches" },
@@ -18,6 +19,7 @@ export function JobAlertsSignup({
   title: string;
   lede: string;
 }) {
+  const tenant = useTenant();
   const [email, setEmail] = useState("");
   const [niche, setNiche] = useState("");
   const [state, setState] = useState("");
@@ -83,7 +85,8 @@ export function JobAlertsSignup({
 
       {status === "subscribed" ? (
         <p className="notice" role="status">
-          You’re subscribed. We’ll email you when new matching roles appear.
+          You’re subscribed to {tenant.brand.name}. We’ll email you when new
+          matching roles appear.
         </p>
       ) : null}
       {status === "already_active" ? (

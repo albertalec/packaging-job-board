@@ -276,7 +276,8 @@ Do not name-call competitors in product UI. Fine in private outreach if factual 
 Before publishing any copy (site, email, social, outreach):
 
 - [ ] Tone: friendly + trustworthy + lightly fun — not eager or hype-y
-- [ ] Correct brand for the surface (Niche Board vs Packaging Jobs)
+- [ ] Correct brand for the surface: **Packaging Jobs** on vertical, **Niche Board** on hub; no “Nicheboard Jobs” / “Packaging Nicheboard”
+- [ ] If both appear, Packaging Jobs leads; Niche Board is powered-by only
 - [ ] Maps to ≥1 positioning pillar
 - [ ] Specialty is explicit; contrast (“not …”) present where packaging is the topic
 - [ ] Apply-out or pin-existing-listing clear when relevant

@@ -12,6 +12,8 @@ export type Brand = {
   employerTagline: string;
   footer: string;
   employerFooter: string;
+  /** e.g. "powered by Niche Board" — vertical boards only */
+  networkCredit?: string;
 };
 
 export type SponsorConfig = {

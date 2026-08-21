@@ -11,11 +11,12 @@ export const packaging: VerticalTenant = {
     markLine1: "Packaging",
     markLine2: "Jobs",
     tagline: "Packaging engineer jobs at top employers.",
-    employerTagline: "Pin an existing listing at the top of the board.",
+    employerTagline: "Pin a live listing at the top of Packaging Jobs.",
     footer:
-      "Packaging engineer roles from employer career sites. Apply on the source listing.",
+      "Roles from employer career sites. Apply on the source listing.",
     employerFooter:
-      "Pin a live career-site listing. Candidates apply on the employer ATS.",
+      "Pin a live career-site listing on Packaging Jobs. Candidates apply on the employer ATS.",
+    networkCredit: "powered by Niche Board",
   },
   theme: {
     accent: "#b42318",
@@ -26,16 +27,17 @@ export const packaging: VerticalTenant = {
   copy: {
     kicker: "Updated daily",
     hero: "Packaging engineer jobs at top employers.",
-    lede: "Packaging engineers and package development — not plant ops. Open roles at companies like General Mills, Johnson & Johnson, Mars, and Clorox. Apply on the company's career site.",
+    lede: "Open roles at companies like General Mills, Johnson & Johnson, Mars, and Clorox. Apply on the company’s career site.",
     contrast: "Package development — not plant ops.",
     metaDescription:
-      "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily. Apply on the company career site.",
+      "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily from employer ATS feeds. Apply on the company career site.",
     empty:
       "No packaging engineer roles listed right now. We’ll have more after the next daily update — hang tight.",
-    emptyFiltered: "No packaging engineer roles match those filters. Try widening them a bit.",
+    emptyFiltered:
+      "No packaging engineer roles match those filters. Try widening them a bit.",
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
-      "Packaging engineers and package-development folks already browse here. Pin a live career-site listing at the top for 30 days — no separate “post a job” round-trip.",
+      "Reach packaging engineers and package-development folks who already browse Packaging Jobs. Pin a live career-site listing at the top for 30 days — no separate “post a job” round-trip.",
     alertsTitle: "Get new packaging engineer roles by email",
     alertsLede:
       "No paywall. Drop in your email and you’re on the list — we’ll send a short digest when fresh package-development jobs show up.",
