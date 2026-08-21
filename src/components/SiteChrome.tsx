@@ -42,7 +42,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           ) : (
             <nav className="mast-nav">
               <Link className="nav-link" href="/#alerts">
-                Free alerts
+                Job alerts
               </Link>
               <Link className="nav-link" href="/sponsor">
                 Sponsor a job

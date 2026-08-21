@@ -134,6 +134,9 @@ test("branded welcome email uses tenant theme and mark", () => {
   );
   assert.doesNotMatch(message.html, /Didn’t mean to subscribe/);
   assert.doesNotMatch(message.html, /Free job alerts/);
+  assert.doesNotMatch(message.html, /Free alerts/);
+  assert.doesNotMatch(message.html, /No paywall/);
+  assert.match(message.html, /Alerts from Packaging Jobs/);
   assert.match(message.html, /Unsubscribe/);
   assert.match(message.html, /color:#5c4c3c/);
   assert.match(message.text, /powered by Niche Board/);

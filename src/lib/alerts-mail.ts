@@ -269,7 +269,7 @@ export function buildConfirmEmail(input: {
   const ink = "#1d1712";
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
-      Confirm your free alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
+      Confirm your alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
       We’ll email you when matching roles appear — apply on the employer career site.
     </p>
     ${ctaButton(input.confirmUrl, "Confirm alerts", ink, input.tenant.theme.paper)}
@@ -281,7 +281,7 @@ export function buildConfirmEmail(input: {
   const shell = brandShell({
     tenant: input.tenant,
     origin: input.origin,
-    preheader: `Confirm free ${input.tenant.brand.name} alerts.`,
+    preheader: `Confirm your ${input.tenant.brand.name} alerts.`,
     title: "Confirm your job alerts",
     bodyHtml,
     footerNote: input.tenant.brand.footer,
@@ -313,7 +313,7 @@ export function buildWelcomeEmail(input: {
   const shell = brandShell({
     tenant: input.tenant,
     origin: input.origin,
-    preheader: `${copy.contrast} Free alerts from ${brand.name}.`,
+    preheader: `${copy.contrast} Alerts from ${brand.name}.`,
     title: copy.alertsWelcomeTitle,
     bodyHtml,
     footerNote: brand.footer,

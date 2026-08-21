@@ -40,7 +40,7 @@ export const packaging: VerticalTenant = {
       "Reach packaging engineers and package-development folks who already browse Packaging Jobs. Pin a live career-site listing at the top for 30 days — no separate “post a job” round-trip.",
     alertsTitle: "Get new packaging engineer roles by email",
     alertsLede:
-      "No paywall. Drop in your email and you’re on the list — we’ll send a short digest when fresh package-development jobs show up.",
+      "Drop in your email and you’re on the list — we’ll send a short digest when fresh package-development jobs show up.",
     alertsWelcomeSubject: "You’re subscribed to Packaging Jobs alerts",
     alertsWelcomeTitle: "You’re on the list",
     alertsWelcomeIntro:
