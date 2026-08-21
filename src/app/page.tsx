@@ -51,21 +51,32 @@ export default async function HomePage() {
         <h1>{tenant.copy.hero}</h1>
         <p className="contrast">{tenant.copy.contrast}</p>
         <p className="lede">{tenant.copy.lede}</p>
-        <dl className="stats">
-          <div>
-            <dt>Live roles</dt>
-            <dd>{total}</dd>
-          </div>
-          <div>
-            <dt>Employers hiring</dt>
-            <dd>{employersHiring}</dd>
-          </div>
-          <div>
-            <dt>Last updated</dt>
-            <dd>{ingestedLabel}</dd>
-          </div>
-        </dl>
+        <div className="hero-actions">
+          <a className="apply" href="#board">
+            Browse open roles
+          </a>
+          <a className="ghost" href="#alerts">
+            Get alerts
+          </a>
+        </div>
       </section>
+
+      <p className="board-meta" aria-label="Board status">
+        <span>
+          <strong>{total}</strong> live roles
+        </span>
+        <span className="board-meta-sep" aria-hidden="true">
+          ·
+        </span>
+        <span>
+          <strong>{employersHiring}</strong> employers
+        </span>
+        <span className="board-meta-sep" aria-hidden="true">
+          ·
+        </span>
+        <span>Updated {ingestedLabel}</span>
+      </p>
+
       <JobBoard
         jobs={sortedJobs}
         sponsoredIds={[...sponsoredIds]}

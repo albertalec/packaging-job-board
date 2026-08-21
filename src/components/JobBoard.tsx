@@ -51,7 +51,7 @@ export function JobBoard({
   }
 
   return (
-    <section>
+    <section id="board">
       <div className="filters">
         <label className="search">
           <span className="sr-only">Search jobs</span>
