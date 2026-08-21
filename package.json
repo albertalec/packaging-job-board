@@ -8,11 +8,11 @@
     "build": "next build",
     "start": "next start",
     "ingest": "tsx ingest/run.ts",
-    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts src/lib/alerts.test.ts"
+    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts src/lib/alerts.test.ts src/lib/kv.test.ts"
   },
   "dependencies": {
+    "@upstash/redis": "^1.38.2",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/blob": "^2.8.0",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
