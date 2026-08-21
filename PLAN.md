@@ -458,7 +458,7 @@ tenant until DNS cutover. **Target:** `packaging.nicheboardjobs.com` + parent hu
 - [x] **`nicheboardjobs.com` parent pages** — `/`, `/niches`, `/employers` (bundle
       pricing, network pitch); no competing packaging SEO on apex
 - [ ] Filter counts, shorter ATS location strings, a real 404 — UX pass 3
-- [ ] **Job alerts (email) before profiles** — per-vertical lists; optional
+- [x] **Job alerts (email) before profiles** — per-vertical lists; optional
       “all niches” on parent later
 - [ ] **DNS cutover** — `packaging.nicheboardjobs.com` + 301 from vercel.app
 - [ ] **Google Search Console** — parent + packaging subdomain; submit sitemaps
@@ -498,8 +498,9 @@ but these items make Google and shares work harder.
       to reduce near-duplicate boilerplate across employers
 
 **Phase C — distribution (parallel, not sequential)**
-- [ ] **Job-alert email** — weekly or daily digest when new roles appear; best
-      return-traffic loop before profiles exist
+- [x] **Job-alert email** — daily digest when new roles appear (double opt-in,
+      niche/state filters, branded HTML matching the board); Vercel Cron +
+      optional post-ingest GitHub Action trigger
 - [ ] **LinkedIn sharing** — 2–3 fresh listings/week with OG preview; packaging
       engineer groups and company tags
 - [ ] **University outreach** — MSU School of Packaging, Clemson, RIT: “curated
@@ -692,7 +693,8 @@ style as-is, and it is an XSS surface.
 9. [x] **SEO Phase A** (§3b) — JSON-LD, Open Graph, canonical, sponsor noindex,
    Vercel Analytics. **Still human:** Search Console (parent + packaging) +
    sitemap submit; enable Analytics in the Vercel project.
-10. **Job-alert emails** on packaging subdomain once list stays above ~50.
+10. [x] **Job-alert emails** on packaging subdomain (free, double opt-in,
+    branded digest when new roles appear).
 11. **Distribution** — LinkedIn shares + 1–2 university packaging programs.
 12. Live-mode Stripe on `packaging.nicheboardjobs.com` when an employer is ready.
 13. **Vertical #2 (supply chain)** — only after packaging sponsor renewals;

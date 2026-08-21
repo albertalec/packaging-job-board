@@ -36,6 +36,9 @@ export const packaging: VerticalTenant = {
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
       "Packaging engineers and package-development candidates already use this board. Pay by card to pin a live career-site listing at the top — no separate \"post a job\" round-trip.",
+    alertsTitle: "Get new packaging engineer roles by email",
+    alertsLede:
+      "No paywall. Confirm once, then we’ll send a short digest when fresh package-development jobs appear — not plant ops noise.",
   },
   ingest: {
     classifier: "packaging",
