@@ -17,6 +17,7 @@ export const packaging: VerticalTenant = {
     employerFooter:
       "Pin a live career-site listing on Packaging Jobs. Candidates apply on the employer ATS.",
     networkCredit: "powered by Niche Board",
+    alertsFromName: "Packaging Jobs Alerts",
   },
   theme: {
     accent: "#b42318",
@@ -46,7 +47,9 @@ export const packaging: VerticalTenant = {
     alertsWelcomeIntro:
       "You’re subscribed to Packaging Jobs alerts, powered by Niche Board.",
     alertsWelcomeBody:
-      "We’ll send a short digest when new packaging engineer and package-development roles appear. Package development — not plant ops. Browse anytime and apply on the company’s career site.",
+      "We’ll send a short digest when new packaging engineer and package-development roles appear. Package development — not plant ops. Browse anytime on Packaging Jobs — apply from the listing when you’re ready.",
+    alertsDigestIntro:
+      "New roles on Packaging Jobs — view details on the board.",
   },
   ingest: {
     classifier: "packaging",

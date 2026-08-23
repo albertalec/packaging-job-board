@@ -35,12 +35,14 @@ function resendConfigured(): boolean {
 
 function fromAddress(tenant: VerticalTenant): string {
   const configured = process.env.ALERTS_FROM_EMAIL?.trim();
+  const displayName =
+    tenant.brand.alertsFromName ?? `${tenant.brand.name} Alerts`;
   if (configured) {
     if (configured.includes("<")) return configured;
-    return `${tenant.brand.name} <${configured}>`;
+    return `${displayName} <${configured}>`;
   }
   // Resend test sender until a domain is verified.
-  return `${tenant.brand.name} <onboarding@resend.dev>`;
+  return `${displayName} <onboarding@resend.dev>`;
 }
 
 function brandShell(input: {
@@ -186,8 +188,7 @@ function jobCardsHtml(
         <a href="${escapeHtml(job.url)}" style="color:${ink};text-decoration:none;">${escapeHtml(job.title)}</a>
       </h2>
       <p style="margin:0 0 12px;font-size:13px;color:${muted};">${meta}</p>
-      <a href="${escapeHtml(job.applyUrl)}" style="display:inline-block;padding:8px 12px;background:${ink};color:${theme.paper};text-decoration:none;font-size:13px;border:1px solid ${ink};">Apply on career site</a>
-      <a href="${escapeHtml(job.url)}" style="display:inline-block;margin-left:8px;padding:8px 12px;background:transparent;color:${ink};text-decoration:none;font-size:13px;border:1px solid ${ink};">Details</a>
+      <a href="${escapeHtml(job.url)}" style="display:inline-block;padding:8px 12px;background:${ink};color:${theme.paper};text-decoration:none;font-size:13px;border:1px solid ${ink};">View role</a>
     </td>
   </tr>
 </table>`;
@@ -270,7 +271,7 @@ export function buildConfirmEmail(input: {
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
       Confirm your alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
-      We’ll email you when matching roles appear — apply on the employer career site.
+      We’ll email you when matching roles appear on ${escapeHtml(input.tenant.brand.name)}.
     </p>
     ${ctaButton(input.confirmUrl, "Confirm alerts", ink, input.tenant.theme.paper)}
     <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
@@ -339,8 +340,7 @@ export function buildDigestEmail(input: {
   const ink = "#1d1712";
   const bodyHtml = `
     <p style="margin:0 0 18px;font-size:16px;line-height:1.5;">
-      Fresh roles for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
-      Apply on the company career site — we’ll keep it short.
+      ${escapeHtml(input.tenant.copy.alertsDigestIntro)}
     </p>
     ${jobCardsHtml(input.jobs, input.tenant.theme)}
     ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, `Browse ${input.tenant.brand.name}`, ink, input.tenant.theme.paper)}
@@ -348,7 +348,7 @@ export function buildDigestEmail(input: {
   const textJobs = input.jobs
     .map(
       (job) =>
-        `- ${job.title} · ${job.company} · ${job.location}\n  ${job.applyUrl}`,
+        `- ${job.title} · ${job.company} · ${job.location}\n  ${job.url}`,
     )
     .join("\n");
   const shell = brandShell({

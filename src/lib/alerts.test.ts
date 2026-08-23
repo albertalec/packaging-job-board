@@ -119,10 +119,8 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /packaging engineer and package-development/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Browse Packaging Jobs/);
+  assert.match(message.html, /apply from the listing when you’re ready/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
-  assert.match(message.html, /apply on the company.+career site/i);
-  assert.doesNotMatch(message.html, /packaging engineering opportunities/);
-  assert.doesNotMatch(message.html, /the specialist stuff/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
@@ -193,12 +191,16 @@ test("branded digest email renders job cards", () => {
   assert.match(message.subject, /1 new role/);
   assert.match(message.html, /Senior Packaging Engineer/);
   assert.match(message.html, /General Mills/);
-  assert.match(message.html, /Apply on career site/);
+  assert.match(message.html, /View role/);
   assert.match(message.html, /Browse Packaging Jobs/);
+  assert.match(message.html, /New roles on Packaging Jobs/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(message.html, /box-shadow:3px 3px 0/);
+  assert.doesNotMatch(message.html, /Apply on career site/);
+  assert.doesNotMatch(message.html, /careers\.example\.com/);
   assert.match(message.text, /Senior Packaging Engineer/);
+  assert.match(message.text, /packaging\.nicheboardjobs\.com\/jobs\/a/);
   assert.match(message.text, /powered by Niche Board/);
 });
 
