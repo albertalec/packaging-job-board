@@ -197,6 +197,31 @@ Candidates are always free to browse, apply, and get alerts. That is strategy, n
 | Employer / hub copy | “Candidates stay free; employers fund precision” (ok once, competitively) | Calling the product “Free Alerts” |
 
 Mention free only when contrasting a competitor that charges candidates — and then say it once, quietly, not as the brand.
+
+---
+
+## 6.5 Brand design prompt (short)
+
+Copy-paste for design, illustration, or AI image work. Platform identity first; vertical skins (e.g. Packaging Jobs kraft) are noted at the end.
+
+```
+Niche Board — a network of precision job boards for professional niches too narrow for LinkedIn.
+
+Core idea: a precise professional slice — signal kept, noise dropped. Focus, selection, clarity, specialization.
+
+Logo (Field mark): a square field in Ink (#1A211E). Four thin Rule (#CBC8C1) horizontal lines in the upper area = dropped noise. One solid Signal (#1F6B5C) band slightly below center = the kept niche. One quiet rule below = calm after selection. Optional variants: Break (band breaks the frame), Gate (brackets admit only the band), Notch (corner crop). Never people, briefcases, pins, networks, maps, or AI imagery.
+
+Personality: quietly confident, trustworthy, warm, human, slightly clever. Professional but not corporate. Friendly but not eager.
+
+Visual system: flat color only — no gradients, neon, 3D, glass, or heavy shadows. Clean geometry, intentional negative space, sharp rectangles (not pills). Ink + Signal do most work; Ember (#C4622D) for held listings only; Contrast (#A33B2A) for specialty clarity lines only. Typography: Epilogue (display/wordmark), Source Sans 3 (UI), IBM Plex Mono (dates/meta, sparse). Patterns: quiet horizontal rules with one highlighted slice band — use sparingly.
+
+Hierarchy: platform = Niche Board; vertical product = {Specialty} Jobs (e.g. Packaging Jobs); credit = “powered by Niche Board.”
+
+Packaging Jobs vertical skin (separate): kraft-paper atmosphere, Source Serif 4 + IBM Plex Sans, stamp-accent contrast line — Package development — not plant ops. Niche Board mark appears as powered-by only on vertical surfaces.
+```
+
+Asset reference (not in repo): brand system v2 in agent artifacts — Field lockup, icons, tokens.
+
 ---
 
 ## 7. Content system (what “all content” means)
@@ -209,8 +234,9 @@ Every asset is one of these types. Stay inside the template.
 - Contrast line is visual + verbal: stamp-accent, left rule — *Package development — not plant ops.*
 - Board counts and “last updated” sit *below* the hero as quiet meta, not in the hero.
 - Keep candidate path (Apply / Browse / Alerts) and employer path (Sponsor) visually separate.
-- **Visual brand (Packaging):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only.
-- Motion is presence, not noise: mark settle, hero rise-in, card hover offset. Respect `prefers-reduced-motion`.
+- **Visual brand (Niche Board platform / hub):** Field logo mark, Epilogue + Source Sans 3, Ink/Signal palette, flat geometry, slice-field patterns sparingly. See §6.5 for the short design prompt.
+- **Visual brand (Packaging vertical):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only.
+- Motion is presence, not noise: mark settle (slice band last), hero rise-in, card hover border darken only. Respect `prefers-reduced-motion`.
 
 ### 7.2 SEO / metadata
 - Title ≈ specialty + “jobs” + employer framing; do not keyword-stuff plant/ops terms.
