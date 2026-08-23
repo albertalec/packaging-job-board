@@ -14,7 +14,10 @@ const WAREHOUSE =
 
 /** Buying, selling, plant ops, or running a converting line — not package design / R&D. */
 const OFF_TARGET =
-  /\b(procurement|category manager|category management|account manager|\bsales\b|business development|commodity manager|\bbuyer\b|\bsourcing\b|corrugator|corrugated supervisor|fleet budget|creative director|art director|graphic designer|system user|delivery leader|packaging equipment|packaging machinery|plant electrician|\boiler\b|hris|\behs\b|process lead|packaging production|artwork coordinator|brand applications|packaging operation|aseptic packaging operation|label packaging|operations manager|manufacturing packaging|manufacturing process.{0,40}packaging|manufacturing\s*(?:&|and)\s*packaging)\b/i;
+  /\b(procurement|category manager|category management|account manager|\bsales\b|business development|commodity(?:\s+\w+){0,3}\s+manager|commodity risk|\bbuyer\b|\bsourcing\b|corrugator|corrugated supervisor|fleet budget|creative director|art director|graphic designer|system user|delivery leader|packaging equipment|packaging machinery|plant electrician|\boiler\b|hris|\behs\b|process lead|packaging production|artwork coordinator|brand applications|packaging operation|aseptic packaging operation|label packaging|operations manager|manufacturing packaging|manufacturing process.{0,40}packaging|manufacturing\s*(?:&|and)\s*packaging)\b/i;
+
+/** Packaging names a commodity/category scope, not the job (e.g. "Energy & Packaging"). */
+const PACKAGING_AS_SCOPE = /&\s*packaging\s*$/i;
 
 const ROLE =
   /\b(packag(?:e|ing) (?:engineer|engineering|manager|management|scientist|science|sciences|designer|design|developer|development|technologist|lead|director|r&d|innovation|compliance|systems)|package development|r&d packaging|research(?: and | ?& ?)development packaging|structural packaging|returnable packaging|dunnage|converting engineer|package engineering|custom packaging design|packaging innovation|engineer(?:\s*ii|\s*iii|\s*2|\s*3)?, packaging)\b/i;
@@ -59,6 +62,14 @@ export function classifyJob(input: {
   }
   if (ROLE.test(input.title)) {
     return { keep: true, reason: "packaging role match" };
+  }
+  if (
+    AMBIGUOUS_PACKAGING.test(input.title) &&
+    CORE_FUNCTION.test(input.title) &&
+    !ROLE.test(input.title) &&
+    PACKAGING_AS_SCOPE.test(input.title)
+  ) {
+    return { keep: false, reason: "packaging as commodity/category scope" };
   }
   if (
     AMBIGUOUS_PACKAGING.test(input.title) &&

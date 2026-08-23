@@ -84,6 +84,8 @@ const DROP = [
   "Sr. Manufacturing Process and Packaging Engineer - Chanhassen, MN",
   "Manager- Manufacturing & Packaging Lead Engineer",
   "Inspection Assembly & Packaging Operations Manager",
+  "Commodity Risk Manager, Energy & Packaging",
+  "Senior Manager, Oral Care & Packaging",
 ];
 
 describe("classifyJob", () => {

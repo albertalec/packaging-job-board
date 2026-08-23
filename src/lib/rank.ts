@@ -2,7 +2,7 @@
 export function promiseRank(title: string): number {
   const t = title.toLowerCase();
   if (
-    /\b(procurement|category manager|account manager|sales|sourcing)\b/.test(t) ||
+    /\b(procurement|category manager|account manager|sales|sourcing|commodity(?:\s+\w+){0,3}\s+manager|commodity risk)\b/.test(t) ||
     /\b(corrugator|corrugated supervisor|fleet budget|creative director|art director)\b/.test(
       t,
     ) ||
