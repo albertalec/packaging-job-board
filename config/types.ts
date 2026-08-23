@@ -14,6 +14,8 @@ export type Brand = {
   employerFooter: string;
   /** e.g. "powered by Niche Board" — vertical boards only */
   networkCredit?: string;
+  /** Inbox From display name for alert emails */
+  alertsFromName?: string;
 };
 
 export type SponsorConfig = {
@@ -39,6 +41,7 @@ export type VerticalCopy = {
   alertsWelcomeTitle: string;
   alertsWelcomeIntro: string;
   alertsWelcomeBody: string;
+  alertsDigestIntro: string;
 };
 
 export type VerticalTenant = {

@@ -10,6 +10,7 @@ import {
   buildConfirmEmail,
   buildDigestEmail,
   buildWelcomeEmail,
+  formatAlertFromAddress,
 } from "./alerts-mail";
 
 test("normalizeAlertFilters accepts niche and state", () => {
@@ -104,6 +105,20 @@ test("emailLinkOrigin prefers canonical host in production", () => {
   );
 });
 
+test("alert From uses tenant display name with the same email address", () => {
+  assert.equal(
+    formatAlertFromAddress(packaging, "alerts@nicheboardjobs.com"),
+    "Packaging Jobs Alerts <alerts@nicheboardjobs.com>",
+  );
+  assert.equal(
+    formatAlertFromAddress(
+      packaging,
+      "Packaging Jobs <alerts@nicheboardjobs.com>",
+    ),
+    "Packaging Jobs Alerts <alerts@nicheboardjobs.com>",
+  );
+});
+
 test("branded welcome email uses tenant theme and mark", () => {
   const message = buildWelcomeEmail({
     tenant: packaging,
@@ -119,10 +134,8 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.match(message.html, /packaging engineer and package-development/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Browse Packaging Jobs/);
+  assert.match(message.html, /apply from the listing when you’re ready/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
-  assert.match(message.html, /apply on the company.+career site/i);
-  assert.doesNotMatch(message.html, /packaging engineering opportunities/);
-  assert.doesNotMatch(message.html, /the specialist stuff/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.match(
     message.html,
@@ -193,12 +206,16 @@ test("branded digest email renders job cards", () => {
   assert.match(message.subject, /1 new role/);
   assert.match(message.html, /Senior Packaging Engineer/);
   assert.match(message.html, /General Mills/);
-  assert.match(message.html, /Apply on career site/);
+  assert.match(message.html, /View role/);
   assert.match(message.html, /Browse Packaging Jobs/);
+  assert.match(message.html, /New roles on Packaging Jobs/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(message.html, /box-shadow:3px 3px 0/);
+  assert.doesNotMatch(message.html, /Apply on career site/);
+  assert.doesNotMatch(message.html, /careers\.example\.com/);
   assert.match(message.text, /Senior Packaging Engineer/);
+  assert.match(message.text, /packaging\.nicheboardjobs\.com\/jobs\/a/);
   assert.match(message.text, /powered by Niche Board/);
 });
 

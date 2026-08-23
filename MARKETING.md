@@ -221,7 +221,7 @@ Every asset is one of these types. Stay inside the template.
 | Email | Purpose | Must include |
 | --- | --- | --- |
 | Welcome | Confirm value + set expectations | Vertical brand; Niche Board as powered-by; specialty focus; Browse CTA; unsubscribe |
-| Digest | New roles only when inventory warrants | Short intro; job list with apply links; Browse; unsubscribe |
+| Digest | New roles only when inventory warrants | Short intro; job cards link to board listings (View role); Browse CTA; unsubscribe |
 | (No) nurture drip yet | — | Do not invent weekly “engagement” mail without a product reason |
 
 Rules:
@@ -332,7 +332,7 @@ Product roadmap context: `PLAN.md`. Update this file when positioning changes.
 ## 13. Success signals (marketing, not vanity)
 
 - Returning candidate visits and alert subscribe → retain rate
-- Digest → click to employer ATS
+- Digest → click to board job page (apply-out stays on the site)
 - Sponsor checkout starts and paid pins / renewals
 - Search impressions/queries for *packaging engineer* / *package development* (not packer)
 - Qualitative: employers say “these are the right people”
