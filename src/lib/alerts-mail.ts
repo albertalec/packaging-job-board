@@ -33,16 +33,24 @@ function resendConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY?.trim());
 }
 
-function fromAddress(tenant: VerticalTenant): string {
-  const configured = process.env.ALERTS_FROM_EMAIL?.trim();
+/** Build Resend From header: display name from tenant config, same verified address. */
+export function formatAlertFromAddress(
+  tenant: VerticalTenant,
+  configured?: string,
+): string {
   const displayName =
     tenant.brand.alertsFromName ?? `${tenant.brand.name} Alerts`;
-  if (configured) {
-    if (configured.includes("<")) return configured;
-    return `${displayName} <${configured}>`;
+  const raw = configured?.trim();
+  if (!raw) {
+    return `${displayName} <onboarding@resend.dev>`;
   }
-  // Resend test sender until a domain is verified.
-  return `${displayName} <onboarding@resend.dev>`;
+  const bracketed = raw.match(/<([^>]+)>/);
+  const email = (bracketed ? bracketed[1] : raw).trim();
+  return `${displayName} <${email}>`;
+}
+
+function fromAddress(tenant: VerticalTenant): string {
+  return formatAlertFromAddress(tenant, process.env.ALERTS_FROM_EMAIL);
 }
 
 function brandShell(input: {

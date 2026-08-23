@@ -10,6 +10,7 @@ import {
   buildConfirmEmail,
   buildDigestEmail,
   buildWelcomeEmail,
+  formatAlertFromAddress,
 } from "./alerts-mail";
 
 test("normalizeAlertFilters accepts niche and state", () => {
@@ -101,6 +102,20 @@ test("emailLinkOrigin prefers canonical host in production", () => {
   assert.equal(
     emailLinkOrigin(packaging, "http://packaging.localhost:3000"),
     "http://packaging.localhost:3000",
+  );
+});
+
+test("alert From uses tenant display name with the same email address", () => {
+  assert.equal(
+    formatAlertFromAddress(packaging, "alerts@nicheboardjobs.com"),
+    "Packaging Jobs Alerts <alerts@nicheboardjobs.com>",
+  );
+  assert.equal(
+    formatAlertFromAddress(
+      packaging,
+      "Packaging Jobs <alerts@nicheboardjobs.com>",
+    ),
+    "Packaging Jobs Alerts <alerts@nicheboardjobs.com>",
   );
 });
 
