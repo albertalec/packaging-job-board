@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { packaging } from "@config/packaging";
+import { LogoMark } from "@/components/LogoMark";
+import { loadJobs } from "@/lib/jobs";
 import { buildPageMetadata } from "@/lib/seo";
 import { formatUsd, getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
 
@@ -25,46 +27,97 @@ export default async function EmployersPage() {
   const packagingOrigin = await verticalPublicOrigin("packaging");
   const price = formatUsd(packaging.sponsor.priceCents);
   const packagingLabel = packaging.brand.hubLabel ?? "Packaging";
+  const jobs = loadJobs("packaging");
+  const employers = new Set(jobs.jobs.map((job) => job.company)).size;
+  const duration = packaging.sponsor.durationDays;
 
   return (
-    <article className="sponsor-page">
-      <p className="kicker">For employers</p>
-      <h1>Pin the listing you already have</h1>
-      <p className="lede">
-        {tenant.brand.employerTagline} Each pin is scoped to one specialty
-        board — the audience that actually matches the role you are hiring.
-      </p>
-      <ul className="sponsor-benefits">
-        <li>
-          Candidates apply on your Workday, Greenhouse, or other ATS — no fake
-          apply wall
+    <div className="hub-shell hub-employers">
+      <section className="hub-employers-hero">
+        <div className="hub-employers-copy">
+          <p className="hub-employers-kicker">For employers</p>
+          <h1>Pin the listing you already have.</h1>
+          <p className="lede">
+            One pin, one board, the audience that actually matches the role.
+            Candidates finish on your Workday or Greenhouse — we don&apos;t take
+            the application.
+          </p>
+          <div className="hub-hero-actions">
+            <a
+              className="hub-btn hub-btn-amber"
+              href={`${packagingOrigin}/sponsor`}
+            >
+              Pin on {packagingLabel} — {price}
+            </a>
+            <Link className="hub-btn hub-btn-ghost" href="/niches">
+              Browse live boards
+            </Link>
+          </div>
+        </div>
+        <aside className="hub-price-panel" aria-label="Pricing">
+          <p className="hub-price-kicker">One pin</p>
+          <p className="hub-price-amount">{price}</p>
+          <p className="hub-price-body">
+            {duration === 30 ? "Thirty" : duration} days on one live board. Not a
+            second posting workflow — the listing you already wrote, in front of
+            the people who wrote the spec.
+          </p>
+        </aside>
+      </section>
+
+      <ul className="hub-employers-grid">
+        <li className="hub-employers-card">
+          <p className="hub-employers-card-title">Your ATS, start to finish</p>
+          <p className="hub-employers-card-body">
+            Candidates apply on Workday, Greenhouse or whatever you run. No fake
+            apply wall, no resumé database.
+          </p>
         </li>
-        <li>
-          Sponsorship is scoped to one board. A pin on {packagingLabel} does not
-          appear on other niches
+        <li className="hub-employers-card">
+          <p className="hub-employers-card-title">Scoped to one board</p>
+          <p className="hub-employers-card-body">
+            A pin on {packagingLabel} appears on {packagingLabel}. It doesn&apos;t
+            leak across the network.
+          </p>
         </li>
-        <li>
-          {price} for {packaging.sponsor.durationDays} days on a live board —
-          pin what you already posted, not a second posting workflow
+        <li className="hub-employers-card">
+          <p className="hub-employers-card-title">Thirty days, one checkout</p>
+          <p className="hub-employers-card-body">
+            {price} flat. One Stripe checkout, one invoice, no seat count and no
+            annual contract.
+          </p>
         </li>
-        <li>
-          Dual-vertical and network pins come after a second board is live.
-          One invoice, still one Stripe checkout
+        <li className="hub-employers-card hub-employers-card-muted">
+          <p className="hub-employers-card-title">
+            Bundles, once board two is live
+          </p>
+          <p className="hub-employers-card-body">
+            Dual-vertical and network pins come next. Hiring across more than one
+            niche already?{" "}
+            <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>
+          </p>
         </li>
       </ul>
-      <div className="sponsor-actions">
-        <a className="apply big amber" href={`${packagingOrigin}/sponsor`}>
-          Pin on {packagingLabel} board — {price}
+
+      <div className="hub-employers-cta">
+        <div className="hub-employers-cta-copy">
+          <LogoMark variant="avatar" size={40} />
+          <div>
+            <p className="hub-employers-cta-title">
+              {packagingLabel} is live now
+            </p>
+            <p className="hub-employers-cta-meta">
+              {jobs.total} roles, {employers} employers, refreshed daily.
+            </p>
+          </div>
+        </div>
+        <a
+          className="hub-btn hub-btn-primary"
+          href={`${packagingOrigin}/sponsor`}
+        >
+          Pin a listing
         </a>
-        <Link className="ghost big" href="/niches">
-          Browse live boards
-        </Link>
       </div>
-      <p className="sponsor-footnote">
-        Bundles (dual pin / network pin) are not for sale yet. Email us if you
-        hire across more than one niche:{" "}
-        <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>
-      </p>
-    </article>
+    </div>
   );
 }
