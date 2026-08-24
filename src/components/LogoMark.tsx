@@ -1,29 +1,48 @@
 import {
   BRAND,
-  LOGO_CORNER_PATH,
-  LOGO_FRAME_PATH,
-  LOGO_STROKE_WIDTH,
+  LOGO_NAVY_PATH,
+  LOGO_ROUNDEL_NAVY_PATH,
+  LOGO_ROUNDEL_TEAL_PATH,
+  LOGO_ROUNDEL_VIEWBOX,
+  LOGO_TEAL_PATH,
   LOGO_VIEWBOX,
+  splitKicker,
   splitTagline,
 } from "./logo-paths";
 
 type LogoMarkProps = {
   className?: string;
   size?: number;
-  /** Avatar variant: white frame on navy circle background */
+  /** Roundel variant for avatars, favicons, and stamps */
   variant?: "default" | "avatar";
 };
 
 /**
- * Niche Board geometric mark — navy frame open at top-right,
- * solid teal triangle in the bottom-right corner.
+ * Niche Board symbol — two crop marks. Navy opens the frame, teal closes it.
+ * The gap between corners is structural and must not be closed.
  */
 export function LogoMark({
   className,
   size = 48,
   variant = "default",
 }: LogoMarkProps) {
-  const frameStroke = variant === "avatar" ? "#FFFFFF" : BRAND.navy;
+  if (variant === "avatar") {
+    return (
+      <svg
+        className={className}
+        width={size}
+        height={size}
+        viewBox={LOGO_ROUNDEL_VIEWBOX}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <circle cx="400" cy="400" r="400" fill={BRAND.navy} />
+        <path d={LOGO_ROUNDEL_NAVY_PATH} fill="#FFFFFF" />
+        <path d={LOGO_ROUNDEL_TEAL_PATH} fill={BRAND.teal} />
+      </svg>
+    );
+  }
 
   return (
     <svg
@@ -35,50 +54,49 @@ export function LogoMark({
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      {variant === "avatar" ? (
-        <circle cx="24" cy="24" r="24" fill={BRAND.navy} />
-      ) : null}
-      <path
-        d={LOGO_FRAME_PATH}
-        stroke={frameStroke}
-        strokeWidth={LOGO_STROKE_WIDTH}
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      />
-      <path d={LOGO_CORNER_PATH} fill={BRAND.teal} />
+      <path d={LOGO_NAVY_PATH} fill={BRAND.navy} />
+      <path d={LOGO_TEAL_PATH} fill={BRAND.teal} />
     </svg>
   );
 }
 
 type HubLogoLockupProps = {
-  markLine1: string;
-  markLine2: string;
-  tagline: string;
+  name: string;
+  kicker: string;
+  tagline?: string;
   className?: string;
 };
 
-/** Primary logo lockup — icon, stacked wordmark, two-tone tagline. */
+/** Primary lockup — symbol, single-line wordmark, uppercase kicker. */
 export function HubLogoLockup({
-  markLine1,
-  markLine2,
+  name,
+  kicker,
   tagline,
   className,
 }: HubLogoLockupProps) {
-  const { lead, accent } = splitTagline(tagline);
+  const kickerParts = splitKicker(kicker);
+  const taglineParts = tagline ? splitTagline(tagline) : null;
 
   return (
     <span className={className ?? "hub-logo-lockup"}>
       <span className="hub-logo-row">
         <LogoMark className="mark-icon" size={48} />
-        <span className="mark-wordstack" aria-hidden="true">
-          <span className="mark-line">{markLine1}</span>
-          <span className="mark-line">{markLine2}</span>
+        <span className="mark-wordmark">{name}</span>
+      </span>
+      <span className="mark-kicker">
+        {kickerParts.lead}
+        {kickerParts.accent ? (
+          <span className="mark-kicker-accent">{kickerParts.accent}</span>
+        ) : null}
+      </span>
+      {taglineParts ? (
+        <span className="mark-tagline">
+          {taglineParts.lead}
+          {taglineParts.accent ? (
+            <span className="mark-tagline-accent"> {taglineParts.accent}</span>
+          ) : null}
         </span>
-      </span>
-      <span className="mark-tagline">
-        {lead}
-        {accent ? <span className="mark-tagline-accent"> {accent}</span> : null}
-      </span>
+      ) : null}
     </span>
   );
 }

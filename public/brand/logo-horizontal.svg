@@ -1,9 +1,5 @@
-<svg width="280" height="88" viewBox="0 0 280 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(4 12)">
-    <path d="M10 10H28M10 10V38M10 38H38M38 38V28" stroke="#0D1B2A" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-    <path d="M28 38L38 38L38 28Z" fill="#0D7D77"/>
-  </g>
-  <text x="68" y="36" fill="#0D1B2A" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="26" font-weight="600" letter-spacing="-0.02em">Niche</text>
-  <text x="68" y="58" fill="#0D1B2A" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="26" font-weight="600" letter-spacing="-0.02em">Board</text>
-  <text x="68" y="76" fill="#0D1B2A" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500">The right jobs.<tspan fill="#0D7D77"> Not all the jobs.</tspan></text>
+<svg viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"/>
+  <path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"/>
+  <text x="255" y="72" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="-0.035em" fill="#0D1B2A">Niche Board</text>
 </svg>

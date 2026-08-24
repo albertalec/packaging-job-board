@@ -56,6 +56,7 @@ export default async function HubHomePage() {
           </span>
           <span className="hub-hero-badge-accent">more coming</span>
         </p>
+        <p className="hub-hero-tagline">{tenant.brand.tagline}</p>
         <h1>{tenant.copy.hero}</h1>
         <p className="lede">{tenant.copy.lede}</p>
         <div className="sponsor-actions hub-hero-actions">
