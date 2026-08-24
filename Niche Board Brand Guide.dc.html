@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  doc-page:not(:defined) { visibility: hidden; }
+  a { color: #0D7D77; text-decoration: none; }
+  a:hover { color: #0D1B2A; text-decoration: underline; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page orientation="landscape">
+
+  <!-- 1 · COVER -->
+  <section class="page" data-screen-label="01 Cover" style="boxSizing: border-box; padding: 64px 72px; background: #0D1B2A; color: #FFFFFF; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div style="display: flex; justifyContent: space-between; alignItems: flex-start">
+      <svg viewBox="0 0 800 800" style="width: 86px; height: 86px; display: block"><circle cx="400" cy="400" r="400" fill="#FFFFFF"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 12px; letterSpacing: 0.16em; textTransform: uppercase; color: rgba(255,255,255,0.55); textAlign: right; lineHeight: 1.8">Brand guide<br>Version 1.0 · August 2026</div>
+    </div>
+    <div style="display: flex; flexDirection: column; gap: 22px">
+      <div style="fontSize: 96px; lineHeight: 0.92; fontWeight: 700; letterSpacing: -0.04em">Niche Board</div>
+      <div style="width: 92px; height: 4px; background: #0D7D77"></div>
+      <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 34px; lineHeight: 1.25; color: #FFFFFF">The right jobs, not all the jobs.</div>
+      <div style="fontSize: 15px; fontWeight: 500; letterSpacing: 0.2em; textTransform: uppercase; color: #F5A623">Precision job boards for specialists</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; alignItems: flex-end; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: rgba(255,255,255,0.5)">
+      <div>Logo · colour · type · voice · application</div>
+      <div>01</div>
+    </div>
+  </section>
+
+  <!-- 2 · POSITIONING -->
+  <section class="page" data-screen-label="02 Positioning" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 26px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">01 · Positioning</div>
+    <div style="fontSize: 46px; lineHeight: 1.15; fontWeight: 600; letterSpacing: -0.025em; color: #0D1B2A; maxWidth: 860px; textWrap: pretty">A network of precision job boards — one board per narrow profession, refreshed daily from employer career sites.</div>
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 28px">
+      <div style="display: flex; flexDirection: column; gap: 10px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">What we do</div>
+        <div style="fontSize: 15px; lineHeight: 1.6">Specialists browse a board that only holds their discipline, then apply on the employer's own career site. Employers pin listings they already have. No middle layer, no reposting, no noise.</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 10px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Why it earns trust</div>
+        <div style="fontSize: 15px; lineHeight: 1.6">Because we subtract. Every board is small on purpose, and the value is in what we chose to leave out. The brand should always feel edited rather than aggregated.</div>
+      </div>
+    </div>
+    <div style="height: 1px; background: #E7EAEE"></div>
+    <div style="display: grid; gridTemplateColumns: repeat(5, 1fr); gap: 14px">
+      <div style="padding: 26px 18px; background: #F1F3F5; borderTop: 3px solid #0D1B2A; display: flex; flexDirection: column; gap: 6px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Trusted advocate</div>
+        <div style="fontSize: 13px; lineHeight: 1.5">On the candidate's side, plainly.</div>
+      </div>
+      <div style="padding: 26px 18px; background: #F1F3F5; borderTop: 3px solid #0D7D77; display: flex; flexDirection: column; gap: 6px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Focused</div>
+        <div style="fontSize: 13px; lineHeight: 1.5">One niche, done properly.</div>
+      </div>
+      <div style="padding: 26px 18px; background: #F1F3F5; borderTop: 3px solid #6A5FA9; display: flex; flexDirection: column; gap: 6px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Warm</div>
+        <div style="fontSize: 13px; lineHeight: 1.5">Professional, never starchy.</div>
+      </div>
+      <div style="padding: 26px 18px; background: #F1F3F5; borderTop: 3px solid #A85C57; display: flex; flexDirection: column; gap: 6px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Quietly confident</div>
+        <div style="fontSize: 13px; lineHeight: 1.5">No volume, no urgency tricks.</div>
+      </div>
+      <div style="padding: 26px 18px; background: #F1F3F5; borderTop: 3px solid #F5A623; display: flex; flexDirection: column; gap: 6px">
+        <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Slightly clever</div>
+        <div style="fontSize: 13px; lineHeight: 1.5">A dry joke, once a page.</div>
+      </div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>02</div>
+    </div>
+  </section>
+
+  <!-- 3 · SYMBOL -->
+  <section class="page" data-screen-label="03 Symbol" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 24px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">02 · The symbol</div>
+    <div style="display: flex; gap: 44px; alignItems: flex-start">
+      <div style="display: flex; flexDirection: column; gap: 14px; alignItems: center">
+        <svg viewBox="0 0 235 235" style="width: 272px; height: 272px; display: block; background: #F1F3F5"><g stroke="#C9CFD6" stroke-width="0.7"><line x1="62" y1="0" x2="62" y2="235"></line><line x1="120" y1="0" x2="120" y2="235"></line><line x1="180" y1="0" x2="180" y2="235"></line><line x1="0" y1="62" x2="235" y2="62"></line><line x1="0" y1="120" x2="235" y2="120"></line><line x1="0" y1="180" x2="235" y2="180"></line></g><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">Built on a 4-unit grid · stroke = 1 unit</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 16px; flex: 1">
+        <div style="fontSize: 30px; lineHeight: 1.2; fontWeight: 600; letterSpacing: -0.02em; color: #0D1B2A; textWrap: pretty">Two crop marks. The job is what sits between them.</div>
+        <div style="fontSize: 15px; lineHeight: 1.65; maxWidth: 520px">A navy corner opens the frame, a teal counter-corner closes it, and the space they leave empty is the point: this is a brand about editing down, not piling up. The two corners never touch — the gap is structural and must not be closed.</div>
+        <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 12px; maxWidth: 520px">
+          <div style="padding: 14px 16px; background: #F1F3F5; fontSize: 13px; lineHeight: 1.5"><span style="fontWeight: 600; color: #0D1B2A">Navy corner</span> — structure, the board itself.</div>
+          <div style="padding: 14px 16px; background: #E6F1EF; fontSize: 13px; lineHeight: 1.5"><span style="fontWeight: 600; color: #0D1B2A">Teal corner</span> — the specialist, closing the match.</div>
+        </div>
+        <div style="fontSize: 15px; lineHeight: 1.65; maxWidth: 520px">Rotation is fixed. Never mirror the pair, never rotate one corner independently, and never add a third.</div>
+      </div>
+    </div>
+    <div style="borderTop: 1px solid #E7EAEE; paddingTop: 20px; display: flex; alignItems: center; gap: 34px">
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.14em; textTransform: uppercase; color: #4B5563; width: 118px; lineHeight: 1.6">Circle accent<br>the roundel</div>
+      <div style="display: flex; alignItems: center; gap: 22px">
+        <svg viewBox="0 0 800 800" style="width: 74px; height: 74px; display: block"><circle cx="400" cy="400" r="400" fill="#0D1B2A"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+        <svg viewBox="0 0 800 800" style="width: 74px; height: 74px; display: block"><circle cx="400" cy="400" r="400" fill="#FFFFFF"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+        <svg viewBox="0 0 800 800" style="width: 74px; height: 74px; display: block"><circle cx="400" cy="400" r="400" fill="#0D7D77"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="rgba(255,255,255,0.5)"></path></svg>
+        <svg viewBox="0 0 800 800" style="width: 74px; height: 74px; display: block"><circle cx="400" cy="400" r="392" fill="#FFFFFF" stroke="#0D1B2A" stroke-width="16"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+      </div>
+      <div style="fontSize: 14px; lineHeight: 1.6; maxWidth: 330px; textWrap: pretty">The roundel is the accent form: avatars, app icons, section markers, list bullets and stamps. Symbol sits at 56% of the disc, optically centred. Use one roundel per view — it is punctuation, not decoration.</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>03</div>
+    </div>
+  </section>
+
+  <!-- 4 · LOCKUPS -->
+  <section class="page" data-screen-label="04 Lockups" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">03 · Lockups</div>
+    <div style="padding: 40px; background: #F1F3F5; display: flex; alignItems: center; gap: 26px">
+      <svg viewBox="0 0 235 235" style="width: 82px; height: 82px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+      <div style="display: flex; flexDirection: column; gap: 9px">
+        <div style="fontSize: 50px; lineHeight: 0.94; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="fontSize: 13px; fontWeight: 500; letterSpacing: 0.22em; textTransform: uppercase; color: #4B5563">Precision job boards for <span style="fontWeight: 700; color: #0D7D77">specialists.</span></div>
+      </div>
+      <div style="marginLeft: auto; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; lineHeight: 1.7; color: #4B5563; textAlign: right">Primary lockup<br>site header, decks, print</div>
+    </div>
+    <div style="display: grid; gridTemplateColumns: repeat(4, 1fr); gap: 14px">
+      <div style="border: 1px solid #E7EAEE; padding: 24px 18px; display: flex; flexDirection: column; alignItems: center; justifyContent: center; gap: 14px; minHeight: 150px">
+        <svg viewBox="0 0 235 235" style="width: 46px; height: 46px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 20px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 24px 18px; display: flex; flexDirection: column; alignItems: center; justifyContent: center; gap: 14px; minHeight: 150px">
+        <div style="fontSize: 24px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #4B5563">wordmark only</div>
+      </div>
+      <div style="background: #0D1B2A; padding: 24px 18px; display: flex; flexDirection: column; alignItems: center; justifyContent: center; gap: 14px; minHeight: 150px">
+        <svg viewBox="0 0 235 235" style="width: 46px; height: 46px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#FFFFFF"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 20px; fontWeight: 700; letterSpacing: -0.035em; color: #FFFFFF">Niche Board</div>
+      </div>
+      <div style="background: #0D7D77; padding: 24px 18px; display: flex; flexDirection: column; alignItems: center; justifyContent: center; gap: 14px; minHeight: 150px">
+        <svg viewBox="0 0 235 235" style="width: 46px; height: 46px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#FFFFFF"></path><path d="M235 235H120V180H180V120H235Z" fill="rgba(255,255,255,0.5)"></path></svg>
+        <div style="fontSize: 20px; fontWeight: 700; letterSpacing: -0.035em; color: #FFFFFF">Niche Board</div>
+      </div>
+    </div>
+    <div style="display: grid; gridTemplateColumns: repeat(4, 1fr); gap: 14px; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; lineHeight: 1.5; color: #4B5563">
+      <div>Stacked — narrow spaces, avatars with text</div>
+      <div>Wordmark — body copy, footers, signatures</div>
+      <div>Reverse — navy and photography</div>
+      <div>On teal — wedge drops to 50% white</div>
+    </div>
+    <div style="borderTop: 1px solid #E7EAEE; paddingTop: 18px; display: flex; alignItems: center; gap: 26px">
+      <div style="display: flex; alignItems: center; gap: 16px">
+        <svg viewBox="0 0 235 235" style="width: 40px; height: 40px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D1B2A"></path></svg>
+        <svg viewBox="0 0 235 235" style="width: 40px; height: 40px; display: block; background: #0D1B2A"><path d="M0 0H235V62H62V235H0Z" fill="#FFFFFF"></path><path d="M235 235H120V180H180V120H235Z" fill="#FFFFFF"></path></svg>
+      </div>
+      <div style="fontSize: 14px; lineHeight: 1.6; maxWidth: 560px; textWrap: pretty"><span style="fontWeight: 600; color: #0D1B2A">One-colour forms</span> for stamps, embroidery, engraving and fax-grade print. Solid navy on light, solid white on dark. Never render the two corners in two greys.</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>04</div>
+    </div>
+  </section>
+
+  <!-- 5 · CLEARSPACE & MISUSE -->
+  <section class="page" data-screen-label="05 Clearspace and misuse" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">04 · Clearspace, sizes, misuse</div>
+    <div style="display: flex; gap: 34px; alignItems: center">
+      <div style="padding: 48px; border: 1px dashed #C9CFD6; display: flex; alignItems: center; gap: 18px">
+        <svg viewBox="0 0 235 235" style="width: 60px; height: 60px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 30px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 12px; flex: 1">
+        <div style="fontSize: 15px; lineHeight: 1.6"><span style="fontWeight: 600; color: #0D1B2A">Clearspace</span> = one stroke width of the symbol (25% of its height) on all four sides. Nothing enters it — no type, no rules, no photo edges.</div>
+        <div style="display: flex; gap: 26px; alignItems: flex-end">
+          <div style="display: flex; flexDirection: column; gap: 8px; alignItems: center">
+            <div style="display: flex; alignItems: center; gap: 8px"><svg viewBox="0 0 235 235" style="width: 20px; height: 20px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg><div style="fontSize: 11px; fontWeight: 700; letterSpacing: -0.03em; color: #0D1B2A">Niche Board</div></div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #4B5563">min lockup 132px / 35mm</div>
+          </div>
+          <div style="display: flex; flexDirection: column; gap: 8px; alignItems: center">
+            <svg viewBox="0 0 235 235" style="width: 20px; height: 20px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #4B5563">min symbol 20px / 6mm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 1px; background: #E7EAEE"></div>
+    <div style="display: grid; gridTemplateColumns: repeat(6, 1fr); gap: 12px">
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><svg viewBox="0 0 235 235" style="width: 48px; height: 48px; display: block; transform: rotate(18deg)"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">don't rotate</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><svg viewBox="0 0 235 235" style="width: 66px; height: 42px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">don't stretch</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><svg viewBox="0 0 235 235" style="width: 48px; height: 48px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#C0392B"></path><path d="M235 235H120V180H180V120H235Z" fill="#8E44AD"></path></svg></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">don't recolour</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><svg viewBox="0 0 235 235" style="width: 48px; height: 48px; display: block; filter: drop-shadow(4px 6px 4px rgba(13,27,42,0.45))"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">no shadows</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><svg viewBox="0 0 235 235" style="width: 48px; height: 48px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M180 180H120V120H180Z" fill="#0D7D77"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">don't close the gap</div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 9px; alignItems: center">
+        <div style="width: 100%; height: 140px; background: #F6EBEA; display: flex; alignItems: center; justifyContent: center"><div style="display: flex; alignItems: center; gap: 6px"><svg viewBox="0 0 235 235" style="width: 26px; height: 26px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg><div style="fontFamily: Newsreader, Georgia, serif; fontSize: 15px; color: #0D1B2A">Nicheboard</div></div></div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #A85C57; textAlign: center">don't reset the name</div>
+      </div>
+    </div>
+    <div style="padding: 16px 18px; background: #F1F3F5; fontSize: 14px; lineHeight: 1.6"><span style="fontWeight: 600; color: #0D1B2A">Name, always:</span> Niche Board — two words, both capitalised. Never Nicheboard, Nicheboard Jobs or Niche Board Jobs. Boards are named by niche alone: <span style="color: #0D7D77; fontWeight: 500">Packaging</span>, not “Packaging Jobs”.</div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>05</div>
+    </div>
+  </section>
+
+  <!-- 6 · COLOUR -->
+  <section class="page" data-screen-label="06 Colour" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">05 · Colour</div>
+    <div style="display: grid; gridTemplateColumns: repeat(6, 1fr); gap: 12px">
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #0D1B2A"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Navy</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#0D1B2A<br>headlines, structure, primary button</div></div>
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #0D7D77"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Teal</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#0D7D77<br>links, active states, niche labels</div></div>
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #F5A623"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Amber</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#F5A623<br>employer CTA, badges — sparingly</div></div>
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #4B5563"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Slate</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#4B5563<br>body text, metadata</div></div>
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #F1F3F5"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Mist</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#F1F3F5<br>section backgrounds</div></div>
+      <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 104px; background: #FFFFFF; border: 1px solid #E0E3E7; boxSizing: border-box"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Paper</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#FFFFFF<br>main surfaces</div></div>
+    </div>
+    <div style="height: 1px; background: #E7EAEE"></div>
+    <div style="display: flex; gap: 26px; alignItems: flex-start">
+      <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 12px; width: 340px">
+        <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 74px; background: #6A5FA9"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Ink Violet</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#6A5FA9 · new<br>oklch(.55 .11 290)</div></div>
+        <div style="display: flex; flexDirection: column; gap: 8px"><div style="height: 74px; background: #A85C57"></div><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Clay</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.5">#A85C57 · new<br>oklch(.55 .11 25)</div></div>
+      </div>
+      <div style="display: flex; flexDirection: column; gap: 12px; flex: 1">
+        <div style="fontSize: 20px; fontWeight: 600; letterSpacing: -0.015em; color: #0D1B2A">Two added accents, one job each</div>
+        <div style="fontSize: 14px; lineHeight: 1.6; textWrap: pretty">Teal and amber can't carry a network of dozens of boards on their own — everything starts to look like the same board. Violet and clay sit at the same lightness and chroma as teal (oklch L .55 / C .11), so they mix without shouting. Use them to <span style="fontWeight: 600; color: #0D1B2A">code board families</span> and to warm up editorial pages. Never in the logo, never for links, never as a button fill.</div>
+        <div style="display: flex; gap: 8px; flexWrap: wrap">
+          <div style="padding: 5px 11px; background: #E6F1EF; color: #0D7D77; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase">Engineering · teal wash #E6F1EF</div>
+          <div style="padding: 5px 11px; background: #EDEBF5; color: #6A5FA9; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase">Clinical · violet wash #EDEBF5</div>
+          <div style="padding: 5px 11px; background: #F6EBEA; color: #A85C57; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase">Craft · clay wash #F6EBEA</div>
+          <div style="padding: 5px 11px; background: #FDF1DC; color: #8A5A05; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase">Featured · amber wash #FDF1DC</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flexDirection: column; gap: 10px">
+      <div style="display: flex; height: 30px; width: 100%">
+        <div style="width: 62%; background: #0D1B2A"></div>
+        <div style="width: 16%; background: #F1F3F5"></div>
+        <div style="width: 14%; background: #0D7D77"></div>
+        <div style="width: 4%; background: #6A5FA9"></div>
+        <div style="width: 4%; background: #F5A623"></div>
+      </div>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #4B5563">Working ratio · navy + neutrals 78 · teal 14 · accents 4 · amber 4. Amber never carries body text and never fills a large area.</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>06</div>
+    </div>
+  </section>
+
+  <!-- 7 · TYPE -->
+  <section class="page" data-screen-label="07 Typography" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">06 · Typography</div>
+    <div style="display: flex; gap: 34px; alignItems: flex-start">
+      <div style="flex: 1; display: flex; flexDirection: column; gap: 16px">
+        <div style="fontSize: 86px; lineHeight: 0.94; fontWeight: 700; letterSpacing: -0.04em; color: #0D1B2A">Archivo</div>
+        <div style="display: flex; flexDirection: column; gap: 6px">
+          <div style="fontSize: 30px; fontWeight: 600; letterSpacing: -0.025em; color: #0D1B2A">Every packaging role, checked by hand.</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">Headline · 600 · −2.5% tracking · 1.15 leading</div>
+        </div>
+        <div style="display: flex; flexDirection: column; gap: 6px">
+          <div style="fontSize: 16px; lineHeight: 1.6; maxWidth: 430px">Body copy sets in Archivo Regular at 16–18px with 1.6 leading. Short sentences. Plain words. Write like a colleague who already read the whole board for you, and stop when the point is made.</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">Body · 400 · 1.6 leading · max 68 characters</div>
+        </div>
+      </div>
+      <div style="width: 300px; display: flex; flexDirection: column; gap: 18px">
+        <div style="padding: 18px; background: #F1F3F5; display: flex; flexDirection: column; gap: 8px">
+          <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 25px; lineHeight: 1.25; color: #0D1B2A">The right jobs, not all the jobs.</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">Newsreader Italic · tagline and pull quotes only</div>
+        </div>
+        <div style="padding: 18px; background: #F1F3F5; display: flex; flexDirection: column; gap: 8px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 13px; letterSpacing: 0.1em; textTransform: uppercase; color: #0D7D77">Updated daily · 41 open roles</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">IBM Plex Mono · eyebrows, counts, metadata, code</div>
+        </div>
+        <div style="fontSize: 13px; lineHeight: 1.6">Three faces, no more. Substitutes: Helvetica Neue for Archivo, Georgia for Newsreader, Menlo for Plex Mono.</div>
+      </div>
+    </div>
+    <div style="height: 1px; background: #E7EAEE"></div>
+    <div style="display: grid; gridTemplateColumns: repeat(5, 1fr); gap: 14px; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; lineHeight: 1.6">
+      <div><div style="fontFamily: Archivo, sans-serif; fontSize: 34px; fontWeight: 600; letterSpacing: -0.03em; color: #0D1B2A">44</div>Display · 700</div>
+      <div><div style="fontFamily: Archivo, sans-serif; fontSize: 26px; fontWeight: 600; letterSpacing: -0.025em; color: #0D1B2A">32</div>H1 · 600</div>
+      <div><div style="fontFamily: Archivo, sans-serif; fontSize: 20px; fontWeight: 600; letterSpacing: -0.02em; color: #0D1B2A">22</div>H2 · 600</div>
+      <div><div style="fontFamily: Archivo, sans-serif; fontSize: 16px; fontWeight: 500; color: #0D1B2A">17</div>Lead · 500</div>
+      <div><div style="fontFamily: Archivo, sans-serif; fontSize: 14px; color: #0D1B2A">16</div>Body · 400</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>07</div>
+    </div>
+  </section>
+
+  <!-- 8 · ROUNDEL SYSTEM -->
+  <section class="page" data-screen-label="08 Roundel system" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">07 · The roundel in use</div>
+    <div style="fontSize: 30px; lineHeight: 1.2; fontWeight: 600; letterSpacing: -0.02em; color: #0D1B2A; maxWidth: 720px; textWrap: pretty">The circle is how the brand signs its work — one per view, always at the start or the end of something.</div>
+    <div style="display: grid; gridTemplateColumns: repeat(4, 1fr); gap: 14px">
+      <div style="border: 1px solid #E7EAEE; padding: 20px; display: flex; flexDirection: column; gap: 14px; minHeight: 132px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">Avatar</div>
+        <div style="display: flex; alignItems: center; gap: 11px">
+          <svg viewBox="0 0 800 800" style="width: 40px; height: 40px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#0D1B2A"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+          <div style="display: flex; flexDirection: column"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Niche Board</div><div style="fontSize: 12px">@nicheboard</div></div>
+        </div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 20px; display: flex; flexDirection: column; gap: 14px; minHeight: 132px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">Section marker</div>
+        <div style="display: flex; alignItems: center; gap: 11px">
+          <svg viewBox="0 0 800 800" style="width: 26px; height: 26px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#E6F1EF"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+          <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">How the boards work</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 20px; display: flex; flexDirection: column; gap: 14px; minHeight: 132px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">Verified stamp</div>
+        <div style="display: flex; alignItems: center; gap: 9px">
+          <svg viewBox="0 0 800 800" style="width: 22px; height: 22px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#0D7D77"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="rgba(255,255,255,0.5)"></path></svg>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.08em; textTransform: uppercase; color: #0D7D77">Checked today</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 20px; display: flex; flexDirection: column; gap: 14px; minHeight: 132px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">List bullet</div>
+        <div style="display: flex; flexDirection: column; gap: 8px">
+          <div style="display: flex; alignItems: center; gap: 9px"><svg viewBox="0 0 800 800" style="width: 15px; height: 15px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#0D1B2A"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg><div style="fontSize: 13px">Pulled from the source</div></div>
+          <div style="display: flex; alignItems: center; gap: 9px"><svg viewBox="0 0 800 800" style="width: 15px; height: 15px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#0D1B2A"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg><div style="fontSize: 13px">Checked by a human</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 14px; alignItems: stretch">
+      <div style="flex: 1; background: #0D1B2A; padding: 26px 30px; display: flex; alignItems: center; justifyContent: space-between; gap: 20px">
+        <div style="display: flex; flexDirection: column; gap: 8px">
+          <div style="fontSize: 24px; fontWeight: 600; letterSpacing: -0.02em; color: #FFFFFF">One board. Yours.</div>
+          <div style="fontSize: 14px; lineHeight: 1.55; color: rgba(255,255,255,0.72); maxWidth: 330px">Social and out-of-home use the roundel large and cropped at the edge of the frame — never centred like a sticker.</div>
+        </div>
+        <svg viewBox="0 0 800 800" style="width: 120px; height: 120px; display: block; marginRight: -46px; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#0D7D77"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="rgba(255,255,255,0.5)"></path></svg>
+      </div>
+      <div style="width: 300px; background: #F1F3F5; padding: 22px 24px; display: flex; flexDirection: column; gap: 10px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">Rules</div>
+        <div style="fontSize: 13px; lineHeight: 1.6">Symbol at 56% of the disc · never outline the disc except on white · never place a roundel on a photograph · never repeat it as a pattern or watermark.</div>
+      </div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>08</div>
+    </div>
+  </section>
+
+  <!-- 9 · SUB-BRANDS -->
+  <section class="page" data-screen-label="09 Board sub-brands" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">08 · Board sub-brands</div>
+    <div style="fontSize: 30px; lineHeight: 1.2; fontWeight: 600; letterSpacing: -0.02em; color: #0D1B2A; maxWidth: 760px; textWrap: pretty">One logo, many boards. The niche is set after a hairline rule — no board ever gets its own mark.</div>
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 14px">
+      <div style="border: 1px solid #E7EAEE; padding: 22px 24px; display: flex; alignItems: center; gap: 13px">
+        <svg viewBox="0 0 235 235" style="width: 30px; height: 30px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 21px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="width: 1px; height: 20px; background: #C9CFD6"></div>
+        <div style="fontSize: 21px; fontWeight: 500; letterSpacing: -0.02em; color: #0D7D77">{{ boardName }}</div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 22px 24px; display: flex; alignItems: center; gap: 13px">
+        <svg viewBox="0 0 235 235" style="width: 30px; height: 30px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 21px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="width: 1px; height: 20px; background: #C9CFD6"></div>
+        <div style="fontSize: 21px; fontWeight: 500; letterSpacing: -0.02em; color: #0D7D77">Metrology</div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 22px 24px; display: flex; alignItems: center; gap: 13px">
+        <svg viewBox="0 0 235 235" style="width: 30px; height: 30px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 21px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="width: 1px; height: 20px; background: #C9CFD6"></div>
+        <div style="fontSize: 21px; fontWeight: 500; letterSpacing: -0.02em; color: #0D7D77">Prosthetics</div>
+      </div>
+      <div style="border: 1px solid #E7EAEE; padding: 22px 24px; display: flex; alignItems: center; gap: 13px">
+        <svg viewBox="0 0 235 235" style="width: 30px; height: 30px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontSize: 21px; fontWeight: 700; letterSpacing: -0.035em; color: #0D1B2A">Niche Board</div>
+        <div style="width: 1px; height: 20px; background: #C9CFD6"></div>
+        <div style="fontSize: 21px; fontWeight: 500; letterSpacing: -0.02em; color: #0D7D77">Conservation</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 14px">
+      <div style="flex: 1; padding: 20px 22px; background: #E6F1EF; display: flex; flexDirection: column; gap: 8px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: #0D7D77">Engineering &amp; industry</div>
+        <div style="fontSize: 13px; lineHeight: 1.55; color: #0D1B2A">Packaging · Metrology · Tribology</div>
+      </div>
+      <div style="flex: 1; padding: 20px 22px; background: #EDEBF5; display: flex; flexDirection: column; gap: 8px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: #6A5FA9">Clinical &amp; care</div>
+        <div style="fontSize: 13px; lineHeight: 1.55; color: #0D1B2A">Prosthetics · Perfusion · Audiology</div>
+      </div>
+      <div style="flex: 1; padding: 20px 22px; background: #F6EBEA; display: flex; flexDirection: column; gap: 8px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: #A85C57">Craft &amp; culture</div>
+        <div style="fontSize: 13px; lineHeight: 1.55; color: #0D1B2A">Conservation · Bookbinding · Luthiery</div>
+      </div>
+    </div>
+    <div style="padding: 16px 18px; background: #F1F3F5; fontSize: 14px; lineHeight: 1.6">Board family colour appears only in labels, tints and category chips — the lockup itself stays navy and teal on every board. URLs follow the niche: <span style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 13px; color: #0D7D77">nicheboard.com/packaging</span></div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>09</div>
+    </div>
+  </section>
+
+  <!-- 10 · APPLIED -->
+  <section class="page" data-screen-label="10 Applied" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 20px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">09 · Application</div>
+    <div style="border: 1px solid #E7EAEE; display: flex; flexDirection: column">
+      <div style="background: #0D1B2A; padding: 16px 22px; display: flex; alignItems: center; justifyContent: space-between; gap: 20px">
+        <div style="display: flex; alignItems: center; gap: 11px">
+          <svg viewBox="0 0 235 235" style="width: 24px; height: 24px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="#FFFFFF"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+          <div style="fontSize: 17px; fontWeight: 700; letterSpacing: -0.03em; color: #FFFFFF">Niche Board</div>
+          <div style="width: 1px; height: 16px; background: rgba(255,255,255,0.3)"></div>
+          <div style="fontSize: 17px; fontWeight: 500; letterSpacing: -0.02em; color: #FFFFFF">{{ boardName }}</div>
+        </div>
+        <div style="display: flex; alignItems: center; gap: 14px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.66)">41 open roles</div>
+          <div style="padding: 8px 14px; background: #F5A623; color: #0D1B2A; fontSize: 12px; fontWeight: 600; borderRadius: 3px">Pin a listing</div>
+        </div>
+      </div>
+      <div style="padding: 22px; display: flex; gap: 22px">
+        <div style="flex: 1; display: flex; flexDirection: column; gap: 12px">
+          <div style="fontSize: 24px; fontWeight: 600; letterSpacing: -0.025em; lineHeight: 1.2; color: #0D1B2A">Every packaging role, checked by hand.</div>
+          <div style="fontSize: 14px; lineHeight: 1.6; maxWidth: 360px">Pulled daily from employer career sites. You apply on the company's own page — we don't sit in the middle.</div>
+          <div style="display: flex; gap: 9px">
+            <div style="padding: 10px 16px; background: #0D1B2A; color: #FFFFFF; fontSize: 13px; fontWeight: 500; borderRadius: 3px">Browse the board</div>
+            <div style="padding: 10px 16px; color: #0D1B2A; fontSize: 13px; fontWeight: 500; borderRadius: 3px; border: 1.5px solid #0D1B2A">Weekly email</div>
+          </div>
+        </div>
+        <div style="width: 330px; display: flex; flexDirection: column; gap: 9px">
+          <div style="border: 1px solid #E7EAEE; borderLeft: 3px solid #0D7D77; padding: 12px 14px; display: flex; flexDirection: column; gap: 5px">
+            <div style="display: flex; justifyContent: space-between; alignItems: baseline; gap: 12px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Structural Packaging Engineer</div><div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">2d</div></div>
+            <div style="fontSize: 13px">Corrugated maker · Leeds, hybrid</div>
+            <div style="display: flex; gap: 6px; marginTop: 2px">
+              <div style="padding: 3px 8px; background: #E6F1EF; color: #0D7D77; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.08em; textTransform: uppercase">New today</div>
+              <div style="padding: 3px 8px; background: #FDF1DC; color: #8A5A05; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.08em; textTransform: uppercase">Featured</div>
+            </div>
+          </div>
+          <div style="border: 1px solid #E7EAEE; padding: 12px 14px; display: flex; justifyContent: space-between; alignItems: baseline; gap: 12px">
+            <div style="display: flex; flexDirection: column; gap: 4px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Packaging Technologist</div><div style="fontSize: 13px">Food manufacturer · Cork</div></div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px">5d</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 14px; alignItems: stretch">
+      <div style="width: 300px; height: 168px; background: #FFFFFF; border: 1px solid #E7EAEE; padding: 20px; display: flex; flexDirection: column; justifyContent: space-between">
+        <svg viewBox="0 0 235 235" style="width: 28px; height: 28px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="display: flex; flexDirection: column; gap: 3px">
+          <div style="fontSize: 15px; fontWeight: 600; color: #0D1B2A">Rowan Mercer</div>
+          <div style="fontSize: 12px">Board editor · Packaging</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #0D7D77; marginTop: 6px">rowan@nicheboard.com</div>
+        </div>
+      </div>
+      <div style="width: 168px; height: 168px; background: #0D1B2A; display: flex; alignItems: center; justifyContent: center">
+        <svg viewBox="0 0 800 800" style="width: 96px; height: 96px; display: block"><circle cx="400" cy="400" r="400" fill="#FFFFFF"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+      </div>
+      <div style="flex: 1; background: #F1F3F5; padding: 20px 24px; display: flex; flexDirection: column; justifyContent: center; gap: 12px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase">Weekly email · sign-off</div>
+        <div style="fontSize: 15px; lineHeight: 1.6; maxWidth: 420px">Eleven new packaging roles this week, and one we'd apply for ourselves. Nothing else worth your time — see you next Tuesday.</div>
+        <div style="display: flex; alignItems: center; gap: 10px">
+          <svg viewBox="0 0 800 800" style="width: 20px; height: 20px; display: block"><circle cx="400" cy="400" r="400" fill="#0D1B2A"></circle><path d="M175 175H625V295H295V625H175Z" fill="#FFFFFF"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+          <div style="fontSize: 13px; fontWeight: 600; color: #0D1B2A">Niche Board</div>
+          <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 14px">The right jobs, not all the jobs.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>10</div>
+    </div>
+  </section>
+
+  <!-- 11 · VOICE -->
+  <section class="page" data-screen-label="11 Voice" style="boxSizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 22px; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">10 · Voice</div>
+    <div style="fontSize: 30px; lineHeight: 1.2; fontWeight: 600; letterSpacing: -0.02em; color: #0D1B2A; maxWidth: 740px; textWrap: pretty">Friendly, not eager. Confident, not loud. One dry joke per page is plenty.</div>
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 14px">
+      <div style="padding: 22px 24px; background: #E6F1EF; display: flex; flexDirection: column; gap: 12px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #0D7D77">Write this</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #0D1B2A">“Eleven new packaging roles this week.”</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #0D1B2A">“Apply on the employer's site — we don't sit in the middle.”</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #0D1B2A">“Small board. That's the point.”</div>
+      </div>
+      <div style="padding: 22px 24px; background: #F6EBEA; display: flex; flexDirection: column; gap: 12px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #A85C57">Not this</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #6B7280; textDecoration: line-through">“Thousands of opportunities await!”</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #6B7280; textDecoration: line-through">“Revolutionising talent acquisition.”</div>
+        <div style="fontSize: 16px; lineHeight: 1.55; color: #6B7280; textDecoration: line-through">“Don't miss out — apply today!!”</div>
+      </div>
+    </div>
+    <div style="display: grid; gridTemplateColumns: repeat(4, 1fr); gap: 14px">
+      <div style="padding: 18px; borderTop: 3px solid #0D1B2A; background: #F1F3F5; display: flex; flexDirection: column; gap: 6px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Say the number</div><div style="fontSize: 13px; lineHeight: 1.55">Eleven roles beats “lots of roles”. Specificity is the whole product.</div></div>
+      <div style="padding: 18px; borderTop: 3px solid #0D7D77; background: #F1F3F5; display: flex; flexDirection: column; gap: 6px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Name the niche</div><div style="fontSize: 13px; lineHeight: 1.55">Talk about packaging, prosthetics, perfusion — never “careers”.</div></div>
+      <div style="padding: 18px; borderTop: 3px solid #6A5FA9; background: #F1F3F5; display: flex; flexDirection: column; gap: 6px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Credit the source</div><div style="fontSize: 13px; lineHeight: 1.55">Always clear that the job and the application live with the employer.</div></div>
+      <div style="padding: 18px; borderTop: 3px solid #F5A623; background: #F1F3F5; display: flex; flexDirection: column; gap: 6px"><div style="fontSize: 14px; fontWeight: 600; color: #0D1B2A">Stop early</div><div style="fontSize: 13px; lineHeight: 1.55">No exclamation marks, no closing pitch. End on the useful sentence.</div></div>
+    </div>
+    <div style="display: flex; alignItems: center; gap: 20px; padding: 22px 26px; background: #0D1B2A">
+      <svg viewBox="0 0 800 800" style="width: 46px; height: 46px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="#FFFFFF"></circle><path d="M175 175H625V295H295V625H175Z" fill="#0D1B2A"></path><path d="M625 625H400V505H505V400H625Z" fill="#0D7D77"></path></svg>
+      <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 26px; color: #FFFFFF">The right jobs, not all the jobs.</div>
+      <div style="marginLeft: auto; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; lineHeight: 1.7; color: rgba(255,255,255,0.55); textAlign: right">Questions on usage<br>brand@nicheboard.com</div>
+    </div>
+    <div style="display: flex; justifyContent: space-between; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px">
+      <div>Niche Board · Brand guide v1.0</div>
+      <div>11</div>
+    </div>
+  </section>
+
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;boardName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Packaging&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}"></script>
+</body>
+</html>
