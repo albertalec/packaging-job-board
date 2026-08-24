@@ -1,3 +1,11 @@
+import {
+  BRAND,
+  LOGO_CORNER_PATH,
+  LOGO_FRAME_PATH,
+  LOGO_STROKE_WIDTH,
+  LOGO_VIEWBOX,
+} from "./logo-paths";
+
 type LogoMarkProps = {
   className?: string;
   size?: number;
@@ -6,44 +14,39 @@ type LogoMarkProps = {
 };
 
 /**
- * Geometric Niche Board icon — navy frame, open bottom-left corner, teal triangle.
- * Matches brand logo lockup (corner triangle points inward).
+ * Niche Board geometric mark — navy frame with open bottom-right corner
+ * and rounded teal selected-corner triangle.
  */
 export function LogoMark({
   className,
-  size = 40,
+  size = 48,
   variant = "default",
 }: LogoMarkProps) {
-  const frameStroke = variant === "avatar" ? "#FFFFFF" : "var(--navy, #0D1B2A)";
-  const triangleFill = "var(--teal, #0D7D77)";
+  const frameStroke = variant === "avatar" ? "#FFFFFF" : BRAND.navy;
 
-  const icon = (
+  return (
     <svg
       className={className}
       width={size}
       height={size}
-      viewBox="0 0 40 40"
+      viewBox={LOGO_VIEWBOX}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
       {variant === "avatar" ? (
-        <circle cx="20" cy="20" r="20" fill="var(--navy, #0D1B2A)" />
+        <circle cx="24" cy="24" r="24" fill={BRAND.navy} />
       ) : null}
-      {/* Frame with open bottom-left corner */}
       <path
-        d="M10 10H30V30H18M10 10V22"
+        d={LOGO_FRAME_PATH}
         stroke={frameStroke}
-        strokeWidth="3"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
+        strokeWidth={LOGO_STROKE_WIDTH}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      {/* Teal triangle in open corner */}
-      <path d="M10 22L10 30L18 30Z" fill={triangleFill} />
+      <path d={LOGO_CORNER_PATH} fill={BRAND.teal} />
     </svg>
   );
-
-  return icon;
 }
 
 type HubLogoLockupProps = {

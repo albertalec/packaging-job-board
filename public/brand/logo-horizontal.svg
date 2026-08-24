@@ -1,0 +1,8 @@
+<svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(8 16)">
+    <path d="M10 10H38M10 10V38M10 38H27" stroke="#0D1B2A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M27.25 38H37.75Q38 38 38 37.75V27.25Q38 38 27.25 38Z" fill="#0D7D77"/>
+  </g>
+  <text x="72" y="38" fill="#0D1B2A" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="-0.02em">Niche Board</text>
+  <text x="72" y="56" fill="#4B5563" font-family="Inter, system-ui, sans-serif" font-size="9.5" font-weight="500" letter-spacing="0.12em">PRECISION JOB BOARDS FOR <tspan fill="#0D7D77">SPECIALISTS.</tspan></text>
+</svg>
