@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "ingest": "tsx ingest/run.ts",
-    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts src/lib/alerts.test.ts src/lib/kv.test.ts src/lib/remote.test.ts"
+    "test": "tsx --test ingest/classify.test.ts src/lib/rank.test.ts src/lib/description.test.ts src/lib/tenant.test.ts src/lib/seo.test.ts src/lib/jobs.test.ts src/lib/alerts.test.ts src/lib/kv.test.ts src/lib/remote.test.ts",
+    "brand:export": "node scripts/export-brand-assets.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.38.2",
@@ -25,6 +26,8 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "tailwindcss": "^4.1.12",
+    "playwright": "^1.55.0",
+    "sharp": "^0.34.3",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
