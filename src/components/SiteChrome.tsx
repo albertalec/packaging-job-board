@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { HubLogoLockup } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
 
 const NETWORK_NAME = "Niche Board";
@@ -42,27 +43,47 @@ export function SiteChrome({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className="mast">
-        <Link href="/" className="mark">
-          <span className="box" aria-hidden="true" />
-          <span>
-            {tenant.brand.markLine1}
-            {tenant.brand.markLine2 ? (
-              <>
-                <br />
-                {tenant.brand.markLine2}
-              </>
-            ) : null}
-          </span>
-        </Link>
-        <div className="mast-links">
-          <p className="tagline">
-            {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
-          </p>
+      <header className={`mast${hub ? " hub-mast" : ""}`}>
+        {hub ? (
+          <div className="hub-brand-strip" aria-hidden="true">
+            <span className="hub-brand-strip-navy" />
+            <span className="hub-brand-strip-teal" />
+            <span className="hub-brand-strip-amber" />
+          </div>
+        ) : null}
+        <div className="hub-mast-row">
+          <Link href="/" className="mark">
+          {hub ? (
+            <HubLogoLockup
+              markLine1={tenant.brand.markLine1}
+              markLine2={tenant.brand.markLine2}
+              tagline={tenant.brand.tagline}
+            />
+          ) : (
+            <>
+              <span className="box" aria-hidden="true" />
+              <span>
+                {tenant.brand.markLine1}
+                {tenant.brand.markLine2 ? (
+                  <>
+                    <br />
+                    {tenant.brand.markLine2}
+                  </>
+                ) : null}
+              </span>
+            </>
+          )}
+          </Link>
+          <div className="mast-links">
+          {!hub ? (
+            <p className="tagline">
+              {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
+            </p>
+          ) : null}
           {hub ? (
             <nav className="mast-nav">
               <Link className="nav-link" href="/niches">
-                Niches
+                Boards
               </Link>
               <Link className="nav-link" href="/employers">
                 Employers
@@ -78,10 +99,18 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </Link>
             </nav>
           )}
+          </div>
         </div>
       </header>
       <main>{children}</main>
-      <footer>
+      <footer className={hub ? "hub-footer" : undefined}>
+        {hub ? (
+          <div className="hub-brand-strip hub-footer-strip" aria-hidden="true">
+            <span className="hub-brand-strip-navy" />
+            <span className="hub-brand-strip-teal" />
+            <span className="hub-brand-strip-amber" />
+          </div>
+        ) : null}
         {tenant.brand.networkCredit ? (
           <p className="network-credit">
             {tenant.brand.name},{" "}

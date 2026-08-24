@@ -5,6 +5,61 @@ If a draft feels breathless, salesy, or flatly corporate, rewrite it.
 
 ---
 
+## Brand Guide v1 (platform — hub shipped 2026-08)
+
+### Positioning
+**Precision job boards for specialists.** The right jobs, not all the jobs.
+
+### Core personality
+- Trusted advocate
+- Focused and precise
+- Warm but professional
+- Quietly confident
+- Slightly clever
+
+### Brand values (voice)
+| Value | Line |
+| --- | --- |
+| Filtering | We filter out the noise so you find the fit. |
+| Efficiency | Exact niche. Zero wasted time. |
+| Advocacy | A trusted advocate in your corner — on your side, not just another job site. |
+| Respect | Less searching. More finding. Your time is valuable. |
+| Impact | The right role changes everything. Better matches. Better outcomes. |
+
+These are **brand values**. Product proof pillars (Classification, Freshness, Apply-out, Precision buy, Simple commerce) stay in §4 — they complement, not replace.
+
+### Color palette
+| Token | Hex | Use |
+| --- | --- | --- |
+| Deep Navy | `#0D1B2A` | Trust, headlines, primary UI |
+| Teal | `#0D7D77` | Focus, brand accent, active states |
+| Amber | `#F5A623` | Energy, CTAs — use sparingly |
+| Slate | `#4B5563` | Secondary text |
+| Mist | `#F1F3F5` | Backgrounds, card borders |
+| Paper | `#FFFFFF` | Main surfaces |
+
+### Typography
+- **Headings:** Inter Tight SemiBold (approved alternative: Outfit SemiBold)
+- **Body:** Inter Regular
+
+### Logo system
+- **Primary:** geometric frame with one open corner + teal triangle in the gap
+- **Icon:** icon-only mark for favicon and avatars
+- **Clear space:** minimum height of icon around logo
+- **Hub wordmark:** single-line **Niche Board** beside the icon (not two-line stack)
+
+### UI guidelines (hub)
+- Large whitespace
+- Simple cards with soft radius, minimal shadow
+- Minimal line icons
+- Amber used sparingly (key employer CTAs, featured badges)
+- Teal for secondary buttons, links, and active/hover states
+- Navy for primary buttons and headings
+
+**Vertical subdomains** (e.g. packaging) keep legacy kraft visual until phase 2 vertical rebrand.
+
+---
+
 ## 1. Strategy in one page
 
 ### What we sell
@@ -39,45 +94,43 @@ Homepage contrast line (keep visible in every packaging surface):
 
 | Layer | Official name | Never call it |
 | --- | --- | --- |
-| **Platform / company** | **Niche Board** (two words) | Nicheboard, Nicheboard Jobs, Niche Board Jobs, NB |
-| **This vertical product** | **Packaging Jobs** | Packaging Nicheboard, Niche Board Packaging, Packaging Niche Board |
+| **Platform / company** | **Niche Board** (two words, always) | Nicheboard, Nicheboard Jobs, Niche Board Jobs, NB |
+| **Specialty board (hub listing)** | Niche name only — e.g. **Packaging**, **Supply chain** | `{Specialty} Jobs` as hub card headline |
+| **Vertical subdomain (phase 2)** | **Packaging Jobs** on `packaging.` mast/SEO | Packaging Nicheboard, Niche Board Packaging |
 | **Domain (URL only)** | `nicheboardjobs.com` / `packaging.nicheboardjobs.com` | Spoken as the brand name |
 
-**Packaging Jobs is the product people use.**  
-**Niche Board is the network behind it.**
+**Niche Board is the network.** Specialty boards are listed by niche on the hub — not as separate product brands.
 
 It is **not** “the Packaging Nicheboard.”  
 It is **not** “Nicheboard Jobs.”  
 It is **not** primarily “launch your next career move” branding — that is generic career fluff and fights our specialist wedge.
 
-### How they relate (use this line)
+### How they relate
+
+On the **hub**, link to boards by niche:
+
+> **Packaging** — package development, not plant ops.
+
+On **vertical subdomains** (unchanged until phase 2 rebrand):
 
 > **Packaging Jobs** — packaging engineer roles, powered by **Niche Board**.
-
-Shorter footer / email form:
-
-> Packaging Jobs, powered by Niche Board.
-
-Optional one-liner under the mark on packaging (when we want network credit without stealing the hero):
-
-> A Niche Board specialty board.
 
 ### Who leads where
 
 | Surface | Lead brand | Supporting line |
 | --- | --- | --- |
-| `packaging.nicheboardjobs.com` mast, hero, SEO title | **Packaging Jobs** | Niche Board only as powered-by / footer credit |
+| `nicheboardjobs.com` hub | **Niche Board** | Specialty boards listed by niche (Packaging, Supply chain, …) |
+| Hub niche cards | **Packaging** (hub label) | Contrast line + live role count — not “Packaging Jobs” |
+| `packaging.nicheboardjobs.com` mast, hero, SEO | **Packaging Jobs** *(phase 2 visual rebrand pending)* | Niche Board as powered-by / footer credit |
 | Alerts subject + body | **Packaging Jobs** / Packaging Job Alerts | “powered by Niche Board” once |
 | Sponsor / employer on packaging | **Packaging Jobs** | Niche Board if explaining the network |
-| `nicheboardjobs.com` hub | **Niche Board** | Link out to Packaging Jobs as proof |
-| Legal / from-email / DNS | nicheboardjobs.com | Display name still “Niche Board” or “Packaging Jobs” |
+| Legal / from-email / DNS | nicheboardjobs.com | Display name “Niche Board” on hub; vertical names on subdomains |
 
-### Why this split
+### Why hub-first
 
-- Candidates search and remember **specialty + jobs** (“Packaging Jobs”), not a platform coined term.
-- Employers buy **precision on a named board**; “Niche Board” alone does not say who they’ll reach.
-- When you add Supply Chain Jobs or Disaster Recovery Jobs, the pattern stays `{Specialty} Jobs`, powered by Niche Board — no rename tax.
-- “Career move / next chapter” language is what LinkedIn and Indeed already own; we own the niche contrast instead.
+- Multiple boards are coming — the hub sells the **network**, not one vertical product name.
+- Employers buy **precision on a specialty board**; candidates discover via niche SEO on subdomains.
+- Vertical `{Specialty} Jobs` naming stays on subdomains for search; hub downplays it.
 
 ### Banned / discouraged names
 
@@ -85,14 +138,13 @@ Optional one-liner under the mark on packaging (when we want network credit with
 - Nicheboard Jobs / Niche Board Jobs as the product name  
 - Packaging Nicheboard / The Packaging Niche Board  
 - “Launch your next career move” as a brand or hero promise  
-- Leading a packaging page with “Niche Board” in the H1
+- Leading a packaging subdomain page with “Niche Board” in the H1  
+- Leading hub niche cards with “Packaging Jobs” — use **Packaging** instead
 
-### Mast mark (already in product)
+### Mast mark
 
-- Packaging: **Packaging** / **Jobs** (`markLine1` / `markLine2`)
-- Hub: **Niche** / **Board**
-
-Keep that. Do not change the packaging mark to “Niche Board.”
+- **Hub:** geometric icon + single-line **Niche Board** wordmark
+- **Packaging vertical (legacy until phase 2):** **Packaging** / **Jobs** two-line mark + stamp box
 
 ---
 
@@ -166,9 +218,10 @@ dream job · passion · disrupt · AI-powered matching · #1 board · thousands 
 ## 6. Message house
 
 ### Platform (Niche Board)
-- **Headline pattern:** Jobs in niches too narrow for LinkedIn.
-- **Support:** Specialist boards for roles generic sites bury. Apply on the employer career site. Employers pin a listing they already have.
-- **CTA:** Browse a niche board · Pin a listing · Talk bundles (later)
+- **Headline pattern:** Precision job boards for specialists.
+- **Tagline:** The right jobs, not all the jobs.
+- **Support:** Daily ATS ingest. Apply on the employer career site. Employers pin a listing they already have.
+- **CTA:** Browse specialty boards · Pin a listing · Talk bundles (later)
 
 ### Vertical — Packaging Jobs
 - **Headline pattern:** Packaging engineer jobs at top employers.
@@ -209,7 +262,8 @@ Every asset is one of these types. Stay inside the template.
 - Contrast line is visual + verbal: stamp-accent, left rule — *Package development — not plant ops.*
 - Board counts and “last updated” sit *below* the hero as quiet meta, not in the hero.
 - Keep candidate path (Apply / Browse / Alerts) and employer path (Sponsor) visually separate.
-- **Visual brand (Packaging):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only.
+- **Visual brand (Hub):** navy/teal palette (Brand Guide v1), Inter Tight + Inter, geometric logo mark, generous whitespace, simple cards. See Brand Guide v1 above.
+- **Visual brand (Packaging vertical — legacy):** kraft-paper atmosphere (outer wash + paper sheet), Source Serif 4 + IBM Plex Sans, ink/kraft offset “stamp” geometry. Niche Board powered-by lives in the footer only. Phase 2: align with Brand Guide v1.
 - Motion is presence, not noise: mark settle, hero rise-in, card hover offset. Respect `prefers-reduced-motion`.
 
 ### 7.2 SEO / metadata
@@ -293,8 +347,9 @@ Do not name-call competitors in product UI. Fine in private outreach if factual 
 Before publishing any copy (site, email, social, outreach):
 
 - [ ] Tone: friendly + trustworthy + lightly fun — not eager or hype-y
-- [ ] Correct brand for the surface: **Packaging Jobs** on vertical, **Niche Board** on hub; no “Nicheboard Jobs” / “Packaging Nicheboard”
-- [ ] If both appear, Packaging Jobs leads; Niche Board is powered-by only
+- [ ] Correct brand for the surface: **Niche Board** on hub; specialty name (e.g. Packaging) on hub cards; **Packaging Jobs** on vertical subdomain only
+- [ ] Hub: Niche Board leads; vertical product names downplayed
+- [ ] Vertical subdomain: Packaging Jobs leads; Niche Board is powered-by only
 - [ ] Maps to ≥1 positioning pillar
 - [ ] Specialty is explicit; contrast (“not …”) present where packaging is the topic
 - [ ] Apply-out or pin-existing-listing clear when relevant
@@ -308,8 +363,8 @@ Before publishing any copy (site, email, social, outreach):
 ## 12. Canonical phrases (reuse, don’t rewrite)
 
 **Platform**
-- Jobs in niches too narrow for LinkedIn.
-- Specialist boards for roles generic sites bury.
+- Precision job boards for specialists.
+- The right jobs, not all the jobs.
 - Pin a listing you already have on Workday or Greenhouse.
 
 **Packaging**

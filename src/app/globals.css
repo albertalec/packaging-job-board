@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Inter+Tight:wght@600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap");
 
 :root {
   --paper: #f3eadb;
@@ -55,6 +55,14 @@ a {
   border-bottom: 3px solid var(--ink);
   padding-bottom: 1.15rem;
   animation: mast-in 0.55s ease-out both;
+}
+
+.hub-mast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
 }
 
 .mark {
@@ -717,6 +725,644 @@ footer {
   }
 
   h1 {
+    max-width: none;
+  }
+}
+
+/* ── Hub: Brand Guide v1 (Niche Board network) ── */
+html[data-vertical="hub"] {
+  --hub-gutter: 1.75rem;
+  --hub-radius: 12px;
+  --hub-card-radius: 10px;
+}
+
+html[data-vertical="hub"],
+html[data-vertical="hub"] body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--navy);
+  background-color: var(--paper);
+  background-image: none;
+}
+
+html[data-vertical="hub"] .sheet {
+  max-width: 960px;
+  background: var(--paper);
+  border: none;
+  box-shadow: none;
+  padding: 2.5rem 2rem 4rem;
+}
+
+html[data-vertical="hub"] .mast {
+  align-items: stretch;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1.25rem;
+}
+
+html[data-vertical="hub"] .hub-mast {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+html[data-vertical="hub"] .hub-mast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+}
+
+html[data-vertical="hub"] .hub-brand-strip {
+  display: flex;
+  width: 100%;
+  max-width: 5.5rem;
+  height: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+html[data-vertical="hub"] .hub-brand-strip-navy {
+  flex: 3;
+  background: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-brand-strip-teal {
+  flex: 1;
+  background: var(--teal);
+}
+
+html[data-vertical="hub"] .hub-brand-strip-amber {
+  flex: 1;
+  background: var(--amber);
+}
+
+html[data-vertical="hub"] .mark {
+  align-items: flex-start;
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  gap: 0;
+}
+
+html[data-vertical="hub"] .hub-logo-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+html[data-vertical="hub"] .hub-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+html[data-vertical="hub"] .mark-wordstack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.02;
+}
+
+html[data-vertical="hub"] .mark-line {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+html[data-vertical="hub"] .mark-tagline {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--navy);
+  padding-left: calc(48px + 0.75rem);
+}
+
+html[data-vertical="hub"] .mark-icon {
+  flex: 0 0 auto;
+}
+
+html[data-vertical="hub"] .mast-links {
+  align-items: flex-end;
+  padding-top: 0.35rem;
+}
+
+html[data-vertical="hub"] .nav-link {
+  color: var(--navy);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+html[data-vertical="hub"] .nav-link:hover {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+html[data-vertical="hub"] h1,
+html[data-vertical="hub"] .hub-section-head,
+html[data-vertical="hub"] .sponsor-subhead,
+html[data-vertical="hub"] .alerts-title {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  color: var(--navy);
+  max-width: none;
+}
+
+html[data-vertical="hub"] h1 {
+  font-size: clamp(2.35rem, 5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+  position: relative;
+  padding-left: 0;
+  border-left: none;
+}
+
+html[data-vertical="hub"] .hub-hero h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  bottom: 0.1em;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--teal);
+  transform: translateX(calc(-1 * var(--hub-gutter)));
+}
+
+html[data-vertical="hub"] .hub-section-head {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+html[data-vertical="hub"] .hub-section-intro {
+  margin: 0 0 1.75rem;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-section-label {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.75rem;
+}
+
+html[data-vertical="hub"] .hub-section-label-muted {
+  color: var(--slate);
+  margin-top: 0.25rem;
+}
+
+html[data-vertical="hub"] .sponsor-subhead {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+}
+
+html[data-vertical="hub"] .lede,
+html[data-vertical="hub"] .sponsor-footnote {
+  color: var(--slate);
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+html[data-vertical="hub"] .hub-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--mist);
+  border: 1px solid #e5e7eb;
+  color: var(--navy);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+html[data-vertical="hub"] .hub-hero-badge-sep {
+  color: #c5cad1;
+  font-weight: 400;
+}
+
+html[data-vertical="hub"] .hub-hero-badge-accent {
+  color: var(--amber);
+}
+
+html[data-vertical="hub"] .hub-text-amber {
+  color: var(--amber);
+}
+
+html[data-vertical="hub"] .hub-audience-split {
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-audience-split strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+html[data-vertical="hub"] .hero.hub-hero {
+  padding: 2rem var(--hub-gutter) 2.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--hub-radius);
+  background:
+    linear-gradient(135deg, rgba(241, 243, 245, 0.85) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--paper);
+  border: 1px solid #eef0f2;
+}
+
+html[data-vertical="hub"] .hub-hero-actions {
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .apply,
+html[data-vertical="hub"] .hub-hero-actions .ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.35rem;
+  box-sizing: border-box;
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  font-weight: 600;
+  border-radius: 8px;
+  border-width: 2px;
+  border-style: solid;
+  white-space: nowrap;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .apply {
+  background: var(--navy);
+  color: var(--paper);
+  border-color: var(--navy);
+  transition: background 0.15s ease;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .apply:hover {
+  background: #152a42;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .ghost {
+  background: var(--paper);
+  color: var(--navy);
+  border-color: #d1d5db;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .ghost:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-hero-actions .hub-cta-employer:hover {
+  border-color: var(--amber);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .apply,
+html[data-vertical="hub"] .ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.25rem;
+  box-sizing: border-box;
+  font-size: 0.9375rem;
+  line-height: 1.2;
+}
+
+html[data-vertical="hub"] .apply {
+  background: var(--navy);
+  color: var(--paper);
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+html[data-vertical="hub"] .apply:hover {
+  background: #152a42;
+}
+
+html[data-vertical="hub"] .ghost {
+  background: var(--paper);
+  color: var(--navy);
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+html[data-vertical="hub"] .ghost:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  background: var(--paper);
+}
+
+html[data-vertical="hub"] .hub-cta-employer:hover {
+  border-color: var(--amber);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-pillars {
+  margin: 0 0 2.5rem;
+  padding: 1.5rem var(--hub-gutter);
+  border-radius: var(--hub-card-radius);
+  background: var(--mist);
+  border: 1px solid #e5e7eb;
+}
+
+html[data-vertical="hub"] .hub-pillars-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+html[data-vertical="hub"] .hub-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+html[data-vertical="hub"] .hub-pillar-mark {
+  width: 1.75rem;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 0.15rem;
+}
+
+html[data-vertical="hub"] .hub-pillar-navy .hub-pillar-mark {
+  background: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-pillar-teal .hub-pillar-mark {
+  background: var(--teal);
+}
+
+html[data-vertical="hub"] .hub-pillar-slate .hub-pillar-mark {
+  background: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-pillar-amber .hub-pillar-mark {
+  background: var(--amber);
+}
+
+html[data-vertical="hub"] .hub-pillar-title {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-pillar-body {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-boards-band {
+  margin: 0 -2rem;
+  padding: 2.5rem calc(2rem + var(--hub-gutter)) 3rem;
+  background-color: var(--mist);
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+  background-size: 18px 18px;
+  border-radius: var(--hub-radius);
+  border-top: 3px solid var(--navy);
+}
+
+html[data-vertical="hub"] .hub-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+html[data-vertical="hub"] .hub-badge-live {
+  background: rgba(13, 125, 119, 0.15);
+  color: #0a6b66;
+}
+
+html[data-vertical="hub"] .niche-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: 1px solid #d1d5db;
+  border-radius: var(--hub-card-radius);
+  background: var(--paper);
+  padding: 1.15rem 3rem 1.15rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(13, 27, 42, 0.06);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+html[data-vertical="hub"] .niche-card-live:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.1);
+}
+
+html[data-vertical="hub"] .niche-card.coming-soon {
+  background: rgba(255, 255, 255, 0.65);
+  border-style: dashed;
+  border-color: #c5cad1;
+  box-shadow: none;
+  padding-right: 1.25rem;
+}
+
+html[data-vertical="hub"] .niche-card.coming-soon:hover {
+  transform: none;
+}
+
+html[data-vertical="hub"] .niche-card-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+html[data-vertical="hub"] .pick-title {
+  color: var(--navy);
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+html[data-vertical="hub"] .pick-contrast {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-badge-soon {
+  background: rgba(245, 166, 35, 0.18);
+  color: #9a6808;
+}
+
+html[data-vertical="hub"] .niche-card-live {
+  box-shadow:
+    inset 3px 0 0 var(--teal),
+    0 1px 3px rgba(13, 27, 42, 0.06);
+}
+
+html[data-vertical="hub"] .niche-card-arrow {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--navy);
+  transition: color 0.15s ease;
+}
+
+html[data-vertical="hub"] .niche-card-live:hover .niche-card-arrow {
+  color: var(--teal);
+}
+
+html[data-vertical="hub"] .pick-meta {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .niche-grid {
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+html[data-vertical="hub"] .niche-grid.hub-board-grid-soon {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[data-vertical="hub"] .niche-grid:last-child {
+  margin-bottom: 0;
+}
+
+html[data-vertical="hub"] .mark-tagline-accent {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+html[data-vertical="hub"] .kicker {
+  color: var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+html[data-vertical="hub"] .apply.amber {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .apply.amber:hover {
+  background: #e09515;
+}
+
+html[data-vertical="hub"] .sponsor-benefits {
+  color: var(--slate);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+html[data-vertical="hub"] footer.hub-footer {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.25rem;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-footer-strip {
+  margin-bottom: 1rem;
+}
+
+html[data-vertical="hub"] .network-link:hover {
+  color: var(--teal);
+}
+
+html[data-vertical="hub"] input,
+html[data-vertical="hub"] select {
+  border-color: #d1d5db;
+  border-radius: 6px;
+}
+
+html[data-vertical="hub"] .box {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  html[data-vertical="hub"] .mark-tagline {
+    font-size: 0.75rem;
+    padding-left: calc(44px + 0.65rem);
+  }
+
+  html[data-vertical="hub"] .mark-line {
+    font-size: 1.25rem;
+  }
+
+  html[data-vertical="hub"] .mast-links {
+    align-items: flex-start;
+    padding-top: 0.75rem;
+  }
+
+  html[data-vertical="hub"] .hub-pillars-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  html[data-vertical="hub"] .hub-boards-band {
+    margin: 0 -1.5rem;
+    padding: 2rem calc(1.5rem + var(--hub-gutter)) 2.5rem;
+    border-radius: 0;
+  }
+
+  html[data-vertical="hub"] .hero.hub-hero {
+    padding: 1.75rem 1.5rem 2rem;
+  }
+
+  html[data-vertical="hub"] .hub-pillars {
+    padding-inline: 1.5rem;
+  }
+
+  html[data-vertical="hub"] .niche-grid.hub-board-grid-soon {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-vertical="hub"] h1 {
     max-width: none;
   }
 }
