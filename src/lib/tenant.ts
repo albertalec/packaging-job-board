@@ -124,7 +124,26 @@ export async function verticalPublicOrigin(verticalId: string): Promise<string> 
 
 export function themeStyle(
   tenant: Tenant,
-): Record<"--stamp" | "--kraft" | "--paper", string> {
+): Record<string, string> {
+  if (tenant.kind === "hub" && tenant.theme.navy) {
+    const { navy, teal, amber, slate, mist, paper } = tenant.theme;
+    return {
+      "--navy": navy!,
+      "--teal": teal!,
+      "--amber": amber!,
+      "--slate": slate!,
+      "--mist": mist!,
+      "--paper": paper!,
+      "--ink": navy!,
+      "--muted": slate!,
+      "--stamp": teal!,
+      "--kraft": mist!,
+      "--rule": mist!,
+      "--card": paper!,
+      "--outer": mist!,
+    };
+  }
+
   return {
     "--stamp": tenant.theme.accent,
     "--kraft": tenant.theme.kraft,

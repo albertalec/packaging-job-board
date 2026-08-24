@@ -27,7 +27,7 @@ export default async function HubHomePage() {
       const jobs = loadJobs(vertical.id);
       return {
         id: vertical.id,
-        name: vertical.brand.name,
+        label: vertical.brand.hubLabel ?? vertical.brand.markLine1,
         tagline: vertical.copy.contrast,
         total: jobs.total,
         href: await verticalPublicOrigin(vertical.id),
@@ -38,7 +38,7 @@ export default async function HubHomePage() {
   return (
     <>
       <section className="hero">
-        <p className="kicker">A Niche Board network</p>
+        <p className="kicker">{tenant.brand.tagline}</p>
         <h1>{tenant.copy.hero}</h1>
         <p className="lede">{tenant.copy.lede}</p>
         <div className="sponsor-actions">
@@ -46,7 +46,7 @@ export default async function HubHomePage() {
             For employers
           </Link>
           <Link className="ghost big" href="/niches">
-            Browse niches
+            Browse specialty boards
           </Link>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default async function HubHomePage() {
           {live.map((board) => (
             <li key={board.id}>
               <a className="niche-card" href={board.href}>
-                <span className="pick-title">{board.name}</span>
+                <span className="pick-title">{board.label}</span>
                 <span className="pick-meta">
                   {board.tagline} · {board.total} live roles
                 </span>

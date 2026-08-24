@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { packaging } from "@config/packaging";
 import { buildPageMetadata } from "@/lib/seo";
@@ -23,14 +24,15 @@ export default async function EmployersPage() {
 
   const packagingOrigin = await verticalPublicOrigin("packaging");
   const price = formatUsd(packaging.sponsor.priceCents);
+  const packagingLabel = packaging.brand.hubLabel ?? "Packaging";
 
   return (
     <article className="sponsor-page">
       <p className="kicker">For employers</p>
       <h1>Pin the listing you already have</h1>
       <p className="lede">
-        {tenant.brand.employerTagline} Start with Packaging Jobs — packaging
-        engineers and package development, not plant ops.
+        {tenant.brand.employerTagline} Each pin is scoped to one specialty
+        board — the audience that actually matches the role you are hiring.
       </p>
       <ul className="sponsor-benefits">
         <li>
@@ -38,12 +40,12 @@ export default async function EmployersPage() {
           apply wall
         </li>
         <li>
-          Sponsorship is scoped to one board. A packaging pin does not appear
-          on other niches
+          Sponsorship is scoped to one board. A pin on {packagingLabel} does not
+          appear on other niches
         </li>
         <li>
-          {price} for {packaging.sponsor.durationDays} days on Packaging Jobs —
-          cheaper than posting the same role on a general packaging board
+          {price} for {packaging.sponsor.durationDays} days on a live board —
+          pin what you already posted, not a second posting workflow
         </li>
         <li>
           Dual-vertical and network pins come after a second board is live.
@@ -51,16 +53,17 @@ export default async function EmployersPage() {
         </li>
       </ul>
       <div className="sponsor-actions">
-        <a className="apply big" href={`${packagingOrigin}/sponsor`}>
-          Pin a packaging listing — {price}
+        <a className="apply big amber" href={`${packagingOrigin}/sponsor`}>
+          Pin on {packagingLabel} board — {price}
         </a>
-        <a className="ghost big" href={`mailto:${tenant.contactEmail}`}>
-          {tenant.contactEmail}
-        </a>
+        <Link className="ghost big" href="/niches">
+          Browse live boards
+        </Link>
       </div>
       <p className="sponsor-footnote">
         Bundles (dual pin / network pin) are not for sale yet. Email us if you
-        hire across more than one niche.
+        hire across more than one niche:{" "}
+        <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>
       </p>
     </article>
   );

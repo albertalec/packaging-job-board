@@ -97,9 +97,13 @@ distribution channel (LinkedIn groups, associations).
 
 **Parent brand (locked):** **Niche Board** — `nicheboardjobs.com`
 
-- Tagline: *Jobs in niches too narrow for LinkedIn.*
-- Employer pitch: *Specialist boards for roles generic sites bury — pin the
-  listing you already have on your ATS.*
+- Positioning: *Precision job boards for specialists.*
+- Tagline: *The right jobs, not all the jobs.*
+- Employer pitch: *Pin the listing you already have on your ATS — scoped to
+  the specialty board that reaches the role you are hiring.*
+- Hub visual (v1): navy/teal Brand Guide palette, Inter Tight + Inter,
+  geometric logo mark. Packaging vertical keeps legacy kraft theme until
+  phase 2 vertical rebrand.
 - Contact: `hello@nicheboardjobs.com` (parent); `hello@packaging.nicheboardjobs.com`
   (vertical — or `hello@nicheboardjobs.com` with vertical in reply-to)
 

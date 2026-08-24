@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="6" fill="#0D1B2A"/>
+  <path d="M8 8H32V32H20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M8 8V32" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="square"/>
+  <path d="M20 20L32 32L20 32Z" fill="#0D7D77"/>
+</svg>

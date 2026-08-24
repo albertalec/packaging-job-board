@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Inter+Tight:wght@600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap");
 
 :root {
   --paper: #f3eadb;
@@ -719,4 +719,189 @@ footer {
   h1 {
     max-width: none;
   }
+}
+
+/* ── Hub: Brand Guide v1 (Niche Board network) ── */
+html[data-vertical="hub"] {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--navy);
+  background-color: var(--mist);
+  background-image: none;
+}
+
+html[data-vertical="hub"] .sheet {
+  max-width: 960px;
+  background: var(--paper);
+  border: none;
+  box-shadow: none;
+  padding: 2.5rem 2rem 4rem;
+}
+
+html[data-vertical="hub"] .mast {
+  align-items: center;
+  border-bottom: 1px solid var(--mist);
+  padding-bottom: 1.25rem;
+}
+
+html[data-vertical="hub"] .mark {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  gap: 0.65rem;
+}
+
+html[data-vertical="hub"] .mark-word {
+  white-space: nowrap;
+}
+
+html[data-vertical="hub"] .mark-icon {
+  flex: 0 0 auto;
+}
+
+html[data-vertical="hub"] .tagline {
+  color: var(--slate);
+  font-size: 0.875rem;
+  max-width: 18rem;
+}
+
+html[data-vertical="hub"] .nav-link {
+  color: var(--slate);
+  border-bottom-color: transparent;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+html[data-vertical="hub"] .nav-link:hover {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+html[data-vertical="hub"] h1,
+html[data-vertical="hub"] .sponsor-subhead,
+html[data-vertical="hub"] .alerts-title {
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  color: var(--navy);
+  max-width: none;
+}
+
+html[data-vertical="hub"] h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+html[data-vertical="hub"] .sponsor-subhead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+}
+
+html[data-vertical="hub"] .lede,
+html[data-vertical="hub"] .sponsor-footnote {
+  color: var(--slate);
+  max-width: 40rem;
+  line-height: 1.6;
+}
+
+html[data-vertical="hub"] .kicker {
+  color: var(--teal);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+html[data-vertical="hub"] .hero {
+  padding: 3rem 0 2rem;
+}
+
+html[data-vertical="hub"] .apply {
+  background: var(--navy);
+  color: var(--paper);
+  border-color: var(--navy);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  transition: background 0.15s ease;
+}
+
+html[data-vertical="hub"] .apply:hover {
+  background: #152a42;
+}
+
+html[data-vertical="hub"] .apply.amber {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .apply.amber:hover {
+  background: #e09515;
+}
+
+html[data-vertical="hub"] .ghost {
+  background: transparent;
+  color: var(--teal);
+  border-color: var(--teal);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+html[data-vertical="hub"] .ghost:hover {
+  background: rgba(13, 125, 119, 0.08);
+}
+
+html[data-vertical="hub"] .niche-card {
+  border: 1px solid var(--mist);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+html[data-vertical="hub"] .niche-card:hover {
+  transform: none;
+  border-color: var(--teal);
+  box-shadow: 0 2px 8px rgba(13, 27, 42, 0.06);
+}
+
+html[data-vertical="hub"] .niche-card.coming-soon {
+  background: var(--mist);
+  border-style: dashed;
+  border-color: #d1d5db;
+}
+
+html[data-vertical="hub"] .pick-title {
+  color: var(--navy);
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+html[data-vertical="hub"] .pick-meta {
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .sponsor-benefits {
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] footer {
+  border-top-color: var(--mist);
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .network-link:hover {
+  color: var(--teal);
+}
+
+html[data-vertical="hub"] input,
+html[data-vertical="hub"] select {
+  border-color: #d1d5db;
+  border-radius: 6px;
+}
+
+html[data-vertical="hub"] .box {
+  display: none;
 }

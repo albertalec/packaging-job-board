@@ -10,6 +10,7 @@ export const packaging: VerticalTenant = {
     name: "Packaging Jobs",
     markLine1: "Packaging",
     markLine2: "Jobs",
+    hubLabel: "Packaging",
     tagline: "Packaging engineer jobs at top employers.",
     employerTagline: "Pin a live listing at the top of Packaging Jobs.",
     footer:

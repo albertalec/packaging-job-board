@@ -2,6 +2,12 @@ export type Theme = {
   accent: string;
   kraft: string;
   paper: string;
+  /** Brand Guide v1 palette — hub and future vertical rebrand */
+  navy?: string;
+  teal?: string;
+  amber?: string;
+  slate?: string;
+  mist?: string;
 };
 
 export type Brand = {
@@ -12,6 +18,8 @@ export type Brand = {
   employerTagline: string;
   footer: string;
   employerFooter: string;
+  /** Short niche name for hub cards — e.g. "Packaging" */
+  hubLabel?: string;
   /** e.g. "powered by Niche Board" — vertical boards only */
   networkCredit?: string;
   /** Inbox From display name for alert emails */
