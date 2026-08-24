@@ -10,11 +10,21 @@ import {
   splitTagline,
 } from "./logo-paths";
 
+export type LogoMarkVariant =
+  | "default"
+  | "reverse"
+  | "mono-navy"
+  | "mono-white"
+  | "avatar"
+  | "avatar-white"
+  | "avatar-teal"
+  | "avatar-outline"
+  | "on-navy";
+
 type LogoMarkProps = {
   className?: string;
   size?: number;
-  /** Roundel variant for avatars, favicons, and stamps */
-  variant?: "default" | "avatar";
+  variant?: LogoMarkVariant;
 };
 
 /**
@@ -26,7 +36,36 @@ export function LogoMark({
   size = 48,
   variant = "default",
 }: LogoMarkProps) {
-  if (variant === "avatar") {
+  if (variant === "on-navy") {
+    return (
+      <svg
+        className={className}
+        width={size}
+        height={size}
+        viewBox="0 0 512 512"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect width="512" height="512" rx="96" fill={BRAND.navy} />
+        <g transform="translate(138 138)">
+          <path d={LOGO_NAVY_PATH} fill="#FFFFFF" />
+          <path d={LOGO_TEAL_PATH} fill={BRAND.teal} />
+        </g>
+      </svg>
+    );
+  }
+
+  if (variant.startsWith("avatar")) {
+    const fills =
+      variant === "avatar-white"
+        ? { bg: "#FFFFFF", navy: BRAND.navy, teal: BRAND.teal }
+        : variant === "avatar-teal"
+          ? { bg: BRAND.teal, navy: "#FFFFFF", teal: "rgba(255,255,255,0.5)" }
+          : variant === "avatar-outline"
+            ? { bg: "#FFFFFF", navy: BRAND.navy, teal: BRAND.teal, stroke: BRAND.navy }
+            : { bg: BRAND.navy, navy: "#FFFFFF", teal: BRAND.teal };
+
     return (
       <svg
         className={className}
@@ -37,12 +76,34 @@ export function LogoMark({
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <circle cx="400" cy="400" r="400" fill={BRAND.navy} />
-        <path d={LOGO_ROUNDEL_NAVY_PATH} fill="#FFFFFF" />
-        <path d={LOGO_ROUNDEL_TEAL_PATH} fill={BRAND.teal} />
+        {"stroke" in fills ? (
+          <circle
+            cx="400"
+            cy="400"
+            r="392"
+            fill={fills.bg}
+            stroke={fills.stroke}
+            strokeWidth="16"
+          />
+        ) : (
+          <circle cx="400" cy="400" r="400" fill={fills.bg} />
+        )}
+        <path d={LOGO_ROUNDEL_NAVY_PATH} fill={fills.navy} />
+        <path d={LOGO_ROUNDEL_TEAL_PATH} fill={fills.teal} />
       </svg>
     );
   }
+
+  const navyFill =
+    variant === "reverse" || variant === "mono-white"
+      ? "#FFFFFF"
+      : BRAND.navy;
+  const tealFill =
+    variant === "mono-navy"
+      ? BRAND.navy
+      : variant === "mono-white"
+        ? "#FFFFFF"
+        : BRAND.teal;
 
   return (
     <svg
@@ -54,8 +115,8 @@ export function LogoMark({
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d={LOGO_NAVY_PATH} fill={BRAND.navy} />
-      <path d={LOGO_TEAL_PATH} fill={BRAND.teal} />
+      <path d={LOGO_NAVY_PATH} fill={navyFill} />
+      <path d={LOGO_TEAL_PATH} fill={tealFill} />
     </svg>
   );
 }
@@ -65,6 +126,8 @@ type HubLogoLockupProps = {
   kicker: string;
   tagline?: string;
   className?: string;
+  /** Use reverse (light) symbol on dark backgrounds */
+  reverse?: boolean;
 };
 
 /** Primary lockup — symbol, single-line wordmark, uppercase kicker. */
@@ -73,6 +136,7 @@ export function HubLogoLockup({
   kicker,
   tagline,
   className,
+  reverse = false,
 }: HubLogoLockupProps) {
   const kickerParts = splitKicker(kicker);
   const taglineParts = tagline ? splitTagline(tagline) : null;
@@ -80,7 +144,11 @@ export function HubLogoLockup({
   return (
     <span className={className ?? "hub-logo-lockup"}>
       <span className="hub-logo-row">
-        <LogoMark className="mark-icon" size={48} />
+        <LogoMark
+          className="mark-icon"
+          size={48}
+          variant={reverse ? "reverse" : "default"}
+        />
         <span className="mark-wordmark">{name}</span>
       </span>
       <span className="mark-kicker">

@@ -55,6 +55,28 @@ Working ratio: navy + neutrals ~78%, teal ~14%, accents ~4%, amber ~4%. Violet a
 - **Primary lockup:** symbol + single-line **Niche Board** + uppercase kicker (*Precision job boards for specialists.* with final word in teal).
 - **Name:** always **Niche Board** (two words). Boards listed by niche alone (**Packaging**, not “Packaging Jobs”).
 
+### Brand assets (repo)
+Source SVGs live under `public/brand/`; PNG lockups and social sizes are generated with `npm run brand:export`.
+
+| Path | Use |
+| --- | --- |
+| `public/brand/logo-mark.svg` | Primary symbol (transparent) |
+| `public/brand/logo-avatar.svg` | Navy roundel |
+| `public/brand/logo-horizontal.svg` | Reference horizontal lockup |
+| `public/brand/svg/logo-mark-on-navy.svg` | App icon base (navy tile) |
+| `public/brand/svg/logo-mark-reverse.svg` | Symbol on dark backgrounds |
+| `public/brand/svg/logo-mark-mono-*.svg` | Single-colour symbol variants |
+| `public/brand/svg/roundel-*.svg` | Roundel avatars (navy, white, teal, outline) |
+| `public/brand/png/logo-horizontal-*.png` | Marketing lockups (light / reverse) |
+| `public/brand/png/logo-stacked.png` | Stacked symbol + wordmark |
+| `public/brand/png/logo-wordmark.png` | Wordmark only |
+| `public/brand/png/og-image.png` | Social share template |
+| `src/app/icon.svg` | Favicon (roundel) |
+| `src/app/apple-icon.png` | Apple touch icon (generated) |
+| `src/app/opengraph-image.png` | Default Open Graph image (generated) |
+
+React: `LogoMark` supports `default`, `reverse`, `mono-navy`, `mono-white`, `on-navy`, and roundel variants (`avatar`, `avatar-white`, `avatar-teal`, `avatar-outline`).
+
 ### UI guidelines (hub)
 - Large whitespace, simple cards, 3px radius on buttons
 - IBM Plex Mono for section labels, badges, and counts
