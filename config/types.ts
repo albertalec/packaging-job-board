@@ -8,6 +8,8 @@ export type Theme = {
   amber?: string;
   slate?: string;
   mist?: string;
+  violet?: string;
+  clay?: string;
 };
 
 export type Brand = {
@@ -18,6 +20,8 @@ export type Brand = {
   employerTagline: string;
   footer: string;
   employerFooter: string;
+  /** Short uppercase kicker under the hub lockup */
+  lockupKicker?: string;
   /** Short niche name for hub cards — e.g. "Packaging" */
   hubLabel?: string;
   /** e.g. "powered by Niche Board" — vertical boards only */

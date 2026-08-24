@@ -14,8 +14,9 @@ export const hub: HubTenant = {
     name: "Niche Board",
     markLine1: "Niche",
     markLine2: "Board",
-    tagline: "The right jobs. Not all the jobs.",
+    tagline: "The right jobs, not all the jobs.",
     employerTagline: "Pin a live listing on the specialty board that reaches your role.",
+    lockupKicker: "Precision job boards for specialists.",
     footer:
       "Precision job boards for specialists. Candidates apply on the employer ATS.",
     employerFooter:
@@ -30,6 +31,8 @@ export const hub: HubTenant = {
     amber: "#F5A623",
     slate: "#4B5563",
     mist: "#F1F3F5",
+    violet: "#6A5FA9",
+    clay: "#A85C57",
   },
   contactEmail: "hello@nicheboardjobs.com",
   copy: {

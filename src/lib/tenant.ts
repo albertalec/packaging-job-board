@@ -126,7 +126,7 @@ export function themeStyle(
   tenant: Tenant,
 ): Record<string, string> {
   if (tenant.kind === "hub" && tenant.theme.navy) {
-    const { navy, teal, amber, slate, mist, paper } = tenant.theme;
+    const { navy, teal, amber, slate, mist, paper, violet, clay } = tenant.theme;
     return {
       "--navy": navy!,
       "--teal": teal!,
@@ -134,6 +134,8 @@ export function themeStyle(
       "--slate": slate!,
       "--mist": mist!,
       "--paper": paper!,
+      "--violet": violet ?? "#6A5FA9",
+      "--clay": clay ?? "#A85C57",
       "--ink": navy!,
       "--muted": slate!,
       "--stamp": teal!,

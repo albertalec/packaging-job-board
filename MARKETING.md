@@ -5,7 +5,9 @@ If a draft feels breathless, salesy, or flatly corporate, rewrite it.
 
 ---
 
-## Brand Guide v1 (platform — hub shipped 2026-08)
+## Brand Guide v1.0 (platform — hub shipped 2026-08)
+
+**Canonical reference:** [`Niche Board Brand Guide.dc.html`](Niche%20Board%20Brand%20Guide.dc.html) — logo, colour, type, voice, application mockups.
 
 ### Positioning
 **Precision job boards for specialists.** The right jobs, not all the jobs.
@@ -32,29 +34,56 @@ These are **brand values**. Product proof pillars (Classification, Freshness, Ap
 | Token | Hex | Use |
 | --- | --- | --- |
 | Deep Navy | `#0D1B2A` | Trust, headlines, primary UI |
-| Teal | `#0D7D77` | Focus, brand accent, active states |
-| Amber | `#F5A623` | Energy, CTAs — use sparingly |
-| Slate | `#4B5563` | Secondary text |
+| Teal | `#0D7D77` | Focus, links, active states, niche labels |
+| Amber | `#F5A623` | Energy, employer CTAs — use sparingly |
+| Slate | `#4B5563` | Secondary text, metadata |
 | Mist | `#F1F3F5` | Backgrounds, card borders |
 | Paper | `#FFFFFF` | Main surfaces |
+| Ink Violet | `#6A5FA9` | Board-family coding (labels/tints only) |
+| Clay | `#A85C57` | Board-family coding (labels/tints only) |
+
+Working ratio: navy + neutrals ~78%, teal ~14%, accents ~4%, amber ~4%. Violet and clay never appear in the logo, links, or button fills.
 
 ### Typography
-- **Headings:** Inter Tight SemiBold (approved alternative: Outfit SemiBold)
-- **Body:** Inter Regular
+- **Headings & body:** Archivo (600/700 headings, 400/500 body)
+- **Tagline & pull quotes:** Newsreader Italic
+- **Eyebrows, counts, metadata:** IBM Plex Mono (uppercase, tracked)
 
 ### Logo system
-- **Primary:** geometric frame with one open corner + teal triangle in the gap
-- **Icon:** icon-only mark for favicon and avatars
-- **Clear space:** minimum height of icon around logo
-- **Hub wordmark:** single-line **Niche Board** beside the icon (not two-line stack)
+- **Symbol:** two crop marks — navy top-left corner opens the frame, teal bottom-right closes it. The gap between corners is structural; never close it, mirror, rotate, or recolour.
+- **Roundel:** circle accent for avatars, favicons, section markers — one per view.
+- **Primary lockup:** symbol + single-line **Niche Board** + uppercase kicker (*Precision job boards for specialists.* with final word in teal).
+- **Name:** always **Niche Board** (two words). Boards listed by niche alone (**Packaging**, not “Packaging Jobs”).
+
+### Brand assets (repo)
+Source SVGs live under `public/brand/`; PNG lockups and social sizes are generated with `npm run brand:export`.
+
+| Path | Use |
+| --- | --- |
+| `public/brand/logo-mark.svg` | Primary symbol (transparent) |
+| `public/brand/logo-avatar.svg` | Navy roundel |
+| `public/brand/logo-horizontal.svg` | Reference horizontal lockup |
+| `public/brand/svg/logo-mark-on-navy.svg` | App icon base (navy tile) |
+| `public/brand/svg/logo-mark-reverse.svg` | Symbol on dark backgrounds |
+| `public/brand/svg/logo-mark-mono-*.svg` | Single-colour symbol variants |
+| `public/brand/svg/roundel-*.svg` | Roundel avatars (navy, white, teal, outline) |
+| `public/brand/png/logo-horizontal-*.png` | Marketing lockups (light / reverse) |
+| `public/brand/png/logo-stacked.png` | Stacked symbol + wordmark |
+| `public/brand/png/logo-wordmark.png` | Wordmark only |
+| `public/brand/png/og-image.png` | Social share template |
+| `src/app/icon.svg` | Favicon (roundel) |
+| `src/app/apple-icon.png` | Apple touch icon (generated) |
+| `src/app/opengraph-image.png` | Default Open Graph image (generated) |
+
+React: `LogoMark` supports `default`, `reverse`, `mono-navy`, `mono-white`, `on-navy`, and roundel variants (`avatar`, `avatar-white`, `avatar-teal`, `avatar-outline`).
 
 ### UI guidelines (hub)
-- Large whitespace
-- Simple cards with soft radius, minimal shadow
-- Minimal line icons
-- Amber used sparingly (key employer CTAs, featured badges)
-- Teal for secondary buttons, links, and active/hover states
+- Large whitespace, simple cards, 3px radius on buttons
+- IBM Plex Mono for section labels, badges, and counts
+- Amber used sparingly (employer CTAs, featured/soon badges)
+- Teal for links, active states, live indicators, niche labels
 - Navy for primary buttons and headings
+- Board-family tints (teal/violet/clay washes) for category chips only
 
 **Vertical subdomains** (e.g. packaging) keep legacy kraft visual until phase 2 vertical rebrand.
 

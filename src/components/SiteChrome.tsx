@@ -55,9 +55,8 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           <Link href="/" className="mark">
           {hub ? (
             <HubLogoLockup
-              markLine1={tenant.brand.markLine1}
-              markLine2={tenant.brand.markLine2}
-              tagline={tenant.brand.tagline}
+              name={tenant.brand.name}
+              kicker={tenant.brand.lockupKicker ?? "Precision job boards for specialists."}
             />
           ) : (
             <>
