@@ -83,6 +83,11 @@ export type HubTenant = {
     hero: string;
     lede: string;
     metaDescription: string;
+    heroBadge?: string;
+    boardsHeadline?: string;
+    boardsIntro?: string;
+    audienceSplit?: string;
+    pillars?: { title: string; body: string }[];
   };
 };
 

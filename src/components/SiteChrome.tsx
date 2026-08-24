@@ -75,7 +75,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           {hub ? (
             <nav className="mast-nav">
               <Link className="nav-link" href="/niches">
-                Niches
+                Boards
               </Link>
               <Link className="nav-link" href="/employers">
                 Employers

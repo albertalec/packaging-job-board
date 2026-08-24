@@ -8,6 +8,17 @@ import { getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
 
 export const dynamic = "force-dynamic";
 
+const UPCOMING = [
+  {
+    label: "Supply chain",
+    note: "Demand planning & S&OP — not warehouse ops.",
+  },
+  {
+    label: "Resilience",
+    note: "BCM & disaster recovery — not generic IT.",
+  },
+];
+
 export async function generateMetadata(): Promise<Metadata> {
   const tenant = await getRequestTenant();
   return buildPageMetadata({
@@ -37,30 +48,77 @@ export default async function HubHomePage() {
 
   return (
     <>
-      <section className="hero">
-        <p className="kicker">{tenant.brand.tagline}</p>
+      <section className="hero hub-hero">
+        {tenant.copy.heroBadge ? (
+          <p className="hub-hero-badge">{tenant.copy.heroBadge}</p>
+        ) : null}
         <h1>{tenant.copy.hero}</h1>
         <p className="lede">{tenant.copy.lede}</p>
-        <div className="sponsor-actions">
-          <Link className="apply big" href="/employers">
+        <div className="sponsor-actions hub-hero-actions">
+          <Link className="apply big hub-cta-primary" href="/niches">
+            Browse live boards
+          </Link>
+          <Link className="ghost big" href="/employers">
             For employers
           </Link>
-          <Link className="ghost big" href="/niches">
-            Browse specialty boards
-          </Link>
         </div>
+        {tenant.copy.audienceSplit ? (
+          <p className="hub-audience-split">{tenant.copy.audienceSplit}</p>
+        ) : null}
       </section>
-      <section>
-        <h2 className="sponsor-subhead">Live boards</h2>
+
+      {tenant.copy.pillars && tenant.copy.pillars.length > 0 ? (
+        <section className="hub-pillars" aria-label="Why Niche Board">
+          <ul className="hub-pillars-list">
+            {tenant.copy.pillars.map((pillar) => (
+              <li key={pillar.title} className="hub-pillar">
+                <span className="hub-pillar-mark" aria-hidden="true" />
+                <span className="hub-pillar-title">{pillar.title}</span>
+                <span className="hub-pillar-body">{pillar.body}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="hub-boards-band">
+        <h2 className="hub-section-head">
+          {tenant.copy.boardsHeadline ?? "Live boards"}
+        </h2>
+        {tenant.copy.boardsIntro ? (
+          <p className="hub-section-intro">{tenant.copy.boardsIntro}</p>
+        ) : null}
+        <h3 className="hub-section-label">Live</h3>
         <ul className="niche-grid">
           {live.map((board) => (
             <li key={board.id}>
-              <a className="niche-card" href={board.href}>
-                <span className="pick-title">{board.label}</span>
-                <span className="pick-meta">
-                  {board.tagline} · {board.total} live roles
+              <a className="niche-card niche-card-live" href={board.href}>
+                <span className="hub-badge hub-badge-live">Live</span>
+                <span className="niche-card-main">
+                  <span className="pick-title">{board.label}</span>
+                  <span className="pick-contrast">{board.tagline}</span>
+                  <span className="pick-meta">
+                    {board.total} roles · Updated daily
+                  </span>
+                </span>
+                <span className="niche-card-arrow" aria-hidden="true">
+                  →
                 </span>
               </a>
+            </li>
+          ))}
+        </ul>
+        <h3 className="hub-section-label">Coming next</h3>
+        <ul className="niche-grid">
+          {UPCOMING.map((board) => (
+            <li key={board.label}>
+              <div className="niche-card coming-soon">
+                <span className="hub-badge">Soon</span>
+                <span className="niche-card-main">
+                  <span className="pick-title">{board.label}</span>
+                  <span className="pick-meta">{board.note}</span>
+                </span>
+              </div>
             </li>
           ))}
         </ul>

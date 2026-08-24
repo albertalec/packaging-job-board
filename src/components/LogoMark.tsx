@@ -69,7 +69,7 @@ export function HubLogoLockup({
   return (
     <span className={className ?? "hub-logo-lockup"}>
       <span className="hub-logo-row">
-        <LogoMark className="mark-icon" size={44} />
+        <LogoMark className="mark-icon" size={48} />
         <span className="mark-wordstack" aria-hidden="true">
           <span className="mark-line">{markLine1}</span>
           <span className="mark-line">{markLine2}</span>

@@ -34,8 +34,29 @@ export const hub: HubTenant = {
   contactEmail: "hello@nicheboardjobs.com",
   copy: {
     hero: "Precision job boards for specialists.",
-    lede: "One network of specialty boards — each built for a narrow professional slice generic sites bury. Candidates apply on the employer career site. Employers pin a listing they already have.",
+    lede:
+      "Specialty boards for narrow professional slices — classified daily from employer career sites. Apply on the company’s ATS, not through us.",
+    heroBadge: "1 board live · more coming",
+    audienceSplit:
+      "Looking for roles? Browse a board below. Hiring? Pin a listing you already have.",
+    boardsHeadline: "Browse a specialty board",
+    boardsIntro:
+      "Each board is built for one niche — its own filters, classifier, and sponsorship pool.",
     metaDescription:
       "Niche Board is a network of precision job boards for specialists. The right jobs, not all the jobs. Pin an ATS listing on the board that reaches the role you are hiring.",
+    pillars: [
+      {
+        title: "Filtered",
+        body: "Specialist titles only — we drop the noise generic boards keep.",
+      },
+      {
+        title: "Fresh",
+        body: "Updated daily from employer ATS feeds, not stale reposts.",
+      },
+      {
+        title: "Apply-out",
+        body: "Finish on the company career site — no fake apply wall.",
+      },
+    ],
   },
 };
