@@ -990,11 +990,53 @@ html[data-vertical="hub"] .hero.hub-hero {
 
 html[data-vertical="hub"] .hub-hero-actions {
   margin-top: 1.5rem;
+  align-items: center;
 }
 
-html[data-vertical="hub"] .hub-cta-primary {
-  padding-inline: 1.35rem;
+html[data-vertical="hub"] .hub-hero-actions .apply,
+html[data-vertical="hub"] .hub-hero-actions .ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.35rem;
+  box-sizing: border-box;
   font-size: 0.9375rem;
+  line-height: 1.2;
+  font-weight: 600;
+  border-radius: 8px;
+  border-width: 2px;
+  border-style: solid;
+  white-space: nowrap;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .apply {
+  background: var(--navy);
+  color: var(--paper);
+  border-color: var(--navy);
+  transition: background 0.15s ease;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .apply:hover {
+  background: #152a42;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .ghost {
+  background: var(--paper);
+  color: var(--navy);
+  border-color: #d1d5db;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+html[data-vertical="hub"] .hub-hero-actions .ghost:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-hero-actions .hub-cta-employer:hover {
+  border-color: var(--amber);
+  color: var(--navy);
 }
 
 html[data-vertical="hub"] .apply,
@@ -1020,10 +1062,6 @@ html[data-vertical="hub"] .apply {
 
 html[data-vertical="hub"] .apply:hover {
   background: #152a42;
-}
-
-html[data-vertical="hub"] .apply.big {
-  display: inline-block;
 }
 
 html[data-vertical="hub"] .ghost {
