@@ -52,7 +52,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           </div>
         ) : null}
         <div className="hub-mast-row">
-        <Link href="/" className="mark">
+          <Link href="/" className="mark">
           {hub ? (
             <HubLogoLockup
               markLine1={tenant.brand.markLine1}
@@ -73,8 +73,8 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </span>
             </>
           )}
-        </Link>
-        <div className="mast-links">
+          </Link>
+          <div className="mast-links">
           {!hub ? (
             <p className="tagline">
               {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
@@ -99,7 +99,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </Link>
             </nav>
           )}
-        </div>
+          </div>
         </div>
       </header>
       <main>{children}</main>

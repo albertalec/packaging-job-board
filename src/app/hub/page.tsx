@@ -118,7 +118,7 @@ export default async function HubHomePage() {
           ))}
         </ul>
         <h3 className="hub-section-label hub-section-label-muted">Coming next</h3>
-        <ul className="niche-grid">
+        <ul className="niche-grid hub-board-grid-soon">
           {UPCOMING.map((board) => (
             <li key={board.label}>
               <div className="niche-card coming-soon">
