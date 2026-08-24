@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HubLogoLockup } from "./LogoMark";
+import { LogoMark } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
 
 const NETWORK_NAME = "Niche Board";
@@ -38,28 +38,37 @@ function NetworkCredit({
 export function SiteChrome({ children }: { children: ReactNode }) {
   const tenant = useTenant();
   const pathname = usePathname();
-  const employer = pathname.startsWith("/sponsor") || pathname.startsWith("/employers");
+  const employer =
+    pathname.startsWith("/sponsor") || pathname.startsWith("/employers");
   const hub = tenant.kind === "hub";
+  const onEmployers = pathname.startsWith("/employers");
 
   return (
     <>
-      <header className={`mast${hub ? " hub-mast" : ""}`}>
+      <header className={hub ? "hub-mast" : "mast"}>
         {hub ? (
-          <div className="hub-brand-strip" aria-hidden="true">
-            <span className="hub-brand-strip-navy" />
-            <span className="hub-brand-strip-teal" />
-            <span className="hub-brand-strip-amber" />
+          <div className="hub-mast-inner">
+            <Link href="/" className="hub-mast-brand">
+              <LogoMark className="hub-mast-mark" size={26} variant="reverse" />
+              <span className="hub-mast-name">{tenant.brand.name}</span>
+            </Link>
+            <nav className="hub-mast-nav" aria-label="Primary">
+              {onEmployers ? (
+                <Link className="hub-mast-link" href="/niches">
+                  Boards
+                </Link>
+              ) : null}
+              <Link
+                className={`hub-mast-link${onEmployers ? " is-active" : ""}`}
+                href="/employers"
+              >
+                Employers
+              </Link>
+            </nav>
           </div>
-        ) : null}
-        <div className="hub-mast-row">
-          <Link href="/" className="mark">
-          {hub ? (
-            <HubLogoLockup
-              name={tenant.brand.name}
-              kicker={tenant.brand.lockupKicker ?? "Precision job boards for specialists."}
-            />
-          ) : (
-            <>
+        ) : (
+          <>
+            <Link href="/" className="mark">
               <span className="box" aria-hidden="true" />
               <span>
                 {tenant.brand.markLine1}
@@ -70,56 +79,49 @@ export function SiteChrome({ children }: { children: ReactNode }) {
                   </>
                 ) : null}
               </span>
-            </>
-          )}
-          </Link>
-          <div className="mast-links">
-          {!hub ? (
-            <p className="tagline">
-              {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
-            </p>
-          ) : null}
-          {hub ? (
-            <nav className="mast-nav">
-              <Link className="nav-link" href="/niches">
-                Boards
-              </Link>
-              <Link className="nav-link" href="/employers">
-                Employers
-              </Link>
-            </nav>
-          ) : (
-            <nav className="mast-nav">
-              <Link className="nav-link" href="/#alerts">
-                Job alerts
-              </Link>
-              <Link className="nav-link" href="/sponsor">
-                Sponsor a job
-              </Link>
-            </nav>
-          )}
-          </div>
-        </div>
+            </Link>
+            <div className="mast-links">
+              <p className="tagline">
+                {employer
+                  ? tenant.brand.employerTagline
+                  : tenant.brand.tagline}
+              </p>
+              <nav className="mast-nav">
+                <Link className="nav-link" href="/#alerts">
+                  Job alerts
+                </Link>
+                <Link className="nav-link" href="/sponsor">
+                  Sponsor a job
+                </Link>
+              </nav>
+            </div>
+          </>
+        )}
       </header>
       <main>{children}</main>
       <footer className={hub ? "hub-footer" : undefined}>
         {hub ? (
-          <div className="hub-brand-strip hub-footer-strip" aria-hidden="true">
-            <span className="hub-brand-strip-navy" />
-            <span className="hub-brand-strip-teal" />
-            <span className="hub-brand-strip-amber" />
+          <div className="hub-footer-inner">
+            <div className="hub-footer-brand">
+              <LogoMark size={22} />
+              <span>{tenant.brand.name}</span>
+            </div>
+            <p className="hub-footer-tagline">{tenant.brand.tagline}</p>
           </div>
-        ) : null}
-        {tenant.brand.networkCredit ? (
-          <p className="network-credit">
-            {tenant.brand.name},{" "}
-            <NetworkCredit
-              credit={tenant.brand.networkCredit}
-              href={tenant.hubOrigin}
-            />
-          </p>
-        ) : null}
-        <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
+        ) : (
+          <>
+            {tenant.brand.networkCredit ? (
+              <p className="network-credit">
+                {tenant.brand.name},{" "}
+                <NetworkCredit
+                  credit={tenant.brand.networkCredit}
+                  href={tenant.hubOrigin}
+                />
+              </p>
+            ) : null}
+            <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
+          </>
+        )}
       </footer>
     </>
   );

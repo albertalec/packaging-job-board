@@ -7,7 +7,8 @@ If a draft feels breathless, salesy, or flatly corporate, rewrite it.
 
 ## Brand Guide v1.0 (platform — hub shipped 2026-08)
 
-**Canonical reference:** [`Niche Board Brand Guide.dc.html`](Niche%20Board%20Brand%20Guide.dc.html) — logo, colour, type, voice, application mockups.
+**Canonical reference:** [`Niche Board Brand Guide.dc.html`](Niche%20Board%20Brand%20Guide.dc.html) — logo, colour, type, voice, application mockups.  
+**Site mock:** [`Niche Board Site.dc.html`](Niche%20Board%20Site.dc.html) — hub, employers, and packaging board layouts.
 
 ### Positioning
 **Precision job boards for specialists.** The right jobs, not all the jobs.
