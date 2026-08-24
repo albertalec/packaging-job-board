@@ -15,8 +15,6 @@ export type Brand = {
   markLine1: string;
   markLine2: string;
   tagline: string;
-  /** Uppercase line under the hub wordmark in the logo lockup */
-  lockupLine?: string;
   employerTagline: string;
   footer: string;
   employerFooter: string;

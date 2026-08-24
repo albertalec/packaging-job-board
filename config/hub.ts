@@ -14,8 +14,7 @@ export const hub: HubTenant = {
     name: "Niche Board",
     markLine1: "Niche",
     markLine2: "Board",
-    tagline: "The right jobs, not all the jobs.",
-    lockupLine: "Precision job boards for specialists.",
+    tagline: "The right jobs. Not all the jobs.",
     employerTagline: "Pin a live listing on the specialty board that reaches your role.",
     footer:
       "Precision job boards for specialists. Candidates apply on the employer ATS.",

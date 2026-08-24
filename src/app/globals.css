@@ -721,18 +721,6 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
-  html[data-vertical="hub"] .mark-lockup {
-    font-size: 0.55rem;
-    letter-spacing: 0.08em;
-  }
-
-  html[data-vertical="hub"] .mast-links {
-    align-items: flex-start;
-    padding-top: 0.75rem;
-  }
-}
-
 /* ── Hub: Brand Guide v1 (Niche Board network) ── */
 html[data-vertical="hub"],
 html[data-vertical="hub"] body {
@@ -757,37 +745,47 @@ html[data-vertical="hub"] .mast {
 }
 
 html[data-vertical="hub"] .mark {
-  align-items: center;
+  align-items: flex-start;
   font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  gap: 0;
+}
+
+html[data-vertical="hub"] .hub-logo-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+html[data-vertical="hub"] .hub-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+html[data-vertical="hub"] .mark-wordstack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.02;
+}
+
+html[data-vertical="hub"] .mark-line {
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  gap: 0.75rem;
-}
-
-html[data-vertical="hub"] .mark-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-html[data-vertical="hub"] .mark-word {
-  white-space: nowrap;
-  font-size: 1.35rem;
-  line-height: 1.1;
   color: var(--navy);
+  white-space: nowrap;
 }
 
-html[data-vertical="hub"] .mark-lockup {
+html[data-vertical="hub"] .mark-tagline {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  color: var(--slate);
+  line-height: 1.3;
+  color: var(--navy);
+  padding-left: calc(44px + 0.65rem);
 }
 
-html[data-vertical="hub"] .mark-lockup-accent {
+html[data-vertical="hub"] .mark-tagline-accent {
   color: var(--teal);
 }
 
@@ -948,9 +946,13 @@ html[data-vertical="hub"] .box {
 }
 
 @media (max-width: 640px) {
-  html[data-vertical="hub"] .mark-lockup {
-    font-size: 0.55rem;
-    letter-spacing: 0.08em;
+  html[data-vertical="hub"] .mark-tagline {
+    font-size: 0.65rem;
+    padding-left: calc(36px + 0.5rem);
+  }
+
+  html[data-vertical="hub"] .mark-line {
+    font-size: 1.15rem;
   }
 
   html[data-vertical="hub"] .mast-links {

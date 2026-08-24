@@ -4,6 +4,7 @@ import {
   LOGO_FRAME_PATH,
   LOGO_STROKE_WIDTH,
   LOGO_VIEWBOX,
+  splitTagline,
 } from "./logo-paths";
 
 type LogoMarkProps = {
@@ -14,8 +15,8 @@ type LogoMarkProps = {
 };
 
 /**
- * Niche Board geometric mark — navy frame with open bottom-right corner
- * and rounded teal selected-corner triangle.
+ * Niche Board geometric mark — navy frame open at top-right,
+ * solid teal triangle in the bottom-right corner.
  */
 export function LogoMark({
   className,
@@ -41,8 +42,8 @@ export function LogoMark({
         d={LOGO_FRAME_PATH}
         stroke={frameStroke}
         strokeWidth={LOGO_STROKE_WIDTH}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
       />
       <path d={LOGO_CORNER_PATH} fill={BRAND.teal} />
     </svg>
@@ -50,35 +51,33 @@ export function LogoMark({
 }
 
 type HubLogoLockupProps = {
-  name: string;
-  lockupLine?: string;
+  markLine1: string;
+  markLine2: string;
+  tagline: string;
   className?: string;
 };
 
-/** Horizontal logo: icon + wordmark + uppercase positioning line. */
-export function HubLogoLockup({ name, lockupLine, className }: HubLogoLockupProps) {
-  const line = lockupLine?.trim();
-  const specialistsMatch = line?.match(/^(.*?)(specialists\.?)$/i);
+/** Primary logo lockup — icon, stacked wordmark, two-tone tagline. */
+export function HubLogoLockup({
+  markLine1,
+  markLine2,
+  tagline,
+  className,
+}: HubLogoLockupProps) {
+  const { lead, accent } = splitTagline(tagline);
 
   return (
-    <span className={className}>
-      <LogoMark className="mark-icon" size={44} />
-      <span className="mark-text">
-        <span className="mark-word">{name}</span>
-        {line ? (
-          <span className="mark-lockup" aria-hidden="true">
-            {specialistsMatch ? (
-              <>
-                {specialistsMatch[1].toUpperCase()}
-                <span className="mark-lockup-accent">
-                  {specialistsMatch[2].toUpperCase()}
-                </span>
-              </>
-            ) : (
-              line.toUpperCase()
-            )}
-          </span>
-        ) : null}
+    <span className={className ?? "hub-logo-lockup"}>
+      <span className="hub-logo-row">
+        <LogoMark className="mark-icon" size={44} />
+        <span className="mark-wordstack" aria-hidden="true">
+          <span className="mark-line">{markLine1}</span>
+          <span className="mark-line">{markLine2}</span>
+        </span>
+      </span>
+      <span className="mark-tagline">
+        {lead}
+        {accent ? <span className="mark-tagline-accent"> {accent}</span> : null}
       </span>
     </span>
   );
