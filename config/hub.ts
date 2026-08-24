@@ -38,17 +38,17 @@ export const hub: HubTenant = {
   copy: {
     hero: "Precision job boards for specialists.",
     lede:
-      "Specialty boards for narrow professional slices — classified daily from employer career sites. Apply on the company’s ATS, not through us.",
+      "One board per narrow professional slice, classified daily from employer career sites. You apply on the company's ATS — never through us.",
     boardsHeadline: "Browse a specialty board",
     boardsIntro:
-      "Each board is built for one niche — its own filters, classifier, and sponsorship pool.",
+      "Each board is built for one niche — its own filters, classifier and sponsorship pool.",
     metaDescription:
       "Niche Board is a network of precision job boards for specialists. The right jobs, not all the jobs. Pin an ATS listing on the board that reaches the role you are hiring.",
     pillars: [
       {
         title: "Filtered",
-        body: "Specialist titles only — we drop the noise generic boards keep.",
-        accent: "navy",
+        body: "Specialist titles only. We drop the noise generic boards keep.",
+        accent: "teal",
       },
       {
         title: "Fresh",
@@ -57,8 +57,8 @@ export const hub: HubTenant = {
       },
       {
         title: "Apply-out",
-        body: "Finish on the company career site — no fake apply wall.",
-        accent: "slate",
+        body: "Finish on the company career site. No fake apply wall.",
+        accent: "teal",
       },
     ],
   },
