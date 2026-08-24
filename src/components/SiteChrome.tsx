@@ -43,7 +43,15 @@ export function SiteChrome({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className="mast">
+      <header className={`mast${hub ? " hub-mast" : ""}`}>
+        {hub ? (
+          <div className="hub-brand-strip" aria-hidden="true">
+            <span className="hub-brand-strip-navy" />
+            <span className="hub-brand-strip-teal" />
+            <span className="hub-brand-strip-amber" />
+          </div>
+        ) : null}
+        <div className="hub-mast-row">
         <Link href="/" className="mark">
           {hub ? (
             <HubLogoLockup
@@ -92,9 +100,17 @@ export function SiteChrome({ children }: { children: ReactNode }) {
             </nav>
           )}
         </div>
+        </div>
       </header>
       <main>{children}</main>
-      <footer>
+      <footer className={hub ? "hub-footer" : undefined}>
+        {hub ? (
+          <div className="hub-brand-strip hub-footer-strip" aria-hidden="true">
+            <span className="hub-brand-strip-navy" />
+            <span className="hub-brand-strip-teal" />
+            <span className="hub-brand-strip-amber" />
+          </div>
+        ) : null}
         {tenant.brand.networkCredit ? (
           <p className="network-credit">
             {tenant.brand.name},{" "}

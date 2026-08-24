@@ -87,7 +87,7 @@ export type HubTenant = {
     boardsHeadline?: string;
     boardsIntro?: string;
     audienceSplit?: string;
-    pillars?: { title: string; body: string }[];
+    pillars?: { title: string; body: string; accent?: "navy" | "teal" | "amber" | "slate" }[];
   };
 };
 

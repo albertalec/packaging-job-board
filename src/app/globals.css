@@ -57,6 +57,14 @@ a {
   animation: mast-in 0.55s ease-out both;
 }
 
+.hub-mast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+}
+
 .mark {
   display: flex;
   gap: 0.85rem;
@@ -739,9 +747,46 @@ html[data-vertical="hub"] .sheet {
 }
 
 html[data-vertical="hub"] .mast {
-  align-items: flex-start;
-  border-bottom: 1px solid var(--mist);
+  align-items: stretch;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 1.25rem;
+}
+
+html[data-vertical="hub"] .hub-mast {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+html[data-vertical="hub"] .hub-mast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+}
+
+html[data-vertical="hub"] .hub-brand-strip {
+  display: flex;
+  width: 100%;
+  max-width: 5.5rem;
+  height: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+html[data-vertical="hub"] .hub-brand-strip-navy {
+  flex: 3;
+  background: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-brand-strip-teal {
+  flex: 1;
+  background: var(--teal);
+}
+
+html[data-vertical="hub"] .hub-brand-strip-amber {
+  flex: 1;
+  background: var(--amber);
 }
 
 html[data-vertical="hub"] .mark {
@@ -827,6 +872,8 @@ html[data-vertical="hub"] h1 {
   line-height: 1.08;
   letter-spacing: -0.03em;
   max-width: 16ch;
+  padding-left: 1rem;
+  border-left: 4px solid var(--teal);
 }
 
 html[data-vertical="hub"] .hub-section-head {
@@ -842,7 +889,7 @@ html[data-vertical="hub"] .hub-section-intro {
   max-width: 36rem;
   font-size: 1.0625rem;
   line-height: 1.55;
-  color: #374151;
+  color: var(--slate);
 }
 
 html[data-vertical="hub"] .hub-section-label {
@@ -855,6 +902,10 @@ html[data-vertical="hub"] .hub-section-label {
   margin: 0 0 0.75rem;
 }
 
+html[data-vertical="hub"] .hub-section-label-muted {
+  color: var(--slate);
+}
+
 html[data-vertical="hub"] .sponsor-subhead {
   font-size: 1.375rem;
   font-weight: 600;
@@ -863,23 +914,39 @@ html[data-vertical="hub"] .sponsor-subhead {
 
 html[data-vertical="hub"] .lede,
 html[data-vertical="hub"] .sponsor-footnote {
-  color: #374151;
+  color: var(--slate);
   max-width: 36rem;
   font-size: 1.0625rem;
   line-height: 1.65;
 }
 
 html[data-vertical="hub"] .hub-hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   margin: 0 0 1rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 999px;
-  background: rgba(13, 125, 119, 0.1);
-  color: var(--teal);
+  background: var(--mist);
+  border: 1px solid #e5e7eb;
+  color: var(--navy);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+html[data-vertical="hub"] .hub-hero-badge-sep {
+  color: #c5cad1;
+  font-weight: 400;
+}
+
+html[data-vertical="hub"] .hub-hero-badge-accent {
+  color: var(--amber);
+}
+
+html[data-vertical="hub"] .hub-text-amber {
+  color: var(--amber);
 }
 
 html[data-vertical="hub"] .hub-audience-split {
@@ -887,11 +954,22 @@ html[data-vertical="hub"] .hub-audience-split {
   max-width: 36rem;
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: #374151;
+  color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-audience-split strong {
+  color: var(--navy);
+  font-weight: 600;
 }
 
 html[data-vertical="hub"] .hero.hub-hero {
-  padding: 2.5rem 0 2.75rem;
+  padding: 2rem 1.75rem 2.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(241, 243, 245, 0.85) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--paper);
+  border: 1px solid #eef0f2;
 }
 
 html[data-vertical="hub"] .hub-hero-actions {
@@ -937,11 +1015,17 @@ html[data-vertical="hub"] .ghost:hover {
   background: var(--paper);
 }
 
+html[data-vertical="hub"] .hub-cta-employer:hover {
+  border-color: var(--amber);
+  color: var(--navy);
+}
+
 html[data-vertical="hub"] .hub-pillars {
   margin: 0 0 2.5rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem 1.25rem;
+  border-radius: 10px;
+  background: var(--mist);
+  border: 1px solid #e5e7eb;
 }
 
 html[data-vertical="hub"] .hub-pillars-list {
@@ -963,8 +1047,23 @@ html[data-vertical="hub"] .hub-pillar-mark {
   width: 1.75rem;
   height: 3px;
   border-radius: 2px;
-  background: var(--teal);
   margin-bottom: 0.15rem;
+}
+
+html[data-vertical="hub"] .hub-pillar-navy .hub-pillar-mark {
+  background: var(--navy);
+}
+
+html[data-vertical="hub"] .hub-pillar-teal .hub-pillar-mark {
+  background: var(--teal);
+}
+
+html[data-vertical="hub"] .hub-pillar-slate .hub-pillar-mark {
+  background: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-pillar-amber .hub-pillar-mark {
+  background: var(--amber);
 }
 
 html[data-vertical="hub"] .hub-pillar-title {
@@ -977,14 +1076,17 @@ html[data-vertical="hub"] .hub-pillar-title {
 html[data-vertical="hub"] .hub-pillar-body {
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: #374151;
+  color: var(--slate);
 }
 
 html[data-vertical="hub"] .hub-boards-band {
   margin: 0 -2rem;
   padding: 2.5rem 2rem 3rem;
-  background: var(--mist);
+  background-color: var(--mist);
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+  background-size: 18px 18px;
   border-radius: 12px;
+  border-top: 3px solid var(--navy);
 }
 
 html[data-vertical="hub"] .hub-badge {
@@ -1060,10 +1162,13 @@ html[data-vertical="hub"] .pick-contrast {
   color: var(--navy);
 }
 
-html[data-vertical="hub"] .pick-meta {
-  font-size: 0.875rem;
-  line-height: 1.4;
-  color: #374151;
+html[data-vertical="hub"] .hub-badge-soon {
+  background: rgba(245, 166, 35, 0.18);
+  color: #9a6808;
+}
+
+html[data-vertical="hub"] .niche-card-live {
+  border-left: 3px solid var(--teal);
 }
 
 html[data-vertical="hub"] .niche-card-arrow {
@@ -1071,7 +1176,18 @@ html[data-vertical="hub"] .niche-card-arrow {
   font-size: 1.35rem;
   font-weight: 600;
   line-height: 1;
+  color: var(--navy);
+  transition: color 0.15s ease;
+}
+
+html[data-vertical="hub"] .niche-card-live:hover .niche-card-arrow {
   color: var(--teal);
+}
+
+html[data-vertical="hub"] .pick-meta {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--slate);
 }
 
 html[data-vertical="hub"] .niche-grid {
@@ -1105,14 +1221,20 @@ html[data-vertical="hub"] .apply.amber:hover {
 }
 
 html[data-vertical="hub"] .sponsor-benefits {
-  color: #374151;
+  color: var(--slate);
   font-size: 1.0625rem;
   line-height: 1.6;
 }
 
-html[data-vertical="hub"] footer {
-  border-top-color: var(--mist);
+html[data-vertical="hub"] footer.hub-footer {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.25rem;
   color: var(--slate);
+}
+
+html[data-vertical="hub"] .hub-footer-strip {
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
 
 html[data-vertical="hub"] .network-link:hover {

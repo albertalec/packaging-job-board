@@ -49,29 +49,38 @@ export default async function HubHomePage() {
   return (
     <>
       <section className="hero hub-hero">
-        {tenant.copy.heroBadge ? (
-          <p className="hub-hero-badge">{tenant.copy.heroBadge}</p>
-        ) : null}
+        <p className="hub-hero-badge">
+          <span>1 board live</span>
+          <span className="hub-hero-badge-sep" aria-hidden="true">
+            ·
+          </span>
+          <span className="hub-hero-badge-accent">more coming</span>
+        </p>
         <h1>{tenant.copy.hero}</h1>
         <p className="lede">{tenant.copy.lede}</p>
         <div className="sponsor-actions hub-hero-actions">
           <Link className="apply big hub-cta-primary" href="/niches">
             Browse live boards
           </Link>
-          <Link className="ghost big" href="/employers">
+          <Link className="ghost big hub-cta-employer" href="/employers">
             For employers
           </Link>
         </div>
-        {tenant.copy.audienceSplit ? (
-          <p className="hub-audience-split">{tenant.copy.audienceSplit}</p>
-        ) : null}
+        <p className="hub-audience-split">
+          <strong>Looking for roles?</strong> Browse a board below.{" "}
+          <strong className="hub-text-amber">Hiring?</strong> Pin a listing you
+          already have.
+        </p>
       </section>
 
       {tenant.copy.pillars && tenant.copy.pillars.length > 0 ? (
         <section className="hub-pillars" aria-label="Why Niche Board">
           <ul className="hub-pillars-list">
             {tenant.copy.pillars.map((pillar) => (
-              <li key={pillar.title} className="hub-pillar">
+              <li
+                key={pillar.title}
+                className={`hub-pillar hub-pillar-${pillar.accent ?? "navy"}`}
+              >
                 <span className="hub-pillar-mark" aria-hidden="true" />
                 <span className="hub-pillar-title">{pillar.title}</span>
                 <span className="hub-pillar-body">{pillar.body}</span>
@@ -108,12 +117,12 @@ export default async function HubHomePage() {
             </li>
           ))}
         </ul>
-        <h3 className="hub-section-label">Coming next</h3>
+        <h3 className="hub-section-label hub-section-label-muted">Coming next</h3>
         <ul className="niche-grid">
           {UPCOMING.map((board) => (
             <li key={board.label}>
               <div className="niche-card coming-soon">
-                <span className="hub-badge">Soon</span>
+                <span className="hub-badge hub-badge-soon">Soon</span>
                 <span className="niche-card-main">
                   <span className="pick-title">{board.label}</span>
                   <span className="pick-meta">{board.note}</span>
