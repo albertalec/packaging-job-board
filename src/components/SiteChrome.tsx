@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoMark } from "./LogoMark";
+import { HubLogoLockup } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
 
 const NETWORK_NAME = "Niche Board";
@@ -46,10 +46,10 @@ export function SiteChrome({ children }: { children: ReactNode }) {
       <header className="mast">
         <Link href="/" className="mark">
           {hub ? (
-            <>
-              <LogoMark className="mark-icon" size={36} />
-              <span className="mark-word">{tenant.brand.name}</span>
-            </>
+            <HubLogoLockup
+              name={tenant.brand.name}
+              lockupLine={tenant.brand.lockupLine}
+            />
           ) : (
             <>
               <span className="box" aria-hidden="true" />
@@ -66,9 +66,11 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           )}
         </Link>
         <div className="mast-links">
-          <p className="tagline">
-            {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
-          </p>
+          {!hub ? (
+            <p className="tagline">
+              {employer ? tenant.brand.employerTagline : tenant.brand.tagline}
+            </p>
+          ) : null}
           {hub ? (
             <nav className="mast-nav">
               <Link className="nav-link" href="/niches">
