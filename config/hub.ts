@@ -8,7 +8,7 @@ export const hub: HubTenant = {
     "www.nicheboardjobs.com",
     "nicheboard.localhost",
   ],
-  canonicalHost: "nicheboardjobs.com",
+  canonicalHost: "www.nicheboardjobs.com",
   localHost: "nicheboard.localhost",
   brand: {
     name: "Niche Board",

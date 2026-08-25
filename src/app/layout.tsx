@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties, ReactNode } from "react";
 import { Analytics } from "@/components/Analytics";
+import { BoardSkinSync } from "@/components/BoardSkinSync";
 import { SiteChrome } from "@/components/SiteChrome";
 import { TenantProvider } from "@/components/TenantProvider";
 import {
@@ -91,9 +92,11 @@ export default async function RootLayout({
     <html
       lang="en"
       data-vertical={tenant.id}
+      {...(tenant.id === "packaging" ? { "data-board-skin": "standard" } : {})}
       style={theme as CSSProperties}
     >
       <body>
+        {tenant.id === "packaging" ? <BoardSkinSync /> : null}
         <div className="sheet">
           <TenantProvider tenant={publicTenant}>
             <SiteChrome>{children}</SiteChrome>
