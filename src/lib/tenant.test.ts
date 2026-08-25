@@ -92,7 +92,7 @@ describe("tenantOrigin", () => {
         hostHeader: "www.nicheboardjobs.com",
         proto: "https",
       }),
-      "https://nicheboardjobs.com",
+      "https://www.nicheboardjobs.com",
     );
   });
 });
