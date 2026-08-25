@@ -737,6 +737,10 @@ html[data-vertical="hub"] {
   --hub-rule: #e7eaee;
   --hub-dash: #c9cfd6;
   --hub-max: 1080px;
+  --field-border: #9aa3ad;
+  --field-placeholder: #3a424d;
+  --field-bg: #ffffff;
+  --field-text: #0d1b2a;
 }
 
 html[data-vertical="hub"],
@@ -1296,6 +1300,24 @@ html[data-vertical="hub"] .hub-footer-tagline {
   font-style: italic;
   font-size: 16px;
   color: var(--slate);
+}
+
+/* Hub field standard (Standard skin — 3:1 border, 4.5:1 text) */
+html[data-vertical="hub"] .hub-field input,
+html[data-vertical="hub"] .hub-field select {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--field-bg);
+  border: 1.5px solid var(--field-border);
+  font: inherit;
+  font-size: 14px;
+  color: var(--field-text);
+  border-radius: 0;
+}
+
+html[data-vertical="hub"] .hub-field input::placeholder {
+  color: var(--field-placeholder);
+  opacity: 1;
 }
 
 /* Employers page */

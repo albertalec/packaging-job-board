@@ -171,7 +171,8 @@ class Component extends DCLogic {
       heading: '#3D2B18', body: '#6B5637', meta: '#7D6541',
       rule: '#C3A87F', accent: '#1F6F5C', eyebrow: '#8A6A33', amber: '#C4741F',
       headerText: '#F0E4CE', headerLink: 'rgba(240,228,206,0.8)', headerRule: 'rgba(240,228,206,0.32)',
-      onDark: '#F0E4CE', onAmber: '#FFF8ED', field: '#F5EBDA',
+      onDark: '#F0E4CE', onAmber: '#FFF8ED', field: '#FBF5EA',
+      fieldBorder: '#A88D62', fieldPlaceholder: '#5A472C', fieldText: '#3D2B18',
       newBg: 'rgba(31,111,92,0.16)', newFg: '#1A5A4B',
       pinBg: 'rgba(196,116,31,0.2)', pinFg: '#8A4E12', dash: 'dashed'
     } : {
@@ -181,6 +182,7 @@ class Component extends DCLogic {
       rule: '#E7EAEE', accent: '#0D7D77', eyebrow: '#0D7D77', amber: '#F5A623',
       headerText: '#FFFFFF', headerLink: 'rgba(255,255,255,0.78)', headerRule: 'rgba(255,255,255,0.3)',
       onDark: '#FFFFFF', onAmber: '#0D1B2A', field: '#FFFFFF',
+      fieldBorder: '#9AA3AD', fieldPlaceholder: '#3A424D', fieldText: '#0D1B2A',
       newBg: '#E6F1EF', newFg: '#0D7D77',
       pinBg: '#FDF1DC', pinFg: '#8A5A05', dash: 'solid'
     };
@@ -208,7 +210,7 @@ class Component extends DCLogic {
 
     const chip = (active) => `padding: 8px 14px; fontSize: 13px; fontWeight: 500; borderRadius: 999px; cursor: pointer; whiteSpace: nowrap; ${active ? `background: ${p.heading}; color: ${p.onDark};` : `color: ${p.body}; border: 1px solid ${p.rule}; boxSizing: border-box;`}`;
     const tag = (bg, fg) => `padding: 3px 8px; background: ${bg}; color: ${fg}; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.1em; textTransform: uppercase;`;
-    const field = `padding: 11px 14px; background: ${p.field}; border: 1px solid ${p.rule}; fontSize: 14px; color: ${p.meta}; cursor: pointer; whiteSpace: nowrap;`;
+    const field = `padding: 11px 14px; background: ${p.field}; border: 1.5px solid ${p.fieldBorder}; fontSize: 14px; color: ${p.fieldText}; cursor: pointer; whiteSpace: nowrap;`;
 
     return {
       jobs,

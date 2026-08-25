@@ -4,6 +4,17 @@ html[data-vertical="packaging"] {
   --board-radius: 3px;
   --board-rule: #e7eaee;
   --board-dash: #c9cfd6;
+  --field-border: #9aa3ad;
+  --field-placeholder: #3a424d;
+  --field-bg: #ffffff;
+  --field-text: #0d1b2a;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] {
+  --field-border: #a88d62;
+  --field-placeholder: #5a472c;
+  --field-bg: #fbf5ea;
+  --field-text: #3d2b18;
 }
 
 html[data-vertical="packaging"],
@@ -379,12 +390,18 @@ html[data-vertical="packaging"] .board-field select,
 html[data-vertical="packaging"] .board-alerts-email input {
   width: 100%;
   padding: 11px 14px;
-  background: #ffffff;
-  border: 1px solid var(--board-rule);
+  background: var(--field-bg);
+  border: 1.5px solid var(--field-border);
   font: inherit;
   font-size: 14px;
-  color: var(--slate);
+  color: var(--field-text);
   border-radius: 0;
+}
+
+html[data-vertical="packaging"] .board-search input::placeholder,
+html[data-vertical="packaging"] .board-alerts-email input::placeholder {
+  color: var(--field-placeholder);
+  opacity: 1;
 }
 
 html[data-vertical="packaging"] .board-field select {
@@ -1134,12 +1151,6 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card {
   background: #e8d7bb;
-}
-
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-search input,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-field select,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts-email input {
-  background: #f5ebda;
 }
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-chip.is-active,
