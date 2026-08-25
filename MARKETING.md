@@ -86,7 +86,7 @@ React: `LogoMark` supports `default`, `reverse`, `mono-navy`, `mono-white`, `on-
 - Navy for primary buttons and headings
 - Board-family tints (teal/violet/clay washes) for category chips only
 
-**Packaging board** matches [`Packaging Board.dc.html`](Packaging%20Board.dc.html) — standard brand UI with optional kraft skin toggle in the masthead.
+**Packaging board** matches [`Packaging Board.dc.html`](Packaging%20Board.dc.html) — standard brand UI.
 
 ---
 

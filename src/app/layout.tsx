@@ -91,7 +91,6 @@ export default async function RootLayout({
     <html
       lang="en"
       data-vertical={tenant.id}
-      data-board-skin={tenant.kind === "vertical" ? "standard" : undefined}
       style={theme as CSSProperties}
     >
       <body>

@@ -3,7 +3,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BoardSkinToggle } from "./BoardSkinToggle";
 import { LogoMark } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
 
@@ -52,7 +51,6 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </Link>
             </div>
             <nav className="board-mast-nav" aria-label="Primary">
-              <BoardSkinToggle />
               <Link className="board-mast-link" href="/#alerts">
                 Job alerts
               </Link>
