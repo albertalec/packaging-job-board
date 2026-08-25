@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BoardSkinToggle } from "./BoardSkinToggle";
 import { LogoMark } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
 
@@ -14,6 +15,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   const hub = tenant.kind === "hub";
   const onEmployers = pathname.startsWith("/employers");
   const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
+  const showSkinToggle = !hub && pathname === "/";
 
   return (
     <>
@@ -41,7 +43,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
         ) : (
           <div className="board-mast-inner">
             <div className="board-mast-brand">
-              <Link href={tenant.hubOrigin ?? "/"} className="board-mast-network">
+              <Link href="/" className="board-mast-network">
                 <LogoMark className="board-mast-mark" size={25} variant="reverse" />
                 <span>Niche Board</span>
               </Link>
@@ -51,6 +53,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               </Link>
             </div>
             <nav className="board-mast-nav" aria-label="Primary">
+              {showSkinToggle ? <BoardSkinToggle /> : null}
               <Link className="board-mast-link" href="/#alerts">
                 Job alerts
               </Link>
@@ -74,8 +77,17 @@ export function SiteChrome({ children }: { children: ReactNode }) {
         ) : (
           <div className="board-footer-inner">
             <div className="board-footer-brand">
-              <LogoMark size={21} />
-              <span>Niche Board</span>
+              {tenant.hubOrigin ? (
+                <Link href={tenant.hubOrigin} className="board-footer-network">
+                  <LogoMark size={21} />
+                  <span>Niche Board</span>
+                </Link>
+              ) : (
+                <>
+                  <LogoMark size={21} />
+                  <span>Niche Board</span>
+                </>
+              )}
               <span className="board-footer-rule" aria-hidden="true" />
               <span className="board-footer-board">{boardLabel}</span>
             </div>
