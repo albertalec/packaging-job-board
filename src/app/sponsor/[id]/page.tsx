@@ -59,65 +59,81 @@ export default async function SponsorJobPage({ params, searchParams }: Params & 
   const paymentsReady = stripeConfigured();
   const price = formatUsd(tenant.sponsor.priceCents);
   const days = tenant.sponsor.durationDays;
+  const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
+  const duration = days === 30 ? "Thirty" : String(days);
 
   return (
-    <article className="sponsor-page">
-      <p className="kicker">
-        <Link href="/sponsor">All listings</Link> / {job.company}
-      </p>
-      <h1>Sponsor this listing</h1>
-      <p className="lede">
-        Pin <strong>{job.title}</strong> at {job.company} to the top of{" "}
-        {tenant.brand.name}. One flat payment for {days} days — no invoice
-        round-trip. The pin stays on this board only.
+    <div className="board-shell board-sponsor-flow">
+      <p className="board-sponsor-crumb">
+        <Link href="/sponsor">All listings</Link>
+        <span aria-hidden="true"> / </span>
+        {job.company}
       </p>
 
-      {canceled ? (
-        <p className="notice">Checkout was canceled. You can try again when ready.</p>
-      ) : null}
-
-      <h2 className="sponsor-subhead">How it looks on the board</h2>
-      <div className="sponsor-preview">
-        <JobCard job={job} sponsored compact />
-      </div>
-
-      {sponsorship ? (
-        <div className="sponsor-active">
-          <p className="stamp sponsor-stamp">Sponsored</p>
-          <p>
-            This job is sponsored through <strong>{formatExpiry(sponsorship.expiresAt)}</strong>.
+      <section className="board-sponsor-checkout">
+        <div className="board-sponsor-checkout-main">
+          <h1>Sponsor this listing</h1>
+          <p className="lede">
+            Pin <strong>{job.title}</strong> at {job.company} to the top of the{" "}
+            {boardLabel} board. One flat payment for {days} days — candidates
+            finish on your ATS.
           </p>
-          <Link className="ghost" href={`/jobs/${job.id}`}>
-            View listing
-          </Link>
-        </div>
-      ) : (
-        <>
-          <ul className="sponsor-benefits">
-            <li>Ranked first on the homepage job list</li>
-            <li>Sponsored badge on the card and detail page</li>
-            <li>{days} days of priority placement</li>
-            <li>Self-serve checkout by credit card</li>
-          </ul>
-          <p className="sponsor-price">
-            <span className="price">{price}</span>
-            <span className="term">one-time · {days} days</span>
-          </p>
-          {paymentsReady ? (
-            <SponsorCheckoutButton jobId={job.id} priceLabel={price} />
-          ) : (
-            <p className="notice">
-              Stripe is not configured yet. Add <code>STRIPE_SECRET_KEY</code> to enable
-              checkout.
+
+          {canceled ? (
+            <p className="board-sponsor-notice">
+              Checkout was canceled. You can try again when ready.
             </p>
-          )}
-        </>
-      )}
+          ) : null}
 
-      <p className="sponsor-footnote">
+          <h2 className="board-sponsor-section-head">How it looks on the board</h2>
+          <div className="board-sponsor-preview">
+            <JobCard job={job} sponsored />
+          </div>
+        </div>
+
+        <aside className="board-sponsor-sidebar" aria-label="Checkout">
+          {sponsorship ? (
+            <div className="board-sponsor-active">
+              <span className="job-tag job-tag-pinned">Pinned</span>
+              <p className="board-sponsor-active-title">Already sponsored</p>
+              <p className="board-sponsor-active-body">
+                This job is pinned through{" "}
+                <strong>{formatExpiry(sponsorship.expiresAt)}</strong>.
+              </p>
+              <Link className="board-btn board-btn-ghost" href={`/jobs/${job.id}`}>
+                View listing
+              </Link>
+            </div>
+          ) : (
+            <>
+              <p className="board-price-kicker">One pin</p>
+              <p className="board-price-amount board-sponsor-price">{price}</p>
+              <p className="board-sponsor-sidebar-term">
+                one-time · {days} days on {boardLabel}
+              </p>
+              <ul className="board-sponsor-sidebar-list">
+                <li>Ranked first on the homepage</li>
+                <li>Pinned badge on card and detail page</li>
+                <li>{duration} days of priority placement</li>
+                <li>Self-serve checkout by card</li>
+              </ul>
+              {paymentsReady ? (
+                <SponsorCheckoutButton jobId={job.id} priceLabel={price} />
+              ) : (
+                <p className="board-sponsor-notice">
+                  Stripe is not configured yet. Add{" "}
+                  <code>STRIPE_SECRET_KEY</code> to enable checkout.
+                </p>
+              )}
+            </>
+          )}
+        </aside>
+      </section>
+
+      <p className="board-sponsor-footnote">
         Questions? Email{" "}
         <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>.
       </p>
-    </article>
+    </div>
   );
 }

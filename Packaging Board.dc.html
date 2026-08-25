@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #0D7D77; text-decoration: none; }
+  a:hover { color: #0D1B2A; text-decoration: underline; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+
+  <div style="{{ headerStyle }}">
+    <div style="maxWidth: 1080px; margin: 0 auto; padding: 16px 40px; display: flex; alignItems: center; justifyContent: space-between; gap: 24px">
+      <div style="display: flex; alignItems: center; gap: 11px">
+        <svg viewBox="0 0 235 235" style="width: 25px; height: 25px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="{{ headerMark }}"></path><path d="M235 235H120V180H180V120H235Z" fill="{{ wedge }}"></path></svg>
+        <div style="fontSize: 17px; fontWeight: 700; letterSpacing: -0.03em; color: {{ headerText }}">Niche Board</div>
+        <div style="width: 1px; height: 16px; background: {{ headerRule }}"></div>
+        <div style="fontSize: 17px; fontWeight: 500; letterSpacing: -0.02em; color: {{ headerText }}">Packaging</div>
+      </div>
+      <div style="display: flex; alignItems: center; gap: 16px">
+        <div onClick="{{ toggleKraft }}" style="{{ skinToggleStyle }}">
+          <div style="{{ skinDotStyle }}"></div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: {{ skinLabelColor }}">{{ skinLabel }}</div>
+        </div>
+        <div style="fontSize: 14px; fontWeight: 500; color: {{ headerLink }}; cursor: pointer">Job alerts</div>
+        <div style="{{ sponsorCtaStyle }}">Sponsor a job</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="maxWidth: 1080px; margin: 0 auto; padding: 0 40px 72px">
+
+    <div style="padding: 52px 0 34px; display: flex; alignItems: flex-start; justifyContent: space-between; gap: 48px">
+      <div style="display: flex; flexDirection: column; gap: 15px; maxWidth: 560px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.14em; textTransform: uppercase; color: {{ eyebrow }}">Updated daily · Aug 24, 12:55 PM</div>
+        <div style="fontSize: 46px; lineHeight: 1.08; fontWeight: 600; letterSpacing: -0.035em; color: {{ heading }}; textWrap: pretty">Packaging engineer roles, checked by hand.</div>
+        <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 21px; color: {{ accent }}">Package development — not plant ops.</div>
+        <div style="fontSize: 17px; lineHeight: 1.62; color: {{ body }}">Open roles at General Mills, Johnson &amp; Johnson, Mars, Clorox and eighteen others. Pulled daily from employer ATS feeds. You apply on the company's career site.</div>
+        <div style="display: flex; alignItems: baseline; gap: 22px; paddingTop: 4px">
+          <div style="display: flex; alignItems: baseline; gap: 7px">
+            <div style="fontSize: 24px; fontWeight: 700; letterSpacing: -0.03em; color: {{ heading }}">51</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.1em; textTransform: uppercase; color: {{ meta }}">live roles</div>
+          </div>
+          <div style="display: flex; alignItems: baseline; gap: 7px">
+            <div style="fontSize: 24px; fontWeight: 700; letterSpacing: -0.03em; color: {{ heading }}">22</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.1em; textTransform: uppercase; color: {{ meta }}">employers</div>
+          </div>
+          <div style="display: flex; alignItems: baseline; gap: 7px">
+            <div style="fontSize: 24px; fontWeight: 700; letterSpacing: -0.03em; color: {{ heading }}">5</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.1em; textTransform: uppercase; color: {{ meta }}">sectors</div>
+          </div>
+        </div>
+      </div>
+      <div style="{{ ectPanelStyle }}">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">Board strength</div>
+        <div style="display: flex; alignItems: baseline; gap: 8px">
+          <div style="fontSize: 54px; lineHeight: 0.9; fontWeight: 700; letterSpacing: -0.035em; color: {{ heading }}">44</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 15px; fontWeight: 500; letterSpacing: 0.08em; color: {{ heading }}">ECT</div>
+        </div>
+        <div style="fontSize: 13px; lineHeight: 1.55; color: {{ body }}">Double-wall. Holds fifty-one roles without buckling. A 32 ECT board would have shipped twelve thousand.</div>
+      </div>
+    </div>
+
+    <div style="{{ searchBarStyle }}">
+      <div style="{{ searchInputStyle }}">Search titles, employers, locations</div>
+      <div style="display: flex; alignItems: center; gap: 8px; flexWrap: wrap">
+        <div style="{{ selectStyle }}">All niches ▾</div>
+        <div style="{{ selectStyle }}">All states ▾</div>
+        <div style="{{ chip }}">Remote / hybrid</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 8px; flexWrap: wrap; padding: 16px 0 0">
+      <div style="{{ chipActive }}">All niches</div>
+      <div style="{{ chip }}">CPG</div>
+      <div style="{{ chip }}">Food &amp; beverage</div>
+      <div style="{{ chip }}">Automotive</div>
+      <div style="{{ chip }}">Pharma</div>
+      <div style="{{ chip }}">Industrial</div>
+    </div>
+
+    <div style="display: flex; alignItems: baseline; justifyContent: space-between; gap: 20px; padding: 30px 0 12px">
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">51 live roles</div>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">Newest first</div>
+    </div>
+
+    <div style="display: flex; flexDirection: column; gap: 10px">
+      <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="8">
+        <div style="{{ job.cardStyle }}">
+          <div style="display: flex; flexDirection: column; gap: 7px; flex: 1">
+            <div style="display: flex; alignItems: center; gap: 9px">
+              <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.06em; color: {{ meta }}">{{ job.company }}</div>
+              <sc-if value="{{ job.isNew }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ newTagStyle }}">New</div>
+              </sc-if>
+              <sc-if value="{{ job.sponsored }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ pinTagStyle }}">Pinned</div>
+              </sc-if>
+            </div>
+            <div style="fontSize: 18px; fontWeight: 600; letterSpacing: -0.015em; lineHeight: 1.3; color: {{ heading }}">{{ job.title }}</div>
+            <div style="fontSize: 14px; color: {{ body }}">{{ job.location }} · {{ job.sector }}</div>
+          </div>
+          <div style="display: flex; flexDirection: column; alignItems: flex-end; gap: 9px; flexShrink: 0">
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: {{ meta }}">{{ job.age }}</div>
+            <div style="fontSize: 13px; fontWeight: 500; color: {{ accent }}; whiteSpace: nowrap; cursor: pointer">Apply on employer site →</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; justifyContent: center; paddingTop: 22px">
+      <div style="{{ moreBtnStyle }}">Show 43 more roles</div>
+    </div>
+
+    <div style="{{ alertsStyle }}">
+      <div style="display: flex; alignItems: center; gap: 12px">
+        <svg viewBox="0 0 800 800" style="width: 26px; height: 26px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="{{ roundelDisc }}"></circle><path d="M175 175H625V295H295V625H175Z" fill="{{ roundelMark }}"></path><path d="M625 625H400V505H505V400H625Z" fill="{{ wedge }}"></path></svg>
+        <div style="fontSize: 22px; fontWeight: 600; letterSpacing: -0.02em; color: {{ heading }}">Get new packaging roles by email</div>
+      </div>
+      <div style="fontSize: 15px; lineHeight: 1.6; color: {{ body }}; maxWidth: 520px">A short digest when fresh package-development jobs show up. Filter it to your sector and state. Nothing on a slow week.</div>
+      <div style="display: flex; gap: 9px; alignItems: center; flexWrap: wrap; paddingTop: 4px">
+        <div style="{{ inputStyle }}">you@work.com</div>
+        <div style="{{ selectStyle }}">All niches ▾</div>
+        <div style="{{ selectStyle }}">All states ▾</div>
+        <div style="{{ alertBtnStyle }}">Get alerts</div>
+      </div>
+    </div>
+
+    <div style="{{ sponsorPanelStyle }}">
+      <div style="display: flex; flexDirection: column; gap: 7px">
+        <div style="fontSize: 20px; fontWeight: 600; letterSpacing: -0.02em; color: {{ onDarkHeading }}">Hiring a packaging engineer?</div>
+        <div style="fontSize: 14px; lineHeight: 1.6; color: {{ onDarkBody }}; maxWidth: 460px">Pin the listing you already have — $100 for thirty days, scoped to this board. Candidates finish on your ATS.</div>
+      </div>
+      <div style="{{ pinCtaStyle }}">Pin a listing — $100</div>
+    </div>
+
+    <div style="{{ footerStyle }}">
+      <div style="display: flex; alignItems: center; gap: 11px">
+        <svg viewBox="0 0 235 235" style="width: 21px; height: 21px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="{{ heading }}"></path><path d="M235 235H120V180H180V120H235Z" fill="{{ wedge }}"></path></svg>
+        <div style="fontSize: 14px; fontWeight: 600; color: {{ heading }}">Niche Board</div>
+        <div style="width: 1px; height: 15px; background: {{ rule }}"></div>
+        <div style="fontSize: 14px; fontWeight: 500; color: {{ accent }}">Packaging</div>
+      </div>
+      <div style="fontSize: 13px; color: {{ meta }}">Roles from employer career sites. Apply on the source listing.</div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1160,&quot;height&quot;:1400}}">
+class Component extends DCLogic {
+  state = { kraft: false };
+
+  renderVals() {
+    const kraft = this.state.kraft;
+
+    const p = kraft ? {
+      page: 'repeating-linear-gradient(92deg, rgba(120,88,48,0.05) 0 1px, transparent 1px 3px), repeating-linear-gradient(2deg, rgba(120,88,48,0.035) 0 1px, transparent 1px 4px), #D9C3A0',
+      surface: 'rgba(61,43,24,0.06)', card: '#E8D7BB', header: '#3D2B18',
+      heading: '#3D2B18', body: '#6B5637', meta: '#7D6541',
+      rule: '#C3A87F', accent: '#1F6F5C', eyebrow: '#8A6A33', amber: '#C4741F',
+      headerText: '#F0E4CE', headerLink: 'rgba(240,228,206,0.8)', headerRule: 'rgba(240,228,206,0.32)',
+      onDark: '#F0E4CE', onAmber: '#FFF8ED', field: '#F5EBDA',
+      newBg: 'rgba(31,111,92,0.16)', newFg: '#1A5A4B',
+      pinBg: 'rgba(196,116,31,0.2)', pinFg: '#8A4E12', dash: 'dashed'
+    } : {
+      page: '#FFFFFF',
+      surface: '#F1F3F5', card: '#FFFFFF', header: '#0D1B2A',
+      heading: '#0D1B2A', body: '#4B5563', meta: '#4B5563',
+      rule: '#E7EAEE', accent: '#0D7D77', eyebrow: '#0D7D77', amber: '#F5A623',
+      headerText: '#FFFFFF', headerLink: 'rgba(255,255,255,0.78)', headerRule: 'rgba(255,255,255,0.3)',
+      onDark: '#FFFFFF', onAmber: '#0D1B2A', field: '#FFFFFF',
+      newBg: '#E6F1EF', newFg: '#0D7D77',
+      pinBg: '#FDF1DC', pinFg: '#8A5A05', dash: 'solid'
+    };
+
+    const card = `display: flex; justifyContent: space-between; alignItems: flex-start; gap: 28px; padding: 18px 20px; background: ${p.card}; border: 1px solid ${p.rule};`;
+    const raw = [
+      ['Sealed Air', 'Packaging Design Engineer', 'Charlotte, NC', 'Food / beverage', '2d ago', true, false],
+      ['Perrigo', 'Packaging Engineer — Fixed Term, 1 year', 'Warsaw, PL', 'Pharma', '2d ago', true, false],
+      ['Edwards Lifesciences', 'Engineer II, Packaging', 'Irvine, CA', 'Pharma', '3d ago', false, true],
+      ['Thermo Fisher Scientific', 'Engineer III, Packaging & Labeling', 'Cincinnati, OH', 'Pharma', '4d ago', false, false],
+      ['Thermo Fisher Scientific', 'Packaging Project Manager', 'Allentown, PA', 'Pharma', '5d ago', false, false],
+      ['Stryker', 'Senior Manufacturing Engineer, Packaging', 'Irvine, CA', 'Pharma', '7d ago', false, false],
+      ['Tyson Foods', 'Senior Analyst, Packaging Systems', 'Springdale, AR', 'Food / beverage', '10d ago', false, false],
+      ['Church & Dwight', 'Senior Packaging Engineer', 'Princeton, NJ', 'CPG', '13d ago', false, false],
+      ['SC Johnson', 'Senior Associate — Packaging Engineer, International Brands', 'Racine, WI', 'CPG', '13d ago', false, false],
+      ['General Mills', 'Associate R&D Principal Packaging Engineer — E-Commerce Pet', 'Minneapolis, MN', 'Food / beverage', '21d ago', false, false],
+      ['Magna', 'Senior Packaging Engineer', 'Troy, MI', 'Automotive', '30d+', false, false],
+      ['PepsiCo', 'Senior Industrial Designer — Structural Packaging', 'Plano, TX', 'Food / beverage', '30d+', false, false]
+    ];
+    const jobs = raw.map(([company, title, location, sector, age, isNew, sponsored]) => ({
+      company, title, location, sector, age, isNew, sponsored,
+      cardStyle: sponsored ? card + ` borderLeft: 3px solid ${p.amber};`
+        : isNew ? card + ` borderLeft: 3px solid ${p.accent};` : card
+    }));
+
+    const chip = (active) => `padding: 8px 14px; fontSize: 13px; fontWeight: 500; borderRadius: 999px; cursor: pointer; whiteSpace: nowrap; ${active ? `background: ${p.heading}; color: ${p.onDark};` : `color: ${p.body}; border: 1px solid ${p.rule}; boxSizing: border-box;`}`;
+    const tag = (bg, fg) => `padding: 3px 8px; background: ${bg}; color: ${fg}; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.1em; textTransform: uppercase;`;
+    const field = `padding: 11px 14px; background: ${p.field}; border: 1px solid ${p.rule}; fontSize: 14px; color: ${p.meta}; cursor: pointer; whiteSpace: nowrap;`;
+
+    return {
+      jobs,
+      toggleKraft: () => this.setState(s => ({ kraft: !s.kraft })),
+      skinLabel: kraft ? 'Kraft' : 'Standard',
+      skinLabelColor: kraft ? '#6B5637' : 'rgba(255,255,255,0.7)',
+      skinToggleStyle: `display: flex; alignItems: center; gap: 9px; padding: 6px 12px 6px 8px; borderRadius: 999px; cursor: pointer; transition: background 150ms, border-color 150ms; background: ${kraft ? '#E8D7BB' : 'rgba(255,255,255,0.1)'}; border: 1px solid ${kraft ? '#C3A87F' : 'rgba(255,255,255,0.22)'};`,
+      skinDotStyle: `width: 11px; height: 11px; borderRadius: 50%; background: ${p.amber};`,
+
+      pageStyle: `background: ${p.page}; minHeight: 100vh; fontFamily: Archivo, Helvetica, Arial, sans-serif;`,
+      headerStyle: `background: ${p.header};`,
+      headerMark: p.headerText, headerText: p.headerText, headerRule: p.headerRule, headerLink: p.headerLink,
+      wedge: p.accent,
+      heading: p.heading, body: p.body, meta: p.meta, eyebrow: p.eyebrow, accent: p.accent, rule: p.rule,
+      roundelDisc: p.heading, roundelMark: p.onDark,
+
+      sponsorCtaStyle: `padding: 9px 15px; background: ${p.amber}; color: ${p.onAmber}; fontSize: 13px; fontWeight: 600; borderRadius: 3px; cursor: pointer;`,
+      ectPanelStyle: `width: 236px; flexShrink: 0; padding: 20px; background: ${p.surface}; border: 1px ${p.dash} ${p.rule}; display: flex; flexDirection: column; gap: 12px;`,
+      searchBarStyle: `display: flex; alignItems: center; justifyContent: space-between; gap: 14px; flexWrap: wrap; padding: 18px 0 0; borderTop: 1px solid ${p.rule};`,
+      searchInputStyle: field + ` flex: 1; minWidth: 260px;`,
+      selectStyle: field,
+      inputStyle: field + ` minWidth: 220px;`,
+      chip: chip(false), chipActive: chip(true),
+      newTagStyle: tag(p.newBg, p.newFg),
+      pinTagStyle: tag(p.pinBg, p.pinFg),
+      moreBtnStyle: `padding: 12px 22px; color: ${p.heading}; fontSize: 14px; fontWeight: 500; border: 1.5px solid ${p.heading}; boxSizing: border-box; borderRadius: 3px; cursor: pointer;`,
+      alertsStyle: `marginTop: 44px; padding: 30px 32px; background: ${p.surface}; display: flex; flexDirection: column; gap: 12px;`,
+      alertBtnStyle: `padding: 12px 20px; background: ${p.heading}; color: ${p.onDark}; fontSize: 14px; fontWeight: 500; borderRadius: 3px; cursor: pointer;`,
+      sponsorPanelStyle: `marginTop: 12px; padding: 26px 32px; background: ${p.header}; display: flex; alignItems: center; justifyContent: space-between; gap: 32px; flexWrap: wrap;`,
+      onDarkHeading: p.onDark,
+      onDarkBody: kraft ? 'rgba(240,228,206,0.72)' : 'rgba(255,255,255,0.72)',
+      pinCtaStyle: `padding: 12px 20px; background: ${p.amber}; color: ${p.onAmber}; fontSize: 14px; fontWeight: 600; borderRadius: 3px; cursor: pointer; whiteSpace: nowrap;`,
+      footerStyle: `marginTop: 40px; paddingTop: 22px; borderTop: 1px solid ${p.rule}; display: flex; alignItems: center; justifyContent: space-between; gap: 24px; flexWrap: wrap;`
+    };
+  }
+}
+</script>
+</body>
+</html>

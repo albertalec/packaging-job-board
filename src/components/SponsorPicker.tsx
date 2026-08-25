@@ -30,8 +30,8 @@ export function SponsorPicker({ jobs }: { jobs: SponsorPick[] }) {
   }
 
   return (
-    <div className="sponsor-picker">
-      <label className="search">
+    <div className="board-sponsor-picker">
+      <label className="board-search">
         <span className="sr-only">Search listings by title or company</span>
         <input
           value={query}
@@ -39,7 +39,7 @@ export function SponsorPicker({ jobs }: { jobs: SponsorPick[] }) {
           placeholder="Search title or company"
         />
       </label>
-      <p className="count">
+      <p className="board-sponsor-picker-count">
         {filtered.length} {filtered.length === 1 ? "listing" : "listings"}
       </p>
       {filtered.length === 0 ? (
@@ -50,14 +50,16 @@ export function SponsorPicker({ jobs }: { jobs: SponsorPick[] }) {
           </button>
         </p>
       ) : (
-        <ul className="sponsor-pick-list">
+        <ul className="board-sponsor-pick-list">
           {filtered.map((job) => (
             <li key={job.id}>
-              <Link href={`/sponsor/${job.id}`}>
-                <span className="pick-title">{job.title}</span>
-                <span className="pick-meta">
-                  {job.company} · {job.location}
+              <Link className="board-sponsor-pick" href={`/sponsor/${job.id}`}>
+                <span className="board-sponsor-pick-copy">
+                  <span className="board-sponsor-pick-company">{job.company}</span>
+                  <span className="board-sponsor-pick-title">{job.title}</span>
+                  <span className="board-sponsor-pick-meta">{job.location}</span>
                 </span>
+                <span className="board-sponsor-pick-cta">Pin this listing →</span>
               </Link>
             </li>
           ))}
