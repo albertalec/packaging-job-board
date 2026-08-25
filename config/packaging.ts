@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "./email";
 import type { VerticalTenant } from "./types";
 
 export const packaging: VerticalTenant = {
@@ -29,7 +30,7 @@ export const packaging: VerticalTenant = {
     slate: "#4B5563",
     mist: "#F1F3F5",
   },
-  contactEmail: "hello@packaging.nicheboardjobs.com",
+  contactEmail: CONTACT_EMAIL,
   copy: {
     kicker: "Updated daily",
     hero: "Packaging engineer roles, checked by hand.",

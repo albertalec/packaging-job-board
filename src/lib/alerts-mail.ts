@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import type { Niche } from "../../ingest/types";
+import { ALERTS_FROM_EMAIL as DEFAULT_ALERTS_FROM } from "@config/email";
 import type { VerticalTenant } from "@config/tenants";
 import { formatNiche } from "./niches";
 
@@ -50,7 +51,10 @@ export function formatAlertFromAddress(
 }
 
 function fromAddress(tenant: VerticalTenant): string {
-  return formatAlertFromAddress(tenant, process.env.ALERTS_FROM_EMAIL);
+  return formatAlertFromAddress(
+    tenant,
+    process.env.ALERTS_FROM_EMAIL ?? DEFAULT_ALERTS_FROM,
+  );
 }
 
 function brandShell(input: {

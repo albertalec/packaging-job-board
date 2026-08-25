@@ -104,8 +104,8 @@ distribution channel (LinkedIn groups, associations).
 - Hub visual (v1): navy/teal Brand Guide palette, Inter Tight + Inter,
   geometric logo mark. Packaging vertical keeps legacy kraft theme until
   phase 2 vertical rebrand.
-- Contact: `hello@nicheboardjobs.com` (parent); `hello@packaging.nicheboardjobs.com`
-  (vertical — or `hello@nicheboardjobs.com` with vertical in reply-to)
+- Contact: `hello@nicheboardjobs.com` (all boards). Outbound alerts:
+  `alerts@nicheboardjobs.com` via Resend (`ALERTS_FROM_EMAIL`).
 
 **Vertical brands (subdomain mastheads)**
 

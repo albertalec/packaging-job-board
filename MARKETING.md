@@ -154,7 +154,7 @@ On **vertical subdomains** (unchanged until phase 2 rebrand):
 | `packaging.nicheboardjobs.com` mast, hero, SEO | **Packaging Jobs** *(phase 2 visual rebrand pending)* | Niche Board as powered-by / footer credit |
 | Alerts subject + body | **Packaging Jobs** / Packaging Job Alerts | “powered by Niche Board” once |
 | Sponsor / employer on packaging | **Packaging Jobs** | Niche Board if explaining the network |
-| Legal / from-email / DNS | nicheboardjobs.com | Display name “Niche Board” on hub; vertical names on subdomains |
+| Legal / contact / DNS | `hello@nicheboardjobs.com` (all boards) | Outbound alerts from `alerts@nicheboardjobs.com`; vertical display names in From header only |
 
 ### Why hub-first
 
