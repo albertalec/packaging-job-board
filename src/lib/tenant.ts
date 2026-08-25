@@ -125,24 +125,25 @@ export async function verticalPublicOrigin(verticalId: string): Promise<string> 
 export function themeStyle(
   tenant: Tenant,
 ): Record<string, string> {
-  if (tenant.kind === "hub" && tenant.theme.navy) {
-    const { navy, teal, amber, slate, mist, paper, violet, clay } = tenant.theme;
+  if (tenant.theme.navy) {
+    const { navy, teal, amber, slate, mist, paper, violet, clay, kraft } =
+      tenant.theme;
     return {
       "--navy": navy!,
-      "--teal": teal!,
-      "--amber": amber!,
-      "--slate": slate!,
-      "--mist": mist!,
-      "--paper": paper!,
+      "--teal": teal ?? tenant.theme.accent,
+      "--amber": amber ?? "#F5A623",
+      "--slate": slate ?? "#4B5563",
+      "--mist": mist ?? "#F1F3F5",
+      "--paper": paper ?? "#FFFFFF",
       "--violet": violet ?? "#6A5FA9",
       "--clay": clay ?? "#A85C57",
       "--ink": navy!,
-      "--muted": slate!,
-      "--stamp": teal!,
-      "--kraft": mist!,
-      "--rule": mist!,
-      "--card": paper!,
-      "--outer": mist!,
+      "--muted": slate ?? "#4B5563",
+      "--stamp": teal ?? tenant.theme.accent,
+      "--kraft": kraft ?? mist ?? "#F1F3F5",
+      "--rule": "#E7EAEE",
+      "--card": paper ?? "#FFFFFF",
+      "--outer": mist ?? "#F1F3F5",
     };
   }
 

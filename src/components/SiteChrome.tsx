@@ -3,37 +3,9 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BoardSkinToggle } from "./BoardSkinToggle";
 import { LogoMark } from "./LogoMark";
 import { useTenant } from "./TenantProvider";
-
-const NETWORK_NAME = "Niche Board";
-
-function NetworkCredit({
-  credit,
-  href,
-}: {
-  credit: string;
-  href: string | null;
-}) {
-  if (!href) return credit;
-  const at = credit.lastIndexOf(NETWORK_NAME);
-  if (at < 0) {
-    return (
-      <a className="network-link" href={href}>
-        {credit}
-      </a>
-    );
-  }
-  return (
-    <>
-      {credit.slice(0, at)}
-      <a className="network-link" href={href}>
-        {NETWORK_NAME}
-      </a>
-      {credit.slice(at + NETWORK_NAME.length)}
-    </>
-  );
-}
 
 export function SiteChrome({ children }: { children: ReactNode }) {
   const tenant = useTenant();
@@ -42,10 +14,11 @@ export function SiteChrome({ children }: { children: ReactNode }) {
     pathname.startsWith("/sponsor") || pathname.startsWith("/employers");
   const hub = tenant.kind === "hub";
   const onEmployers = pathname.startsWith("/employers");
+  const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
 
   return (
     <>
-      <header className={hub ? "hub-mast" : "mast"}>
+      <header className={hub ? "hub-mast" : "board-mast"}>
         {hub ? (
           <div className="hub-mast-inner">
             <Link href="/" className="hub-mast-brand">
@@ -67,39 +40,31 @@ export function SiteChrome({ children }: { children: ReactNode }) {
             </nav>
           </div>
         ) : (
-          <>
-            <Link href="/" className="mark">
-              <span className="box" aria-hidden="true" />
-              <span>
-                {tenant.brand.markLine1}
-                {tenant.brand.markLine2 ? (
-                  <>
-                    <br />
-                    {tenant.brand.markLine2}
-                  </>
-                ) : null}
-              </span>
-            </Link>
-            <div className="mast-links">
-              <p className="tagline">
-                {employer
-                  ? tenant.brand.employerTagline
-                  : tenant.brand.tagline}
-              </p>
-              <nav className="mast-nav">
-                <Link className="nav-link" href="/#alerts">
-                  Job alerts
-                </Link>
-                <Link className="nav-link" href="/sponsor">
-                  Sponsor a job
-                </Link>
-              </nav>
+          <div className="board-mast-inner">
+            <div className="board-mast-brand">
+              <Link href={tenant.hubOrigin ?? "/"} className="board-mast-network">
+                <LogoMark className="board-mast-mark" size={25} variant="reverse" />
+                <span>Niche Board</span>
+              </Link>
+              <span className="board-mast-rule" aria-hidden="true" />
+              <Link href="/" className="board-mast-board">
+                {boardLabel}
+              </Link>
             </div>
-          </>
+            <nav className="board-mast-nav" aria-label="Primary">
+              <BoardSkinToggle />
+              <Link className="board-mast-link" href="/#alerts">
+                Job alerts
+              </Link>
+              <Link className="board-btn board-btn-amber board-mast-cta" href="/sponsor">
+                Sponsor a job
+              </Link>
+            </nav>
+          </div>
         )}
       </header>
       <main>{children}</main>
-      <footer className={hub ? "hub-footer" : undefined}>
+      <footer className={hub ? "hub-footer" : "board-footer"}>
         {hub ? (
           <div className="hub-footer-inner">
             <div className="hub-footer-brand">
@@ -109,18 +74,17 @@ export function SiteChrome({ children }: { children: ReactNode }) {
             <p className="hub-footer-tagline">{tenant.brand.tagline}</p>
           </div>
         ) : (
-          <>
-            {tenant.brand.networkCredit ? (
-              <p className="network-credit">
-                {tenant.brand.name},{" "}
-                <NetworkCredit
-                  credit={tenant.brand.networkCredit}
-                  href={tenant.hubOrigin}
-                />
-              </p>
-            ) : null}
-            <p>{employer ? tenant.brand.employerFooter : tenant.brand.footer}</p>
-          </>
+          <div className="board-footer-inner">
+            <div className="board-footer-brand">
+              <LogoMark size={21} />
+              <span>Niche Board</span>
+              <span className="board-footer-rule" aria-hidden="true" />
+              <span className="board-footer-board">{boardLabel}</span>
+            </div>
+            <p className="board-footer-meta">
+              {employer ? tenant.brand.employerFooter : tenant.brand.footer}
+            </p>
+          </div>
         )}
       </footer>
     </>

@@ -12,6 +12,8 @@ const NICHES = [
   ...Object.entries(NICHE_LABELS).map(([id, label]) => ({ id, label })),
 ] as const;
 
+const PAGE_SIZE = 8;
+
 export function JobBoard({
   jobs,
   sponsoredIds,
@@ -28,6 +30,7 @@ export function JobBoard({
   const [niche, setNiche] = useState("");
   const [state, setState] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const hasFilters = Boolean(query.trim() || niche || state || remoteOnly);
 
@@ -46,55 +49,102 @@ export function JobBoard({
     });
   }, [jobs, query, niche, state, remoteOnly]);
 
+  const visible = filtered.slice(0, visibleCount);
+  const hiddenCount = filtered.length - visible.length;
+
   function clearFilters() {
     setQuery("");
     setNiche("");
     setState("");
     setRemoteOnly(false);
+    setVisibleCount(PAGE_SIZE);
+  }
+
+  function selectNiche(next: string) {
+    setNiche(next);
+    setVisibleCount(PAGE_SIZE);
+  }
+
+  function toggleRemote() {
+    setRemoteOnly((prev) => !prev);
+    setVisibleCount(PAGE_SIZE);
   }
 
   return (
-    <section id="board">
-      <div className="filters">
-        <label className="search">
+    <section id="board" className="board-listing">
+      <div className="board-search-bar">
+        <label className="board-search">
           <span className="sr-only">Search jobs</span>
           <input
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search title, company, city"
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setVisibleCount(PAGE_SIZE);
+            }}
+            placeholder="Search titles, employers, locations"
           />
         </label>
-        <label className="filter-select">
-          <span className="sr-only">Niche</span>
-          <select value={niche} onChange={(event) => setNiche(event.target.value)}>
-            {NICHES.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="filter-select">
-          <span className="sr-only">State</span>
-          <select value={state} onChange={(event) => setState(event.target.value)}>
-            <option value="">All states</option>
-            {US_STATES.map((item) => (
-              <option key={item.code} value={item.code}>
-                {item.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={remoteOnly}
-            onChange={(event) => setRemoteOnly(event.target.checked)}
-          />
-          Remote / hybrid
-        </label>
-        <p className="count">{filtered.length} live roles</p>
+        <div className="board-search-controls">
+          <label className="board-field">
+            <span className="sr-only">Niche</span>
+            <select
+              value={niche}
+              onChange={(event) => selectNiche(event.target.value)}
+            >
+              {NICHES.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="board-field">
+            <span className="sr-only">State</span>
+            <select
+              value={state}
+              onChange={(event) => {
+                setState(event.target.value);
+                setVisibleCount(PAGE_SIZE);
+              }}
+            >
+              <option value="">All states</option>
+              {US_STATES.map((item) => (
+                <option key={item.code} value={item.code}>
+                  {item.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button
+            type="button"
+            className={`board-chip${remoteOnly ? " is-active" : ""}`}
+            aria-pressed={remoteOnly}
+            onClick={toggleRemote}
+          >
+            Remote / hybrid
+          </button>
+        </div>
       </div>
+
+      <div className="board-chip-row" role="group" aria-label="Filter by sector">
+        {NICHES.map((item) => (
+          <button
+            key={item.id || "all"}
+            type="button"
+            className={`board-chip${niche === item.id ? " is-active" : ""}`}
+            aria-pressed={niche === item.id}
+            onClick={() => selectNiche(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="board-list-head">
+        <p>{filtered.length} live roles</p>
+        <p>Newest first</p>
+      </div>
+
       {filtered.length === 0 ? (
         <p className="empty">
           {hasFilters ? (
@@ -109,13 +159,26 @@ export function JobBoard({
           )}
         </p>
       ) : (
-        <ul className="job-list">
-          {filtered.map((job) => (
-            <li key={job.id}>
-              <JobCard job={job} sponsored={sponsoredSet.has(job.id)} />
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="job-list">
+            {visible.map((job) => (
+              <li key={job.id}>
+                <JobCard job={job} sponsored={sponsoredSet.has(job.id)} />
+              </li>
+            ))}
+          </ul>
+          {hiddenCount > 0 ? (
+            <div className="board-more-wrap">
+              <button
+                type="button"
+                className="board-btn board-btn-outline"
+                onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+              >
+                Show {hiddenCount} more role{hiddenCount === 1 ? "" : "s"}
+              </button>
+            </div>
+          ) : null}
+        </>
       )}
     </section>
   );

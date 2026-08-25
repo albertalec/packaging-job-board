@@ -8,49 +8,51 @@ export const packaging: VerticalTenant = {
   localHost: "packaging.localhost",
   brand: {
     name: "Packaging Jobs",
-    markLine1: "Packaging",
-    markLine2: "Jobs",
+    markLine1: "Niche Board",
+    markLine2: "",
     hubLabel: "Packaging",
-    tagline: "Packaging engineer jobs at top employers.",
-    employerTagline: "Pin a live listing at the top of Packaging Jobs.",
-    footer:
-      "Roles from employer career sites. Apply on the source listing.",
+    tagline: "Package development — not plant ops.",
+    employerTagline: "Pin a live listing on the Packaging board.",
+    footer: "Roles from employer career sites. Apply on the source listing.",
     employerFooter:
-      "Pin a live career-site listing on Packaging Jobs. Candidates apply on the employer ATS.",
+      "Pin a listing you already have — scoped to the Packaging board. Candidates apply on the employer ATS.",
     networkCredit: "powered by Niche Board",
     alertsFromName: "Packaging Jobs Alerts",
   },
   theme: {
-    accent: "#b42318",
-    kraft: "#c4a484",
-    paper: "#f3eadb",
+    accent: "#0D7D77",
+    kraft: "#D9C3A0",
+    paper: "#FFFFFF",
+    navy: "#0D1B2A",
+    teal: "#0D7D77",
+    amber: "#F5A623",
+    slate: "#4B5563",
+    mist: "#F1F3F5",
   },
   contactEmail: "hello@packaging.nicheboardjobs.com",
   copy: {
     kicker: "Updated daily",
-    hero: "Packaging engineer jobs at top employers.",
-    lede: "Open roles at companies like General Mills, Johnson & Johnson, Mars, and Clorox. Apply on the company’s career site.",
+    hero: "Packaging engineer roles, checked by hand.",
+    lede: "Open roles at brand employers. Pulled daily from employer ATS feeds. You apply on the company's career site.",
     contrast: "Package development — not plant ops.",
     metaDescription:
-      "Packaging engineer and package-development jobs at CPG and brand employers. Updated daily from employer ATS feeds. Apply on the company career site.",
+      "Packaging engineer and package-development roles at CPG and brand employers. Updated daily from employer ATS feeds. Apply on the company career site.",
     empty:
-      "No packaging engineer roles listed right now. We’ll have more after the next daily update — hang tight.",
-    emptyFiltered:
-      "No packaging engineer roles match those filters. Try widening them a bit.",
+      "No packaging engineer roles listed right now. We'll have more after the next daily update.",
+    emptyFiltered: "No roles match those filters. Try widening them.",
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
-      "Reach packaging engineers and package-development folks who already browse Packaging Jobs. Pin a live career-site listing at the top for 30 days — no separate “post a job” round-trip.",
-    alertsTitle: "Get new packaging engineer roles by email",
+      "Reach packaging engineers who browse this board. Pin a live career-site listing for 30 days — no separate posting workflow.",
+    alertsTitle: "Get new packaging roles by email",
     alertsLede:
-      "Drop in your email and you’re on the list — we’ll send a short digest when fresh package-development jobs show up.",
-    alertsWelcomeSubject: "You’re subscribed to Packaging Jobs alerts",
-    alertsWelcomeTitle: "You’re on the list",
+      "A short digest when fresh package-development jobs show up. Filter it to your sector and state. Nothing on a slow week.",
+    alertsWelcomeSubject: "You're subscribed to Packaging Jobs alerts",
+    alertsWelcomeTitle: "You're on the list",
     alertsWelcomeIntro:
-      "You’re subscribed to Packaging Jobs alerts, powered by Niche Board.",
+      "You're subscribed to Packaging Jobs alerts, powered by Niche Board.",
     alertsWelcomeBody:
-      "We’ll send a short digest when new packaging engineer and package-development roles appear. Package development — not plant ops. Browse anytime on Packaging Jobs — apply from the listing when you’re ready.",
-    alertsDigestIntro:
-      "New roles on Packaging Jobs — view details on the board.",
+      "We'll send a short digest when new package-development roles appear. Package development — not plant ops.",
+    alertsDigestIntro: "New roles on Packaging Jobs — view details on the board.",
   },
   ingest: {
     classifier: "packaging",

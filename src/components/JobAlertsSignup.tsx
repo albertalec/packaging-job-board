@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { LogoMark } from "@/components/LogoMark";
 import { NICHE_LABELS } from "@/lib/niches";
 import { US_STATES } from "@/lib/states";
 import { useTenant } from "./TenantProvider";
@@ -76,17 +77,17 @@ export function JobAlertsSignup({
   }
 
   return (
-    <section className="alerts" id="alerts">
-      <div className="alerts-copy">
-        <p className="kicker">Job alerts</p>
-        <h2 className="alerts-title">{title}</h2>
-        <p className="alerts-lede">{lede}</p>
+    <section className="board-alerts" id="alerts">
+      <div className="board-alerts-head">
+        <LogoMark variant="avatar" size={26} />
+        <h2 className="board-alerts-title">{title}</h2>
       </div>
+      <p className="board-alerts-lede">{lede}</p>
 
       {status === "subscribed" ? (
         <p className="notice" role="status">
-          You’re subscribed to {tenant.brand.name}. We’ll email you when new
-          matching roles appear.
+          You&apos;re subscribed to {tenant.brand.name}. We&apos;ll email you when
+          new matching roles appear.
         </p>
       ) : null}
       {status === "already_active" ? (
@@ -96,8 +97,8 @@ export function JobAlertsSignup({
         </p>
       ) : null}
 
-      <form className="alerts-form" onSubmit={onSubmit}>
-        <label className="alerts-email">
+      <form className="board-alerts-form" onSubmit={onSubmit}>
+        <label className="board-field board-alerts-email">
           <span className="sr-only">Email</span>
           <input
             type="email"
@@ -106,11 +107,11 @@ export function JobAlertsSignup({
             required
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="you@example.com"
+            placeholder="you@work.com"
             disabled={status === "submitting"}
           />
         </label>
-        <label className="filter-select">
+        <label className="board-field">
           <span className="sr-only">Niche filter</span>
           <select
             value={niche}
@@ -124,7 +125,7 @@ export function JobAlertsSignup({
             ))}
           </select>
         </label>
-        <label className="filter-select">
+        <label className="board-field">
           <span className="sr-only">State filter</span>
           <select
             value={state}
@@ -149,7 +150,7 @@ export function JobAlertsSignup({
           />
         </label>
         <button
-          className="apply alerts-submit"
+          className="board-btn board-btn-primary board-alerts-submit"
           type="submit"
           disabled={status === "submitting"}
         >
