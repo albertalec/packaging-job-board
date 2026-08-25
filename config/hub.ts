@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "./email";
 import type { HubTenant } from "./types";
 
 export const hub: HubTenant = {
@@ -34,7 +35,7 @@ export const hub: HubTenant = {
     violet: "#6A5FA9",
     clay: "#A85C57",
   },
-  contactEmail: "hello@nicheboardjobs.com",
+  contactEmail: CONTACT_EMAIL,
   copy: {
     hero: "Precision job boards for specialists.",
     lede:

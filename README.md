@@ -119,8 +119,9 @@ Optional niche/state filters. Subscribers are stored in
 `data/alerts/{vertical}.json` locally, or **Upstash Redis**
 (`nicheboard:alerts:{vertical}`) in production.
 
+Contact mailto links use `hello@nicheboardjobs.com` on every tenant (`config/email.ts`).
 Set `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`, plus `RESEND_API_KEY`,
-optional `ALERTS_FROM_EMAIL` (the **address only**, e.g. `alerts@nicheboardjobs.com` —
+optional `ALERTS_FROM_EMAIL` (outbound alerts only — default `alerts@nicheboardjobs.com`;
 display name comes from `config/` as `Packaging Jobs Alerts`), and
 `ALERTS_CRON_SECRET` (or Vercel `CRON_SECRET`).
 After ingest changes, GitHub Actions can POST the digest URL via repo secrets
