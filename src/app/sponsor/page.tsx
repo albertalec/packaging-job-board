@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     tenant,
     title: "Sponsor a job",
-    description: `Pin a live listing on ${tenant.brand.name} for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
+    description: `Pin a live listing on ${tenant.brand.hubLabel ?? tenant.brand.name} for ${price} — ${tenant.sponsor.durationDays} days at the top of the board.`,
     path: "/sponsor",
     index: false,
   });
@@ -27,6 +27,8 @@ export default async function SponsorIndexPage() {
 
   const price = formatUsd(tenant.sponsor.priceCents);
   const days = tenant.sponsor.durationDays;
+  const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
+  const duration = days === 30 ? "Thirty" : String(days);
   const picks = [...loadJobs(tenant.id).jobs]
     .sort(compareJobsByPromise)
     .map((job) => ({
@@ -37,24 +39,67 @@ export default async function SponsorIndexPage() {
     }));
 
   return (
-    <article className="sponsor-page">
-      <p className="kicker">For employers & recruiters</p>
-      <h1>
-        {price} {tenant.copy.sponsorHeadline} {days} days
-      </h1>
-      <p className="lede">{tenant.copy.sponsorLede}</p>
-      <ul className="sponsor-benefits">
-        <li>First on the {tenant.brand.name} homepage (above organic listings)</li>
-        <li>Sponsored stamp on the card and job detail page</li>
-        <li>{`${days}-day run`} — flat fee, no recurring charge</li>
-        <li>Ranks on this specialty board only — not the rest of Niche Board</li>
+    <div className="board-shell board-sponsor-flow">
+      <section className="board-sponsor-hero">
+        <div className="board-sponsor-copy">
+          <p className="board-eyebrow">For employers</p>
+          <h1>Pin the listing you already have.</h1>
+          <p className="lede">{tenant.copy.sponsorLede}</p>
+        </div>
+        <aside className="board-price-panel" aria-label="Pricing">
+          <p className="board-price-kicker">One pin</p>
+          <p className="board-price-amount">{price}</p>
+          <p className="board-price-body">
+            {duration} days on the {boardLabel} board. Not a second posting
+            workflow — the listing you already wrote, in front of the people who
+            wrote the spec.
+          </p>
+        </aside>
+      </section>
+
+      <ul className="board-sponsor-grid">
+        <li className="board-sponsor-card">
+          <p className="board-sponsor-card-title">Your ATS, start to finish</p>
+          <p className="board-sponsor-card-body">
+            Candidates apply on Workday, Greenhouse or whatever you run. No fake
+            apply wall, no resumé database.
+          </p>
+        </li>
+        <li className="board-sponsor-card">
+          <p className="board-sponsor-card-title">Scoped to this board</p>
+          <p className="board-sponsor-card-body">
+            A pin on {boardLabel} appears on {boardLabel}. It doesn&apos;t leak
+            across the network.
+          </p>
+        </li>
+        <li className="board-sponsor-card">
+          <p className="board-sponsor-card-title">{duration} days, one checkout</p>
+          <p className="board-sponsor-card-body">
+            {price} flat. One Stripe checkout, one invoice, no seat count and no
+            annual contract.
+          </p>
+        </li>
+        <li className="board-sponsor-card">
+          <p className="board-sponsor-card-title">Pinned at the top</p>
+          <p className="board-sponsor-card-body">
+            Pinned badge on the card and detail page. Ranked first on the
+            homepage job list for {days} days.
+          </p>
+        </li>
       </ul>
-      <h2 className="sponsor-subhead">Pick a live listing</h2>
-      <SponsorPicker jobs={picks} />
-      <p className="sponsor-footnote">
-        Listing not here yet? It appears after the next daily ingest from your
-        career-site feed.
-      </p>
-    </article>
+
+      <section className="board-sponsor-picker-section">
+        <h2 className="board-sponsor-section-head">Pick a live listing</h2>
+        <p className="board-sponsor-section-intro">
+          Choose a role already on the board from your career-site feed. Checkout
+          takes about a minute.
+        </p>
+        <SponsorPicker jobs={picks} />
+        <p className="board-sponsor-footnote">
+          Listing not here yet? It appears after the next daily ingest from your
+          career-site feed.
+        </p>
+      </section>
+    </div>
   );
 }

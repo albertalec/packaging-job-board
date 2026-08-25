@@ -38,10 +38,10 @@ export function SponsorCheckoutButton({
   }
 
   return (
-    <div className="checkout-wrap">
+    <div className="board-sponsor-checkout-wrap">
       <button
         type="button"
-        className="apply big checkout"
+        className="board-btn board-btn-amber board-sponsor-checkout-btn"
         onClick={startCheckout}
         disabled={loading}
       >

@@ -33,35 +33,40 @@ export default async function SponsorSuccessPage({ searchParams }: SearchParams)
     }
   }
 
-  const boardName = tenant.kind === "vertical" ? tenant.brand.name : "the board";
+  const boardLabel =
+    tenant.kind === "vertical"
+      ? tenant.brand.hubLabel ?? tenant.brand.markLine1
+      : "the board";
 
   return (
-    <article className="sponsor-page">
-      <p className="kicker">Payment received</p>
-      <h1>Thank you — this listing is being pinned</h1>
-      <p className="lede">
-        {jobTitle ? (
-          <>
-            Payment confirmed for <strong>{jobTitle}</strong>. It should appear
-            at the top of {boardName} within a minute.
-          </>
-        ) : (
-          <>
-            Payment confirmed. It should appear at the top of {boardName} within
-            a minute.
-          </>
-        )}
-      </p>
-      <div className="sponsor-actions">
-        {jobId ? (
-          <Link className="apply big" href={`/jobs/${jobId}`}>
-            View sponsored listing
+    <div className="board-shell board-sponsor-flow">
+      <section className="board-sponsor-success">
+        <p className="board-eyebrow">Payment received</p>
+        <h1>Thank you — this listing is being pinned</h1>
+        <p className="lede">
+          {jobTitle ? (
+            <>
+              Payment confirmed for <strong>{jobTitle}</strong>. It should appear
+              at the top of the {boardLabel} board within a minute.
+            </>
+          ) : (
+            <>
+              Payment confirmed. It should appear at the top of the {boardLabel}{" "}
+              board within a minute.
+            </>
+          )}
+        </p>
+        <div className="board-hero-actions">
+          {jobId ? (
+            <Link className="board-btn board-btn-primary" href={`/jobs/${jobId}`}>
+              View pinned listing
+            </Link>
+          ) : null}
+          <Link className="board-btn board-btn-ghost" href="/">
+            Back to {boardLabel}
           </Link>
-        ) : null}
-        <Link className="ghost" href="/">
-          Back to {boardName}
-        </Link>
-      </div>
-    </article>
+        </div>
+      </section>
+    </div>
   );
 }
