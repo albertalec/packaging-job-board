@@ -206,7 +206,7 @@
           </div>
           <div style="display: flex; alignItems: center; gap: 10px">
             <div style="{{ chip }}">All states</div>
-            <div style="{{ chip }}">Remote / hybrid</div>
+            <div style="{{ chipControl }}">Remote / hybrid</div>
           </div>
         </div>
 
@@ -412,6 +412,7 @@ class Component extends DCLogic {
       ectPanelStyle: `width: 236px; flexShrink: 0; padding: 22px; background: ${kraft ? 'rgba(61,43,24,0.06)' : '#F1F3F5'}; border: 1px ${p.dash} ${p.rule}; display: flex; flexDirection: column; gap: 12px;`,
       filterBarStyle: `display: flex; alignItems: center; justifyContent: space-between; gap: 20px; flexWrap: wrap; padding: 18px 0; borderTop: 1px solid ${p.rule}; borderBottom: 1px solid ${p.rule};`,
       chip: chip(false), chipActive: chip(true),
+      chipControl: `padding: 8px 14px; fontSize: 13px; fontWeight: 500; borderRadius: 999px; cursor: pointer; whiteSpace: nowrap; color: ${p.body}; border: 1.5px solid ${p.fieldBorder}; boxSizing: border-box;`,
       newTagStyle: tagStyle(p.newBg, p.newFg),
       sponsorTagStyle: tagStyle(p.pinBg, p.pinFg),
       alertsStyle: `marginTop: 40px; padding: 30px 32px; background: ${kraft ? 'rgba(61,43,24,0.06)' : '#F1F3F5'}; display: flex; flexDirection: column; gap: 12px;`,

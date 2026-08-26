@@ -433,6 +433,14 @@ html[data-vertical="packaging"] .board-chip.is-active {
   border-color: var(--navy);
 }
 
+html[data-vertical="packaging"] .board-search-controls .board-chip {
+  border: 1.5px solid var(--field-border);
+}
+
+html[data-vertical="packaging"] .board-search-controls .board-chip.is-active {
+  border-color: var(--navy);
+}
+
 html[data-vertical="packaging"] .board-chip-row {
   display: flex;
   gap: 8px;
