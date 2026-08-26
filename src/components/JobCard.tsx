@@ -61,7 +61,9 @@ export function JobCard({
           {sponsored ? <span className="job-tag job-tag-pinned">Pinned</span> : null}
         </div>
         <h2>
-          <Link href={`/jobs/${job.id}`}>{job.title}</Link>
+          <Link className="job-card-title" href={`/jobs/${job.id}`}>
+            {job.title}
+          </Link>
         </h2>
         <p className="meta">
           <span>

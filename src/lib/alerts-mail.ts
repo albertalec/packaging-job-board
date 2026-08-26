@@ -194,13 +194,15 @@ function jobCardsHtml(
 
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px;background:${card};border:1px solid ${ink};box-shadow:3px 3px 0 ${kraft};">
   <tr>
-    <td style="padding:14px 16px;">
-      <p style="margin:0;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:${muted};">${escapeHtml(job.company)}</p>
-      <h2 style="margin:4px 0 8px;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;font-weight:600;">
-        <a href="${escapeHtml(job.url)}" style="color:${ink};text-decoration:none;">${escapeHtml(job.title)}</a>
-      </h2>
-      <p style="margin:0 0 12px;font-size:13px;color:${muted};">${meta}</p>
-      <a href="${escapeHtml(job.url)}" style="display:inline-block;padding:8px 12px;background:${ink};color:${theme.paper};text-decoration:none;font-size:13px;border:1px solid ${ink};">View role</a>
+    <td style="padding:0;">
+      <a href="${escapeHtml(job.url)}" style="display:block;padding:14px 16px;color:inherit;text-decoration:none;">
+        <p style="margin:0;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:${muted};">${escapeHtml(job.company)}</p>
+        <h2 style="margin:4px 0 8px;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;font-weight:600;color:${ink};">
+          ${escapeHtml(job.title)}
+        </h2>
+        <p style="margin:0 0 12px;font-size:13px;color:${muted};">${meta}</p>
+        <span style="display:inline-block;padding:8px 12px;background:${ink};color:${theme.paper};font-size:13px;border:1px solid ${ink};">View role</span>
+      </a>
     </td>
   </tr>
 </table>`;
