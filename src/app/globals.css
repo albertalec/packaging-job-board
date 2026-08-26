@@ -283,6 +283,19 @@ select {
   text-transform: uppercase;
 }
 
+.job-snippet {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--muted, #5c5346);
+}
+
+.job-snippet mark {
+  background: #e6f1ef;
+  color: inherit;
+  padding: 0 0.12em;
+}
+
 .stamp {
   border: 1.5px solid var(--stamp);
   color: var(--stamp);

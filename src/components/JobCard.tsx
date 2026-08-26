@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { NormalizedJob } from "../../ingest/types";
 import { ApplyLink } from "@/components/ApplyLink";
+import { highlightSnippet } from "@/lib/job-search";
 import { formatNiche } from "@/lib/niches";
 
 export type ListingRail = "pinned" | "new" | "default";
@@ -37,10 +38,14 @@ export function JobCard({
   job,
   sponsored = false,
   compact = false,
+  snippet = null,
+  tokens = [],
 }: {
   job: NormalizedJob;
   sponsored?: boolean;
   compact?: boolean;
+  snippet?: string | null;
+  tokens?: string[];
 }) {
   const posted = postedLabel(job.postedAt);
   const rail = listingRail(job.postedAt, sponsored);
@@ -51,6 +56,10 @@ export function JobCard({
       : rail === "new"
         ? "job-card job-card-new"
         : "job-card";
+  const excerpt =
+    !compact && snippet
+      ? highlightSnippet(snippet, tokens)
+      : null;
 
   return (
     <article className={`${cardClass}${compact ? " job-card-preview" : ""}`}>
@@ -69,6 +78,17 @@ export function JobCard({
             {niche ? ` · ${niche}` : ""}
           </span>
         </p>
+        {excerpt ? (
+          <p className="job-snippet">
+            {excerpt.map((part, index) =>
+              part.match ? (
+                <mark key={index}>{part.text}</mark>
+              ) : (
+                <span key={index}>{part.text}</span>
+              ),
+            )}
+          </p>
+        ) : null}
       </div>
       {compact ? null : (
         <div className="job-card-side">

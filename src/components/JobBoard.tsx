@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
+import { parseSearchQuery, searchJobs } from "@/lib/job-search";
 import { NICHE_LABELS } from "@/lib/niches";
 import { isRemote } from "@/lib/remote";
 import { jobState, US_STATES } from "@/lib/states";
@@ -33,24 +34,29 @@ export function JobBoard({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const hasFilters = Boolean(query.trim() || niche || state || remoteOnly);
+  const tokens = useMemo(() => parseSearchQuery(query), [query]);
 
-  const filtered = useMemo(() => {
-    const needle = query.trim().toLowerCase();
-    return jobs.filter((job) => {
+  const hits = useMemo(() => {
+    const scoped = jobs.filter((job) => {
       if (niche && job.niche !== niche) return false;
       if (state && jobState(job) !== state) return false;
       if (remoteOnly && !job.remote && !isRemote(job.location, job.description)) {
         return false;
       }
-      if (!needle) return true;
-      return `${job.title} ${job.company} ${job.location}`
-        .toLowerCase()
-        .includes(needle);
+      return true;
     });
-  }, [jobs, query, niche, state, remoteOnly]);
+    const matched = searchJobs(scoped, query);
+    if (tokens.length === 0) return matched;
+    return [...matched].sort((left, right) => {
+      const leftPinned = sponsoredSet.has(left.job.id) ? 1 : 0;
+      const rightPinned = sponsoredSet.has(right.job.id) ? 1 : 0;
+      if (leftPinned !== rightPinned) return rightPinned - leftPinned;
+      return right.score - left.score;
+    });
+  }, [jobs, query, tokens.length, niche, state, remoteOnly, sponsoredSet]);
 
-  const visible = filtered.slice(0, visibleCount);
-  const hiddenCount = filtered.length - visible.length;
+  const visible = hits.slice(0, visibleCount);
+  const hiddenCount = hits.length - visible.length;
 
   function clearFilters() {
     setQuery("");
@@ -74,14 +80,14 @@ export function JobBoard({
     <section id="board" className="board-listing">
       <div className="board-search-bar">
         <label className="board-search">
-          <span className="sr-only">Search jobs</span>
+          <span className="sr-only">Search titles, skills, and posting text</span>
           <input
             value={query}
             onChange={(event) => {
               setQuery(event.target.value);
               setVisibleCount(PAGE_SIZE);
             }}
-            placeholder="Search titles, employers, locations"
+            placeholder="Search titles, skills, posting text"
           />
         </label>
         <div className="board-search-controls">
@@ -141,11 +147,13 @@ export function JobBoard({
       </div>
 
       <div className="board-list-head">
-        <p>{filtered.length} live roles</p>
-        <p>Newest first</p>
+        <p>
+          {hits.length} live role{hits.length === 1 ? "" : "s"}
+        </p>
+        <p>{tokens.length > 0 ? "Best match first" : "Newest first"}</p>
       </div>
 
-      {filtered.length === 0 ? (
+      {hits.length === 0 ? (
         <p className="empty">
           {hasFilters ? (
             <>
@@ -161,9 +169,14 @@ export function JobBoard({
       ) : (
         <>
           <ul className="job-list">
-            {visible.map((job) => (
+            {visible.map(({ job, snippet }) => (
               <li key={job.id}>
-                <JobCard job={job} sponsored={sponsoredSet.has(job.id)} />
+                <JobCard
+                  job={job}
+                  sponsored={sponsoredSet.has(job.id)}
+                  snippet={snippet}
+                  tokens={tokens}
+                />
               </li>
             ))}
           </ul>

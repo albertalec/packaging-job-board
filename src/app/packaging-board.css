@@ -577,6 +577,19 @@ html[data-vertical="packaging"] .job-card .meta {
   gap: 0;
 }
 
+html[data-vertical="packaging"] .job-snippet {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-snippet mark {
+  background: #e6f1ef;
+  color: var(--navy);
+  padding: 0 0.12em;
+}
+
 html[data-vertical="packaging"] .job-card-side {
   display: flex;
   flex-direction: column;
@@ -1586,6 +1599,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-body,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-list-head,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .company,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .meta,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-snippet,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-age,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-pick-company,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-pick-meta,
@@ -1628,6 +1642,11 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-mast-cta {
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-tag-new {
   background: rgba(31, 111, 92, 0.16);
   color: #1a5a4b;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-snippet mark {
+  background: rgba(31, 111, 92, 0.18);
+  color: #3d2b18;
 }
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-apply,
