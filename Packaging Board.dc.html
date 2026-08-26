@@ -174,7 +174,8 @@ class Component extends DCLogic {
       onDark: '#F0E4CE', onAmber: '#FFF8ED', field: '#FBF5EA',
       fieldBorder: '#A88D62', fieldPlaceholder: '#5A472C', fieldText: '#3D2B18',
       newBg: 'rgba(31,111,92,0.16)', newFg: '#1A5A4B',
-      pinBg: 'rgba(196,116,31,0.2)', pinFg: '#8A4E12', dash: 'dashed'
+      pinBg: 'rgba(196,116,31,0.2)', pinFg: '#8A4E12', dash: 'dashed',
+      rail: '#96794C'
     } : {
       page: '#FFFFFF',
       surface: '#F1F3F5', card: '#FFFFFF', header: '#0D1B2A',
@@ -184,7 +185,8 @@ class Component extends DCLogic {
       onDark: '#FFFFFF', onAmber: '#0D1B2A', field: '#FFFFFF',
       fieldBorder: '#9AA3AD', fieldPlaceholder: '#3A424D', fieldText: '#0D1B2A',
       newBg: '#E6F1EF', newFg: '#0D7D77',
-      pinBg: '#FDF1DC', pinFg: '#8A5A05', dash: 'solid'
+      pinBg: '#FDF1DC', pinFg: '#8A5A05', dash: 'solid',
+      rail: '#B4BCC5'
     };
 
     const card = `display: flex; justifyContent: space-between; alignItems: flex-start; gap: 28px; padding: 18px 20px; background: ${p.card}; border: 1px solid ${p.rule};`;
@@ -205,7 +207,8 @@ class Component extends DCLogic {
     const jobs = raw.map(([company, title, location, sector, age, isNew, sponsored]) => ({
       company, title, location, sector, age, isNew, sponsored,
       cardStyle: sponsored ? card + ` borderLeft: 3px solid ${p.amber};`
-        : isNew ? card + ` borderLeft: 3px solid ${p.accent};` : card
+        : isNew ? card + ` borderLeft: 3px solid ${p.accent};`
+        : card + ` borderLeft: 3px solid ${p.rail};`
     }));
 
     const chip = (active) => `padding: 8px 14px; fontSize: 13px; fontWeight: 500; borderRadius: 999px; cursor: pointer; whiteSpace: nowrap; ${active ? `background: ${p.heading}; color: ${p.onDark};` : `color: ${p.body}; border: 1px solid ${p.rule}; boxSizing: border-box;`}`;

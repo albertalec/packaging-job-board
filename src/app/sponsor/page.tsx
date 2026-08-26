@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { listingRail } from "@/components/JobCard";
 import { SponsorPicker } from "@/components/SponsorPicker";
 import { loadJobs } from "@/lib/jobs";
 import { buildPageMetadata } from "@/lib/seo";
-import { compareJobsByPromise } from "@/lib/sponsorships";
+import {
+  compareJobsByPromise,
+  getActiveSponsoredJobIds,
+} from "@/lib/sponsorships";
 import { formatUsd, getRequestTenant } from "@/lib/tenant";
 
 export const revalidate = 3600;
@@ -29,6 +33,7 @@ export default async function SponsorIndexPage() {
   const days = tenant.sponsor.durationDays;
   const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
   const duration = days === 30 ? "Thirty" : String(days);
+  const sponsoredIds = await getActiveSponsoredJobIds(tenant.id);
   const picks = [...loadJobs(tenant.id).jobs]
     .sort(compareJobsByPromise)
     .map((job) => ({
@@ -36,6 +41,7 @@ export default async function SponsorIndexPage() {
       title: job.title,
       company: job.company,
       location: job.location,
+      rail: listingRail(job.postedAt, sponsoredIds.has(job.id)),
     }));
 
   return (

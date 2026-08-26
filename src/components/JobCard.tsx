@@ -3,6 +3,8 @@ import type { NormalizedJob } from "../../ingest/types";
 import { ApplyLink } from "@/components/ApplyLink";
 import { formatNiche } from "@/lib/niches";
 
+export type ListingRail = "pinned" | "new" | "default";
+
 function postedLabel(postedAt: string | null): string | null {
   if (!postedAt) return null;
   const time = Date.parse(postedAt);
@@ -18,6 +20,19 @@ function postedLabel(postedAt: string | null): string | null {
   return "30d+";
 }
 
+export function listingRail(
+  postedAt: string | null,
+  sponsored: boolean,
+): ListingRail {
+  if (sponsored) return "pinned";
+  const posted = postedLabel(postedAt);
+  const fresh =
+    posted === "1d ago" ||
+    posted === "2d ago" ||
+    (posted?.endsWith("d ago") && Number.parseInt(posted, 10) <= 3);
+  return fresh ? "new" : "default";
+}
+
 export function JobCard({
   job,
   sponsored = false,
@@ -28,23 +43,21 @@ export function JobCard({
   compact?: boolean;
 }) {
   const posted = postedLabel(job.postedAt);
-  const fresh =
-    posted === "1d ago" ||
-    posted === "2d ago" ||
-    (posted?.endsWith("d ago") && Number.parseInt(posted, 10) <= 3);
+  const rail = listingRail(job.postedAt, sponsored);
   const niche = formatNiche(job.niche);
-  const cardClass = sponsored
-    ? "job-card job-card-pinned"
-    : fresh
-      ? "job-card job-card-new"
-      : "job-card";
+  const cardClass =
+    rail === "pinned"
+      ? "job-card job-card-pinned"
+      : rail === "new"
+        ? "job-card job-card-new"
+        : "job-card";
 
   return (
     <article className={`${cardClass}${compact ? " job-card-preview" : ""}`}>
       <div className="job-card-main">
         <div className="job-card-top">
           <p className="company">{job.company}</p>
-          {!sponsored && fresh ? <span className="job-tag job-tag-new">New</span> : null}
+          {rail === "new" ? <span className="job-tag job-tag-new">New</span> : null}
           {sponsored ? <span className="job-tag job-tag-pinned">Pinned</span> : null}
         </div>
         <h2>
