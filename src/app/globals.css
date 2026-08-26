@@ -245,6 +245,7 @@ select {
 }
 
 .job-card {
+  position: relative;
   background: var(--card);
   padding: 1.1rem 1.2rem 1rem;
   border: 1px solid var(--ink);
@@ -263,8 +264,24 @@ select {
   margin: 0.2rem 0 0.4rem;
 }
 
-.job-card h2 a {
+.job-card-title {
+  display: inline;
   text-decoration: none;
+  color: inherit;
+}
+
+/* Stretch the title link across the card so users can click anywhere. */
+.job-card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.job-card-side,
+.job-apply {
+  position: relative;
+  z-index: 1;
 }
 
 .job-card-top,

@@ -496,6 +496,7 @@ html[data-vertical="packaging"] .job-list {
 }
 
 html[data-vertical="packaging"] .job-card {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -514,6 +515,11 @@ html[data-vertical="packaging"] .job-card:hover {
   box-shadow: none;
   border-color: var(--teal);
   border-left-color: var(--job-rail);
+}
+
+html[data-vertical="packaging"] .job-card:hover .job-card-title,
+html[data-vertical="packaging"] .job-card:focus-within .job-card-title {
+  color: var(--teal);
 }
 
 html[data-vertical="packaging"] .job-card-new {
@@ -585,12 +591,12 @@ html[data-vertical="packaging"] .job-card h2 {
   line-height: 1.3;
 }
 
-html[data-vertical="packaging"] .job-card h2 a {
+html[data-vertical="packaging"] .job-card-title {
   color: var(--navy);
   text-decoration: none;
 }
 
-html[data-vertical="packaging"] .job-card h2 a:hover {
+html[data-vertical="packaging"] .job-card-title:hover {
   color: var(--teal);
   text-decoration: none;
 }
@@ -603,6 +609,8 @@ html[data-vertical="packaging"] .job-card .meta {
 }
 
 html[data-vertical="packaging"] .job-card-side {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -617,6 +625,8 @@ html[data-vertical="packaging"] .job-age {
 }
 
 html[data-vertical="packaging"] .job-apply {
+  position: relative;
+  z-index: 1;
   font-size: 13px;
   font-weight: 500;
   color: var(--teal);
@@ -1593,7 +1603,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-stat-value,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-value,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-unit,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts-title,
-html[data-vertical="packaging"][data-board-skin="kraft"] .job-card h2 a,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-card-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-pick-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-brand {
   color: #3d2b18;
@@ -1735,6 +1745,8 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card-pinne
 }
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card:hover .job-related-title,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-card:hover .job-card-title,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-card:focus-within .job-card-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-link,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-all,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-sponsor-strip a,
