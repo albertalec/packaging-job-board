@@ -4,6 +4,10 @@ import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
 import { NICHE_LABELS } from "@/lib/niches";
 import { isRemote } from "@/lib/remote";
+import {
+  sortJobsWithSponsors,
+  type BoardSortMode,
+} from "@/lib/job-sort";
 import { jobState, US_STATES } from "@/lib/states";
 import { JobCard } from "./JobCard";
 
@@ -11,6 +15,11 @@ const NICHES = [
   { id: "", label: "All niches" },
   ...Object.entries(NICHE_LABELS).map(([id, label]) => ({ id, label })),
 ] as const;
+
+const SORT_OPTIONS: { id: BoardSortMode; label: string }[] = [
+  { id: "date", label: "Newest first" },
+  { id: "promise", label: "Best match" },
+];
 
 const PAGE_SIZE = 8;
 
@@ -30,13 +39,14 @@ export function JobBoard({
   const [niche, setNiche] = useState("");
   const [state, setState] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
+  const [sortMode, setSortMode] = useState<BoardSortMode>("date");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const hasFilters = Boolean(query.trim() || niche || state || remoteOnly);
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    return jobs.filter((job) => {
+    const matched = jobs.filter((job) => {
       if (niche && job.niche !== niche) return false;
       if (state && jobState(job) !== state) return false;
       if (remoteOnly && !job.remote && !isRemote(job.location, job.description)) {
@@ -47,7 +57,8 @@ export function JobBoard({
         .toLowerCase()
         .includes(needle);
     });
-  }, [jobs, query, niche, state, remoteOnly]);
+    return sortJobsWithSponsors(matched, sponsoredSet, Date.now(), sortMode);
+  }, [jobs, query, niche, state, remoteOnly, sponsoredSet, sortMode]);
 
   const visible = filtered.slice(0, visibleCount);
   const hiddenCount = filtered.length - visible.length;
@@ -67,6 +78,11 @@ export function JobBoard({
 
   function toggleRemote() {
     setRemoteOnly((prev) => !prev);
+    setVisibleCount(PAGE_SIZE);
+  }
+
+  function selectSort(next: BoardSortMode) {
+    setSortMode(next);
     setVisibleCount(PAGE_SIZE);
   }
 
@@ -142,7 +158,19 @@ export function JobBoard({
 
       <div className="board-list-head">
         <p>{filtered.length} live roles</p>
-        <p>Newest first</p>
+        <label className="board-sort">
+          <span className="sr-only">Sort jobs</span>
+          <select
+            value={sortMode}
+            onChange={(event) => selectSort(event.target.value as BoardSortMode)}
+          >
+            {SORT_OPTIONS.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       {filtered.length === 0 ? (

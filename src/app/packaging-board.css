@@ -455,6 +455,31 @@ html[data-vertical="packaging"] .board-list-head p {
   margin: 0;
 }
 
+html[data-vertical="packaging"] .board-sort {
+  display: block;
+  margin: 0;
+}
+
+html[data-vertical="packaging"] .board-sort select {
+  appearance: none;
+  margin: 0;
+  padding: 0 1.1em 0 0;
+  border: 0;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%235a6570' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E")
+    right center / 8px 5px no-repeat;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+html[data-vertical="packaging"] .board-sort select:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
 /* Job cards */
 html[data-vertical="packaging"] .job-list {
   gap: 10px;

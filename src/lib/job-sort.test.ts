@@ -4,7 +4,7 @@ import type { NormalizedJob } from "../../ingest/types.ts";
 import {
   compareJobsByRecency,
   sortJobsWithSponsors,
-} from "./sponsorships.ts";
+} from "./job-sort.ts";
 
 function job(
   overrides: Partial<NormalizedJob> & Pick<NormalizedJob, "id" | "title" | "postedAt">,
@@ -81,7 +81,7 @@ describe("sortJobsWithSponsors", () => {
     );
   });
 
-  it("does not prefer core packaging titles over newer postings", () => {
+  it("does not prefer core packaging titles over newer postings by default", () => {
     const engineerOld = job({
       id: "eng",
       title: "Packaging Engineer",
@@ -97,9 +97,45 @@ describe("sortJobsWithSponsors", () => {
       [engineerOld, managerNew],
       new Set(),
       now,
+      "date",
     );
 
     assert.equal(sorted[0].id, "mgr");
     assert.equal(sorted[1].id, "eng");
+  });
+
+  it("can sort by promise rank with pinned still first", () => {
+    const pinnedOld = job({
+      id: "pinned",
+      title: "Pinned sales role",
+      postedAt: "Posted 30 Days Ago",
+    });
+    const engineerOld = job({
+      id: "eng",
+      title: "Packaging Engineer",
+      postedAt: "Posted 14 Days Ago",
+    });
+    const managerNew = job({
+      id: "mgr",
+      title: "Packaging Manager",
+      postedAt: "Posted 1 Days Ago",
+    });
+    const salesNew = job({
+      id: "sales",
+      title: "Account Manager - Healthcare Packaging",
+      postedAt: "Posted Yesterday",
+    });
+
+    const sorted = sortJobsWithSponsors(
+      [salesNew, managerNew, pinnedOld, engineerOld],
+      new Set(["pinned"]),
+      now,
+      "promise",
+    );
+
+    assert.deepEqual(
+      sorted.map((item) => item.id),
+      ["pinned", "eng", "mgr", "sales"],
+    );
   });
 });
