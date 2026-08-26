@@ -139,6 +139,9 @@ test("branded welcome email uses Brand Guide v1 shell", () => {
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(message.html, /background:#0D1B2A/);
   assert.match(message.html, /border-radius:3px/);
+  assert.match(message.html, /email-mark-reverse-48\.png/);
+  assert.match(message.html, /email-roundel-navy-40\.png/);
+  assert.match(message.html, /alt="Niche Board"/);
   assert.match(message.html, /color:#0D7D77/);
   assert.ok(message.html.includes(packaging.theme.paper));
   assert.ok(message.html.includes(packaging.theme.mist!));
@@ -221,6 +224,7 @@ test("branded digest email renders flat-rail job cards", () => {
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
   assert.match(message.html, /border-left:3px solid #B4BCC5/);
+  assert.match(message.html, /email-mark-reverse-48\.png/);
   assert.doesNotMatch(message.html, /box-shadow:3px 3px 0/);
   assert.doesNotMatch(message.html, /Apply on career site/);
   assert.doesNotMatch(message.html, /careers\.example\.com/);
