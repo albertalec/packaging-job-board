@@ -38,6 +38,8 @@ These are **brand values**. Product proof pillars (Classification, Freshness, Ap
 | Teal | `#0D7D77` | Focus, links, active states, niche labels |
 | Amber | `#F5A623` | Energy, employer CTAs — use sparingly |
 | Slate | `#4B5563` | Secondary text, metadata |
+| Rail slate | `#B4BCC5` | Default listing rail (Standard) |
+| Kraft rail | `#96794C` | Default listing rail (Kraft skin) |
 | Mist | `#F1F3F5` | Backgrounds, card borders |
 | Paper | `#FFFFFF` | Main surfaces |
 | Ink Violet | `#6A5FA9` | Board-family coding (labels/tints only) |
@@ -85,6 +87,7 @@ React: `LogoMark` supports `default`, `reverse`, `mono-navy`, `mono-white`, `on-
 - Teal for links, active states, live indicators, niche labels
 - Navy for primary buttons and headings
 - Board-family tints (teal/violet/clay washes) for category chips only
+- **Listing rails** — every card has one 3px flat left rail. New = teal `#0D7D77`, pinned = amber `#F5A623`. All other listings share one quiet rail: `#B4BCC5` in Standard, `#96794C` in Kraft. Do not cycle family colours on default listings.
 
 **Packaging board** matches [`Packaging Board.dc.html`](Packaging%20Board.dc.html) — standard brand UI.
 

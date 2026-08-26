@@ -2,12 +2,14 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import type { ListingRail } from "@/components/JobCard";
 
 export type SponsorPick = {
   id: string;
   title: string;
   company: string;
   location: string;
+  rail: ListingRail;
 };
 
 export function SponsorPicker({ jobs }: { jobs: SponsorPick[] }) {
@@ -53,7 +55,10 @@ export function SponsorPicker({ jobs }: { jobs: SponsorPick[] }) {
         <ul className="board-sponsor-pick-list">
           {filtered.map((job) => (
             <li key={job.id}>
-              <Link className="board-sponsor-pick" href={`/sponsor/${job.id}`}>
+              <Link
+                className={`board-sponsor-pick${job.rail === "new" ? " is-new" : ""}${job.rail === "pinned" ? " is-pinned" : ""}`}
+                href={`/sponsor/${job.id}`}
+              >
                 <span className="board-sponsor-pick-copy">
                   <span className="board-sponsor-pick-company">{job.company}</span>
                   <span className="board-sponsor-pick-title">{job.title}</span>
