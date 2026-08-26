@@ -2,14 +2,6 @@ import { Resend } from "resend";
 import type { Niche } from "../../ingest/types";
 import { ALERTS_FROM_EMAIL as DEFAULT_ALERTS_FROM } from "@config/email";
 import type { VerticalTenant } from "@config/tenants";
-import {
-  LOGO_NAVY_PATH,
-  LOGO_ROUNDEL_NAVY_PATH,
-  LOGO_ROUNDEL_TEAL_PATH,
-  LOGO_ROUNDEL_VIEWBOX,
-  LOGO_TEAL_PATH,
-  LOGO_VIEWBOX,
-} from "@/components/logo-paths";
 import { formatNiche } from "./niches";
 
 export type DigestJob = {
@@ -31,6 +23,8 @@ export type MailResult = {
 };
 
 const NETWORK_TAGLINE = "The right jobs, not all the jobs.";
+const EMAIL_MARK_PNG = "/brand/png/email-mark-reverse-48.png";
+const EMAIL_ROUNDEL_PNG = "/brand/png/email-roundel-navy-40.png";
 
 function escapeHtml(value: string): string {
   return value
@@ -57,14 +51,19 @@ function emailPalette(theme: VerticalTenant["theme"]) {
   };
 }
 
-function logoMarkSvg(size: number, reverse = false): string {
-  const navy = reverse ? "#FFFFFF" : "#0D1B2A";
-  const teal = "#0D7D77";
-  return `<svg width="${size}" height="${size}" viewBox="${LOGO_VIEWBOX}" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="display:block;"><path d="${LOGO_NAVY_PATH}" fill="${navy}"/><path d="${LOGO_TEAL_PATH}" fill="${teal}"/></svg>`;
+function brandAssetUrl(origin: string, assetPath: string): string {
+  return `${origin.replace(/\/$/, "")}${assetPath}`;
 }
 
-function logoRoundelSvg(size: number): string {
-  return `<svg width="${size}" height="${size}" viewBox="${LOGO_ROUNDEL_VIEWBOX}" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="display:block;"><circle cx="400" cy="400" r="400" fill="#0D1B2A"/><path d="${LOGO_ROUNDEL_NAVY_PATH}" fill="#FFFFFF"/><path d="${LOGO_ROUNDEL_TEAL_PATH}" fill="#0D7D77"/></svg>`;
+/** Hosted PNG — inline SVG is stripped by Gmail, Outlook, and most clients. */
+function logoMarkImg(origin: string, size = 24): string {
+  const src = escapeHtml(brandAssetUrl(origin, EMAIL_MARK_PNG));
+  return `<img src="${src}" width="${size}" height="${size}" alt="Niche Board" style="display:block;border:0;outline:none;text-decoration:none;" />`;
+}
+
+function logoRoundelImg(origin: string, size = 20): string {
+  const src = escapeHtml(brandAssetUrl(origin, EMAIL_ROUNDEL_PNG));
+  return `<img src="${src}" width="${size}" height="${size}" alt="" style="display:block;border:0;outline:none;text-decoration:none;" />`;
 }
 
 /** Build Resend From header: display name from tenant config, same verified address. */
@@ -133,7 +132,7 @@ function brandShell(input: {
                   <td style="vertical-align:middle;">
                     <table role="presentation" cellpadding="0" cellspacing="0">
                       <tr>
-                        <td style="vertical-align:middle;padding-right:11px;">${logoMarkSvg(24, true)}</td>
+                        <td style="vertical-align:middle;padding-right:11px;">${logoMarkImg(origin, 24)}</td>
                         <td style="vertical-align:middle;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.2;font-weight:700;letter-spacing:-0.03em;">
                           <a href="${boardUrl}" style="text-decoration:none;color:#FFFFFF;">Niche Board</a>
                         </td>
@@ -165,7 +164,7 @@ function brandShell(input: {
             <td style="padding:0 28px 28px;border-top:1px solid ${palette.rule};">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:20px 0 16px;">
                 <tr>
-                  <td style="vertical-align:middle;padding-right:10px;">${logoRoundelSvg(20)}</td>
+                  <td style="vertical-align:middle;padding-right:10px;">${logoRoundelImg(origin, 20)}</td>
                   <td style="vertical-align:middle;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;color:${palette.navy};">
                     <span style="font-weight:600;">Niche Board</span><br />
                     <span style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:14px;color:${palette.slate};">${escapeHtml(NETWORK_TAGLINE)}</span>
