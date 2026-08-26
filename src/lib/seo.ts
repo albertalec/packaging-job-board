@@ -9,6 +9,9 @@ import {
 } from "@config/tenants";
 import { jobState } from "./states";
 import { requestHostAndProto } from "./tenant";
+import { toIsoDate } from "./posted-at";
+
+export { postedTimestamp, toIsoDate } from "./posted-at";
 
 export type PageMetaInput = {
   tenant: Tenant;
@@ -65,29 +68,6 @@ export function normalizePath(path: string): string {
   if (!path || path === "/") return "/";
   const withSlash = path.startsWith("/") ? path : `/${path}`;
   return withSlash.replace(/\/+$/, "") || "/";
-}
-
-/** Prefer ISO dates; approximate relative Workday strings for JSON-LD. */
-export function toIsoDate(
-  postedAt: string | null | undefined,
-  now = Date.now(),
-): string | null {
-  if (!postedAt) return null;
-  const trimmed = postedAt.trim();
-  const parsed = Date.parse(trimmed);
-  if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
-
-  if (/posted\s+today/i.test(trimmed)) return new Date(now).toISOString();
-
-  const days = trimmed.match(/posted\s+(\d+)\+?\s*days?\s+ago/i);
-  if (days) {
-    const n = Number.parseInt(days[1], 10);
-    if (!Number.isNaN(n)) {
-      return new Date(now - n * 86_400_000).toISOString();
-    }
-  }
-
-  return null;
 }
 
 export function parseSalary(salary: string | null | undefined): {
