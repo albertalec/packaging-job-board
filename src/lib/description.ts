@@ -166,6 +166,32 @@ export function parseJobDescription(input: string): DescriptionBlock[] {
   return mergeLists(blocks);
 }
 
+const EMPLOYER_HEADINGS = new Set([
+  "about us",
+  "about us (and our exciting future)",
+  "company overview",
+  "who we are",
+]);
+
+/** Pull company-overview copy out of the posting body for the employer panel. */
+export function splitEmployerAbout(blocks: DescriptionBlock[]): {
+  about: DescriptionBlock[];
+  rest: DescriptionBlock[];
+} {
+  const about: DescriptionBlock[] = [];
+  const rest: DescriptionBlock[] = [];
+  let inAbout = false;
+  for (const block of blocks) {
+    if (block.type === "heading") {
+      inAbout = EMPLOYER_HEADINGS.has(block.text.toLowerCase());
+      if (inAbout) continue;
+    }
+    if (inAbout) about.push(block);
+    else rest.push(block);
+  }
+  return { about, rest };
+}
+
 function chunkToBlocks(chunk: string): DescriptionBlock[] {
   const lines = chunk.split("\n").map((line) => line.trim()).filter(Boolean);
   const heading = matchHeadingPrefix(lines[0] ?? "");

@@ -5,6 +5,7 @@ import {
   htmlToPlainText,
   normalizeDescription,
   parseJobDescription,
+  splitEmployerAbout,
 } from "./description.ts";
 
 describe("decodeHtmlEntities", () => {
@@ -133,6 +134,29 @@ describe("htmlToPlainText", () => {
         { type: "paragraph", text: "Lead packaging R&D." },
         { type: "list", items: ["Flexible films", "Rigid plastics"] },
       ],
+    );
+  });
+});
+
+describe("splitEmployerAbout", () => {
+  it("moves company overview copy into the about panel and leaves the role body", () => {
+    const { about, rest } = splitEmployerAbout(
+      parseJobDescription(
+        "COMPANY OVERVIEW\n\nWe exist to make food the world loves.\n\nJOB OVERVIEW\n\nLead packaging R&D for Pet brands.",
+      ),
+    );
+    assert.equal(about.length, 1);
+    assert.equal(
+      about[0]?.type === "paragraph" && about[0].text,
+      "We exist to make food the world loves.",
+    );
+    assert.deepEqual(
+      rest.map((block) =>
+        block.type === "heading" || block.type === "paragraph"
+          ? block.text
+          : block.type,
+      ),
+      ["JOB OVERVIEW", "Lead packaging R&D for Pet brands."],
     );
   });
 });
