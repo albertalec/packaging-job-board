@@ -40,6 +40,11 @@ describe("toIsoDate", () => {
     assert.equal(iso, "2026-08-03T00:00:00.000Z");
   });
 
+  it("handles yesterday", () => {
+    const now = Date.parse("2026-08-20T00:00:00.000Z");
+    assert.equal(toIsoDate("Posted Yesterday", now), "2026-08-19T00:00:00.000Z");
+  });
+
   it("handles 30+ days ago", () => {
     const now = Date.parse("2026-08-20T00:00:00.000Z");
     const iso = toIsoDate("Posted 30+ Days Ago", now);

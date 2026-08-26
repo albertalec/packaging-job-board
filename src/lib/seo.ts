@@ -78,6 +78,9 @@ export function toIsoDate(
   if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
 
   if (/posted\s+today/i.test(trimmed)) return new Date(now).toISOString();
+  if (/posted\s+yesterday/i.test(trimmed)) {
+    return new Date(now - 86_400_000).toISOString();
+  }
 
   const days = trimmed.match(/posted\s+(\d+)\+?\s*days?\s+ago/i);
   if (days) {
@@ -88,6 +91,17 @@ export function toIsoDate(
   }
 
   return null;
+}
+
+/** Milliseconds since epoch for sorting; unknown/unparseable dates sort last. */
+export function postedTimestamp(
+  postedAt: string | null | undefined,
+  now = Date.now(),
+): number {
+  const iso = toIsoDate(postedAt, now);
+  if (!iso) return 0;
+  const time = Date.parse(iso);
+  return Number.isNaN(time) ? 0 : time;
 }
 
 export function parseSalary(salary: string | null | undefined): {
