@@ -317,6 +317,7 @@ Rules:
 - Subject: outcome-oriented, specialty-named, no clickbait.
 - Links: canonical vertical host (`https://packaging.nicheboardjobs.com/...`).
 - Unsubscribe: always one-click; muted styling, not alarmist.
+- **Inbox avatar (roundel next to sender name):** BIMI — see [`docs/bimi-setup.md`](../docs/bimi-setup.md). Requires enforced DMARC + hosted SVG + mark certificate (CMC/VMC). Check readiness: `npm run check:bimi`.
 
 ### 7.4 Employer outreach (manual or later sequences)
 Structure: who you reach → proof of board focus → pin mechanic → price → link to `/sponsor`.
