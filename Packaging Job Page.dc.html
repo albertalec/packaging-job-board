@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #0D7D77; text-decoration: none; }
+  a:hover { color: #0D1B2A; text-decoration: underline; }
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+
+  <div style="{{ headerStyle }}">
+    <div style="maxWidth: 1080px; margin: 0 auto; padding: 16px 40px; display: flex; alignItems: center; justifyContent: space-between; gap: 24px">
+      <div style="display: flex; alignItems: center; gap: 11px">
+        <svg viewBox="0 0 235 235" style="width: 25px; height: 25px; display: block; flexShrink: 0"><path d="M0 0H235V62H62V235H0Z" fill="{{ headerText }}"></path><path d="M235 235H120V180H180V120H235Z" fill="{{ accent }}"></path></svg>
+        <div style="fontSize: 17px; fontWeight: 700; letterSpacing: -0.03em; color: {{ headerText }}">Niche Board</div>
+        <div style="width: 1px; height: 16px; background: {{ headerRule }}"></div>
+        <div style="fontSize: 17px; fontWeight: 500; letterSpacing: -0.02em; color: {{ headerText }}">Packaging</div>
+      </div>
+      <div style="display: flex; alignItems: center; gap: 16px">
+        <div style="fontSize: 14px; fontWeight: 500; color: {{ headerLink }}; cursor: pointer">Job alerts</div>
+        <div style="{{ sponsorCtaStyle }}">Sponsor a job</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="maxWidth: 1080px; margin: 0 auto; padding: 0 40px 72px">
+
+    <div style="padding: 22px 0 0; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.08em; color: {{ meta }}">
+      <span style="color: {{ accent }}; cursor: pointer">All roles</span> / General Mills
+    </div>
+
+    <div style="padding: 24px 0 30px; display: flex; alignItems: flex-start; justifyContent: space-between; gap: 44px">
+      <div style="display: flex; flexDirection: column; gap: 16px; maxWidth: 620px">
+        <div style="display: flex; alignItems: center; gap: 9px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.06em; color: {{ meta }}">General Mills</div>
+          <div style="{{ sectorTagStyle }}">Food / beverage</div>
+        </div>
+        <div style="fontSize: 40px; lineHeight: 1.1; fontWeight: 600; letterSpacing: -0.03em; color: {{ heading }}; textWrap: pretty">Associate R&amp;D Principal Packaging Engineer — E-Commerce Pet</div>
+        <div style="{{ factRowStyle }}">
+          <div style="display: flex; flexDirection: column; gap: 3px">
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">Salary</div>
+            <div style="fontSize: 15px; fontWeight: 600; letterSpacing: -0.015em; color: {{ heading }}">$110,800 – $166,300</div>
+          </div>
+          <div style="display: flex; flexDirection: column; gap: 3px">
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">Location</div>
+            <div style="fontSize: 15px; fontWeight: 600; letterSpacing: -0.015em; color: {{ heading }}">Minneapolis, MN</div>
+          </div>
+          <div style="display: flex; flexDirection: column; gap: 3px">
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">Experience</div>
+            <div style="fontSize: 15px; fontWeight: 600; letterSpacing: -0.015em; color: {{ heading }}">5+ years</div>
+          </div>
+          <div style="display: flex; flexDirection: column; gap: 3px">
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">Posted</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 15px; color: {{ heading }}">22d ago</div>
+          </div>
+        </div>
+        <div style="display: flex; alignItems: center; gap: 14px; flexWrap: wrap">
+          <div style="{{ applyBtnStyle }}">Apply on General Mills careers →</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="{{ contentGridStyle }}">
+      <div style="display: flex; flexDirection: column; gap: 30px; maxWidth: 620px">
+
+        <div style="display: flex; flexDirection: column; gap: 11px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">The role</div>
+          <div style="fontSize: 16px; lineHeight: 1.68; color: {{ body }}">Packaging R&amp;D accountability across General Mills' Pet brands, acting as the direct business interface for current plan delivery and growth strategy. The work spans a large raw-material COGS base, so it carries real cost-savings and innovation targets alongside the capability build.</div>
+          <div style="fontSize: 16px; lineHeight: 1.68; color: {{ body }}">You'd translate a packaging modelling framework to accelerate flexible formats across the portfolio, managing products through a complex manufacturing network, multiple temperature states and channels.</div>
+        </div>
+
+        <div style="display: flex; flexDirection: column; gap: 11px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">Key accountabilities</div>
+          <div style="display: flex; flexDirection: column; gap: 9px">
+            <sc-for list="{{ duties }}" as="d" hint-placeholder-count="6">
+              <div style="{{ bulletRowStyle }}">
+                <div style="{{ bulletDotStyle }}"></div>
+                <div style="fontSize: 15px; lineHeight: 1.6; color: {{ body }}">{{ d.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flexDirection: column; gap: 11px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">Qualifications</div>
+          <div style="display: flex; flexDirection: column; gap: 9px">
+            <sc-for list="{{ quals }}" as="q" hint-placeholder-count="7">
+              <div style="{{ bulletRowStyle }}">
+                <div style="{{ bulletDotStyle }}"></div>
+                <div style="fontSize: 15px; lineHeight: 1.6; color: {{ body }}">{{ q.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flexDirection: column; gap: 11px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">Additional considerations</div>
+          <div style="fontSize: 15px; lineHeight: 1.68; color: {{ body }}">Applicants must be currently authorised to work in the United States on a full-time basis; General Mills will not sponsor work visas for this position. The role is open to US relocation with support if the selected candidate meets organisational standards, but international relocation and remote assignments will not be considered. Applicants must meet a minimum 18-year age qualification.</div>
+        </div>
+
+        <div style="{{ employerPanelStyle }}">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ meta }}">About General Mills</div>
+          <div style="fontSize: 14px; lineHeight: 1.65; color: {{ body }}">"We exist to make food the world loves." Equal opportunity employer; accommodation requests handled through their online form. Full boilerplate, benefits detail and EOE statement live on the source listing.</div>
+          <div style="fontSize: 13px; fontWeight: 500; color: {{ accent }}; cursor: pointer">Read the full posting on General Mills careers →</div>
+        </div>
+
+      </div>
+
+      <div style="{{ asideStyle }}">
+        <div style="{{ relatedPanelStyle }}">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: {{ eyebrow }}">More on this board</div>
+          <div style="display: flex; flexDirection: column">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+              <div style="{{ r.style }}">
+                <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10.5px; letterSpacing: 0.06em; color: {{ meta }}">{{ r.company }}</div>
+                <div style="fontSize: 14px; fontWeight: 600; lineHeight: 1.35; letterSpacing: -0.01em; color: {{ heading }}">{{ r.title }}</div>
+                <div style="fontSize: 12.5px; color: {{ meta }}">{{ r.location }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="fontSize: 13px; fontWeight: 500; color: {{ accent }}; cursor: pointer">All 51 packaging roles →</div>
+        </div>
+
+        <div style="{{ alertPanelStyle }}">
+          <div style="display: flex; alignItems: center; gap: 10px">
+            <svg viewBox="0 0 800 800" style="width: 22px; height: 22px; display: block; flexShrink: 0"><circle cx="400" cy="400" r="400" fill="{{ heading }}"></circle><path d="M175 175H625V295H295V625H175Z" fill="{{ onDark }}"></path><path d="M625 625H400V505H505V400H625Z" fill="{{ accent }}"></path></svg>
+            <div style="fontSize: 15px; fontWeight: 600; color: {{ heading }}">Get roles like this</div>
+          </div>
+          <div style="fontSize: 13px; lineHeight: 1.55; color: {{ body }}">A short digest when new package-development jobs land. Nothing on a slow week.</div>
+          <div style="{{ inputStyle }}">you@work.com</div>
+          <div style="{{ alertBtnStyle }}">Get alerts</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="{{ sponsorStripStyle }}">
+      <div style="fontSize: 14px; lineHeight: 1.55; color: {{ meta }}; maxWidth: 560px">Hiring for a role like this? Pin your own listing to this board — $100 for thirty days.</div>
+      <div style="fontSize: 13px; fontWeight: 500; color: {{ accent }}; cursor: pointer; whiteSpace: nowrap">Sponsor a listing →</div>
+    </div>
+
+    <div style="{{ footerStyle }}">
+      <div style="display: flex; alignItems: center; gap: 11px">
+        <svg viewBox="0 0 235 235" style="width: 21px; height: 21px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="{{ heading }}"></path><path d="M235 235H120V180H180V120H235Z" fill="{{ accent }}"></path></svg>
+        <div style="fontSize: 14px; fontWeight: 600; color: {{ heading }}">Niche Board</div>
+        <div style="width: 1px; height: 15px; background: {{ rule }}"></div>
+        <div style="fontSize: 14px; fontWeight: 500; color: {{ accent }}">Packaging</div>
+      </div>
+      <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 15px; color: {{ body }}">The right jobs, not all the jobs.</div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1160,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  state = { kraft: false };
+
+  renderVals() {
+    const kraft = this.state.kraft;
+
+    const p = kraft ? {
+      page: 'repeating-linear-gradient(92deg, rgba(120,88,48,0.05) 0 1px, transparent 1px 3px), repeating-linear-gradient(2deg, rgba(120,88,48,0.035) 0 1px, transparent 1px 4px), #D9C3A0',
+      surface: 'rgba(61,43,24,0.06)', card: '#E8D7BB', header: '#3D2B18',
+      heading: '#3D2B18', body: '#6B5637', meta: '#7D6541',
+      rule: '#C3A87F', cardRule: '#BFA47B', rail: '#96794C',
+      accent: '#1F6F5C', eyebrow: '#8A6A33', amber: '#C4741F',
+      headerText: '#F0E4CE', headerLink: 'rgba(240,228,206,0.8)', headerRule: 'rgba(240,228,206,0.32)',
+      onDark: '#F0E4CE', field: '#FBF5EA', fieldRule: '#A88D62', fieldText: '#5A472C',
+      tagBg: 'rgba(31,111,92,0.14)', tagFg: '#1A5A4B', dash: 'dashed'
+    } : {
+      page: '#FFFFFF',
+      surface: '#F1F3F5', card: '#FFFFFF', header: '#0D1B2A',
+      heading: '#0D1B2A', body: '#4B5563', meta: '#4B5563',
+      rule: '#E7EAEE', cardRule: '#DDE1E6', rail: '#B4BCC5',
+      accent: '#0D7D77', eyebrow: '#0D7D77', amber: '#F5A623',
+      headerText: '#FFFFFF', headerLink: 'rgba(255,255,255,0.78)', headerRule: 'rgba(255,255,255,0.3)',
+      onDark: '#FFFFFF', field: '#FFFFFF', fieldRule: '#9AA3AD', fieldText: '#3A424D',
+      tagBg: '#E6F1EF', tagFg: '#0D7D77', dash: 'solid'
+    };
+
+    const duties = [
+      'Develop a flexible technology framework through new digital ways of working across the entire Pet portfolio.',
+      'Act as a mentor to a high-performing team of packaging developers with diverse expertise across key materials, brands and technical areas.',
+      'Support and activate a packaging strategy to unlock fewer and bigger end-to-end cost savings initiatives.',
+      'Drive key business initiatives for growth across a variety of formats and sectors, including e-commerce partnerships and non-traditional bag formats.',
+      'Steer the activation of functional and business strategies, tapping into subject matter experts, external partners and brand remarkability tools.',
+      'Advance a circular future through collaboration with central technology resources on new packaging material technologies.'
+    ].map(text => ({ text }));
+
+    const quals = [
+      "Bachelor's degree in Packaging Engineering or another related field.",
+      '5 years of packaging experience in CPG packaging or another relevant industry, with 3+ years working on e-commerce packaging.',
+      'Technical acumen across a variety of packaging materials, including flexible films and thermal rigid plastics.',
+      'Knowledge of business processes and the ability to develop relationships with cross-functional partners.',
+      'Strong people, strategic planning and leadership skills, with effective communication for internal and external stakeholders.',
+      'Depth in designing, qualifying and commercialising dry pet food packaging across an array of size offerings and channels.',
+      'Comfort navigating ambiguity and organisational complexity, with experience mentoring other packaging engineers.'
+    ].map(text => ({ text }));
+
+    const relCard = `padding: 14px 16px; background: ${p.card}; border: 1px solid ${p.cardRule}; borderLeft: 3px solid ${p.rail}; display: flex; flexDirection: column; gap: 4px; cursor: pointer;`;
+    const relNext = relCard + ' borderTop: none;';
+    const related = [
+      { company: 'Tyson Foods', title: 'Senior Analyst, Packaging Systems', location: 'Springdale, AR', style: relCard },
+      { company: 'PepsiCo', title: 'Senior Industrial Designer — Structural Packaging', location: 'Plano, TX', style: relNext },
+      { company: 'Church & Dwight', title: 'Senior Packaging Engineer', location: 'Princeton, NJ', style: relNext }
+    ];
+
+    return {
+      duties, quals, related,
+      toggleKraft: () => this.setState(s => ({ kraft: !s.kraft })),
+      skinLabel: kraft ? 'Kraft' : 'Standard',
+      skinLabelColor: kraft ? '#6B5637' : 'rgba(255,255,255,0.7)',
+      skinToggleStyle: `display: flex; alignItems: center; gap: 9px; padding: 6px 12px 6px 8px; borderRadius: 999px; cursor: pointer; transition: background 150ms, border-color 150ms; background: ${kraft ? '#E8D7BB' : 'rgba(255,255,255,0.1)'}; border: 1px solid ${kraft ? '#C3A87F' : 'rgba(255,255,255,0.22)'};`,
+      skinDotStyle: `width: 11px; height: 11px; borderRadius: 50%; background: ${p.amber};`,
+
+      pageStyle: `background: ${p.page}; minHeight: 100vh; fontFamily: Archivo, Helvetica, Arial, sans-serif;`,
+      headerStyle: `background: ${p.header};`,
+      headerText: p.headerText, headerRule: p.headerRule, headerLink: p.headerLink,
+      sponsorCtaStyle: `padding: 9px 15px; background: ${p.amber}; color: ${kraft ? '#FFF8ED' : '#0D1B2A'}; fontSize: 13px; fontWeight: 600; borderRadius: 3px; cursor: pointer; whiteSpace: nowrap;`,
+      heading: p.heading, body: p.body, meta: p.meta, eyebrow: p.eyebrow, accent: p.accent, rule: p.rule, onDark: p.onDark,
+
+      sectorTagStyle: `padding: 3px 8px; background: ${p.tagBg}; color: ${p.tagFg}; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9.5px; letterSpacing: 0.1em; textTransform: uppercase;`,
+      factRowStyle: `display: flex; flexWrap: wrap; gap: 14px 40px; padding: 16px 0; borderTop: 1px solid ${p.rule}; borderBottom: 1px solid ${p.rule};`,
+      applyBtnStyle: `padding: 13px 20px; background: ${p.heading}; color: ${p.onDark}; fontSize: 14px; fontWeight: 500; borderRadius: 3px; cursor: pointer;`,
+
+      contentGridStyle: `display: flex; alignItems: flex-start; gap: 44px; paddingTop: 30px; borderTop: 1px solid ${p.rule}; flexWrap: wrap;`,
+      bulletRowStyle: `display: flex; gap: 14px; alignItems: flex-start;`,
+      bulletDotStyle: `width: 5px; height: 5px; borderRadius: 50%; background: ${p.accent}; marginTop: 9px; flexShrink: 0;`,
+      employerPanelStyle: `padding: 20px 22px; background: ${p.card}; border: 1px solid ${p.cardRule}; borderLeft: 3px solid ${p.rail}; display: flex; flexDirection: column; gap: 10px;`,
+
+      asideStyle: `width: 300px; flexShrink: 0; display: flex; flexDirection: column; gap: 14px;`,
+      relatedPanelStyle: `display: flex; flexDirection: column; gap: 12px;`,
+      alertPanelStyle: `padding: 20px; background: ${p.surface}; display: flex; flexDirection: column; gap: 10px;`,
+      inputStyle: `padding: 11px 14px; background: ${p.field}; border: 1.5px solid ${p.fieldRule}; fontSize: 14px; color: ${p.fieldText}; cursor: pointer;`,
+      alertBtnStyle: `padding: 11px 18px; background: ${p.heading}; color: ${p.onDark}; fontSize: 14px; fontWeight: 500; borderRadius: 3px; textAlign: center; cursor: pointer;`,
+
+      sponsorStripStyle: `marginTop: 40px; padding: 18px 22px; background: ${p.surface}; display: flex; alignItems: center; justifyContent: space-between; gap: 24px; flexWrap: wrap;`,
+      footerStyle: `marginTop: 32px; paddingTop: 22px; borderTop: 1px solid ${p.rule}; display: flex; alignItems: center; justifyContent: space-between; gap: 24px; flexWrap: wrap;`
+    };
+  }
+}
+</script>
+</body>
+</html>

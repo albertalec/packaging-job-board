@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { getVertical } from "@config/tenants";
 import type { NormalizedJob } from "../../ingest/types";
+import { compareJobsByPromise } from "./sponsorships";
 
 export type JobsFile = {
   ingestedAt: string | null;
@@ -54,4 +55,24 @@ export function getJob(
   verticalId = "packaging",
 ): NormalizedJob | undefined {
   return loadJobs(verticalId).jobs.find((job) => job.id === id);
+}
+
+/** Same company first, then same niche, then homepage promise rank. */
+export function relatedJobs(
+  jobs: NormalizedJob[],
+  current: NormalizedJob,
+  limit = 3,
+): NormalizedJob[] {
+  const affinity = (job: NormalizedJob) =>
+    (job.company === current.company ? 2 : 0) +
+    (job.niche && job.niche === current.niche ? 1 : 0);
+
+  return jobs
+    .filter((job) => job.id !== current.id)
+    .sort((left, right) => {
+      const byAffinity = affinity(right) - affinity(left);
+      if (byAffinity !== 0) return byAffinity;
+      return compareJobsByPromise(left, right);
+    })
+    .slice(0, limit);
 }

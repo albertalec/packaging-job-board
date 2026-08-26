@@ -16,13 +16,17 @@ type Status = "idle" | "submitting" | "subscribed" | "already_active" | "error";
 export function JobAlertsSignup({
   title,
   lede,
+  compact = false,
+  defaultNiche = "",
 }: {
   title: string;
   lede: string;
+  compact?: boolean;
+  defaultNiche?: string;
 }) {
   const tenant = useTenant();
   const [email, setEmail] = useState("");
-  const [niche, setNiche] = useState("");
+  const [niche, setNiche] = useState(defaultNiche);
   const [state, setState] = useState("");
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -77,9 +81,12 @@ export function JobAlertsSignup({
   }
 
   return (
-    <section className="board-alerts" id="alerts">
+    <section
+      className={compact ? "board-alerts job-alert-panel" : "board-alerts"}
+      id={compact ? "job-alerts" : "alerts"}
+    >
       <div className="board-alerts-head">
-        <LogoMark variant="avatar" size={26} />
+        <LogoMark variant="avatar" size={compact ? 22 : 26} />
         <h2 className="board-alerts-title">{title}</h2>
       </div>
       <p className="board-alerts-lede">{lede}</p>
@@ -111,35 +118,39 @@ export function JobAlertsSignup({
             disabled={status === "submitting"}
           />
         </label>
-        <label className="board-field">
-          <span className="sr-only">Niche filter</span>
-          <select
-            value={niche}
-            onChange={(event) => setNiche(event.target.value)}
-            disabled={status === "submitting"}
-          >
-            {NICHES.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="board-field">
-          <span className="sr-only">State filter</span>
-          <select
-            value={state}
-            onChange={(event) => setState(event.target.value)}
-            disabled={status === "submitting"}
-          >
-            <option value="">All states</option>
-            {US_STATES.map((item) => (
-              <option key={item.code} value={item.code}>
-                {item.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        {compact ? null : (
+          <>
+            <label className="board-field">
+              <span className="sr-only">Niche filter</span>
+              <select
+                value={niche}
+                onChange={(event) => setNiche(event.target.value)}
+                disabled={status === "submitting"}
+              >
+                {NICHES.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="board-field">
+              <span className="sr-only">State filter</span>
+              <select
+                value={state}
+                onChange={(event) => setState(event.target.value)}
+                disabled={status === "submitting"}
+              >
+                <option value="">All states</option>
+                {US_STATES.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </>
+        )}
         <label className="alerts-hp" aria-hidden="true">
           Website
           <input

@@ -5,7 +5,7 @@ import { formatNiche } from "@/lib/niches";
 
 export type ListingRail = "pinned" | "new" | "default";
 
-function postedLabel(postedAt: string | null): string | null {
+export function postedLabel(postedAt: string | null): string | null {
   if (!postedAt) return null;
   const time = Date.parse(postedAt);
   if (Number.isNaN(time)) {

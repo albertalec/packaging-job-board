@@ -89,7 +89,8 @@ React: `LogoMark` supports `default`, `reverse`, `mono-navy`, `mono-white`, `on-
 - Board-family tints (teal/violet/clay washes) for category chips only
 - **Listing rails** — every card has one 3px flat left rail. New = teal `#0D7D77`, pinned = amber `#F5A623`. All other listings share one quiet rail: `#B4BCC5` in Standard, `#96794C` in Kraft. Do not cycle family colours on default listings.
 
-**Packaging board** matches [`Packaging Board.dc.html`](Packaging%20Board.dc.html) — standard brand UI.
+**Packaging board** matches [`Packaging Board.dc.html`](Packaging%20Board.dc.html) — standard brand UI.  
+**Packaging job page** matches [`Packaging Job Page.dc.html`](Packaging%20Job%20Page.dc.html) — listing detail layout. Facts only when present (salary, location, posted). Apply once in the hero. Description + related/alerts two-column body. Default listing rail on the employer panel and related cards. Sponsor strip below, not a ghost button next to Apply.
 
 ---
 

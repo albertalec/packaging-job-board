@@ -16,12 +16,18 @@ function BlockView({ block }: { block: DescriptionBlock }) {
   return <p>{block.text}</p>;
 }
 
-export function JobDescription({ text }: { text: string }) {
-  const blocks = parseJobDescription(text);
-  if (blocks.length === 0) return null;
+export function JobDescription({
+  text,
+  blocks,
+}: {
+  text?: string;
+  blocks?: DescriptionBlock[];
+}) {
+  const resolved = blocks ?? parseJobDescription(text ?? "");
+  if (resolved.length === 0) return null;
   return (
     <div className="description">
-      {blocks.map((block, index) => (
+      {resolved.map((block, index) => (
         <BlockView key={`${block.type}-${index}`} block={block} />
       ))}
     </div>

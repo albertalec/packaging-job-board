@@ -5,6 +5,7 @@ html[data-vertical="packaging"] {
   --board-rule: #e7eaee;
   --board-dash: #c9cfd6;
   --job-rail: #b4bcc5;
+  --card-rule: #dde1e6;
   --field-border: #9aa3ad;
   --field-placeholder: #3a424d;
   --field-bg: #ffffff;
@@ -13,6 +14,7 @@ html[data-vertical="packaging"] {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] {
   --job-rail: #96794c;
+  --card-rule: #bfa47b;
   --field-border: #a88d62;
   --field-placeholder: #5a472c;
   --field-bg: #fbf5ea;
@@ -689,6 +691,414 @@ html[data-vertical="packaging"] .board-sponsor-panel .board-btn-amber {
   font-size: 14px;
 }
 
+/* Job page — Packaging Job Page.dc.html */
+html[data-vertical="packaging"] .job-page {
+  padding-bottom: 4.5rem;
+}
+
+html[data-vertical="packaging"] .job-crumb {
+  margin: 0;
+  padding: 22px 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-hero {
+  padding: 24px 0 30px;
+}
+
+html[data-vertical="packaging"] .job-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+}
+
+html[data-vertical="packaging"] .job-hero-byline {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+html[data-vertical="packaging"] .job-company {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-sector {
+  padding: 3px 8px;
+  background: #e6f1ef;
+  color: var(--teal);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html[data-vertical="packaging"] .job-page h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  max-width: 620px;
+}
+
+html[data-vertical="packaging"] .job-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--board-rule);
+  border-bottom: 1px solid var(--board-rule);
+}
+
+html[data-vertical="packaging"] .job-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+html[data-vertical="packaging"] .job-facts dt {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+}
+
+html[data-vertical="packaging"] .job-facts dd.is-posted {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+html[data-vertical="packaging"] .job-apply-btn {
+  align-self: flex-start;
+  padding: 13px 20px;
+  font-size: 14px;
+}
+
+html[data-vertical="packaging"] .job-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 44px;
+  padding-top: 30px;
+  border-top: 1px solid var(--board-rule);
+  flex-wrap: wrap;
+}
+
+html[data-vertical="packaging"] .job-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 620px;
+  flex: 1 1 420px;
+}
+
+html[data-vertical="packaging"] .job-page .description {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  max-width: none;
+  line-height: 1.68;
+}
+
+html[data-vertical="packaging"] .job-page .description h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-page .description h2:not(:first-child) {
+  margin-top: 19px;
+}
+
+html[data-vertical="packaging"] .job-page .description p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.68;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-page .description ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[data-vertical="packaging"] .job-page .description li {
+  position: relative;
+  margin: 0;
+  padding-left: 19px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-page .description li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-employer {
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid var(--card-rule);
+  border-left: 3px solid var(--job-rail);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+html[data-vertical="packaging"] .job-employer-kicker {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-employer-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-employer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+html[data-vertical="packaging"] .job-employer-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-employer-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-employer-link {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+html[data-vertical="packaging"] .job-aside {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+html[data-vertical="packaging"] .job-related {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+html[data-vertical="packaging"] .job-related-kicker {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-related-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+html[data-vertical="packaging"] .job-related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--card-rule);
+  border-left: 3px solid var(--job-rail);
+  text-decoration: none;
+}
+
+html[data-vertical="packaging"] .job-related-card.is-stacked {
+  border-top: none;
+}
+
+html[data-vertical="packaging"] .job-related-card:hover {
+  text-decoration: none;
+  border-color: var(--teal);
+  border-left-color: var(--job-rail);
+}
+
+html[data-vertical="packaging"] .job-related-card.is-stacked:hover {
+  border-top-color: transparent;
+}
+
+html[data-vertical="packaging"] .job-related-card-new {
+  border-left-color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-related-card-new:hover {
+  border-left-color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-related-card-pinned {
+  border-left-color: var(--amber);
+}
+
+html[data-vertical="packaging"] .job-related-card-pinned:hover {
+  border-left-color: var(--amber);
+}
+
+html[data-vertical="packaging"] .job-related-company {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-related-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+html[data-vertical="packaging"] .job-related-card:hover .job-related-title {
+  color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-related-meta {
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-related-all {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+html[data-vertical="packaging"] .job-alert-panel {
+  margin-top: 0;
+  padding: 20px;
+  gap: 10px;
+  border: none;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-head {
+  gap: 10px;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-title {
+  font-size: 15px;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-lede {
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: none;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-form {
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding-top: 0;
+  gap: 10px;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-email {
+  min-width: 0;
+  width: 100%;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-email input {
+  padding: 11px 14px;
+}
+
+html[data-vertical="packaging"] .job-alert-panel .board-alerts-submit {
+  width: 100%;
+  padding: 11px 18px;
+  font-size: 14px;
+}
+
+html[data-vertical="packaging"] .job-sponsor-strip {
+  margin-top: 40px;
+  padding: 18px 22px;
+  background: var(--mist);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+html[data-vertical="packaging"] .job-sponsor-strip p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--slate);
+  max-width: 560px;
+}
+
+html[data-vertical="packaging"] .job-sponsor-strip a {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 /* Footer */
 html[data-vertical="packaging"] footer.board-footer {
   border-top: none;
@@ -1218,6 +1628,100 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-board {
   color: #1f6f5c;
 }
 
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-page h1,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-facts dd,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-title,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board-alerts-title {
+  color: #3d2b18;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-crumb,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-company,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-facts dt,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-kicker,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-company,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-meta,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-sponsor-strip p {
+  color: #7d6541;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-page .description p,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-page .description li,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-body,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-list li,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board-alerts-lede {
+  color: #6b5637;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-page .description h2,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-kicker {
+  color: #8a6a33;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-page .description li::before,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-list li::before {
+  background: #1f6f5c;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-facts,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-layout {
+  border-color: #c3a87f;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-sector {
+  background: rgba(31, 111, 92, 0.14);
+  color: #1a5a4b;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card {
+  background: #e8d7bb;
+  border-color: #bfa47b;
+  border-left-color: var(--job-rail);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card-new {
+  border-left-color: var(--teal);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card-pinned {
+  border-left-color: var(--amber);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card:hover {
+  border-color: #1f6f5c;
+  border-left-color: var(--job-rail);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card-new:hover {
+  border-left-color: var(--teal);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card-pinned:hover {
+  border-left-color: var(--amber);
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-card:hover .job-related-title,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-employer-link,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-related-all,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-sponsor-strip a,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-crumb a {
+  color: #1f6f5c;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-sponsor-strip {
+  background: rgba(61, 43, 24, 0.06);
+  border: none;
+}
+
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-apply-btn,
+html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board-alerts-submit {
+  background: #3d2b18;
+  border-color: #3d2b18;
+  color: #f0e4ce;
+}
+
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-panel {
   background: #3d2b18;
 }
@@ -1284,5 +1788,18 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-panel {
   html[data-vertical="packaging"] .board-sponsor-pick {
     flex-direction: column;
     gap: 12px;
+  }
+
+  html[data-vertical="packaging"] .job-page h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  html[data-vertical="packaging"] .job-aside {
+    width: 100%;
+  }
+
+  html[data-vertical="packaging"] .job-main {
+    max-width: none;
+    flex: 1 1 100%;
   }
 }
