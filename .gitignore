@@ -11,3 +11,4 @@ Thumbs.db
 .vercel
 coverage/
 *.tsbuildinfo
+public/brand/bimi/*.pem
