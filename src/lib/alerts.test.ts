@@ -119,7 +119,7 @@ test("alert From uses tenant display name with the same email address", () => {
   );
 });
 
-test("branded welcome email uses tenant theme and mark", () => {
+test("branded welcome email uses Brand Guide v1 shell", () => {
   const message = buildWelcomeEmail({
     tenant: packaging,
     origin: "https://packaging.nicheboardjobs.com",
@@ -128,15 +128,20 @@ test("branded welcome email uses tenant theme and mark", () => {
   });
 
   assert.match(message.subject, /Packaging Jobs alerts/);
-  assert.match(message.html, /Source Serif 4/);
-  assert.match(message.html, /You’re on the list/);
+  assert.match(message.html, /Archivo/);
+  assert.match(message.html, /Newsreader/);
+  assert.match(message.html, /You.re on the list/);
   assert.match(message.html, /powered by Niche Board/);
-  assert.match(message.html, /packaging engineer and package-development/);
+  assert.match(message.html, /package-development roles appear/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Browse Packaging Jobs/);
-  assert.match(message.html, /apply from the listing when you’re ready/);
+  assert.match(message.html, /The right jobs, not all the jobs/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
+  assert.match(message.html, /background:#0D1B2A/);
+  assert.match(message.html, /border-radius:3px/);
+  assert.match(message.html, /color:#0D7D77/);
   assert.ok(message.html.includes(packaging.theme.paper));
+  assert.ok(message.html.includes(packaging.theme.mist!));
   assert.match(
     message.html,
     /href="https:\/\/packaging\.nicheboardjobs\.com\/"/,
@@ -145,6 +150,8 @@ test("branded welcome email uses tenant theme and mark", () => {
     message.html,
     /href="https:\/\/packaging\.nicheboardjobs\.com\/alerts\/unsubscribe\?token=abc"/,
   );
+  assert.doesNotMatch(message.html, /Source Serif 4/);
+  assert.doesNotMatch(message.html, /box-shadow:3px 3px 0/);
   assert.doesNotMatch(message.html, /Didn’t mean to subscribe/);
   assert.doesNotMatch(message.html, /Free job alerts/);
   assert.doesNotMatch(message.html, /Free alerts/);
@@ -152,11 +159,11 @@ test("branded welcome email uses tenant theme and mark", () => {
   assert.doesNotMatch(message.html, /Alerts from Packaging Jobs/);
   assert.match(message.html, /Short digests when new roles appear/);
   assert.match(message.html, /Unsubscribe/);
-  assert.match(message.html, /color:#5c4c3c/);
   assert.match(message.text, /powered by Niche Board/);
+  assert.match(message.text, /The right jobs, not all the jobs/);
 });
 
-test("branded confirm email uses tenant theme and mark", () => {
+test("branded confirm email uses Brand Guide v1 shell", () => {
   const message = buildConfirmEmail({
     tenant: packaging,
     origin: "https://packaging.nicheboardjobs.com",
@@ -166,12 +173,13 @@ test("branded confirm email uses tenant theme and mark", () => {
   });
 
   assert.match(message.subject, /Packaging Jobs/);
-  assert.match(message.html, /Source Serif 4/);
-  assert.match(message.html, /IBM Plex Sans/);
+  assert.match(message.html, /Archivo/);
+  assert.match(message.html, /IBM Plex Mono/);
   assert.ok(message.html.includes(packaging.theme.paper));
-  assert.ok(message.html.includes(packaging.theme.kraft));
-  assert.match(message.html, /color:#5c4c3c/);
-  assert.match(message.html, /Packaging/);
+  assert.ok(message.html.includes(packaging.theme.mist!));
+  assert.match(message.html, /color:#4B5563/);
+  assert.match(message.html, /Niche Board/);
+  assert.match(message.html, /Packaging<\/a>/);
   assert.match(message.html, /Confirm alerts/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
@@ -181,9 +189,10 @@ test("branded confirm email uses tenant theme and mark", () => {
   );
   assert.match(message.html, /Unsubscribe/);
   assert.match(message.text, /Unsubscribe/);
+  assert.doesNotMatch(message.html, /Source Serif 4/);
 });
 
-test("branded digest email renders job cards", () => {
+test("branded digest email renders flat-rail job cards", () => {
   const message = buildDigestEmail({
     tenant: packaging,
     origin: "https://packaging.nicheboardjobs.com",
@@ -206,12 +215,13 @@ test("branded digest email renders job cards", () => {
   assert.match(message.subject, /1 new role/);
   assert.match(message.html, /Senior Packaging Engineer/);
   assert.match(message.html, /General Mills/);
-  assert.match(message.html, /View role/);
+  assert.match(message.html, /View role →/);
   assert.match(message.html, /Browse Packaging Jobs/);
   assert.match(message.html, /New roles on Packaging Jobs/);
   assert.match(message.html, /Package development — not plant ops/);
   assert.match(message.html, /Packaging Jobs, powered by Niche Board/);
-  assert.match(message.html, /box-shadow:3px 3px 0/);
+  assert.match(message.html, /border-left:3px solid #B4BCC5/);
+  assert.doesNotMatch(message.html, /box-shadow:3px 3px 0/);
   assert.doesNotMatch(message.html, /Apply on career site/);
   assert.doesNotMatch(message.html, /careers\.example\.com/);
   assert.match(message.text, /Senior Packaging Engineer/);
