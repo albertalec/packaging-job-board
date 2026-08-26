@@ -30,6 +30,20 @@ node scripts/check-bimi-dns.mjs
 
 BIMI **requires** enforced DMARC. `p=none` will never show an avatar.
 
+### Option A — Vercel API (Cloud Agent / script)
+
+Add a [Vercel API token](https://vercel.com/account/tokens) with DNS access to your Cloud Agent environment as **`VERCEL_TOKEN`** (team slug defaults to `alba24`; override with `VERCEL_TEAM_ID` or `VERCEL_TEAM_SLUG` if needed).
+
+```bash
+# Preview changes
+node scripts/apply-bimi-dns-vercel.mjs
+
+# Apply DMARC + BIMI logo records (Steps 1 and 3)
+npm run apply:bimi-dns
+```
+
+### Option B — Vercel dashboard (manual)
+
 1. Open [Vercel](https://vercel.com) → **Domains** → **`nicheboardjobs.com`** → **DNS Records**
 2. Find the existing **`_dmarc`** TXT record
 3. Replace its value with:
@@ -73,7 +87,7 @@ Optional: validate at [BIMI Group SVG converter](https://bimigroup.org/bimi-gene
 
 ## Step 3 — Add BIMI DNS record (logo only)
 
-In **Vercel DNS** for `nicheboardjobs.com`:
+Use **`npm run apply:bimi-dns`** (see Step 1 Option A) or add manually in **Vercel DNS** for `nicheboardjobs.com`:
 
 | Type | Name | Value |
 | --- | --- | --- |
