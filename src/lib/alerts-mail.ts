@@ -2,6 +2,14 @@ import { Resend } from "resend";
 import type { Niche } from "../../ingest/types";
 import { ALERTS_FROM_EMAIL as DEFAULT_ALERTS_FROM } from "@config/email";
 import type { VerticalTenant } from "@config/tenants";
+import {
+  LOGO_NAVY_PATH,
+  LOGO_ROUNDEL_NAVY_PATH,
+  LOGO_ROUNDEL_TEAL_PATH,
+  LOGO_ROUNDEL_VIEWBOX,
+  LOGO_TEAL_PATH,
+  LOGO_VIEWBOX,
+} from "@/components/logo-paths";
 import { formatNiche } from "./niches";
 
 export type DigestJob = {
@@ -22,6 +30,8 @@ export type MailResult = {
   error?: string;
 };
 
+const NETWORK_TAGLINE = "The right jobs, not all the jobs.";
+
 function escapeHtml(value: string): string {
   return value
     .replaceAll("&", "&amp;")
@@ -32,6 +42,29 @@ function escapeHtml(value: string): string {
 
 function resendConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY?.trim());
+}
+
+/** Brand Guide v1 palette for HTML email (inline styles). */
+function emailPalette(theme: VerticalTenant["theme"]) {
+  return {
+    navy: theme.navy ?? "#0D1B2A",
+    teal: theme.teal ?? theme.accent ?? "#0D7D77",
+    slate: theme.slate ?? "#4B5563",
+    mist: theme.mist ?? "#F1F3F5",
+    paper: theme.paper ?? "#FFFFFF",
+    rule: "#E7EAEE",
+    rail: "#B4BCC5",
+  };
+}
+
+function logoMarkSvg(size: number, reverse = false): string {
+  const navy = reverse ? "#FFFFFF" : "#0D1B2A";
+  const teal = "#0D7D77";
+  return `<svg width="${size}" height="${size}" viewBox="${LOGO_VIEWBOX}" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="display:block;"><path d="${LOGO_NAVY_PATH}" fill="${navy}"/><path d="${LOGO_TEAL_PATH}" fill="${teal}"/></svg>`;
+}
+
+function logoRoundelSvg(size: number): string {
+  return `<svg width="${size}" height="${size}" viewBox="${LOGO_ROUNDEL_VIEWBOX}" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="display:block;"><circle cx="400" cy="400" r="400" fill="#0D1B2A"/><path d="${LOGO_ROUNDEL_NAVY_PATH}" fill="#FFFFFF"/><path d="${LOGO_ROUNDEL_TEAL_PATH}" fill="#0D7D77"/></svg>`;
 }
 
 /** Build Resend From header: display name from tenant config, same verified address. */
@@ -68,17 +101,14 @@ function brandShell(input: {
 }): { html: string; text: string } {
   const { tenant, origin, preheader, title, bodyHtml, footerNote, unsubscribeUrl } =
     input;
-  const paper = tenant.theme.paper;
-  const kraft = tenant.theme.kraft;
-  const ink = "#1d1712";
-  const rule = "#c9b79a";
-  const muted = "#5c4c3c";
-  const outer = "#d9cbb3";
+  const palette = emailPalette(tenant.theme);
   const boardUrl = escapeHtml(origin.replace(/\/$/, "") + "/");
   const unsubUrl = escapeHtml(unsubscribeUrl);
-  const mark2 = tenant.brand.markLine2
-    ? `<br />${escapeHtml(tenant.brand.markLine2)}`
-    : "";
+  const boardLabel =
+    tenant.brand.hubLabel?.trim() || tenant.brand.name.trim();
+  const networkLine = tenant.brand.networkCredit
+    ? `${tenant.brand.name}, ${tenant.brand.networkCredit}`
+    : tenant.brand.name;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -88,29 +118,35 @@ function brandShell(input: {
   <title>${escapeHtml(title)}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet" />
 </head>
-<body style="margin:0;padding:0;background:${outer};color:${ink};font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;">
+<body style="margin:0;padding:0;background:${palette.mist};color:${palette.navy};font-family:Archivo,Helvetica,Arial,sans-serif;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;">${escapeHtml(preheader)}</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${outer};padding:24px 12px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${palette.mist};padding:24px 12px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:${paper};border-left:1px solid ${rule};border-right:1px solid ${rule};">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:${palette.paper};border:1px solid ${palette.rule};">
           <tr>
-            <td style="padding:28px 28px 18px;border-bottom:3px solid ${ink};">
+            <td style="padding:16px 22px;background:${palette.navy};">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align:middle;">
                     <table role="presentation" cellpadding="0" cellspacing="0">
                       <tr>
-                        <td style="width:28px;height:28px;border:2px solid ${ink};box-shadow:4px 4px 0 ${kraft};"></td>
-                        <td style="padding-left:12px;font-family:'Source Serif 4',Georgia,serif;font-size:22px;line-height:1.1;font-weight:600;">
-                          <a href="${boardUrl}" style="text-decoration:none;color:${ink};">${escapeHtml(tenant.brand.markLine1)}${mark2}</a>
+                        <td style="vertical-align:middle;padding-right:11px;">${logoMarkSvg(24, true)}</td>
+                        <td style="vertical-align:middle;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.2;font-weight:700;letter-spacing:-0.03em;">
+                          <a href="${boardUrl}" style="text-decoration:none;color:#FFFFFF;">Niche Board</a>
+                        </td>
+                        <td style="vertical-align:middle;padding:0 10px;">
+                          <span style="display:inline-block;width:1px;height:16px;background:rgba(255,255,255,0.3);"></span>
+                        </td>
+                        <td style="vertical-align:middle;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.2;font-weight:500;letter-spacing:-0.02em;color:#FFFFFF;">
+                          <a href="${boardUrl}" style="text-decoration:none;color:#FFFFFF;">${escapeHtml(boardLabel)}</a>
                         </td>
                       </tr>
                     </table>
                   </td>
-                  <td align="right" style="font-size:12px;line-height:1.35;color:${muted};max-width:180px;">
+                  <td align="right" style="vertical-align:middle;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;line-height:1.4;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.66);max-width:180px;">
                     ${escapeHtml(tenant.copy.contrast)}
                   </td>
                 </tr>
@@ -118,29 +154,34 @@ function brandShell(input: {
             </td>
           </tr>
           <tr>
-            <td style="padding:28px;">
-              <h1 style="margin:0 0 16px;font-family:'Source Serif 4',Georgia,serif;font-size:28px;line-height:1.15;font-weight:600;color:${ink};">
+            <td style="padding:28px 28px 24px;">
+              <h1 style="margin:0 0 16px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em;color:${palette.navy};">
                 ${escapeHtml(title)}
               </h1>
               ${bodyHtml}
             </td>
           </tr>
           <tr>
-            <td style="padding:0 28px 28px;border-top:1px solid ${rule};">
-              <p style="margin:18px 0 8px;font-size:13px;line-height:1.5;color:${muted};">
+            <td style="padding:0 28px 28px;border-top:1px solid ${palette.rule};">
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:20px 0 16px;">
+                <tr>
+                  <td style="vertical-align:middle;padding-right:10px;">${logoRoundelSvg(20)}</td>
+                  <td style="vertical-align:middle;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;color:${palette.navy};">
+                    <span style="font-weight:600;">Niche Board</span><br />
+                    <span style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:14px;color:${palette.slate};">${escapeHtml(NETWORK_TAGLINE)}</span>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0 0 8px;font-size:13px;line-height:1.55;color:${palette.slate};">
                 ${escapeHtml(footerNote)}
               </p>
-              <p style="margin:0 0 8px;font-size:13px;line-height:1.5;color:${muted};">
-                ${escapeHtml(tenant.brand.name)}${
-                  tenant.brand.networkCredit
-                    ? `, ${escapeHtml(tenant.brand.networkCredit)}`
-                    : ""
-                }
+              <p style="margin:0 0 8px;font-size:13px;line-height:1.55;color:${palette.slate};">
+                ${escapeHtml(networkLine)}
               </p>
-              <p style="margin:0;font-size:13px;line-height:1.5;color:${muted};">
-                <a href="${unsubUrl}" style="color:${muted};">Unsubscribe</a>
+              <p style="margin:0;font-size:13px;line-height:1.55;color:${palette.slate};">
+                <a href="${unsubUrl}" style="color:${palette.slate};text-decoration:underline;">Unsubscribe</a>
                 ·
-                <a href="${boardUrl}" style="color:${ink};">${escapeHtml(tenant.brand.name)}</a>
+                <a href="${boardUrl}" style="color:${palette.teal};text-decoration:none;">${escapeHtml(tenant.brand.name)}</a>
               </p>
             </td>
           </tr>
@@ -157,9 +198,8 @@ function brandShell(input: {
     preheader,
     "",
     footerNote,
-    tenant.brand.networkCredit
-      ? `${tenant.brand.name}, ${tenant.brand.networkCredit}`
-      : tenant.brand.name,
+    networkLine,
+    NETWORK_TAGLINE,
     `Browse roles: ${origin.replace(/\/$/, "")}/`,
     `Unsubscribe: ${unsubscribeUrl}`,
   ].join("\n");
@@ -167,24 +207,25 @@ function brandShell(input: {
   return { html, text };
 }
 
-function ctaButton(href: string, label: string, ink: string, paper: string): string {
-  return `<a href="${escapeHtml(href)}" style="display:inline-block;margin:8px 0 4px;padding:10px 14px;background:${ink};color:${paper};text-decoration:none;font-size:14px;border:1px solid ${ink};">${escapeHtml(label)}</a>`;
+function ctaButton(
+  href: string,
+  label: string,
+  navy: string,
+  paper: string,
+): string {
+  return `<a href="${escapeHtml(href)}" style="display:inline-block;margin:16px 0 0;padding:10px 16px;background:${navy};color:${paper};text-decoration:none;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:14px;font-weight:500;border-radius:3px;">${escapeHtml(label)}</a>`;
 }
 
 function jobCardsHtml(
   jobs: DigestJob[],
   theme: VerticalTenant["theme"],
 ): string {
-  const ink = "#1d1712";
-  const kraft = theme.kraft;
-  const muted = "#5c4c3c";
-  const card = "#fffaf2";
+  const palette = emailPalette(theme);
 
   return jobs
     .map((job) => {
       const niche = formatNiche(job.niche);
       const meta = [
-        escapeHtml(job.company),
         escapeHtml(job.location),
         job.remote ? "Remote / hybrid" : null,
         niche ? escapeHtml(niche) : null,
@@ -192,16 +233,16 @@ function jobCardsHtml(
         .filter(Boolean)
         .join(" · ");
 
-      return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px;background:${card};border:1px solid ${ink};box-shadow:3px 3px 0 ${kraft};">
+      return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 12px;background:${palette.paper};border:1px solid ${palette.rule};border-left:3px solid ${palette.rail};">
   <tr>
     <td style="padding:0;">
       <a href="${escapeHtml(job.url)}" style="display:block;padding:14px 16px;color:inherit;text-decoration:none;">
-        <p style="margin:0;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:${muted};">${escapeHtml(job.company)}</p>
-        <h2 style="margin:4px 0 8px;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;font-weight:600;color:${ink};">
+        <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:${palette.slate};">${escapeHtml(job.company)}</p>
+        <h2 style="margin:4px 0 8px;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:18px;line-height:1.3;font-weight:600;letter-spacing:-0.015em;color:${palette.navy};">
           ${escapeHtml(job.title)}
         </h2>
-        <p style="margin:0 0 12px;font-size:13px;color:${muted};">${meta}</p>
-        <span style="display:inline-block;padding:8px 12px;background:${ink};color:${theme.paper};font-size:13px;border:1px solid ${ink};">View role</span>
+        <p style="margin:0 0 10px;font-size:14px;line-height:1.45;color:${palette.slate};">${meta}</p>
+        <span style="font-size:13px;font-weight:500;color:${palette.teal};">View role →</span>
       </a>
     </td>
   </tr>
@@ -242,7 +283,6 @@ async function sendMail(input: {
       html: input.html,
       text: input.text,
     };
-    // Only set reply-to when it shares a likely-verified apex with the from address.
     const from = payload.from;
     const reply = input.tenant.contactEmail;
     if (reply && from.includes("@") && reply.includes("@")) {
@@ -281,16 +321,16 @@ export function buildConfirmEmail(input: {
   confirmUrl: string;
   unsubscribeUrl: string;
 }): { subject: string; html: string; text: string } {
-  const ink = "#1d1712";
+  const palette = emailPalette(input.tenant.theme);
   const bodyHtml = `
-    <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
-      Confirm your alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>
+    <p style="margin:0 0 16px;font-size:16px;line-height:1.55;color:${palette.navy};max-width:42rem;">
+      Confirm your alert for <strong>${escapeHtml(input.tenant.copy.contrast)}</strong>.
       We’ll email you when matching roles appear on ${escapeHtml(input.tenant.brand.name)}.
     </p>
-    ${ctaButton(input.confirmUrl, "Confirm alerts", ink, input.tenant.theme.paper)}
-    <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#5c4c3c;">
+    ${ctaButton(input.confirmUrl, "Confirm alerts", palette.navy, palette.paper)}
+    <p style="margin:16px 0 0;font-size:13px;line-height:1.55;color:${palette.slate};">
       If you did not request this, ignore the message or
-      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:#5c4c3c;">unsubscribe</a>.
+      <a href="${escapeHtml(input.unsubscribeUrl)}" style="color:${palette.slate};text-decoration:underline;">unsubscribe</a>.
     </p>
   `;
   const shell = brandShell({
@@ -313,17 +353,17 @@ export function buildWelcomeEmail(input: {
   origin: string;
   unsubscribeUrl: string;
 }): { subject: string; html: string; text: string } {
-  const ink = "#1d1712";
+  const palette = emailPalette(input.tenant.theme);
   const boardUrl = `${input.origin.replace(/\/$/, "")}/`;
   const { brand, copy } = input.tenant;
   const bodyHtml = `
-    <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
+    <p style="margin:0 0 16px;font-size:16px;line-height:1.55;color:${palette.navy};max-width:42rem;">
       ${escapeHtml(copy.alertsWelcomeIntro)}
     </p>
-    <p style="margin:0 0 16px;font-size:16px;line-height:1.5;max-width:42rem;">
+    <p style="margin:0 0 16px;font-size:16px;line-height:1.55;color:${palette.navy};max-width:42rem;">
       ${escapeHtml(copy.alertsWelcomeBody)}
     </p>
-    ${ctaButton(boardUrl, `Browse ${brand.name}`, ink, input.tenant.theme.paper)}
+    ${ctaButton(boardUrl, `Browse ${brand.name}`, palette.navy, palette.paper)}
   `;
   const shell = brandShell({
     tenant: input.tenant,
@@ -351,13 +391,13 @@ export function buildDigestEmail(input: {
     count === 1
       ? `1 new role on ${input.tenant.brand.name}`
       : `${count} new roles on ${input.tenant.brand.name}`;
-  const ink = "#1d1712";
+  const palette = emailPalette(input.tenant.theme);
   const bodyHtml = `
-    <p style="margin:0 0 18px;font-size:16px;line-height:1.5;">
+    <p style="margin:0 0 18px;font-size:16px;line-height:1.55;color:${palette.navy};">
       ${escapeHtml(input.tenant.copy.alertsDigestIntro)}
     </p>
     ${jobCardsHtml(input.jobs, input.tenant.theme)}
-    ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, `Browse ${input.tenant.brand.name}`, ink, input.tenant.theme.paper)}
+    ${ctaButton(`${input.origin.replace(/\/$/, "")}/`, `Browse ${input.tenant.brand.name}`, palette.navy, palette.paper)}
   `;
   const textJobs = input.jobs
     .map(
