@@ -15,7 +15,8 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   const hub = tenant.kind === "hub";
   const onEmployers = pathname.startsWith("/employers");
   const boardLabel = tenant.brand.hubLabel ?? tenant.brand.markLine1;
-  const showSkinToggle = !hub && pathname === "/";
+  const showSkinToggle =
+    tenant.id === "packaging" && !hub && pathname === "/";
 
   return (
     <>

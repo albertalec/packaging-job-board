@@ -1,11 +1,12 @@
+import { disasterrecovery } from "./disasterrecovery";
 import { hub } from "./hub";
 import { packaging } from "./packaging";
 import type { Tenant, TenantEnv, VerticalTenant } from "./types";
 
 export type { Tenant, TenantEnv, VerticalTenant } from "./types";
-export { hub, packaging };
+export { disasterrecovery, hub, packaging };
 
-export const verticals: VerticalTenant[] = [packaging];
+export const verticals: VerticalTenant[] = [packaging, disasterrecovery];
 
 export const tenants: Tenant[] = [hub, ...verticals];
 
