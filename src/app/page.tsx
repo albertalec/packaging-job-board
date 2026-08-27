@@ -39,7 +39,7 @@ export default async function HomePage() {
 
   const { jobs, ingestedAt, total } = loadJobs(tenant.id);
   const sponsoredIds = await getActiveSponsoredJobIds(tenant.id);
-  const sortedJobs = sortJobsWithSponsors(jobs, sponsoredIds);
+  const sortedJobs = sortJobsWithSponsors(jobs, sponsoredIds, Date.now(), "date", tenant.id);
   const employersHiring = new Set(jobs.map((job) => job.company)).size;
   const sectors = countSectors(jobs);
   const ect = boardEctRating(total);

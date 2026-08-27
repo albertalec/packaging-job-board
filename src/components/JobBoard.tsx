@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
 import { parseSearchQuery, searchJobs } from "@/lib/job-search";
-import { NICHE_LABELS } from "@/lib/niches";
 import { isRemote } from "@/lib/remote";
+import { sectorFilterOptions } from "@/lib/sector-filters";
 import {
   compareJobsByPromise,
   compareJobsByRecency,
@@ -13,11 +13,7 @@ import {
 } from "@/lib/job-sort";
 import { jobState, US_STATES } from "@/lib/states";
 import { JobCard } from "./JobCard";
-
-const NICHES = [
-  { id: "", label: "All niches" },
-  ...Object.entries(NICHE_LABELS).map(([id, label]) => ({ id, label })),
-] as const;
+import { useTenant } from "./TenantProvider";
 
 const SORT_OPTIONS: { id: BoardSortMode; label: string }[] = [
   { id: "date", label: "Newest first" },
@@ -37,6 +33,12 @@ export function JobBoard({
   empty: string;
   emptyFiltered: string;
 }) {
+  const tenant = useTenant();
+  const sectors = useMemo(
+    () => sectorFilterOptions(tenant.sectorFilters),
+    [tenant.sectorFilters],
+  );
+  const verticalId = tenant.id;
   const sponsoredSet = useMemo(() => new Set(sponsoredIds), [sponsoredIds]);
   const [query, setQuery] = useState("");
   const [niche, setNiche] = useState("");
@@ -64,6 +66,7 @@ export function JobBoard({
         sponsoredSet,
         Date.now(),
         sortMode,
+        verticalId,
       );
       return sorted.map((job) => ({ job, score: 0, snippet: null }));
     }
@@ -73,10 +76,10 @@ export function JobBoard({
       if (leftPinned !== rightPinned) return rightPinned - leftPinned;
       if (right.score !== left.score) return right.score - left.score;
       return sortMode === "promise"
-        ? compareJobsByPromise(left.job, right.job)
+        ? compareJobsByPromise(left.job, right.job, Date.now(), verticalId)
         : compareJobsByRecency(left.job, right.job);
     });
-  }, [jobs, query, tokens.length, niche, state, remoteOnly, sponsoredSet, sortMode]);
+  }, [jobs, query, tokens.length, niche, state, remoteOnly, sponsoredSet, sortMode, verticalId]);
 
   const visible = hits.slice(0, visibleCount);
   const hiddenCount = hits.length - visible.length;
@@ -120,12 +123,12 @@ export function JobBoard({
         </label>
         <div className="board-search-controls">
           <label className="board-field">
-            <span className="sr-only">Niche</span>
+            <span className="sr-only">Sector</span>
             <select
               value={niche}
               onChange={(event) => selectNiche(event.target.value)}
             >
-              {NICHES.map((item) => (
+              {sectors.map((item) => (
                 <option key={item.id} value={item.id}>
                   {item.label}
                 </option>
@@ -161,7 +164,7 @@ export function JobBoard({
       </div>
 
       <div className="board-chip-row" role="group" aria-label="Filter by sector">
-        {NICHES.map((item) => (
+        {sectors.map((item) => (
           <button
             key={item.id || "all"}
             type="button"

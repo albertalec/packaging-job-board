@@ -25,13 +25,14 @@ jobs:
 
       - run: npm ci
       - run: npm run ingest -- --vertical=packaging
+      - run: npm run ingest -- --vertical=disasterrecovery
 
       - name: Commit updated listings
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/packaging/jobs.json
+          git add data/packaging/jobs.json data/disasterrecovery/jobs.json
           if git diff --staged --quiet; then
             echo "No listing changes"
             echo "changed=false" >> "$GITHUB_OUTPUT"
