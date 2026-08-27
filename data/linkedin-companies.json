@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "description": "LinkedIn company page URLs for ingest employers. followStatus: pending | followed | skipped",
+  "companies": {
+    "Abbott": {
+      "linkedinUrl": "https://www.linkedin.com/company/abbott-/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Amcor": {
+      "linkedinUrl": "https://www.linkedin.com/company/amcor/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Amazon": {
+      "linkedinUrl": "https://www.linkedin.com/company/amazon/",
+      "followStatus": "skipped",
+      "verified": true,
+      "notes": "Too broad — skip unless intentional"
+    },
+    "Aptar": {
+      "linkedinUrl": "https://www.linkedin.com/company/aptar/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Autoliv": {
+      "linkedinUrl": "https://www.linkedin.com/company/autoliv/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Ball Corporation": {
+      "linkedinUrl": "https://www.linkedin.com/company/ball-corporation/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "BD": {
+      "linkedinUrl": "https://www.linkedin.com/company/bdcompany/",
+      "followStatus": "pending",
+      "verified": true,
+      "notes": "Becton, Dickinson and Company"
+    },
+    "Berlin Packaging": {
+      "linkedinUrl": "https://www.linkedin.com/company/berlin-packaging/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Campbell's": {
+      "linkedinUrl": "https://www.linkedin.com/company/campbells/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Church & Dwight": {
+      "linkedinUrl": "https://www.linkedin.com/company/church-%26-dwight-co-/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Clorox": {
+      "linkedinUrl": "https://www.linkedin.com/company/the-clorox-company/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Conagra Brands": {
+      "linkedinUrl": "https://www.linkedin.com/company/conagra-brands/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "DuPont": {
+      "linkedinUrl": "https://www.linkedin.com/company/dupont/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Edwards Lifesciences": {
+      "linkedinUrl": "https://www.linkedin.com/company/edwards-lifesciences/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "General Mills": {
+      "linkedinUrl": "https://www.linkedin.com/company/general-mills/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "General Motors": {
+      "linkedinUrl": "https://www.linkedin.com/company/general-motors/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "J.M. Smucker": {
+      "linkedinUrl": "https://www.linkedin.com/company/the-j-m-smucker-company/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Johnson & Johnson": {
+      "linkedinUrl": "https://www.linkedin.com/company/johnson-%26-johnson/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Kenvue": {
+      "linkedinUrl": "https://www.linkedin.com/company/kenvue/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Kimberly-Clark": {
+      "linkedinUrl": "https://www.linkedin.com/company/kimberly-clark/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Magna": {
+      "linkedinUrl": "https://www.linkedin.com/company/magna-international/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Mars": {
+      "linkedinUrl": "https://www.linkedin.com/company/mars/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Menasha": {
+      "linkedinUrl": "https://www.linkedin.com/company/menasha-corporation/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Nestlé": {
+      "linkedinUrl": "https://www.linkedin.com/company/nestle-s-a-/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "PepsiCo": {
+      "linkedinUrl": "https://www.linkedin.com/company/pepsico/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Perrigo": {
+      "linkedinUrl": "https://www.linkedin.com/company/perrigo/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Procter & Gamble": {
+      "linkedinUrl": "https://www.linkedin.com/company/procter-and-gamble/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "SC Johnson": {
+      "linkedinUrl": "https://www.linkedin.com/company/sc-johnson/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Sealed Air": {
+      "linkedinUrl": "https://www.linkedin.com/company/sealed-air/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Silgan Containers": {
+      "linkedinUrl": "https://www.linkedin.com/company/silgan-containers/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Silgan Dispensing": {
+      "linkedinUrl": "https://www.linkedin.com/company/silgan-dispensing/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Sonoco": {
+      "linkedinUrl": "https://www.linkedin.com/company/sonoco/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Stryker": {
+      "linkedinUrl": "https://www.linkedin.com/company/stryker/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "The Coca-Cola Company": {
+      "linkedinUrl": "https://www.linkedin.com/company/the-coca-cola-company/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "The Hershey Company": {
+      "linkedinUrl": "https://www.linkedin.com/company/the-hershey-company/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Thermo Fisher Scientific": {
+      "linkedinUrl": "https://www.linkedin.com/company/thermo-fisher-scientific/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Tyson Foods": {
+      "linkedinUrl": "https://www.linkedin.com/company/tyson-foods/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "Unilever": {
+      "linkedinUrl": "https://www.linkedin.com/company/unilever/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "WK Kellogg Co": {
+      "linkedinUrl": "https://www.linkedin.com/company/wk-kellogg-co/",
+      "followStatus": "pending",
+      "verified": true
+    },
+    "3M": {
+      "linkedinUrl": "https://www.linkedin.com/company/3m/",
+      "followStatus": "pending",
+      "verified": true
+    }
+  }
+}
