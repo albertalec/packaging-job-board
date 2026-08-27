@@ -13,10 +13,6 @@ const UPCOMING = [
     label: "Supply chain",
     note: "Demand planning & S&OP — not warehouse ops.",
   },
-  {
-    label: "Resilience",
-    note: "BCM & disaster recovery — not generic IT.",
-  },
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
