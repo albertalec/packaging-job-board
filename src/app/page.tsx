@@ -103,6 +103,7 @@ export default async function HomePage() {
       />
 
       <BoardSponsorPanel
+        title={tenant.copy.sponsorPanelTitle}
         priceCents={tenant.sponsor.priceCents}
         durationDays={tenant.sponsor.durationDays}
       />

@@ -41,6 +41,7 @@ export const packaging: VerticalTenant = {
     empty:
       "No packaging engineer roles listed right now. We'll have more after the next daily update.",
     emptyFiltered: "No roles match those filters. Try widening them.",
+    sponsorPanelTitle: "Hiring a packaging engineer?",
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
       "Reach packaging engineers who browse this board. Pin a live career-site listing for 30 days — no separate posting workflow.",

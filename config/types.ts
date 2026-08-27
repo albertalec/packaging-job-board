@@ -44,6 +44,8 @@ export type VerticalCopy = {
   metaDescription: string;
   empty: string;
   emptyFiltered: string;
+  /** Homepage employer CTA panel title (e.g. "Hiring a packaging engineer?"). */
+  sponsorPanelTitle: string;
   sponsorHeadline: string;
   sponsorLede: string;
   kicker: string;
