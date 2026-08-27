@@ -23,10 +23,6 @@ const UPCOMING = [
     label: "Supply chain",
     note: "Demand planning and S&OP — not warehouse ops. Coming after packaging sponsor renewals.",
   },
-  {
-    label: "Resilience",
-    note: "BCM and disaster recovery — not generic IT. Phase 3.",
-  },
 ];
 
 export default async function NichesPage() {

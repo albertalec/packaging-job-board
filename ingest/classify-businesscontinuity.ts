@@ -15,13 +15,17 @@ const GENERIC_IT =
   /\b(help\s?desk|service desk|desktop support|field technician|field service|noc analyst|network engineer|systems administrator|sysadmin|database administrator|dba|software engineer|software developer|full stack|front end developer|backend developer|qa engineer|quality assurance engineer|it support|technical support representative|customer support)\b/i;
 
 const OFF_TARGET =
-  /\b(account manager|sales|business development|recruiter|talent acquisition|marketing manager|product manager|project manager|scrum master|agile coach|data analyst|business analyst)\b/i;
+  /\b(account manager|sales|business development|recruiter|talent acquisition|marketing manager|product manager|project manager|scrum master|agile coach|data analyst|business analyst|underwriter|claims (?:handler|adjuster)|catastrophe (?:analyst|model))\b/i;
+
+/** Product / SRE “resilience” noise — not BCM / DR. */
+const RESILIENCE_NOISE =
+  /\b(?:site reliability|\bsre\b|chaos engineering|product resilience|brand resilience|application resilience|platform resilience|service resilience|reliability engineering|customer resilienc[ey]|data scientist|resiliency intelligence|ai resilienc[ey]|software engineer[\w\s,/-]{0,40}resilienc|resilienc[\w\s,/-]{0,40}software engineer|data engineer[\w\s,()/-]{0,50}resilienc|resilienc[\w\s,()/-]{0,50}data engineer|cloud operations resilienc|product simplification[\w\s,&/-]{0,40}resilienc)/i;
 
 const CONTINUITY_SIGNAL =
-  /\b(business continuity|continuity of operations|coo\b|bcm\b|disaster recovery|\bdr\b|resilience|crisis management|emergency management|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|resilience engineer|resilience manager|resilience architect|dr architect|bcp\b|crisis response|operational resilience)\b/i;
+  /\b(business continuity|continuity of (?:operations|business)|cob\b|bcm\b|disaster recovery|\bdr\b|bc\/dr|bcdr|crisis management|emergency management|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|resilience engineer|resilience manager|resilience architect|dr architect|bcp\b|crisis response|operational resilienc[ey]|enterprise resilienc[ey]|global business resilienc[ey]|business(?:\s*(?:[&+/]|and)\s*\w+)?\s+resilienc[ey]|technology resilienc[ey]|organizational resilienc[ey]|operations resilienc[ey]|cyber resilienc[ey]|resiliency)\b/i;
 
 const CORE_ROLE =
-  /\b(business continuity|continuity of operations|disaster recovery|resilience|crisis management|emergency preparedness|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|bcm manager|bcm director|bcm analyst|bcm coordinator|resilience (?:engineer|manager|director|architect|lead|analyst|specialist)|dr (?:architect|engineer|manager|director|lead|specialist|analyst|coordinator)|crisis (?:manager|director|lead|specialist))\b/i;
+  /\b(business continuity|continuity of (?:operations|business)|disaster recovery|operational resilienc[ey]|enterprise resilienc[ey]|global business resilienc[ey]|business(?:\s*(?:[&+/]|and)\s*\w+)?\s+resilienc[ey]|technology resilienc[ey]|organizational resilienc[ey]|operations resilienc[ey]|cyber resilienc[ey]|crisis management|emergency (?:management|preparedness)|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|bcm (?:manager|director|analyst|coordinator|specialist|lead)|bc\/dr|bcdr|resilienc[ey] (?:engineer|manager|director|architect|lead|analyst|specialist|advisor|risk|governance|program)|dr (?:architect|engineer|manager|director|lead|specialist|analyst|coordinator)|crisis (?:manager|director|lead|specialist|response)|continuity of business)\b/i;
 
 export function classifyBusinessContinuityJob(input: {
   title: string;
@@ -34,6 +38,12 @@ export function classifyBusinessContinuityJob(input: {
   if (SOFTWARE_PACKAGING.test(title)) {
     return { keep: false, reason: "software packaging" };
   }
+  if (RESILIENCE_NOISE.test(title)) {
+    return { keep: false, reason: "product/SRE resilience noise" };
+  }
+  if (/\bunderwriter\b/i.test(title)) {
+    return { keep: false, reason: "insurance underwriting" };
+  }
   if (GENERIC_IT.test(title) && !CONTINUITY_SIGNAL.test(title)) {
     return { keep: false, reason: "generic IT title" };
   }
@@ -43,8 +53,32 @@ export function classifyBusinessContinuityJob(input: {
   if (CORE_ROLE.test(title)) {
     return { keep: true, reason: "BCM/DR role match" };
   }
-  if (CONTINUITY_SIGNAL.test(blob) && /\b(manager|director|lead|architect|engineer|analyst|specialist|coordinator|consultant|officer|head)\b/i.test(title)) {
+  const seniorIc =
+    /\b(manager|director|lead|architect|engineer|analyst|specialist|coordinator|consultant|officer|head|advisor|svp|vp|vice president|avp|assistant vice president|managing director|md\b)\b/i;
+  // Prefer title-primary continuity signal; description-only is harder to pass.
+  if (CONTINUITY_SIGNAL.test(title) && seniorIc.test(title)) {
+    return { keep: true, reason: "continuity signal in title" };
+  }
+  if (
+    CONTINUITY_SIGNAL.test(blob) &&
+    seniorIc.test(title) &&
+    /\b(continuity|disaster recovery|bcm|crisis|bc\/dr|bcdr|cob\b|resilienc)\b/i.test(
+      title,
+    )
+  ) {
     return { keep: true, reason: "continuity signal with senior IC/manager title" };
+  }
+  // Risk / control titles that own BCM programs (common in banks) when the
+  // description clearly states business continuity / DR / ops resilience.
+  if (
+    /\b(risk|continuity|resilienc|crisis|recovery|bcm|bcp)\b/i.test(title) &&
+    !/\b(operations control|trading|underwrit|actuarial|claims)\b/i.test(title) &&
+    seniorIc.test(title) &&
+    /\b(business continuity|disaster recovery|operational resilienc[ey]|continuity of business|BCM program|business continuity plan|\bBCP\b)\b/i.test(
+      input.description,
+    )
+  ) {
+    return { keep: true, reason: "risk title with BCM program in description" };
   }
   return { keep: false, reason: "not a BCM/DR role" };
 }
