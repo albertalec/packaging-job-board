@@ -15,6 +15,7 @@ import { ingestSuccessFactors } from "./sources/successfactors.ts";
 import { ingestTeamtailor } from "./sources/teamtailor.ts";
 import { ingestCws } from "./sources/cws.ts";
 import { ingestJibe } from "./sources/jibe.ts";
+import { ingestUltipro } from "./sources/ultipro.ts";
 import { ingestWorkday } from "./sources/workday.ts";
 
 export type SourceReport = {
@@ -66,6 +67,8 @@ async function ingestCompany(company: Company) {
       return ingestCws(company);
     case "jibe":
       return ingestJibe(company);
+    case "ultipro":
+      return ingestUltipro(company);
     default:
       throw new Error(`No connector for ${(company as { ats: string }).ats}`);
   }

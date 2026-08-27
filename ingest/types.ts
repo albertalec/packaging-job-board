@@ -20,7 +20,8 @@ export type Ats =
   | "teamtailor"
   | "oracle"
   | "cws"
-  | "jibe";
+  | "jibe"
+  | "ultipro";
 
 export type Company = {
   name: string;
