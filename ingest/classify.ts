@@ -138,9 +138,9 @@ export function isUsOrRemote(
     location,
   );
   const mentionsAbroad =
-    /\b(canada|ontario|quebec|alberta|manitoba|saskatchewan|united kingdom|\buk\b|england|scotland|wales|ireland|philippines|india|(?<!\bnew )mexico|germany|france|china|brazil|australia|japan|poland|hungary|romania|slovakia|austria|spain|italy|netherlands|sweden|singapore)\b/i.test(
+    /\b(canada|ontario|quebec|alberta|manitoba|saskatchewan|united kingdom|\buk\b|england|scotland|wales|ireland|philippines|india|(?<!\bnew )mexico|germany|france|china|brazil|australia|japan|poland|hungary|romania|slovakia|austria|spain|italy|netherlands|sweden|singapore|luxembourg|mississauga|toronto|vancouver|calgary|ottawa|montreal|taguig|chennai|budapest|warsaw|dubai|london|kuala lumpur|hong kong|belfast|edinburgh|manchester|dublin)\b/i.test(
       location,
-    );
+    ) || /,\s*(ON|QC|AB|MB|SK|NS|NB|PE|NL|YT|NT|NU)\b/.test(location);
   if (mentionsAbroad && !mentionsUs) return false;
   if (job.remote) return true;
   if (job.state) return true;

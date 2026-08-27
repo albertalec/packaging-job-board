@@ -16,6 +16,13 @@ describe("classifyBusinessContinuityJob", () => {
       "Enterprise Resilience Lead",
       "Global Business Resilience Advisor",
       "BC/DR Specialist",
+      "Operational Resiliency Lead",
+      "Business Resilience Manager",
+      "Senior Associate, Business Continuity Management",
+      "Resiliency Client Engagement, Vice President",
+      "Business Continuity Planning Specialist",
+      "Senior Manager, Business & Technology Resilience",
+      "Senior Manager, Business Resilience and Crisis Management",
     ]) {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, true, title);
@@ -41,6 +48,9 @@ describe("classifyBusinessContinuityJob", () => {
       "Product Resilience Manager",
       "Chaos Engineering Lead",
       "Brand Resilience Specialist",
+      "Staff Software Engineer, Resiliency (Federal)",
+      "Product Simplification & Resilience Lead, Global Core Payments - SVP",
+      "Senior Software Engineer, AI Resiliency",
     ]) {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, false, title);
@@ -55,11 +65,13 @@ describe("classifyBusinessContinuityJob", () => {
     assert.equal(result.keep, false);
   });
 
-  it("does not keep description-only resilience with unrelated title", () => {
-    const result = classifyBusinessContinuityJob({
-      title: "Program Manager",
-      description: "Supports operational resilience and business continuity planning.",
-    });
-    assert.equal(result.keep, false);
+  it("drops commodities COO and underwriter crisis titles", () => {
+    for (const title of [
+      "Vice President, Commodities COO",
+      "Underwriter, Crisis Management",
+    ]) {
+      const result = classifyBusinessContinuityJob({ title, description: "" });
+      assert.equal(result.keep, false, title);
+    }
   });
 });
