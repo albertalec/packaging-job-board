@@ -11,6 +11,7 @@
       --mist: #f1f3f5;
       --slate: #4b5563;
       --amber: #f5a623;
+      --violet: #6a5fa9;
     }
     * { box-sizing: border-box; }
     body {
@@ -83,6 +84,8 @@
       margin-left: 0.35rem;
     }
     .badge.live { background: #dbeafe; color: #1e40af; }
+    .badge.board-packaging { background: #d1fae5; color: #065f46; }
+    .badge.board-businesscontinuity { background: #ede9fe; color: #5b21b6; }
     .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
     .actions a, .actions button {
       font: inherit;
@@ -136,18 +139,28 @@
           <option value="skipped">Skipped</option>
         </select>
       </label>
+      <label>
+        Board
+        <select id="board-filter">
+          <option value="all">All boards</option>
+          <option value="packaging">Packaging</option>
+          <option value="businesscontinuity">Resilience</option>
+        </select>
+      </label>
       <button type="button" id="open-next-batch" class="primary">Open next batch (10)</button>
       <button type="button" id="reset-progress" class="ghost">Reset browser progress</button>
     </div>
     <ol id="list"></ol>
     <div class="hint">
-      <strong>Tip:</strong> Following shows company posts in your feed. For new package-development roles,
-      use <a href="https://packaging.nicheboardjobs.com">Packaging job alerts</a> — they are more precise than LinkedIn follows.
+      <strong>Tip:</strong> Following shows company posts in your feed. For new specialist roles,
+      use board job alerts —
+      <a href="https://packaging.nicheboardjobs.com">Packaging</a> ·
+      <a href="https://businesscontinuity.nicheboardjobs.com">Resilience</a>.
     </div>
   </main>
   <script>
-    const STORAGE_KEY = "nicheboard-linkedin-follow-v1";
-    const rows = [{"company":"Menasha","liveJobCount":7,"linkedinUrl":"https://www.linkedin.com/company/menasha-corporation/","followStatus":"pending","verified":true,"notes":""},{"company":"Thermo Fisher Scientific","liveJobCount":6,"linkedinUrl":"https://www.linkedin.com/company/thermo-fisher-scientific/","followStatus":"pending","verified":true,"notes":""},{"company":"Conagra Brands","liveJobCount":5,"linkedinUrl":"https://www.linkedin.com/company/conagra-brands/","followStatus":"pending","verified":true,"notes":""},{"company":"Clorox","liveJobCount":4,"linkedinUrl":"https://www.linkedin.com/company/the-clorox-company/","followStatus":"pending","verified":true,"notes":""},{"company":"Magna","liveJobCount":4,"linkedinUrl":"https://www.linkedin.com/company/magna-international/","followStatus":"pending","verified":true,"notes":""},{"company":"Autoliv","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/autoliv/","followStatus":"pending","verified":true,"notes":""},{"company":"General Mills","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/general-mills/","followStatus":"pending","verified":true,"notes":""},{"company":"PepsiCo","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/pepsico/","followStatus":"pending","verified":true,"notes":""},{"company":"BD","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/bdcompany/","followStatus":"pending","verified":true,"notes":"Becton, Dickinson and Company"},{"company":"Edwards Lifesciences","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/edwards-lifesciences/","followStatus":"pending","verified":true,"notes":""},{"company":"Abbott","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/abbott-/","followStatus":"pending","verified":true,"notes":""},{"company":"Campbell's","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/campbells/","followStatus":"pending","verified":true,"notes":""},{"company":"Church & Dwight","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/church-%26-dwight-co-/","followStatus":"pending","verified":true,"notes":""},{"company":"J.M. Smucker","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/the-j-m-smucker-company/","followStatus":"pending","verified":true,"notes":""},{"company":"Johnson & Johnson","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/johnson-%26-johnson/","followStatus":"pending","verified":true,"notes":""},{"company":"Mars","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/mars/","followStatus":"pending","verified":true,"notes":""},{"company":"Perrigo","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/perrigo/","followStatus":"pending","verified":true,"notes":""},{"company":"SC Johnson","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/sc-johnson/","followStatus":"pending","verified":true,"notes":""},{"company":"Silgan Containers","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/silgan-containers/","followStatus":"pending","verified":true,"notes":""},{"company":"Stryker","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/stryker/","followStatus":"pending","verified":true,"notes":""},{"company":"The Hershey Company","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/the-hershey-company/","followStatus":"pending","verified":true,"notes":""},{"company":"Tyson Foods","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/tyson-foods/","followStatus":"pending","verified":true,"notes":""},{"company":"WK Kellogg Co","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/wk-kellogg-co/","followStatus":"pending","verified":true,"notes":""}];
+    const STORAGE_KEY = "nicheboard-linkedin-follow-v2";
+    const rows = [{"rowKey":"packaging:Menasha","vertical":"packaging","boardLabel":"Packaging","company":"Menasha","liveJobCount":7,"linkedinUrl":"https://www.linkedin.com/company/menasha-corporation/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Thermo Fisher Scientific","vertical":"packaging","boardLabel":"Packaging","company":"Thermo Fisher Scientific","liveJobCount":6,"linkedinUrl":"https://www.linkedin.com/company/thermo-fisher-scientific/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Conagra Brands","vertical":"packaging","boardLabel":"Packaging","company":"Conagra Brands","liveJobCount":5,"linkedinUrl":"https://www.linkedin.com/company/conagra-brands/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Clorox","vertical":"packaging","boardLabel":"Packaging","company":"Clorox","liveJobCount":4,"linkedinUrl":"https://www.linkedin.com/company/the-clorox-company/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Magna","vertical":"packaging","boardLabel":"Packaging","company":"Magna","liveJobCount":4,"linkedinUrl":"https://www.linkedin.com/company/magna-international/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Capital One","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Capital One","liveJobCount":4,"linkedinUrl":"https://www.linkedin.com/company/capital-one/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Autoliv","vertical":"packaging","boardLabel":"Packaging","company":"Autoliv","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/autoliv/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:General Mills","vertical":"packaging","boardLabel":"Packaging","company":"General Mills","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/general-mills/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:PepsiCo","vertical":"packaging","boardLabel":"Packaging","company":"PepsiCo","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/pepsico/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Intermountain Health","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Intermountain Health","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/intermountain-health/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Waymo","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Waymo","liveJobCount":3,"linkedinUrl":"https://www.linkedin.com/company/waymo/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:BD","vertical":"packaging","boardLabel":"Packaging","company":"BD","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/bdcompany/","followStatus":"pending","verified":true,"notes":"Becton, Dickinson and Company"},{"rowKey":"packaging:Edwards Lifesciences","vertical":"packaging","boardLabel":"Packaging","company":"Edwards Lifesciences","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/edwards-lifesciences/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:American Electric Power","vertical":"businesscontinuity","boardLabel":"Resilience","company":"American Electric Power","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/american-electric-power/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Elevance Health","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Elevance Health","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/elevance-health/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:State Street","vertical":"businesscontinuity","boardLabel":"Resilience","company":"State Street","liveJobCount":2,"linkedinUrl":"https://www.linkedin.com/company/state-street/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Abbott","vertical":"packaging","boardLabel":"Packaging","company":"Abbott","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/abbott-/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Campbell's","vertical":"packaging","boardLabel":"Packaging","company":"Campbell's","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/campbells/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Church & Dwight","vertical":"packaging","boardLabel":"Packaging","company":"Church & Dwight","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/church-%26-dwight-co-/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:J.M. Smucker","vertical":"packaging","boardLabel":"Packaging","company":"J.M. Smucker","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/the-j-m-smucker-company/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Johnson & Johnson","vertical":"packaging","boardLabel":"Packaging","company":"Johnson & Johnson","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/johnson-%26-johnson/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Mars","vertical":"packaging","boardLabel":"Packaging","company":"Mars","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/mars/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Perrigo","vertical":"packaging","boardLabel":"Packaging","company":"Perrigo","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/perrigo/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:SC Johnson","vertical":"packaging","boardLabel":"Packaging","company":"SC Johnson","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/sc-johnson/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Silgan Containers","vertical":"packaging","boardLabel":"Packaging","company":"Silgan Containers","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/silgan-containers/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Stryker","vertical":"packaging","boardLabel":"Packaging","company":"Stryker","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/stryker/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:The Hershey Company","vertical":"packaging","boardLabel":"Packaging","company":"The Hershey Company","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/the-hershey-company/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:Tyson Foods","vertical":"packaging","boardLabel":"Packaging","company":"Tyson Foods","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/tyson-foods/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"packaging:WK Kellogg Co","vertical":"packaging","boardLabel":"Packaging","company":"WK Kellogg Co","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/wk-kellogg-co/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:AbbVie","vertical":"businesscontinuity","boardLabel":"Resilience","company":"AbbVie","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/abbvie/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Airbus","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Airbus","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/airbus/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:BMO","vertical":"businesscontinuity","boardLabel":"Resilience","company":"BMO","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/bmo/","followStatus":"pending","verified":true,"notes":"Bank of Montreal"},{"rowKey":"businesscontinuity:Cockroach Labs","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Cockroach Labs","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/cockroachdb/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Duke Energy","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Duke Energy","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/duke-energy-corporation/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Freddie Mac","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Freddie Mac","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/freddie-mac/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Horizon Blue Cross Blue Shield of New Jersey","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Horizon Blue Cross Blue Shield of New Jersey","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/horizon-bcbsnj/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Jamf","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Jamf","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/jamf/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:MSU Federal Credit Union","vertical":"businesscontinuity","boardLabel":"Resilience","company":"MSU Federal Credit Union","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/msu-federal-credit-union/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Pax8","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Pax8","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/pax8/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Roche","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Roche","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/roche/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:RTX","vertical":"businesscontinuity","boardLabel":"Resilience","company":"RTX","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/rtx/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Solventum","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Solventum","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/solventum/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:SpaceX","vertical":"businesscontinuity","boardLabel":"Resilience","company":"SpaceX","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/spacex/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Target","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Target","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/target/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:The Hartford","vertical":"businesscontinuity","boardLabel":"Resilience","company":"The Hartford","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/the-hartford/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Twilio","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Twilio","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/twilio/","followStatus":"pending","verified":true,"notes":""},{"rowKey":"businesscontinuity:Visions Federal Credit Union","vertical":"businesscontinuity","boardLabel":"Resilience","company":"Visions Federal Credit Union","liveJobCount":1,"linkedinUrl":"https://www.linkedin.com/company/visions-federal-credit-union/","followStatus":"pending","verified":true,"notes":""}];
     let progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
 
     function saveProgress() {
@@ -155,13 +168,20 @@
       renderStats();
     }
 
-    function statusFor(company) {
-      return progress[company] || rows.find(r => r.company === company)?.followStatus || "pending";
+    function statusFor(row) {
+      return progress[row.rowKey] || row.followStatus || "pending";
+    }
+
+    function visibleRows() {
+      const board = document.getElementById("board-filter").value;
+      if (board === "all") return rows;
+      return rows.filter(r => r.vertical === board);
     }
 
     function renderStats() {
-      const statuses = rows.map(r => statusFor(r.company));
-      document.getElementById("stat-total").textContent = rows.length + " employers";
+      const visible = visibleRows();
+      const statuses = visible.map(r => statusFor(r));
+      document.getElementById("stat-total").textContent = visible.length + " employers";
       document.getElementById("stat-pending").textContent =
         statuses.filter(s => s === "pending").length + " pending";
       document.getElementById("stat-done").textContent =
@@ -172,8 +192,8 @@
       const filter = document.getElementById("filter").value;
       const list = document.getElementById("list");
       list.innerHTML = "";
-      rows.forEach((row, i) => {
-        const status = statusFor(row.company);
+      visibleRows().forEach((row, i) => {
+        const status = statusFor(row);
         if (filter === "pending" && status !== "pending") return;
         if (filter === "done" && status !== "followed") return;
         if (filter === "skipped" && status !== "skipped") return;
@@ -190,6 +210,10 @@
         meta.className = "meta";
         const title = document.createElement("h2");
         title.textContent = row.company;
+        const boardBadge = document.createElement("span");
+        boardBadge.className = "badge board-" + row.vertical;
+        boardBadge.textContent = row.boardLabel;
+        title.appendChild(boardBadge);
         if (row.liveJobCount > 0) {
           const b = document.createElement("span");
           b.className = "badge live";
@@ -212,7 +236,6 @@
           open.rel = "noopener noreferrer";
           open.className = "primary";
           open.textContent = "Open LinkedIn";
-          open.dataset.company = row.company;
           actions.appendChild(open);
         }
         const done = document.createElement("button");
@@ -220,7 +243,7 @@
         done.className = "ghost";
         done.textContent = status === "followed" ? "Undo" : "Mark followed";
         done.addEventListener("click", () => {
-          progress[row.company] = status === "followed" ? "pending" : "followed";
+          progress[row.rowKey] = status === "followed" ? "pending" : "followed";
           saveProgress();
           renderList();
         });
@@ -230,7 +253,7 @@
         skip.className = "ghost";
         skip.textContent = status === "skipped" ? "Unskip" : "Skip";
         skip.addEventListener("click", () => {
-          progress[row.company] = status === "skipped" ? "pending" : "skipped";
+          progress[row.rowKey] = status === "skipped" ? "pending" : "skipped";
           saveProgress();
           renderList();
         });
@@ -241,9 +264,10 @@
       });
     }
 
-    document.getElementById("filter").addEventListener("change", renderList);
+    document.getElementById("filter").addEventListener("change", () => { renderStats(); renderList(); });
+    document.getElementById("board-filter").addEventListener("change", () => { renderStats(); renderList(); });
     document.getElementById("open-next-batch").addEventListener("click", () => {
-      const pending = rows.filter(r => statusFor(r.company) === "pending" && r.linkedinUrl);
+      const pending = visibleRows().filter(r => statusFor(r) === "pending" && r.linkedinUrl);
       pending.slice(0, 10).forEach(r => window.open(r.linkedinUrl, "_blank", "noopener,noreferrer"));
     });
     document.getElementById("reset-progress").addEventListener("click", () => {

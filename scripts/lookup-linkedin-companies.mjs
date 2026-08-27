@@ -2,38 +2,34 @@
 /**
  * Look up LinkedIn company page URLs via DuckDuckGo (does not scrape LinkedIn).
  *
- *   node scripts/lookup-linkedin-companies.mjs
- *   node scripts/lookup-linkedin-companies.mjs --company="General Mills"
- *   node scripts/lookup-linkedin-companies.mjs --tier=p0 --write
- *
- * Updates data/linkedin-companies.json for rows missing linkedinUrl.
+ *   node scripts/lookup-linkedin-companies.mjs --vertical=businesscontinuity --tier=p0 --write
+ *   node scripts/lookup-linkedin-companies.mjs --company="Capital One" --vertical=businesscontinuity --write
  */
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  VERTICALS,
+  loadLinkedInRegistry,
+  loadLiveCounts,
+  resolveVerticalsArg,
+} from "./linkedin-data.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const linkedinPath = path.join(root, "data/linkedin-companies.json");
-const jobsPath = path.join(root, "data/packaging/jobs.json");
 
 const args = process.argv.slice(2);
 const tier = args.find((a) => a.startsWith("--tier="))?.split("=")[1] ?? "p0";
+const verticalArg =
+  args.find((a) => a.startsWith("--vertical="))?.split("=")[1] ?? "all";
 const write = args.includes("--write");
 const oneCompany = args.find((a) => a.startsWith("--company="))?.split("=")[1];
-const delayMs = Number(args.find((a) => a.startsWith("--delay="))?.split("=")[1] ?? 1500);
+const delayMs = Number(
+  args.find((a) => a.startsWith("--delay="))?.split("=")[1] ?? 1500,
+);
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
-}
-
-function decodeDdgRedirect(href) {
-  if (!href) return null;
-  if (href.startsWith("//")) href = `https:${href}`;
-  if (href.includes("uddg=")) {
-    const u = new URL(href, "https://duckduckgo.com");
-    return decodeURIComponent(u.searchParams.get("uddg") ?? "");
-  }
-  return href;
 }
 
 function extractLinkedInCompanyUrl(html) {
@@ -72,63 +68,70 @@ async function searchLinkedInUrl(companyName) {
   return extractLinkedInCompanyUrl(html);
 }
 
-async function loadLiveEmployers() {
-  const jobs = JSON.parse(await readFile(jobsPath, "utf8"));
-  const counts = new Map();
-  for (const job of jobs.jobs) {
-    counts.set(job.company, (counts.get(job.company) ?? 0) + 1);
+async function targetsForVertical(registry, verticalId) {
+  const liveCounts = await loadLiveCounts(VERTICALS[verticalId].jobsPath);
+  const companies = registry.verticals[verticalId]?.companies ?? {};
+
+  if (oneCompany) return [{ verticalId, name: oneCompany }];
+
+  const names = new Set();
+  if (tier === "p0") {
+    for (const name of liveCounts.keys()) names.add(name);
+  } else {
+    for (const name of Object.keys(companies)) names.add(name);
   }
-  return counts;
+
+  return [...names].map((name) => ({ verticalId, name }));
 }
 
 async function main() {
-  const linkedin = JSON.parse(await readFile(linkedinPath, "utf8"));
-  const liveCounts = await loadLiveEmployers();
-
-  let targets = [];
-  if (oneCompany) {
-    targets = [oneCompany];
-  } else if (tier === "p0") {
-    targets = [...liveCounts.keys()].sort(
-      (a, b) => (liveCounts.get(b) ?? 0) - (liveCounts.get(a) ?? 0),
-    );
-  } else {
-    targets = Object.keys(linkedin.companies).sort();
-  }
-
+  const registry = await loadLinkedInRegistry(linkedinPath);
+  const verticalIds = resolveVerticalsArg(verticalArg);
   const results = [];
-  for (const name of targets) {
-    const existing = linkedin.companies[name];
-    if (existing?.linkedinUrl && existing.verified) {
-      results.push({ name, status: "cached", url: existing.linkedinUrl });
-      continue;
+
+  for (const verticalId of verticalIds) {
+    if (!VERTICALS[verticalId]) {
+      console.error(`Unknown vertical: ${verticalId}`);
+      process.exit(1);
     }
 
-    process.stdout.write(`Looking up ${name}… `);
-    try {
-      const url = await searchLinkedInUrl(name);
-      if (url) {
-        linkedin.companies[name] = {
-          linkedinUrl: url,
-          followStatus: existing?.followStatus ?? "pending",
-          verified: false,
-          notes: existing?.notes ?? "Auto-discovered via DuckDuckGo — verify before follow",
-        };
-        results.push({ name, status: "found", url });
-        console.log(url);
-      } else {
-        results.push({ name, status: "not_found", url: null });
-        console.log("not found");
+    const targets = await targetsForVertical(registry, verticalId);
+    for (const { name } of targets) {
+      const bucket = registry.verticals[verticalId].companies;
+      const existing = bucket[name];
+      if (existing?.linkedinUrl && existing.verified) {
+        results.push({ verticalId, name, status: "cached", url: existing.linkedinUrl });
+        continue;
       }
-    } catch (err) {
-      results.push({ name, status: "error", error: String(err) });
-      console.log(`error: ${err.message}`);
+
+      process.stdout.write(`[${verticalId}] Looking up ${name}… `);
+      try {
+        const url = await searchLinkedInUrl(name);
+        if (url) {
+          bucket[name] = {
+            linkedinUrl: url,
+            followStatus: existing?.followStatus ?? "pending",
+            verified: false,
+            notes:
+              existing?.notes ??
+              "Auto-discovered via DuckDuckGo — verify before follow",
+          };
+          results.push({ verticalId, name, status: "found", url });
+          console.log(url);
+        } else {
+          results.push({ verticalId, name, status: "not_found", url: null });
+          console.log("not found");
+        }
+      } catch (err) {
+        results.push({ verticalId, name, status: "error", error: String(err) });
+        console.log(`error: ${err.message}`);
+      }
+      await sleep(delayMs);
     }
-    await sleep(delayMs);
   }
 
   if (write) {
-    await writeFile(linkedinPath, `${JSON.stringify(linkedin, null, 2)}\n`);
+    await writeFile(linkedinPath, `${JSON.stringify(registry, null, 2)}\n`);
     console.log(`\nWrote ${linkedinPath}`);
   } else {
     console.log("\nDry run — pass --write to save discoveries.");

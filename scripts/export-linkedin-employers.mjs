@@ -3,23 +3,33 @@
  * Export ingest employers with LinkedIn URLs and generate a follow checklist.
  *
  *   node scripts/export-linkedin-employers.mjs
- *   node scripts/export-linkedin-employers.mjs --tier=p0
+ *   node scripts/export-linkedin-employers.mjs --vertical=packaging
+ *   node scripts/export-linkedin-employers.mjs --vertical=businesscontinuity
+ *   node scripts/export-linkedin-employers.mjs --vertical=all --tier=p0
  *
  * Outputs:
- *   data/linkedin-employers-packaging.csv
+ *   data/linkedin-employers.csv
  *   data/linkedin-follow-checklist.html
  */
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  VERTICALS,
+  companiesForVertical,
+  loadLinkedInRegistry,
+  loadLiveCounts,
+  resolveVerticalsArg,
+} from "./linkedin-data.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const linkedinPath = path.join(root, "data/linkedin-companies.json");
-const jobsPath = path.join(root, "data/packaging/jobs.json");
-const csvPath = path.join(root, "data/linkedin-employers-packaging.csv");
+const csvPath = path.join(root, "data/linkedin-employers.csv");
 const htmlPath = path.join(root, "data/linkedin-follow-checklist.html");
 
 const tier = process.argv.find((a) => a.startsWith("--tier="))?.split("=")[1] ?? "p0";
+const verticalArg =
+  process.argv.find((a) => a.startsWith("--vertical="))?.split("=")[1] ?? "all";
 
 function csvEscape(value) {
   const s = String(value ?? "");
@@ -27,24 +37,36 @@ function csvEscape(value) {
   return s;
 }
 
-function buildRows(liveCounts, linkedinData) {
+function buildRowsForVertical(verticalId, liveCounts, registry) {
+  const meta = VERTICALS[verticalId];
+  const companies = companiesForVertical(registry, verticalId);
   const rows = [];
-  for (const [name, meta] of Object.entries(linkedinData.companies)) {
+  const seen = new Set();
+
+  for (const [name, companyMeta] of Object.entries(companies)) {
     const liveJobCount = liveCounts.get(name) ?? 0;
     if (tier === "p0" && liveJobCount === 0) continue;
+    const rowKey = `${verticalId}:${name}`;
+    seen.add(name);
     rows.push({
+      rowKey,
+      vertical: verticalId,
+      boardLabel: registry.verticals[verticalId]?.label ?? meta.label,
       company: name,
       liveJobCount,
-      linkedinUrl: meta.linkedinUrl ?? "",
-      followStatus: meta.followStatus ?? "pending",
-      verified: meta.verified ?? false,
-      notes: meta.notes ?? "",
+      linkedinUrl: companyMeta.linkedinUrl ?? "",
+      followStatus: companyMeta.followStatus ?? "pending",
+      verified: companyMeta.verified ?? false,
+      notes: companyMeta.notes ?? "",
     });
   }
 
   for (const [name, count] of liveCounts) {
-    if (linkedinData.companies[name]) continue;
+    if (seen.has(name)) continue;
     rows.push({
+      rowKey: `${verticalId}:${name}`,
+      vertical: verticalId,
+      boardLabel: registry.verticals[verticalId]?.label ?? meta.label,
       company: name,
       liveJobCount: count,
       linkedinUrl: "",
@@ -54,7 +76,6 @@ function buildRows(liveCounts, linkedinData) {
     });
   }
 
-  rows.sort((a, b) => b.liveJobCount - a.liveJobCount || a.company.localeCompare(b.company));
   return rows;
 }
 
@@ -73,6 +94,7 @@ function renderHtml(rows) {
       --mist: #f1f3f5;
       --slate: #4b5563;
       --amber: #f5a623;
+      --violet: #6a5fa9;
     }
     * { box-sizing: border-box; }
     body {
@@ -145,6 +167,8 @@ function renderHtml(rows) {
       margin-left: 0.35rem;
     }
     .badge.live { background: #dbeafe; color: #1e40af; }
+    .badge.board-packaging { background: #d1fae5; color: #065f46; }
+    .badge.board-businesscontinuity { background: #ede9fe; color: #5b21b6; }
     .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
     .actions a, .actions button {
       font: inherit;
@@ -198,17 +222,27 @@ function renderHtml(rows) {
           <option value="skipped">Skipped</option>
         </select>
       </label>
+      <label>
+        Board
+        <select id="board-filter">
+          <option value="all">All boards</option>
+          <option value="packaging">Packaging</option>
+          <option value="businesscontinuity">Resilience</option>
+        </select>
+      </label>
       <button type="button" id="open-next-batch" class="primary">Open next batch (10)</button>
       <button type="button" id="reset-progress" class="ghost">Reset browser progress</button>
     </div>
     <ol id="list"></ol>
     <div class="hint">
-      <strong>Tip:</strong> Following shows company posts in your feed. For new package-development roles,
-      use <a href="https://packaging.nicheboardjobs.com">Packaging job alerts</a> — they are more precise than LinkedIn follows.
+      <strong>Tip:</strong> Following shows company posts in your feed. For new specialist roles,
+      use board job alerts —
+      <a href="https://packaging.nicheboardjobs.com">Packaging</a> ·
+      <a href="https://businesscontinuity.nicheboardjobs.com">Resilience</a>.
     </div>
   </main>
   <script>
-    const STORAGE_KEY = "nicheboard-linkedin-follow-v1";
+    const STORAGE_KEY = "nicheboard-linkedin-follow-v2";
     const rows = ${payload};
     let progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
 
@@ -217,13 +251,20 @@ function renderHtml(rows) {
       renderStats();
     }
 
-    function statusFor(company) {
-      return progress[company] || rows.find(r => r.company === company)?.followStatus || "pending";
+    function statusFor(row) {
+      return progress[row.rowKey] || row.followStatus || "pending";
+    }
+
+    function visibleRows() {
+      const board = document.getElementById("board-filter").value;
+      if (board === "all") return rows;
+      return rows.filter(r => r.vertical === board);
     }
 
     function renderStats() {
-      const statuses = rows.map(r => statusFor(r.company));
-      document.getElementById("stat-total").textContent = rows.length + " employers";
+      const visible = visibleRows();
+      const statuses = visible.map(r => statusFor(r));
+      document.getElementById("stat-total").textContent = visible.length + " employers";
       document.getElementById("stat-pending").textContent =
         statuses.filter(s => s === "pending").length + " pending";
       document.getElementById("stat-done").textContent =
@@ -234,8 +275,8 @@ function renderHtml(rows) {
       const filter = document.getElementById("filter").value;
       const list = document.getElementById("list");
       list.innerHTML = "";
-      rows.forEach((row, i) => {
-        const status = statusFor(row.company);
+      visibleRows().forEach((row, i) => {
+        const status = statusFor(row);
         if (filter === "pending" && status !== "pending") return;
         if (filter === "done" && status !== "followed") return;
         if (filter === "skipped" && status !== "skipped") return;
@@ -252,6 +293,10 @@ function renderHtml(rows) {
         meta.className = "meta";
         const title = document.createElement("h2");
         title.textContent = row.company;
+        const boardBadge = document.createElement("span");
+        boardBadge.className = "badge board-" + row.vertical;
+        boardBadge.textContent = row.boardLabel;
+        title.appendChild(boardBadge);
         if (row.liveJobCount > 0) {
           const b = document.createElement("span");
           b.className = "badge live";
@@ -274,7 +319,6 @@ function renderHtml(rows) {
           open.rel = "noopener noreferrer";
           open.className = "primary";
           open.textContent = "Open LinkedIn";
-          open.dataset.company = row.company;
           actions.appendChild(open);
         }
         const done = document.createElement("button");
@@ -282,7 +326,7 @@ function renderHtml(rows) {
         done.className = "ghost";
         done.textContent = status === "followed" ? "Undo" : "Mark followed";
         done.addEventListener("click", () => {
-          progress[row.company] = status === "followed" ? "pending" : "followed";
+          progress[row.rowKey] = status === "followed" ? "pending" : "followed";
           saveProgress();
           renderList();
         });
@@ -292,7 +336,7 @@ function renderHtml(rows) {
         skip.className = "ghost";
         skip.textContent = status === "skipped" ? "Unskip" : "Skip";
         skip.addEventListener("click", () => {
-          progress[row.company] = status === "skipped" ? "pending" : "skipped";
+          progress[row.rowKey] = status === "skipped" ? "pending" : "skipped";
           saveProgress();
           renderList();
         });
@@ -303,9 +347,10 @@ function renderHtml(rows) {
       });
     }
 
-    document.getElementById("filter").addEventListener("change", renderList);
+    document.getElementById("filter").addEventListener("change", () => { renderStats(); renderList(); });
+    document.getElementById("board-filter").addEventListener("change", () => { renderStats(); renderList(); });
     document.getElementById("open-next-batch").addEventListener("click", () => {
-      const pending = rows.filter(r => statusFor(r.company) === "pending" && r.linkedinUrl);
+      const pending = visibleRows().filter(r => statusFor(r) === "pending" && r.linkedinUrl);
       pending.slice(0, 10).forEach(r => window.open(r.linkedinUrl, "_blank", "noopener,noreferrer"));
     });
     document.getElementById("reset-progress").addEventListener("click", () => {
@@ -325,20 +370,34 @@ function renderHtml(rows) {
 }
 
 async function main() {
-  const linkedinData = JSON.parse(await readFile(linkedinPath, "utf8"));
-  const jobs = JSON.parse(await readFile(jobsPath, "utf8"));
-  const liveCounts = new Map();
-  for (const job of jobs.jobs) {
-    liveCounts.set(job.company, (liveCounts.get(job.company) ?? 0) + 1);
+  const registry = await loadLinkedInRegistry(linkedinPath);
+  const verticalIds = resolveVerticalsArg(verticalArg);
+  let rows = [];
+
+  for (const verticalId of verticalIds) {
+    if (!VERTICALS[verticalId]) {
+      console.error(`Unknown vertical: ${verticalId}`);
+      process.exit(1);
+    }
+    const liveCounts = await loadLiveCounts(VERTICALS[verticalId].jobsPath);
+    rows = rows.concat(buildRowsForVertical(verticalId, liveCounts, registry));
   }
 
-  const rows = buildRows(liveCounts, linkedinData);
+  rows.sort(
+    (a, b) =>
+      b.liveJobCount - a.liveJobCount ||
+      a.boardLabel.localeCompare(b.boardLabel) ||
+      a.company.localeCompare(b.company),
+  );
 
-  const header = "company,live_job_count,linkedin_url,follow_status,verified,notes";
+  const header =
+    "vertical,board,company,live_job_count,linkedin_url,follow_status,verified,notes";
   const csv = [
     header,
     ...rows.map((r) =>
       [
+        csvEscape(r.vertical),
+        csvEscape(r.boardLabel),
         csvEscape(r.company),
         r.liveJobCount,
         csvEscape(r.linkedinUrl),
@@ -352,11 +411,13 @@ async function main() {
   await writeFile(csvPath, `${csv}\n`);
   await writeFile(htmlPath, renderHtml(rows));
 
-  console.log(`Wrote ${csvPath} (${rows.length} rows, tier=${tier})`);
+  console.log(
+    `Wrote ${csvPath} (${rows.length} rows, vertical=${verticalArg}, tier=${tier})`,
+  );
   console.log(`Wrote ${htmlPath}`);
   console.log("\nOpen the checklist:");
-  console.log(`  xdg-open ${htmlPath}`);
-  console.log("  or: npx serve data  →  http://localhost:3000/linkedin-follow-checklist.html");
+  console.log(`  start data\\linkedin-follow-checklist.html   (Windows)`);
+  console.log(`  open data/linkedin-follow-checklist.html     (Mac)`);
 }
 
 main().catch((err) => {

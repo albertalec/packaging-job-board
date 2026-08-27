@@ -278,15 +278,19 @@ Follow employers on LinkedIn **manually** — automation is not available and vi
 | Asset | Path |
 | --- | --- |
 | LinkedIn URL registry | [`data/linkedin-companies.json`](data/linkedin-companies.json) |
-| Export CSV (live board employers) | [`data/linkedin-employers-packaging.csv`](data/linkedin-employers-packaging.csv) |
+| Export CSV (live board employers) | [`data/linkedin-employers.csv`](data/linkedin-employers.csv) |
 | Interactive follow checklist | [`data/linkedin-follow-checklist.html`](data/linkedin-follow-checklist.html) |
 
 ```bash
-# Regenerate CSV + checklist (P0 = employers with live jobs only)
+# Regenerate CSV + checklist — all live boards (Packaging + Resilience)
 npm run export:linkedin-employers
 
+# One board only
+npm run export:linkedin-employers -- --vertical=packaging
+npm run export:linkedin-employers -- --vertical=businesscontinuity
+
 # Discover missing URLs via DuckDuckGo (does not scrape LinkedIn)
-npm run lookup:linkedin-companies -- --tier=p0 --write
+npm run lookup:linkedin-companies -- --vertical=businesscontinuity --tier=p0 --write
 
 # Open checklist in browser
 xdg-open data/linkedin-follow-checklist.html
