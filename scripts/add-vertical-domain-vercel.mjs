@@ -8,6 +8,7 @@
  *
  * Usage:
  *   node scripts/add-vertical-domain-vercel.mjs                              # dry run
+ *   node scripts/add-vertical-domain-vercel.mjs --list                       # list project domains
  *   node scripts/add-vertical-domain-vercel.mjs --apply                      # add domain
  *   node scripts/add-vertical-domain-vercel.mjs --apply --domain foo.example.com
  *   node scripts/add-vertical-domain-vercel.mjs --apply --project my-project
@@ -24,6 +25,7 @@ const project =
     : "packaging-job-board";
 
 const apply = process.argv.includes("--apply");
+const listOnly = process.argv.includes("--list");
 
 function teamQuery() {
   const teamId = process.env.VERCEL_TEAM_ID;
@@ -78,6 +80,10 @@ async function api(path, options = {}) {
   return body;
 }
 
+async function getProject() {
+  return api(`/v9/projects/${encodeURIComponent(project)}`);
+}
+
 async function listProjectDomains() {
   const domains = [];
   let until;
@@ -105,6 +111,35 @@ async function addProjectDomain(name) {
 }
 
 async function main() {
+  if (listOnly) {
+    if (!authHeaders()) {
+      console.error("Missing VERCEL_TOKEN — required for --list");
+      process.exit(1);
+    }
+    const info = await getProject();
+    const domains = await listProjectDomains();
+    console.log(`Project: ${info.name ?? project}`);
+    console.log(`  id: ${info.id ?? "unknown"}`);
+    console.log(
+      `  repo: ${info.link?.type ?? "none"} ${info.link?.repo ?? info.link?.org ?? ""}`,
+    );
+    console.log(`  production: ${info.targets?.production?.alias?.[0] ?? "n/a"}`);
+    console.log(`\nDomains (${domains.length}):`);
+    for (const d of domains.sort((a, b) => a.name.localeCompare(b.name))) {
+      console.log(
+        `  ${d.verified ? "✓" : "○"} ${d.name}${d.gitBranch ? ` (${d.gitBranch})` : ""}`,
+      );
+    }
+    const want = domain;
+    const hit = domains.find((d) => d.name === want);
+    if (!hit) {
+      console.log(`\n✗ Missing ${want} — run: npm run add:vertical-domain`);
+      process.exit(1);
+    }
+    console.log(`\n✓ ${want} is connected to ${project}`);
+    return;
+  }
+
   console.log(
     `${apply ? "Applying" : "Dry run — pass --apply to write"} add ${domain} to Vercel project "${project}"\n`,
   );
