@@ -29,7 +29,7 @@ export function promiseRank(title: string): number {
 }
 
 /** BCM / DR titles for the Resilience board. */
-export function promiseRankDisasterRecovery(title: string): number {
+export function promiseRankBusinessContinuity(title: string): number {
   const t = title.toLowerCase();
   if (
     /\b(help\s?desk|service desk|desktop support|software engineer|network engineer|sysadmin|it support)\b/.test(
@@ -56,8 +56,8 @@ export function promiseRankDisasterRecovery(title: string): number {
 }
 
 export function promiseRankForVertical(title: string, verticalId: string): number {
-  if (verticalId === "disasterrecovery") {
-    return promiseRankDisasterRecovery(title);
+  if (verticalId === "businesscontinuity") {
+    return promiseRankBusinessContinuity(title);
   }
   return promiseRank(title);
 }

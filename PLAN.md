@@ -2,7 +2,7 @@
 
 A **multi-niche specialist job platform**: one codebase, one Stripe account,
 subdomain per vertical (e.g. `packaging.nicheboardjobs.com`,
-`disasterrecovery.nicheboardjobs.com`). Each vertical has its own ingest rules,
+`businesscontinuity.nicheboardjobs.com`). Each vertical has its own ingest rules,
 classifier, filters, theme, and sponsorship pool. Parent site
 (`nicheboardjobs.com`) is the employer hub and bundle-sales surface.
 
@@ -36,7 +36,7 @@ sponsor SKUs** — not on matching industry-board volume.
 | --- | --- | --- |
 | `nicheboardjobs.com` | Employers | Network story, bundle pricing, `/employers` |
 | `packaging.nicheboardjobs.com` | Candidates + sponsors | SEO, listings, checkout |
-| `disasterrecovery.nicheboardjobs.com` | Candidates + sponsors | Same pattern, phase 3 |
+| `businesscontinuity.nicheboardjobs.com` | Candidates + sponsors | Same pattern, phase 3 |
 | `supplychain.nicheboardjobs.com` | Candidates + sponsors | Same pattern, phase 2 |
 
 ### 1b. Vertical #1 — Packaging (live)
@@ -87,7 +87,7 @@ classified roles** before public launch of a new subdomain.
 | --- | --- | --- | --- | --- |
 | **1 (now)** | Packaging | `packaging.nicheboardjobs.com` | CPG brand-side package dev | $100 / 30d |
 | **2** | Supply chain / S&OP | `supplychain.nicheboardjobs.com` | Demand planning, S&OP — not warehouse | $125 / 30d |
-| **3** | Disaster recovery / BCM | `disasterrecovery.nicheboardjobs.com` | DR architect, BCM manager, resilience | $150–200 / 30d |
+| **3** | Business continuity / BCM | `businesscontinuity.nicheboardjobs.com` | DR architect, BCM manager, resilience | $150–200 / 30d |
 
 Scorecard for vertical #4+: classification moat, ATS coverage, ~30+ roles
 at launch, long-tail search demand, weak/stale incumbent, sponsor WTP,
@@ -635,7 +635,7 @@ style as-is, and it is an XSS surface.
 
 - [ ] **Supply chain vertical** — `supplychain.nicheboardjobs.com`; demand-planning
       / S&OP classifier; overlap CPG employer graph for bundle upsell
-- [ ] **Disaster recovery vertical** — `disasterrecovery.nicheboardjobs.com`; BCM /
+- [ ] **Business continuity vertical** — `businesscontinuity.nicheboardjobs.com`; BCM /
       DR / resilience classifier; finance + healthcare employer seed
 - [ ] Per-vertical: companies module, classifier, ingest Action job, GSC property,
       sponsor price, theme tint

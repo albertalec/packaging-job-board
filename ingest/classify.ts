@@ -2,18 +2,18 @@ import { createHash } from "node:crypto";
 import { htmlToPlainText } from "../src/lib/description.ts";
 import { isRemote } from "../src/lib/remote.ts";
 import { parseState } from "../src/lib/states.ts";
-import { toJob as toDisasterRecoveryJob } from "./classify-disasterrecovery.ts";
+import { toJob as toBusinessContinuityJob } from "./classify-businesscontinuity.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
 
-type IngestClassifier = "packaging" | "disasterrecovery";
+type IngestClassifier = "packaging" | "businesscontinuity";
 
 let activeClassifier: IngestClassifier = "packaging";
 
 export function setIngestClassifier(classifier: string) {
   activeClassifier =
-    classifier === "disasterrecovery" ? "disasterrecovery" : "packaging";
+    classifier === "businesscontinuity" ? "businesscontinuity" : "packaging";
 }
 
 const SEMICONDUCTOR =
@@ -172,8 +172,8 @@ export function toJob(
     salary?: string | null;
   },
 ): NormalizedJob | null {
-  if (activeClassifier === "disasterrecovery") {
-    return toDisasterRecoveryJob(company, input);
+  if (activeClassifier === "businesscontinuity") {
+    return toBusinessContinuityJob(company, input);
   }
   const verdict = classifyJob({
     title: input.title,

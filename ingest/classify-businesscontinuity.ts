@@ -23,7 +23,7 @@ const CONTINUITY_SIGNAL =
 const CORE_ROLE =
   /\b(business continuity|continuity of operations|disaster recovery|resilience|crisis management|emergency preparedness|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|bcm manager|bcm director|bcm analyst|bcm coordinator|resilience (?:engineer|manager|director|architect|lead|analyst|specialist)|dr (?:architect|engineer|manager|director|lead|specialist|analyst|coordinator)|crisis (?:manager|director|lead|specialist))\b/i;
 
-export function classifyDrJob(input: {
+export function classifyBusinessContinuityJob(input: {
   title: string;
   description: string;
   department?: string | null;
@@ -90,7 +90,7 @@ export function toJob(
     salary?: string | null;
   },
 ): NormalizedJob | null {
-  const verdict = classifyDrJob({
+  const verdict = classifyBusinessContinuityJob({
     title: input.title,
     description: stripHtml(input.description) || input.title.trim(),
     department: input.department,

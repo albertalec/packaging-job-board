@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { classifyDrJob } from "./classify-disasterrecovery.ts";
+import { classifyBusinessContinuityJob } from "./classify-businesscontinuity.ts";
 
-describe("classifyDrJob", () => {
+describe("classifyBusinessContinuityJob", () => {
   it("keeps BCM and disaster recovery titles", () => {
     for (const title of [
       "Business Continuity Manager",
@@ -11,7 +11,7 @@ describe("classifyDrJob", () => {
       "BCM Analyst",
       "IT Continuity Lead",
     ]) {
-      const result = classifyDrJob({ title, description: "" });
+      const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, true, title);
     }
   });
@@ -23,13 +23,13 @@ describe("classifyDrJob", () => {
       "Software Engineer II",
       "Help Desk Analyst",
     ]) {
-      const result = classifyDrJob({ title, description: "" });
+      const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, false, title);
     }
   });
 
   it("drops software application packaging", () => {
-    const result = classifyDrJob({
+    const result = classifyBusinessContinuityJob({
       title: "Application Packaging Engineer",
       description: "SCCM and Intune",
     });

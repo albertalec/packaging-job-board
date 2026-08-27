@@ -16,15 +16,15 @@ describe("resolveTenantId", () => {
   it("maps packaging and hub hosts", () => {
     assert.equal(resolveTenantId("packaging.nicheboardjobs.com"), "packaging");
     assert.equal(
-      resolveTenantId("disasterrecovery.nicheboardjobs.com"),
-      "disasterrecovery",
+      resolveTenantId("businesscontinuity.nicheboardjobs.com"),
+      "businesscontinuity",
     );
     assert.equal(resolveTenantId("nicheboardjobs.com"), "hub");
     assert.equal(resolveTenantId("www.nicheboardjobs.com"), "hub");
     assert.equal(resolveTenantId("packaging.localhost:3000"), "packaging");
     assert.equal(
-      resolveTenantId("disasterrecovery.localhost:3000"),
-      "disasterrecovery",
+      resolveTenantId("businesscontinuity.localhost:3000"),
+      "businesscontinuity",
     );
     assert.equal(resolveTenantId("nicheboard.localhost:3000"), "hub");
   });
@@ -96,11 +96,11 @@ describe("tenantOrigin", () => {
       "https://packaging.nicheboardjobs.com",
     );
     assert.equal(
-      tenantOrigin(getTenant("disasterrecovery"), {
-        hostHeader: "disasterrecovery.nicheboardjobs.com",
+      tenantOrigin(getTenant("businesscontinuity"), {
+        hostHeader: "businesscontinuity.nicheboardjobs.com",
         proto: "https",
       }),
-      "https://disasterrecovery.nicheboardjobs.com",
+      "https://businesscontinuity.nicheboardjobs.com",
     );
     assert.equal(
       tenantOrigin(getTenant("hub"), {
@@ -133,8 +133,8 @@ describe("helpers", () => {
   it("scopes blob keys per vertical", () => {
     assert.equal(sponsorshipBlobName("packaging"), "sponsorships/packaging.json");
     assert.equal(
-      sponsorshipBlobName("disasterrecovery"),
-      "sponsorships/disasterrecovery.json",
+      sponsorshipBlobName("businesscontinuity"),
+      "sponsorships/businesscontinuity.json",
     );
     assert.notEqual(
       sponsorshipBlobName("packaging"),

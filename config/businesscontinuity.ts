@@ -1,15 +1,15 @@
 import { CONTACT_EMAIL } from "./email";
 import type { VerticalTenant } from "./types";
 
-export const disasterrecovery: VerticalTenant = {
+export const businesscontinuity: VerticalTenant = {
   kind: "vertical",
-  id: "disasterrecovery",
+  id: "businesscontinuity",
   hosts: [
-    "disasterrecovery.nicheboardjobs.com",
-    "disasterrecovery.localhost",
+    "businesscontinuity.nicheboardjobs.com",
+    "businesscontinuity.localhost",
   ],
-  canonicalHost: "disasterrecovery.nicheboardjobs.com",
-  localHost: "disasterrecovery.localhost",
+  canonicalHost: "businesscontinuity.nicheboardjobs.com",
+  localHost: "businesscontinuity.localhost",
   brand: {
     name: "Resilience Jobs",
     markLine1: "Niche Board",
@@ -59,9 +59,9 @@ export const disasterrecovery: VerticalTenant = {
     alertsDigestIntro: "New roles on Resilience Jobs — view details on the board.",
   },
   ingest: {
-    classifier: "disasterrecovery",
+    classifier: "businesscontinuity",
   },
-  dataFile: "data/disasterrecovery/jobs.json",
+  dataFile: "data/businesscontinuity/jobs.json",
   sponsor: {
     priceCents: 17_500,
     durationDays: 30,

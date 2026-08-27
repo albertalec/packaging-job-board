@@ -28,8 +28,8 @@ export type SourceReport = {
 const COMPANY_LOADERS: Record<string, () => Promise<Company[]>> = {
   packaging: async () =>
     (await import("./verticals/packaging/companies.ts")).companies,
-  disasterrecovery: async () =>
-    (await import("./verticals/disasterrecovery/companies.ts")).companies,
+  businesscontinuity: async () =>
+    (await import("./verticals/businesscontinuity/companies.ts")).companies,
 };
 
 async function loadCompanies(verticalId: string): Promise<Company[]> {
