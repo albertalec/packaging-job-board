@@ -1,4 +1,5 @@
 import { BROWSER_HEADERS, toJob } from "../classify.ts";
+import { enrichLocationWithCityState } from "../location.ts";
 import { companySearchTexts } from "../search.ts";
 import type { Company, NormalizedJob } from "../types.ts";
 
@@ -157,7 +158,10 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
         const detail = path
           ? await fetchDetail(board, cookies, path)
           : { description: title, location: "" };
-        const location = detail.location.trim() || listLocation;
+        const location = enrichLocationWithCityState(
+          detail.location.trim() || listLocation,
+          detail.description || title,
+        );
         const normalized = toJob(company, {
           sourceId,
           title,

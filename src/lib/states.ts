@@ -83,7 +83,9 @@ export function parseState(location: string): string | null {
     if (comma.test(text) || hyphen.test(text)) return code;
   }
 
-  const abbrev = text.match(/,\s*([A-Z]{2})(?:\s*,|\s*$|\s*\()/i);
+  const abbrev = text.match(
+    /,\s*([A-Z]{2})(?:\s*,|\s*$|\s*\(|\s*[·•|–—\-]|\/|\s+)/i,
+  );
   if (abbrev && CODE_SET.has(abbrev[1].toUpperCase())) {
     return abbrev[1].toUpperCase();
   }
