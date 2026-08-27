@@ -44,6 +44,7 @@ export const businesscontinuity: VerticalTenant = {
     empty:
       "No BCM or disaster recovery roles listed right now. We'll have more after the next daily update.",
     emptyFiltered: "No roles match those filters. Try widening them.",
+    sponsorPanelTitle: "Hiring a BCM or DR specialist?",
     sponsorHeadline: "to pin a listing for",
     sponsorLede:
       "Reach BCM and DR specialists who browse this board. Pin a live career-site listing for 30 days — no separate posting workflow.",
