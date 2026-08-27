@@ -3,8 +3,10 @@ import type { Company } from "../../types.ts";
 const DR_QUERIES = [
   "business continuity",
   "disaster recovery",
+  "operational resilience",
+  "continuity of business",
   "BCM",
-  "resilience",
+  "crisis management",
 ] as const;
 
 export const companies: Company[] = [

@@ -32,23 +32,27 @@ export function promiseRank(title: string): number {
 export function promiseRankBusinessContinuity(title: string): number {
   const t = title.toLowerCase();
   if (
-    /\b(help\s?desk|service desk|desktop support|software engineer|network engineer|sysadmin|it support)\b/.test(
+    /\b(help\s?desk|service desk|desktop support|software engineer|network engineer|sysadmin|it support|site reliability|chaos engineering|product resilience)\b/.test(
       t,
     ) &&
-    !/\b(business continuity|disaster recovery|bcm|resilience|continuity)\b/.test(t)
+    !/\b(business continuity|disaster recovery|bcm|continuity of (?:operations|business)|operational resilience|enterprise resilience)\b/.test(
+      t,
+    )
   ) {
     return 0;
   }
 
   const intern = /\b(intern(?:ship)?|co-op|coop|campus recruit)\b/.test(t);
   const core =
-    /\b(business continuity manager|bcm manager|disaster recovery manager|dr manager|resilience manager|continuity manager|dr architect|resilience architect|business continuity director|bcm director)\b/.test(
+    /\b(business continuity manager|bcm manager|disaster recovery manager|dr manager|resilience manager|continuity manager|dr architect|resilience architect|business continuity director|bcm director|operational resilience manager|enterprise resilience)\b/.test(
       t,
     ) ||
-    (/\b(business continuity|disaster recovery|resilience|bcm|continuity)\b/.test(
+    (/\b(business continuity|disaster recovery|operational resilience|enterprise resilience|bcm|continuity of (?:operations|business)|bc\/dr|bcdr)\b/.test(
       t,
     ) &&
-      /\b(manager|director|architect|engineer|lead|specialist|analyst)\b/.test(t));
+      /\b(manager|director|architect|engineer|lead|specialist|analyst|advisor)\b/.test(
+        t,
+      ));
 
   if (core && !intern) return 3;
   if (core && intern) return 2;
