@@ -178,6 +178,7 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 | Logo lockup (reverse) | `public/brand/png/logo-horizontal-reverse.png` |
 | OG / share image | `public/brand/png/og-image.png` · `opengraph-image.png` |
 | Avatar / roundel | `public/brand/png/` roundel variants · `@nicheboard` profile photo |
+| **LinkedIn company logo** | `public/brand/png/linkedin-logo-300.png` — 300×300 navy roundel (PNG) |
 | Colours | Navy `#0D1B2A`, Teal `#0D7D77`, Amber `#F5A623` (employer CTAs only) |
 
 **Rules:** Symbol is two crop marks (navy + teal). Do not mirror, rotate, or recolour the mark. Board-family tints (violet, clay) for category chips only — not logo or button fills.
