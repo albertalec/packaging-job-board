@@ -21,7 +21,11 @@ type WorkdayDetail = {
     location?: string;
     postedOn?: string;
     hiringOrganization?: string;
-    jobRequisitionLocation?: { descriptor?: string };
+    country?: { descriptor?: string; alpha2Code?: string };
+    jobRequisitionLocation?: {
+      descriptor?: string;
+      country?: { descriptor?: string; alpha2Code?: string };
+    };
   };
 };
 
@@ -52,11 +56,25 @@ async function openBoard(url: string): Promise<{ board: Board | null; cookies: s
   return { board: boardFromHtml(html, host) ?? boardFromUrl(res.url), cookies };
 }
 
+function locationFromDetail(info: WorkdayDetail["jobPostingInfo"]): string {
+  if (!info) return "";
+  const city =
+    info.location ||
+    info.jobRequisitionLocation?.descriptor ||
+    "";
+  const country =
+    info.country?.descriptor ||
+    info.jobRequisitionLocation?.country?.descriptor ||
+    "";
+  if (city && country) return `${city}, ${country}`;
+  return city || country;
+}
+
 async function fetchDetail(
   board: Board,
   cookies: string,
   externalPath: string,
-): Promise<string> {
+): Promise<{ description: string; location: string }> {
   const path = externalPath.startsWith("/") ? externalPath : `/${externalPath}`;
   const url = `https://${board.host}/wday/cxs/${board.tenant}/${board.site}${path}`;
   const res = await fetch(url, {
@@ -66,9 +84,12 @@ async function fetchDetail(
       Referer: `https://${board.host}/${board.site}`,
     },
   });
-  if (!res.ok) return "";
+  if (!res.ok) return { description: "", location: "" };
   const detail = (await res.json()) as WorkdayDetail;
-  return detail.jobPostingInfo?.jobDescription ?? "";
+  return {
+    description: detail.jobPostingInfo?.jobDescription ?? "",
+    location: locationFromDetail(detail.jobPostingInfo),
+  };
 }
 
 export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> {
@@ -122,24 +143,28 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
         const applyUrl = path.startsWith("http")
           ? path
           : `https://${board.host}/${board.site}${path}`;
+        const listLocation = posting.locationsText ?? "";
         const preview = toJob(company, {
           sourceId,
           title,
-          location: posting.locationsText ?? "",
+          location: listLocation,
           postedAt: posting.postedOn ?? null,
           applyUrl,
           description: title,
         });
         if (!preview) continue;
         seen.add(sourceId);
-        const description = path ? await fetchDetail(board, cookies, path) : title;
+        const detail = path
+          ? await fetchDetail(board, cookies, path)
+          : { description: title, location: "" };
+        const location = detail.location.trim() || listLocation;
         const normalized = toJob(company, {
           sourceId,
           title,
-          location: posting.locationsText ?? "",
+          location,
           postedAt: posting.postedOn ?? null,
           applyUrl,
-          description: description || title,
+          description: detail.description || title,
         });
         if (normalized) jobs.push(normalized);
       }

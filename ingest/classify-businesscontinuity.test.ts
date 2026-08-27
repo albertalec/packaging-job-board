@@ -23,6 +23,8 @@ describe("classifyBusinessContinuityJob", () => {
       "Business Continuity Planning Specialist",
       "Senior Manager, Business & Technology Resilience",
       "Senior Manager, Business Resilience and Crisis Management",
+      "Sr. Business and Cyber Resilience Analyst",
+      "Senior Manager Cybersecurity Incident Response and Business Continuity",
     ]) {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, true, title);
@@ -51,6 +53,7 @@ describe("classifyBusinessContinuityJob", () => {
       "Staff Software Engineer, Resiliency (Federal)",
       "Product Simplification & Resilience Lead, Global Core Payments - SVP",
       "Senior Software Engineer, AI Resiliency",
+      "Lead Data Engineer (Cloud Operations Resilience Engineering)",
     ]) {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, false, title);
