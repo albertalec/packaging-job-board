@@ -242,6 +242,15 @@ curl -X POST -H "Authorization: Bearer $ALERTS_CRON_SECRET" \
 | `SOCIAL_DRY_RUN` | Skip persisting drafts when `true` |
 | `ALERTS_CRON_SECRET` | Auth for `/api/social/linkedin-draft` |
 
+### Vercel setup
+
+1. Add secrets in [Vercel → packaging-job-board → Environment Variables](https://vercel.com/alba24/packaging-job-board/settings/environment-variables):
+   - `XAI_API_KEY` — Production + Preview
+   - `X_BEARER_TOKEN` — Production + Preview
+2. `GROK_MODEL=grok-3` is already set on Production + Preview.
+3. Or, with keys exported locally: `npm run add:social-env -- --apply`
+4. Redeploy after adding secrets so `/api/social/linkedin-draft` can call Grok + X.
+
 Draft history is stored in `data/social/{vertical}.json` locally or Upstash Redis in production.
 
 ---
