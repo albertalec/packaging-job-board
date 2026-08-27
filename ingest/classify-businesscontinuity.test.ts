@@ -25,6 +25,9 @@ describe("classifyBusinessContinuityJob", () => {
       "Senior Manager, Business Resilience and Crisis Management",
       "Sr. Business and Cyber Resilience Analyst",
       "Senior Manager Cybersecurity Incident Response and Business Continuity",
+      "Disaster Recovery Specialist",
+      "Business Continuity Analyst I - ERM",
+      "Enterprise Resilience Analyst",
     ]) {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, true, title);
