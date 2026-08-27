@@ -1,7 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { NormalizedJob } from "../../ingest/types";
+import {
+  BOARD_PAGE_SIZE,
+  clearBoardViewState,
+  readBoardViewState,
+  writeBoardViewState,
+} from "@/lib/board-view-state";
 import { parseSearchQuery, searchJobs } from "@/lib/job-search";
 import { isRemote } from "@/lib/remote";
 import { sectorFilterOptions } from "@/lib/sector-filters";
@@ -20,7 +26,7 @@ const SORT_OPTIONS: { id: BoardSortMode; label: string }[] = [
   { id: "promise", label: "Best match" },
 ];
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = BOARD_PAGE_SIZE;
 
 export function JobBoard({
   jobs,
@@ -46,6 +52,54 @@ export function JobBoard({
   const [remoteOnly, setRemoteOnly] = useState(false);
   const [sortMode, setSortMode] = useState<BoardSortMode>("date");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    const saved = readBoardViewState(tenant.id);
+    if (saved) {
+      setQuery(saved.query);
+      setNiche(saved.niche);
+      setState(saved.state);
+      setRemoteOnly(saved.remoteOnly);
+      setSortMode(saved.sortMode);
+      setVisibleCount(saved.visibleCount);
+      if (saved.scrollY > 0) {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, saved.scrollY);
+        });
+      }
+    }
+    setHydrated(true);
+  }, [tenant.id]);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const snapshot = {
+      query,
+      niche,
+      state,
+      remoteOnly,
+      sortMode,
+      visibleCount,
+      scrollY: window.scrollY,
+    };
+    writeBoardViewState(tenant.id, snapshot);
+    return () => {
+      writeBoardViewState(tenant.id, {
+        ...snapshot,
+        scrollY: window.scrollY,
+      });
+    };
+  }, [
+    hydrated,
+    tenant.id,
+    query,
+    niche,
+    state,
+    remoteOnly,
+    sortMode,
+    visibleCount,
+  ]);
 
   const hasFilters = Boolean(query.trim() || niche || state || remoteOnly);
   const tokens = useMemo(() => parseSearchQuery(query), [query]);
@@ -90,6 +144,7 @@ export function JobBoard({
     setState("");
     setRemoteOnly(false);
     setVisibleCount(PAGE_SIZE);
+    clearBoardViewState(tenant.id);
   }
 
   function selectNiche(next: string) {
