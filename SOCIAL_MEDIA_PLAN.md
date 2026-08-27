@@ -209,6 +209,43 @@ Clone this plan per vertical: swap specialty noun, contrast line, example employ
 
 ---
 
+## 15. LinkedIn drafts — X + Grok (current events)
+
+Use **X** for timely niche conversation and **Grok** (xAI) to draft LinkedIn posts that follow this plan’s voice. Posts are **drafts for manual review** — nothing auto-publishes to LinkedIn.
+
+### Flow
+
+1. **X recent search** — vertical-specific queries (packaging engineers, BCM/DR, etc.)
+2. **Board context** — live job count, optional freshest role link
+3. **Grok** — synthesizes contrast + proof + CTA with one current-events angle
+4. **Review** — run the pre-publish checklist (§12) before posting
+
+### Commands
+
+```bash
+# Local draft (dry-run when SOCIAL_DRY_RUN=true or --dry-run)
+npm run social:linkedin-draft -- --vertical=packaging
+npm run social:linkedin-draft -- --vertical=packaging --postType=fresh-role
+
+# Cron/API (same auth as alert digest)
+curl -X POST -H "Authorization: Bearer $ALERTS_CRON_SECRET" \
+  "https://packaging.nicheboardjobs.com/api/social/linkedin-draft?vertical=packaging&dryRun=true"
+```
+
+### Env vars (see `.env.example`)
+
+| Variable | Purpose |
+| --- | --- |
+| `X_BEARER_TOKEN` | X API v2 recent search |
+| `XAI_API_KEY` | Grok chat completions |
+| `GROK_MODEL` | Optional model id (default `grok-3`) |
+| `SOCIAL_DRY_RUN` | Skip persisting drafts when `true` |
+| `ALERTS_CRON_SECRET` | Auth for `/api/social/linkedin-draft` |
+
+Draft history is stored in `data/social/{vertical}.json` locally or Upstash Redis in production.
+
+---
+
 ## 12. Quality bar (pre-publish checklist)
 
 Before any social post goes live:
