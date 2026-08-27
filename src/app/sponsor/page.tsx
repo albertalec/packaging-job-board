@@ -35,7 +35,7 @@ export default async function SponsorIndexPage() {
   const duration = days === 30 ? "Thirty" : String(days);
   const sponsoredIds = await getActiveSponsoredJobIds(tenant.id);
   const picks = [...loadJobs(tenant.id).jobs]
-    .sort(compareJobsByPromise)
+    .sort((left, right) => compareJobsByPromise(left, right, Date.now(), tenant.id))
     .map((job) => ({
       id: job.id,
       title: job.title,

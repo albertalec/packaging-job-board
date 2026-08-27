@@ -27,3 +27,37 @@ export function promiseRank(title: string): number {
   if (core && intern) return 2;
   return 1;
 }
+
+/** BCM / DR titles for the Resilience board. */
+export function promiseRankBusinessContinuity(title: string): number {
+  const t = title.toLowerCase();
+  if (
+    /\b(help\s?desk|service desk|desktop support|software engineer|network engineer|sysadmin|it support)\b/.test(
+      t,
+    ) &&
+    !/\b(business continuity|disaster recovery|bcm|resilience|continuity)\b/.test(t)
+  ) {
+    return 0;
+  }
+
+  const intern = /\b(intern(?:ship)?|co-op|coop|campus recruit)\b/.test(t);
+  const core =
+    /\b(business continuity manager|bcm manager|disaster recovery manager|dr manager|resilience manager|continuity manager|dr architect|resilience architect|business continuity director|bcm director)\b/.test(
+      t,
+    ) ||
+    (/\b(business continuity|disaster recovery|resilience|bcm|continuity)\b/.test(
+      t,
+    ) &&
+      /\b(manager|director|architect|engineer|lead|specialist|analyst)\b/.test(t));
+
+  if (core && !intern) return 3;
+  if (core && intern) return 2;
+  return 1;
+}
+
+export function promiseRankForVertical(title: string, verticalId: string): number {
+  if (verticalId === "businesscontinuity") {
+    return promiseRankBusinessContinuity(title);
+  }
+  return promiseRank(title);
+}

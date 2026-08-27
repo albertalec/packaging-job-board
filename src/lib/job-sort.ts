@@ -1,6 +1,6 @@
 import type { NormalizedJob } from "../../ingest/types";
 import { postedTimestamp } from "./posted-at";
-import { promiseRank } from "./rank";
+import { promiseRankForVertical } from "./rank";
 
 export type BoardSortMode = "date" | "promise";
 
@@ -13,13 +13,16 @@ export function compareJobsByRecency(
   return postedTimestamp(right.postedAt, now) - postedTimestamp(left.postedAt, now);
 }
 
-/** Prefer core packaging titles, then recency. */
+/** Prefer on-wedge titles for the vertical, then recency. */
 export function compareJobsByPromise(
   left: NormalizedJob,
   right: NormalizedJob,
   now = Date.now(),
+  verticalId = "packaging",
 ): number {
-  const rank = promiseRank(right.title) - promiseRank(left.title);
+  const rank =
+    promiseRankForVertical(right.title, verticalId) -
+    promiseRankForVertical(left.title, verticalId);
   if (rank !== 0) return rank;
   return compareJobsByRecency(left, right, now);
 }
@@ -27,16 +30,18 @@ export function compareJobsByPromise(
 /** Board listing: pinned first, then date or promise rank. */
 export function sortJobsWithSponsors(
   jobs: NormalizedJob[],
-  sponsoredIds: Set<string>,
+  sponsoredIds: Set<string> | Iterable<string>,
   now = Date.now(),
   mode: BoardSortMode = "date",
+  verticalId = "packaging",
 ): NormalizedJob[] {
+  const sponsored = sponsoredIds instanceof Set ? sponsoredIds : new Set(sponsoredIds);
   return [...jobs].sort((left, right) => {
-    const leftSponsored = sponsoredIds.has(left.id) ? 1 : 0;
-    const rightSponsored = sponsoredIds.has(right.id) ? 1 : 0;
+    const leftSponsored = sponsored.has(left.id) ? 1 : 0;
+    const rightSponsored = sponsored.has(right.id) ? 1 : 0;
     if (leftSponsored !== rightSponsored) return rightSponsored - leftSponsored;
     return mode === "promise"
-      ? compareJobsByPromise(left, right, now)
+      ? compareJobsByPromise(left, right, now, verticalId)
       : compareJobsByRecency(left, right, now);
   });
 }

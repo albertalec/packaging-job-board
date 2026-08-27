@@ -2,9 +2,19 @@ import { createHash } from "node:crypto";
 import { htmlToPlainText } from "../src/lib/description.ts";
 import { isRemote } from "../src/lib/remote.ts";
 import { parseState } from "../src/lib/states.ts";
+import { toJob as toBusinessContinuityJob } from "./classify-businesscontinuity.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
+
+type IngestClassifier = "packaging" | "businesscontinuity";
+
+let activeClassifier: IngestClassifier = "packaging";
+
+export function setIngestClassifier(classifier: string) {
+  activeClassifier =
+    classifier === "businesscontinuity" ? "businesscontinuity" : "packaging";
+}
 
 const SEMICONDUCTOR =
   /\b(semiconductor|wafer|osat|flip[ -]?chip|wirebond|chiplet|\bsip\b|\bsoc\b|advanced packaging|ic packaging|soc packaging|electronics packaging|avionics (mechanical|packaging)|package[- ]level|integrated circuit|silicon up)\b/i;
@@ -162,6 +172,9 @@ export function toJob(
     salary?: string | null;
   },
 ): NormalizedJob | null {
+  if (activeClassifier === "businesscontinuity") {
+    return toBusinessContinuityJob(company, input);
+  }
   const verdict = classifyJob({
     title: input.title,
     description: stripHtml(input.description) || input.title.trim(),

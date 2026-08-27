@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { getVertical } from "../config/tenants.ts";
 import { parseVerticalArg } from "./args.ts";
-import { isUsOrRemote } from "./classify.ts";
+import { isUsOrRemote, setIngestClassifier } from "./classify.ts";
 import type { Company, NormalizedJob } from "./types.ts";
 import { ingestAmazon } from "./sources/amazon.ts";
 import { ingestAshby } from "./sources/ashby.ts";
@@ -28,6 +28,8 @@ export type SourceReport = {
 const COMPANY_LOADERS: Record<string, () => Promise<Company[]>> = {
   packaging: async () =>
     (await import("./verticals/packaging/companies.ts")).companies,
+  businesscontinuity: async () =>
+    (await import("./verticals/businesscontinuity/companies.ts")).companies,
 };
 
 async function loadCompanies(verticalId: string): Promise<Company[]> {
@@ -71,9 +73,7 @@ async function ingestCompany(company: Company) {
 
 export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
   const vertical = getVertical(verticalId);
-  if (vertical.ingest.classifier !== "packaging") {
-    throw new Error(`No classifier wired for vertical: ${vertical.id}`);
-  }
+  setIngestClassifier(vertical.ingest.classifier);
 
   const companies = await loadCompanies(vertical.id);
   const reports: SourceReport[] = [];

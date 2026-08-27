@@ -1,11 +1,12 @@
+import { businesscontinuity } from "./businesscontinuity";
 import { hub } from "./hub";
 import { packaging } from "./packaging";
 import type { Tenant, TenantEnv, VerticalTenant } from "./types";
 
 export type { Tenant, TenantEnv, VerticalTenant } from "./types";
-export { hub, packaging };
+export { businesscontinuity, hub, packaging };
 
-export const verticals: VerticalTenant[] = [packaging];
+export const verticals: VerticalTenant[] = [packaging, businesscontinuity];
 
 export const tenants: Tenant[] = [hub, ...verticals];
 

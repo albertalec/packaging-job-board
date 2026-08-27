@@ -22,6 +22,8 @@ export type PublicTenant = {
   /** Hub home URL for vertical “powered by Niche Board” links; null on the hub itself. */
   hubOrigin: string | null;
   sponsor: VerticalTenant["sponsor"] | null;
+  /** Sector filter ids for vertical boards (excludes state/remote). */
+  sectorFilters: string[];
 };
 
 function headerEnv() {
@@ -114,6 +116,10 @@ export async function toPublicTenant(tenant?: Tenant): Promise<PublicTenant> {
         ? tenantOrigin(getTenant("hub"), { hostHeader, proto })
         : null,
     sponsor: resolved.kind === "vertical" ? resolved.sponsor : null,
+    sectorFilters:
+      resolved.kind === "vertical"
+        ? resolved.filters.filter((id) => id !== "state" && id !== "remote")
+        : [],
   };
 }
 

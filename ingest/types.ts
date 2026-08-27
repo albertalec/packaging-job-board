@@ -3,7 +3,10 @@ export type Niche =
   | "pharma"
   | "cpg"
   | "food-beverage"
-  | "industrial";
+  | "industrial"
+  | "finance"
+  | "healthcare"
+  | "insurance";
 
 export type Ats =
   | "workday"

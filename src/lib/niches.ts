@@ -6,6 +6,9 @@ export const NICHE_LABELS: Record<Niche, string> = {
   automotive: "Automotive",
   pharma: "Pharma",
   industrial: "Industrial",
+  finance: "Finance",
+  healthcare: "Healthcare",
+  insurance: "Insurance",
 };
 
 export function formatNiche(niche: string | null | undefined): string | null {
