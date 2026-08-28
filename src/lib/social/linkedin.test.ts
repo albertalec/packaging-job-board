@@ -3,6 +3,12 @@ import test from "node:test";
 import { buildGrokMessages } from "./grok";
 import { pickFreshJob } from "./jobs";
 import { xSearchQuery } from "./x";
+import {
+  formatHashtag,
+  parseGrokDraftResponse,
+  reviewDraftTone,
+  sanitizeHashtags,
+} from "./voice";
 
 test("xSearchQuery returns vertical-specific queries", () => {
   assert.match(xSearchQuery("packaging"), /packaging engineer/i);
@@ -10,7 +16,7 @@ test("xSearchQuery returns vertical-specific queries", () => {
   assert.match(xSearchQuery("businesscontinuity"), /business continuity/i);
 });
 
-test("buildGrokMessages includes contrast line and X context", () => {
+test("buildGrokMessages includes brand voice and JSON output format", () => {
   const { system, user } = buildGrokMessages({
     verticalId: "packaging",
     brandName: "Packaging Jobs",
@@ -31,9 +37,53 @@ test("buildGrokMessages includes contrast line and X context", () => {
     boardStats: { totalJobs: 52, ingestedAt: "2026-08-27T12:00:00.000Z" },
   });
 
-  assert.match(system, /Contrast \+ one proof \+ one CTA/);
+  assert.match(system, /BRAND VOICE/);
+  assert.match(system, /HASHTAGS/);
+  assert.match(system, /valid JSON only/);
   assert.match(user, /Package development — not plant ops/);
   assert.match(user, /CPG brands are hiring packaging engineers/);
+});
+
+test("parseGrokDraftResponse extracts post and hashtags from JSON", () => {
+  const parsed = parseGrokDraftResponse(
+    JSON.stringify({
+      post: "Package development — not plant ops.\n\nBrowse Packaging →",
+      hashtags: ["PackagingEngineering", "Hiring", "CPGJobs"],
+    }),
+    "packaging",
+    "current-events",
+  );
+
+  assert.match(parsed.post, /Package development — not plant ops/);
+  assert.ok(parsed.hashtags.includes("PackagingEngineering"));
+  assert.ok(parsed.hashtags.includes("CPGJobs"));
+  assert.equal(parsed.hashtags.includes("Hiring"), false);
+});
+
+test("sanitizeHashtags filters banned generic tags", () => {
+  const tags = sanitizeHashtags(
+    ["DreamJob", "PackagingEngineering", "Jobs", "PackageDevelopment"],
+    "packaging",
+  );
+  assert.ok(tags.includes("PackagingEngineering"));
+  assert.equal(tags.includes("DreamJob"), false);
+  assert.equal(tags.includes("Jobs"), false);
+});
+
+test("reviewDraftTone flags banned copy and inline hashtags", () => {
+  const review = reviewDraftTone({
+    draft: "Find your dream job today! #Hiring",
+    verticalId: "packaging",
+    contrastLine: "Package development — not plant ops.",
+  });
+  assert.equal(review.passed, false);
+  assert.ok(review.warnings.some((w) => /dream job/i.test(w)));
+  assert.ok(review.warnings.some((w) => /hashtags/i.test(w)));
+});
+
+test("formatHashtag adds hash prefix", () => {
+  assert.equal(formatHashtag("PackagingEngineering"), "#PackagingEngineering");
+  assert.equal(formatHashtag("#BCM"), "#BCM");
 });
 
 test("pickFreshJob returns newest role with board URL", () => {

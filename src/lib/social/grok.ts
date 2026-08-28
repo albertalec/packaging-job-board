@@ -1,4 +1,9 @@
 import type { XTweet } from "./x";
+import {
+  buildBrandVoicePromptBlock,
+  buildHashtagPromptBlock,
+  parseGrokDraftResponse,
+} from "./voice";
 
 export type GrokDraftInput = {
   verticalId: string;
@@ -21,7 +26,7 @@ export type GrokDraftInput = {
 };
 
 export type GrokDraftResult =
-  | { ok: true; draft: string; model: string }
+  | { ok: true; draft: string; hashtags: string[]; model: string }
   | { ok: false; skipped?: boolean; error: string };
 
 export function grokConfigured(): boolean {
@@ -67,17 +72,22 @@ export function buildGrokMessages(input: GrokDraftInput): {
         : "Open with a relatable search-pain observation for this specialty (no specific news claim). Bridge to why a classified niche board exists."
       : input.postType === "fresh-role"
         ? "Lead with the featured role. One line of contrast or proof. Apply-out CTA."
-        : "";
+        : input.postType === "contrast"
+          ? "Lead with the specialty contrast line. One proof point (classification, freshness, or apply-out). Single CTA."
+          : input.postType === "proof"
+            ? "Show how the board works: daily ingest, specialist classification, apply on employer ATS. No invented stats."
+            : input.postType === "employer"
+              ? "Speak to hiring managers who already posted on Workday/Greenhouse. Pin-existing-listing offer. Practical tone."
+              : "";
 
   const system = [
     "You write LinkedIn posts for Niche Board, a network of precision job boards.",
-    "Tone: friendly but not eager, trustworthy, lightly fun. No hype, emojis, or exclamation piles.",
-    "Formula: Contrast + one proof + one CTA.",
-    "Never invent metrics, candidate counts, or employer claims.",
-    "Use canonical brand names: Niche Board (two words). Never Nicheboard.",
-    "Output ONLY the post text — no title, labels, hashtags block, or commentary.",
-    "Keep under 900 characters. Use line breaks for readability.",
+    buildBrandVoicePromptBlock(),
+    buildHashtagPromptBlock(input.verticalId),
     postTypeGuide,
+    "OUTPUT FORMAT: valid JSON only, no markdown fences — {\"post\":\"...\",\"hashtags\":[\"TagOne\",\"TagTwo\",\"TagThree\"]}.",
+    "post: the LinkedIn copy only (no hashtags, no title, no commentary). Under 900 characters. Use line breaks.",
+    "hashtags: 3–5 strings without # prefix.",
   ]
     .filter(Boolean)
     .join(" ");
@@ -101,6 +111,7 @@ export function buildGrokMessages(input: GrokDraftInput): {
       ? "Write one LinkedIn post that ties a current industry moment to why this specialty board matters."
       : "Write one LinkedIn post draft for this vertical.",
     "Include exactly one primary CTA with the board or sponsor URL.",
+    "Return JSON with post and hashtags fields.",
   ]
     .filter(Boolean)
     .join("\n");
@@ -141,8 +152,8 @@ export async function generateLinkedInDraft(
       },
       body: JSON.stringify({
         model,
-        temperature: 0.6,
-        max_tokens: 600,
+        temperature: 0.55,
+        max_tokens: 700,
         messages: [
           { role: "system", content: system },
           { role: "user", content: user },
@@ -158,12 +169,22 @@ export async function generateLinkedInDraft(
       };
     }
 
-    const draft = body.choices?.[0]?.message?.content?.trim();
-    if (!draft) {
+    const raw = body.choices?.[0]?.message?.content?.trim();
+    if (!raw) {
       return { ok: false, error: "Grok returned an empty draft." };
     }
 
-    return { ok: true, draft, model };
+    const parsed = parseGrokDraftResponse(raw, input.verticalId, input.postType);
+    if (!parsed.post) {
+      return { ok: false, error: "Grok returned an empty post body." };
+    }
+
+    return {
+      ok: true,
+      draft: parsed.post,
+      hashtags: parsed.hashtags,
+      model,
+    };
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Grok request failed";

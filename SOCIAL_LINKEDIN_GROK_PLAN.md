@@ -278,7 +278,26 @@ Same as [`SOCIAL_MEDIA_PLAN.md` §13](SOCIAL_MEDIA_PLAN.md#13-success-signals-so
 
 ---
 
-## 10. Prompt evolution (backlog)
+## 10. Brand tone + hashtags (draft email)
+
+Drafts follow [`MARKETING.md`](MARKETING.md) §4–5 via `src/lib/social/voice.ts` and Grok system prompts.
+
+**Post body:** contrast + proof + CTA. No hashtags inside the copy — LinkedIn reach tags are separate.
+
+**Suggested hashtags** (3–5, in digest email below the post):
+
+| Vertical | Specialty tags (examples) | Avoid |
+| --- | --- | --- |
+| Packaging | `#PackagingEngineering` `#PackageDevelopment` `#CPGJobs` `#PackagingJobs` | `#Hiring` `#JobSearch` `#DreamJob` |
+| Resilience | `#BusinessContinuity` `#BCM` `#DisasterRecovery` `#OperationalResilience` | Generic recruitment spam |
+
+Use `#NicheBoard` at most once when the post mentions the network. Paste hashtags **below** the post on LinkedIn — not in the opening line.
+
+Tone warnings (banned words, missing contrast, inline hashtags) appear in the email **Notes** section when Grok drifts off voice.
+
+---
+
+## 11. Prompt evolution (backlog)
 
 Improve Grok prompts in `src/lib/social/grok.ts` when drafts repeatedly miss the mark:
 

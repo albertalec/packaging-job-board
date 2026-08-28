@@ -7,6 +7,7 @@ import {
 } from "../alerts-mail";
 import { isValidEmail } from "../alerts-store";
 import type { LinkedInDraftRunResult, LinkedInPostType } from "./linkedin";
+import { formatHashtag } from "./voice";
 
 const POST_TYPE_LABEL: Record<LinkedInPostType, string> = {
   "current-events": "Industry pulse (X trend)",
@@ -49,6 +50,11 @@ export function buildLinkedInDraftEmail(input: {
   const subject = `LinkedIn draft — ${boardLabel} · ${label}`;
   const draft = result.draft ?? "";
   const draftHtml = escapeHtml(draft).replaceAll("\n", "<br />");
+  const hashtagLine =
+    result.hashtags && result.hashtags.length > 0
+      ? result.hashtags.map((tag) => formatHashtag(tag)).join(" ")
+      : "";
+  const hashtagHtml = escapeHtml(hashtagLine);
 
   const xLines =
     result.xTweets && result.xTweets.length > 0
@@ -78,6 +84,11 @@ export function buildLinkedInDraftEmail(input: {
     "",
     draft,
     "",
+    hashtagLine
+      ? "— Suggested hashtags (paste below the post on LinkedIn) —"
+      : "",
+    hashtagLine,
+    "",
     jobBlock,
     "",
     xStatusLine,
@@ -87,7 +98,7 @@ export function buildLinkedInDraftEmail(input: {
     "",
     errorBlock,
     "",
-    "Checklist: contrast line · one CTA · no invented metrics · canonical URL",
+    "Checklist: contrast line · one CTA · no invented metrics · canonical URL · specialty hashtags",
     `Board: ${origin}`,
   ]
     .filter(Boolean)
@@ -100,6 +111,12 @@ export function buildLinkedInDraftEmail(input: {
   <p style="margin:0 0 8px;font-size:13px;color:#4B5563;">${escapeHtml(label)} · ${escapeHtml(tenant.copy.contrast)}</p>
   <h1 style="margin:0 0 16px;font-size:20px;">LinkedIn draft</h1>
   <div style="margin:0 0 20px;padding:16px;background:#F1F3F5;border-left:3px solid #0D7D77;font-size:16px;white-space:pre-wrap;">${draftHtml}</div>
+  ${
+    hashtagLine
+      ? `<p style="margin:0 0 8px;font-size:12px;color:#4B5563;font-weight:600;">Suggested hashtags (paste below the post)</p>
+  <p style="margin:0 0 20px;padding:12px;background:#fff;border:1px solid #E7EAEE;font-size:14px;">${hashtagHtml}</p>`
+      : ""
+  }
   ${
     result.job
       ? `<p style="margin:0 0 12px;font-size:14px;"><strong>Job link:</strong> <a href="${escapeHtml(result.job.url)}">${escapeHtml(result.job.title)} · ${escapeHtml(result.job.company)}</a></p>`
