@@ -28,6 +28,7 @@ test("buildLinkedInDraftEmail includes draft text", () => {
       postType: "current-events",
       ok: true,
       draft: "Package development — not plant ops.\n\nBrowse Packaging →",
+      hashtags: ["PackagingEngineering", "PackageDevelopment", "CPGJobs"],
       errors: [],
       xTweets: [
         {
@@ -49,6 +50,7 @@ test("buildLinkedInDraftEmail includes draft text", () => {
 
   assert.match(message.subject, /LinkedIn draft/);
   assert.match(message.text, /Package development — not plant ops/);
+  assert.match(message.text, /#PackagingEngineering/);
   assert.match(message.text, /Clorox/);
   assert.match(message.html, /LinkedIn draft/);
 });

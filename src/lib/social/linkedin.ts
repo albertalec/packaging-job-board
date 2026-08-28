@@ -19,6 +19,7 @@ import {
   xConfigured,
   type XTweet,
 } from "./x";
+import { reviewDraftTone } from "./voice";
 
 const NETWORK_TAGLINE = "The right jobs, not all the jobs.";
 
@@ -36,6 +37,7 @@ export type LinkedInDraftRunResult = {
   skipped?: boolean;
   dryRun?: boolean;
   draft?: string;
+  hashtags?: string[];
   model?: string;
   xQuery?: string;
   xTweets?: XTweet[];
@@ -165,6 +167,15 @@ export async function generateLinkedInPostDraft(input: {
     };
   }
 
+  const toneReview = reviewDraftTone({
+    draft: grok.draft,
+    verticalId: tenant.id,
+    contrastLine: tenant.copy.contrast,
+  });
+  const toneWarnings = toneReview.warnings.map(
+    (warning) => `Tone: ${warning}`,
+  );
+
   let saved: SocialDraftRecord | undefined;
   if (!input.dryRun) {
     saved = await saveDraft({
@@ -182,13 +193,14 @@ export async function generateLinkedInPostDraft(input: {
     ok: true,
     dryRun: input.dryRun,
     draft: grok.draft,
+    hashtags: grok.hashtags,
     model: grok.model,
     xQuery: xResult.query,
     xTweets,
     xStatus,
     job: job ?? undefined,
     saved,
-    errors,
+    errors: [...errors, ...toneWarnings],
     recentDrafts: input.includeRecent
       ? await listRecentDrafts(tenant.id)
       : undefined,
