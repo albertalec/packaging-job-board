@@ -156,7 +156,26 @@ Use **one** per post — don’t stack.
 
 ## 6. Production workflow
 
-### Generate
+### Deliver (no local CLI required)
+
+LinkedIn drafts are **emailed** via Resend when `SOCIAL_DRAFT_TO_EMAIL` is set (your personal inbox).
+
+| Schedule | Lane | Trigger |
+| --- | --- | --- |
+| **Tue 15:00 UTC** | B — Industry pulse | Vercel cron → `/api/social/linkedin-digest?cronDayOnly=true` |
+| **Thu 15:00 UTC** | A — Job highlight | Same cron path (day picks `fresh-role`) |
+| **After ingest** | A — Job highlight | GitHub Action → `SOCIAL_LINKEDIN_DIGEST_URL` + `postType=fresh-role` |
+
+**Manual test email:**
+
+```bash
+curl -X POST -H "Authorization: Bearer $ALERTS_CRON_SECRET" \
+  "https://packaging.nicheboardjobs.com/api/social/linkedin-digest?vertical=packaging&postType=current-events"
+```
+
+Email includes copy-paste draft text, optional job link, and X theme notes (not for quoting).
+
+### Generate (optional local CLI)
 
 1. **Job lane** — run after ingest when listings changed, or pick manually from board.
 2. **Trend lane** — run 1–2× weekly; X supplies recent posts; Grok synthesizes theme.
@@ -199,13 +218,14 @@ Run [`SOCIAL_MEDIA_PLAN.md` §12](SOCIAL_MEDIA_PLAN.md#12-quality-bar-pre-publis
 2. Job shares: use **job URL** for OG preview.
 3. Log qualitatively: which lane, which pillar, any inbound.
 
-### Automate later (optional)
+### Automate (email delivery)
 
 | Trigger | Action |
 | --- | --- |
-| GitHub ingest commit (listings changed) | API `postType=fresh-role` → draft queue |
-| Vercel cron Tue/Thu | API `postType=current-events` |
-| Human | Review queue → publish |
+| **Tue 15:00 UTC** | Vercel cron → industry pulse email (`current-events`) |
+| **Thu 15:00 UTC** | Vercel cron → job highlight email (`fresh-role`) |
+| **Ingest commit** (listings changed) | GitHub Action → job highlight email |
+| Human | Review email → post on LinkedIn |
 
 Nothing auto-posts to LinkedIn without human approval.
 
@@ -266,7 +286,6 @@ Improve Grok prompts in `src/lib/social/grok.ts` when drafts repeatedly miss the
 - [ ] Explicit “relatable opener” requirement for Lane B
 - [ ] `employer` / `proof` templates with fixed CTA lines from `config/*.ts`
 - [ ] Optional second job in digest-style post (still max 2, never 10)
-- [ ] Slack/email draft queue instead of only CLI/JSON store
 
 ---
 
@@ -281,7 +300,7 @@ Improve Grok prompts in `src/lib/social/grok.ts` when drafts repeatedly miss the
 | Employer pin | `--postType=employer` |
 | Preview without saving | `--dry-run` |
 
-**Env:** `XAI_API_KEY`, `X_BEARER_TOKEN`, `GROK_MODEL` — see `.env.example` and [`SOCIAL_MEDIA_PLAN.md` §15](SOCIAL_MEDIA_PLAN.md#15-linkedin-drafts--x--grok-current-events).
+**Env:** `XAI_API_KEY`, `X_BEARER_TOKEN`, `GROK_MODEL`, `SOCIAL_DRAFT_TO_EMAIL` — see `.env.example` and [`SOCIAL_MEDIA_PLAN.md` §15](SOCIAL_MEDIA_PLAN.md#15-linkedin-drafts--x--grok-current-events).
 
 ---
 

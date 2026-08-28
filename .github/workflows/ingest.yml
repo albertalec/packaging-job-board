@@ -55,3 +55,17 @@ jobs:
           curl -fsS -X POST \
             -H "Authorization: Bearer ${ALERTS_CRON_SECRET}" \
             "${ALERTS_DIGEST_URL}"
+
+      - name: Email LinkedIn job-highlight draft
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          SOCIAL_LINKEDIN_DIGEST_URL: ${{ secrets.SOCIAL_LINKEDIN_DIGEST_URL }}
+          ALERTS_CRON_SECRET: ${{ secrets.ALERTS_CRON_SECRET }}
+        run: |
+          if [ -z "$SOCIAL_LINKEDIN_DIGEST_URL" ]; then
+            echo "SOCIAL_LINKEDIN_DIGEST_URL not set; skipping LinkedIn draft email"
+            exit 0
+          fi
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${ALERTS_CRON_SECRET}" \
+            "${SOCIAL_LINKEDIN_DIGEST_URL}?vertical=packaging&postType=fresh-role"

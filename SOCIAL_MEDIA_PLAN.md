@@ -216,6 +216,8 @@ Clone this plan per vertical: swap specialty noun, contrast line, example employ
 
 Use **X** for timely niche conversation and **Grok** (xAI) to draft LinkedIn posts that follow this plan’s voice. Posts are **drafts for manual review** — nothing auto-publishes to LinkedIn.
 
+**Email delivery:** set `SOCIAL_DRAFT_TO_EMAIL` on Vercel — drafts arrive Tue/Thu (and after ingest when configured) via `/api/social/linkedin-digest`. No local CLI required.
+
 ### Flow
 
 1. **X recent search** — vertical-specific queries (packaging engineers, BCM/DR, etc.)
