@@ -146,9 +146,10 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 
 1. **LinkedIn Company Page** — About, tagline, logo lockup, link to hub
 2. **Packaging R&D / package-dev communities** — same message house; participate, don’t spam
-3. **Fresh listing shares** — 2–3/week with OG preview when inventory warrants
-4. **Employer education** — who sees a pin, what it costs, link to `/sponsor`
-5. **Hub / network posts** — light until 2+ verticals live
+3. **Fresh listing shares** — 2–3/week with OG preview when inventory warrants ([Grok plan — Lane A](SOCIAL_LINKEDIN_GROK_PLAN.md#lane-a--new-job-highlights-board-led))
+4. **Industry pulse from X** — 1–2/week trend bridges ([Grok plan — Lane B](SOCIAL_LINKEDIN_GROK_PLAN.md#lane-b--industry-pulse-x-led))
+5. **Employer education** — who sees a pin, what it costs, link to `/sponsor`
+6. **Hub / network posts** — light until 2+ verticals live
 
 ### Post templates
 
@@ -210,6 +211,8 @@ Clone this plan per vertical: swap specialty noun, contrast line, example employ
 ---
 
 ## 15. LinkedIn drafts — X + Grok (current events)
+
+**Operational plan:** [`SOCIAL_LINKEDIN_GROK_PLAN.md`](SOCIAL_LINKEDIN_GROK_PLAN.md) — weekly mix (job highlights vs X industry pulse), relatable hooks, workflow, and `postType` mapping.
 
 Use **X** for timely niche conversation and **Grok** (xAI) to draft LinkedIn posts that follow this plan’s voice. Posts are **drafts for manual review** — nothing auto-publishes to LinkedIn.
 
