@@ -1,11 +1,5 @@
 import type { NormalizedJob } from "../../ingest/types";
 
-/** Packaging in-joke: ECT rating scales with inventory (44 at ~51 roles). */
-export function boardEctRating(roleCount: number): number {
-  if (roleCount <= 0) return 32;
-  return Math.max(32, Math.min(80, Math.round(roleCount * 0.862)));
-}
-
 export function countSectors(jobs: NormalizedJob[]): number {
   return new Set(jobs.map((job) => job.niche).filter(Boolean)).size;
 }

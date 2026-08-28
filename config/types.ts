@@ -56,6 +56,9 @@ export type VerticalCopy = {
   alertsWelcomeIntro: string;
   alertsWelcomeBody: string;
   alertsDigestIntro: string;
+  /** Side panel on packaging homepage hero. */
+  boardSpecTitle?: string;
+  boardSpecParagraphs?: readonly string[];
 };
 
 export type VerticalTenant = {

@@ -1,10 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import {
-  boardEctRating,
-  countSectors,
-  employerLede,
-} from "./board-stats.ts";
+import { countSectors, employerLede } from "./board-stats.ts";
 import type { NormalizedJob } from "../../ingest/types.ts";
 
 const job = (company: string, niche: string): NormalizedJob => ({
@@ -24,16 +20,6 @@ const job = (company: string, niche: string): NormalizedJob => ({
   salary: null,
   niche: niche as NormalizedJob["niche"],
   source: "workday",
-});
-
-describe("boardEctRating", () => {
-  it("returns 32 for empty boards", () => {
-    assert.equal(boardEctRating(0), 32);
-  });
-
-  it("scales near 44 for ~51 roles", () => {
-    assert.equal(boardEctRating(51), 44);
-  });
 });
 
 describe("countSectors", () => {

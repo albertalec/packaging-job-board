@@ -23,6 +23,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] {
 
 html[data-vertical="packaging"], html[data-vertical="businesscontinuity"],
 html[data-vertical="packaging"] body, html[data-vertical="businesscontinuity"] body {
+
   font-family: Archivo, Helvetica, Arial, sans-serif;
   color: var(--slate);
   background: #ffffff;
@@ -31,16 +32,19 @@ html[data-vertical="packaging"] body, html[data-vertical="businesscontinuity"] b
 }
 
 html[data-vertical="packaging"] a, html[data-vertical="businesscontinuity"] a {
+
   color: var(--teal);
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] a:hover, html[data-vertical="businesscontinuity"] a:hover {
+
   color: var(--navy);
   text-decoration: underline;
 }
 
 html[data-vertical="packaging"] .sheet, html[data-vertical="businesscontinuity"] .sheet {
+
   max-width: none;
   width: 100%;
   margin: 0;
@@ -58,6 +62,7 @@ html[data-vertical="packaging"] main, html[data-vertical="businesscontinuity"] m
 }
 
 html[data-vertical="packaging"] .board-shell, html[data-vertical="businesscontinuity"] .board-shell {
+
   max-width: var(--board-max);
   margin: 0 auto;
   padding: 0 2.5rem 4.5rem;
@@ -65,12 +70,14 @@ html[data-vertical="packaging"] .board-shell, html[data-vertical="businesscontin
 
 /* Mast */
 html[data-vertical="packaging"] .board-mast, html[data-vertical="businesscontinuity"] .board-mast {
+
   background: var(--navy);
   border-bottom: none;
   animation: none;
 }
 
 html[data-vertical="packaging"] .board-mast-inner, html[data-vertical="businesscontinuity"] .board-mast-inner {
+
   max-width: var(--board-max);
   margin: 0 auto;
   padding: 16px 2.5rem;
@@ -81,6 +88,7 @@ html[data-vertical="packaging"] .board-mast-inner, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .board-mast-brand, html[data-vertical="businesscontinuity"] .board-mast-brand {
+
   display: flex;
   align-items: center;
   gap: 11px;
@@ -88,6 +96,7 @@ html[data-vertical="packaging"] .board-mast-brand, html[data-vertical="businessc
 
 html[data-vertical="packaging"] .board-mast-network, html[data-vertical="businesscontinuity"] .board-mast-network,
 html[data-vertical="packaging"] .board-mast-board, html[data-vertical="businesscontinuity"] .board-mast-board {
+
   display: flex;
   align-items: center;
   gap: 11px;
@@ -99,29 +108,34 @@ html[data-vertical="packaging"] .board-mast-board, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .board-mast-board, html[data-vertical="businesscontinuity"] .board-mast-board {
+
   font-weight: 500;
   letter-spacing: -0.02em;
 }
 
 html[data-vertical="packaging"] .board-mast-network:hover, html[data-vertical="businesscontinuity"] .board-mast-network:hover,
 html[data-vertical="packaging"] .board-mast-board:hover, html[data-vertical="businesscontinuity"] .board-mast-board:hover {
+
   color: #ffffff;
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .board-mast-rule, html[data-vertical="businesscontinuity"] .board-mast-rule {
+
   width: 1px;
   height: 16px;
   background: rgba(255, 255, 255, 0.3);
 }
 
 html[data-vertical="packaging"] .board-mast-nav, html[data-vertical="businesscontinuity"] .board-mast-nav {
+
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 html[data-vertical="packaging"] .board-mast-link, html[data-vertical="businesscontinuity"] .board-mast-link {
+
   font-size: 14px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.78);
@@ -129,11 +143,13 @@ html[data-vertical="packaging"] .board-mast-link, html[data-vertical="businessco
 }
 
 html[data-vertical="packaging"] .board-mast-link:hover, html[data-vertical="businesscontinuity"] .board-mast-link:hover {
+
   color: #ffffff;
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .board-skin-toggle, html[data-vertical="businesscontinuity"] .board-skin-toggle {
+
   display: flex;
   align-items: center;
   gap: 9px;
@@ -147,6 +163,7 @@ html[data-vertical="packaging"] .board-skin-toggle, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-skin-dot, html[data-vertical="businesscontinuity"] .board-skin-dot {
+
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -154,6 +171,7 @@ html[data-vertical="packaging"] .board-skin-dot, html[data-vertical="businesscon
 }
 
 html[data-vertical="packaging"] .board-skin-label, html[data-vertical="businesscontinuity"] .board-skin-label {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -161,12 +179,14 @@ html[data-vertical="packaging"] .board-skin-label, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .board-mast-cta, html[data-vertical="businesscontinuity"] .board-mast-cta {
+
   padding: 9px 15px;
   font-size: 13px;
 }
 
 /* Shared board buttons */
 html[data-vertical="packaging"] .board-btn, html[data-vertical="businesscontinuity"] .board-btn {
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -189,17 +209,20 @@ html[data-vertical="packaging"] .board-btn:hover, html[data-vertical="businessco
 }
 
 html[data-vertical="packaging"] .board-btn-primary, html[data-vertical="businesscontinuity"] .board-btn-primary {
+
   background: var(--navy);
   color: #ffffff;
   border-color: var(--navy);
 }
 
 html[data-vertical="packaging"] .board-btn-primary:hover, html[data-vertical="businesscontinuity"] .board-btn-primary:hover {
+
   background: #152a42;
   color: #ffffff;
 }
 
 html[data-vertical="packaging"] .board-btn-amber, html[data-vertical="businesscontinuity"] .board-btn-amber {
+
   background: var(--amber);
   color: var(--navy);
   border-color: var(--amber);
@@ -207,23 +230,27 @@ html[data-vertical="packaging"] .board-btn-amber, html[data-vertical="businessco
 }
 
 html[data-vertical="packaging"] .board-btn-amber:hover, html[data-vertical="businesscontinuity"] .board-btn-amber:hover {
+
   background: #e09515;
   color: var(--navy);
 }
 
 html[data-vertical="packaging"] .board-btn-outline, html[data-vertical="businesscontinuity"] .board-btn-outline {
+
   background: transparent;
   color: var(--navy);
   border-color: var(--navy);
 }
 
 html[data-vertical="packaging"] .board-btn-outline:hover, html[data-vertical="businesscontinuity"] .board-btn-outline:hover {
+
   background: var(--mist);
   color: var(--navy);
 }
 
 /* Hero */
 html[data-vertical="packaging"] .board-hero, html[data-vertical="businesscontinuity"] .board-hero {
+
   padding: 52px 0 34px;
   display: flex;
   align-items: flex-start;
@@ -232,6 +259,7 @@ html[data-vertical="packaging"] .board-hero, html[data-vertical="businesscontinu
 }
 
 html[data-vertical="packaging"] .board-hero-copy, html[data-vertical="businesscontinuity"] .board-hero-copy {
+
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -239,6 +267,7 @@ html[data-vertical="packaging"] .board-hero-copy, html[data-vertical="businessco
 }
 
 html[data-vertical="packaging"] .board-eyebrow, html[data-vertical="businesscontinuity"] .board-eyebrow {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
@@ -248,6 +277,7 @@ html[data-vertical="packaging"] .board-eyebrow, html[data-vertical="businesscont
 }
 
 html[data-vertical="packaging"] h1, html[data-vertical="businesscontinuity"] h1 {
+
   margin: 0;
   font-family: Archivo, Helvetica, Arial, sans-serif;
   font-size: clamp(2rem, 4.5vw, 2.875rem);
@@ -260,6 +290,7 @@ html[data-vertical="packaging"] h1, html[data-vertical="businesscontinuity"] h1 
 }
 
 html[data-vertical="packaging"] .board-contrast, html[data-vertical="businesscontinuity"] .board-contrast {
+
   margin: 0;
   font-family: Newsreader, Georgia, serif;
   font-style: italic;
@@ -272,6 +303,7 @@ html[data-vertical="packaging"] .board-contrast, html[data-vertical="businesscon
 }
 
 html[data-vertical="packaging"] .lede, html[data-vertical="businesscontinuity"] .lede {
+
   margin: 0;
   font-size: 17px;
   line-height: 1.62;
@@ -280,6 +312,7 @@ html[data-vertical="packaging"] .lede, html[data-vertical="businesscontinuity"] 
 }
 
 html[data-vertical="packaging"] .board-stats, html[data-vertical="businesscontinuity"] .board-stats {
+
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -288,12 +321,14 @@ html[data-vertical="packaging"] .board-stats, html[data-vertical="businesscontin
 }
 
 html[data-vertical="packaging"] .board-stat, html[data-vertical="businesscontinuity"] .board-stat {
+
   display: flex;
   align-items: baseline;
   gap: 7px;
 }
 
 html[data-vertical="packaging"] .board-stat-value, html[data-vertical="businesscontinuity"] .board-stat-value {
+
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -301,6 +336,7 @@ html[data-vertical="packaging"] .board-stat-value, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .board-stat-label, html[data-vertical="businesscontinuity"] .board-stat-label {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -308,9 +344,11 @@ html[data-vertical="packaging"] .board-stat-label, html[data-vertical="businessc
   color: var(--slate);
 }
 
-html[data-vertical="packaging"] .board-ect-panel, html[data-vertical="businesscontinuity"] .board-ect-panel {
+/* Board specification panel (packaging homepage hero) */
+html[data-vertical="packaging"] .board-spec-panel {
   display: flex;
-  width: 236px;
+  width: 280px;
+
   flex-shrink: 0;
   padding: 20px;
   background: var(--mist);
@@ -319,7 +357,8 @@ html[data-vertical="packaging"] .board-ect-panel, html[data-vertical="businessco
   gap: 12px;
 }
 
-html[data-vertical="packaging"] .board-ect-kicker, html[data-vertical="businesscontinuity"] .board-ect-kicker {
+html[data-vertical="packaging"] .board-spec-kicker {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
@@ -328,30 +367,15 @@ html[data-vertical="packaging"] .board-ect-kicker, html[data-vertical="businessc
   color: var(--teal);
 }
 
-html[data-vertical="packaging"] .board-ect-rating, html[data-vertical="businesscontinuity"] .board-ect-rating {
-  margin: 0;
+html[data-vertical="packaging"] .board-spec-body {
+
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-html[data-vertical="packaging"] .board-ect-value, html[data-vertical="businesscontinuity"] .board-ect-value {
-  font-size: 54px;
-  line-height: 0.9;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  color: var(--navy);
-}
+html[data-vertical="packaging"] .board-spec-body p {
 
-html[data-vertical="packaging"] .board-ect-unit, html[data-vertical="businesscontinuity"] .board-ect-unit {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--navy);
-}
-
-html[data-vertical="packaging"] .board-ect-body, html[data-vertical="businesscontinuity"] .board-ect-body {
   margin: 0;
   font-size: 13px;
   line-height: 1.55;
@@ -360,6 +384,7 @@ html[data-vertical="packaging"] .board-ect-body, html[data-vertical="businesscon
 
 /* Search + filters */
 html[data-vertical="packaging"] .board-search-bar, html[data-vertical="businesscontinuity"] .board-search-bar {
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -370,11 +395,13 @@ html[data-vertical="packaging"] .board-search-bar, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .board-search, html[data-vertical="businesscontinuity"] .board-search {
+
   flex: 1;
   min-width: 260px;
 }
 
 html[data-vertical="packaging"] .board-search-controls, html[data-vertical="businesscontinuity"] .board-search-controls {
+
   display: flex;
   align-items: center;
   gap: 8px;
@@ -388,6 +415,7 @@ html[data-vertical="packaging"] .board-field, html[data-vertical="businesscontin
 html[data-vertical="packaging"] .board-search input, html[data-vertical="businesscontinuity"] .board-search input,
 html[data-vertical="packaging"] .board-field select, html[data-vertical="businesscontinuity"] .board-field select,
 html[data-vertical="packaging"] .board-alerts-email input, html[data-vertical="businesscontinuity"] .board-alerts-email input {
+
   width: 100%;
   padding: 11px 14px;
   background: var(--field-bg);
@@ -400,16 +428,19 @@ html[data-vertical="packaging"] .board-alerts-email input, html[data-vertical="b
 
 html[data-vertical="packaging"] .board-search input::placeholder, html[data-vertical="businesscontinuity"] .board-search input::placeholder,
 html[data-vertical="packaging"] .board-alerts-email input::placeholder, html[data-vertical="businesscontinuity"] .board-alerts-email input::placeholder {
+
   color: var(--field-placeholder);
   opacity: 1;
 }
 
 html[data-vertical="packaging"] .board-field select, html[data-vertical="businesscontinuity"] .board-field select {
+
   min-width: 8.5rem;
   cursor: pointer;
 }
 
 html[data-vertical="packaging"] .board-chip, html[data-vertical="businesscontinuity"] .board-chip {
+
   padding: 8px 14px;
   font-size: 13px;
   font-weight: 500;
@@ -424,6 +455,7 @@ html[data-vertical="packaging"] .board-chip, html[data-vertical="businesscontinu
 }
 
 html[data-vertical="packaging"] .board-chip.is-active, html[data-vertical="businesscontinuity"] .board-chip.is-active {
+
   background: var(--navy);
   color: #ffffff;
   border-color: var(--navy);
@@ -438,6 +470,7 @@ html[data-vertical="packaging"] .board-search-controls .board-chip.is-active, ht
 }
 
 html[data-vertical="packaging"] .board-chip-row, html[data-vertical="businesscontinuity"] .board-chip-row {
+
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -445,6 +478,7 @@ html[data-vertical="packaging"] .board-chip-row, html[data-vertical="businesscon
 }
 
 html[data-vertical="packaging"] .board-list-head, html[data-vertical="businesscontinuity"] .board-list-head {
+
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -462,11 +496,13 @@ html[data-vertical="packaging"] .board-list-head p, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-sort, html[data-vertical="businesscontinuity"] .board-sort {
+
   display: block;
   margin: 0;
 }
 
 html[data-vertical="packaging"] .board-sort select, html[data-vertical="businesscontinuity"] .board-sort select {
+
   appearance: none;
   margin: 0;
   padding: 0 1.1em 0 0;
@@ -482,6 +518,7 @@ html[data-vertical="packaging"] .board-sort select, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-sort select:focus-visible, html[data-vertical="businesscontinuity"] .board-sort select:focus-visible {
+
   outline: 2px solid var(--navy);
   outline-offset: 3px;
 }
@@ -492,6 +529,7 @@ html[data-vertical="packaging"] .job-list, html[data-vertical="businesscontinuit
 }
 
 html[data-vertical="packaging"] .job-card, html[data-vertical="businesscontinuity"] .job-card {
+
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -507,6 +545,7 @@ html[data-vertical="packaging"] .job-card, html[data-vertical="businesscontinuit
 }
 
 html[data-vertical="packaging"] .job-card:hover, html[data-vertical="businesscontinuity"] .job-card:hover {
+
   transform: none;
   box-shadow: none;
   border-color: var(--teal);
@@ -535,6 +574,7 @@ html[data-vertical="packaging"] .job-card-pinned:hover, html[data-vertical="busi
 }
 
 html[data-vertical="packaging"] .job-card-main, html[data-vertical="businesscontinuity"] .job-card-main {
+
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -543,6 +583,7 @@ html[data-vertical="packaging"] .job-card-main, html[data-vertical="businesscont
 }
 
 html[data-vertical="packaging"] .job-card-top, html[data-vertical="businesscontinuity"] .job-card-top {
+
   display: flex;
   align-items: center;
   gap: 9px;
@@ -550,6 +591,7 @@ html[data-vertical="packaging"] .job-card-top, html[data-vertical="businessconti
 }
 
 html[data-vertical="packaging"] .job-card .company, html[data-vertical="businesscontinuity"] .job-card .company {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
@@ -559,6 +601,7 @@ html[data-vertical="packaging"] .job-card .company, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .job-tag, html[data-vertical="businesscontinuity"] .job-tag {
+
   padding: 3px 8px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 9.5px;
@@ -569,16 +612,19 @@ html[data-vertical="packaging"] .job-tag, html[data-vertical="businesscontinuity
 }
 
 html[data-vertical="packaging"] .job-tag-new, html[data-vertical="businesscontinuity"] .job-tag-new {
+
   background: #e6f1ef;
   color: var(--teal);
 }
 
 html[data-vertical="packaging"] .job-tag-pinned, html[data-vertical="businesscontinuity"] .job-tag-pinned {
+
   background: #fdf1dc;
   color: #8a5a05;
 }
 
 html[data-vertical="packaging"] .job-card h2, html[data-vertical="businesscontinuity"] .job-card h2 {
+
   margin: 0;
   font-family: Archivo, Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -588,16 +634,19 @@ html[data-vertical="packaging"] .job-card h2, html[data-vertical="businesscontin
 }
 
 html[data-vertical="packaging"] .job-card-title, html[data-vertical="businesscontinuity"] .job-card-title {
+
   color: var(--navy);
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .job-card-title:hover, html[data-vertical="businesscontinuity"] .job-card-title:hover {
+
   color: var(--teal);
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .job-card .meta, html[data-vertical="businesscontinuity"] .job-card .meta {
+
   margin: 0;
   font-size: 14px;
   color: var(--slate);
@@ -605,6 +654,7 @@ html[data-vertical="packaging"] .job-card .meta, html[data-vertical="businesscon
 }
 
 html[data-vertical="packaging"] .job-snippet, html[data-vertical="businesscontinuity"] .job-snippet {
+
   margin: 2px 0 0;
   font-size: 13px;
   line-height: 1.45;
@@ -612,12 +662,14 @@ html[data-vertical="packaging"] .job-snippet, html[data-vertical="businesscontin
 }
 
 html[data-vertical="packaging"] .job-snippet mark, html[data-vertical="businesscontinuity"] .job-snippet mark {
+
   background: #e6f1ef;
   color: var(--navy);
   padding: 0 0.12em;
 }
 
 html[data-vertical="packaging"] .job-card-side, html[data-vertical="businesscontinuity"] .job-card-side {
+
   position: relative;
   z-index: 1;
   display: flex;
@@ -628,12 +680,14 @@ html[data-vertical="packaging"] .job-card-side, html[data-vertical="businesscont
 }
 
 html[data-vertical="packaging"] .job-age, html[data-vertical="businesscontinuity"] .job-age {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
   color: var(--slate);
 }
 
 html[data-vertical="packaging"] .job-apply, html[data-vertical="businesscontinuity"] .job-apply {
+
   position: relative;
   z-index: 1;
   font-size: 13px;
@@ -644,23 +698,27 @@ html[data-vertical="packaging"] .job-apply, html[data-vertical="businesscontinui
 }
 
 html[data-vertical="packaging"] .job-apply:hover, html[data-vertical="businesscontinuity"] .job-apply:hover {
+
   text-decoration: underline;
   color: var(--navy);
 }
 
 html[data-vertical="packaging"] .board-more-wrap, html[data-vertical="businesscontinuity"] .board-more-wrap {
+
   display: flex;
   justify-content: center;
   padding-top: 22px;
 }
 
 html[data-vertical="packaging"] .board-more-wrap .board-btn, html[data-vertical="businesscontinuity"] .board-more-wrap .board-btn {
+
   padding: 12px 22px;
   font-size: 14px;
 }
 
 /* Alerts */
 html[data-vertical="packaging"] .board-alerts, html[data-vertical="businesscontinuity"] .board-alerts {
+
   margin-top: 44px;
   padding: 30px 32px;
   background: var(--mist);
@@ -670,12 +728,14 @@ html[data-vertical="packaging"] .board-alerts, html[data-vertical="businessconti
 }
 
 html[data-vertical="packaging"] .board-alerts-head, html[data-vertical="businesscontinuity"] .board-alerts-head {
+
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
 html[data-vertical="packaging"] .board-alerts-title, html[data-vertical="businesscontinuity"] .board-alerts-title {
+
   margin: 0;
   font-family: Archivo, Helvetica, Arial, sans-serif;
   font-size: 22px;
@@ -685,6 +745,7 @@ html[data-vertical="packaging"] .board-alerts-title, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-alerts-lede, html[data-vertical="businesscontinuity"] .board-alerts-lede {
+
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
@@ -693,6 +754,7 @@ html[data-vertical="packaging"] .board-alerts-lede, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-alerts-form, html[data-vertical="businesscontinuity"] .board-alerts-form {
+
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
@@ -701,17 +763,20 @@ html[data-vertical="packaging"] .board-alerts-form, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-alerts-email, html[data-vertical="businesscontinuity"] .board-alerts-email {
+
   flex: 1;
   min-width: 220px;
 }
 
 html[data-vertical="packaging"] .board-alerts-submit, html[data-vertical="businesscontinuity"] .board-alerts-submit {
+
   padding: 12px 20px;
   font-size: 14px;
 }
 
 /* Sponsor panel */
 html[data-vertical="packaging"] .board-sponsor-panel, html[data-vertical="businesscontinuity"] .board-sponsor-panel {
+
   margin-top: 12px;
   padding: 26px 32px;
   background: var(--navy);
@@ -723,6 +788,7 @@ html[data-vertical="packaging"] .board-sponsor-panel, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .board-sponsor-title, html[data-vertical="businesscontinuity"] .board-sponsor-title {
+
   margin: 0 0 7px;
   font-size: 20px;
   font-weight: 600;
@@ -731,6 +797,7 @@ html[data-vertical="packaging"] .board-sponsor-title, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .board-sponsor-body, html[data-vertical="businesscontinuity"] .board-sponsor-body {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
@@ -739,6 +806,7 @@ html[data-vertical="packaging"] .board-sponsor-body, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-panel .board-btn-amber, html[data-vertical="businesscontinuity"] .board-sponsor-panel .board-btn-amber {
+
   padding: 12px 20px;
   font-size: 14px;
 }
@@ -749,6 +817,7 @@ html[data-vertical="packaging"] .job-page, html[data-vertical="businesscontinuit
 }
 
 html[data-vertical="packaging"] .job-crumb, html[data-vertical="businesscontinuity"] .job-crumb {
+
   margin: 0;
   padding: 22px 0 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -762,6 +831,7 @@ html[data-vertical="packaging"] .job-hero, html[data-vertical="businesscontinuit
 }
 
 html[data-vertical="packaging"] .job-hero-copy, html[data-vertical="businesscontinuity"] .job-hero-copy {
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -769,6 +839,7 @@ html[data-vertical="packaging"] .job-hero-copy, html[data-vertical="businesscont
 }
 
 html[data-vertical="packaging"] .job-hero-byline, html[data-vertical="businesscontinuity"] .job-hero-byline {
+
   display: flex;
   align-items: center;
   gap: 9px;
@@ -776,6 +847,7 @@ html[data-vertical="packaging"] .job-hero-byline, html[data-vertical="businessco
 }
 
 html[data-vertical="packaging"] .job-company, html[data-vertical="businesscontinuity"] .job-company {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
@@ -784,6 +856,7 @@ html[data-vertical="packaging"] .job-company, html[data-vertical="businesscontin
 }
 
 html[data-vertical="packaging"] .job-sector, html[data-vertical="businesscontinuity"] .job-sector {
+
   padding: 3px 8px;
   background: #e6f1ef;
   color: var(--teal);
@@ -794,6 +867,7 @@ html[data-vertical="packaging"] .job-sector, html[data-vertical="businesscontinu
 }
 
 html[data-vertical="packaging"] .job-page h1, html[data-vertical="businesscontinuity"] .job-page h1 {
+
   font-size: 40px;
   line-height: 1.1;
   font-weight: 600;
@@ -802,6 +876,7 @@ html[data-vertical="packaging"] .job-page h1, html[data-vertical="businesscontin
 }
 
 html[data-vertical="packaging"] .job-facts, html[data-vertical="businesscontinuity"] .job-facts {
+
   display: flex;
   flex-wrap: wrap;
   gap: 14px 40px;
@@ -812,12 +887,14 @@ html[data-vertical="packaging"] .job-facts, html[data-vertical="businesscontinui
 }
 
 html[data-vertical="packaging"] .job-facts > div, html[data-vertical="businesscontinuity"] .job-facts > div {
+
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
 html[data-vertical="packaging"] .job-facts dt, html[data-vertical="businesscontinuity"] .job-facts dt {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 9.5px;
   letter-spacing: 0.12em;
@@ -826,6 +903,7 @@ html[data-vertical="packaging"] .job-facts dt, html[data-vertical="businessconti
 }
 
 html[data-vertical="packaging"] .job-facts dd, html[data-vertical="businesscontinuity"] .job-facts dd {
+
   margin: 0;
   font-size: 15px;
   font-weight: 600;
@@ -834,18 +912,21 @@ html[data-vertical="packaging"] .job-facts dd, html[data-vertical="businessconti
 }
 
 html[data-vertical="packaging"] .job-facts dd.is-posted, html[data-vertical="businesscontinuity"] .job-facts dd.is-posted {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
   letter-spacing: 0;
 }
 
 html[data-vertical="packaging"] .job-apply-btn, html[data-vertical="businesscontinuity"] .job-apply-btn {
+
   align-self: flex-start;
   padding: 13px 20px;
   font-size: 14px;
 }
 
 html[data-vertical="packaging"] .job-layout, html[data-vertical="businesscontinuity"] .job-layout {
+
   display: flex;
   align-items: flex-start;
   gap: 44px;
@@ -855,6 +936,7 @@ html[data-vertical="packaging"] .job-layout, html[data-vertical="businesscontinu
 }
 
 html[data-vertical="packaging"] .job-main, html[data-vertical="businesscontinuity"] .job-main {
+
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -863,6 +945,7 @@ html[data-vertical="packaging"] .job-main, html[data-vertical="businesscontinuit
 }
 
 html[data-vertical="packaging"] .job-page .description, html[data-vertical="businesscontinuity"] .job-page .description {
+
   display: flex;
   flex-direction: column;
   gap: 11px;
@@ -871,6 +954,7 @@ html[data-vertical="packaging"] .job-page .description, html[data-vertical="busi
 }
 
 html[data-vertical="packaging"] .job-page .description h2, html[data-vertical="businesscontinuity"] .job-page .description h2 {
+
   margin: 0;
   padding: 0;
   border: none;
@@ -887,6 +971,7 @@ html[data-vertical="packaging"] .job-page .description h2:not(:first-child), htm
 }
 
 html[data-vertical="packaging"] .job-page .description p, html[data-vertical="businesscontinuity"] .job-page .description p {
+
   margin: 0;
   font-size: 16px;
   line-height: 1.68;
@@ -894,6 +979,7 @@ html[data-vertical="packaging"] .job-page .description p, html[data-vertical="bu
 }
 
 html[data-vertical="packaging"] .job-page .description ul, html[data-vertical="businesscontinuity"] .job-page .description ul {
+
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -903,6 +989,7 @@ html[data-vertical="packaging"] .job-page .description ul, html[data-vertical="b
 }
 
 html[data-vertical="packaging"] .job-page .description li, html[data-vertical="businesscontinuity"] .job-page .description li {
+
   position: relative;
   margin: 0;
   padding-left: 19px;
@@ -912,6 +999,7 @@ html[data-vertical="packaging"] .job-page .description li, html[data-vertical="b
 }
 
 html[data-vertical="packaging"] .job-page .description li::before, html[data-vertical="businesscontinuity"] .job-page .description li::before {
+
   content: "";
   position: absolute;
   left: 0;
@@ -923,6 +1011,7 @@ html[data-vertical="packaging"] .job-page .description li::before, html[data-ver
 }
 
 html[data-vertical="packaging"] .job-employer, html[data-vertical="businesscontinuity"] .job-employer {
+
   padding: 20px 22px;
   background: #ffffff;
   border: 1px solid var(--card-rule);
@@ -933,6 +1022,7 @@ html[data-vertical="packaging"] .job-employer, html[data-vertical="businessconti
 }
 
 html[data-vertical="packaging"] .job-employer-kicker, html[data-vertical="businesscontinuity"] .job-employer-kicker {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
@@ -942,6 +1032,7 @@ html[data-vertical="packaging"] .job-employer-kicker, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .job-employer-body, html[data-vertical="businesscontinuity"] .job-employer-body {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.65;
@@ -949,6 +1040,7 @@ html[data-vertical="packaging"] .job-employer-body, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .job-employer-list, html[data-vertical="businesscontinuity"] .job-employer-list {
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -958,6 +1050,7 @@ html[data-vertical="packaging"] .job-employer-list, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .job-employer-list li, html[data-vertical="businesscontinuity"] .job-employer-list li {
+
   position: relative;
   padding-left: 16px;
   font-size: 14px;
@@ -966,6 +1059,7 @@ html[data-vertical="packaging"] .job-employer-list li, html[data-vertical="busin
 }
 
 html[data-vertical="packaging"] .job-employer-list li::before, html[data-vertical="businesscontinuity"] .job-employer-list li::before {
+
   content: "";
   position: absolute;
   left: 0;
@@ -977,11 +1071,13 @@ html[data-vertical="packaging"] .job-employer-list li::before, html[data-vertica
 }
 
 html[data-vertical="packaging"] .job-employer-link, html[data-vertical="businesscontinuity"] .job-employer-link {
+
   font-size: 13px;
   font-weight: 500;
 }
 
 html[data-vertical="packaging"] .job-aside, html[data-vertical="businesscontinuity"] .job-aside {
+
   width: 300px;
   flex-shrink: 0;
   display: flex;
@@ -990,12 +1086,14 @@ html[data-vertical="packaging"] .job-aside, html[data-vertical="businesscontinui
 }
 
 html[data-vertical="packaging"] .job-related, html[data-vertical="businesscontinuity"] .job-related {
+
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 html[data-vertical="packaging"] .job-related-kicker, html[data-vertical="businesscontinuity"] .job-related-kicker {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
@@ -1005,6 +1103,7 @@ html[data-vertical="packaging"] .job-related-kicker, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .job-related-list, html[data-vertical="businesscontinuity"] .job-related-list {
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1013,6 +1112,7 @@ html[data-vertical="packaging"] .job-related-list, html[data-vertical="businessc
 }
 
 html[data-vertical="packaging"] .job-related-card, html[data-vertical="businesscontinuity"] .job-related-card {
+
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -1028,6 +1128,7 @@ html[data-vertical="packaging"] .job-related-card.is-stacked, html[data-vertical
 }
 
 html[data-vertical="packaging"] .job-related-card:hover, html[data-vertical="businesscontinuity"] .job-related-card:hover {
+
   text-decoration: none;
   border-color: var(--teal);
   border-left-color: var(--job-rail);
@@ -1054,6 +1155,7 @@ html[data-vertical="packaging"] .job-related-card-pinned:hover, html[data-vertic
 }
 
 html[data-vertical="packaging"] .job-related-company, html[data-vertical="businesscontinuity"] .job-related-company {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10.5px;
   letter-spacing: 0.06em;
@@ -1061,6 +1163,7 @@ html[data-vertical="packaging"] .job-related-company, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .job-related-title, html[data-vertical="businesscontinuity"] .job-related-title {
+
   font-size: 14px;
   font-weight: 600;
   line-height: 1.35;
@@ -1073,16 +1176,19 @@ html[data-vertical="packaging"] .job-related-card:hover .job-related-title, html
 }
 
 html[data-vertical="packaging"] .job-related-meta, html[data-vertical="businesscontinuity"] .job-related-meta {
+
   font-size: 12.5px;
   color: var(--slate);
 }
 
 html[data-vertical="packaging"] .job-related-all, html[data-vertical="businesscontinuity"] .job-related-all {
+
   font-size: 13px;
   font-weight: 500;
 }
 
 html[data-vertical="packaging"] .job-alert-panel, html[data-vertical="businesscontinuity"] .job-alert-panel {
+
   margin-top: 0;
   padding: 20px;
   gap: 10px;
@@ -1098,12 +1204,14 @@ html[data-vertical="packaging"] .job-alert-panel .board-alerts-title, html[data-
 }
 
 html[data-vertical="packaging"] .job-alert-panel .board-alerts-lede, html[data-vertical="businesscontinuity"] .job-alert-panel .board-alerts-lede {
+
   font-size: 13px;
   line-height: 1.55;
   max-width: none;
 }
 
 html[data-vertical="packaging"] .job-alert-panel .board-alerts-form, html[data-vertical="businesscontinuity"] .job-alert-panel .board-alerts-form {
+
   flex-direction: column;
   align-items: stretch;
   flex-wrap: nowrap;
@@ -1112,6 +1220,7 @@ html[data-vertical="packaging"] .job-alert-panel .board-alerts-form, html[data-v
 }
 
 html[data-vertical="packaging"] .job-alert-panel .board-alerts-email, html[data-vertical="businesscontinuity"] .job-alert-panel .board-alerts-email {
+
   min-width: 0;
   width: 100%;
 }
@@ -1121,12 +1230,14 @@ html[data-vertical="packaging"] .job-alert-panel .board-alerts-email input, html
 }
 
 html[data-vertical="packaging"] .job-alert-panel .board-alerts-submit, html[data-vertical="businesscontinuity"] .job-alert-panel .board-alerts-submit {
+
   width: 100%;
   padding: 11px 18px;
   font-size: 14px;
 }
 
 html[data-vertical="packaging"] .job-sponsor-strip, html[data-vertical="businesscontinuity"] .job-sponsor-strip {
+
   margin-top: 40px;
   padding: 18px 22px;
   background: var(--mist);
@@ -1138,6 +1249,7 @@ html[data-vertical="packaging"] .job-sponsor-strip, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .job-sponsor-strip p, html[data-vertical="businesscontinuity"] .job-sponsor-strip p {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.55;
@@ -1146,6 +1258,7 @@ html[data-vertical="packaging"] .job-sponsor-strip p, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .job-sponsor-strip a, html[data-vertical="businesscontinuity"] .job-sponsor-strip a {
+
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
@@ -1153,12 +1266,14 @@ html[data-vertical="packaging"] .job-sponsor-strip a, html[data-vertical="busine
 
 /* Footer */
 html[data-vertical="packaging"] footer.board-footer, html[data-vertical="businesscontinuity"] footer.board-footer {
+
   border-top: none;
   padding: 0;
   color: var(--slate);
 }
 
 html[data-vertical="packaging"] .board-footer-inner, html[data-vertical="businesscontinuity"] .board-footer-inner {
+
   max-width: var(--board-max);
   margin: 0 auto;
   padding: 40px 2.5rem 56px;
@@ -1171,6 +1286,7 @@ html[data-vertical="packaging"] .board-footer-inner, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-footer-brand, html[data-vertical="businesscontinuity"] .board-footer-brand {
+
   display: flex;
   align-items: center;
   gap: 11px;
@@ -1180,6 +1296,7 @@ html[data-vertical="packaging"] .board-footer-brand, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-footer-network, html[data-vertical="businesscontinuity"] .board-footer-network {
+
   display: flex;
   align-items: center;
   gap: 11px;
@@ -1188,22 +1305,26 @@ html[data-vertical="packaging"] .board-footer-network, html[data-vertical="busin
 }
 
 html[data-vertical="packaging"] .board-footer-network:hover, html[data-vertical="businesscontinuity"] .board-footer-network:hover {
+
   color: var(--navy);
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .board-footer-rule, html[data-vertical="businesscontinuity"] .board-footer-rule {
+
   width: 1px;
   height: 15px;
   background: var(--board-rule);
 }
 
 html[data-vertical="packaging"] .board-footer-board, html[data-vertical="businesscontinuity"] .board-footer-board {
+
   font-weight: 500;
   color: var(--teal);
 }
 
 html[data-vertical="packaging"] .board-footer-meta, html[data-vertical="businesscontinuity"] .board-footer-meta {
+
   margin: 0;
   font-size: 13px;
   color: var(--slate);
@@ -1215,6 +1336,7 @@ html[data-vertical="packaging"] .board-sponsor-flow, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-hero, html[data-vertical="businesscontinuity"] .board-sponsor-hero {
+
   padding: 52px 0 40px;
   display: flex;
   align-items: flex-start;
@@ -1223,6 +1345,7 @@ html[data-vertical="packaging"] .board-sponsor-hero, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-copy, html[data-vertical="businesscontinuity"] .board-sponsor-copy {
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1230,6 +1353,7 @@ html[data-vertical="packaging"] .board-sponsor-copy, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-grid, html[data-vertical="businesscontinuity"] .board-sponsor-grid {
+
   list-style: none;
   margin: 0 0 48px;
   padding: 0;
@@ -1239,6 +1363,7 @@ html[data-vertical="packaging"] .board-sponsor-grid, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-card, html[data-vertical="businesscontinuity"] .board-sponsor-card {
+
   border: 1px solid var(--board-rule);
   border-left: 3px solid var(--teal);
   padding: 22px 24px;
@@ -1248,6 +1373,7 @@ html[data-vertical="packaging"] .board-sponsor-card, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-card-title, html[data-vertical="businesscontinuity"] .board-sponsor-card-title {
+
   margin: 0;
   font-size: 16px;
   font-weight: 600;
@@ -1255,6 +1381,7 @@ html[data-vertical="packaging"] .board-sponsor-card-title, html[data-vertical="b
 }
 
 html[data-vertical="packaging"] .board-sponsor-card-body, html[data-vertical="businesscontinuity"] .board-sponsor-card-body {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
@@ -1262,11 +1389,13 @@ html[data-vertical="packaging"] .board-sponsor-card-body, html[data-vertical="bu
 }
 
 html[data-vertical="packaging"] .board-sponsor-picker-section, html[data-vertical="businesscontinuity"] .board-sponsor-picker-section {
+
   padding-top: 8px;
   border-top: 1px solid var(--board-rule);
 }
 
 html[data-vertical="packaging"] .board-sponsor-section-head, html[data-vertical="businesscontinuity"] .board-sponsor-section-head {
+
   margin: 0 0 8px;
   font-family: Archivo, Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -1276,6 +1405,7 @@ html[data-vertical="packaging"] .board-sponsor-section-head, html[data-vertical=
 }
 
 html[data-vertical="packaging"] .board-sponsor-section-intro, html[data-vertical="businesscontinuity"] .board-sponsor-section-intro {
+
   margin: 0 0 20px;
   font-size: 15px;
   line-height: 1.6;
@@ -1284,6 +1414,7 @@ html[data-vertical="packaging"] .board-sponsor-section-intro, html[data-vertical
 }
 
 html[data-vertical="packaging"] .board-sponsor-footnote, html[data-vertical="businesscontinuity"] .board-sponsor-footnote {
+
   margin: 20px 0 0;
   font-size: 14px;
   line-height: 1.55;
@@ -1291,6 +1422,7 @@ html[data-vertical="packaging"] .board-sponsor-footnote, html[data-vertical="bus
 }
 
 html[data-vertical="packaging"] .board-sponsor-picker-count, html[data-vertical="businesscontinuity"] .board-sponsor-picker-count {
+
   margin: 0 0 12px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
@@ -1300,6 +1432,7 @@ html[data-vertical="packaging"] .board-sponsor-picker-count, html[data-vertical=
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-list, html[data-vertical="businesscontinuity"] .board-sponsor-pick-list {
+
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1309,6 +1442,7 @@ html[data-vertical="packaging"] .board-sponsor-pick-list, html[data-vertical="bu
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick, html[data-vertical="businesscontinuity"] .board-sponsor-pick {
+
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -1323,6 +1457,7 @@ html[data-vertical="packaging"] .board-sponsor-pick, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick:hover, html[data-vertical="businesscontinuity"] .board-sponsor-pick:hover {
+
   border-color: var(--teal);
   border-left-color: var(--job-rail);
   text-decoration: none;
@@ -1346,6 +1481,7 @@ html[data-vertical="packaging"] .board-sponsor-pick.is-pinned:hover, html[data-v
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-copy, html[data-vertical="businesscontinuity"] .board-sponsor-pick-copy {
+
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -1353,6 +1489,7 @@ html[data-vertical="packaging"] .board-sponsor-pick-copy, html[data-vertical="bu
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-company, html[data-vertical="businesscontinuity"] .board-sponsor-pick-company {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
@@ -1360,6 +1497,7 @@ html[data-vertical="packaging"] .board-sponsor-pick-company, html[data-vertical=
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-title, html[data-vertical="businesscontinuity"] .board-sponsor-pick-title {
+
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -1368,11 +1506,13 @@ html[data-vertical="packaging"] .board-sponsor-pick-title, html[data-vertical="b
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-meta, html[data-vertical="businesscontinuity"] .board-sponsor-pick-meta {
+
   font-size: 14px;
   color: var(--slate);
 }
 
 html[data-vertical="packaging"] .board-sponsor-pick-cta, html[data-vertical="businesscontinuity"] .board-sponsor-pick-cta {
+
   flex-shrink: 0;
   font-size: 13px;
   font-weight: 500;
@@ -1386,6 +1526,7 @@ html[data-vertical="packaging"] .board-sponsor-pick:hover .board-sponsor-pick-ct
 }
 
 html[data-vertical="packaging"] .board-sponsor-crumb, html[data-vertical="businesscontinuity"] .board-sponsor-crumb {
+
   margin: 0;
   padding-top: 28px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -1396,16 +1537,19 @@ html[data-vertical="packaging"] .board-sponsor-crumb, html[data-vertical="busine
 }
 
 html[data-vertical="packaging"] .board-sponsor-crumb a, html[data-vertical="businesscontinuity"] .board-sponsor-crumb a {
+
   color: var(--teal);
   text-decoration: none;
 }
 
 html[data-vertical="packaging"] .board-sponsor-crumb a:hover, html[data-vertical="businesscontinuity"] .board-sponsor-crumb a:hover {
+
   color: var(--navy);
   text-decoration: underline;
 }
 
 html[data-vertical="packaging"] .board-sponsor-checkout, html[data-vertical="businesscontinuity"] .board-sponsor-checkout {
+
   padding: 28px 0 40px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 268px;
@@ -1422,6 +1566,7 @@ html[data-vertical="packaging"] .board-sponsor-preview, html[data-vertical="busi
 }
 
 html[data-vertical="packaging"] .board-sponsor-sidebar, html[data-vertical="businesscontinuity"] .board-sponsor-sidebar {
+
   padding: 26px;
   background: var(--navy);
   display: flex;
@@ -1434,11 +1579,13 @@ html[data-vertical="packaging"] .board-sponsor-sidebar .board-price-kicker, html
 }
 
 html[data-vertical="packaging"] .board-sponsor-price, html[data-vertical="businesscontinuity"] .board-sponsor-price {
+
   margin: 0;
   color: #ffffff;
 }
 
 html[data-vertical="packaging"] .board-sponsor-sidebar-term, html[data-vertical="businesscontinuity"] .board-sponsor-sidebar-term {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
@@ -1446,6 +1593,7 @@ html[data-vertical="packaging"] .board-sponsor-sidebar-term, html[data-vertical=
 }
 
 html[data-vertical="packaging"] .board-sponsor-sidebar-list, html[data-vertical="businesscontinuity"] .board-sponsor-sidebar-list {
+
   margin: 0;
   padding-left: 1.1rem;
   font-size: 14px;
@@ -1462,12 +1610,14 @@ html[data-vertical="packaging"] .board-sponsor-checkout-wrap, html[data-vertical
 }
 
 html[data-vertical="packaging"] .board-sponsor-checkout-btn, html[data-vertical="businesscontinuity"] .board-sponsor-checkout-btn {
+
   width: 100%;
   padding: 12px 20px;
   font-size: 14px;
 }
 
 html[data-vertical="packaging"] .board-sponsor-notice, html[data-vertical="businesscontinuity"] .board-sponsor-notice {
+
   margin: 0;
   padding: 12px 14px;
   background: rgba(255, 255, 255, 0.08);
@@ -1478,11 +1628,13 @@ html[data-vertical="packaging"] .board-sponsor-notice, html[data-vertical="busin
 }
 
 html[data-vertical="packaging"] .board-sponsor-notice code, html[data-vertical="businesscontinuity"] .board-sponsor-notice code {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 12px;
 }
 
 html[data-vertical="packaging"] .board-sponsor-active, html[data-vertical="businesscontinuity"] .board-sponsor-active {
+
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1490,6 +1642,7 @@ html[data-vertical="packaging"] .board-sponsor-active, html[data-vertical="busin
 }
 
 html[data-vertical="packaging"] .board-sponsor-active-title, html[data-vertical="businesscontinuity"] .board-sponsor-active-title {
+
   margin: 0;
   font-size: 18px;
   font-weight: 600;
@@ -1497,6 +1650,7 @@ html[data-vertical="packaging"] .board-sponsor-active-title, html[data-vertical=
 }
 
 html[data-vertical="packaging"] .board-sponsor-active-body, html[data-vertical="businesscontinuity"] .board-sponsor-active-body {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
@@ -1504,6 +1658,7 @@ html[data-vertical="packaging"] .board-sponsor-active-body, html[data-vertical="
 }
 
 html[data-vertical="packaging"] .board-sponsor-success, html[data-vertical="businesscontinuity"] .board-sponsor-success {
+
   padding: 72px 0 48px;
   max-width: 620px;
   display: flex;
@@ -1512,6 +1667,7 @@ html[data-vertical="packaging"] .board-sponsor-success, html[data-vertical="busi
 }
 
 html[data-vertical="packaging"] .board-price-panel, html[data-vertical="businesscontinuity"] .board-price-panel {
+
   width: 268px;
   flex-shrink: 0;
   padding: 26px;
@@ -1522,6 +1678,7 @@ html[data-vertical="packaging"] .board-price-panel, html[data-vertical="business
 }
 
 html[data-vertical="packaging"] .board-price-kicker, html[data-vertical="businesscontinuity"] .board-price-kicker {
+
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
@@ -1531,6 +1688,7 @@ html[data-vertical="packaging"] .board-price-kicker, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-price-amount, html[data-vertical="businesscontinuity"] .board-price-amount {
+
   margin: 0;
   font-size: 54px;
   line-height: 0.9;
@@ -1540,6 +1698,7 @@ html[data-vertical="packaging"] .board-price-amount, html[data-vertical="busines
 }
 
 html[data-vertical="packaging"] .board-price-body, html[data-vertical="businesscontinuity"] .board-price-body {
+
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
@@ -1548,18 +1707,21 @@ html[data-vertical="packaging"] .board-price-body, html[data-vertical="businessc
 
 /* Legacy sponsor-page fallback (alerts, not-found) */
 html[data-vertical="packaging"] .sponsor-page, html[data-vertical="businesscontinuity"] .sponsor-page {
+
   max-width: var(--board-max);
   margin: 0 auto;
   padding: 48px 2.5rem 64px;
 }
 
 html[data-vertical="packaging"] .sponsor-page h1, html[data-vertical="businesscontinuity"] .sponsor-page h1 {
+
   font-family: Archivo, Helvetica, Arial, sans-serif;
   color: var(--navy);
   max-width: none;
 }
 
 html[data-vertical="packaging"] .sponsor-page .kicker, html[data-vertical="businesscontinuity"] .sponsor-page .kicker {
+
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -1574,6 +1736,7 @@ html[data-vertical="packaging"] .sponsor-page .lede, html[data-vertical="busines
 html[data-vertical="packaging"] .sponsor-actions .board-btn, html[data-vertical="businesscontinuity"] .sponsor-actions .board-btn,
 html[data-vertical="packaging"] .sponsor-actions .apply, html[data-vertical="businesscontinuity"] .sponsor-actions .apply,
 html[data-vertical="packaging"] .sponsor-actions .ghost, html[data-vertical="businesscontinuity"] .sponsor-actions .ghost {
+
   display: inline-flex;
 }
 
@@ -1605,8 +1768,6 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-skin-toggle {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] h1,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-stat-value,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-value,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-unit,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-pick-title,
@@ -1616,13 +1777,13 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-brand {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-contrast,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-eyebrow,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-kicker {
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-kicker {
   color: #8a6a33;
 }
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .lede,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-stat-label,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-body,
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-body p,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-list-head,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .company,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .meta,
@@ -1635,7 +1796,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-meta {
   color: #6b5637;
 }
 
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-panel,
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-panel,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts {
   background: rgba(61, 43, 24, 0.06);
   border-style: dashed;
@@ -1788,41 +1949,48 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board
   }
 
   html[data-vertical="packaging"] .board-hero, html[data-vertical="businesscontinuity"] .board-hero {
+
     flex-direction: column;
     gap: 28px;
     padding-top: 40px;
   }
 
-  html[data-vertical="packaging"] .board-ect-panel, html[data-vertical="businesscontinuity"] .board-ect-panel {
+  html[data-vertical="packaging"] .board-spec-panel {
     width: 100%;
   }
 
   html[data-vertical="packaging"] .job-card, html[data-vertical="businesscontinuity"] .job-card {
+
     flex-direction: column;
     gap: 16px;
   }
 
   html[data-vertical="packaging"] .job-card-side, html[data-vertical="businesscontinuity"] .job-card-side {
+
     align-items: flex-start;
     width: 100%;
   }
 
   html[data-vertical="packaging"] .board-mast-nav, html[data-vertical="businesscontinuity"] .board-mast-nav {
+
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
   html[data-vertical="packaging"] .board-sponsor-panel, html[data-vertical="businesscontinuity"] .board-sponsor-panel {
+
     flex-direction: column;
     align-items: flex-start;
   }
 
   html[data-vertical="packaging"] .board-sponsor-hero, html[data-vertical="businesscontinuity"] .board-sponsor-hero {
+
     flex-direction: column;
     gap: 28px;
   }
 
   html[data-vertical="packaging"] .board-sponsor-checkout, html[data-vertical="businesscontinuity"] .board-sponsor-checkout {
+
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -1837,6 +2005,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board
   }
 
   html[data-vertical="packaging"] .board-sponsor-pick, html[data-vertical="businesscontinuity"] .board-sponsor-pick {
+
     flex-direction: column;
     gap: 12px;
   }
@@ -1850,6 +2019,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .job-alert-panel .board
   }
 
   html[data-vertical="packaging"] .job-main, html[data-vertical="businesscontinuity"] .job-main {
+
     max-width: none;
     flex: 1 1 100%;
   }
