@@ -218,13 +218,14 @@ Run [`SOCIAL_MEDIA_PLAN.md` §12](SOCIAL_MEDIA_PLAN.md#12-quality-bar-pre-publis
 2. Job shares: use **job URL** for OG preview.
 3. Log qualitatively: which lane, which pillar, any inbound.
 
-### Automate later (optional)
+### Automate (email delivery)
 
 | Trigger | Action |
 | --- | --- |
-| GitHub ingest commit (listings changed) | API `postType=fresh-role` → draft queue |
-| Vercel cron Tue/Thu | API `postType=current-events` |
-| Human | Review queue → publish |
+| **Tue 15:00 UTC** | Vercel cron → industry pulse email (`current-events`) |
+| **Thu 15:00 UTC** | Vercel cron → job highlight email (`fresh-role`) |
+| **Ingest commit** (listings changed) | GitHub Action → job highlight email |
+| Human | Review email → post on LinkedIn |
 
 Nothing auto-posts to LinkedIn without human approval.
 
@@ -285,7 +286,6 @@ Improve Grok prompts in `src/lib/social/grok.ts` when drafts repeatedly miss the
 - [ ] Explicit “relatable opener” requirement for Lane B
 - [ ] `employer` / `proof` templates with fixed CTA lines from `config/*.ts`
 - [ ] Optional second job in digest-style post (still max 2, never 10)
-- [ ] Slack/email draft queue instead of only CLI/JSON store
 
 ---
 
@@ -300,7 +300,7 @@ Improve Grok prompts in `src/lib/social/grok.ts` when drafts repeatedly miss the
 | Employer pin | `--postType=employer` |
 | Preview without saving | `--dry-run` |
 
-**Env:** `XAI_API_KEY`, `X_BEARER_TOKEN`, `GROK_MODEL` — see `.env.example` and [`SOCIAL_MEDIA_PLAN.md` §15](SOCIAL_MEDIA_PLAN.md#15-linkedin-drafts--x--grok-current-events).
+**Env:** `XAI_API_KEY`, `X_BEARER_TOKEN`, `GROK_MODEL`, `SOCIAL_DRAFT_TO_EMAIL` — see `.env.example` and [`SOCIAL_MEDIA_PLAN.md` §15](SOCIAL_MEDIA_PLAN.md#15-linkedin-drafts--x--grok-current-events).
 
 ---
 
