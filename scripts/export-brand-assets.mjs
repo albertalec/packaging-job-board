@@ -122,6 +122,7 @@ async function main() {
     [path.join(brandDir, "logo-mark.svg"), "logo-mark-512.png", 512],
     [path.join(svgDir, "logo-mark-on-navy.svg"), "app-icon-512.png", 512],
     [path.join(brandDir, "logo-avatar.svg"), "roundel-navy-512.png", 512],
+    [path.join(brandDir, "logo-avatar.svg"), "linkedin-logo-300.png", 300],
     [path.join(svgDir, "roundel-white.svg"), "roundel-white-512.png", 512],
     [path.join(svgDir, "roundel-teal.svg"), "roundel-teal-512.png", 512],
     [path.join(svgDir, "roundel-outline.svg"), "roundel-outline-512.png", 512],

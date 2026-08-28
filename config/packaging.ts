@@ -55,6 +55,12 @@ export const packaging: VerticalTenant = {
     alertsWelcomeBody:
       "We'll send a short digest when new package-development roles appear. Package development — not plant ops.",
     alertsDigestIntro: "New roles on Packaging Jobs — view details on the board.",
+    boardSpecTitle: "Board Specification",
+    boardSpecParagraphs: [
+      "As a packaging professional, you know the impact of matching the spec to the conditions—ECT, flute, geometry.",
+      "That's what Niche Board does for your career.",
+      "We filter out the noise and surface curated jobs selected for your professional niche—so you spend less time searching and more time finding the right fit.",
+    ],
   },
   ingest: {
     classifier: "packaging",

@@ -1,0 +1,29 @@
+name: LinkedIn draft email
+
+on:
+  workflow_dispatch:
+    inputs:
+      vertical:
+        description: Vertical id
+        default: packaging
+        type: string
+      postType:
+        description: Grok post type (current-events, fresh-role, etc.)
+        default: current-events
+        type: string
+
+jobs:
+  email-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate and email LinkedIn draft
+        env:
+          ALERTS_CRON_SECRET: ${{ secrets.ALERTS_CRON_SECRET }}
+        run: |
+          if [ -z "$ALERTS_CRON_SECRET" ]; then
+            echo "ALERTS_CRON_SECRET not set"
+            exit 1
+          fi
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${ALERTS_CRON_SECRET}" \
+            "https://packaging.nicheboardjobs.com/api/social/linkedin-digest?vertical=${{ inputs.vertical }}&postType=${{ inputs.postType }}"

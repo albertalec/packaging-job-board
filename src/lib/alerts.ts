@@ -297,16 +297,28 @@ export async function runAlertDigest(input: {
 }
 
 export function cronAuthorized(request: Request): boolean {
-  const secret = process.env.ALERTS_CRON_SECRET?.trim();
-  if (!secret) {
+  const secrets = [
+    process.env.ALERTS_CRON_SECRET?.trim(),
+    process.env.CRON_SECRET?.trim(),
+  ].filter((value): value is string => Boolean(value));
+
+  if (secrets.length === 0) {
     // Allow Vercel Cron (adds Authorization: Bearer <CRON_SECRET> when set)
     // or open local/dev when no secret is configured.
     const vercelCron = request.headers.get("x-vercel-cron");
     if (vercelCron) return true;
     return process.env.NODE_ENV !== "production";
   }
+
   const header = request.headers.get("authorization");
-  if (header === `Bearer ${secret}`) return true;
+  if (header?.startsWith("Bearer ")) {
+    const token = header.slice("Bearer ".length).trim();
+    if (secrets.includes(token)) return true;
+  }
+
   const url = new URL(request.url);
-  return url.searchParams.get("secret") === secret;
+  const querySecret = url.searchParams.get("secret");
+  if (querySecret && secrets.includes(querySecret)) return true;
+
+  return false;
 }
