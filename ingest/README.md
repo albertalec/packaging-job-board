@@ -10,6 +10,19 @@ npm run ingest -- --vertical=packaging
 Writes `data/{vertical}/jobs.json`. Packaging companies live in
 `ingest/verticals/packaging/companies.ts`.
 
+## United States only
+
+Every board lists **US roles only**. After title classification, `run.ts`
+filters with `isUsOrRemote()` (`ingest/classify.ts`):
+
+- US state, explicit US/USA in location, or Workday `"N Locations"` for
+  employers with `country: "USA"`.
+- Drops foreign locations, foreign Workday path segments (`/job/Latin-America-…`),
+  and foreign hybrid/remote postings.
+- `remote: true` does **not** bypass the US check.
+
+Mark US-focused employers with `country: "USA"` even when the ATS site is global.
+
 ## Sources
 
 1. **Workday** — paginated POST to `/wday/cxs/{tenant}/{site}/jobs`

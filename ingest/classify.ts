@@ -125,26 +125,42 @@ export function slugify(value: string): string {
     .slice(0, 72);
 }
 
+/** Non-US locations and Workday path segments we never list. */
+const ABROAD_LOCATION =
+  /\b(?:latin america|south america|central america|colombia|bogot[aá]|cali\b|mexico|canada|ontario|quebec|alberta|manitoba|saskatchewan|united kingdom|\buk\b|england|scotland|wales|ireland|philippines|india|(?<!\bnew )mexico|germany|france|china|brazil|australia|japan|poland|hungary|romania|slovakia|austria|spain|italy|netherlands|sweden|singapore|luxembourg|mississauga|toronto|vancouver|calgary|ottawa|montreal|taguig|chennai|budapest|warsaw|dubai|london|kuala lumpur|hong kong|belfast|edinburgh|manchester|dublin|argentina|chile|peru|costa rica|puerto rico(?!\s*,\s*(?:usa|u\.s\.|united states)))\b/i;
+
+const CANADIAN_PROVINCE = /,\s*(ON|QC|AB|MB|SK|NS|NB|PE|NL|YT|NT|NU)\b/;
+
+const US_MENTION =
+  /\b(?:united states|u\.s\.a\.|u\.s\.|usa)\b|-\s*usa\b/i;
+
+/** Workday encodes region in the job path when the listing location string is sparse. */
+const FOREIGN_WORKDAY_PATH =
+  /\/job\/(?:Latin-America|Canada|Mexico|United-Kingdom|APAC|EMEA|India|Philippines|Singapore|Australia|Germany|France|Brazil|China|Japan|Poland|Colombia|Argentina|Chile|Peru|Hong-Kong|Ireland|Scotland|England|Wales|Netherlands|Sweden|Austria|Spain|Italy|Luxembourg|Romania|Hungary|Slovakia|Czech|Belgium|Taiwan|South-Korea|Korea|Thailand|Vietnam|Indonesia|Malaysia|Toronto|Vancouver|Montreal|Calgary|Ottawa|Mississauga)/i;
+
 export function isUsOrRemote(
   job: {
     state: string | null;
     remote: boolean;
     location: string;
+    applyUrl?: string;
+    sourceId?: string;
   },
   opts?: { homeCountry?: string },
 ): boolean {
   const location = job.location;
-  const mentionsUs = /\b(united states|\bu\.s\.a\.\b|\bu\.s\.\b|\busa\b)\b/i.test(
-    location,
-  );
+  const pathHint = `${job.applyUrl ?? ""} ${job.sourceId ?? ""}`;
+  const mentionsUs = US_MENTION.test(location) || US_MENTION.test(pathHint);
   const mentionsAbroad =
-    /\b(canada|ontario|quebec|alberta|manitoba|saskatchewan|united kingdom|\buk\b|england|scotland|wales|ireland|philippines|india|(?<!\bnew )mexico|germany|france|china|brazil|australia|japan|poland|hungary|romania|slovakia|austria|spain|italy|netherlands|sweden|singapore|luxembourg|mississauga|toronto|vancouver|calgary|ottawa|montreal|taguig|chennai|budapest|warsaw|dubai|london|kuala lumpur|hong kong|belfast|edinburgh|manchester|dublin)\b/i.test(
-      location,
-    ) || /,\s*(ON|QC|AB|MB|SK|NS|NB|PE|NL|YT|NT|NU)\b/.test(location);
+    ABROAD_LOCATION.test(location) ||
+    CANADIAN_PROVINCE.test(location) ||
+    FOREIGN_WORKDAY_PATH.test(pathHint);
+
   if (mentionsAbroad && !mentionsUs) return false;
-  if (job.remote) return true;
   if (job.state) return true;
   if (mentionsUs) return true;
+  // US hybrid/remote must still anchor to a US location — not a foreign site marked hybrid.
+  if (job.remote) return Boolean(job.state || mentionsUs);
   // Workday collapses multi-site US postings to "4 Locations"
   if (
     opts?.homeCountry === "USA" &&
