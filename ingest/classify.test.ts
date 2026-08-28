@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { classifyJob } from "./classify.ts";
+import { classifyJob, isUsOrRemote } from "./classify.ts";
 
 function verdict(
   title: string,
@@ -133,5 +133,54 @@ describe("classifyJob", () => {
         `${job.company}: ${job.title} (${result.reason})`,
       );
     }
+  });
+});
+
+describe("isUsOrRemote", () => {
+  it("drops foreign hybrid roles flagged remote in the description", () => {
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: true,
+        location: "Latin America, Colombia, Valle del Cauca, Cali, Colombia",
+        sourceId:
+          "/job/Latin-America-Colombia-Valle-del-Cauca-Cali/Packaging-Engineer_2607047814W",
+        applyUrl:
+          "https://kenvue.wd5.myworkdayjobs.com/kenvue/job/Latin-America-Colombia-Valle-del-Cauca-Cali/Packaging-Engineer_2607047814W",
+      }),
+      false,
+    );
+  });
+
+  it("keeps US hybrid roles with a state", () => {
+    assert.equal(
+      isUsOrRemote({
+        state: "GA",
+        remote: true,
+        location: "Alpharetta, GA - USA, United States of America",
+      }),
+      true,
+    );
+  });
+
+  it("drops Canada-only listings", () => {
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: false,
+        location: "Mississauga, ON, Canada",
+      }),
+      false,
+    );
+  });
+
+  it("keeps Workday multi-location US collapse for USA employers", () => {
+    assert.equal(
+      isUsOrRemote(
+        { state: null, remote: false, location: "4 Locations" },
+        { homeCountry: "USA" },
+      ),
+      true,
+    );
   });
 });

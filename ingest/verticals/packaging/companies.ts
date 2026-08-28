@@ -72,6 +72,7 @@ export const companies: Company[] = [
     searchText: PACKAGING_QUERY,
     searchTexts: [...ENGINEER_QUERIES],
     niche: "cpg",
+    country: "USA",
   },
   {
     name: "Clorox",

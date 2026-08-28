@@ -1,5 +1,17 @@
 # Agent instructions
 
+## Job scope (United States only)
+
+All Niche Board verticals list **United States roles only**. Candidates browse US employers on US career sites; we do not run an international job board.
+
+**Ingest gate:** every normalized job must pass `isUsOrRemote()` in `ingest/classify.ts` before it is written to `data/{vertical}/jobs.json`.
+
+- **Keep:** US city + state, explicit US/USA in location or Workday path, or Workday `"N Locations"` collapse for employers marked `country: "USA"`.
+- **Drop:** foreign locations (Latin America, Canada, EMEA, APAC, etc.), foreign Workday path segments (`/job/Latin-America-…`), and **foreign hybrid/remote** roles.
+- **Do not** treat `remote: true` alone as US-qualified. Hybrid/remote must still anchor to a US state or US mention in location/path.
+
+When adding employers on global ATS sites (e.g. Kenvue Workday), set `country: "USA"` on the company record and rely on the location filter — do not widen ingest to non-US postings.
+
 ## CSS layout stability
 
 Board and hub layout must stay **stable** across verticals, theme skins (Standard / Kraft), and feature work. Visual themes may change colors and surfaces; they must not change structure.
