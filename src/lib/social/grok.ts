@@ -43,7 +43,7 @@ export function buildGrokMessages(input: GrokDraftInput): {
           .slice(0, 6)
           .map(
             (tweet, index) =>
-              `${index + 1}. "${tweet.text}" (${tweet.createdAt || "recent"}, ${tweet.url})`,
+              `${index + 1}. Theme: ${tweet.text.replace(/\s+/g, " ").slice(0, 200)} (${tweet.createdAt || "recent"})`,
           )
           .join("\n")
       : "No recent X posts were available — write from board context only.";
@@ -60,6 +60,15 @@ export function buildGrokMessages(input: GrokDraftInput): {
       }.`
     : "";
 
+  const postTypeGuide =
+    input.postType === "current-events"
+      ? input.xTweets.length > 0
+        ? "Open with a relatable observation about what specialists are discussing this week (from X themes below). Bridge to why keyword search buries narrow titles. Do NOT quote tweets or @mention anyone."
+        : "Open with a relatable search-pain observation for this specialty (no specific news claim). Bridge to why a classified niche board exists."
+      : input.postType === "fresh-role"
+        ? "Lead with the featured role. One line of contrast or proof. Apply-out CTA."
+        : "";
+
   const system = [
     "You write LinkedIn posts for Niche Board, a network of precision job boards.",
     "Tone: friendly but not eager, trustworthy, lightly fun. No hype, emojis, or exclamation piles.",
@@ -68,7 +77,10 @@ export function buildGrokMessages(input: GrokDraftInput): {
     "Use canonical brand names: Niche Board (two words). Never Nicheboard.",
     "Output ONLY the post text — no title, labels, hashtags block, or commentary.",
     "Keep under 900 characters. Use line breaks for readability.",
-  ].join(" ");
+    postTypeGuide,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   const user = [
     `Vertical: ${input.brandName} (${input.verticalId})`,
@@ -80,10 +92,14 @@ export function buildGrokMessages(input: GrokDraftInput): {
     statsBlock,
     jobBlock,
     "",
-    "Recent X conversation (current events — weave in ONE timely angle naturally; do not quote tweets verbatim or @mention authors):",
+    input.xTweets.length > 0
+      ? "Recent X conversation themes (synthesize ONE timely angle — do not quote verbatim):"
+      : "Recent X conversation (none available):",
     xContext,
     "",
-    "Write one LinkedIn post draft that ties a current-events angle to why this specialty board matters.",
+    input.postType === "current-events"
+      ? "Write one LinkedIn post that ties a current industry moment to why this specialty board matters."
+      : "Write one LinkedIn post draft for this vertical.",
     "Include exactly one primary CTA with the board or sponsor URL.",
   ]
     .filter(Boolean)

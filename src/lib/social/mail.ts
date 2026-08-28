@@ -56,7 +56,13 @@ export function buildLinkedInDraftEmail(input: {
           .slice(0, 4)
           .map((tweet) => `• ${tweet.text.replace(/\s+/g, " ").slice(0, 140)}…`)
           .join("\n")
-      : "No X context used for this draft.";
+      : "No X themes passed to Grok for this draft.";
+
+  const xStatusLine = result.xStatus
+    ? `X: ${result.xStatus}`
+    : result.xQuery
+      ? `X query: ${result.xQuery}`
+      : "";
 
   const jobBlock = result.job
     ? `Job anchor: ${result.job.title} at ${result.job.company}\n${result.job.url}`
@@ -73,6 +79,8 @@ export function buildLinkedInDraftEmail(input: {
     draft,
     "",
     jobBlock,
+    "",
+    xStatusLine,
     "",
     "X themes (do not quote on LinkedIn):",
     xLines,
@@ -97,7 +105,8 @@ export function buildLinkedInDraftEmail(input: {
       ? `<p style="margin:0 0 12px;font-size:14px;"><strong>Job link:</strong> <a href="${escapeHtml(result.job.url)}">${escapeHtml(result.job.title)} · ${escapeHtml(result.job.company)}</a></p>`
       : ""
   }
-  <p style="margin:16px 0 8px;font-size:12px;color:#4B5563;font-weight:600;">X themes (reference only — do not quote)</p>
+  <p style="margin:16px 0 8px;font-size:12px;color:#4B5563;">${escapeHtml(xStatusLine || "X status unknown")}</p>
+  <p style="margin:0 0 8px;font-size:12px;color:#4B5563;font-weight:600;">X themes (reference only — do not quote)</p>
   <pre style="margin:0 0 16px;padding:12px;background:#fff;border:1px solid #E7EAEE;font-size:12px;white-space:pre-wrap;">${escapeHtml(xLines)}</pre>
   <p style="margin:0;font-size:12px;color:#4B5563;">Review SOCIAL_MEDIA_PLAN §12 before posting. Nothing auto-publishes to LinkedIn.</p>
 </body>

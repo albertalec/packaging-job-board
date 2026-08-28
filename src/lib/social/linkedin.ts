@@ -13,7 +13,12 @@ import {
   saveDraft,
   type SocialDraftRecord,
 } from "./store";
-import { searchRecentPosts, xConfigured, type XTweet } from "./x";
+import {
+  describeXSearchResult,
+  searchRecentPosts,
+  xConfigured,
+  type XTweet,
+} from "./x";
 
 const NETWORK_TAGLINE = "The right jobs, not all the jobs.";
 
@@ -34,6 +39,7 @@ export type LinkedInDraftRunResult = {
   model?: string;
   xQuery?: string;
   xTweets?: XTweet[];
+  xStatus?: string;
   job?: { title: string; company: string; url: string; id: string };
   saved?: SocialDraftRecord;
   recentDrafts?: SocialDraftRecord[];
@@ -79,12 +85,23 @@ export async function generateLinkedInPostDraft(input: {
   ]);
 
   const xResult = await searchRecentPosts({ verticalId: tenant.id });
-  if (!xResult.ok) {
-    if (!xResult.skipped) errors.push(`X: ${xResult.error}`);
-  }
-
   const xTweets =
     xResult.ok ? filterUnusedTweets(xResult.tweets, usedTweetIds) : [];
+  const xStatus = describeXSearchResult(
+    xResult,
+    xResult.ok ? xTweets.length : 0,
+    tenant.id,
+  );
+
+  if (!xResult.ok) {
+    if (!xResult.skipped) errors.push(`X: ${xResult.error}`);
+  } else if (xResult.rawCount === 0) {
+    errors.push(`X: ${xStatus}`);
+  } else if (xResult.rawCount > 0 && xTweets.length === 0) {
+    errors.push(
+      `X: ${xResult.rawCount} post(s) found but all were already used in recent drafts.`,
+    );
+  }
 
   const job =
     postType === "fresh-role" || postType === "current-events"
@@ -104,6 +121,7 @@ export async function generateLinkedInPostDraft(input: {
       dryRun: input.dryRun,
       xQuery: xResult.query,
       xTweets,
+      xStatus,
       job: job ?? undefined,
       errors: ["Grok: XAI_API_KEY is not configured."],
       recentDrafts: input.includeRecent
@@ -138,6 +156,7 @@ export async function generateLinkedInPostDraft(input: {
       dryRun: input.dryRun,
       xQuery: xResult.query,
       xTweets,
+      xStatus,
       job: job ?? undefined,
       errors: [...errors, `Grok: ${grok.error}`],
       recentDrafts: input.includeRecent
@@ -166,6 +185,7 @@ export async function generateLinkedInPostDraft(input: {
     model: grok.model,
     xQuery: xResult.query,
     xTweets,
+    xStatus,
     job: job ?? undefined,
     saved,
     errors,

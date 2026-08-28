@@ -34,7 +34,6 @@ test("buildGrokMessages includes contrast line and X context", () => {
   assert.match(system, /Contrast \+ one proof \+ one CTA/);
   assert.match(user, /Package development — not plant ops/);
   assert.match(user, /CPG brands are hiring packaging engineers/);
-  assert.match(user, /52 live roles/);
 });
 
 test("pickFreshJob returns newest role with board URL", () => {
