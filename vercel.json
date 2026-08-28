@@ -3,6 +3,14 @@
     {
       "path": "/api/alerts/digest",
       "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/social/linkedin-digest?cronDayOnly=true",
+      "schedule": "0 15 * * 2"
+    },
+    {
+      "path": "/api/social/linkedin-digest?cronDayOnly=true",
+      "schedule": "0 15 * * 4"
     }
   ]
 }

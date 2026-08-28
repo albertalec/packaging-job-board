@@ -156,7 +156,26 @@ Use **one** per post — don’t stack.
 
 ## 6. Production workflow
 
-### Generate
+### Deliver (no local CLI required)
+
+LinkedIn drafts are **emailed** via Resend when `SOCIAL_DRAFT_TO_EMAIL` is set (your personal inbox).
+
+| Schedule | Lane | Trigger |
+| --- | --- | --- |
+| **Tue 15:00 UTC** | B — Industry pulse | Vercel cron → `/api/social/linkedin-digest?cronDayOnly=true` |
+| **Thu 15:00 UTC** | A — Job highlight | Same cron path (day picks `fresh-role`) |
+| **After ingest** | A — Job highlight | GitHub Action → `SOCIAL_LINKEDIN_DIGEST_URL` + `postType=fresh-role` |
+
+**Manual test email:**
+
+```bash
+curl -X POST -H "Authorization: Bearer $ALERTS_CRON_SECRET" \
+  "https://packaging.nicheboardjobs.com/api/social/linkedin-digest?vertical=packaging&postType=current-events"
+```
+
+Email includes copy-paste draft text, optional job link, and X theme notes (not for quoting).
+
+### Generate (optional local CLI)
 
 1. **Job lane** — run after ingest when listings changed, or pick manually from board.
 2. **Trend lane** — run 1–2× weekly; X supplies recent posts; Grok synthesizes theme.
