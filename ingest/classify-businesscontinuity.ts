@@ -10,6 +10,79 @@ export { isRemote };
 const SOFTWARE_PACKAGING =
   /\b(application packaging|endpoint packaging|desktop packaging|software packaging)\b/i;
 
+/** Payments/card BCP acronym — not Business Continuity Planning. */
+const BCP_PAYMENTS =
+  /\b(customer engagement|business cards?(?:\s*&|\s*and\s*)?\s*payments?|bc\s*&\s*p|card risk|global core payments)\b/i;
+
+/** Field / FEMA / humanitarian disaster response — not corporate IT BCM/DR. */
+const FIELD_DISASTER =
+  /\b(\bfema\b|national incident management|\bnims\b|incident command system|\bics[-\s]?(?:100|200|300|400|700|800)\b|public safety answering point|\bpsap\b|humanitarian relief|emergency response agencies|federal emergency management|state emergency management offices|national guard|starlink crisis|family care liaison|prepared @ airbus)\b/i;
+
+/** Physical / fleet emergency ops — not IT BCM programs. */
+const PHYSICAL_EM_OPS =
+  /\b(emergency response team|escalation manager ops|public safety answering|field events|fleet network|site-specific emergency action plans|physical security|autonomous vehicle.*(?:emergency|safety)|operations center.*(?:on-call|escalation))\b/i;
+
+/** Factory / manufacturing capacity resiliency — not IT BCM/DR. */
+const MANUFACTURING_RESILIENCY =
+  /\b(capacity growth office|smart factory|digital twin|iiot|factory build|manufacturing uptime|production ramp|warehouse\/logistics fulfillment)\b/i;
+
+const CORPORATE_BCM_TITLE =
+  /\b(business continuity|disaster recovery|operational resilienc|technology resilienc|enterprise resilienc|bc\/dr|bcdr|\bbcm\b|continuity of business|technology disaster recovery|crisis management\s*&\s*business continuity|business continuity\s*&|business continuity\s*\/)\b/i;
+
+function isFieldDisasterRole(
+  title: string,
+  blob: string,
+): boolean {
+  if (/\b(starlink crisis response|crisis response lead)\b/i.test(title)) {
+    return true;
+  }
+  if (/\bregion crisis management coordinator\b/i.test(title)) {
+    return true;
+  }
+  if (CORPORATE_BCM_TITLE.test(title)) {
+    return false;
+  }
+  if (
+    /\bemergency management\b/i.test(title) &&
+    (FIELD_DISASTER.test(blob) || PHYSICAL_EM_OPS.test(blob))
+  ) {
+    return true;
+  }
+  if (
+    /\bcrisis (?:response|management)\b/i.test(title) &&
+    (FIELD_DISASTER.test(blob) ||
+      /\b(family care|prepared @|physical security)\b/i.test(blob))
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function isProductDrEngineering(
+  title: string,
+  department: string | null | undefined,
+  blob: string,
+): boolean {
+  return (
+    /\b(member of technical staff|software engineer|backend engineer|staff engineer|database engineer)\b/i.test(
+      title,
+    ) &&
+    /\bdisaster recovery\b/i.test(title) &&
+    /\b(engineering|product development|database platform|software)\b/i.test(
+      `${department ?? ""}\n${blob}`,
+    )
+  );
+}
+
+function isManufacturingResiliency(blob: string): boolean {
+  return (
+    MANUFACTURING_RESILIENCY.test(blob) &&
+    !/\b(it disaster recovery|technology disaster recovery|business continuity program|recovery time objective|\brto\b|\brpo\b|cbcp|bcm program)\b/i.test(
+      blob,
+    )
+  );
+}
+
 /** Generic IT ops — not BCM / DR unless title carries continuity signal. */
 const GENERIC_IT =
   /\b(help\s?desk|service desk|desktop support|field technician|field service|noc analyst|network engineer|systems administrator|sysadmin|database administrator|dba|software engineer|software developer|full stack|front end developer|backend developer|qa engineer|quality assurance engineer|it support|technical support representative|customer support)\b/i;
@@ -37,6 +110,18 @@ export function classifyBusinessContinuityJob(input: {
 
   if (SOFTWARE_PACKAGING.test(title)) {
     return { keep: false, reason: "software packaging" };
+  }
+  if (/\bbcp\b/i.test(title) && BCP_PAYMENTS.test(blob)) {
+    return { keep: false, reason: "BCP acronym (business cards/payments)" };
+  }
+  if (isFieldDisasterRole(title, blob)) {
+    return { keep: false, reason: "field/FEMA disaster response" };
+  }
+  if (isProductDrEngineering(title, input.department, blob)) {
+    return { keep: false, reason: "product/database engineering DR" };
+  }
+  if (isManufacturingResiliency(blob)) {
+    return { keep: false, reason: "manufacturing capacity resiliency" };
   }
   if (RESILIENCE_NOISE.test(title)) {
     return { keep: false, reason: "product/SRE resilience noise" };
@@ -87,17 +172,18 @@ export function inferDrSector(
   companyNiche: Niche | undefined,
   text: string,
 ): Niche | null {
+  if (companyNiche) return companyNiche;
   const blob = text.toLowerCase();
-  if (/\b(insurance|insurer|underwriter|actuarial carrier)\b/.test(blob)) {
+  if (/\b(insurance company|insurance carrier|insurer|underwriter|actuarial carrier)\b/.test(blob)) {
     return "insurance";
   }
   if (/\b(hospital|health system|healthcare|clinical|patient|medical center|payer|pharmacy benefit)\b/.test(blob)) {
-    return companyNiche === "insurance" ? "insurance" : "healthcare";
+    return "healthcare";
   }
   if (/\b(bank|banking|capital markets|investment|asset management|financial services|brokerage)\b/.test(blob)) {
     return "finance";
   }
-  return companyNiche ?? null;
+  return null;
 }
 
 export function jobHash(company: string, sourceId: string, title: string): string {

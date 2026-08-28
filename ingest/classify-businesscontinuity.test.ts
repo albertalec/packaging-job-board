@@ -80,4 +80,68 @@ describe("classifyBusinessContinuityJob", () => {
       assert.equal(result.keep, false, title);
     }
   });
+
+  it("drops BCP business-cards acronym collision", () => {
+    const result = classifyBusinessContinuityJob({
+      title: "BCP Customer Engagement Analytics Lead - Business Director",
+      description: "Business Cards and Payments analytics for card products.",
+    });
+    assert.equal(result.keep, false);
+  });
+
+  it("drops FEMA-style and humanitarian disaster response roles", () => {
+    for (const [title, description] of [
+      [
+        "Starlink Crisis Response Lead",
+        "Experience with FEMA, state emergency management offices, and humanitarian relief.",
+      ],
+      [
+        "Emergency Management Program Manager",
+        "Serve as liaison for Public Safety Answering Points and the Emergency Response Team.",
+      ],
+      [
+        "Region Crisis Management Coordinator (Contract)",
+        "Support the Family Care program and Prepared @ Airbus crisis exercises.",
+      ],
+    ] as const) {
+      const result = classifyBusinessContinuityJob({ title, description });
+      assert.equal(result.keep, false, title);
+    }
+  });
+
+  it("keeps corporate BCM when emergency management is paired in title", () => {
+    for (const title of [
+      "Emergency Management & Business Continuity Program Manager",
+      "Business Continuity / Senior Business Continuity and Emergency Management Specialist",
+      "Manager, Crisis Management & Business Continuity",
+    ]) {
+      const result = classifyBusinessContinuityJob({
+        title,
+        description: "Own the BCM program and disaster recovery planning.",
+      });
+      assert.equal(result.keep, true, title);
+    }
+  });
+
+  it("drops product engineering and manufacturing resiliency noise", () => {
+    for (const [title, description, department] of [
+      [
+        "Member of Technical Staff (Disaster Recovery)",
+        "Backend software engineer on backup and replication features.",
+        "Engineering",
+      ],
+      [
+        "Director, Operations Resiliency, Capacity Growth Office",
+        "Lead smart factory and IIoT resiliency for new factory builds.",
+        null,
+      ],
+    ] as const) {
+      const result = classifyBusinessContinuityJob({
+        title,
+        description,
+        department,
+      });
+      assert.equal(result.keep, false, title);
+    }
+  });
 });

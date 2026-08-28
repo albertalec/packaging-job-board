@@ -6,14 +6,12 @@ const DR_QUERIES = [
   "operational resilience",
   "continuity of business",
   "BCM",
-  "crisis management",
   "business resilience",
   "technology resilience",
+  "technology disaster recovery",
   "DR architect",
   "continuity planning",
-  "BCP",
   "resiliency",
-  "emergency management",
 ] as const;
 
 export const companies: Company[] = [

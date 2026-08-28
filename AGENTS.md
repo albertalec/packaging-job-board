@@ -12,6 +12,16 @@ All Niche Board verticals list **United States roles only**. Candidates browse U
 
 When adding employers on global ATS sites (e.g. Kenvue Workday), set `country: "USA"` on the company record and rely on the location filter — do not widen ingest to non-US postings.
 
+## Resilience board scope (BCM & IT DR only)
+
+The **Resilience** vertical (`businesscontinuity`) lists corporate **business continuity management (BCM)** and **IT disaster recovery** roles — not FEMA-style field emergency management or humanitarian disaster response.
+
+**Ingest gate:** `classifyBusinessContinuityJob()` in `ingest/classify-businesscontinuity.ts`.
+
+- **Keep:** BCM program owners, IT/technology disaster recovery managers, operational/enterprise resilience in regulated finance and healthcare employers.
+- **Drop:** FEMA/NIMS/ICS/PSAP field emergency ops, humanitarian crisis response, product-engineering DR teams, manufacturing capacity/smart-factory resiliency, and `BCP` acronym collisions (Business Cards & Payments).
+- **Emergency management in title:** keep only when paired with business continuity / disaster recovery in the title (healthcare EMBC program managers are OK).
+
 ## CSS layout stability
 
 Board and hub layout must stay **stable** across verticals, theme skins (Standard / Kraft), and feature work. Visual themes may change colors and surfaces; they must not change structure.
