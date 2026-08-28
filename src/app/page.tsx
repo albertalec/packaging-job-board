@@ -4,7 +4,6 @@ import { BoardSponsorPanel } from "@/components/BoardSponsorPanel";
 import { JobAlertsSignup } from "@/components/JobAlertsSignup";
 import { JobBoard } from "@/components/JobBoard";
 import {
-  boardEctRating,
   countSectors,
   employerLede,
 } from "@/lib/board-stats";
@@ -42,7 +41,6 @@ export default async function HomePage() {
   const sortedJobs = sortJobsWithSponsors(jobs, sponsoredIds, Date.now(), "date", tenant.id);
   const employersHiring = new Set(jobs.map((job) => job.company)).size;
   const sectors = countSectors(jobs);
-  const ect = boardEctRating(total);
   const ingestedLabel = ingestedAt
     ? new Date(ingestedAt).toLocaleString("en-US", {
         month: "short",
@@ -77,17 +75,19 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
-        <aside className="board-ect-panel" aria-label="Board strength">
-          <p className="board-ect-kicker">Board strength</p>
-          <p className="board-ect-rating">
-            <span className="board-ect-value">{ect}</span>
-            <span className="board-ect-unit">ECT</span>
-          </p>
-          <p className="board-ect-body">
-            Double-wall. Holds {total} roles without buckling. A 32 ECT board
-            would have shipped twelve thousand.
-          </p>
-        </aside>
+        {tenant.copy.boardSpecParagraphs && tenant.copy.boardSpecTitle ? (
+          <aside
+            className="board-spec-panel"
+            aria-label={tenant.copy.boardSpecTitle}
+          >
+            <p className="board-spec-kicker">{tenant.copy.boardSpecTitle}</p>
+            <div className="board-spec-body">
+              {tenant.copy.boardSpecParagraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </aside>
+        ) : null}
       </section>
 
       <JobBoard

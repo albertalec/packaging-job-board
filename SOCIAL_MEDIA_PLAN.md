@@ -146,9 +146,10 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 
 1. **LinkedIn Company Page** — About, tagline, logo lockup, link to hub
 2. **Packaging R&D / package-dev communities** — same message house; participate, don’t spam
-3. **Fresh listing shares** — 2–3/week with OG preview when inventory warrants
-4. **Employer education** — who sees a pin, what it costs, link to `/sponsor`
-5. **Hub / network posts** — light until 2+ verticals live
+3. **Fresh listing shares** — 2–3/week with OG preview when inventory warrants ([Grok plan — Lane A](SOCIAL_LINKEDIN_GROK_PLAN.md#lane-a--new-job-highlights-board-led))
+4. **Industry pulse from X** — 1–2/week trend bridges ([Grok plan — Lane B](SOCIAL_LINKEDIN_GROK_PLAN.md#lane-b--industry-pulse-x-led))
+5. **Employer education** — who sees a pin, what it costs, link to `/sponsor`
+6. **Hub / network posts** — light until 2+ verticals live
 
 ### Post templates
 
@@ -206,6 +207,47 @@ When sharing job links, rely on per-job OG metadata so LinkedIn/Slack previews r
 ### Future channels
 
 Clone this plan per vertical: swap specialty noun, contrast line, example employers, and vertical URL. Keep Niche Board platform lines unchanged.
+
+---
+
+## 15. LinkedIn drafts — X + Grok (current events)
+
+**Operational plan:** [`SOCIAL_LINKEDIN_GROK_PLAN.md`](SOCIAL_LINKEDIN_GROK_PLAN.md) — weekly mix (job highlights vs X industry pulse), relatable hooks, workflow, and `postType` mapping.
+
+Use **X** for timely niche conversation and **Grok** (xAI) to draft LinkedIn posts that follow this plan’s voice. Posts are **drafts for manual review** — nothing auto-publishes to LinkedIn.
+
+**Email delivery:** set `SOCIAL_DRAFT_TO_EMAIL` on Vercel — drafts arrive Tue/Thu (and after ingest when configured) via `/api/social/linkedin-digest`. No local CLI required.
+
+### Flow
+
+1. **X recent search** — vertical-specific queries (packaging engineers, BCM/DR, etc.)
+2. **Board context** — live job count, optional freshest role link
+3. **Grok** — synthesizes contrast + proof + CTA with one current-events angle
+4. **Review** — run the pre-publish checklist (§12) before posting
+
+### Commands
+
+```bash
+# Local draft (dry-run when SOCIAL_DRY_RUN=true or --dry-run)
+npm run social:linkedin-draft -- --vertical=packaging
+npm run social:linkedin-draft -- --vertical=packaging --postType=fresh-role
+
+# Cron/API (same auth as alert digest)
+curl -X POST -H "Authorization: Bearer $ALERTS_CRON_SECRET" \
+  "https://packaging.nicheboardjobs.com/api/social/linkedin-draft?vertical=packaging&dryRun=true"
+```
+
+### Env vars (see `.env.example`)
+
+| Variable | Purpose |
+| --- | --- |
+| `X_BEARER_TOKEN` | X API v2 recent search |
+| `XAI_API_KEY` | Grok chat completions |
+| `GROK_MODEL` | Optional model id (default `grok-3`) |
+| `SOCIAL_DRY_RUN` | Skip persisting drafts when `true` |
+| `ALERTS_CRON_SECRET` | Auth for `/api/social/linkedin-draft` |
+
+Draft history is stored in `data/social/{vertical}.json` locally or Upstash Redis in production.
 
 ---
 
@@ -269,7 +311,7 @@ Track qualitatively and via referrals — not vanity alone:
 
 ---
 
-## 15. Employer follow workflow (internal)
+## 16. Employer follow workflow (internal)
 
 Follow employers on LinkedIn **manually** — automation is not available and violates LinkedIn ToS.
 
