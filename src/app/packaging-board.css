@@ -308,9 +308,10 @@ html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-stat-label
   color: var(--slate);
 }
 
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-panel, html[data-vertical="businesscontinuity"] .board-ect-panel {
-  display: none;
-  width: 236px;
+/* Board specification panel (packaging homepage hero) */
+html[data-vertical="packaging"] .board-spec-panel {
+  display: flex;
+  width: 280px;
   flex-shrink: 0;
   padding: 20px;
   background: var(--mist);
@@ -319,11 +320,7 @@ html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-panel,
   gap: 12px;
 }
 
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-panel {
-  display: flex;
-}
-
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-kicker, html[data-vertical="businesscontinuity"] .board-ect-kicker {
+html[data-vertical="packaging"] .board-spec-kicker {
   margin: 0;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 10px;
@@ -332,30 +329,13 @@ html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-kicker
   color: var(--teal);
 }
 
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-rating, html[data-vertical="businesscontinuity"] .board-ect-rating {
-  margin: 0;
+html[data-vertical="packaging"] .board-spec-body {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-value, html[data-vertical="businesscontinuity"] .board-ect-value {
-  font-size: 54px;
-  line-height: 0.9;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  color: var(--navy);
-}
-
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-unit, html[data-vertical="businesscontinuity"] .board-ect-unit {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--navy);
-}
-
-html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-body, html[data-vertical="businesscontinuity"] .board-ect-body {
+html[data-vertical="packaging"] .board-spec-body p {
   margin: 0;
   font-size: 13px;
   line-height: 1.55;
@@ -1613,8 +1593,6 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-skin-toggle {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] h1,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-stat-value,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-value,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-unit,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card-title,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-pick-title,
@@ -1624,13 +1602,13 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-brand {
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-contrast,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-eyebrow,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-kicker {
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-kicker {
   color: #8a6a33;
 }
 
 html[data-vertical="packaging"][data-board-skin="kraft"] .lede,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-stat-label,
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-body,
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-body p,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-list-head,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .company,
 html[data-vertical="packaging"][data-board-skin="kraft"] .job-card .meta,
@@ -1643,7 +1621,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-footer-meta {
   color: #6b5637;
 }
 
-html[data-vertical="packaging"][data-board-skin="kraft"] .board-ect-panel,
+html[data-vertical="packaging"][data-board-skin="kraft"] .board-spec-panel,
 html[data-vertical="packaging"][data-board-skin="kraft"] .board-alerts {
   background: rgba(61, 43, 24, 0.06);
   border-style: dashed;
@@ -1806,7 +1784,7 @@ html[data-vertical="packaging"][data-board-skin="kraft"] .board-sponsor-panel {
     padding-top: 40px;
   }
 
-  html[data-vertical="packaging"]:not([data-board-skin="kraft"]) .board-ect-panel, html[data-vertical="businesscontinuity"] .board-ect-panel {
+  html[data-vertical="packaging"] .board-spec-panel {
     width: 100%;
   }
 
