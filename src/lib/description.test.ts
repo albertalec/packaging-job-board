@@ -35,6 +35,57 @@ describe("normalizeDescription", () => {
     }
   });
 
+  it("merges Workday-split education and experience headings", () => {
+    const input =
+      "EDUCATION\n\nAND\n\nEXPERIENCE\n\n, YOU'LL BRING\nRequired\n\n• Bachelor's degree (or equivalent) is required\n\n• 5 years of experience in regulatory preferred\n\nPreferred\n\n• M.S. or Ph.D. degree";
+    const blocks = parseJobDescription(input);
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, ["EDUCATION AND EXPERIENCE YOU'LL BRING"]);
+    assert.equal(blocks[1]?.type, "paragraph");
+    if (blocks[1]?.type === "paragraph") {
+      assert.equal(blocks[1].text, "Required");
+    }
+    const list = blocks.find((block) => block.type === "list");
+    assert.equal(list?.type, "list");
+    if (list?.type === "list") {
+      assert.match(list.items[0] ?? "", /Bachelor's degree/);
+    }
+    assert.doesNotMatch(
+      blocks.map((block) => ("text" in block ? block.text : "")).join("\n"),
+      /^\s*AND\s*$/m,
+    );
+  });
+
+  it("treats standalone employer section labels as headings", () => {
+    const blocks = parseJobDescription(
+      "The Opportunity\n\nThis position works out of our Abbott Park, IL location in the Nutrition Division.\n\nWhat You'll Work On\n\nPrimary Function/Primary Goals/Objectives:\n1. Combine knowledge of scientific, regulatory and business issues.",
+    );
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, ["The Opportunity", "What You'll Work On"]);
+    assert.equal(blocks[1]?.type, "paragraph");
+    if (blocks[1]?.type === "paragraph") {
+      assert.match(blocks[1].text, /Abbott Park, IL/);
+    }
+  });
+
+  it("does not promote short labels or prose lines to headings", () => {
+    const blocks = parseJobDescription(
+      "Required\n\n• Bachelor's degree\n\nPreferred\n\n• M.S. degree\n\nJoin us and become part of the power behind possible.\n\nPackaging Manager\n\nLead the packaging team.",
+    );
+    assert.deepEqual(
+      blocks.filter((block) => block.type === "heading"),
+      [],
+    );
+    assert.equal(blocks[0]?.type, "paragraph");
+    if (blocks[0]?.type === "paragraph") {
+      assert.equal(blocks[0].text, "Required");
+    }
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",
