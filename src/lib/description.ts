@@ -113,6 +113,102 @@ const WEAK_HEADINGS = new Set([
 const ATS_NOISE =
   /^(menasha corporation employees, please log-in|job descriptions may display in multiple languages)\b/i;
 
+/** Standalone labels that are usually subheads, not section breaks. */
+const STRUCTURAL_HEADING_STOPWORDS = new Set([
+  "apply now",
+  "preferred",
+  "required",
+  ...WEAK_HEADINGS,
+]);
+
+/** Small words allowed in title-case section labels. */
+const TITLE_CASE_MINOR_WORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "at",
+  "for",
+  "in",
+  "of",
+  "on",
+  "or",
+  "the",
+  "to",
+  "vs",
+  "versus",
+  "with",
+  "&",
+  "what",
+  "how",
+  "why",
+  "when",
+  "where",
+  "who",
+]);
+
+/** First words that commonly start employer-written section labels. */
+const SECTION_START_WORDS = new Set([
+  "a",
+  "about",
+  "accommodation",
+  "additional",
+  "all",
+  "an",
+  "better",
+  "candidate",
+  "compensation",
+  "core",
+  "cross",
+  "discover",
+  "drive",
+  "environmental",
+  "equal",
+  "essential",
+  "execution",
+  "focus",
+  "group",
+  "how",
+  "inclusion",
+  "ingredients",
+  "job",
+  "key",
+  "lead",
+  "leadership",
+  "magna",
+  "manufacturing",
+  "minimum",
+  "operational",
+  "optional",
+  "our",
+  "packaging",
+  "partner",
+  "physical",
+  "position",
+  "preferred",
+  "primary",
+  "process",
+  "quality",
+  "reasonable",
+  "recruitment",
+  "required",
+  "role",
+  "strategy",
+  "support",
+  "talent",
+  "technical",
+  "the",
+  "travel",
+  "validation",
+  "what",
+  "why",
+  "work",
+  "working",
+  "your",
+]);
+
+const JOB_TITLE_SUFFIX =
+  /\b(?:analyst|architect|consultant|coordinator|director|engineer|engineering|manager|specialist|technician)\s*$/i;
+
 export function decodeHtmlEntities(input: string): string {
   return input.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, body: string) => {
     const key = body.toLowerCase();
@@ -213,6 +309,15 @@ function chunkToBlocks(chunk: string): DescriptionBlock[] {
     ];
   }
 
+  if (lines.length === 1 && looksLikeStructuralHeading(lines[0] ?? "")) {
+    return [
+      {
+        type: "heading",
+        text: displayHeading(lines[0].replace(/:$/, "").trim()),
+      },
+    ];
+  }
+
   return linesToContent(lines);
 }
 
@@ -295,6 +400,62 @@ function mergeFragmentedSectionHeadings(text: string): string {
       return bring ? `${heading} ${bring.toUpperCase()}` : heading;
     },
   );
+}
+
+function looksLikeStructuralHeading(line: string): boolean {
+  const trimmed = line.trim();
+  const label = trimmed.replace(/:$/, "").trim();
+  if (!label || label.length > 72) return false;
+  if (/^[•·●▪‣\-–—]/.test(trimmed)) return false;
+  if (/[.!?…]["'”’)]*$/.test(trimmed)) return false;
+  if (/^\[/.test(trimmed)) return false;
+  if (/^&#/.test(trimmed)) return false;
+  if (/^[^:\n]{1,60}:\s*\S/.test(trimmed)) return false;
+  if (/\//.test(trimmed)) return false;
+  if (/\d/.test(trimmed)) return false;
+  if (/[$%]/.test(trimmed)) return false;
+  if (/&\s*$/.test(trimmed)) return false;
+  if (STRUCTURAL_HEADING_STOPWORDS.has(label.toLowerCase())) return false;
+  if (/^(?:and|or|&)\s/i.test(label)) return false;
+  if (/^[A-Z]{1,2}\s+(?:AND|OR)\s/i.test(label)) return false;
+  if (/^&\s/.test(label)) return false;
+  if (/^(?:what|and|&)\s/i.test(label) && label.split(/\s+/).length <= 3) {
+    return false;
+  }
+  if (/^you(?:\u2019|')ll bring$/i.test(label)) return false;
+  if ((trimmed.match(/,/g) ?? []).length >= 2) return false;
+  if (/^[A-Za-z .'\u2019-]+,\s*[A-Z]{2}$/.test(trimmed)) return false;
+  if (/United States of America|United Kingdom/i.test(trimmed)) return false;
+  if (JOB_TITLE_SUFFIX.test(label)) return false;
+
+  const words = label.split(/\s+/);
+  if (words.length < 2 || words.length > 8) return false;
+  if (!looksLikeHeadingPhrase(label)) return false;
+
+  const firstWord = words[0]?.replace(/[^A-Za-z]/g, "").toLowerCase() ?? "";
+  return (
+    isMostlyUppercase(label) ||
+    trimmed.endsWith(":") ||
+    SECTION_START_WORDS.has(firstWord)
+  );
+}
+
+function looksLikeHeadingPhrase(text: string): boolean {
+  const words = text.split(/\s+/);
+  let contentWords = 0;
+
+  for (const word of words) {
+    const clean = word.replace(/[^A-Za-z\u2019']/g, "");
+    if (!clean) continue;
+    const lower = clean.toLowerCase();
+    if (TITLE_CASE_MINOR_WORDS.has(lower)) continue;
+    contentWords += 1;
+    if (!/^[A-Z]/.test(clean) && clean !== clean.toUpperCase()) {
+      return false;
+    }
+  }
+
+  return contentWords >= 1;
 }
 
 function isPlausibleHeading(

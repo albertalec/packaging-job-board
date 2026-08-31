@@ -58,6 +58,34 @@ describe("normalizeDescription", () => {
     );
   });
 
+  it("treats standalone employer section labels as headings", () => {
+    const blocks = parseJobDescription(
+      "The Opportunity\n\nThis position works out of our Abbott Park, IL location in the Nutrition Division.\n\nWhat You'll Work On\n\nPrimary Function/Primary Goals/Objectives:\n1. Combine knowledge of scientific, regulatory and business issues.",
+    );
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, ["The Opportunity", "What You'll Work On"]);
+    assert.equal(blocks[1]?.type, "paragraph");
+    if (blocks[1]?.type === "paragraph") {
+      assert.match(blocks[1].text, /Abbott Park, IL/);
+    }
+  });
+
+  it("does not promote short labels or prose lines to headings", () => {
+    const blocks = parseJobDescription(
+      "Required\n\n• Bachelor's degree\n\nPreferred\n\n• M.S. degree\n\nJoin us and become part of the power behind possible.\n\nPackaging Manager\n\nLead the packaging team.",
+    );
+    assert.deepEqual(
+      blocks.filter((block) => block.type === "heading"),
+      [],
+    );
+    assert.equal(blocks[0]?.type, "paragraph");
+    if (blocks[0]?.type === "paragraph") {
+      assert.equal(blocks[0].text, "Required");
+    }
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",
