@@ -80,6 +80,9 @@ const SECTION_HEADINGS = [
   "overview",
   "purpose",
   "benefits",
+  "education and experience you'll bring",
+  "education and experience you’ll bring",
+  "education and experience",
   "education",
   "experience",
 ].sort((left, right) => right.length - left.length);
@@ -144,7 +147,8 @@ export function normalizeDescription(input: string): string {
     .replace(/\u200b/g, "")
     .replace(/[•·●▪‣]\s*/g, "• ");
   const withEeo = splitEqualOpportunity(decoded);
-  const withHeadings = insertHeadingBreaks(withEeo);
+  const withMergedHeadings = mergeFragmentedSectionHeadings(withEeo);
+  const withHeadings = insertHeadingBreaks(withMergedHeadings);
   return withHeadings
     .split("\n")
     .map((line) => line.replace(/[ \t\f\v]+/g, " ").trim())
@@ -283,6 +287,16 @@ function insertHeadingBreaks(text: string): string {
   return output;
 }
 
+function mergeFragmentedSectionHeadings(text: string): string {
+  return text.replace(
+    /\b(education)\b\s*\n+\s*and\s*\n+\s*\b(experience)\b(?:\n+\s*,?\s*(you(?:\u2019|')ll bring))?/gi,
+    (_match, education: string, experience: string, bring?: string) => {
+      const heading = `${education.toUpperCase()} AND ${experience.toUpperCase()}`;
+      return bring ? `${heading} ${bring.toUpperCase()}` : heading;
+    },
+  );
+}
+
 function isPlausibleHeading(
   raw: string,
   atStart: boolean,
@@ -290,6 +304,9 @@ function isPlausibleHeading(
 ): boolean {
   const hasColon = /:$/.test(raw.trim());
   const label = raw.replace(/:$/, "").trim();
+  if (WEAK_HEADINGS.has(label.toLowerCase()) && !hasColon) {
+    return false;
+  }
   if (isMostlyUppercase(label)) return true;
   if (atStart && /^[A-Z]/.test(label)) return true;
   if (

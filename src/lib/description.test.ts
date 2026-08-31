@@ -35,6 +35,29 @@ describe("normalizeDescription", () => {
     }
   });
 
+  it("merges Workday-split education and experience headings", () => {
+    const input =
+      "EDUCATION\n\nAND\n\nEXPERIENCE\n\n, YOU'LL BRING\nRequired\n\n• Bachelor's degree (or equivalent) is required\n\n• 5 years of experience in regulatory preferred\n\nPreferred\n\n• M.S. or Ph.D. degree";
+    const blocks = parseJobDescription(input);
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, ["EDUCATION AND EXPERIENCE YOU'LL BRING"]);
+    assert.equal(blocks[1]?.type, "paragraph");
+    if (blocks[1]?.type === "paragraph") {
+      assert.equal(blocks[1].text, "Required");
+    }
+    const list = blocks.find((block) => block.type === "list");
+    assert.equal(list?.type, "list");
+    if (list?.type === "list") {
+      assert.match(list.items[0] ?? "", /Bachelor's degree/);
+    }
+    assert.doesNotMatch(
+      blocks.map((block) => ("text" in block ? block.text : "")).join("\n"),
+      /^\s*AND\s*$/m,
+    );
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",
