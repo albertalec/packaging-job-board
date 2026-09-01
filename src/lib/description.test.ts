@@ -141,6 +141,31 @@ describe("normalizeDescription", () => {
     assert.equal(blocks[0].rows[0]?.competency, "Process Knowledge");
   });
 
+  it("stops competency rubrics before the next section", () => {
+    const input =
+      "Process Knowledge\n\nPerforming\n\nDemonstrates knowledge of procedures.\n\nSystem Knowledge\n\nPerforming\n\nDemonstrates knowledge of systems.\n\nResourcefulness\n\nPerforming\n\nCreatively copes with difficult situations or unusual problems.\n\nPhysical Demands & Work Environment:\n\n• May be required to remain in a stationary position for an extended period.\n\nDisclaimer:\n\n• Please note this job description is not intended to be exhaustive.";
+    const blocks = parseJobDescription(input);
+    assert.equal(blocks.length, 5);
+    assert.equal(blocks[0]?.type, "rubric");
+    if (blocks[0]?.type !== "rubric") return;
+    assert.equal(blocks[0].rows.length, 3);
+    assert.match(
+      blocks[0].rows[2]?.description ?? "",
+      /Creatively copes with difficult situations/,
+    );
+    assert.doesNotMatch(blocks[0].rows[2]?.description ?? "", /Physical Demands/);
+    assert.equal(blocks[1]?.type, "heading");
+    if (blocks[1]?.type === "heading") {
+      assert.equal(blocks[1].text, "Physical Demands & Work Environment");
+    }
+    assert.equal(blocks[2]?.type, "list");
+    assert.equal(blocks[3]?.type, "paragraph");
+    if (blocks[3]?.type === "paragraph") {
+      assert.equal(blocks[3].text, "Disclaimer:");
+    }
+    assert.equal(blocks[4]?.type, "list");
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",
