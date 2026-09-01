@@ -634,6 +634,7 @@ function tryParseRubricFromChunks(
         break;
       }
       if (isRubricHeaderChunk(chunks[descIndex] ?? "")) break;
+      if (isRubricBoundaryChunk(chunks[descIndex] ?? "")) break;
       descriptionParts.push(chunks[descIndex] ?? "");
       descIndex += 1;
     }
@@ -656,6 +657,20 @@ function singleLineChunk(chunk: string): string {
 function isRubricHeaderChunk(chunk: string): boolean {
   const line = singleLineChunk(chunk);
   return RUBRIC_HEADER_LABELS.has(line.toLowerCase());
+}
+
+function isRubricBoundaryChunk(chunk: string): boolean {
+  if (isBulletListChunk(chunk)) return true;
+  const line = singleLineChunk(chunk);
+  if (/^[•·●▪‣]/.test(line)) return true;
+  const trimmed = line.trim();
+  if (!trimmed.endsWith(":")) return false;
+  const label = trimmed.replace(/:$/, "").trim();
+  if (/^disclaimer$/i.test(label)) return true;
+  if (label.split(/\s+/).length < 2) return false;
+  return (
+    looksLikeStructuralHeading(trimmed) || looksLikeListIntroHeading(trimmed)
+  );
 }
 
 function isCompetencyLevel(text: string): boolean {
