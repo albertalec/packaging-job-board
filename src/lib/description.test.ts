@@ -86,6 +86,34 @@ describe("normalizeDescription", () => {
     }
   });
 
+  it("promotes title-case list intro labels before bullet blocks", () => {
+    const input =
+      "What you will be responsible for\n\nOperational Resilience & Crisis Management\n\n• Provide strategic leadership of Operational Resilience\n\n• Lead scenario testing\n\nGovernance, Risk Management & Regulatory Alignment\n\n• Own and enhance governance frameworks\n\n• Ensure alignment with regulatory requirements\n\nStakeholder Engagement & Influential Leadership\n\n• Act as a senior liaison across Technology, Business, and Risk functions";
+    const blocks = parseJobDescription(input);
+    const headings = blocks
+      .filter((block) => block.type === "heading")
+      .map((block) => (block.type === "heading" ? block.text : ""));
+    assert.deepEqual(headings, [
+      "Operational Resilience & Crisis Management",
+      "Governance, Risk Management & Regulatory Alignment",
+      "Stakeholder Engagement & Influential Leadership",
+    ]);
+    assert.equal(blocks[0]?.type, "paragraph");
+    if (blocks[0]?.type === "paragraph") {
+      assert.equal(blocks[0].text, "What you will be responsible for");
+    }
+  });
+
+  it("does not promote single-word list labels or rhetorical questions", () => {
+    const blocks = parseJobDescription(
+      "Knowledge:\n\n• Strong knowledge and application of BCM practices.\n\nWhy Horizon?\n\nAt Horizon, you'll do meaningful work that directly improves lives.",
+    );
+    assert.deepEqual(
+      blocks.filter((block) => block.type === "heading"),
+      [],
+    );
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",
