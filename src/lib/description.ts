@@ -257,11 +257,14 @@ export function parseJobDescription(input: string): DescriptionBlock[] {
   const normalized = normalizeDescription(input);
   if (!normalized) return [];
 
+  const chunks = normalized
+    .split(/\n\s*\n/)
+    .map((chunk) => chunk.trim())
+    .filter((chunk) => chunk && !ATS_NOISE.test(chunk));
+
   const blocks: DescriptionBlock[] = [];
-  for (const chunk of normalized.split(/\n\s*\n/)) {
-    const trimmed = chunk.trim();
-    if (!trimmed || ATS_NOISE.test(trimmed)) continue;
-    blocks.push(...chunkToBlocks(trimmed));
+  for (let index = 0; index < chunks.length; index += 1) {
+    blocks.push(...chunkToBlocks(chunks[index] ?? "", chunks[index + 1]));
   }
   return mergeLists(blocks);
 }
@@ -292,7 +295,7 @@ export function splitEmployerAbout(blocks: DescriptionBlock[]): {
   return { about, rest };
 }
 
-function chunkToBlocks(chunk: string): DescriptionBlock[] {
+function chunkToBlocks(chunk: string, nextChunk?: string): DescriptionBlock[] {
   const lines = chunk.split("\n").map((line) => line.trim()).filter(Boolean);
   const heading = matchHeadingPrefix(lines[0] ?? "");
   if (heading && heading.rest === "" && lines.length === 1) {
@@ -309,13 +312,28 @@ function chunkToBlocks(chunk: string): DescriptionBlock[] {
     ];
   }
 
-  if (lines.length === 1 && looksLikeStructuralHeading(lines[0] ?? "")) {
-    return [
-      {
-        type: "heading",
-        text: displayHeading(lines[0].replace(/:$/, "").trim()),
-      },
-    ];
+  if (lines.length === 1) {
+    const line = lines[0] ?? "";
+    if (looksLikeStructuralHeading(line)) {
+      return [
+        {
+          type: "heading",
+          text: displayHeading(line.replace(/:$/, "").trim()),
+        },
+      ];
+    }
+    if (
+      nextChunk &&
+      isBulletListChunk(nextChunk) &&
+      looksLikeListIntroHeading(line)
+    ) {
+      return [
+        {
+          type: "heading",
+          text: displayHeading(line.replace(/:$/, "").trim()),
+        },
+      ];
+    }
   }
 
   return linesToContent(lines);
@@ -403,8 +421,39 @@ function mergeFragmentedSectionHeadings(text: string): string {
 }
 
 function looksLikeStructuralHeading(line: string): boolean {
+  const { trimmed, label } = normalizeHeadingCandidate(line);
+  if (!passesHeadingCandidateGuards(trimmed, label)) return false;
+
+  const words = label.split(/\s+/);
+  if (words.length < 2 || words.length > 8) return false;
+  if (!looksLikeHeadingPhrase(label)) return false;
+
+  const firstWord = words[0]?.replace(/[^A-Za-z]/g, "").toLowerCase() ?? "";
+  return (
+    isMostlyUppercase(label) ||
+    trimmed.endsWith(":") ||
+    SECTION_START_WORDS.has(firstWord)
+  );
+}
+
+function looksLikeListIntroHeading(line: string): boolean {
+  const { trimmed, label } = normalizeHeadingCandidate(line);
+  if (!passesHeadingCandidateGuards(trimmed, label)) return false;
+
+  const words = label.split(/\s+/);
+  if (words.length < 2 || words.length > 8) return false;
+  return looksLikeHeadingPhrase(label);
+}
+
+function normalizeHeadingCandidate(line: string): {
+  trimmed: string;
+  label: string;
+} {
   const trimmed = line.trim();
-  const label = trimmed.replace(/:$/, "").trim();
+  return { trimmed, label: trimmed.replace(/:$/, "").trim() };
+}
+
+function passesHeadingCandidateGuards(trimmed: string, label: string): boolean {
   if (!label || label.length > 72) return false;
   if (/^[•·●▪‣\-–—]/.test(trimmed)) return false;
   if (/[.!?…]["'”’)]*$/.test(trimmed)) return false;
@@ -427,17 +476,16 @@ function looksLikeStructuralHeading(line: string): boolean {
   if (/^[A-Za-z .'\u2019-]+,\s*[A-Z]{2}$/.test(trimmed)) return false;
   if (/United States of America|United Kingdom/i.test(trimmed)) return false;
   if (JOB_TITLE_SUFFIX.test(label)) return false;
+  return true;
+}
 
-  const words = label.split(/\s+/);
-  if (words.length < 2 || words.length > 8) return false;
-  if (!looksLikeHeadingPhrase(label)) return false;
-
-  const firstWord = words[0]?.replace(/[^A-Za-z]/g, "").toLowerCase() ?? "";
-  return (
-    isMostlyUppercase(label) ||
-    trimmed.endsWith(":") ||
-    SECTION_START_WORDS.has(firstWord)
-  );
+function isBulletListChunk(chunk: string): boolean {
+  const lines = chunk
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+  if (lines.length === 0) return false;
+  return lines.every((line) => /^[•·●▪‣]/.test(line));
 }
 
 function looksLikeHeadingPhrase(text: string): boolean {
