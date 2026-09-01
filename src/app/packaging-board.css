@@ -1780,11 +1780,27 @@ html[data-vertical="packaging"] .sponsor-page .lede, html[data-vertical="busines
   color: var(--slate);
 }
 
+html[data-vertical="packaging"] .sponsor-actions, html[data-vertical="businesscontinuity"] .sponsor-actions {
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 28rem;
+  margin: 1.5rem 0;
+}
+
 html[data-vertical="packaging"] .sponsor-actions .board-btn, html[data-vertical="businesscontinuity"] .sponsor-actions .board-btn,
 html[data-vertical="packaging"] .sponsor-actions .apply, html[data-vertical="businesscontinuity"] .sponsor-actions .apply,
 html[data-vertical="packaging"] .sponsor-actions .ghost, html[data-vertical="businesscontinuity"] .sponsor-actions .ghost {
 
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  white-space: normal;
+  text-align: center;
 }
 
 /* Kraft skin — page wash, listing surfaces, and form fields only (not mast/header layout). */

@@ -47,10 +47,10 @@ export default async function AlertUnsubscribePage({ searchParams }: Props) {
         </>
       )}
       <div className="sponsor-actions">
-        <Link className="apply big" href="/">
+        <Link className="board-btn board-btn-primary" href="/">
           Back to the board
         </Link>
-        <Link className="ghost" href="/#alerts">
+        <Link className="board-btn board-btn-outline" href="/#alerts">
           Subscribe again
         </Link>
       </div>
