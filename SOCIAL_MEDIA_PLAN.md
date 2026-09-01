@@ -311,4 +311,44 @@ Track qualitatively and via referrals — not vanity alone:
 
 ---
 
+## 16. Employer follow workflow (internal)
+
+Follow employers on LinkedIn **manually** — automation is not available and violates LinkedIn ToS.
+
+### Files & commands
+
+| Asset | Path |
+| --- | --- |
+| LinkedIn URL registry | [`data/linkedin-companies.json`](data/linkedin-companies.json) |
+| Export CSV (live board employers) | [`data/linkedin-employers.csv`](data/linkedin-employers.csv) |
+| Interactive follow checklist | [`data/linkedin-follow-checklist.html`](data/linkedin-follow-checklist.html) |
+
+```bash
+# Regenerate CSV + checklist — all live boards (Packaging + Resilience)
+npm run export:linkedin-employers
+
+# One board only
+npm run export:linkedin-employers -- --vertical=packaging
+npm run export:linkedin-employers -- --vertical=businesscontinuity
+
+# Discover missing URLs via DuckDuckGo (does not scrape LinkedIn)
+npm run lookup:linkedin-companies -- --vertical=businesscontinuity --tier=p0 --write
+
+# Open checklist in browser
+xdg-open data/linkedin-follow-checklist.html
+```
+
+### How to follow
+
+1. Run `npm run export:linkedin-employers`
+2. Open `data/linkedin-follow-checklist.html` in Chrome (logged into LinkedIn)
+3. Click **Open next batch (10)** — opens 10 company pages in new tabs
+4. On each LinkedIn page, click **Follow**
+5. Return to checklist → **Mark followed** for each
+6. Repeat next day until pending = 0
+
+Batch **10–15 follows per session** to avoid LinkedIn rate limits.
+
+---
+
 *Update this file when positioning, pricing, or vertical launches change. Config source for live strings: `config/hub.ts`, `config/packaging.ts`.*
