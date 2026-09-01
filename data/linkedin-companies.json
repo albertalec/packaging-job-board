@@ -1,0 +1,429 @@
+{
+  "version": 2,
+  "description": "LinkedIn company page URLs by board. followStatus: pending | followed | skipped",
+  "verticals": {
+    "packaging": {
+      "label": "Packaging",
+      "companies": {
+        "3M": {
+          "linkedinUrl": "https://www.linkedin.com/company/3m/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Abbott": {
+          "linkedinUrl": "https://www.linkedin.com/company/abbott-/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Amcor": {
+          "linkedinUrl": "https://www.linkedin.com/company/amcor/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Amazon": {
+          "linkedinUrl": "https://www.linkedin.com/company/amazon/",
+          "followStatus": "skipped",
+          "verified": true,
+          "notes": "Too broad — skip unless intentional"
+        },
+        "Aptar": {
+          "linkedinUrl": "https://www.linkedin.com/company/aptar/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Autoliv": {
+          "linkedinUrl": "https://www.linkedin.com/company/autoliv/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Ball Corporation": {
+          "linkedinUrl": "https://www.linkedin.com/company/ball-corporation/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "BD": {
+          "linkedinUrl": "https://www.linkedin.com/company/bdcompany/",
+          "followStatus": "pending",
+          "verified": true,
+          "notes": "Becton, Dickinson and Company"
+        },
+        "Berlin Packaging": {
+          "linkedinUrl": "https://www.linkedin.com/company/berlin-packaging/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Campbell's": {
+          "linkedinUrl": "https://www.linkedin.com/company/campbells/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Church & Dwight": {
+          "linkedinUrl": "https://www.linkedin.com/company/church-%26-dwight-co-/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Clorox": {
+          "linkedinUrl": "https://www.linkedin.com/company/the-clorox-company/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Conagra Brands": {
+          "linkedinUrl": "https://www.linkedin.com/company/conagra-brands/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "DuPont": {
+          "linkedinUrl": "https://www.linkedin.com/company/dupont/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Edwards Lifesciences": {
+          "linkedinUrl": "https://www.linkedin.com/company/edwards-lifesciences/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "General Mills": {
+          "linkedinUrl": "https://www.linkedin.com/company/general-mills/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "General Motors": {
+          "linkedinUrl": "https://www.linkedin.com/company/general-motors/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "J.M. Smucker": {
+          "linkedinUrl": "https://www.linkedin.com/company/the-j-m-smucker-company/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Johnson & Johnson": {
+          "linkedinUrl": "https://www.linkedin.com/company/johnson-%26-johnson/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Kenvue": {
+          "linkedinUrl": "https://www.linkedin.com/company/kenvue/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Kimberly-Clark": {
+          "linkedinUrl": "https://www.linkedin.com/company/kimberly-clark/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Magna": {
+          "linkedinUrl": "https://www.linkedin.com/company/magna-international/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Mars": {
+          "linkedinUrl": "https://www.linkedin.com/company/mars/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Menasha": {
+          "linkedinUrl": "https://www.linkedin.com/company/menasha-corporation/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Nestlé": {
+          "linkedinUrl": "https://www.linkedin.com/company/nestle-s-a-/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "PepsiCo": {
+          "linkedinUrl": "https://www.linkedin.com/company/pepsico/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Perrigo": {
+          "linkedinUrl": "https://www.linkedin.com/company/perrigo/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Procter & Gamble": {
+          "linkedinUrl": "https://www.linkedin.com/company/procter-and-gamble/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "SC Johnson": {
+          "linkedinUrl": "https://www.linkedin.com/company/sc-johnson/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Sealed Air": {
+          "linkedinUrl": "https://www.linkedin.com/company/sealed-air/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Silgan Containers": {
+          "linkedinUrl": "https://www.linkedin.com/company/silgan-containers/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Silgan Dispensing": {
+          "linkedinUrl": "https://www.linkedin.com/company/silgan-dispensing/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Sonoco": {
+          "linkedinUrl": "https://www.linkedin.com/company/sonoco/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Stryker": {
+          "linkedinUrl": "https://www.linkedin.com/company/stryker/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "The Coca-Cola Company": {
+          "linkedinUrl": "https://www.linkedin.com/company/the-coca-cola-company/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "The Hershey Company": {
+          "linkedinUrl": "https://www.linkedin.com/company/the-hershey-company/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Thermo Fisher Scientific": {
+          "linkedinUrl": "https://www.linkedin.com/company/thermo-fisher-scientific/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Tyson Foods": {
+          "linkedinUrl": "https://www.linkedin.com/company/tyson-foods/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Unilever": {
+          "linkedinUrl": "https://www.linkedin.com/company/unilever/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "WK Kellogg Co": {
+          "linkedinUrl": "https://www.linkedin.com/company/wk-kellogg-co/",
+          "followStatus": "pending",
+          "verified": true
+        }
+      }
+    },
+    "businesscontinuity": {
+      "label": "Resilience",
+      "companies": {
+        "AbbVie": {
+          "linkedinUrl": "https://www.linkedin.com/company/abbvie/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "AIG": {
+          "linkedinUrl": "https://www.linkedin.com/company/aig/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Airbus": {
+          "linkedinUrl": "https://www.linkedin.com/company/airbus/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "American Electric Power": {
+          "linkedinUrl": "https://www.linkedin.com/company/american-electric-power/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Bank of America": {
+          "linkedinUrl": "https://www.linkedin.com/company/bank-of-america/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "BECU": {
+          "linkedinUrl": "https://www.linkedin.com/company/becu/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "BlueCross BlueShield of Tennessee": {
+          "linkedinUrl": "https://www.linkedin.com/company/bcbst/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "BMO": {
+          "linkedinUrl": "https://www.linkedin.com/company/bmo/",
+          "followStatus": "pending",
+          "verified": true,
+          "notes": "Bank of Montreal"
+        },
+        "Capital One": {
+          "linkedinUrl": "https://www.linkedin.com/company/capital-one/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Cigna": {
+          "linkedinUrl": "https://www.linkedin.com/company/cigna/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Citigroup": {
+          "linkedinUrl": "https://www.linkedin.com/company/citi/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Cockroach Labs": {
+          "linkedinUrl": "https://www.linkedin.com/company/cockroachdb/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Dick's Sporting Goods": {
+          "linkedinUrl": "https://www.linkedin.com/company/dick%27s-sporting-goods/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Duke Energy": {
+          "linkedinUrl": "https://www.linkedin.com/company/duke-energy-corporation/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Elevance Health": {
+          "linkedinUrl": "https://www.linkedin.com/company/elevance-health/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Freddie Mac": {
+          "linkedinUrl": "https://www.linkedin.com/company/freddie-mac/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Gilead Sciences": {
+          "linkedinUrl": "https://www.linkedin.com/company/gilead-sciences/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Horizon Blue Cross Blue Shield of New Jersey": {
+          "linkedinUrl": "https://www.linkedin.com/company/horizon-bcbsnj/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Humana": {
+          "linkedinUrl": "https://www.linkedin.com/company/humana/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Intermountain Health": {
+          "linkedinUrl": "https://www.linkedin.com/company/intermountain-health/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Jamf": {
+          "linkedinUrl": "https://www.linkedin.com/company/jamf/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Morgan Stanley": {
+          "linkedinUrl": "https://www.linkedin.com/company/morgan-stanley/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "MSU Federal Credit Union": {
+          "linkedinUrl": "https://www.linkedin.com/company/msu-federal-credit-union/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Navy Federal Credit Union": {
+          "linkedinUrl": "https://www.linkedin.com/company/navy-federal-credit-union/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Neuberger Berman": {
+          "linkedinUrl": "https://www.linkedin.com/company/neuberger-berman/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Pax8": {
+          "linkedinUrl": "https://www.linkedin.com/company/pax8/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "PayPal": {
+          "linkedinUrl": "https://www.linkedin.com/company/paypal/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Roche": {
+          "linkedinUrl": "https://www.linkedin.com/company/roche/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "RTX": {
+          "linkedinUrl": "https://www.linkedin.com/company/rtx/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "SchoolsFirst Federal Credit Union": {
+          "linkedinUrl": "https://www.linkedin.com/company/schoolsfirst-federal-credit-union/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Solventum": {
+          "linkedinUrl": "https://www.linkedin.com/company/solventum/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "SpaceX": {
+          "linkedinUrl": "https://www.linkedin.com/company/spacex/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "State Street": {
+          "linkedinUrl": "https://www.linkedin.com/company/state-street/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Target": {
+          "linkedinUrl": "https://www.linkedin.com/company/target/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "TD Bank": {
+          "linkedinUrl": "https://www.linkedin.com/company/td/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "The Hartford": {
+          "linkedinUrl": "https://www.linkedin.com/company/the-hartford/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Travelers": {
+          "linkedinUrl": "https://www.linkedin.com/company/travelers/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Twilio": {
+          "linkedinUrl": "https://www.linkedin.com/company/twilio/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "U.S. Bank": {
+          "linkedinUrl": "https://www.linkedin.com/company/us-bank/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Visions Federal Credit Union": {
+          "linkedinUrl": "https://www.linkedin.com/company/visions-federal-credit-union/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Waymo": {
+          "linkedinUrl": "https://www.linkedin.com/company/waymo/",
+          "followStatus": "pending",
+          "verified": true
+        },
+        "Wells Fargo": {
+          "linkedinUrl": "https://www.linkedin.com/company/wellsfargo/",
+          "followStatus": "pending",
+          "verified": true
+        }
+      }
+    }
+  }
+}
