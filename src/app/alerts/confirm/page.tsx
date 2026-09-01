@@ -49,11 +49,11 @@ export default async function AlertConfirmPage({ searchParams }: Props) {
         </>
       )}
       <div className="sponsor-actions">
-        <Link className="apply big" href="/">
+        <Link className="board-btn board-btn-primary" href="/">
           Browse open roles
         </Link>
         {!subscriber ? (
-          <Link className="ghost" href="/#alerts">
+          <Link className="board-btn board-btn-outline" href="/#alerts">
             Try again
           </Link>
         ) : null}
