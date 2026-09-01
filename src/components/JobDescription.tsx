@@ -13,6 +13,19 @@ function BlockView({ block }: { block: DescriptionBlock }) {
       </ul>
     );
   }
+  if (block.type === "rubric") {
+    return (
+      <div className="description-rubric">
+        {block.rows.map((row, rowIndex) => (
+          <div className="description-rubric-row" key={rowIndex}>
+            <div className="description-rubric-competency">{row.competency}</div>
+            <div className="description-rubric-level">{row.level}</div>
+            <p className="description-rubric-description">{row.description}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
   return <p>{block.text}</p>;
 }
 

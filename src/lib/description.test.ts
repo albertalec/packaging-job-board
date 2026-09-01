@@ -114,6 +114,33 @@ describe("normalizeDescription", () => {
     );
   });
 
+  it("parses flattened competency rubrics into rubric blocks", () => {
+    const input =
+      "Functional Competency\n\nBehavioral Description\n\nProcess Knowledge\n\nPerforming\n\nDemonstrates knowledge of procedures and department processes.\n\nSystem Knowledge\n\nPerforming\n\nDemonstrates knowledge of specific programs and applications.";
+    const blocks = parseJobDescription(input);
+    assert.equal(blocks.length, 1);
+    assert.equal(blocks[0]?.type, "rubric");
+    if (blocks[0]?.type !== "rubric") return;
+    assert.equal(blocks[0].rows.length, 2);
+    assert.deepEqual(blocks[0].rows[0], {
+      competency: "Process Knowledge",
+      level: "Performing",
+      description:
+        "Demonstrates knowledge of procedures and department processes.",
+    });
+  });
+
+  it("serializes competency tables from HTML during ingest conversion", () => {
+    const html =
+      "<table><tr><td><p>Process Knowledge</p></td><td><p>Performing</p></td><td><p>Demonstrates knowledge of procedures.</p></td></tr><tr><td><p>System Knowledge</p></td><td><p>Performing</p></td><td><p>Demonstrates knowledge of systems.</p></td></tr></table>";
+    const blocks = parseJobDescription(htmlToPlainText(html));
+    assert.equal(blocks.length, 1);
+    assert.equal(blocks[0]?.type, "rubric");
+    if (blocks[0]?.type !== "rubric") return;
+    assert.equal(blocks[0].rows.length, 2);
+    assert.equal(blocks[0].rows[0]?.competency, "Process Knowledge");
+  });
+
   it("does not treat lowercase 'experience' as a section heading", () => {
     const blocks = parseJobDescription(
       "5 years of packaging experience working in CPG packaging or other relevant industry",

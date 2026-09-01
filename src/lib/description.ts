@@ -1,7 +1,14 @@
+export type RubricRow = {
+  competency: string;
+  level: string;
+  description: string;
+};
+
 export type DescriptionBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "rubric"; rows: RubricRow[] };
 
 const NAMED_ENTITIES: Record<string, string> = {
   amp: "&",
@@ -209,6 +216,19 @@ const SECTION_START_WORDS = new Set([
 const JOB_TITLE_SUFFIX =
   /\b(?:analyst|architect|consultant|coordinator|director|engineer|engineering|manager|specialist|technician)\s*$/i;
 
+const COMPETENCY_RUBRIC_START = "[[COMPETENCY-RUBRIC]]";
+const COMPETENCY_RUBRIC_END = "[[/COMPETENCY-RUBRIC]]";
+const COMPETENCY_RUBRIC_PATTERN =
+  /\[\[COMPETENCY-RUBRIC\]\]([\s\S]*?)\[\[\/COMPETENCY-RUBRIC\]\]/g;
+
+const COMPETENCY_LEVEL_RE =
+  /^(?:performing|developing|exceeding|not demonstrated|needs improvement|advanced|proficient|foundational|n\/a|na)$/i;
+
+const RUBRIC_HEADER_LABELS = new Set([
+  "behavioral description",
+  "functional competency",
+]);
+
 export function decodeHtmlEntities(input: string): string {
   return input.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, body: string) => {
     const key = body.toLowerCase();
@@ -225,9 +245,14 @@ export function decodeHtmlEntities(input: string): string {
 }
 
 export function htmlToPlainText(html: string): string {
-  const withBreaks = html
+  const withoutScripts = html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "");
+  const withRubrics = withoutScripts.replace(
+    /<table[\s\S]*?<\/table>/gi,
+    (tableHtml) => serializeCompetencyTable(tableHtml) ?? flattenTableHtml(tableHtml),
+  );
+  const withBreaks = withRubrics
     .replace(/<\/(p|div|h[1-6]|tr|table|section|article|header|footer|blockquote)>/gi, "\n\n")
     .replace(/<(br|hr)\s*\/?>/gi, "\n")
     .replace(/<\/(li|dt|dd)>/gi, "\n")
@@ -257,16 +282,37 @@ export function parseJobDescription(input: string): DescriptionBlock[] {
   const normalized = normalizeDescription(input);
   if (!normalized) return [];
 
-  const chunks = normalized
+  const blocks: DescriptionBlock[] = [];
+  let cursor = 0;
+  COMPETENCY_RUBRIC_PATTERN.lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = COMPETENCY_RUBRIC_PATTERN.exec(normalized))) {
+    blocks.push(...parseDescriptionSegment(normalized.slice(cursor, match.index)));
+    blocks.push(parseSerializedRubric(match[1] ?? ""));
+    cursor = match.index + match[0].length;
+  }
+  blocks.push(...parseDescriptionSegment(normalized.slice(cursor)));
+  return mergeLists(blocks);
+}
+
+function parseDescriptionSegment(text: string): DescriptionBlock[] {
+  const chunks = text
     .split(/\n\s*\n/)
     .map((chunk) => chunk.trim())
     .filter((chunk) => chunk && !ATS_NOISE.test(chunk));
 
   const blocks: DescriptionBlock[] = [];
-  for (let index = 0; index < chunks.length; index += 1) {
+  for (let index = 0; index < chunks.length; ) {
+    const rubric = tryParseRubricFromChunks(chunks, index);
+    if (rubric) {
+      blocks.push(rubric.block);
+      index = rubric.nextIndex;
+      continue;
+    }
     blocks.push(...chunkToBlocks(chunks[index] ?? "", chunks[index + 1]));
+    index += 1;
   }
-  return mergeLists(blocks);
+  return blocks;
 }
 
 const EMPLOYER_HEADINGS = new Set([
@@ -486,6 +532,145 @@ function isBulletListChunk(chunk: string): boolean {
     .filter(Boolean);
   if (lines.length === 0) return false;
   return lines.every((line) => /^[•·●▪‣]/.test(line));
+}
+
+function flattenTableHtml(tableHtml: string): string {
+  return tableHtml
+    .replace(/<\/tr>/gi, "\n\n")
+    .replace(/<\/t[dh]>/gi, "\n")
+    .replace(/<[^>]+>/g, " ");
+}
+
+function stripCellHtml(cellHtml: string): string {
+  return decodeHtmlEntities(
+    cellHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+  );
+}
+
+function parseTableRows(tableHtml: string): string[][] {
+  const rows: string[][] = [];
+  for (const rowMatch of tableHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)) {
+    const cells: string[] = [];
+    for (const cellMatch of rowMatch[0].matchAll(/<t[dh][\s\S]*?<\/t[dh]>/gi)) {
+      const text = stripCellHtml(cellMatch[0]);
+      if (text) cells.push(text);
+    }
+    if (cells.length) rows.push(cells);
+  }
+  return rows;
+}
+
+function serializeCompetencyTable(tableHtml: string): string | null {
+  const rows = parseTableRows(tableHtml)
+    .map((row) => row.map((cell) => cell.trim()).filter(Boolean))
+    .filter((row) => row.length >= 3)
+    .map(([competency, level, ...rest]) => ({
+      competency,
+      level,
+      description: rest.join(" ").trim(),
+    }))
+    .filter(
+      (row) =>
+        looksLikeCompetencyLabel(row.competency) &&
+        isCompetencyLevel(row.level) &&
+        row.description.length > 0,
+    );
+
+  if (rows.length < 2) return null;
+
+  const body = rows
+    .map((row) => `${row.competency} | ${row.level} | ${row.description}`)
+    .join("\n");
+  return `${COMPETENCY_RUBRIC_START}\n${body}\n${COMPETENCY_RUBRIC_END}`;
+}
+
+function parseSerializedRubric(body: string): DescriptionBlock {
+  const rows = body
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const separator = line.indexOf(" | ");
+      if (separator === -1) return null;
+      const competency = line.slice(0, separator).trim();
+      const remainder = line.slice(separator + 3);
+      const levelSeparator = remainder.indexOf(" | ");
+      if (levelSeparator === -1) return null;
+      const level = remainder.slice(0, levelSeparator).trim();
+      const description = remainder.slice(levelSeparator + 3).trim();
+      if (!competency || !level || !description) return null;
+      return { competency, level, description };
+    })
+    .filter((row): row is RubricRow => row !== null);
+
+  return { type: "rubric", rows };
+}
+
+function tryParseRubricFromChunks(
+  chunks: string[],
+  start: number,
+): { block: DescriptionBlock; nextIndex: number } | null {
+  let index = start;
+  while (index < chunks.length && isRubricHeaderChunk(chunks[index] ?? "")) {
+    index += 1;
+  }
+
+  const rows: RubricRow[] = [];
+  while (index + 2 < chunks.length) {
+    const competency = singleLineChunk(chunks[index] ?? "");
+    const level = singleLineChunk(chunks[index + 1] ?? "");
+    if (!looksLikeCompetencyLabel(competency) || !isCompetencyLevel(level)) {
+      break;
+    }
+
+    const descriptionParts: string[] = [];
+    let descIndex = index + 2;
+    while (descIndex < chunks.length) {
+      if (
+        descIndex + 1 < chunks.length &&
+        looksLikeCompetencyLabel(singleLineChunk(chunks[descIndex] ?? "")) &&
+        isCompetencyLevel(singleLineChunk(chunks[descIndex + 1] ?? ""))
+      ) {
+        break;
+      }
+      if (isRubricHeaderChunk(chunks[descIndex] ?? "")) break;
+      descriptionParts.push(chunks[descIndex] ?? "");
+      descIndex += 1;
+    }
+
+    const description = descriptionParts.join(" ").replace(/\s+/g, " ").trim();
+    if (!description) break;
+
+    rows.push({ competency, level, description });
+    index = descIndex;
+  }
+
+  if (rows.length < 2) return null;
+  return { block: { type: "rubric", rows }, nextIndex: index };
+}
+
+function singleLineChunk(chunk: string): string {
+  return chunk.split("\n").map((line) => line.trim()).filter(Boolean)[0] ?? "";
+}
+
+function isRubricHeaderChunk(chunk: string): boolean {
+  const line = singleLineChunk(chunk);
+  return RUBRIC_HEADER_LABELS.has(line.toLowerCase());
+}
+
+function isCompetencyLevel(text: string): boolean {
+  return COMPETENCY_LEVEL_RE.test(text.trim());
+}
+
+function looksLikeCompetencyLabel(text: string): boolean {
+  const trimmed = text.trim();
+  if (!trimmed || trimmed.length > 80) return false;
+  if (isCompetencyLevel(trimmed) || isRubricHeaderChunk(trimmed)) return false;
+  if (/^[•·●▪‣]/.test(trimmed)) return false;
+  if (/[.!?…]["'”’)]*$/.test(trimmed)) return false;
+  const words = trimmed.split(/\s+/);
+  if (words.length < 1 || words.length > 6) return false;
+  return looksLikeHeadingPhrase(trimmed);
 }
 
 function looksLikeHeadingPhrase(text: string): boolean {
