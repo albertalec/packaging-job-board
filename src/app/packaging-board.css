@@ -1010,6 +1010,53 @@ html[data-vertical="packaging"] .job-page .description li::before, html[data-ver
   background: var(--teal);
 }
 
+html[data-vertical="packaging"] .job-page .description-rubric, html[data-vertical="businesscontinuity"] .job-page .description-rubric {
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+
+html[data-vertical="packaging"] .job-page .description-rubric-row, html[data-vertical="businesscontinuity"] .job-page .description-rubric-row {
+
+  display: grid;
+  gap: 4px 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--card-rule);
+}
+
+html[data-vertical="packaging"] .job-page .description-rubric-row:last-child, html[data-vertical="businesscontinuity"] .job-page .description-rubric-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+html[data-vertical="packaging"] .job-page .description-rubric-competency, html[data-vertical="businesscontinuity"] .job-page .description-rubric-competency {
+
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+html[data-vertical="packaging"] .job-page .description-rubric-level, html[data-vertical="businesscontinuity"] .job-page .description-rubric-level {
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+html[data-vertical="packaging"] .job-page .description-rubric-description, html[data-vertical="businesscontinuity"] .job-page .description-rubric-description {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--slate);
+}
+
 html[data-vertical="packaging"] .job-employer, html[data-vertical="businesscontinuity"] .job-employer {
 
   padding: 20px 22px;
