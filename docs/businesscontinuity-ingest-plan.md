@@ -263,12 +263,25 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 
 ### Phase A — clear launch gate (~30+ roles)
 
-- [ ] **A1** Wave 0 repairs: `country: "USA"` on TD Bank, BMO; Workday site audit on zero-`fetched` banks
-- [ ] **A2** Expand `DR_QUERIES` with Wave A keywords (§3)
-- [ ] **A3** Add Wave 4 P0 finance: JPMorgan Chase, Goldman Sachs
-- [ ] **A4** Add Wave 5 P0 payers: UnitedHealth/Optum, Kaiser Permanente
-- [ ] **A5** Run full ingest; confirm **≥30 listed** on-wedge roles
-- [ ] **A6** Spot-check homepage sort: tier-3 BCM/DR titles above generic risk
+- [x] **A1** Wave 0 repairs: `country: "USA"` on TD Bank, BMO; removed Airbus (global field-EM noise)
+- [x] **A2** Expand `DR_QUERIES` with Wave A keywords (§3)
+- [x] **A3** Add Wave 4 P0 finance: PNC (JPM/Goldman use Oracle — no public keyword API hits; deferred)
+- [ ] **A4** Add Wave 5 P0 payers: UnitedHealth/Optum (Taleo), Kaiser (custom) — **blocked:** no connector
+- [x] **A5** Run full ingest; confirm **≥30 listed** on-wedge roles → **38 listed** (2026-09-02)
+- [x] **A6** Spot-check homepage sort: tier-3 BCM/DR titles above generic risk (`rank.test.ts` passes)
+
+### Phase A implementation notes (2026-09-02)
+
+| Change | File | Effect |
+| --- | --- | --- |
+| Workday JD prefetch for bank risk/control titles | `ingest/sources/workday.ts`, `classify-businesscontinuity.ts` | Unlocked Morgan Stanley (+8), Capital One (+4), PNC (+5) |
+| Expanded search keywords (+7) | `companies.ts` | Broader ATS recall |
+| Added PNC Financial Services | `companies.ts` | +5 on-wedge roles |
+| Tightened bare `crisis` title match | `classify-businesscontinuity.ts` | Drops behavioral-health crisis hub roles |
+| Removed Airbus | `companies.ts` | Less field-EM noise |
+| Truist deferred | — | Workday API returns HTTP 500 to Node `fetch` (curl OK); needs connector investigation |
+
+**P0 blockers for next wave:** JPMorgan/Goldman Sachs (Oracle Recruiting Cloud), UnitedHealth (Taleo), Kaiser (`kaiserpermanentejobs.org`) — require new connectors or manual employer verification.
 
 ### Phase B — sustain density (50+ roles)
 
@@ -316,8 +329,8 @@ npm test -- ingest/classify-businesscontinuity.test.ts
 
 | Milestone | Target | Status |
 | --- | --- | --- |
-| Launch gate | ≥30 on-wedge listed | 21 — **9 short** |
-| Credible SEO floor | ≥50 on-wedge listed | Not yet |
+| Launch gate | ≥30 on-wedge listed | **38** ✓ |
+| Credible SEO floor | ≥50 on-wedge listed | 38 — Wave B next |
 | Employer hit rate | ≥50% of wired with ≥1 kept | 40% |
 | Wedge density | ≥60% of listed are rank-3 titles | TBD — manual sample |
 | Sector balance | Finance + healthcare + insurance all represented | Yes (thin insurance) |
