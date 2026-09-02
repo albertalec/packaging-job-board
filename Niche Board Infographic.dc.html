@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; background: #E7EAEE; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page orientation="portrait">
+
+  <!-- WIREFRAME · 1080×1080 LinkedIn carousel · How Niche Board works -->
+  <!-- Canonical brief: docs/infographic-niche-board-proposal.md -->
+
+  <!-- SLIDE 1 · PROBLEM -->
+  <section class="page" data-screen-label="01 Problem" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 72px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div style="display: flex; justifyContent: space-between; alignItems: flex-start">
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77">01 · The problem</div>
+      <svg viewBox="0 0 235 235" style="width: 36px; height: 36px; display: block; opacity: 0.35"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+    </div>
+    <div style="display: flex; flexDirection: column; gap: 28px; flex: 1; justifyContent: center">
+      <div style="fontSize: 44px; lineHeight: 1.12; fontWeight: 600; letterSpacing: -0.03em; color: #0D1B2A; maxWidth: 880px; textWrap: pretty">Your specialty has a title. General search treats it like a keyword.</div>
+      <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 20px">
+        <div style="padding: 24px; background: #F1F3F5; border: 1px dashed #C9CFD6; display: flex; flexDirection: column; gap: 14px">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #4B5563">Keyword soup</div>
+          <div style="display: flex; flexWrap: wrap; gap: 8px">
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">plant ops</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">procurement</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">semiconductor</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">packer</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">IT SRE</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">field EM</div>
+            <div style="padding: 6px 10px; background: #E7EAEE; color: #4B5563; fontSize: 12px; borderRadius: 2px">product DR</div>
+          </div>
+        </div>
+        <div style="padding: 24px; background: #E6F1EF; border: 1.5px solid #0D7D77; display: flex; flexDirection: column; gap: 14px; justifyContent: center">
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #0D7D77">Your title</div>
+          <div style="padding: 10px 14px; background: #0D7D77; color: #FFFFFF; fontSize: 15px; fontWeight: 600; borderRadius: 2px; textAlign: center">Packaging engineer</div>
+          <div style="padding: 10px 14px; background: #0D7D77; color: #FFFFFF; fontSize: 15px; fontWeight: 600; borderRadius: 2px; textAlign: center">BCM program manager</div>
+        </div>
+      </div>
+    </div>
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563; borderTop: 1px solid #E7EAEE; paddingTop: 16px; display: flex; justifyContent: space-between">
+      <div>Niche Board · How it works · Wireframe</div>
+      <div>1080 × 1080</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2 · SOURCE -->
+  <section class="page" data-screen-label="02 Source" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 72px 64px; background: #0D1B2A; color: #FFFFFF; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: rgba(255,255,255,0.55)">02 · The source</div>
+    <div style="display: flex; flexDirection: column; gap: 32px; flex: 1; justifyContent: center">
+      <div style="fontSize: 44px; lineHeight: 1.12; fontWeight: 600; letterSpacing: -0.03em; color: #FFFFFF; maxWidth: 820px">Pulled daily from employer career sites.</div>
+      <div style="fontSize: 17px; lineHeight: 1.6; color: rgba(255,255,255,0.78); maxWidth: 640px">Same listings employers publish on Workday, Greenhouse, SuccessFactors, and more — not stale reposts.</div>
+      <div style="display: flex; alignItems: center; gap: 16px; paddingTop: 8px">
+        <div style="display: flex; flexDirection: column; alignItems: center; gap: 8px">
+          <div style="width: 72px; height: 48px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.08em; color: rgba(255,255,255,0.7)">WORKDAY</div>
+        </div>
+        <div style="display: flex; flexDirection: column; alignItems: center; gap: 8px">
+          <div style="width: 72px; height: 48px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.08em; color: rgba(255,255,255,0.7)">GH</div>
+        </div>
+        <div style="display: flex; flexDirection: column; alignItems: center; gap: 8px">
+          <div style="width: 72px; height: 48px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.08em; color: rgba(255,255,255,0.7)">SF</div>
+        </div>
+        <div style="fontSize: 24px; color: #0D7D77">→</div>
+        <svg viewBox="0 0 235 235" style="width: 56px; height: 56px; display: block"><path d="M0 0H235V62H62V235H0Z" fill="#FFFFFF"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+      </div>
+      <div style="display: grid; gridTemplateColumns: repeat(3, 1fr); gap: 16px; paddingTop: 12px">
+        <div style="padding: 20px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+          <div style="fontSize: 36px; fontWeight: 700; letterSpacing: -0.03em; color: #FFFFFF">98</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">employer feeds</div>
+        </div>
+        <div style="padding: 20px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+          <div style="fontSize: 36px; fontWeight: 700; letterSpacing: -0.03em; color: #FFFFFF">13</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">ATS connectors</div>
+        </div>
+        <div style="padding: 20px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+          <div style="fontSize: 36px; fontWeight: 700; letterSpacing: -0.03em; color: #FFFFFF">2</div>
+          <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">boards live</div>
+        </div>
+      </div>
+    </div>
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: rgba(255,255,255,0.4)">Stats · Sep 2026 ingest</div>
+  </section>
+
+  <!-- SLIDE 3 · FILTER (hero) -->
+  <section class="page" data-screen-label="03 Filter" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 56px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 24px">
+    <div style="display: flex; justifyContent: space-between; alignItems: flex-start">
+      <div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77; marginBottom: 10px">03 · The filter</div>
+        <div style="fontSize: 40px; lineHeight: 1.12; fontWeight: 600; letterSpacing: -0.03em; color: #0D1B2A">We classify before we list.</div>
+        <div style="fontSize: 16px; color: #4B5563; marginTop: 8px">The value is what we leave out.</div>
+      </div>
+    </div>
+
+    <!-- Funnel -->
+    <div style="display: flex; alignItems: stretch; gap: 10px; flex: 1">
+      <div style="flex: 1.4; padding: 20px 16px; background: #F1F3F5; display: flex; flexDirection: column; justifyContent: center; gap: 8px; position: relative">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.1em; textTransform: uppercase; color: #4B5563">Scanned</div>
+        <div style="fontSize: 32px; fontWeight: 700; color: #4B5563">{scanned}</div>
+        <div style="fontSize: 12px; lineHeight: 1.45; color: #4B5563">ATS postings seen daily</div>
+        <div style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); fontSize: 20px; color: #0D7D77; zIndex: 2">→</div>
+      </div>
+      <div style="flex: 1.2; padding: 20px 16px; background: #E7EAEE; display: flex; flexDirection: column; justifyContent: center; gap: 8px; position: relative">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.1em; textTransform: uppercase; color: #4B5563">Classifier</div>
+        <div style="fontSize: 32px; fontWeight: 700; color: #4B5563">113</div>
+        <div style="fontSize: 12px; lineHeight: 1.45; color: #4B5563">on-wedge titles pass</div>
+        <div style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); fontSize: 20px; color: #0D7D77; zIndex: 2">→</div>
+      </div>
+      <div style="flex: 1; padding: 20px 16px; background: #E6F1EF; border: 1.5px solid #0D7D77; display: flex; flexDirection: column; justifyContent: center; gap: 8px; position: relative">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.1em; textTransform: uppercase; color: #0D7D77">Listed</div>
+        <div style="fontSize: 40px; fontWeight: 700; color: #0D1B2A">70</div>
+        <div style="fontSize: 12px; lineHeight: 1.45; color: #0D7D77">US roles on board</div>
+      </div>
+    </div>
+
+    <!-- Noise dropped -->
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 16px">
+      <div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.1em; textTransform: uppercase; color: #6A5FA9; marginBottom: 10px">Packaging · dropped</div>
+        <div style="display: flex; flexWrap: wrap; gap: 6px">
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">plant ops</div>
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">semiconductor</div>
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">procurement</div>
+        </div>
+        <div style="fontSize: 12px; fontWeight: 600; color: #0D1B2A; marginTop: 10px">Package development — not plant ops.</div>
+      </div>
+      <div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 9px; letterSpacing: 0.1em; textTransform: uppercase; color: #A85C57; marginBottom: 10px">Resilience · dropped</div>
+        <div style="display: flex; flexWrap: wrap; gap: 6px">
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">IT SRE</div>
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">FEMA / field EM</div>
+          <div style="padding: 5px 8px; background: #F1F3F5; color: #4B5563; fontSize: 11px; textDecoration: line-through">product DR</div>
+        </div>
+        <div style="fontSize: 12px; fontWeight: 600; color: #0D1B2A; marginTop: 10px">BCM &amp; disaster recovery — not generic IT.</div>
+      </div>
+    </div>
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #4B5563; fontStyle: italic">{scanned} placeholder — unlock after ingest analytics Phase A</div>
+  </section>
+
+  <!-- SLIDE 4 · BOARDS -->
+  <section class="page" data-screen-label="04 Boards" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 72px 64px; background: #F1F3F5; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77; marginBottom: 12px">04 · The boards</div>
+      <div style="fontSize: 40px; lineHeight: 1.12; fontWeight: 600; letterSpacing: -0.03em; color: #0D1B2A">One board per narrow profession.</div>
+    </div>
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 20px; flex: 1; alignItems: center">
+      <div style="background: #FFFFFF; border: 1px solid #E7EAEE; borderTop: 4px solid #6A5FA9; padding: 28px; display: flex; flexDirection: column; gap: 16px; minHeight: 360px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: #6A5FA9">Packaging</div>
+        <div style="fontSize: 22px; fontWeight: 600; color: #0D1B2A">Package development at CPG &amp; brand employers</div>
+        <div style="fontSize: 14px; lineHeight: 1.55">Packaging engineers · R&amp;D · campus recruiting</div>
+        <div style="marginTop: auto; display: flex; alignItems: flex-end; justifyContent: space-between">
+          <div>
+            <div style="fontSize: 40px; fontWeight: 700; color: #0D1B2A">49</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase; color: #4B5563">live roles</div>
+          </div>
+          <div style="fontSize: 13px; fontWeight: 500; color: #0D7D77">packaging.nicheboardjobs.com</div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E7EAEE; borderTop: 4px solid #A85C57; padding: 28px; display: flex; flexDirection: column; gap: 16px; minHeight: 360px">
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: #A85C57">Resilience</div>
+        <div style="fontSize: 22px; fontWeight: 600; color: #0D1B2A">BCM &amp; disaster recovery at regulated employers</div>
+        <div style="fontSize: 14px; lineHeight: 1.55">Finance · healthcare · credit unions</div>
+        <div style="marginTop: auto; display: flex; alignItems: flex-end; justifyContent: space-between">
+          <div>
+            <div style="fontSize: 40px; fontWeight: 700; color: #0D1B2A">21</div>
+            <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.08em; textTransform: uppercase; color: #4B5563">live roles</div>
+          </div>
+          <div style="fontSize: 11px; fontWeight: 500; color: #0D7D77; textAlign: right; maxWidth: 140px">businesscontinuity.nicheboardjobs.com</div>
+        </div>
+      </div>
+    </div>
+    <div style="fontSize: 13px; color: #4B5563; textAlign: center">Examples on the board today: General Mills · Clorox · Capital One · State Street</div>
+  </section>
+
+  <!-- SLIDE 5 · YOUR PATH -->
+  <section class="page" data-screen-label="05 Your path" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 72px 64px; background: #FFFFFF; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: #0D7D77; marginBottom: 12px">05 · Your path</div>
+      <div style="fontSize: 40px; lineHeight: 1.12; fontWeight: 600; letterSpacing: -0.03em; color: #0D1B2A">Browse a list that's already filtered.</div>
+    </div>
+    <div style="display: flex; alignItems: flex-start; gap: 12px; flex: 1; paddingTop: 40px">
+      <div style="flex: 1; display: flex; flexDirection: column; gap: 16px; alignItems: center; textAlign: center">
+        <svg viewBox="0 0 235 235" style="width: 48px; height: 48px"><path d="M0 0H235V62H62V235H0Z" fill="#0D1B2A"></path><path d="M235 235H120V180H180V120H235Z" fill="#0D7D77"></path></svg>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #0D7D77">01 · Browse</div>
+        <div style="fontSize: 15px; lineHeight: 1.55; maxWidth: 220px">Filter by sector, state, or remote. No profiles.</div>
+      </div>
+      <div style="fontSize: 28px; color: #0D7D77; paddingTop: 48px">→</div>
+      <div style="flex: 1; display: flex; flexDirection: column; gap: 16px; alignItems: center; textAlign: center">
+        <div style="width: 48px; height: 48px; border: 2px solid #0D1B2A; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: #0D1B2A">ATS</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #0D7D77">02 · Apply</div>
+        <div style="fontSize: 15px; lineHeight: 1.55; maxWidth: 220px">On the employer's career site. No fake apply wall.</div>
+      </div>
+      <div style="fontSize: 28px; color: #0D7D77; paddingTop: 48px">→</div>
+      <div style="flex: 1; display: flex; flexDirection: column; gap: 16px; alignItems: center; textAlign: center">
+        <div style="width: 48px; height: 48px; background: #E6F1EF; border: 1.5px solid #0D7D77; display: flex; alignItems: center; justifyContent: center; fontSize: 20px">@</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.12em; textTransform: uppercase; color: #0D7D77">03 · Alerts</div>
+        <div style="fontSize: 15px; lineHeight: 1.55; maxWidth: 220px">Short digest when new roles post. Optional.</div>
+      </div>
+    </div>
+    <div style="padding: 16px 20px; background: #F1F3F5; fontSize: 14px; lineHeight: 1.5; textAlign: center; color: #4B5563">Descriptions formatted for scanning — headings, lists, not a wall of ATS HTML.</div>
+  </section>
+
+  <!-- SLIDE 6 · PROOF + CTA -->
+  <section class="page" data-screen-label="06 Proof" style="boxSizing: border-box; width: 1080px; height: 1080px; padding: 72px 64px; background: #0D1B2A; color: #FFFFFF; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; justifyContent: space-between">
+    <div style="display: flex; flexDirection: column; gap: 12px">
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; letterSpacing: 0.16em; textTransform: uppercase; color: rgba(255,255,255,0.55)">06 · Proof</div>
+      <div style="fontFamily: Newsreader, Georgia, serif; fontStyle: italic; fontSize: 36px; lineHeight: 1.2; color: #FFFFFF">The right jobs, not all the jobs.</div>
+    </div>
+    <div style="display: grid; gridTemplateColumns: 1fr 1fr; gap: 16px">
+      <div style="padding: 24px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+        <div style="fontSize: 44px; fontWeight: 700; letterSpacing: -0.03em">70</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">live specialist roles</div>
+      </div>
+      <div style="padding: 24px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+        <div style="fontSize: 44px; fontWeight: 700; letterSpacing: -0.03em">38</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">employers hiring</div>
+      </div>
+      <div style="padding: 24px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+        <div style="fontSize: 44px; fontWeight: 700; letterSpacing: -0.03em">24</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">US states</div>
+      </div>
+      <div style="padding: 24px; background: rgba(255,255,255,0.06); borderTop: 3px solid #0D7D77">
+        <div style="fontSize: 44px; fontWeight: 700; letterSpacing: -0.03em">20</div>
+        <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; letterSpacing: 0.1em; textTransform: uppercase; color: rgba(255,255,255,0.55); marginTop: 6px">remote / hybrid flagged</div>
+      </div>
+    </div>
+    <div style="display: flex; flexDirection: column; gap: 16px; alignItems: center; textAlign: center">
+      <div style="padding: 16px 32px; background: #0D7D77; color: #FFFFFF; fontSize: 18px; fontWeight: 600; borderRadius: 3px">nicheboardjobs.com</div>
+      <div style="fontSize: 14px; color: rgba(255,255,255,0.65)">Browse Packaging · Browse Resilience</div>
+      <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 10px; color: rgba(255,255,255,0.4)">Stats from daily ingest · Sep 2026</div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW · all slides -->
+  <section class="page" data-screen-label="Overview" style="boxSizing: border-box; width: 1080px; minHeight: 1080px; padding: 48px 56px; background: #E7EAEE; color: #4B5563; fontFamily: Archivo, Helvetica, Arial, sans-serif; display: flex; flexDirection: column; gap: 24px">
+    <div style="fontSize: 24px; fontWeight: 600; color: #0D1B2A">Carousel overview · 6 slides + export</div>
+    <div style="fontSize: 14px; lineHeight: 1.55; maxWidth: 720px">LinkedIn carousel wireframes at 1080×1080. Export each <code style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 12px">.page</code> section as PNG @2× for production. Stack vertically for tall hub infographic.</div>
+    <div style="display: grid; gridTemplateColumns: repeat(3, 1fr); gap: 12px">
+      <div style="aspectRatio: 1; background: #FFFFFF; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">01 Problem</div>
+      <div style="aspectRatio: 1; background: #0D1B2A; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: rgba(255,255,255,0.7)">02 Source</div>
+      <div style="aspectRatio: 1; background: #FFFFFF; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">03 Filter</div>
+      <div style="aspectRatio: 1; background: #F1F3F5; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">04 Boards</div>
+      <div style="aspectRatio: 1; background: #FFFFFF; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">05 Path</div>
+      <div style="aspectRatio: 1; background: #0D1B2A; border: 1px solid #C9CFD6; display: flex; alignItems: center; justifyContent: center; fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: rgba(255,255,255,0.7)">06 Proof</div>
+    </div>
+    <div style="fontFamily: 'IBM Plex Mono', monospace; fontSize: 11px; color: #4B5563">See docs/infographic-niche-board-proposal.md · AGENTS.md canonical mocks</div>
+  </section>
+
+</doc-page>
+</x-dc>
+</body>
+</html>

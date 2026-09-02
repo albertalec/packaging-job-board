@@ -1,6 +1,6 @@
 # Infographic proposal — How Niche Board works
 
-**Status:** Proposal (not designed yet)  
+**Status:** Proposal — wireframes at [`Niche Board Infographic.dc.html`](../Niche%20Board%20Infographic.dc.html)  
 **Audience:** Candidates first; employers second  
 **Primary use:** LinkedIn proof post (carousel or single tall image), hub landing embed, optional PDF for university outreach  
 **Voice:** [`MARKETING.md`](../MARKETING.md) · [`Niche Board Brand Guide.dc.html`](../Niche%20Board%20Brand%20Guide.dc.html)  
@@ -308,7 +308,8 @@ Use verbatim where possible:
 
 ### Design
 
-- [ ] Wireframe 6 slides in Figma (or `.dc.html` mock) at 1080×1080
+- [x] Wireframe 6 slides in `.dc.html` mock — [`Niche Board Infographic.dc.html`](../Niche%20Board%20Infographic.dc.html) (1080×1080 per slide)
+- [ ] High-fidelity pass in Figma (or refine `.dc.html` to production)
 - [ ] Brand review — navy/teal only in logo; amber absent
 - [ ] Accessibility — 4.5:1 contrast on body text; don’t rely on color alone for drop vs keep
 - [ ] Export PNG @2× + PDF
