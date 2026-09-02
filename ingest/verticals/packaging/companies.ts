@@ -59,6 +59,7 @@ export const companies: Company[] = [
     site: "Search",
     searchText: PACKAGING_QUERY,
     searchTexts: [...ENGINEER_QUERIES],
+    country: "USA",
     niche: "industrial",
   },
   {

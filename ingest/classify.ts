@@ -131,8 +131,9 @@ const ABROAD_LOCATION =
 
 const CANADIAN_PROVINCE = /,\s*(ON|QC|AB|MB|SK|NS|NB|PE|NL|YT|NT|NU)\b/;
 
+/** Bare `, US` suffix (SuccessFactors / Phenom) — not matched by `usa` alone. */
 const US_MENTION =
-  /\b(?:united states|u\.s\.a\.|u\.s\.|usa)\b|-\s*usa\b/i;
+  /\b(?:united states|u\.s\.a\.|u\.s\.|usa)\b|-\s*usa\b|(?:^|,\s*)US\b(?:\s*$|\s*,)/i;
 
 /** Workday encodes region in the job path when the listing location string is sparse. */
 const FOREIGN_WORKDAY_PATH =

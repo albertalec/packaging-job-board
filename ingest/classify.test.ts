@@ -183,4 +183,23 @@ describe("isUsOrRemote", () => {
       true,
     );
   });
+
+  it("keeps SuccessFactors-style locations ending in , US", () => {
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: false,
+        location: "Nationwide, US",
+      }),
+      true,
+    );
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: true,
+        location: "Remote, US",
+      }),
+      true,
+    );
+  });
 });
