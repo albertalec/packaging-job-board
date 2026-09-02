@@ -90,21 +90,23 @@ npm run social:linkedin-draft -- --vertical=businesscontinuity --postType=curren
 
 ---
 
-## 3. Weekly mix (Packaging — launch)
+## 3. Weekly mix (rollout schedule)
 
-Target **2–3 LinkedIn posts per week** total. Rotate lanes so followers see both *roles* and *why the board exists*.
+**Dated calendar:** [`SOCIAL_ROLLOUT_PLAN.md`](SOCIAL_ROLLOUT_PLAN.md) — anchored to hub intro **2 Sep 2026**; Tue + Thu at **10:00 AM US Eastern** (15:00 UTC EDT).
 
-| Week rhythm | Lane | `postType` | Example angle |
+Target **2 LinkedIn posts per week** (not 3) during rollout — education first, then job features from **2 Oct 2026**. Rotate boards so Packaging and Resilience both get coverage.
+
+| Phase | Dates | Rhythm | `postType` mix |
 | --- | --- | --- | --- |
-| **Mon or Tue** | B — Industry pulse | `current-events` | X trend → “specialists get lost in keyword search” |
-| **Thu** | A — Job highlight | `fresh-role` | One strong new role + apply-out |
-| **Optional Sat** | B or education | `contrast` or `proof` | Contrast line only, or “updated daily from ATS” |
+| **Education** | 2 Sep – 25 Sep 2026 | Tue + Thu | `network`, `proof`, `contrast`, `audience` |
+| **Transition** | 30 Sep – 9 Oct 2026 | Tue + Thu | Last education + first `fresh-role` |
+| **Steady state** | 14 Oct 2026 onward | Tue + Thu | ~50% `fresh-role` · ~50% education / `proof` |
 
-**Ratio:** ~40% job highlights · ~60% trend/education (until audience knows the product; then adjust).
+**Ratio (steady state):** ~50% job highlights · ~50% trend/education.
 
-**Employer posts** (`employer`) — max **1 per month** unless inbound sponsor push; don’t crowd candidate feed.
+**Employer posts** (`employer`) — max **1 per month per board**; don’t crowd candidate feed.
 
-**Hub / network** (`contrast` on hub copy) — when a second vertical ships or hub milestone; not weekly filler.
+**Hub / network** (`contrast` on hub copy) — kickoff (2 Sep) and milestones only; not weekly filler.
 
 ---
 
@@ -253,11 +255,12 @@ Nothing auto-posts to LinkedIn without human approval.
 
 ## 8. Sample calendar (Packaging — week 1)
 
+Superseded by the dated two-board calendar in [`SOCIAL_ROLLOUT_PLAN.md`](SOCIAL_ROLLOUT_PLAN.md) (hub intro 2 Sep 2026).
+
 | Day | Lane | Draft focus |
 | --- | --- | --- |
-| Tue | B | X: CPG hiring chatter → “package dev vs plant ops” + browse CTA |
-| Thu | A | Fresh role: Senior Packaging Engineer at [brand] → job link |
-| Optional | B | `proof`: daily ATS ingest, short digest alerts |
+| Wed 2 Sep | Hub | Niche Board introduction |
+| Thu 4 Sep | Packaging | How we curate roles (curation / proof) |
 
 ---
 
