@@ -1,14 +1,14 @@
 {
-  "ingestedAt": "2026-09-02T23:24:29.607Z",
-  "total": 56,
+  "ingestedAt": "2026-09-02T23:48:43.969Z",
+  "total": 57,
   "stats": {
-    "scanned": 3876,
-    "classifierPass": 78,
-    "kept": 56,
+    "scanned": 3895,
+    "classifierPass": 79,
+    "kept": 57,
     "classifierDrops": {
-      "not a packaging role": 3028,
-      "warehouse/ops title": 209,
-      "off-target function": 508,
+      "not a packaging role": 3044,
+      "warehouse/ops title": 207,
+      "off-target function": 512,
       "plant process engineering": 36,
       "semiconductor/electronics packaging": 15,
       "software/electronics packaging": 1,
@@ -1029,6 +1029,24 @@
       "salary": null,
       "niche": "pharma",
       "source": "workday"
+    },
+    {
+      "id": "purple-diamond-9cd776533c732ed2",
+      "sourceId": "10949",
+      "hash": "9cd776533c732ed2",
+      "company": "Purple Diamond",
+      "companySlug": "purple-diamond",
+      "title": "Packaging Engineer",
+      "department": null,
+      "location": "Mikron Rd. Bethlehem, PA",
+      "state": "PA",
+      "remote": false,
+      "postedAt": "2023-05-10T14:41:21.000Z",
+      "applyUrl": "https://purple-diamond.com/jobs/packaging-engineer/",
+      "description": "Team Role: Packaging Engineer\n\nWhat we do\n\nWe help bring products and goods to market. How?\n\n Design Packaging Systems for our clients\n\n Engineering, we produce samples and prototypes\n\n Testing, we test and validate products & packaging\n\nHere are some of the main industries we work with:\n\n Consumer Goods (the things we see and buy in stores)\n\n Medical/Pharmaceutical (the things that keep us healthy)\n\n Hazardous Goods (the things we protect the public from)\n\nWe break stuff! We shake, drop, compress, freeze, and pull things apart. It sounds awesome…and it is! We analyze how and why it broke not everything we touch breaks, regardless, we still evaluate it for clients.\n\nDespite how much fun it is to TEST (break) things, we have other areas we focus on too. When things break, we help create the solution to fix the problems with our DESIGN and ENGINEERING expertise. We have the opportunity to work with a vast array of companies and be part of market launches, product/packaging changes and studies that are monumental to a companies’ bottom line. So, what we do is pretty important!\n\nThe Ideal Candidate:\n\nEach person has their own unique set of skills and traits that make them the person they are. We encourage our team members to embrace those attributes and put them to use in their role with Purple Diamond. We believe the best candidate for this role is self-motivated, organized has a niche for communication (both written and verbal, takes ownership, is detail oriented, yet creative and forward thinking. We expect our team to adhere to deadlines and can multi-task to stay aligned with project goals.\n\nThe Packaging Engineer will be accountable for Packaging Projects that focus on\n\ndesigning and Developing Packaging structures.\n\nThe ideal candidate thrives in an open, results-based work environment, possesses\n\nstrong interpersonal skills, is goal oriented, and works well independently.\n\nAreas of Focus:\n\n• Implement new package designs for product launches\n\n• Ensure the compatibility of package designs equipment and technology.\n\n• Develop and maintain packaging documentation: Specification, Packaging Study\n\ndocumentation, change controls\n\n• Write and execute Packaging Qualification Protocols and Reports.\n\n• Conduct Packaging Studies and component qualifications.\n\n• Create Packaging Test plans / Protocols as need to evaluate Packaging Systems\n\nTop Skills:\n\n• Positive Attitude\n\n• AutoCAD experience\n\n• Adobe illustrator experience\n\n• Experience with structural package design projects.\n\n• Solutions driven\n\nEducation / Experience:\n\n• Bachelor’s degree in Packaging, Engineering, Material Science, or related field\n\n• 1-3+ years of Packaging development experience\n\n• understanding of packaging materials and product commercialization process\n\nfrom packaging design\n\n• Structural Design experience\n\n• Packaging development experience in the Pharmaceutical / Medical Device\n\nindustry\n\n• Ability to Write/ interpret Packaging Specifications\n\nPlease contact HR@purple-diamond.com to apply, please no phone calls\n\nPurple Diamond Packaging | 183 Mikron Rd. Bethlehem, PA 18020 United States | Lehigh Valley Region | Hiring Now!",
+      "salary": null,
+      "niche": "pharma",
+      "source": "wpjobs"
     }
   ],
   "reports": [
@@ -1131,13 +1149,13 @@
     {
       "company": "Campbell's",
       "ats": "workday",
-      "scanned": 192,
+      "scanned": 185,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "warehouse/ops title": 33,
-        "not a packaging role": 142,
+        "warehouse/ops title": 30,
+        "not a packaging role": 138,
         "off-target function": 16
       }
     },
@@ -1315,12 +1333,12 @@
     {
       "company": "Johnson & Johnson",
       "ats": "workday",
-      "scanned": 129,
+      "scanned": 130,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 109,
+        "not a packaging role": 110,
         "off-target function": 15,
         "packaging as commodity/category scope": 1,
         "plant process engineering": 1,
@@ -1412,8 +1430,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 18,
+        "not a packaging role": 17,
         "off-target function": 1,
+        "warehouse/ops title": 1,
         "semiconductor/electronics packaging": 1
       }
     },
@@ -1771,6 +1790,42 @@
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 11
+      }
+    },
+    {
+      "company": "Smithers",
+      "ats": "ultipro",
+      "scanned": 18,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {
+        "not a packaging role": 16,
+        "off-target function": 2
+      }
+    },
+    {
+      "company": "Westpak",
+      "ats": "rippling",
+      "scanned": 3,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {
+        "off-target function": 1,
+        "not a packaging role": 2
+      }
+    },
+    {
+      "company": "Purple Diamond",
+      "ats": "wpjobs",
+      "scanned": 4,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 2,
+        "off-target function": 1
       }
     }
   ]
