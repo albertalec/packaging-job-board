@@ -1,5 +1,6 @@
 import { BROWSER_HEADERS, slugify, toJob } from "../classify.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type CwsJob = {
   id?: number | string;
@@ -43,13 +44,14 @@ function applyUrl(company: Company, job: CwsJob): string {
   return slug ? `${origin}/job/${id}/${slug}` : `${origin}/job/${id}`;
 }
 
-export async function ingestCws(company: Company): Promise<NormalizedJob[]> {
+export async function ingestCws(company: Company): Promise<IngestResult> {
   const orgId = company.orgId ?? company.boardToken;
   if (!orgId) throw new Error(`CWS org id missing for ${company.name}`);
 
   const host = company.host ?? DEFAULT_HOST;
   const query = company.searchText ?? "packaging";
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   let offset = 1;
   let total = Infinity;
 
@@ -84,20 +86,22 @@ export async function ingestCws(company: Company): Promise<NormalizedJob[]> {
     const postings = page.queryResult ?? [];
     for (const posting of postings) {
       const title = posting.title ?? "";
+      const sourceId = String(posting.ref ?? posting.id ?? title);
+      stats.recordScan(sourceId);
       const normalized = toJob(company, {
-        sourceId: String(posting.ref ?? posting.id ?? title),
+        sourceId,
         title,
         department: posting.function ?? null,
         location: locationOf(posting),
         postedAt: posting.open_date ?? null,
         applyUrl: applyUrl(company, posting),
         description: posting.description || title,
-      });
+      }, stats);
       if (normalized) jobs.push(normalized);
     }
     if (postings.length === 0) break;
     offset += PAGE_SIZE;
   }
 
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

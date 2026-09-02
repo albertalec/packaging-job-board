@@ -1,6 +1,7 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type SfJob = {
   id?: string;
@@ -82,7 +83,7 @@ async function fromRss(origin: string, query: string): Promise<SfJob[]> {
 
 export async function ingestSuccessFactors(
   company: Company,
-): Promise<NormalizedJob[]> {
+): Promise<IngestResult> {
   const origin = new URL(company.careerUrl).origin;
   const seenRaw = new Set<string>();
   let raw: SfJob[] = [];
@@ -116,17 +117,20 @@ export async function ingestSuccessFactors(
       `SuccessFactors public JSON not available for ${company.name}`,
     );
   }
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   for (const job of raw) {
+    const sourceId = job.id || job.title || "";
+    stats.recordScan(sourceId);
     const normalized = toJob(company, {
-      sourceId: job.id || job.title || "",
+      sourceId,
       title: job.title ?? "",
       location: job.location ?? "",
       postedAt: job.postedDate ?? null,
       applyUrl: job.url || company.careerUrl,
       description: stripHtml(job.description ?? job.title ?? ""),
-    });
+    }, stats);
     if (normalized) jobs.push(normalized);
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

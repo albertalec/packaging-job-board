@@ -6,6 +6,7 @@ import {
   shouldPrefetchWorkdayDetail,
   toJob as toBusinessContinuityJob,
 } from "./classify-businesscontinuity.ts";
+import type { IngestStats } from "./stats.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
@@ -201,15 +202,17 @@ export function toJob(
     description: string;
     salary?: string | null;
   },
+  stats?: IngestStats,
 ): NormalizedJob | null {
   if (activeClassifier === "businesscontinuity") {
-    return toBusinessContinuityJob(company, input);
+    return toBusinessContinuityJob(company, input, stats);
   }
   const verdict = classifyJob({
     title: input.title,
     description: stripHtml(input.description) || input.title.trim(),
     department: input.department,
   });
+  stats?.recordClassifierResult(input.sourceId, verdict);
   if (!verdict.keep) return null;
   const plain = stripHtml(input.description) || input.title.trim();
   const hash = jobHash(company.slug, input.sourceId, input.title);
