@@ -1,6 +1,20 @@
 {
-  "ingestedAt": "2026-09-02T23:04:55.946Z",
+  "ingestedAt": "2026-09-02T23:24:29.607Z",
   "total": 56,
+  "stats": {
+    "scanned": 3876,
+    "classifierPass": 78,
+    "kept": 56,
+    "classifierDrops": {
+      "not a packaging role": 3028,
+      "warehouse/ops title": 209,
+      "off-target function": 508,
+      "plant process engineering": 36,
+      "semiconductor/electronics packaging": 15,
+      "software/electronics packaging": 1,
+      "packaging as commodity/category scope": 1
+    }
+  },
   "jobs": [
     {
       "id": "general-mills-a2dec98cbc20f033",
@@ -1021,345 +1035,743 @@
     {
       "company": "Kimberly-Clark",
       "ats": "workday",
+      "scanned": 58,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 52,
+        "warehouse/ops title": 1,
+        "off-target function": 3,
+        "plant process engineering": 2
+      }
     },
     {
       "company": "General Mills",
       "ats": "workday",
+      "scanned": 85,
+      "classifierPass": 3,
+      "kept": 3,
       "fetched": 3,
-      "kept": 3
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "off-target function": 12,
+        "not a packaging role": 66
+      }
     },
     {
       "company": "Sonoco",
       "ats": "workday",
+      "scanned": 76,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 64,
+        "off-target function": 5,
+        "plant process engineering": 2,
+        "warehouse/ops title": 4
+      }
     },
     {
       "company": "3M",
       "ats": "workday",
+      "scanned": 51,
+      "classifierPass": 3,
+      "kept": 0,
       "fetched": 3,
-      "kept": 0
+      "classifierDrops": {
+        "semiconductor/electronics packaging": 3,
+        "warehouse/ops title": 2,
+        "not a packaging role": 38,
+        "off-target function": 5
+      }
     },
     {
       "company": "Kenvue",
       "ats": "workday",
+      "scanned": 52,
+      "classifierPass": 3,
+      "kept": 1,
       "fetched": 3,
-      "kept": 1
+      "classifierDrops": {
+        "plant process engineering": 1,
+        "not a packaging role": 37,
+        "warehouse/ops title": 5,
+        "off-target function": 6
+      }
     },
     {
       "company": "Clorox",
       "ats": "workday",
+      "scanned": 68,
+      "classifierPass": 6,
+      "kept": 6,
       "fetched": 6,
-      "kept": 6
+      "classifierDrops": {
+        "warehouse/ops title": 27,
+        "off-target function": 10,
+        "not a packaging role": 25
+      }
     },
     {
       "company": "Conagra Brands",
       "ats": "workday",
+      "scanned": 72,
+      "classifierPass": 4,
+      "kept": 4,
       "fetched": 4,
-      "kept": 4
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 8,
+        "not a packaging role": 53,
+        "plant process engineering": 3
+      }
     },
     {
       "company": "Campbell's",
       "ats": "workday",
+      "scanned": 192,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "warehouse/ops title": 33,
+        "not a packaging role": 142,
+        "off-target function": 16
+      }
     },
     {
       "company": "Church & Dwight",
       "ats": "workday",
+      "scanned": 38,
+      "classifierPass": 2,
+      "kept": 2,
       "fetched": 2,
-      "kept": 2
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 8,
+        "not a packaging role": 24
+      }
     },
     {
       "company": "SC Johnson",
       "ats": "workday",
+      "scanned": 48,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 7,
+        "not a packaging role": 39,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "J.M. Smucker",
       "ats": "workday",
+      "scanned": 59,
+      "classifierPass": 2,
+      "kept": 2,
       "fetched": 2,
-      "kept": 2
+      "classifierDrops": {
+        "plant process engineering": 3,
+        "not a packaging role": 49,
+        "off-target function": 4,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Silgan Containers",
       "ats": "workday",
+      "scanned": 65,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 58,
+        "warehouse/ops title": 5,
+        "off-target function": 2
+      }
     },
     {
       "company": "Silgan Dispensing",
       "ats": "workday",
+      "scanned": 17,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 13,
+        "off-target function": 3,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Aptar",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 19,
+        "off-target function": 1
+      }
     },
     {
       "company": "Autoliv",
       "ats": "teamtailor",
+      "scanned": 66,
+      "classifierPass": 3,
+      "kept": 3,
       "fetched": 3,
-      "kept": 3
+      "classifierDrops": {
+        "warehouse/ops title": 3,
+        "not a packaging role": 51,
+        "plant process engineering": 6,
+        "off-target function": 3
+      }
     },
     {
       "company": "General Motors",
       "ats": "workday",
+      "scanned": 40,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "software/electronics packaging": 1,
+        "not a packaging role": 36,
+        "off-target function": 3
+      }
     },
     {
       "company": "Magna",
       "ats": "workday",
+      "scanned": 60,
+      "classifierPass": 3,
+      "kept": 2,
       "fetched": 3,
-      "kept": 2
+      "classifierDrops": {
+        "not a packaging role": 54,
+        "off-target function": 2,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Menasha",
       "ats": "workday",
+      "scanned": 85,
+      "classifierPass": 7,
+      "kept": 7,
       "fetched": 7,
-      "kept": 7
+      "classifierDrops": {
+        "not a packaging role": 69,
+        "warehouse/ops title": 4,
+        "plant process engineering": 2,
+        "off-target function": 3
+      }
     },
     {
       "company": "International Paper",
       "ats": "oracle",
+      "scanned": 50,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 9,
+        "not a packaging role": 37
+      }
     },
     {
       "company": "PepsiCo",
       "ats": "jibe",
+      "scanned": 10,
+      "classifierPass": 4,
+      "kept": 3,
       "fetched": 4,
-      "kept": 3
+      "classifierDrops": {
+        "off-target function": 4,
+        "not a packaging role": 2
+      }
     },
     {
       "company": "Unilever",
       "ats": "workday",
+      "scanned": 34,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 25,
+        "warehouse/ops title": 5,
+        "off-target function": 3,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Johnson & Johnson",
       "ats": "workday",
+      "scanned": 129,
+      "classifierPass": 2,
+      "kept": 1,
       "fetched": 2,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 109,
+        "off-target function": 15,
+        "packaging as commodity/category scope": 1,
+        "plant process engineering": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Procter & Gamble",
       "ats": "phenom",
+      "scanned": 129,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 119,
+        "off-target function": 7,
+        "plant process engineering": 3
+      }
     },
     {
       "company": "The Coca-Cola Company",
       "ats": "cws",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "off-target function": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "DuPont",
       "ats": "phenom",
+      "scanned": 115,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 75,
+        "warehouse/ops title": 2,
+        "off-target function": 36,
+        "plant process engineering": 1,
+        "semiconductor/electronics packaging": 1
+      }
     },
     {
       "company": "WK Kellogg Co",
       "ats": "phenom",
+      "scanned": 4,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 4
+      }
     },
     {
       "company": "Mars",
       "ats": "phenom",
+      "scanned": 263,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "warehouse/ops title": 36,
+        "not a packaging role": 167,
+        "off-target function": 59
+      }
     },
     {
       "company": "Ball Corporation",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 17,
+        "warehouse/ops title": 3
+      }
     },
     {
       "company": "Sealed Air",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "off-target function": 1,
+        "semiconductor/electronics packaging": 1
+      }
     },
     {
       "company": "Amcor",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 8,
+        "not a packaging role": 11
+      }
     },
     {
       "company": "Nestlé",
       "ats": "successfactors",
-      "fetched": 0,
+      "scanned": 0,
+      "classifierPass": 0,
       "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
       "error": "SuccessFactors public JSON not available for Nestlé"
     },
     {
       "company": "Berlin Packaging",
       "ats": "greenhouse",
+      "scanned": 16,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 5,
+        "off-target function": 2,
+        "warehouse/ops title": 9
+      }
     },
     {
       "company": "Ernest Packaging",
       "ats": "greenhouse",
+      "scanned": 39,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 14,
+        "off-target function": 25
+      }
     },
     {
       "company": "Amazon",
       "ats": "amazon",
+      "scanned": 8,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "semiconductor/electronics packaging": 6,
+        "not a packaging role": 2
+      }
     },
     {
       "company": "Abbott",
       "ats": "workday",
+      "scanned": 79,
+      "classifierPass": 6,
+      "kept": 2,
       "fetched": 6,
-      "kept": 2
+      "classifierDrops": {
+        "not a packaging role": 50,
+        "off-target function": 18,
+        "plant process engineering": 2,
+        "warehouse/ops title": 3
+      }
     },
     {
       "company": "Pfizer",
       "ats": "workday",
+      "scanned": 69,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "off-target function": 1,
+        "not a packaging role": 68
+      }
     },
     {
       "company": "Baxter",
       "ats": "workday",
+      "scanned": 68,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 56,
+        "warehouse/ops title": 6,
+        "off-target function": 5
+      }
     },
     {
       "company": "Stryker",
       "ats": "workday",
+      "scanned": 73,
+      "classifierPass": 4,
+      "kept": 2,
       "fetched": 4,
-      "kept": 2
+      "classifierDrops": {
+        "off-target function": 10,
+        "not a packaging role": 58,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Catalent",
       "ats": "workday",
+      "scanned": 56,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 49,
+        "warehouse/ops title": 2,
+        "plant process engineering": 1,
+        "off-target function": 4
+      }
     },
     {
       "company": "Tyson Foods",
       "ats": "workday",
+      "scanned": 20,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Constellation Brands",
       "ats": "workday",
+      "scanned": 29,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 26,
+        "off-target function": 3
+      }
     },
     {
       "company": "Target",
       "ats": "workday",
+      "scanned": 51,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 48,
+        "warehouse/ops title": 2,
+        "off-target function": 1
+      }
     },
     {
       "company": "CHEP",
       "ats": "workday",
+      "scanned": 21,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 19,
+        "off-target function": 2
+      }
     },
     {
       "company": "Thermo Fisher Scientific",
       "ats": "workday",
+      "scanned": 543,
+      "classifierPass": 8,
+      "kept": 5,
       "fetched": 8,
-      "kept": 5
+      "classifierDrops": {
+        "not a packaging role": 492,
+        "warehouse/ops title": 8,
+        "off-target function": 33,
+        "semiconductor/electronics packaging": 2
+      }
     },
     {
       "company": "BD",
       "ats": "workday",
+      "scanned": 89,
+      "classifierPass": 2,
+      "kept": 2,
       "fetched": 2,
-      "kept": 2
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "not a packaging role": 79,
+        "plant process engineering": 1,
+        "off-target function": 3
+      }
     },
     {
       "company": "The Hershey Company",
       "ats": "successfactors",
+      "scanned": 30,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1,
+        "off-target function": 2
+      }
     },
     {
       "company": "Eastman",
       "ats": "successfactors",
+      "scanned": 35,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 31,
+        "off-target function": 1,
+        "plant process engineering": 2
+      }
     },
     {
       "company": "Molson Coors",
       "ats": "successfactors",
+      "scanned": 30,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1,
+        "off-target function": 2
+      }
     },
     {
       "company": "Reckitt",
       "ats": "successfactors",
+      "scanned": 31,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 26,
+        "semiconductor/electronics packaging": 1,
+        "off-target function": 1,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "E&J Gallo",
       "ats": "successfactors",
+      "scanned": 28,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 24,
+        "off-target function": 2,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
+      "scanned": 34,
+      "classifierPass": 2,
+      "kept": 1,
       "fetched": 2,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 28,
+        "off-target function": 4
+      }
     },
     {
       "company": "Perrigo",
       "ats": "successfactors",
+      "scanned": 28,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Edwards Lifesciences",
       "ats": "workday",
+      "scanned": 39,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 34,
+        "off-target function": 4
+      }
     },
     {
       "company": "Medtronic",
       "ats": "workday",
+      "scanned": 78,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 5,
+        "not a packaging role": 71,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
+      "scanned": 364,
+      "classifierPass": 3,
+      "kept": 1,
       "fetched": 3,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 215,
+        "off-target function": 142,
+        "plant process engineering": 2,
+        "semiconductor/electronics packaging": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Sargento",
       "ats": "phenom",
+      "scanned": 41,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 32,
+        "off-target function": 7,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "GSK",
       "ats": "workday",
+      "scanned": 11,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 11
+      }
     }
   ]
 }

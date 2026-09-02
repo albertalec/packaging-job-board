@@ -1,6 +1,7 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type PhenomJob = {
   jobId?: string;
@@ -51,7 +52,7 @@ async function openSite(careerUrl: string): Promise<{ origin: string; cookies: s
   return { origin: new URL(res.url).origin, cookies, html };
 }
 
-export async function ingestPhenom(company: Company): Promise<NormalizedJob[]> {
+export async function ingestPhenom(company: Company): Promise<IngestResult> {
   const opened = await openSite(company.careerUrl);
   const origin = originFrom(company.careerUrl);
   const refNum = company.refNum || refNumFromHtml(opened.html);
@@ -59,7 +60,8 @@ export async function ingestPhenom(company: Company): Promise<NormalizedJob[]> {
     throw new Error(`Phenom ${company.name}: refNum not found`);
   }
 
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   const seen = new Set<string>();
   const size = 50;
 
@@ -114,6 +116,8 @@ export async function ingestPhenom(company: Company): Promise<NormalizedJob[]> {
           posting.jobSeqNo || posting.jobId || posting.reqId || title,
         );
         if (seen.has(sourceId)) continue;
+        seen.add(sourceId);
+        stats.recordScan(sourceId);
         const applyUrl =
           posting.applyUrl ||
           (posting.jobSeqNo
@@ -131,15 +135,12 @@ export async function ingestPhenom(company: Company): Promise<NormalizedJob[]> {
           postedAt: posting.postedDate ?? null,
           applyUrl,
           description,
-        });
-        if (normalized) {
-          seen.add(sourceId);
-          jobs.push(normalized);
-        }
+        }, stats);
+        if (normalized) jobs.push(normalized);
       }
       if (postings.length === 0) break;
       from += size;
     }
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

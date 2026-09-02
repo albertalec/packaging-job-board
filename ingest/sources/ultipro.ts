@@ -1,6 +1,7 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type UltiproAddress = {
   City?: string | null;
@@ -134,7 +135,7 @@ async function loadDetail(
   return parseEmbeddedDetail(await res.text());
 }
 
-export async function ingestUltipro(company: Company): Promise<NormalizedJob[]> {
+export async function ingestUltipro(company: Company): Promise<IngestResult> {
   const base = boardBase(company.careerUrl);
   const byId = new Map<string, UltiproSearchHit>();
   for (const query of companySearchTexts(company)) {
@@ -145,8 +146,10 @@ export async function ingestUltipro(company: Company): Promise<NormalizedJob[]> 
     }
   }
 
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   for (const hit of byId.values()) {
+    stats.recordScan(hit.Id!);
     const preview = toJob(company, {
       sourceId: hit.Id!,
       title: hit.Title!,
@@ -155,7 +158,7 @@ export async function ingestUltipro(company: Company): Promise<NormalizedJob[]> 
       postedAt: hit.PostedDate ?? null,
       applyUrl: `${base}/OpportunityDetail?opportunityId=${hit.Id}`,
       description: stripHtml(hit.BriefDescription ?? hit.Title ?? ""),
-    });
+    }, stats);
     if (!preview) continue;
 
     const detail = (await loadDetail(base, hit.Id!)) ?? hit;
@@ -170,8 +173,8 @@ export async function ingestUltipro(company: Company): Promise<NormalizedJob[]> 
         detail.Description ?? hit.BriefDescription ?? hit.Title ?? "",
       ),
       salary: salaryFromDetail(detail),
-    });
+    }, stats);
     if (normalized) jobs.push(normalized);
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

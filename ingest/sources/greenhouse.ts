@@ -1,5 +1,6 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type GreenhouseJob = {
   id: number;
@@ -35,18 +36,21 @@ function salaryFromMetadata(job: GreenhouseJob): string | null {
   return null;
 }
 
-export async function ingestGreenhouse(company: Company): Promise<NormalizedJob[]> {
+export async function ingestGreenhouse(company: Company): Promise<IngestResult> {
   const token = company.boardToken;
   if (!token) throw new Error(`Greenhouse board token missing for ${company.name}`);
   const url = `https://boards-api.greenhouse.io/v1/boards/${token}/jobs?content=true`;
   const res = await fetch(url, { headers: BROWSER_HEADERS });
   if (!res.ok) throw new Error(`Greenhouse ${company.name} ${res.status}`);
   const data = (await res.json()) as { jobs?: GreenhouseJob[] };
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   for (const job of data.jobs ?? []) {
+    const sourceId = String(job.id);
+    stats.recordScan(sourceId);
     const description = stripHtml(job.content ?? "");
     const normalized = toJob(company, {
-      sourceId: String(job.id),
+      sourceId,
       title: job.title,
       department: job.departments?.[0]?.name ?? null,
       location: job.location?.name ?? "",
@@ -54,8 +58,8 @@ export async function ingestGreenhouse(company: Company): Promise<NormalizedJob[
       applyUrl: job.absolute_url,
       description,
       salary: salaryFromMetadata(job),
-    });
+    }, stats);
     if (normalized) jobs.push(normalized);
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { htmlToPlainText } from "../src/lib/description.ts";
 import { isRemote } from "../src/lib/remote.ts";
 import { parseState } from "../src/lib/states.ts";
+import type { IngestStats } from "./stats.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
@@ -217,12 +218,14 @@ export function toJob(
     description: string;
     salary?: string | null;
   },
+  stats?: IngestStats,
 ): NormalizedJob | null {
   const verdict = classifyBusinessContinuityJob({
     title: input.title,
     description: stripHtml(input.description) || input.title.trim(),
     department: input.department,
   });
+  stats?.recordClassifierResult(input.sourceId, verdict);
   if (!verdict.keep) return null;
   const plain = stripHtml(input.description) || input.title.trim();
   const hash = jobHash(company.slug, input.sourceId, input.title);

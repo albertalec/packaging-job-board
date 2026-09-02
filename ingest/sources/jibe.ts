@@ -1,5 +1,6 @@
 import { BROWSER_HEADERS, toJob } from "../classify.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type JibeJob = {
   slug?: string;
@@ -34,7 +35,7 @@ function locationOf(job: JibeJob): string {
   return [job.city, job.state, job.country].filter(Boolean).join(", ");
 }
 
-export async function ingestJibe(company: Company): Promise<NormalizedJob[]> {
+export async function ingestJibe(company: Company): Promise<IngestResult> {
   const origin = new URL(company.careerUrl).origin;
   const query = encodeURIComponent(company.searchText ?? "packaging");
   const url = `${origin}/api/jobs?keywords=${query}`;
@@ -43,22 +44,24 @@ export async function ingestJibe(company: Company): Promise<NormalizedJob[]> {
   });
   if (!res.ok) throw new Error(`Jibe ${company.name} ${res.status} ${url}`);
   const page = (await res.json()) as JibePage;
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   for (const posting of unwrap(page)) {
-    const sourceId = posting.req_id || posting.slug || posting.title || "";
+    const sourceId = String(posting.req_id || posting.slug || posting.title || "");
+    stats.recordScan(sourceId);
     const applyUrl = posting.slug
       ? `${origin}/main/jobs/${posting.slug}`
       : posting.apply_url || company.careerUrl;
     const normalized = toJob(company, {
-      sourceId: String(sourceId),
+      sourceId,
       title: posting.title ?? "",
       department: posting.category ?? null,
       location: locationOf(posting),
       postedAt: posting.posted_date ?? null,
       applyUrl,
       description: posting.description || posting.title || "",
-    });
+    }, stats);
     if (normalized) jobs.push(normalized);
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }
