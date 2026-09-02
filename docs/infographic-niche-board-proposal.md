@@ -1,6 +1,6 @@
 # Infographic proposal — How Niche Board works
 
-**Status:** Proposal — wireframes at [`Niche Board Infographic.dc.html`](../Niche%20Board%20Infographic.dc.html)  
+**Status:** Proposal — wireframes at [`Niche Board Infographic.dc.html`](../Niche%20Board%20Infographic.dc.html) (Design Canvas) · **browser preview:** [`Niche Board Infographic.preview.html`](../Niche%20Board%20Infographic.preview.html)  
 **Audience:** Candidates first; employers second  
 **Primary use:** LinkedIn proof post (carousel or single tall image), hub landing embed, optional PDF for university outreach  
 **Voice:** [`MARKETING.md`](../MARKETING.md) · [`Niche Board Brand Guide.dc.html`](../Niche%20Board%20Brand%20Guide.dc.html)  
