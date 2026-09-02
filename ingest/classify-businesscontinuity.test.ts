@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { classifyBusinessContinuityJob } from "./classify-businesscontinuity.ts";
+import { classifyBusinessContinuityJob, shouldPrefetchWorkdayDetail } from "./classify-businesscontinuity.ts";
 
 describe("classifyBusinessContinuityJob", () => {
   it("keeps BCM and disaster recovery titles", () => {
@@ -32,6 +32,22 @@ describe("classifyBusinessContinuityJob", () => {
       const result = classifyBusinessContinuityJob({ title, description: "" });
       assert.equal(result.keep, true, title);
     }
+  });
+
+  it("prefetches Workday detail for bank risk/control titles without BCM in list card", () => {
+    assert.equal(shouldPrefetchWorkdayDetail("Business Control Manager"), true);
+    assert.equal(shouldPrefetchWorkdayDetail("Enterprise Resilience Officer I"), true);
+    assert.equal(shouldPrefetchWorkdayDetail("Cons Prod Strat Analyst III"), false);
+  });
+
+  it("drops behavioral health crisis account roles without BCM in title", () => {
+    const result = classifyBusinessContinuityJob({
+      title:
+        "Director I Carelon Account Management - Behavioral Health - Louisiana Crisis",
+      description:
+        "Supports the statewide Crisis Hub for behavioral health crisis services and 988 triage.",
+    });
+    assert.equal(result.keep, false);
   });
 
   it("drops generic IT without continuity signal", () => {

@@ -12,6 +12,13 @@ const DR_QUERIES = [
   "DR architect",
   "continuity planning",
   "resiliency",
+  "enterprise resiliency",
+  "enterprise resilience",
+  "crisis management",
+  "EMBC",
+  "business resiliency",
+  "continuity of operations",
+  "IT disaster recovery",
 ] as const;
 
 export const companies: Company[] = [
@@ -147,6 +154,7 @@ export const companies: Company[] = [
     tenant: "td",
     site: "TD_Bank_Careers",
     searchTexts: [...DR_QUERIES],
+    country: "USA",
     niche: "finance",
   },
   {
@@ -158,6 +166,7 @@ export const companies: Company[] = [
     tenant: "bmo",
     site: "External",
     searchTexts: [...DR_QUERIES],
+    country: "USA",
     niche: "finance",
   },
   {
@@ -168,6 +177,19 @@ export const companies: Company[] = [
     host: "paypal.wd1.myworkdayjobs.com",
     tenant: "paypal",
     site: "jobs",
+    searchTexts: [...DR_QUERIES],
+    country: "USA",
+    niche: "finance",
+  },
+  // Wave 4 — tier-1 finance (verified Workday hits)
+  {
+    name: "PNC Financial Services",
+    slug: "pnc",
+    ats: "workday",
+    careerUrl: "https://pnc.wd5.myworkdayjobs.com/External",
+    host: "pnc.wd5.myworkdayjobs.com",
+    tenant: "pnc",
+    site: "External",
     searchTexts: [...DR_QUERIES],
     country: "USA",
     niche: "finance",
@@ -319,16 +341,6 @@ export const companies: Company[] = [
     searchTexts: [...DR_QUERIES],
     country: "USA",
     niche: "healthcare",
-  },
-  {
-    name: "Airbus",
-    slug: "airbus",
-    ats: "workday",
-    careerUrl: "https://ag.wd3.myworkdayjobs.com/airbus",
-    host: "ag.wd3.myworkdayjobs.com",
-    tenant: "ag",
-    site: "airbus",
-    searchTexts: [...DR_QUERIES],
   },
   {
     name: "AbbVie",

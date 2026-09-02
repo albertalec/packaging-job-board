@@ -1,4 +1,9 @@
-import { BROWSER_HEADERS, toJob } from "../classify.ts";
+import {
+  BROWSER_HEADERS,
+  isBusinessContinuityIngest,
+  shouldPrefetchWorkdayDetail,
+  toJob,
+} from "../classify.ts";
 import { enrichLocationWithCityState } from "../location.ts";
 import { companySearchTexts } from "../search.ts";
 import type { Company, NormalizedJob } from "../types.ts";
@@ -153,7 +158,9 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
           applyUrl,
           description: title,
         });
-        if (!preview) continue;
+        const prefetchDetail =
+          isBusinessContinuityIngest() && shouldPrefetchWorkdayDetail(title);
+        if (!preview && !prefetchDetail) continue;
         seen.add(sourceId);
         const detail = path
           ? await fetchDetail(board, cookies, path)

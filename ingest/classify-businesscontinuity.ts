@@ -100,6 +100,14 @@ const CONTINUITY_SIGNAL =
 const CORE_ROLE =
   /\b(business continuity|continuity of (?:operations|business)|disaster recovery|operational resilienc[ey]|enterprise resilienc[ey]|global business resilienc[ey]|business(?:\s*(?:[&+/]|and)\s*\w+)?\s+resilienc[ey]|technology resilienc[ey]|organizational resilienc[ey]|operations resilienc[ey]|cyber resilienc[ey]|crisis management|emergency (?:management|preparedness)|it continuity|technology continuity|recovery manager|continuity manager|continuity planner|bcm (?:manager|director|analyst|coordinator|specialist|lead)|bc\/dr|bcdr|resilienc[ey] (?:engineer|manager|director|architect|lead|analyst|specialist|advisor|risk|governance|program)|dr (?:architect|engineer|manager|director|lead|specialist|analyst|coordinator)|crisis (?:manager|director|lead|specialist|response)|continuity of business)\b/i;
 
+/** Workday list cards often omit BCM wording — fetch JD before dropping. */
+export const WORKDAY_DETAIL_PREFETCH =
+  /\b(business control|risk|resilien\w*|continuity|disaster|bcm|bcp|crisis|recovery|resiliency)\b/i;
+
+export function shouldPrefetchWorkdayDetail(title: string): boolean {
+  return WORKDAY_DETAIL_PREFETCH.test(title);
+}
+
 export function classifyBusinessContinuityJob(input: {
   title: string;
   description: string;
@@ -147,7 +155,7 @@ export function classifyBusinessContinuityJob(input: {
   if (
     CONTINUITY_SIGNAL.test(blob) &&
     seniorIc.test(title) &&
-    /\b(continuity|disaster recovery|bcm|crisis|bc\/dr|bcdr|cob\b|resilienc)\b/i.test(
+    /\b(continuity|disaster recovery|bcm|bc\/dr|bcdr|cob\b|resilien\w*|crisis management)\b/i.test(
       title,
     )
   ) {
@@ -156,7 +164,7 @@ export function classifyBusinessContinuityJob(input: {
   // Risk / control titles that own BCM programs (common in banks) when the
   // description clearly states business continuity / DR / ops resilience.
   if (
-    /\b(risk|continuity|resilienc|crisis|recovery|bcm|bcp)\b/i.test(title) &&
+    /\b(risk|continuity|resilien\w*|crisis management|recovery|bcm|bcp)\b/i.test(title) &&
     !/\b(operations control|trading|underwrit|actuarial|claims)\b/i.test(title) &&
     seniorIc.test(title) &&
     /\b(business continuity|disaster recovery|operational resilienc[ey]|continuity of business|BCM program|business continuity plan|\bBCP\b)\b/i.test(
