@@ -637,6 +637,7 @@ style as-is, and it is an XSS surface.
       / S&OP classifier; overlap CPG employer graph for bundle upsell
 - [ ] **Business continuity vertical** — `businesscontinuity.nicheboardjobs.com`; BCM /
       DR / resilience classifier; finance + healthcare employer seed
+      ([`docs/businesscontinuity-ingest-plan.md`](docs/businesscontinuity-ingest-plan.md))
 - [ ] Per-vertical: companies module, classifier, ingest Action job, GSC property,
       sponsor price, theme tint
 - [ ] Parent `/niches` lists only verticals above inventory gate

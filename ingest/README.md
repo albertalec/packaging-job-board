@@ -47,6 +47,9 @@ converting-line supervision, and other non-engineer plant roles.
 
 ### Resilience (`businesscontinuity`)
 
+Employer waves and wedge-role growth plan:
+[`docs/businesscontinuity-ingest-plan.md`](../docs/businesscontinuity-ingest-plan.md).
+
 Keep corporate **BCM**, **IT disaster recovery**, and **operational/enterprise
 resilience** roles at regulated employers. Drop:
 

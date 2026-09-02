@@ -2,7 +2,10 @@ import { createHash } from "node:crypto";
 import { htmlToPlainText } from "../src/lib/description.ts";
 import { isRemote } from "../src/lib/remote.ts";
 import { parseState } from "../src/lib/states.ts";
-import { toJob as toBusinessContinuityJob } from "./classify-businesscontinuity.ts";
+import {
+  shouldPrefetchWorkdayDetail,
+  toJob as toBusinessContinuityJob,
+} from "./classify-businesscontinuity.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
@@ -15,6 +18,12 @@ export function setIngestClassifier(classifier: string) {
   activeClassifier =
     classifier === "businesscontinuity" ? "businesscontinuity" : "packaging";
 }
+
+export function isBusinessContinuityIngest(): boolean {
+  return activeClassifier === "businesscontinuity";
+}
+
+export { shouldPrefetchWorkdayDetail };
 
 const SEMICONDUCTOR =
   /\b(semiconductor|wafer|osat|flip[ -]?chip|wirebond|chiplet|\bsip\b|\bsoc\b|advanced packaging|ic packaging|soc packaging|electronics packaging|avionics (mechanical|packaging)|package[- ]level|integrated circuit|silicon up)\b/i;
