@@ -667,5 +667,33 @@ export const companies: Company[] = [
     country: "USA",
     niche: "pharma",
   },
+  {
+    name: "Smithers",
+    slug: "smithers",
+    ats: "ultipro",
+    careerUrl:
+      "https://recruiting.ultipro.com/smi1007smgr/JobBoard/dde2327c-90a5-4557-a8b1-951901232c23",
+    searchText: PACKAGING_QUERY,
+    searchTexts: [...ENGINEER_QUERIES],
+    country: "USA",
+    niche: "industrial",
+  },
+  {
+    name: "Westpak",
+    slug: "westpak",
+    ats: "rippling",
+    careerUrl: "https://ats.rippling.com/westpak-inc/jobs",
+    boardToken: "westpak-inc",
+    country: "USA",
+    niche: "industrial",
+  },
+  {
+    name: "Purple Diamond",
+    slug: "purple-diamond",
+    ats: "wpjobs",
+    careerUrl: "https://purple-diamond.com/about/careers/",
+    country: "USA",
+    niche: "industrial",
+  },
 
 ];

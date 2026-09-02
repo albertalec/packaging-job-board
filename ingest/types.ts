@@ -21,7 +21,9 @@ export type Ats =
   | "oracle"
   | "cws"
   | "jibe"
-  | "ultipro";
+  | "ultipro"
+  | "wpjobs"
+  | "rippling";
 
 export type Company = {
   name: string;

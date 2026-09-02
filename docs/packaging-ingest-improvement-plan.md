@@ -1,7 +1,8 @@
 # Packaging ingest improvement plan
 
-**Status:** Phase 2 complete (Tier A audit + classifier fix) — Phase 3 next  
+**Status:** Phase 3 started (Priority 1 labs wired) — more lab ATS discovery next  
 **Baseline (2026-09-01 ingest):** 49 live roles · 73 classifier-pass · 57 wired employers · 21 with listings  
+**Current (2026-09-02):** 57 listed · 60 wired · 27 with listings · Phase 0 analytics live  
 **Classifier:** `ingest/classify.ts` · **Employer list:** `ingest/verticals/packaging/companies.ts`  
 **Related:** [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) · [`PLAN.md`](../PLAN.md) §3
 
@@ -160,6 +161,16 @@ Smithers, TEN-E, Westpak, Packaging Compliance Labs, DDL, Gaynes, Purple Diamond
 - High signal, low plant noise; same talent pool as MSU / Cal Poly / Stout pipelines.
 - Need ATS discovery; Smithers → UltiPro, Westpak → Rippling.
 
+**Wired (2026-09-02):**
+
+| Employer | ATS | Listed | Notes |
+| --- | --- | ---: | --- |
+| Smithers | UltiPro | 0 | Board live; no US packaging-engineer titles open |
+| Westpak | Rippling | 0 | 3 scanned; lab tech titles fail classifier |
+| Purple Diamond | WP Job Openings | 1 | Packaging Engineer (Bethlehem, PA) |
+
+**Blocked / next discovery:** TEN-E (careers 404), Packaging Compliance Labs (apply form only), DDL (ADP Workforce Now), Gaynes, Applus+ Keystone (careers 404), Modality Solutions.
+
 ### Priority 2 — School-gap CPG (brand-side)
 
 Amway, Altria, LiDestri, Wegmans, Wonderful Company, Driscoll's.
@@ -200,7 +211,8 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | Baseline | 49 | 21 |
 | After Phase 1 | **55** | **25** |
 | After Phase 2 | **56** | **26** |
-| After Phase 3 | 80–100 | 35–40 |
+| After Phase 3 (partial) | **57** | **27** |
+| After Phase 3 (target) | 80–100 | 35–40 |
 
 ---
 
@@ -211,3 +223,4 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | 2026-09-02 | — | Plan created from Sep 2026 baseline analysis |
 | 2026-09-02 | 1 | Audit: 7/8 “US losses” are correct foreign drops; fix `, US` location suffix |
 | 2026-09-02 | 2 | Classifier: department OFF_TARGET after wedge keeps; Mars +1; ENGINEER_ONLY on noisy boards |
+| 2026-09-02 | 3 | Wired Smithers (UltiPro), Westpak (Rippling), Purple Diamond (WP Job Openings); +1 listed |

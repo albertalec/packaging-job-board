@@ -33,6 +33,9 @@ Mark US-focused employers with `country: "USA"` even when the ATS site is global
 6. **SmartRecruiters** — public company postings API
 7. **CWS / m-cloud** — JSONP `GET https://{host}/api/job` with `Organization` + search facets
 8. **Jibe** — `GET /api/jobs?keywords=` and unwrap `jobs[].data` (PepsiCo)
+9. **UltiPro / UKG** — `POST …/JobBoardView/LoadSearchResults` (Smithers, credit unions)
+10. **Rippling** — public job board HTML (`__NEXT_DATA__` job-posts query; Westpak)
+11. **WP Job Openings** — WordPress `awsm_job_openings` REST (`/wp-json/wp/v2/awsm_job_openings`; Purple Diamond)
 
 ## Normalized schema
 
