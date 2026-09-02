@@ -142,6 +142,8 @@ Content that only says “find your dream job” or “post jobs fast” fails t
 
 ## 9. Content types & cadence
 
+**Rollout calendar (dated):** [`SOCIAL_ROLLOUT_PLAN.md`](SOCIAL_ROLLOUT_PLAN.md) — hub intro **2 Sep 2026** · **2 posts/week** (Tue + Thu) · **10:00 AM US Eastern**.
+
 ### Near-term priorities (ordered)
 
 1. **LinkedIn Company Page** — About, tagline, logo lockup, link to hub
