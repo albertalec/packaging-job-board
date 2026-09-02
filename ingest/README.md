@@ -58,3 +58,9 @@ resilience** roles at regulated employers. Drop:
 
 Descriptions are normalized to plain text: HTML entities decoded, section
 headings split, lists preserved. Do not store raw ATS HTML.
+
+## Analytics (planned)
+
+Ingest metrics for marketing and infographic copy — raw ATS scan counts,
+classifier drop reasons, and weekly snapshots — are specified in
+[`docs/ingest-analytics-plan.md`](../docs/ingest-analytics-plan.md).
