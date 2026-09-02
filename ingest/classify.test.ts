@@ -111,6 +111,15 @@ describe("classifyJob", () => {
     assert.equal(result.reason, "off-target function");
   });
 
+  it("keeps packaging wedge titles when ATS department is Procurement", () => {
+    const result = classifyJob({
+      title: "Sr Manager, Packaging Simplification",
+      description: "Lead packaging simplification programs for Mars Snacking.",
+      department: "Procurement",
+    });
+    assert.equal(result.keep, true, result.reason);
+  });
+
   it("keeps every title currently stored in packaging jobs.json", () => {
     const data = JSON.parse(readFileSync("data/packaging/jobs.json", "utf8")) as {
       jobs: Array<{
@@ -180,6 +189,25 @@ describe("isUsOrRemote", () => {
         { state: null, remote: false, location: "4 Locations" },
         { homeCountry: "USA" },
       ),
+      true,
+    );
+  });
+
+  it("keeps SuccessFactors-style locations ending in , US", () => {
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: false,
+        location: "Nationwide, US",
+      }),
+      true,
+    );
+    assert.equal(
+      isUsOrRemote({
+        state: null,
+        remote: true,
+        location: "Remote, US",
+      }),
       true,
     );
   });

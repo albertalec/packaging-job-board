@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Niche Board Infographic — Wireframe Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #c9cfd6;
+      font-family: Archivo, Helvetica, Arial, sans-serif;
+      color: #4b5563;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #0d1b2a;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .toolbar strong { margin-right: 8px; font-size: 14px; }
+    .toolbar a {
+      color: #fff;
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 2px;
+    }
+    .toolbar a:hover { background: #0d7d77; border-color: #0d7d77; }
+    .toolbar .hint {
+      margin-left: auto;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+    }
+    .canvas {
+      padding: 32px 16px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .slide {
+      width: min(1080px, 100%);
+      aspect-ratio: 1;
+      padding: clamp(32px, 5vw, 72px) clamp(24px, 4vw, 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 32px rgba(13,27,42,0.15);
+    }
+    .slide.light { background: #fff; }
+    .slide.navy { background: #0d1b2a; color: #fff; }
+    .slide.mist { background: #f1f3f5; }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #0d7d77;
+    }
+    .slide.navy .kicker { color: rgba(255,255,255,0.55); }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #0d1b2a;
+    }
+    .slide.navy h2 { color: #fff; }
+    .tagline {
+      font-family: Newsreader, Georgia, serif;
+      font-style: italic;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.2;
+      color: #fff;
+      margin: 0;
+    }
+    .sub { font-size: 16px; margin-top: 8px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; align-content: center; }
+    .panel { padding: 24px; }
+    .panel.soup { background: #f1f3f5; border: 1px dashed #c9cfd6; }
+    .panel.good { background: #e6f1ef; border: 1.5px solid #0d7d77; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip { padding: 6px 10px; background: #e7eaee; font-size: 12px; border-radius: 2px; }
+    .chip.drop { text-decoration: line-through; }
+    .chip.teal { background: #0d7d77; color: #fff; font-weight: 600; text-align: center; padding: 10px 14px; }
+    .funnel { display: flex; gap: 10px; flex: 1; align-items: stretch; margin: 16px 0; }
+    .funnel-step {
+      flex: 1;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+    }
+    .funnel-step.s1 { flex: 1.4; background: #f1f3f5; }
+    .funnel-step.s2 { flex: 1.2; background: #e7eaee; }
+    .funnel-step.s3 { flex: 1; background: #e6f1ef; border: 1.5px solid #0d7d77; }
+    .funnel-step .num { font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: #0d1b2a; }
+    .funnel-step .label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .board-card {
+      background: #fff;
+      border: 1px solid #e7eaee;
+      padding: 28px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .board-card.pack { border-top: 4px solid #6a5fa9; }
+    .board-card.res { border-top: 4px solid #a85c57; }
+    .board-card .count { font-size: 40px; font-weight: 700; color: #0d1b2a; }
+    .path { display: flex; align-items: flex-start; gap: 12px; flex: 1; padding-top: 24px; }
+    .path-step { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 15px; line-height: 1.55; }
+    .path-arrow { color: #0d7d77; font-size: 28px; padding-top: 40px; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat {
+      padding: 24px;
+      background: rgba(255,255,255,0.06);
+      border-top: 3px solid #0d7d77;
+    }
+    .stat .num { font-size: 44px; font-weight: 700; }
+    .cta {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #0d7d77;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    .footer-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      border-top: 1px solid #e7eaee;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .slide.navy .footer-note { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); }
+    @media (max-width: 720px) {
+      .grid-2, .stats { grid-template-columns: 1fr; }
+      .funnel { flex-direction: column; }
+      .path { flex-direction: column; }
+      .path-arrow { padding: 0; transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar">
+    <strong>Infographic wireframe</strong>
+    <a href="#slide-1">01 Problem</a>
+    <a href="#slide-2">02 Source</a>
+    <a href="#slide-3">03 Filter</a>
+    <a href="#slide-4">04 Boards</a>
+    <a href="#slide-5">05 Path</a>
+    <a href="#slide-6">06 Proof</a>
+    <span class="hint">Open this file in a browser — not the .dc.html</span>
+  </nav>
+
+  <main class="canvas">
+    <section id="slide-1" class="slide light">
+      <div class="kicker">01 · The problem</div>
+      <div>
+        <h2>Your specialty has a title. General search treats it like a keyword.</h2>
+        <div class="grid-2" style="margin-top:28px">
+          <div class="panel soup">
+            <div class="label">Keyword soup</div>
+            <div class="chips">
+              <span class="chip">plant ops</span><span class="chip">procurement</span>
+              <span class="chip">semiconductor</span><span class="chip">IT SRE</span>
+              <span class="chip">field EM</span><span class="chip">product DR</span>
+            </div>
+          </div>
+          <div class="panel good">
+            <div class="label" style="color:#0d7d77">Your title</div>
+            <div class="chips" style="flex-direction:column">
+              <span class="chip teal">Packaging engineer</span>
+              <span class="chip teal">BCM program manager</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Niche Board · Wireframe preview</span><span>1080 × 1080</span></div>
+    </section>
+
+    <section id="slide-2" class="slide navy">
+      <div class="kicker">02 · The source</div>
+      <div>
+        <h2>Pulled daily from employer career sites.</h2>
+        <p style="opacity:0.78; max-width:640px; line-height:1.6">Same listings employers publish on Workday, Greenhouse, SuccessFactors — not stale reposts.</p>
+        <div class="stats" style="margin-top:24px">
+          <div class="stat"><div class="num">98</div><div class="label">employer feeds</div></div>
+          <div class="stat"><div class="num">13</div><div class="label">ATS connectors</div></div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Stats · Sep 2026</span></div>
+    </section>
+
+    <section id="slide-3" class="slide light">
+      <div class="kicker">03 · The filter</div>
+      <div style="flex:1; display:flex; flex-direction:column">
+        <h2>We classify before we list.</h2>
+        <p class="sub">The value is what we leave out.</p>
+        <div class="funnel">
+          <div class="funnel-step s1"><div class="label">Scanned</div><div class="num">{scanned}</div><div style="font-size:12px">ATS postings daily</div></div>
+          <div class="funnel-step s2"><div class="label">Classifier</div><div class="num">113</div><div style="font-size:12px">on-wedge titles</div></div>
+          <div class="funnel-step s3"><div class="label" style="color:#0d7d77">Listed</div><div class="num">70</div><div style="font-size:12px;color:#0d7d77">US roles</div></div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <div class="kicker" style="color:#6a5fa9">Packaging · dropped</div>
+            <div class="chips"><span class="chip drop">plant ops</span><span class="chip drop">semiconductor</span></div>
+            <p style="font-weight:600;font-size:12px;margin-top:10px">Package development — not plant ops.</p>
+          </div>
+          <div>
+            <div class="kicker" style="color:#a85c57">Resilience · dropped</div>
+            <div class="chips"><span class="chip drop">IT SRE</span><span class="chip drop">FEMA / field EM</span></div>
+            <p style="font-weight:600;font-size:12px;margin-top:10px">BCM &amp; disaster recovery — not generic IT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="slide-4" class="slide mist">
+      <div class="kicker">04 · The boards</div>
+      <h2>One board per narrow profession.</h2>
+      <div class="grid-2">
+        <div class="board-card pack">
+          <div class="kicker" style="color:#6a5fa9">Packaging</div>
+          <div style="font-size:22px;font-weight:600;color:#0d1b2a">Package development at CPG &amp; brand employers</div>
+          <div class="count">49</div>
+          <div class="label">live roles</div>
+        </div>
+        <div class="board-card res">
+          <div class="kicker" style="color:#a85c57">Resilience</div>
+          <div style="font-size:22px;font-weight:600;color:#0d1b2a">BCM &amp; disaster recovery</div>
+          <div class="count">21</div>
+          <div class="label">live roles</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="slide-5" class="slide light">
+      <div class="kicker">05 · Your path</div>
+      <h2>Browse a list that's already filtered.</h2>
+      <div class="path">
+        <div class="path-step"><strong>01 · Browse</strong><span>Filter by sector, state, remote</span></div>
+        <div class="path-arrow">→</div>
+        <div class="path-step"><strong>02 · Apply</strong><span>On the employer career site</span></div>
+        <div class="path-arrow">→</div>
+        <div class="path-step"><strong>03 · Alerts</strong><span>Short digest when new roles post</span></div>
+      </div>
+    </section>
+
+    <section id="slide-6" class="slide navy">
+      <div>
+        <div class="kicker">06 · Proof</div>
+        <p class="tagline">The right jobs, not all the jobs.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">70</div><div class="label">live roles</div></div>
+        <div class="stat"><div class="num">38</div><div class="label">employers</div></div>
+        <div class="stat"><div class="num">24</div><div class="label">US states</div></div>
+        <div class="stat"><div class="num">20</div><div class="label">remote / hybrid</div></div>
+      </div>
+      <div style="text-align:center">
+        <a class="cta" href="https://www.nicheboardjobs.com">nicheboardjobs.com</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
