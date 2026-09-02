@@ -6,6 +6,7 @@
 
 **Consumers:**
 - Social / infographic copy ([`SOCIAL_ROLLOUT_PLAN.md`](../SOCIAL_ROLLOUT_PLAN.md) proof posts)
+- Infographic creative brief ([`docs/infographic-niche-board-proposal.md`](infographic-niche-board-proposal.md))
 - Optional board UI (“last updated”, “roles added this week”) — out of scope unless explicitly requested later
 
 ---
