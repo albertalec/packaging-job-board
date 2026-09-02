@@ -7,6 +7,7 @@ import {
 import { enrichLocationWithCityState } from "../location.ts";
 import { companySearchTexts } from "../search.ts";
 import type { Company, NormalizedJob } from "../types.ts";
+import { workdayFetch } from "../workday-http.ts";
 
 type WorkdayJob = {
   title?: string;
@@ -83,7 +84,7 @@ async function fetchDetail(
 ): Promise<{ description: string; location: string }> {
   const path = externalPath.startsWith("/") ? externalPath : `/${externalPath}`;
   const url = `https://${board.host}/wday/cxs/${board.tenant}/${board.site}${path}`;
-  const res = await fetch(url, {
+  const res = await workdayFetch(url, {
     headers: {
       ...BROWSER_HEADERS,
       Cookie: cookies,
@@ -91,7 +92,7 @@ async function fetchDetail(
     },
   });
   if (!res.ok) return { description: "", location: "" };
-  const detail = (await res.json()) as WorkdayDetail;
+  const detail = JSON.parse(res.text) as WorkdayDetail;
   return {
     description: detail.jobPostingInfo?.jobDescription ?? "",
     location: locationFromDetail(detail.jobPostingInfo),
@@ -120,7 +121,7 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
     let total = Infinity;
     while (offset < total && offset < 400) {
       const url = `https://${board.host}/wday/cxs/${board.tenant}/${board.site}/jobs`;
-      const res = await fetch(url, {
+      const res = await workdayFetch(url, {
         method: "POST",
         headers: {
           ...BROWSER_HEADERS,
@@ -138,7 +139,7 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
       if (!res.ok) {
         throw new Error(`Workday ${company.name} ${res.status} ${url}`);
       }
-      const page = (await res.json()) as WorkdayPage;
+      const page = JSON.parse(res.text) as WorkdayPage;
       total = page.total ?? 0;
       const postings = page.jobPostings ?? [];
       for (const posting of postings) {
