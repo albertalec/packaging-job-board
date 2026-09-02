@@ -43,7 +43,6 @@ export function classifyJob(input: {
   department?: string | null;
 }): { keep: boolean; reason: string } {
   const blob = `${input.title}\n${input.department ?? ""}\n${input.description}`;
-  const titleAndDept = `${input.title}\n${input.department ?? ""}`;
   if (SEMICONDUCTOR.test(blob)) {
     return { keep: false, reason: "semiconductor/electronics packaging" };
   }
@@ -61,7 +60,8 @@ export function classifyJob(input: {
   if (WAREHOUSE.test(input.title)) {
     return { keep: false, reason: "warehouse/ops title" };
   }
-  if (OFF_TARGET.test(titleAndDept)) {
+  // Title-level off-target (procurement, sales, …) before wedge keeps.
+  if (OFF_TARGET.test(input.title)) {
     return { keep: false, reason: "off-target function" };
   }
   if (
@@ -89,6 +89,10 @@ export function classifyJob(input: {
     )
   ) {
     return { keep: true, reason: "title contains packaging" };
+  }
+  // Phenom/SF often tag wedge roles under Procurement or Sales departments.
+  if (input.department && OFF_TARGET.test(input.department)) {
+    return { keep: false, reason: "off-target function" };
   }
   return { keep: false, reason: "not a packaging role" };
 }

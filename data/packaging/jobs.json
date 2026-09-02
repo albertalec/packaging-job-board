@@ -1,6 +1,6 @@
 {
-  "ingestedAt": "2026-09-02T22:17:09.957Z",
-  "total": 55,
+  "ingestedAt": "2026-09-02T22:30:03.081Z",
+  "total": 56,
   "jobs": [
     {
       "id": "general-mills-a2dec98cbc20f033",
@@ -579,6 +579,24 @@
       "source": "workday"
     },
     {
+      "id": "amcor-b0783bda303c8f6c",
+      "sourceId": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "b0783bda303c8f6c",
+      "company": "Amcor",
+      "companySlug": "amcor",
+      "title": "Product Developer and Project Manager  for Plastic Packaging  (m/f/d)",
+      "department": null,
+      "location": "Lohne, DE",
+      "state": "DE",
+      "remote": false,
+      "postedAt": "Tue, 01 Sep 2026 2:00:00 GMT",
+      "applyUrl": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "YOUR MAIN\n\nRESPONSIBILITIES\n\nYou will develop and optimize products, assemblies, etc., in the field of plastic packaging, present packaging concepts, and coordinate development projects with regard to deadlines, costs, and quality specifications. In addition, you will manage and oversee projects at various domestic and international facilities. Your responsibilities will also include planning and monitoring projects with regard to deadlines, processes, functions, and costs, as well as technical coordination with domestic and international customers and suppliers.\n\nWHAT YOU SHOULD BRING TO THE TABLE:\nYou have completed an apprenticeship in plastics or toolmaking and have gone on to earn a master craftsman’s certificate, a technician’s degree, or a bachelor’s degree, as well as extensive professional experience in plastic injection molding. We also expect you to have strong CAE and CAD skills. Good English skills are essential for communicating with international customers and suppliers. As a product developer and project manager, you demonstrate organizational skills and a strong sense of responsibility. You are characterized by resilience and assertiveness. You have excellent communication skills and impress with your high level of commitment as well as your independent and meticulous work ethic. You possess the ability to clearly structure complex relationships and address them in a project-specific manner. In addition, you bring team spirit, dedication, and attention to detail to the role.\n\nYOUR APPLICATION\n\nIn addition to vacation pay, a Christmas bonus, Hansefit, and other benefits, we offer a position of responsibility with opportunities for advancement and competitive compensation. Interested? Then we look forward to receiving your detailed application. Please send your application in writing to the address below.",
+      "salary": null,
+      "niche": "industrial",
+      "source": "successfactors"
+    },
+    {
       "id": "pepsico-465fd80d0b4c4b2b",
       "sourceId": "464619",
       "hash": "465fd80d0b4c4b2b",
@@ -657,22 +675,22 @@
       "source": "workday"
     },
     {
-      "id": "amcor-b0783bda303c8f6c",
-      "sourceId": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "b0783bda303c8f6c",
-      "company": "Amcor",
-      "companySlug": "amcor",
-      "title": "Product Developer and Project Manager  for Plastic Packaging  (m/f/d)",
-      "department": null,
-      "location": "Lohne, DE",
-      "state": "DE",
+      "id": "mars-712ce983bb8ad5be",
+      "sourceId": "MARSGLOBALR163994EXTERNALENGLOBAL",
+      "hash": "712ce983bb8ad5be",
+      "company": "Mars",
+      "companySlug": "mars",
+      "title": "Sr Manager, Packaging Simplification",
+      "department": "Procurement",
+      "location": "Chicago, Illinois, United States",
+      "state": "IL",
       "remote": false,
-      "postedAt": "Tue, 01 Sep 2026 2:00:00 GMT",
-      "applyUrl": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "YOUR MAIN\n\nRESPONSIBILITIES\n\nYou will develop and optimize products, assemblies, etc., in the field of plastic packaging, present packaging concepts, and coordinate development projects with regard to deadlines, costs, and quality specifications. In addition, you will manage and oversee projects at various domestic and international facilities. Your responsibilities will also include planning and monitoring projects with regard to deadlines, processes, functions, and costs, as well as technical coordination with domestic and international customers and suppliers.\n\nWHAT YOU SHOULD BRING TO THE TABLE:\nYou have completed an apprenticeship in plastics or toolmaking and have gone on to earn a master craftsman’s certificate, a technician’s degree, or a bachelor’s degree, as well as extensive professional experience in plastic injection molding. We also expect you to have strong CAE and CAD skills. Good English skills are essential for communicating with international customers and suppliers. As a product developer and project manager, you demonstrate organizational skills and a strong sense of responsibility. You are characterized by resilience and assertiveness. You have excellent communication skills and impress with your high level of commitment as well as your independent and meticulous work ethic. You possess the ability to clearly structure complex relationships and address them in a project-specific manner. In addition, you bring team spirit, dedication, and attention to detail to the role.\n\nYOUR APPLICATION\n\nIn addition to vacation pay, a Christmas bonus, Hansefit, and other benefits, we offer a position of responsibility with opportunities for advancement and competitive compensation. Interested? Then we look forward to receiving your detailed application. Please send your application in writing to the address below.",
+      "postedAt": "2026-08-31T00:00:00.000+0000",
+      "applyUrl": "https://mars.wd3.myworkdayjobs.com/en-US/External/job/USA-Illinois-Chicago/Sr-Manager--Packaging-Simplification_R163994-1/apply",
+      "description": "Job Description\n\n. As Packaging Simplification, Senior Manager you will help lead a number of critical transformation initiatives in Mars Snacking as our packaging portfolio changes over the coming y...",
       "salary": null,
-      "niche": "industrial",
-      "source": "successfactors"
+      "niche": "food-beverage",
+      "source": "phenom"
     },
     {
       "id": "abbott-be28150170971dd1",
@@ -1159,8 +1177,8 @@
     {
       "company": "Mars",
       "ats": "phenom",
-      "fetched": 0,
-      "kept": 0
+      "fetched": 1,
+      "kept": 1
     },
     {
       "company": "Ball Corporation",
@@ -1292,7 +1310,7 @@
     {
       "company": "Reckitt",
       "ats": "successfactors",
-      "fetched": 2,
+      "fetched": 1,
       "kept": 0
     },
     {

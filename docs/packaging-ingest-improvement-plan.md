@@ -1,6 +1,6 @@
 # Packaging ingest improvement plan
 
-**Status:** Phase 1 complete — Phase 2 next  
+**Status:** Phase 2 complete (Tier A audit + classifier fix) — Phase 3 next  
 **Baseline (2026-09-01 ingest):** 49 live roles · 73 classifier-pass · 57 wired employers · 21 with listings  
 **Classifier:** `ingest/classify.ts` · **Employer list:** `ingest/verticals/packaging/companies.ts`  
 **Related:** [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) · [`PLAN.md`](../PLAN.md) §3
@@ -100,22 +100,42 @@ Foreign drops unchanged: 3M (PH), Reckitt (GB), Sonoco (UK), Kenvue (CN/CO).
 
 **Goal:** Fix search/connector config on majors already in `companies.ts` with 0 classifier-pass.
 
-### Tier A — Brand-side CPG / food (fix first)
+### 2.1 Audit (2026-09-02)
 
-| Employer | ATS | Action |
+| Employer | Root cause | Action |
 | --- | --- | --- |
-| Kimberly-Clark | Workday | Verify site slug + search |
-| Procter & Gamble | Phenom | Audit `PGBPGNGLOBAL` refineSearch |
-| Mars | Phenom | Audit `MARSGLOBAL` — CSV notes Franklin TN packaging dev |
-| WK Kellogg Co | Phenom | Audit `WKNWKIUS` |
-| Unilever | Workday | Switch to `ENGINEER_ONLY` queries |
-| Hershey, E&J Gallo | SuccessFactors | Recheck SF RSS search |
-| Pfizer, Medtronic, Target, Tyson | Workday | Recheck + `country: "USA"` |
-| Constellation Brands | Workday | Already wired; recheck titles |
+| **Mars** | Phenom category `Procurement` triggered OFF_TARGET before title wedge keep | Classifier fix (see 2.2) |
+| **P&G, Kellogg, K-C, Unilever, Pfizer, Constellation, Hershey, Gallo, DuPont, Coke** | ATS keyword search matches body text / plant ops — **no on-wedge titles posted** | Tighten to `ENGINEER_ONLY`; monitor quarterly |
+| **Hershey / Gallo SF** | RSS returns jobs; none pass classifier (plant ops, pre-press) | Connector OK |
+| **Nestlé** | SF public JSON unavailable | Tier B — blocked |
 
-**Expected yield:** +15–25 roles if P&G / Mars / K-C behave like Clorox.
+**Classifier bug:** `OFF_TARGET` ran on `title + department` before packaging wedge keeps. Phenom often tags program managers under **Procurement** even when the title is on-wedge (e.g. Mars “Sr Manager, Packaging Simplification”).
 
-### Tier B — Connector fixes
+### 2.2 Fix
+
+- [x] Reorder `classifyJob()` — title OFF_TARGET → wedge keeps → department OFF_TARGET only.
+- [x] Regression test: Procurement department + packaging simplification title.
+- [x] Tighten Phenom/Workday/SF search on noisy boards to `ENGINEER_ONLY` (P&G, DuPont, Kellogg, K-C, Unilever, Hershey, Gallo, Reckitt).
+- [x] Add `country: "USA"` on K-C, P&G, DuPont, Hershey, Gallo, Reckitt, Eastman.
+- [x] Keep Mars on full `ENGINEER_QUERIES` (wedge title matches “packaging” not “engineer”).
+- [x] Keep Eastman on broad SF search (`flexible packaging`) — engineer-only search dropped its lone listing.
+
+### 2.3 Verify
+
+```bash
+npm test
+npm run ingest -- --vertical=packaging
+```
+
+**Result (2026-09-02):** 55 → **56** listed roles · 25 → **26** employers with listings.
+
+| Recovered | Listed |
+| --- | ---: |
+| **Mars** — Sr Manager, Packaging Simplification | 1 |
+
+No yield from P&G / K-C / Unilever this cycle — those boards have no US packaging-engineer titles open. Re-check after Phase 3 lab adds and quarterly ingest.
+
+### Tier B — Still open
 
 | Employer | Issue |
 | --- | --- |
@@ -179,7 +199,7 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | --- | ---: | ---: |
 | Baseline | 49 | 21 |
 | After Phase 1 | **55** | **25** |
-| After Phase 2 | 65–75 | 28–32 |
+| After Phase 2 | **56** | **26** |
 | After Phase 3 | 80–100 | 35–40 |
 
 ---
@@ -190,4 +210,4 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | --- | --- | --- |
 | 2026-09-02 | — | Plan created from Sep 2026 baseline analysis |
 | 2026-09-02 | 1 | Audit: 7/8 “US losses” are correct foreign drops; fix `, US` location suffix |
-| 2026-09-02 | 1 | Shipped: `US_MENTION` trailing `, US`; Eastman +1; ingest 49→55 (+ Tyson, Medtronic, Kenvue, Smucker, Church & Dwight inventory shifts) |
+| 2026-09-02 | 2 | Classifier: department OFF_TARGET after wedge keeps; Mars +1; ENGINEER_ONLY on noisy boards |
