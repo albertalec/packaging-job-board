@@ -183,6 +183,28 @@ export const companies: Company[] = [
   },
   // Wave 4 — tier-1 finance (verified Workday hits)
   {
+    name: "JPMorgan Chase",
+    slug: "jpmorgan-chase",
+    ats: "oracle",
+    careerUrl:
+      "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+    site: "CX_1001",
+    searchTexts: [...DR_QUERIES],
+    country: "USA",
+    niche: "finance",
+  },
+  {
+    name: "Goldman Sachs",
+    slug: "goldman-sachs",
+    ats: "oracle",
+    careerUrl:
+      "https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2",
+    site: "CX_2",
+    searchTexts: [...DR_QUERIES],
+    country: "USA",
+    niche: "finance",
+  },
+  {
     name: "PNC Financial Services",
     slug: "pnc",
     ats: "workday",
@@ -219,6 +241,25 @@ export const companies: Company[] = [
     niche: "finance",
   },
   // Wave 2 — insurers / payers
+  {
+    name: "UnitedHealth Group",
+    slug: "unitedhealth-group",
+    ats: "talentbrew",
+    careerUrl: "https://careers.unitedhealthgroup.com/search-jobs",
+    orgId: "34088",
+    searchTexts: [
+      "business continuity",
+      "disaster recovery",
+      "operational resilience",
+      "business resiliency",
+      "EMBC",
+      "IT disaster recovery",
+      "technology disaster recovery",
+      "continuity planning",
+    ],
+    country: "USA",
+    niche: "insurance",
+  },
   {
     name: "Travelers",
     slug: "travelers",
