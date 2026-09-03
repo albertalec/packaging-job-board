@@ -23,7 +23,8 @@ export type Ats =
   | "jibe"
   | "ultipro"
   | "wpjobs"
-  | "rippling";
+  | "rippling"
+  | "eightfold";
 
 export type Company = {
   name: string;

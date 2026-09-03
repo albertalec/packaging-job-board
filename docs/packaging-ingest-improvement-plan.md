@@ -1,8 +1,8 @@
 # Packaging ingest improvement plan
 
-**Status:** Phase 3 started (Priority 1 labs wired) — more lab ATS discovery next  
+**Status:** Phase 3c complete — Kraft Heinz (Eightfold) + Ingredion (Workday); ADM BrassRing blocked  
 **Baseline (2026-09-01 ingest):** 49 live roles · 73 classifier-pass · 57 wired employers · 21 with listings  
-**Current (2026-09-02):** 57 listed · 60 wired · 27 with listings · Phase 0 analytics live  
+**Current (2026-09-03):** 78 listed · 64 wired · 31 with listings · Phase 0 analytics live  
 **Classifier:** `ingest/classify.ts` · **Employer list:** `ingest/verticals/packaging/companies.ts`  
 **Related:** [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) · [`PLAN.md`](../PLAN.md) §3
 
@@ -175,6 +175,22 @@ Smithers, TEN-E, Westpak, Packaging Compliance Labs, DDL, Gaynes, Purple Diamond
 
 Amway, Altria, LiDestri, Wegmans, Wonderful Company, Driscoll's.
 
+**Wired from competitor-board research (2026-09-03):**
+
+| Employer | ATS | Listed | Source board |
+| --- | --- | ---: | --- |
+| **Ocean Spray** | Workday | 1 | CareersInFood — Manager, Package Engineer |
+| **Lamb Weston** | Workday | 3 | IoPP featured — Packaging / Sr / Associate Engineer |
+
+**Wired from Phase 3c ATS discovery (2026-09-03):**
+
+| Employer | ATS | Listed | Notes |
+| --- | --- | ---: | --- |
+| **Kraft Heinz** | Eightfold PCSX | 16 | `/api/pcsx/search?domain=kraftheinz.com`; Glenview/Warrendale packaging R&D |
+| **Ingredion** | Workday | 1 | Principal Packaging Engineer (Indianapolis) |
+
+**Next CPG targets (not yet wired):** ADM (BrassRing — MatchedJobs 500 from ingest VM), Danone (iCIMS), Perdue, Bel Brands, Ste Michelle Wine Estates.
+
 ### Priority 3 — Automotive expansion (not homepage lead)
 
 Ford, Adient — returnable/dunnage; watch electronics-packaging leaks.
@@ -212,6 +228,8 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | After Phase 1 | **55** | **25** |
 | After Phase 2 | **56** | **26** |
 | After Phase 3 (partial) | **57** | **27** |
+| After Phase 3b (Ocean Spray + Lamb Weston) | **61** | **29** |
+| After Phase 3c (Kraft Heinz + Ingredion) | **78** | **31** |
 | After Phase 3 (target) | 80–100 | 35–40 |
 
 ---
@@ -224,3 +242,5 @@ Ship [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) Phase A before 
 | 2026-09-02 | 1 | Audit: 7/8 “US losses” are correct foreign drops; fix `, US` location suffix |
 | 2026-09-02 | 2 | Classifier: department OFF_TARGET after wedge keeps; Mars +1; ENGINEER_ONLY on noisy boards |
 | 2026-09-02 | 3 | Wired Smithers (UltiPro), Westpak (Rippling), Purple Diamond (WP Job Openings); +1 listed |
+| 2026-09-03 | 3b | Wired Ocean Spray + Lamb Weston from competitor-board research; +4 listed |
+| 2026-09-03 | 3c | Eightfold connector; Kraft Heinz + Ingredion Workday; +17 listed (78 total) |
