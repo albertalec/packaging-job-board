@@ -24,6 +24,7 @@ import { ingestJibe } from "./sources/jibe.ts";
 import { ingestUltipro } from "./sources/ultipro.ts";
 import { ingestRippling } from "./sources/rippling.ts";
 import { ingestWpJobs } from "./sources/wpjobs.ts";
+import { ingestEightfold } from "./sources/eightfold.ts";
 import { ingestWorkday } from "./sources/workday.ts";
 
 export type SourceReport = {
@@ -85,6 +86,8 @@ async function ingestCompany(company: Company) {
       return ingestWpJobs(company);
     case "rippling":
       return ingestRippling(company);
+    case "eightfold":
+      return ingestEightfold(company);
     default:
       throw new Error(`No connector for ${(company as { ats: string }).ats}`);
   }
