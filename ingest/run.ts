@@ -3,6 +3,12 @@ import path from "node:path";
 import { getVertical } from "../config/tenants.ts";
 import { parseVerticalArg } from "./args.ts";
 import { isUsOrRemote, setIngestClassifier } from "./classify.ts";
+import { appendSnapshot } from "./snapshots.ts";
+import {
+  rollupEmployerStats,
+  type EmployerIngestStats,
+  type VerticalIngestStats,
+} from "./stats.ts";
 import type { Company, NormalizedJob } from "./types.ts";
 import { ingestAmazon } from "./sources/amazon.ts";
 import { ingestAshby } from "./sources/ashby.ts";
@@ -21,8 +27,12 @@ import { ingestWorkday } from "./sources/workday.ts";
 export type SourceReport = {
   company: string;
   ats: string;
-  fetched: number;
+  scanned: number;
+  classifierPass: number;
   kept: number;
+  /** @deprecated use classifierPass */
+  fetched: number;
+  classifierDrops?: Record<string, number>;
   error?: string;
 };
 
@@ -74,19 +84,42 @@ async function ingestCompany(company: Company) {
   }
 }
 
+function emptyEmployerStats(): EmployerIngestStats {
+  return { scanned: 0, classifierPass: 0, classifierDrops: {} };
+}
+
+function toSourceReport(
+  company: Company,
+  employerStats: EmployerIngestStats,
+  kept: number,
+  error?: string,
+): SourceReport {
+  return {
+    company: company.name,
+    ats: company.ats,
+    scanned: employerStats.scanned,
+    classifierPass: employerStats.classifierPass,
+    kept,
+    fetched: employerStats.classifierPass,
+    classifierDrops: employerStats.classifierDrops,
+    error,
+  };
+}
+
 export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
   const vertical = getVertical(verticalId);
   setIngestClassifier(vertical.ingest.classifier);
 
   const companies = await loadCompanies(vertical.id);
   const reports: SourceReport[] = [];
+  const employerSummaries: EmployerIngestStats[] = [];
   const seen = new Set<string>();
   const jobs: NormalizedJob[] = [];
 
   for (const company of companies) {
     process.stdout.write(`Ingest ${company.name} (${company.ats})… `);
     try {
-      const raw = await ingestCompany(company);
+      const { jobs: raw, stats: employerStats } = await ingestCompany(company);
       let kept = 0;
       for (const job of raw) {
         if (!isUsOrRemote(job, { homeCountry: company.country })) continue;
@@ -95,22 +128,13 @@ export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
         jobs.push(job);
         kept += 1;
       }
-      reports.push({
-        company: company.name,
-        ats: company.ats,
-        fetched: raw.length,
-        kept,
-      });
+      employerSummaries.push(employerStats);
+      reports.push(toSourceReport(company, employerStats, kept));
       console.log(`kept ${kept}`);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      reports.push({
-        company: company.name,
-        ats: company.ats,
-        fetched: 0,
-        kept: 0,
-        error: message,
-      });
+      employerSummaries.push(emptyEmployerStats());
+      reports.push(toSourceReport(company, emptyEmployerStats(), 0, message));
       console.log(`skip (${message})`);
     }
   }
@@ -121,9 +145,15 @@ export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
     return bDate - aDate;
   });
 
+  const stats: VerticalIngestStats = rollupEmployerStats(
+    employerSummaries,
+    jobs.length,
+  );
+  const ingestedAt = new Date().toISOString();
   const payload = {
-    ingestedAt: new Date().toISOString(),
+    ingestedAt,
     total: jobs.length,
+    stats,
     jobs,
     reports,
   };
@@ -131,6 +161,17 @@ export async function runIngest(verticalId = parseVerticalArg(process.argv)) {
   const jobsPath = path.join(process.cwd(), vertical.dataFile);
   await mkdir(path.dirname(jobsPath), { recursive: true });
   await writeFile(jobsPath, JSON.stringify(payload, null, 2));
+
+  const employersWithRoles = reports.filter((report) => report.kept > 0).length;
+  await appendSnapshot(
+    vertical.id,
+    ingestedAt,
+    stats,
+    jobs.map((job) => job.id),
+    companies.length,
+    employersWithRoles,
+  );
+
   console.log(`\nWrote ${jobs.length} jobs to ${vertical.dataFile}`);
   return payload;
 }

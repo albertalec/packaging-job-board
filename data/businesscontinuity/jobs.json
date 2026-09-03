@@ -1,6 +1,21 @@
 {
-  "ingestedAt": "2026-09-02T23:56:32.354Z",
+  "ingestedAt": "2026-09-03T00:17:43.453Z",
   "total": 43,
+  "stats": {
+    "scanned": 7304,
+    "classifierPass": 76,
+    "kept": 43,
+    "classifierDrops": {
+      "not a BCM/DR role": 5881,
+      "product/SRE resilience noise": 125,
+      "off-target function": 344,
+      "generic IT title": 777,
+      "insurance underwriting": 30,
+      "field/FEMA disaster response": 2,
+      "manufacturing capacity resiliency": 68,
+      "product/database engineering DR": 1
+    }
+  },
   "jobs": [
     {
       "id": "morgan-stanley-2e0407f447489650",
@@ -781,266 +796,584 @@
     {
       "company": "Bank of America",
       "ats": "workday",
+      "scanned": 898,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 834,
+        "product/SRE resilience noise": 4,
+        "off-target function": 34,
+        "generic IT title": 17,
+        "insurance underwriting": 9
+      }
     },
     {
       "company": "Wells Fargo",
       "ats": "workday",
+      "scanned": 110,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 93,
+        "off-target function": 4,
+        "generic IT title": 10,
+        "product/SRE resilience noise": 2
+      }
     },
     {
       "company": "Citigroup",
       "ats": "workday",
+      "scanned": 342,
+      "classifierPass": 8,
+      "kept": 0,
       "fetched": 8,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 296,
+        "product/SRE resilience noise": 9,
+        "generic IT title": 17,
+        "insurance underwriting": 1,
+        "off-target function": 11
+      }
     },
     {
       "company": "Elevance Health",
       "ats": "workday",
+      "scanned": 78,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 77,
+        "off-target function": 1
+      }
     },
     {
       "company": "Cigna",
       "ats": "workday",
+      "scanned": 96,
+      "classifierPass": 3,
+      "kept": 0,
       "fetched": 3,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 87,
+        "off-target function": 6
+      }
     },
     {
       "company": "Humana",
       "ats": "workday",
+      "scanned": 49,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 34,
+        "off-target function": 5,
+        "generic IT title": 9,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "Morgan Stanley",
       "ats": "workday",
+      "scanned": 128,
+      "classifierPass": 11,
+      "kept": 8,
       "fetched": 11,
-      "kept": 8
+      "classifierDrops": {
+        "not a BCM/DR role": 90,
+        "off-target function": 6,
+        "product/SRE resilience noise": 9,
+        "generic IT title": 12
+      }
     },
     {
       "company": "Capital One",
       "ats": "workday",
+      "scanned": 453,
+      "classifierPass": 7,
+      "kept": 7,
       "fetched": 7,
-      "kept": 7
+      "classifierDrops": {
+        "not a BCM/DR role": 284,
+        "generic IT title": 87,
+        "off-target function": 37,
+        "product/SRE resilience noise": 38
+      }
     },
     {
       "company": "State Street",
       "ats": "workday",
+      "scanned": 219,
+      "classifierPass": 9,
+      "kept": 3,
       "fetched": 9,
-      "kept": 3
+      "classifierDrops": {
+        "not a BCM/DR role": 187,
+        "generic IT title": 6,
+        "off-target function": 17
+      }
     },
     {
       "company": "U.S. Bank",
       "ats": "workday",
+      "scanned": 80,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 49,
+        "generic IT title": 29,
+        "off-target function": 1,
+        "insurance underwriting": 1
+      }
     },
     {
       "company": "TD Bank",
       "ats": "workday",
+      "scanned": 162,
+      "classifierPass": 2,
+      "kept": 0,
       "fetched": 2,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 143,
+        "generic IT title": 15,
+        "product/SRE resilience noise": 1,
+        "off-target function": 1
+      }
     },
     {
       "company": "BMO",
       "ats": "workday",
+      "scanned": 87,
+      "classifierPass": 4,
+      "kept": 1,
       "fetched": 4,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 72,
+        "generic IT title": 6,
+        "off-target function": 4,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "PayPal",
       "ats": "workday",
+      "scanned": 16,
+      "classifierPass": 2,
+      "kept": 0,
       "fetched": 2,
-      "kept": 0
+      "classifierDrops": {
+        "generic IT title": 6,
+        "not a BCM/DR role": 8
+      }
     },
     {
       "company": "PNC Financial Services",
       "ats": "workday",
+      "scanned": 103,
+      "classifierPass": 5,
+      "kept": 5,
       "fetched": 5,
-      "kept": 5
+      "classifierDrops": {
+        "not a BCM/DR role": 77,
+        "product/SRE resilience noise": 4,
+        "generic IT title": 14,
+        "off-target function": 3
+      }
     },
     {
       "company": "Truist",
       "ats": "workday",
+      "scanned": 69,
+      "classifierPass": 4,
+      "kept": 4,
       "fetched": 4,
-      "kept": 4
+      "classifierDrops": {
+        "not a BCM/DR role": 51,
+        "generic IT title": 10,
+        "product/SRE resilience noise": 3,
+        "off-target function": 1
+      }
     },
     {
       "company": "Regions Bank",
       "ats": "workday",
+      "scanned": 41,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 2,
+        "not a BCM/DR role": 33,
+        "generic IT title": 5
+      }
     },
     {
       "company": "Travelers",
       "ats": "workday",
+      "scanned": 52,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 35,
+        "generic IT title": 17
+      }
     },
     {
       "company": "AIG",
       "ats": "workday",
+      "scanned": 65,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 48,
+        "generic IT title": 5,
+        "insurance underwriting": 6,
+        "off-target function": 2,
+        "product/SRE resilience noise": 3
+      }
     },
     {
       "company": "Target",
       "ats": "workday",
+      "scanned": 113,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 104,
+        "off-target function": 3,
+        "generic IT title": 2,
+        "product/SRE resilience noise": 3
+      }
     },
     {
       "company": "Duke Energy",
       "ats": "workday",
+      "scanned": 2,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 1
+      }
     },
     {
       "company": "Neuberger Berman",
       "ats": "workday",
+      "scanned": 19,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 12,
+        "generic IT title": 3,
+        "off-target function": 3
+      }
     },
     {
       "company": "Twilio",
       "ats": "greenhouse",
+      "scanned": 143,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 100,
+        "off-target function": 16,
+        "generic IT title": 26
+      }
     },
     {
       "company": "Waymo",
       "ats": "greenhouse",
+      "scanned": 344,
+      "classifierPass": 3,
+      "kept": 2,
       "fetched": 3,
-      "kept": 2
+      "classifierDrops": {
+        "not a BCM/DR role": 250,
+        "off-target function": 13,
+        "product/SRE resilience noise": 10,
+        "field/FEMA disaster response": 1,
+        "generic IT title": 62,
+        "manufacturing capacity resiliency": 5
+      }
     },
     {
       "company": "Cockroach Labs",
       "ats": "greenhouse",
+      "scanned": 26,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 16,
+        "product/database engineering DR": 1,
+        "off-target function": 9
+      }
     },
     {
       "company": "The Hartford",
       "ats": "workday",
+      "scanned": 75,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 41,
+        "generic IT title": 16,
+        "insurance underwriting": 13,
+        "off-target function": 3,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "Freddie Mac",
       "ats": "workday",
+      "scanned": 22,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 16,
+        "generic IT title": 6
+      }
     },
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
       "ats": "workday",
+      "scanned": 14,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 13
+      }
     },
     {
       "company": "Intermountain Health",
       "ats": "workday",
+      "scanned": 48,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 47
+      }
     },
     {
       "company": "Roche",
       "ats": "workday",
+      "scanned": 44,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 33,
+        "product/SRE resilience noise": 7,
+        "generic IT title": 3
+      }
     },
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
+      "scanned": 279,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 266,
+        "off-target function": 10,
+        "generic IT title": 2,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "Jamf",
       "ats": "greenhouse",
+      "scanned": 28,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 13,
+        "off-target function": 7,
+        "generic IT title": 6,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "SpaceX",
       "ats": "greenhouse",
+      "scanned": 2277,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 1789,
+        "off-target function": 114,
+        "generic IT title": 289,
+        "manufacturing capacity resiliency": 62,
+        "product/SRE resilience noise": 22,
+        "field/FEMA disaster response": 1
+      }
     },
     {
       "company": "Solventum",
       "ats": "workday",
+      "scanned": 76,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 60,
+        "generic IT title": 1,
+        "off-target function": 14
+      }
     },
     {
       "company": "Gilead Sciences",
       "ats": "workday",
+      "scanned": 80,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 74,
+        "off-target function": 4,
+        "product/SRE resilience noise": 2
+      }
     },
     {
       "company": "Dick's Sporting Goods",
       "ats": "workday",
+      "scanned": 11,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "off-target function": 1,
+        "not a BCM/DR role": 9,
+        "generic IT title": 1
+      }
     },
     {
       "company": "RTX",
       "ats": "workday",
+      "scanned": 491,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 398,
+        "generic IT title": 84,
+        "off-target function": 5,
+        "product/SRE resilience noise": 2,
+        "manufacturing capacity resiliency": 1
+      }
     },
     {
       "company": "BlueCross BlueShield of Tennessee",
       "ats": "workday",
+      "scanned": 5,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 5
+      }
     },
     {
       "company": "Pax8",
       "ats": "workday",
+      "scanned": 19,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 12,
+        "off-target function": 4,
+        "generic IT title": 2
+      }
     },
     {
       "company": "MSU Federal Credit Union",
       "ats": "ultipro",
+      "scanned": 20,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 18,
+        "off-target function": 1
+      }
     },
     {
       "company": "Visions Federal Credit Union",
       "ats": "ultipro",
+      "scanned": 25,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "generic IT title": 2,
+        "not a BCM/DR role": 21,
+        "off-target function": 1
+      }
     },
     {
       "company": "SchoolsFirst Federal Credit Union",
       "ats": "workday",
+      "scanned": 3,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "generic IT title": 2,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "BECU",
       "ats": "workday",
+      "scanned": 9,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "generic IT title": 4,
+        "not a BCM/DR role": 5
+      }
     },
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
+      "scanned": 58,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a BCM/DR role": 56,
+        "generic IT title": 1,
+        "off-target function": 1
+      }
     },
     {
       "company": "American Electric Power",
       "ats": "workday",
+      "scanned": 25,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a BCM/DR role": 24
+      }
     }
   ]
 }

@@ -122,19 +122,21 @@ describe("isRemote", () => {
     };
 
     const expectedRemoteIds = new Set([
+      "kenvue-024b17f1e272cc99",
       "clorox-8a646b90ca3a3a75",
       "clorox-af0c26e688937e1b",
       "clorox-1b8d9dfabeaa2782",
-      "conagra-1290fa690b47c0ca",
       "conagra-003fc6feb067a106",
       "conagra-df4f4054f2215cfd",
-      "conagra-5937f9ff76e0f8dc",
+      "conagra-0946e7bb432acfb7",
       "church-dwight-b9c080251de3ed5f",
+      "church-dwight-1933d7b7f02d653d",
       "sc-johnson-7db82df72eaeba5f",
       "smucker-34a0178560e3504f",
-      "smucker-0b617a17d16ca5d7",
+      "smucker-77fa50d2b26ccf3b",
       "stryker-f6bf296edfd7cb75",
-      "target-4589d77499ac4476",
+      "colgate-1e9b5003000083bb",
+      "medtronic-b546cfbe0bcd22db",
     ]);
 
     for (const job of data.jobs) {

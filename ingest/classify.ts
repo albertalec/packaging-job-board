@@ -6,6 +6,7 @@ import {
   shouldPrefetchWorkdayDetail,
   toJob as toBusinessContinuityJob,
 } from "./classify-businesscontinuity.ts";
+import type { IngestStats } from "./stats.ts";
 import type { Company, Niche, NormalizedJob } from "./types.ts";
 
 export { isRemote };
@@ -52,7 +53,6 @@ export function classifyJob(input: {
   department?: string | null;
 }): { keep: boolean; reason: string } {
   const blob = `${input.title}\n${input.department ?? ""}\n${input.description}`;
-  const titleAndDept = `${input.title}\n${input.department ?? ""}`;
   if (SEMICONDUCTOR.test(blob)) {
     return { keep: false, reason: "semiconductor/electronics packaging" };
   }
@@ -70,7 +70,8 @@ export function classifyJob(input: {
   if (WAREHOUSE.test(input.title)) {
     return { keep: false, reason: "warehouse/ops title" };
   }
-  if (OFF_TARGET.test(titleAndDept)) {
+  // Title-level off-target (procurement, sales, …) before wedge keeps.
+  if (OFF_TARGET.test(input.title)) {
     return { keep: false, reason: "off-target function" };
   }
   if (
@@ -98,6 +99,10 @@ export function classifyJob(input: {
     )
   ) {
     return { keep: true, reason: "title contains packaging" };
+  }
+  // Phenom/SF often tag wedge roles under Procurement or Sales departments.
+  if (input.department && OFF_TARGET.test(input.department)) {
+    return { keep: false, reason: "off-target function" };
   }
   return { keep: false, reason: "not a packaging role" };
 }
@@ -140,8 +145,9 @@ const ABROAD_LOCATION =
 
 const CANADIAN_PROVINCE = /,\s*(ON|QC|AB|MB|SK|NS|NB|PE|NL|YT|NT|NU)\b/;
 
+/** Bare `, US` suffix (SuccessFactors / Phenom) — not matched by `usa` alone. */
 const US_MENTION =
-  /\b(?:united states|u\.s\.a\.|u\.s\.|usa)\b|-\s*usa\b/i;
+  /\b(?:united states|u\.s\.a\.|u\.s\.|usa)\b|-\s*usa\b|(?:^|,\s*)US\b(?:\s*$|\s*,)/i;
 
 /** Workday encodes region in the job path when the listing location string is sparse. */
 const FOREIGN_WORKDAY_PATH =
@@ -196,15 +202,17 @@ export function toJob(
     description: string;
     salary?: string | null;
   },
+  stats?: IngestStats,
 ): NormalizedJob | null {
   if (activeClassifier === "businesscontinuity") {
-    return toBusinessContinuityJob(company, input);
+    return toBusinessContinuityJob(company, input, stats);
   }
   const verdict = classifyJob({
     title: input.title,
     description: stripHtml(input.description) || input.title.trim(),
     department: input.department,
   });
+  stats?.recordClassifierResult(input.sourceId, verdict);
   if (!verdict.keep) return null;
   const plain = stripHtml(input.description) || input.title.trim();
   const hash = jobHash(company.slug, input.sourceId, input.title);

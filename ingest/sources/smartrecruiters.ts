@@ -1,6 +1,7 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type SrJob = {
   id?: string;
@@ -13,12 +14,13 @@ type SrJob = {
 
 export async function ingestSmartRecruiters(
   company: Company,
-): Promise<NormalizedJob[]> {
+): Promise<IngestResult> {
   const token = company.boardToken;
   if (!token) {
     throw new Error(`SmartRecruiters company id missing for ${company.name}`);
   }
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   const seen = new Set<string>();
 
   for (const query of companySearchTexts(company)) {
@@ -29,6 +31,8 @@ export async function ingestSmartRecruiters(
     for (const job of data.content ?? []) {
       const sourceId = job.id ?? job.name ?? "";
       if (!sourceId || seen.has(sourceId)) continue;
+      seen.add(sourceId);
+      stats.recordScan(sourceId);
       const locationParts = [
         job.location?.city,
         job.location?.region,
@@ -45,12 +49,9 @@ export async function ingestSmartRecruiters(
         postedAt: job.releasedDate ?? null,
         applyUrl,
         description: stripHtml(job.jobAd?.sections?.jobDescription?.text ?? ""),
-      });
-      if (normalized) {
-        seen.add(sourceId);
-        jobs.push(normalized);
-      }
+      }, stats);
+      if (normalized) jobs.push(normalized);
     }
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

@@ -1,6 +1,7 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type OracleJob = {
   Id?: string;
@@ -24,7 +25,7 @@ function collectJobs(value: unknown, found: OracleJob[] = []): OracleJob[] {
   return found;
 }
 
-export async function ingestOracle(company: Company): Promise<NormalizedJob[]> {
+export async function ingestOracle(company: Company): Promise<IngestResult> {
   const origin = new URL(company.careerUrl).origin;
   const site = company.site ?? "CX_1";
   const byId = new Map<string, OracleJob>();
@@ -48,9 +49,11 @@ export async function ingestOracle(company: Company): Promise<NormalizedJob[]> {
   if (!byId.size) {
     throw new Error(`Oracle recruiting JSON not available for ${company.name}`);
   }
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   for (const job of byId.values()) {
     const id = String(job.Id ?? job.Title);
+    stats.recordScan(id);
     const applyUrl = `${origin}/hcmUI/CandidateExperience/en/sites/${site}/job/${id}`;
     const normalized = toJob(company, {
       sourceId: id,
@@ -59,8 +62,8 @@ export async function ingestOracle(company: Company): Promise<NormalizedJob[]> {
       postedAt: job.PostedDate ?? null,
       applyUrl,
       description: stripHtml(job.ShortDescriptionStr ?? job.Title ?? ""),
-    });
+    }, stats);
     if (normalized) jobs.push(normalized);
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

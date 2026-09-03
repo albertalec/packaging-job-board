@@ -6,7 +6,8 @@ import {
 } from "../classify.ts";
 import { enrichLocationWithCityState } from "../location.ts";
 import { companySearchTexts } from "../search.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 import { workdayFetch } from "../workday-http.ts";
 
 type WorkdayJob = {
@@ -99,7 +100,7 @@ async function fetchDetail(
   };
 }
 
-export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> {
+export async function ingestWorkday(company: Company): Promise<IngestResult> {
   let board: Board | null =
     company.host && company.tenant && company.site
       ? { host: company.host, tenant: company.tenant, site: company.site }
@@ -112,7 +113,8 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
     throw new Error(`Workday board not found for ${company.name}`);
   }
 
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   const seen = new Set<string>();
   const limit = 20;
 
@@ -151,6 +153,7 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
           ? path
           : `https://${board.host}/${board.site}${path}`;
         const listLocation = posting.locationsText ?? "";
+        stats.recordScan(sourceId);
         const preview = toJob(company, {
           sourceId,
           title,
@@ -158,7 +161,7 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
           postedAt: posting.postedOn ?? null,
           applyUrl,
           description: title,
-        });
+        }, stats);
         const prefetchDetail =
           isBusinessContinuityIngest() && shouldPrefetchWorkdayDetail(title);
         if (!preview && !prefetchDetail) continue;
@@ -177,12 +180,12 @@ export async function ingestWorkday(company: Company): Promise<NormalizedJob[]> 
           postedAt: posting.postedOn ?? null,
           applyUrl,
           description: detail.description || title,
-        });
+        }, stats);
         if (normalized) jobs.push(normalized);
       }
       if (postings.length === 0) break;
       offset += limit;
     }
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }

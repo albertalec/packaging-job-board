@@ -279,7 +279,7 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 | Added PNC Financial Services | `companies.ts` | +5 on-wedge roles |
 | Tightened bare `crisis` title match | `classify-businesscontinuity.ts` | Drops behavioral-health crisis hub roles |
 | Removed Airbus | `companies.ts` | Less field-EM noise |
-| Truist deferred | — | Workday API returns HTTP 500 to Node `fetch` (curl OK); needs connector investigation |
+| Truist curl fallback | `ingest/workday-http.ts` | Fixed Workday HTTP 500 on Node `fetch` (Phase B) |
 
 **P0 blockers for next wave:** JPMorgan/Goldman Sachs (Oracle Recruiting Cloud), UnitedHealth (Taleo), Kaiser (`kaiserpermanentejobs.org`) — require new connectors or manual employer verification.
 
@@ -290,7 +290,7 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 - [ ] **B3** Add Wave 6 P0–P1 health systems (HCA, Ascension, Mayo) — HCA search returns clinical false positives; no connector for Kaiser
 - [ ] **B4** Add Wave 7 utilities (Southern, Exelon, Dominion) — Workday POST 422 without session; no US BCM hits in curl probes
 - [ ] **B5** Add Wave 8 credit unions (PenFed, Alliant) — PenFed not on UltiPro/Oracle public API; Navy Federal Oracle returns 0
-- [ ] **B6** Implement ingest analytics Phase A ([`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md))
+- [x] **B6** Ingest analytics Phase A — merged from `main` ([`ingest/stats.ts`](ingest/stats.ts), snapshots, export script)
 
 ### Phase B implementation notes (2026-09-02)
 
@@ -300,7 +300,7 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 | Added Truist, Regions Bank | +5 listed roles (Enterprise Resilience Officer, Business Resilience Engineer) |
 | **Inventory** | **43 listed** (was 38 post–Phase A) — **7 short of 50+ SEO floor** |
 
-**Next employers to unblock 50+:** insurers on non-Workday ATS (Taleo/Oracle), health systems with EMBC titles, or additional regional banks when roles are posted US-only. — scanned / drop reasons
+**Next employers to unblock 50+:** insurers on non-Workday ATS (Taleo/Oracle), health systems with EMBC titles, or additional regional banks when roles are posted US-only.
 
 ### Phase C — optimize funnel
 

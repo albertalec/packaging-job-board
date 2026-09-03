@@ -1,6 +1,20 @@
 {
-  "ingestedAt": "2026-09-02T16:10:46.049Z",
-  "total": 52,
+  "ingestedAt": "2026-09-02T23:24:29.607Z",
+  "total": 56,
+  "stats": {
+    "scanned": 3876,
+    "classifierPass": 78,
+    "kept": 56,
+    "classifierDrops": {
+      "not a packaging role": 3028,
+      "warehouse/ops title": 209,
+      "off-target function": 508,
+      "plant process engineering": 36,
+      "semiconductor/electronics packaging": 15,
+      "software/electronics packaging": 1,
+      "packaging as commodity/category scope": 1
+    }
+  },
   "jobs": [
     {
       "id": "general-mills-a2dec98cbc20f033",
@@ -291,6 +305,24 @@
       "source": "workday"
     },
     {
+      "id": "church-dwight-1933d7b7f02d653d",
+      "sourceId": "/job/USA-Princeton-NJ/XMLNAME-2027-Undergraduate-Packaging-Engineer-Co-Op_R2026-15611",
+      "hash": "1933d7b7f02d653d",
+      "company": "Church & Dwight",
+      "companySlug": "church-dwight",
+      "title": "2027 Undergraduate Packaging Engineer Co-Op",
+      "department": null,
+      "location": "USA, Princeton, NJ, United States of America",
+      "state": "NJ",
+      "remote": true,
+      "postedAt": "Posted Today",
+      "applyUrl": "https://churchdwight.wd1.myworkdayjobs.com/chdcareers/job/USA-Princeton-NJ/XMLNAME-2027-Undergraduate-Packaging-Engineer-Co-Op_R2026-15611",
+      "description": "A collective energy and ambition. A place where you can make a real difference.\n\nWe’re a company that genuinely cares about our people, our products, our consumers and the environment.\n\nOur unique, informal culture champions courage, determination and collaboration. Knowing we have an open and supportive team means each of us has the freedom to take responsibility and ownership. We have a shared passion to work hard, innovate and push boundaries.\n\nUnited by the belief that when we strive for growth, anything is possible. While we might not be the largest company in our industry, we believe we can have the biggest impact because: Together We Have the Power to Win.\n\nChurch & Dwight Co., Inc. is currently offering an excellent opportunity for a Packaging Engineering Co-Op located at our Princeton, NJ facility. This 6-month program starts January 2027, and runs through June 2027, and includes exposure to leadership, professional development, networking events, and the chance to connect with students throughout a variety of functions.\n\nWhat’s In It for You\n\n• Hybrid work schedule\n\n• Learning & Development opportunities\n\n• Summer Speaker Series featuring executive leadership\n\n• Networking opportunities with early career cohort\n\n• Access to company store\n\n• Final Capstone Presentation with leadership\n\n• Housing Stipend - for students whose residential address is greater than 30 miles from the work site\n\nThis position will provide support to one of three functional areas:\n\n• Package Innovation : The co-op will focus on the early phases of packaging development, working with ideas, consumer insights, concepts, and rough designs.\n\n• Package Development : The co-op will work on package design that optimizes innovation functionality, costs and equipment integration requirements based on CHD’s core technology platforms.\n\n• Package Technical Transfer : The co-op will utilize performance-based specifications & technology platform thinking to shorten & expedite the package commercialization process for new and revised packaging.\n\nThrough this position, the co-op will work in a project-based environment. Responsibilities include testing, documentation, and travel to plants, and suppliers. The co-op will have the opportunity to work in cross-functional teams, as well as independently to determine and implement solutions based upon analytical data assessments.\n\nQualifications\n\n• Currently enrolled undergraduate students who have completed at least two years of college coursework (rising Junior or rising Senior) pursuing a bachelor's degree in Packaging Science/Engineering, with packaging coursework completed .\n\n• Ability and interest in working a hybrid schedule in Princeton, NJ\n\n• Co-op will be trained in specification systems, CAD, testing, or prototyping equipment as required .\n\n• Aptitude and willingness to learn how to interface with different platforms, run reports, and engage with various company systems.\n\n• Experience in Microsoft 365 applications required\n\n• Experience managing multiple timelines and priorities.\n\n• Strong written and verbal communication skills are r equired .\n\n• Willingness to work in a fast-paced environment, desire to learn and contribute to a growing company.\n\n• Candidates must have US Work Authorization (US Citizen, permanent resident, green card holder)\n\nChurch & Dwight is proud to be an Equal Opportunity Employer/Veterans/Individuals with Disabilities.\n\nFor more information on our company, our brands and our culture visit us at http://www.churchdwight.com/",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
       "id": "sc-johnson-7db82df72eaeba5f",
       "sourceId": "/job/USA---WI---Racine/Senior-Associate---Packaging-Engineer-for-International-Brands-Pest-Control_33654-1",
       "hash": "7db82df72eaeba5f",
@@ -561,6 +593,24 @@
       "source": "workday"
     },
     {
+      "id": "amcor-b0783bda303c8f6c",
+      "sourceId": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "b0783bda303c8f6c",
+      "company": "Amcor",
+      "companySlug": "amcor",
+      "title": "Product Developer and Project Manager  for Plastic Packaging  (m/f/d)",
+      "department": null,
+      "location": "Lohne, DE",
+      "state": "DE",
+      "remote": false,
+      "postedAt": "Tue, 01 Sep 2026 2:00:00 GMT",
+      "applyUrl": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "YOUR MAIN\n\nRESPONSIBILITIES\n\nYou will develop and optimize products, assemblies, etc., in the field of plastic packaging, present packaging concepts, and coordinate development projects with regard to deadlines, costs, and quality specifications. In addition, you will manage and oversee projects at various domestic and international facilities. Your responsibilities will also include planning and monitoring projects with regard to deadlines, processes, functions, and costs, as well as technical coordination with domestic and international customers and suppliers.\n\nWHAT YOU SHOULD BRING TO THE TABLE:\nYou have completed an apprenticeship in plastics or toolmaking and have gone on to earn a master craftsman’s certificate, a technician’s degree, or a bachelor’s degree, as well as extensive professional experience in plastic injection molding. We also expect you to have strong CAE and CAD skills. Good English skills are essential for communicating with international customers and suppliers. As a product developer and project manager, you demonstrate organizational skills and a strong sense of responsibility. You are characterized by resilience and assertiveness. You have excellent communication skills and impress with your high level of commitment as well as your independent and meticulous work ethic. You possess the ability to clearly structure complex relationships and address them in a project-specific manner. In addition, you bring team spirit, dedication, and attention to detail to the role.\n\nYOUR APPLICATION\n\nIn addition to vacation pay, a Christmas bonus, Hansefit, and other benefits, we offer a position of responsibility with opportunities for advancement and competitive compensation. Interested? Then we look forward to receiving your detailed application. Please send your application in writing to the address below.",
+      "salary": null,
+      "niche": "industrial",
+      "source": "successfactors"
+    },
+    {
       "id": "pepsico-465fd80d0b4c4b2b",
       "sourceId": "464619",
       "hash": "465fd80d0b4c4b2b",
@@ -639,22 +689,22 @@
       "source": "workday"
     },
     {
-      "id": "amcor-b0783bda303c8f6c",
-      "sourceId": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "b0783bda303c8f6c",
-      "company": "Amcor",
-      "companySlug": "amcor",
-      "title": "Product Developer and Project Manager  for Plastic Packaging  (m/f/d)",
-      "department": null,
-      "location": "Lohne, DE",
-      "state": "DE",
+      "id": "mars-712ce983bb8ad5be",
+      "sourceId": "MARSGLOBALR163994EXTERNALENGLOBAL",
+      "hash": "712ce983bb8ad5be",
+      "company": "Mars",
+      "companySlug": "mars",
+      "title": "Sr Manager, Packaging Simplification",
+      "department": "Procurement",
+      "location": "Chicago, Illinois, United States",
+      "state": "IL",
       "remote": false,
-      "postedAt": "Tue, 01 Sep 2026 2:00:00 GMT",
-      "applyUrl": "https://jobs-sf.amcor.com/job/Lohne-Product-Developer-and-Project-Manager-for-Plastic-Packaging-%28mfd%29/1351629755/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "YOUR MAIN\n\nRESPONSIBILITIES\n\nYou will develop and optimize products, assemblies, etc., in the field of plastic packaging, present packaging concepts, and coordinate development projects with regard to deadlines, costs, and quality specifications. In addition, you will manage and oversee projects at various domestic and international facilities. Your responsibilities will also include planning and monitoring projects with regard to deadlines, processes, functions, and costs, as well as technical coordination with domestic and international customers and suppliers.\n\nWHAT YOU SHOULD BRING TO THE TABLE:\nYou have completed an apprenticeship in plastics or toolmaking and have gone on to earn a master craftsman’s certificate, a technician’s degree, or a bachelor’s degree, as well as extensive professional experience in plastic injection molding. We also expect you to have strong CAE and CAD skills. Good English skills are essential for communicating with international customers and suppliers. As a product developer and project manager, you demonstrate organizational skills and a strong sense of responsibility. You are characterized by resilience and assertiveness. You have excellent communication skills and impress with your high level of commitment as well as your independent and meticulous work ethic. You possess the ability to clearly structure complex relationships and address them in a project-specific manner. In addition, you bring team spirit, dedication, and attention to detail to the role.\n\nYOUR APPLICATION\n\nIn addition to vacation pay, a Christmas bonus, Hansefit, and other benefits, we offer a position of responsibility with opportunities for advancement and competitive compensation. Interested? Then we look forward to receiving your detailed application. Please send your application in writing to the address below.",
+      "postedAt": "2026-08-31T00:00:00.000+0000",
+      "applyUrl": "https://mars.wd3.myworkdayjobs.com/en-US/External/job/USA-Illinois-Chicago/Sr-Manager--Packaging-Simplification_R163994-1/apply",
+      "description": "Job Description\n\n. As Packaging Simplification, Senior Manager you will help lead a number of critical transformation initiatives in Mars Snacking as our packaging portfolio changes over the coming y...",
       "salary": null,
-      "niche": "industrial",
-      "source": "successfactors"
+      "niche": "food-beverage",
+      "source": "phenom"
     },
     {
       "id": "abbott-be28150170971dd1",
@@ -801,6 +851,24 @@
       "source": "workday"
     },
     {
+      "id": "thermo-fisher-633bf39022712cad",
+      "sourceId": "/job/Allentown-Pennsylvania-USA/Packaging-Project-Manager_R-01358120",
+      "hash": "633bf39022712cad",
+      "company": "Thermo Fisher Scientific",
+      "companySlug": "thermo-fisher",
+      "title": "Packaging Project Manager",
+      "department": null,
+      "location": "Allentown, Pennsylvania, USA, United States of America",
+      "state": "PA",
+      "remote": false,
+      "postedAt": "Posted Today",
+      "applyUrl": "https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Allentown-Pennsylvania-USA/Packaging-Project-Manager_R-01358120",
+      "description": "Work Schedule\n\nStandard (Mon-Fri)\n\nEnvironmental Conditions\n\nOffice\n\nJob Description\n\nAs part of the Thermo Fisher Scientific team, you’ll discover meaningful work that makes a positive impact on a global scale. Join our colleagues in bringing our Mission to life every single day to enable our customers to make the world healthier, cleaner and safer. We provide our global teams with the resources needed to achieve individual career goals while helping to take science a step beyond by developing solutions for some of the world’s toughest challenges, like protecting the environment, making sure our food is safe or helping find cures for cancer.\n\nDESCRIPTION:\nJoin Thermo Fisher Scientific as a Client Services Project Manager III and make a meaningful impact on global healthcare. You'll independently manage a portfolio of moderate to strategic client projects, leading end-to-end delivery of technical and service aspects while developing effective solutions for optimal outcomes. As part of our collaborative team, you'll serve as the key liaison between customers and internal stakeholders, ensuring consistent project execution from initial discussions through completion. This role offers the opportunity to shape client strategy, improve processes, and support team members while contributing to our mission of enabling customers to make the world healthier, cleaner and safer.\n\nREQUIREMENTS\n\n• High school diploma and/or GED required + proven relevant experience in a similar environment and skillset. Degree preferred.\n• Project Management Professional (PMP) certification or equivalent preferred\n• Expertise in clinical trials, pharmaceutical, or biotech industry preferred\n• Strong proficiency in project management methodologies, tools and best practices\n• Advanced skills in budget management, forecasting, and financial tracking\n• Demonstrated ability to manage complex, multi-stakeholder projects independently\n• Excellent communication and presentation skills, with ability to work effectively at all levels\n• Strong problem-solving abilities and record of implementing effective solutions\n• Proficiency in relevant systems (Salesforce, ERP, MS Office Suite, project management tools)\n• Experience with GMP/GxP regulations and quality management systems\n• Proven ability to build and maintain strategic client relationships\n• Exceptional organizational and time management capabilities\n• Ability to support and guide team members and provide project leadership\n• May require up to 25% travel\n• Foreign language skills beneficial\n• Ability to work effectively in a collaborative matrix organization",
+      "salary": null,
+      "niche": "pharma",
+      "source": "workday"
+    },
+    {
       "id": "thermo-fisher-19ae6c0af489f6e4",
       "sourceId": "/job/Allentown-Pennsylvania-USA/Packaging-Project-Manager_R-01363378",
       "hash": "19ae6c0af489f6e4",
@@ -891,6 +959,42 @@
       "source": "successfactors"
     },
     {
+      "id": "zimmer-biomet-5f5903eb7b294579",
+      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
+      "hash": "5f5903eb7b294579",
+      "company": "Zimmer Biomet",
+      "companySlug": "zimmer-biomet",
+      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
+      "department": "Research & Development",
+      "location": "Warsaw, Indiana, United States",
+      "state": "IN",
+      "remote": false,
+      "postedAt": "2026-08-27T00:00:00.000+0000",
+      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
+      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
+      "salary": null,
+      "niche": "pharma",
+      "source": "phenom"
+    },
+    {
+      "id": "eastman-915aea7cefddb8b5",
+      "sourceId": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-&-Food-Service-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "915aea7cefddb8b5",
+      "company": "Eastman",
+      "companySlug": "eastman",
+      "title": "Market Development Manager - Flexible Packaging & Food Service",
+      "department": null,
+      "location": "Nationwide, US",
+      "state": null,
+      "remote": false,
+      "postedAt": "Mon, 24 Aug 2026 7:00:00 GMT",
+      "applyUrl": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-&-Food-Service-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nRole Profile\n\nThis role will be an MDM on an innovation platform within Eastman’s CASE division. The person in this role will be responsible for the development and execution of strategies to activate brands and the value chain for coated paper articles and flexible packaging used in the food service and consumer packaged goods (CPG) industries. This role requires up to 30% travel.\n\nKey Accountabilities\n\n• Earnings: Drive variable margin gains by closing new business initiatives.\n\n• Growth: Measure growth by launch effectiveness, projected revenue from Gate 5 launches, and new business from market development and innovation.\n\n• Talent Management: Provide marketing expertise and coaching to teams and manage personal career development.\n\nThis role is open to remote candidates.\n\nResponsibilities\n\n• Contributes to the development of Addressable Market Maps and offers through segment cross-functional teams\n\n• Leads front end discovery to articulate where to play and how to win options in prioritized markets\n\n• Responsible for determining the best path for specific initiatives surfaced from market strategy work, developing the plans for execution, executing the plan (either directly or indirectly) and monitoring its effectiveness\n\n• Leads or supports growth projects as a Marketing resource by using the EBME framework to make quality strategic choices on all initiatives; assists others as needed\n\n• Establishes and tracks metrics to ensure post launch efforts are contributing to the segment’s strategy and performance; provides recommendation to Marketing leaders if changes are needed\n\n• Enters new opportunities for initiatives into Leads Management (SFDC) so that leads can be properly managed and tracked as they are passed on to Sales\n\n• Make recommendations on potential growth initiatives in the market based on market trends and insights, as well as customer discovery\n\n• Creates understanding of value of Eastman offerings vs. alternatives by developing Economic Value Estimates (EVE™)\n\n• Develops transition plans and materials as well as provides coaching to Sales and other supporting functions in preparation for a new product launch\n\n• Communicates offers that tie to initiatives; offers may be new, existing, or revised\n\n• Draw conclusions from multiple sources to create insights that support growth projects\n\n• Networks and becomes an industry expert in assigned markets\n\n• Interfaces with leverage points through the value chain to identify potential product and application opportunities\n\nQualifications\n\n• Bachelor's Degree required; MBA or advanced education in strategic marketing required\n\n• 8+ years of experience in commercial, marketing, or product management roles\n\n• 5+ years experience launching new products in relevant markets (Preferred)\n\n• 5+ years working in marketing in the paper value chain, e.g., for a paper manufacturer or a converter / manufacturer of paper articles, engaging the flexible packaging and food service markets (Preferred)\n\n• Strong business and marketing acumen\n\nThe base salary range for this position is $104,000 to $143,000.\n\nAt Eastman, we are committed to transparency and integrity in our compensation practices. Eastman includes salary ranges in some job postings to provide clear compensation information and to be compliant with state laws that require disclosure. Not all postings display ranges due to factors like location, market conditions, or position specifics. Compensation is based on qualifications and experience. Candidates are encouraged to discuss their salary questions during the interview process.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "successfactors"
+    },
+    {
       "id": "edwards-86a3a194c3064de1",
       "sourceId": "/job/USA---California--Irvine/Engineer-II--Packaging_Req-49561-1",
       "hash": "86a3a194c3064de1",
@@ -925,369 +1029,749 @@
       "salary": null,
       "niche": "pharma",
       "source": "workday"
-    },
-    {
-      "id": "zimmer-biomet-5f5903eb7b294579",
-      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
-      "hash": "5f5903eb7b294579",
-      "company": "Zimmer Biomet",
-      "companySlug": "zimmer-biomet",
-      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
-      "department": "Research & Development",
-      "location": "Warsaw, Indiana, United States",
-      "state": "IN",
-      "remote": false,
-      "postedAt": "2026-08-27T00:00:00.000+0000",
-      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
-      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
-      "salary": null,
-      "niche": "pharma",
-      "source": "phenom"
     }
   ],
   "reports": [
     {
       "company": "Kimberly-Clark",
       "ats": "workday",
+      "scanned": 58,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 52,
+        "warehouse/ops title": 1,
+        "off-target function": 3,
+        "plant process engineering": 2
+      }
     },
     {
       "company": "General Mills",
       "ats": "workday",
+      "scanned": 85,
+      "classifierPass": 3,
+      "kept": 3,
       "fetched": 3,
-      "kept": 3
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "off-target function": 12,
+        "not a packaging role": 66
+      }
     },
     {
       "company": "Sonoco",
       "ats": "workday",
+      "scanned": 76,
+      "classifierPass": 1,
+      "kept": 0,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 64,
+        "off-target function": 5,
+        "plant process engineering": 2,
+        "warehouse/ops title": 4
+      }
     },
     {
       "company": "3M",
       "ats": "workday",
+      "scanned": 51,
+      "classifierPass": 3,
+      "kept": 0,
       "fetched": 3,
-      "kept": 0
+      "classifierDrops": {
+        "semiconductor/electronics packaging": 3,
+        "warehouse/ops title": 2,
+        "not a packaging role": 38,
+        "off-target function": 5
+      }
     },
     {
       "company": "Kenvue",
       "ats": "workday",
+      "scanned": 52,
+      "classifierPass": 3,
+      "kept": 1,
       "fetched": 3,
-      "kept": 1
+      "classifierDrops": {
+        "plant process engineering": 1,
+        "not a packaging role": 37,
+        "warehouse/ops title": 5,
+        "off-target function": 6
+      }
     },
     {
       "company": "Clorox",
       "ats": "workday",
+      "scanned": 68,
+      "classifierPass": 6,
+      "kept": 6,
       "fetched": 6,
-      "kept": 6
+      "classifierDrops": {
+        "warehouse/ops title": 27,
+        "off-target function": 10,
+        "not a packaging role": 25
+      }
     },
     {
       "company": "Conagra Brands",
       "ats": "workday",
+      "scanned": 72,
+      "classifierPass": 4,
+      "kept": 4,
       "fetched": 4,
-      "kept": 4
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 8,
+        "not a packaging role": 53,
+        "plant process engineering": 3
+      }
     },
     {
       "company": "Campbell's",
       "ats": "workday",
+      "scanned": 192,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "warehouse/ops title": 33,
+        "not a packaging role": 142,
+        "off-target function": 16
+      }
     },
     {
       "company": "Church & Dwight",
       "ats": "workday",
-      "fetched": 1,
-      "kept": 1
+      "scanned": 38,
+      "classifierPass": 2,
+      "kept": 2,
+      "fetched": 2,
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 8,
+        "not a packaging role": 24
+      }
     },
     {
       "company": "SC Johnson",
       "ats": "workday",
+      "scanned": 48,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 7,
+        "not a packaging role": 39,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "J.M. Smucker",
       "ats": "workday",
+      "scanned": 59,
+      "classifierPass": 2,
+      "kept": 2,
       "fetched": 2,
-      "kept": 2
+      "classifierDrops": {
+        "plant process engineering": 3,
+        "not a packaging role": 49,
+        "off-target function": 4,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Silgan Containers",
       "ats": "workday",
+      "scanned": 65,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 58,
+        "warehouse/ops title": 5,
+        "off-target function": 2
+      }
     },
     {
       "company": "Silgan Dispensing",
       "ats": "workday",
+      "scanned": 17,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 13,
+        "off-target function": 3,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Aptar",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 19,
+        "off-target function": 1
+      }
     },
     {
       "company": "Autoliv",
       "ats": "teamtailor",
+      "scanned": 66,
+      "classifierPass": 3,
+      "kept": 3,
       "fetched": 3,
-      "kept": 3
+      "classifierDrops": {
+        "warehouse/ops title": 3,
+        "not a packaging role": 51,
+        "plant process engineering": 6,
+        "off-target function": 3
+      }
     },
     {
       "company": "General Motors",
       "ats": "workday",
+      "scanned": 40,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "software/electronics packaging": 1,
+        "not a packaging role": 36,
+        "off-target function": 3
+      }
     },
     {
       "company": "Magna",
       "ats": "workday",
+      "scanned": 60,
+      "classifierPass": 3,
+      "kept": 2,
       "fetched": 3,
-      "kept": 2
+      "classifierDrops": {
+        "not a packaging role": 54,
+        "off-target function": 2,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Menasha",
       "ats": "workday",
+      "scanned": 85,
+      "classifierPass": 7,
+      "kept": 7,
       "fetched": 7,
-      "kept": 7
+      "classifierDrops": {
+        "not a packaging role": 69,
+        "warehouse/ops title": 4,
+        "plant process engineering": 2,
+        "off-target function": 3
+      }
     },
     {
       "company": "International Paper",
       "ats": "oracle",
+      "scanned": 50,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "off-target function": 4,
+        "warehouse/ops title": 9,
+        "not a packaging role": 37
+      }
     },
     {
       "company": "PepsiCo",
       "ats": "jibe",
+      "scanned": 10,
+      "classifierPass": 4,
+      "kept": 3,
       "fetched": 4,
-      "kept": 3
+      "classifierDrops": {
+        "off-target function": 4,
+        "not a packaging role": 2
+      }
     },
     {
       "company": "Unilever",
       "ats": "workday",
+      "scanned": 34,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 25,
+        "warehouse/ops title": 5,
+        "off-target function": 3,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Johnson & Johnson",
       "ats": "workday",
+      "scanned": 129,
+      "classifierPass": 2,
+      "kept": 1,
       "fetched": 2,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 109,
+        "off-target function": 15,
+        "packaging as commodity/category scope": 1,
+        "plant process engineering": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Procter & Gamble",
       "ats": "phenom",
+      "scanned": 129,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 119,
+        "off-target function": 7,
+        "plant process engineering": 3
+      }
     },
     {
       "company": "The Coca-Cola Company",
       "ats": "cws",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "off-target function": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "DuPont",
       "ats": "phenom",
+      "scanned": 115,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 75,
+        "warehouse/ops title": 2,
+        "off-target function": 36,
+        "plant process engineering": 1,
+        "semiconductor/electronics packaging": 1
+      }
     },
     {
       "company": "WK Kellogg Co",
       "ats": "phenom",
+      "scanned": 4,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 4
+      }
     },
     {
       "company": "Mars",
       "ats": "phenom",
-      "fetched": 0,
-      "kept": 0
+      "scanned": 263,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "warehouse/ops title": 36,
+        "not a packaging role": 167,
+        "off-target function": 59
+      }
     },
     {
       "company": "Ball Corporation",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 17,
+        "warehouse/ops title": 3
+      }
     },
     {
       "company": "Sealed Air",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "off-target function": 1,
+        "semiconductor/electronics packaging": 1
+      }
     },
     {
       "company": "Amcor",
       "ats": "successfactors",
+      "scanned": 20,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 8,
+        "not a packaging role": 11
+      }
     },
     {
       "company": "Nestlé",
       "ats": "successfactors",
-      "fetched": 0,
+      "scanned": 0,
+      "classifierPass": 0,
       "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
       "error": "SuccessFactors public JSON not available for Nestlé"
     },
     {
       "company": "Berlin Packaging",
       "ats": "greenhouse",
+      "scanned": 16,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 5,
+        "off-target function": 2,
+        "warehouse/ops title": 9
+      }
     },
     {
       "company": "Ernest Packaging",
       "ats": "greenhouse",
+      "scanned": 39,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 14,
+        "off-target function": 25
+      }
     },
     {
       "company": "Amazon",
       "ats": "amazon",
+      "scanned": 8,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "semiconductor/electronics packaging": 6,
+        "not a packaging role": 2
+      }
     },
     {
       "company": "Abbott",
       "ats": "workday",
+      "scanned": 79,
+      "classifierPass": 6,
+      "kept": 2,
       "fetched": 6,
-      "kept": 2
+      "classifierDrops": {
+        "not a packaging role": 50,
+        "off-target function": 18,
+        "plant process engineering": 2,
+        "warehouse/ops title": 3
+      }
     },
     {
       "company": "Pfizer",
       "ats": "workday",
+      "scanned": 69,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "off-target function": 1,
+        "not a packaging role": 68
+      }
     },
     {
       "company": "Baxter",
       "ats": "workday",
+      "scanned": 68,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 56,
+        "warehouse/ops title": 6,
+        "off-target function": 5
+      }
     },
     {
       "company": "Stryker",
       "ats": "workday",
+      "scanned": 73,
+      "classifierPass": 4,
+      "kept": 2,
       "fetched": 4,
-      "kept": 2
+      "classifierDrops": {
+        "off-target function": 10,
+        "not a packaging role": 58,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Catalent",
       "ats": "workday",
+      "scanned": 56,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 49,
+        "warehouse/ops title": 2,
+        "plant process engineering": 1,
+        "off-target function": 4
+      }
     },
     {
       "company": "Tyson Foods",
       "ats": "workday",
+      "scanned": 20,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Constellation Brands",
       "ats": "workday",
+      "scanned": 29,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 26,
+        "off-target function": 3
+      }
     },
     {
       "company": "Target",
       "ats": "workday",
+      "scanned": 51,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 48,
+        "warehouse/ops title": 2,
+        "off-target function": 1
+      }
     },
     {
       "company": "CHEP",
       "ats": "workday",
+      "scanned": 21,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 19,
+        "off-target function": 2
+      }
     },
     {
       "company": "Thermo Fisher Scientific",
       "ats": "workday",
-      "fetched": 7,
-      "kept": 4
+      "scanned": 543,
+      "classifierPass": 8,
+      "kept": 5,
+      "fetched": 8,
+      "classifierDrops": {
+        "not a packaging role": 492,
+        "warehouse/ops title": 8,
+        "off-target function": 33,
+        "semiconductor/electronics packaging": 2
+      }
     },
     {
       "company": "BD",
       "ats": "workday",
+      "scanned": 89,
+      "classifierPass": 2,
+      "kept": 2,
       "fetched": 2,
-      "kept": 2
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "not a packaging role": 79,
+        "plant process engineering": 1,
+        "off-target function": 3
+      }
     },
     {
       "company": "The Hershey Company",
       "ats": "successfactors",
+      "scanned": 30,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1,
+        "off-target function": 2
+      }
     },
     {
       "company": "Eastman",
       "ats": "successfactors",
+      "scanned": 35,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 31,
+        "off-target function": 1,
+        "plant process engineering": 2
+      }
     },
     {
       "company": "Molson Coors",
       "ats": "successfactors",
+      "scanned": 30,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1,
+        "off-target function": 2
+      }
     },
     {
       "company": "Reckitt",
       "ats": "successfactors",
-      "fetched": 2,
-      "kept": 0
+      "scanned": 31,
+      "classifierPass": 1,
+      "kept": 0,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 26,
+        "semiconductor/electronics packaging": 1,
+        "off-target function": 1,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "E&J Gallo",
       "ats": "successfactors",
+      "scanned": 28,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 24,
+        "off-target function": 2,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
+      "scanned": 34,
+      "classifierPass": 2,
+      "kept": 1,
       "fetched": 2,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 28,
+        "off-target function": 4
+      }
     },
     {
       "company": "Perrigo",
       "ats": "successfactors",
+      "scanned": 28,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 27,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Edwards Lifesciences",
       "ats": "workday",
+      "scanned": 39,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 34,
+        "off-target function": 4
+      }
     },
     {
       "company": "Medtronic",
       "ats": "workday",
+      "scanned": 78,
+      "classifierPass": 1,
+      "kept": 1,
       "fetched": 1,
-      "kept": 1
+      "classifierDrops": {
+        "off-target function": 5,
+        "not a packaging role": 71,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
+      "scanned": 364,
+      "classifierPass": 3,
+      "kept": 1,
       "fetched": 3,
-      "kept": 1
+      "classifierDrops": {
+        "not a packaging role": 215,
+        "off-target function": 142,
+        "plant process engineering": 2,
+        "semiconductor/electronics packaging": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Sargento",
       "ats": "phenom",
+      "scanned": 41,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 32,
+        "off-target function": 7,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "GSK",
       "ats": "workday",
+      "scanned": 11,
+      "classifierPass": 0,
+      "kept": 0,
       "fetched": 0,
-      "kept": 0
+      "classifierDrops": {
+        "not a packaging role": 11
+      }
     }
   ]
 }

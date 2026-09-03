@@ -62,8 +62,31 @@ resilience** roles at regulated employers. Drop:
 Descriptions are normalized to plain text: HTML entities decoded, section
 headings split, lists preserved. Do not store raw ATS HTML.
 
-## Analytics (planned)
+## Analytics
 
 Ingest metrics for marketing and infographic copy — raw ATS scan counts,
 classifier drop reasons, and weekly snapshots — are specified in
 [`docs/ingest-analytics-plan.md`](../docs/ingest-analytics-plan.md).
+
+After ingest, `data/{vertical}/jobs.json` includes:
+
+```ts
+stats: {
+  scanned: number;          // unique ATS postings seen before classification
+  classifierPass: number;   // postings that passed title classifier
+  kept: number;             // listed on board after US filter + dedup
+  classifierDrops: Record<string, number>;
+}
+```
+
+Per-employer `reports[]` rows mirror the same fields (`scanned`,
+`classifierPass`, `kept`, `classifierDrops`). `fetched` remains as a deprecated
+alias for `classifierPass`.
+
+Weekly history is appended to `data/{vertical}/snapshots.json` (last 52 runs).
+Export marketing-ready rollups:
+
+```bash
+node scripts/export-ingest-stats.mjs
+node scripts/export-ingest-stats.mjs packaging
+```

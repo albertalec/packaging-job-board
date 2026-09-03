@@ -1,5 +1,6 @@
 import { BROWSER_HEADERS, stripHtml, toJob } from "../classify.ts";
-import type { Company, NormalizedJob } from "../types.ts";
+import { IngestStats, type IngestResult } from "../stats.ts";
+import type { Company } from "../types.ts";
 
 type AmazonJob = {
   id_icims?: string;
@@ -20,10 +21,11 @@ function parsePosted(value?: string): string | null {
   return Number.isNaN(parsed) ? value : new Date(parsed).toISOString();
 }
 
-export async function ingestAmazon(company: Company): Promise<NormalizedJob[]> {
+export async function ingestAmazon(company: Company): Promise<IngestResult> {
   const query = encodeURIComponent(company.searchText ?? "packaging engineer");
   const country = company.country ? `&country=${company.country}` : "";
-  const jobs: NormalizedJob[] = [];
+  const stats = new IngestStats();
+  const jobs = [];
   const pageSize = 20;
   let offset = 0;
   let hits = Infinity;
@@ -35,24 +37,25 @@ export async function ingestAmazon(company: Company): Promise<NormalizedJob[]> {
     const data = (await res.json()) as { hits?: number; jobs?: AmazonJob[] };
     hits = data.hits ?? 0;
     for (const job of data.jobs ?? []) {
-      const sourceId = job.id_icims || job.id || job.title || "";
+      const sourceId = String(job.id_icims || job.id || job.title || "");
+      stats.recordScan(sourceId);
       const path = job.job_path ?? "";
       const applyUrl = path.startsWith("http")
         ? path
         : `https://www.amazon.jobs${path}`;
       const normalized = toJob(company, {
-        sourceId: String(sourceId),
+        sourceId,
         title: job.title ?? "",
         department: job.job_family || job.job_category || null,
         location: job.normalized_location || job.location || "",
         postedAt: parsePosted(job.posted_date),
         applyUrl,
         description: stripHtml(job.description ?? ""),
-      });
+      }, stats);
       if (normalized) jobs.push(normalized);
     }
     if (!(data.jobs ?? []).length) break;
     offset += pageSize;
   }
-  return jobs;
+  return { jobs, stats: stats.summary() };
 }
