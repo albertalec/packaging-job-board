@@ -279,18 +279,28 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 | Added PNC Financial Services | `companies.ts` | +5 on-wedge roles |
 | Tightened bare `crisis` title match | `classify-businesscontinuity.ts` | Drops behavioral-health crisis hub roles |
 | Removed Airbus | `companies.ts` | Less field-EM noise |
-| Truist deferred | — | Workday API returns HTTP 500 to Node `fetch` (curl OK); needs connector investigation |
+| Truist curl fallback | `ingest/workday-http.ts` | Fixed Workday HTTP 500 on Node `fetch` (Phase B) |
 
 **P0 blockers for next wave:** JPMorgan/Goldman Sachs (Oracle Recruiting Cloud), UnitedHealth (Taleo), Kaiser (`kaiserpermanentejobs.org`) — require new connectors or manual employer verification.
 
 ### Phase B — sustain density (50+ roles)
 
-- [ ] **B1** Complete Wave 4 P1 finance (PNC, Truist, Schwab, BlackRock, Fidelity)
-- [ ] **B2** Complete Wave 5 P1 insurers (MetLife, Chubb, Zurich, Liberty Mutual)
-- [ ] **B3** Add Wave 6 P0–P1 health systems (HCA, Ascension, Mayo)
-- [ ] **B4** Add Wave 7 utilities (Southern, Exelon, Dominion)
-- [ ] **B5** Add Wave 8 credit unions (PenFed, Alliant)
-- [ ] **B6** Implement ingest analytics Phase A ([`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md)) — scanned / drop reasons
+- [x] **B1** Complete Wave 4 P1 finance: Truist (+4), Regions Bank (+1) — Schwab/BlackRock/Fidelity lack public Workday BCM hits
+- [ ] **B2** Complete Wave 5 P1 insurers (MetLife, Chubb, Zurich, Liberty Mutual) — **blocked:** careers sites not on Workday CXS API
+- [ ] **B3** Add Wave 6 P0–P1 health systems (HCA, Ascension, Mayo) — HCA search returns clinical false positives; no connector for Kaiser
+- [ ] **B4** Add Wave 7 utilities (Southern, Exelon, Dominion) — Workday POST 422 without session; no US BCM hits in curl probes
+- [ ] **B5** Add Wave 8 credit unions (PenFed, Alliant) — PenFed not on UltiPro/Oracle public API; Navy Federal Oracle returns 0
+- [x] **B6** Ingest analytics Phase A — merged from `main` ([`ingest/stats.ts`](ingest/stats.ts), snapshots, export script)
+
+### Phase B implementation notes (2026-09-02)
+
+| Change | Effect |
+| --- | --- |
+| `ingest/workday-http.ts` curl fallback on HTTP 500 | Fixed Truist ingest (Node `fetch` rejected; curl succeeds) |
+| Added Truist, Regions Bank | +5 listed roles (Enterprise Resilience Officer, Business Resilience Engineer) |
+| **Inventory** | **43 listed** (was 38 post–Phase A) — **7 short of 50+ SEO floor** |
+
+**Next employers to unblock 50+:** insurers on non-Workday ATS (Taleo/Oracle), health systems with EMBC titles, or additional regional banks when roles are posted US-only.
 
 ### Phase C — optimize funnel
 
@@ -330,7 +340,7 @@ npm test -- ingest/classify-businesscontinuity.test.ts
 | Milestone | Target | Status |
 | --- | --- | --- |
 | Launch gate | ≥30 on-wedge listed | **38** ✓ |
-| Credible SEO floor | ≥50 on-wedge listed | 38 — Wave B next |
+| Credible SEO floor | ≥50 on-wedge listed | 43 — Wave B in progress (7 short) |
 | Employer hit rate | ≥50% of wired with ≥1 kept | 40% |
 | Wedge density | ≥60% of listed are rank-3 titles | TBD — manual sample |
 | Sector balance | Finance + healthcare + insurance all represented | Yes (thin insurance) |
