@@ -15,6 +15,7 @@ import { ingestAshby } from "./sources/ashby.ts";
 import { ingestGreenhouse } from "./sources/greenhouse.ts";
 import { ingestLever } from "./sources/lever.ts";
 import { ingestOracle } from "./sources/oracle.ts";
+import { ingestTalentBrew } from "./sources/talentbrew.ts";
 import { ingestPhenom } from "./sources/phenom.ts";
 import { ingestSmartRecruiters } from "./sources/smartrecruiters.ts";
 import { ingestSuccessFactors } from "./sources/successfactors.ts";
@@ -67,6 +68,8 @@ async function ingestCompany(company: Company) {
       return ingestPhenom(company);
     case "oracle":
       return ingestOracle(company);
+    case "talentbrew":
+      return ingestTalentBrew(company);
     case "successfactors":
       return ingestSuccessFactors(company);
     case "teamtailor":

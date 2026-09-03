@@ -266,7 +266,7 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 - [x] **A1** Wave 0 repairs: `country: "USA"` on TD Bank, BMO; removed Airbus (global field-EM noise)
 - [x] **A2** Expand `DR_QUERIES` with Wave A keywords (§3)
 - [x] **A3** Add Wave 4 P0 finance: PNC (JPM/Goldman use Oracle — no public keyword API hits; deferred)
-- [ ] **A4** Add Wave 5 P0 payers: UnitedHealth/Optum (Taleo), Kaiser (custom) — **blocked:** no connector
+- [ ] **A4** Add Wave 5 P0 payers: UnitedHealth/Optum (TalentBrew/Taleo), Kaiser (custom) — Kaiser still blocked
 - [x] **A5** Run full ingest; confirm **≥30 listed** on-wedge roles → **38 listed** (2026-09-02)
 - [x] **A6** Spot-check homepage sort: tier-3 BCM/DR titles above generic risk (`rank.test.ts` passes)
 
@@ -281,7 +281,7 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 | Removed Airbus | `companies.ts` | Less field-EM noise |
 | Truist curl fallback | `ingest/workday-http.ts` | Fixed Workday HTTP 500 on Node `fetch` (Phase B) |
 
-**P0 blockers for next wave:** JPMorgan/Goldman Sachs (Oracle Recruiting Cloud), UnitedHealth (Taleo), Kaiser (`kaiserpermanentejobs.org`) — require new connectors or manual employer verification.
+**P0 blockers for next wave:** Kaiser (`kaiserpermanentejobs.org`) — custom connector still needed. JPMorgan/Goldman wired via Oracle CE; UnitedHealth via TalentBrew (Taleo-backed careers site).
 
 ### Phase B — sustain density (50+ roles)
 
@@ -298,9 +298,9 @@ Ordered by **impact ÷ effort**. Check off in PRs tied to ingest commits.
 | --- | --- |
 | `ingest/workday-http.ts` curl fallback on HTTP 500 | Fixed Truist ingest (Node `fetch` rejected; curl succeeds) |
 | Added Truist, Regions Bank | +5 listed roles (Enterprise Resilience Officer, Business Resilience Engineer) |
-| **Inventory** | **43 listed** (was 38 post–Phase A) — **7 short of 50+ SEO floor** |
+| **Inventory** | **53 listed** (was 43) — cleared **50+ SEO floor** |
 
-**Next employers to unblock 50+:** insurers on non-Workday ATS (Taleo/Oracle), health systems with EMBC titles, or additional regional banks when roles are posted US-only.
+**Track B (Oracle + TalentBrew):** `ingest/sources/talentbrew.ts` for UnitedHealth (Radancy TalentBrew front-end on Taleo); JPMorgan Chase + Goldman Sachs on existing Oracle CE connector with JD detail fetch.
 
 ### Phase C — optimize funnel
 
@@ -340,7 +340,7 @@ npm test -- ingest/classify-businesscontinuity.test.ts
 | Milestone | Target | Status |
 | --- | --- | --- |
 | Launch gate | ≥30 on-wedge listed | **38** ✓ |
-| Credible SEO floor | ≥50 on-wedge listed | 43 — Wave B in progress (7 short) |
+| Credible SEO floor | ≥50 on-wedge listed | **53** ✓ (Track B: JPM +8, Goldman +1, UHG +1) |
 | Employer hit rate | ≥50% of wired with ≥1 kept | 40% |
 | Wedge density | ≥60% of listed are rank-3 titles | TBD — manual sample |
 | Sector balance | Finance + healthcare + insurance all represented | Yes (thin insurance) |

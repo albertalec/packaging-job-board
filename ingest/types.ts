@@ -19,6 +19,7 @@ export type Ats =
   | "smartrecruiters"
   | "teamtailor"
   | "oracle"
+  | "talentbrew"
   | "cws"
   | "jibe"
   | "ultipro";
