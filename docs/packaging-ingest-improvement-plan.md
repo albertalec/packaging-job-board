@@ -1,8 +1,8 @@
 # Packaging ingest improvement plan
 
-**Status:** Phase 3c in progress — Kraft Heinz (Eightfold) + Ingredion (Workday); ADM BrassRing blocked  
+**Status:** Phase 3c complete — Kraft Heinz (Eightfold) + Ingredion (Workday); ADM BrassRing blocked  
 **Baseline (2026-09-01 ingest):** 49 live roles · 73 classifier-pass · 57 wired employers · 21 with listings  
-**Current (2026-09-03):** 61 listed · 62 wired · 29 with listings · Phase 0 analytics live  
+**Current (2026-09-03):** 78 listed · 64 wired · 31 with listings · Phase 0 analytics live  
 **Classifier:** `ingest/classify.ts` · **Employer list:** `ingest/verticals/packaging/companies.ts`  
 **Related:** [`docs/ingest-analytics-plan.md`](ingest-analytics-plan.md) · [`PLAN.md`](../PLAN.md) §3
 
@@ -186,8 +186,8 @@ Amway, Altria, LiDestri, Wegmans, Wonderful Company, Driscoll's.
 
 | Employer | ATS | Listed | Notes |
 | --- | --- | ---: | --- |
-| **Kraft Heinz** | Eightfold PCSX | TBD | `/api/pcsx/search?domain=kraftheinz.com`; packaging R&D Glenview/Warrendale |
-| **Ingredion** | Workday | TBD | `ingredion.wd1.myworkdayjobs.com/IngredionCareers` |
+| **Kraft Heinz** | Eightfold PCSX | 16 | `/api/pcsx/search?domain=kraftheinz.com`; Glenview/Warrendale packaging R&D |
+| **Ingredion** | Workday | 1 | Principal Packaging Engineer (Indianapolis) |
 
 **Next CPG targets (not yet wired):** ADM (BrassRing — MatchedJobs 500 from ingest VM), Danone (iCIMS), Perdue, Bel Brands, Ste Michelle Wine Estates.
 
