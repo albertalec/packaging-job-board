@@ -12,6 +12,7 @@
     "social:linkedin-draft": "tsx scripts/social-linkedin-draft-run.mjs",
     "brand:export": "node scripts/export-brand-assets.mjs",
     "export:linkedin-employers": "node scripts/export-linkedin-employers.mjs",
+    "mark:linkedin-followed": "node scripts/mark-linkedin-followed.mjs",
     "lookup:linkedin-companies": "node scripts/lookup-linkedin-companies.mjs",
     "check:bimi": "node scripts/check-bimi-dns.mjs",
     "apply:bimi-dns": "node scripts/apply-bimi-dns-vercel.mjs --apply",

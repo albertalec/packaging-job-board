@@ -41,6 +41,8 @@ export type Company = {
   orgId?: string;
   refNum?: string;
   facets?: string[];
+  /** Official LinkedIn company page URL when curated (follow workflow). */
+  linkedinUrl?: string;
 };
 
 export type NormalizedJob = {

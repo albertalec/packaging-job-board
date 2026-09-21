@@ -1,0 +1,26 @@
+company,slug,career_url,live_job_count,confidence,linkedin_url,follow_status,follow_session,notes
+Menasha,menasha,https://menasha.wd12.myworkdayjobs.com/MenashaCorp,7,high,https://www.linkedin.com/company/menasha-corporation/,pending,1,ORBIS parent; returnable/dunnage; Neenah WI HQ
+Clorox,clorox,https://clorox.wd1.myworkdayjobs.com/Clorox,6,high,https://www.linkedin.com/company/the-clorox-company/,pending,1,Live Workday; drop packer/operator titles
+Thermo Fisher Scientific,thermo-fisher-scientific,https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers,6,high,https://www.linkedin.com/company/thermo-fisher-scientific/,pending,1,Live packaging board employer
+Conagra Brands,conagra-brands,https://conagrabrands.wd1.myworkdayjobs.com/Careers_US,4,high,https://www.linkedin.com/company/conagra-brands/,pending,1,Live Workday Careers_US; packaging engineer titles on board
+Autoliv,autoliv,https://careerunitedstates.autoliv.com/jobs,3,high,https://www.linkedin.com/company/autoliv/,pending,1,Teamtailor US board jobs.json; not Workday
+General Mills,general-mills,https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers,3,high,https://www.linkedin.com/company/general-mills/,pending,1,Host is genmills not generalmills
+Magna,magna,https://magna.wd3.myworkdayjobs.com/Magna,3,high,https://www.linkedin.com/company/magna-international/,pending,1,US/Canada auto supplier; returnable packaging engineers
+PepsiCo,pepsico,https://www.pepsicojobs.com/main,3,high,https://www.linkedin.com/company/pepsico/,pending,1,Jibe /api/jobs; unwrap jobs[].data; iCIMS apply backend
+BD,bd,https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA,2,high,https://www.linkedin.com/company/bdcompany/,pending,1,Becton Dickinson; live packaging board employer
+Edwards Lifesciences,edwards-lifesciences,https://edwards.wd5.myworkdayjobs.com/EdwardsCareers,2,high,https://www.linkedin.com/company/edwards-lifesciences/,pending,1,Live packaging board employer
+Abbott,abbott,https://abbott.wd5.myworkdayjobs.com/abbottcareers,1,high,https://www.linkedin.com/company/abbott-/,pending,2,Live packaging board employer
+Baxter,baxter,https://baxter.wd1.myworkdayjobs.com/baxter,1,high,https://www.linkedin.com/company/baxter-healthcare/,pending,2,Live packaging board employer
+Campbell's,campbell-s,https://campbellsoup.wd5.myworkdayjobs.com/ExternalCareers_GlobalSite,1,high,https://www.linkedin.com/company/campbells/,pending,2,Live Workday; drop plant operators/techs; CPG package designer
+Church & Dwight,church-and-dwight,https://churchdwight.wd1.myworkdayjobs.com/chdcareers,1,high,https://www.linkedin.com/company/church-%26-dwight-co-/,pending,2,Live Workday US site chdcareers; Princeton packaging engineers
+J.M. Smucker,j-m-smucker,https://smucker.wd5.myworkdayjobs.com/US_External_Careers,1,high,https://www.linkedin.com/company/the-j-m-smucker-company/,pending,2,Live Workday; Orrville packaging R&D
+Johnson & Johnson,johnson-and-johnson,https://jj.wd5.myworkdayjobs.com/JJ,1,high,https://www.linkedin.com/company/johnson-%26-johnson/,pending,2,Live Workday; medical/pharma package engineers
+Kenvue,kenvue,https://kenvue.wd5.myworkdayjobs.com/kenvue,1,high,https://www.linkedin.com/company/kenvue/,pending,2,Live Workday site slug kenvue
+Mars,mars,https://careers.mars.com/us/en,1,high,https://www.linkedin.com/company/mars/,pending,2,Phenom widgets; Engineer Packaging Development Franklin TN
+SC Johnson,sc-johnson,https://scj.wd5.myworkdayjobs.com/External_Career_Site,1,high,https://www.linkedin.com/company/sc-johnson/,pending,2,Live Workday; Racine packaging engineer; TalentBrew front end
+Silgan Containers,silgan-containers,https://silgancontainers.wd1.myworkdayjobs.com/silgan,1,high,https://www.linkedin.com/company/silgan-containers/,pending,2,Live Workday packaging manufacturer
+Stryker,stryker,https://stryker.wd1.myworkdayjobs.com/StrykerCareers,1,high,https://www.linkedin.com/company/stryker/,pending,3,Live packaging board employer
+The Hershey Company,the-hershey-company,https://careers.thehersheycompany.com,1,high,https://www.linkedin.com/company/the-hershey-company/,pending,3,Live packaging board employer
+Tyson Foods,tyson-foods,https://tyson.wd5.myworkdayjobs.com/Tyson,1,high,https://www.linkedin.com/company/tyson-foods/,pending,3,Live packaging board employer
+WK Kellogg Co,wk-kellogg-co,https://jobs.wkkellogg.com/us/en/search-results,1,high,https://www.linkedin.com/company/wk-kellogg-co/,pending,3,Phenom CareerConnect; Battle Creek packaging engineer
+Zimmer Biomet,zimmer-biomet,https://zimmerbiomet.wd5.myworkdayjobs.com/zimmerbiometcareers,1,high,https://www.linkedin.com/company/zimmerbiomet/,pending,3,Live packaging board employer

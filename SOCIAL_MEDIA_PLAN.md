@@ -313,41 +313,51 @@ Track qualitatively and via referrals — not vanity alone:
 
 ## 16. Employer follow workflow (internal)
 
-Follow employers on LinkedIn **manually** — automation is not available and violates LinkedIn ToS.
+Follow Packaging employers on LinkedIn **manually** — automation is not available and violates LinkedIn ToS. Use follow sessions for distribution / employer visibility; **job alerts** remain the better channel for package-development roles.
 
 ### Files & commands
 
 | Asset | Path |
 | --- | --- |
-| LinkedIn URL registry | [`data/linkedin-companies.json`](data/linkedin-companies.json) |
-| Export CSV (live board employers) | [`data/linkedin-employers.csv`](data/linkedin-employers.csv) |
+| Source of truth (URLs + status) | [`data/companies.csv`](data/companies.csv) — `linkedin_url`, `follow_status` |
+| Export CSV (Packaging) | [`data/linkedin-employers-packaging.csv`](data/linkedin-employers-packaging.csv) |
 | Interactive follow checklist | [`data/linkedin-follow-checklist.html`](data/linkedin-follow-checklist.html) |
 
 ```bash
-# Regenerate CSV + checklist — all live boards (Packaging + Resilience)
+# Regenerate Packaging export + checklist (P0 = live board employers)
 npm run export:linkedin-employers
+npm run export:linkedin-employers -- --tier=p1   # live + high-confidence ingest
+npm run export:linkedin-employers -- --tier=all
 
-# One board only
-npm run export:linkedin-employers -- --vertical=packaging
-npm run export:linkedin-employers -- --vertical=businesscontinuity
+# After a manual follow session, persist status into companies.csv
+npm run mark:linkedin-followed -- --session=1
+npm run mark:linkedin-followed -- --company="General Mills"
+npm run mark:linkedin-followed -- --company="Amazon" --status=skipped
 
-# Discover missing URLs via DuckDuckGo (does not scrape LinkedIn)
-npm run lookup:linkedin-companies -- --vertical=businesscontinuity --tier=p0 --write
-
-# Open checklist in browser
-xdg-open data/linkedin-follow-checklist.html
+# Open checklist (logged into LinkedIn)
+start data\linkedin-follow-checklist.html   # Windows
+open data/linkedin-follow-checklist.html    # Mac
 ```
 
-### How to follow
+### How to follow (3 sessions)
+
+P0 live-board employers are assigned automatically (10 / 10 / remainder):
+
+| Session | Day | Employers |
+| --- | --- | --- |
+| **1** | Day 1 | Menasha, Clorox, Thermo Fisher Scientific, Conagra Brands, Autoliv, General Mills, Magna, PepsiCo, BD, Edwards Lifesciences |
+| **2** | Day 2 | Abbott, Baxter, Campbell's, Church & Dwight, J.M. Smucker, Johnson & Johnson, Kenvue, Mars, SC Johnson, Silgan Containers |
+| **3** | Day 3 | Stryker, The Hershey Company, Tyson Foods, WK Kellogg Co, Zimmer Biomet |
 
 1. Run `npm run export:linkedin-employers`
-2. Open `data/linkedin-follow-checklist.html` in Chrome (logged into LinkedIn)
-3. Click **Open next batch (10)** — opens 10 company pages in new tabs
-4. On each LinkedIn page, click **Follow**
-5. Return to checklist → **Mark followed** for each
-6. Repeat next day until pending = 0
+2. Open `data/linkedin-follow-checklist.html` while logged into LinkedIn
+3. Filter to **Session N** → **Open next batch (10)** → click **Follow** on each tab
+4. Persist: `npm run mark:linkedin-followed -- --session=N` then re-export
+5. Repeat next day until pending = 0
 
-Batch **10–15 follows per session** to avoid LinkedIn rate limits.
+Batch **10 follows per session** to avoid LinkedIn rate limits.
+
+`follow_status` values: `pending` · `followed` · `skipped` · `no_page`
 
 ---
 
