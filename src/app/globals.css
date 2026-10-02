@@ -1423,7 +1423,7 @@ html[data-vertical="hub"] .hub-employers-grid {
   margin: 0 0 48px;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 
