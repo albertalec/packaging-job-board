@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { packaging } from "@config/packaging";
-import { LogoMark } from "@/components/LogoMark";
+import { verticals } from "@config/tenants";
 import { loadJobs } from "@/lib/jobs";
 import { buildPageMetadata } from "@/lib/seo";
 import { formatUsd, getRequestTenant, verticalPublicOrigin } from "@/lib/tenant";
@@ -24,12 +23,24 @@ export default async function EmployersPage() {
   const tenant = await getRequestTenant();
   if (tenant.kind !== "hub") notFound();
 
-  const packagingOrigin = await verticalPublicOrigin("packaging");
-  const price = formatUsd(packaging.sponsor.priceCents);
-  const packagingLabel = packaging.brand.hubLabel ?? "Packaging";
-  const jobs = loadJobs("packaging");
-  const employers = new Set(jobs.jobs.map((job) => job.company)).size;
-  const duration = packaging.sponsor.durationDays;
+  const liveBoards = await Promise.all(
+    verticals.map(async (vertical) => {
+      const jobs = loadJobs(vertical.id);
+      const employers = new Set(jobs.jobs.map((job) => job.company)).size;
+      const origin = await verticalPublicOrigin(vertical.id);
+      return {
+        id: vertical.id,
+        label: vertical.brand.hubLabel ?? vertical.brand.markLine1,
+        contrast: vertical.copy.contrast,
+        total: jobs.total,
+        employers,
+        price: formatUsd(vertical.sponsor.priceCents),
+        duration: vertical.sponsor.durationDays,
+        sponsorHref: `${origin}/sponsor`,
+        boardHref: origin,
+      };
+    }),
+  );
 
   return (
     <div className="hub-shell hub-employers">
@@ -38,31 +49,19 @@ export default async function EmployersPage() {
           <p className="hub-employers-kicker">For employers</p>
           <h1>Pin the listing you already have.</h1>
           <p className="lede">
-            One pin, one board, the audience that actually matches the role.
-            Candidates finish on your Workday or Greenhouse — we don&apos;t take
-            the application.
+            One pin, one specialty board, the audience that actually matches the
+            role. Candidates finish on your Workday or Greenhouse — we
+            don&apos;t take the application.
           </p>
           <div className="hub-hero-actions">
-            <a
-              className="hub-btn hub-btn-amber"
-              href={`${packagingOrigin}/sponsor`}
-            >
-              Pin on {packagingLabel} — {price}
+            <a className="hub-btn hub-btn-amber" href="#boards">
+              Choose a board
             </a>
             <Link className="hub-btn hub-btn-ghost" href="/niches">
               Browse live boards
             </Link>
           </div>
         </div>
-        <aside className="hub-price-panel" aria-label="Pricing">
-          <p className="hub-price-kicker">One pin</p>
-          <p className="hub-price-amount">{price}</p>
-          <p className="hub-price-body">
-            {duration === 30 ? "Thirty" : duration} days on one live board. Not a
-            second posting workflow — the listing you already wrote, in front of
-            the people who wrote the spec.
-          </p>
-        </aside>
       </section>
 
       <ul className="hub-employers-grid">
@@ -76,47 +75,70 @@ export default async function EmployersPage() {
         <li className="hub-employers-card">
           <p className="hub-employers-card-title">Scoped to one board</p>
           <p className="hub-employers-card-body">
-            A pin on {packagingLabel} appears on {packagingLabel}. It doesn&apos;t
-            leak across the network.
+            A pin appears on the board you choose. It doesn&apos;t leak across
+            the network.
           </p>
         </li>
         <li className="hub-employers-card">
-          <p className="hub-employers-card-title">Thirty days, one checkout</p>
+          <p className="hub-employers-card-title">Flat checkout</p>
           <p className="hub-employers-card-body">
-            {price} flat. One Stripe checkout, one invoice, no seat count and no
-            annual contract.
-          </p>
-        </li>
-        <li className="hub-employers-card hub-employers-card-muted">
-          <p className="hub-employers-card-title">
-            Bundles, once board two is live
-          </p>
-          <p className="hub-employers-card-body">
-            Dual-vertical and network pins come next. Hiring across more than one
-            niche already?{" "}
-            <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>
+            One Stripe checkout per pin, one invoice, no seat count and no annual
+            contract. Price is set per board.
           </p>
         </li>
       </ul>
 
+      <section className="hub-employers-boards" id="boards">
+        <h2 className="hub-section-head">Live boards</h2>
+        <p className="hub-section-intro">
+          Pick the specialty board that reaches the role you are hiring. Pin
+          price and duration are listed per board.
+        </p>
+        <ul className="hub-employers-boards-grid">
+          {liveBoards.map((board) => (
+            <li key={board.id} className="hub-employers-board-card">
+              <div className="hub-employers-board-copy">
+                <p className="hub-employers-board-label">{board.label}</p>
+                <p className="hub-employers-board-contrast">{board.contrast}</p>
+                <p className="hub-employers-board-meta">
+                  {board.total} roles · {board.employers} employers · refreshed
+                  daily
+                </p>
+              </div>
+              <div className="hub-employers-board-price">
+                <p className="hub-employers-board-amount">{board.price}</p>
+                <p className="hub-employers-board-duration">
+                  {board.duration === 30 ? "Thirty" : board.duration} days
+                </p>
+              </div>
+              <div className="hub-employers-board-actions">
+                <a
+                  className="hub-btn hub-btn-amber"
+                  href={board.sponsorHref}
+                >
+                  Pin on {board.label}
+                </a>
+                <a className="hub-employers-board-browse" href={board.boardHref}>
+                  Browse {board.label} →
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <div className="hub-employers-cta">
         <div className="hub-employers-cta-copy">
-          <LogoMark variant="avatar" size={40} />
           <div>
             <p className="hub-employers-cta-title">
-              {packagingLabel} is live now
+              Hiring across more than one board?
             </p>
             <p className="hub-employers-cta-meta">
-              {jobs.total} roles, {employers} employers, refreshed daily.
+              Talk dual pins — we can coordinate sponsorship across live boards.{" "}
+              <a href={`mailto:${tenant.contactEmail}`}>{tenant.contactEmail}</a>
             </p>
           </div>
         </div>
-        <a
-          className="hub-btn hub-btn-primary"
-          href={`${packagingOrigin}/sponsor`}
-        >
-          Pin a listing
-        </a>
       </div>
     </div>
   );
