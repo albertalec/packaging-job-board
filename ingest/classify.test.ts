@@ -72,6 +72,8 @@ const DROP = [
   "Night Shift Finishing Operator",
   "Plant Electrician",
   "Application Packaging Engineer",
+  "Senior Systems Engineer – Sensor Packaging and Placement",
+  "Sensor Packaging Engineer",
   "Process Lead - Packaging",
   "Packaging Operator",
   "Manager Packaging Production",

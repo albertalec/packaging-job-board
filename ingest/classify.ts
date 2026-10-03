@@ -61,8 +61,12 @@ export function classifyJob(input: {
   ) {
     return { keep: false, reason: "software/electronics packaging" };
   }
+  // Automotive/AV "sensor packaging", electronics "mechanical packaging", etc. —
+  // hardware integration, not package development / container design.
   if (
-    /\bmechanical packaging\b/i.test(input.title) &&
+    /\b(mechanical packaging|sensor packaging|sensor placement|hardware packaging)\b/i.test(
+      input.title,
+    ) &&
     !/\b(returnable|dunnage|container|corrugat)\b/i.test(input.title)
   ) {
     return { keep: false, reason: "electronics/mechanical packaging" };
@@ -94,7 +98,7 @@ export function classifyJob(input: {
   if (
     AMBIGUOUS_PACKAGING.test(input.title) &&
     CORE_FUNCTION.test(input.title) &&
-    !/\b(fulfillment|electronics|avionics|ic\/soc|optical|optics|operator|technician|cloud hardware)\b/i.test(
+    !/\b(fulfillment|electronics|avionics|ic\/soc|optical|optics|operator|technician|cloud hardware|sensor)\b/i.test(
       input.title,
     )
   ) {
