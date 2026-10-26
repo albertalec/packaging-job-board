@@ -1,18 +1,18 @@
 {
-  "ingestedAt": "2026-10-25T15:44:24.736Z",
-  "total": 44,
+  "ingestedAt": "2026-10-26T18:27:10.145Z",
+  "total": 45,
   "stats": {
-    "scanned": 4073,
-    "classifierPass": 67,
-    "kept": 44,
+    "scanned": 4068,
+    "classifierPass": 70,
+    "kept": 45,
     "classifierDrops": {
-      "not a packaging role": 3189,
-      "warehouse/ops title": 184,
-      "plant process engineering": 40,
-      "off-target function": 572,
-      "semiconductor/electronics packaging": 17,
-      "electronics/mechanical packaging": 3,
-      "packaging as commodity/category scope": 1
+      "not a packaging role": 3167,
+      "warehouse/ops title": 191,
+      "plant process engineering": 39,
+      "off-target function": 580,
+      "semiconductor/electronics packaging": 18,
+      "packaging as commodity/category scope": 1,
+      "electronics/mechanical packaging": 2
     }
   },
   "jobs": [
@@ -99,7 +99,7 @@
       "location": "North America, United States, Pennsylvania, Fort Washington, United States of America",
       "state": "PA",
       "remote": true,
-      "postedAt": "Posted 25 Days Ago",
+      "postedAt": "Posted 26 Days Ago",
       "applyUrl": "https://kenvue.wd5.myworkdayjobs.com/kenvue/job/North-America-United-States-Pennsylvania-Fort-Washington/Technical-Operations-Packaging-Co-Op_2607048899W",
       "description": "Kenvue is currently recruiting for a:\n\nTech Ops Package Dev Co-Op Spring\n\nWhat we do\n\nAt Kenvue , we realize the extraordinary power of everyday care. Built on over a century of heritage and rooted in science, we’re the house of iconic brands - including NEUTROGENA®, AVEENO®, TYLENOL®, LISTERINE®, JOHNSON’S® and BAND-AID® that you already know and love. Science is our passion; care is our talent.\n\nWho We Are\n\nOur global team is ~ 22,000 brilliant people with a workplace culture where every voice matters, and every contribution is appreciated. We are passionate about insights, innovation and committed to delivering the best products to our customers. With expertise and empathy, being a Kenvuer means having the power to impact millions of people every day. We put people first, care fiercely, earn trust with science and solve with courage – and have brilliant opportunities waiting for you! Join us in shaping our future–and yours. For more information , click here .\n\nRole reports to:\n\nPrincipal Engineer Package Development\n\nLocation:\n\nNorth America, United States, Pennsylvania, Fort Washington\n\nWork Location:\n\nHybrid\n\nWhat you will do\n\nTechnical Operations Package Development Engineer Co-Op January – June 2027\n\nThis position reports into Technical Operations Principal Engineer, Package Development and is based at Fort Washington, Pennsylvania.\n\nThe Tech Ops Package Development Co-Op provides each student with real-life hands-on experience, coaching and mentoring, networking opportunities, as well as the opportunity to meet people from various schools throughout the country. Multi-functional collaboration provides an opportunity to partner with a variety of people in the organization and develop your leadership, analytical, and project management skills to build a strong career foundation.\n\nKey Responsibilities\n\n• Support package development activities for a broad portfolio of consumer healthcare products including OTC drugs and dietary supplements\n• Create and/or update packaging component and assembly drawings and material specifications\n• Document all packaging design, development, and testing to comply with internal processes and regulatory requirements\n• Support package development activities in Manufacturing Operations including packaging line trials\n• Interact with outside suppliers for packaging component development, evaluation, and testing\n• Recommend alternatives and solutions to resolve supply chain disruptions and emerging requirements\n\nWhat We Are Looking For\n\nRequired Qualifications\n\n• Candidates must be actively enrolled in an accredited college/university pursuing a Bachelor's or Master's degree in Packaging Engineering/Science, Material Science, Mechanical Engineering, Industrial Engineering, or related degree.\n• Minimum GPA of 2.8 is required\n• Candidates must be diligent, highly organized, and able to handle multiple tasks\n• Candidates must have the ability to work individually (independently) as well as on a team\n• Ability to demonstrate strong analytical and problem solving skills is required\n• Candidates need to be proficient with Microsoft Office, Word, Excel, and Power Point\n• Strong oral and written communication skills\n\nDesired Qualifications\n\n• Demonstrated leadership and/or participation in campus/community service activities is desired Candidates must:\n• Be available to work full-time (40 hours/week) during the co-op term\n• Be available to travel to the office. Transportation is the student's responsibility\n• Be legally authorized to work in the United States and not require sponsorship for employment visa status now or in the future (e.g. H1-B or F1 status are not eligible)\n\nWhat’s In It For You\n\n• Competitive Benefit Package\n• Paid Company Holidays, Paid Vacation, Volunteer Time & More!\n• Learning & Development Opportunities\n• Employee Resource Groups\n\nWhat’s in it for you\n\nHourly pay rate for new hires in this position ranges:\n\n$20.00 - $45.00\n\nThis takes into account a number of factors including work location, the candidate’s skills, experience, education level & other job-related factors.\n\n• Competitive Benefit Package*\n\n• Paid Company Holidays, Paid Vacation, Volunteer Time & More!\n\n• Learning & Development Opportunities\n\n• Kenvuer Impact Networks\n\n• This list could vary based on location/region\n\n*Note: Total Rewards at Kenvue include salary, bonus (if applicable) and benefits. Your Talent Access Partner will be able to share more about our total rewards offerings and the specific salary range for the relevant location(s) during the recruitment & hiring process.\n\nKenvue is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment based on merit without regard to race, color, religion, sex, sexual orientation, gender identity, age, national origin, or protected veteran status and will not be discriminated against on the basis of disability.\n\nIf you are an individual with a disability, please check our Disability Assistance page for information on how to request an accommodation.",
       "salary": null,
@@ -117,7 +117,7 @@
       "location": "Pleasanton, CA - USA, United States of America",
       "state": "CA",
       "remote": true,
-      "postedAt": "Posted 11 Days Ago",
+      "postedAt": "Posted 12 Days Ago",
       "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/Packaging-Scientist-II_JR23380",
       "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nAt Clorox, Packaging is a critical part of the consumer experience, brand equity, sustainability journey, and business growth strategy. As a Scientist II within Packaging R&D for the Cleaning Business Unit, you will develop and deliver packaging solutions that delight consumers, enable manufacturing excellence, and drive profitable growth across some of the most trusted household brands.\n\nThis role is ideal for an engineer or scientist who enjoys solving complex technical challenges, influencing cross-functional teams, and turning consumer insights into innovative packaging solutions. You'll lead packaging development initiatives from concept through commercialization, working at the intersection of consumer needs, sustainability, manufacturing, supply chain, and business strategy.\n\nAs a Scientist II, you will operate with increasing independence, often navigating ambiguity and driving solutions where design, manufacturing approaches, technical requirements, or business needs are still being defined.\n\nJoin Clorox and help shape the future of packaging for brands used in millions of homes every day. You'll have the opportunity to solve meaningful technical challenges, influence the direction of iconic brands, and create packaging innovations that deliver superior consumer experiences while advancing sustainability and business growth. If you're energized by turning ideas into products that reach store shelves and consumers' homes, we'd love to meet you.\n\nHybrid - This position will be located in our Pleasanton, CA office, and the individual will be expected to be in the office of 3 days a week.\n\nIn this role, you will:\n\nLead Packaging Development\n\n• Own packaging development projects from concept through commercialization, including design, testing, qualification, scale-up, and launch.\n• Develop primary, secondary, club, and e-commerce packaging solutions that balance consumer experience, performance, sustainability, cost, and manufacturability.\n• Drive packaging solutions for new products, line extensions, and cost savings.\nSolve Technical Challenges\n\n• Lead packaging development efforts where package design, manufacturing approaches, or technical requirements may be undefined or evolving.\n• Apply engineering and scientific principles to troubleshoot packaging, manufacturing, and supply chain challenges.\n• Assess technical risks and develop mitigation plans to deliver successful business outcomes.\nInfluence Across the Organization\n\n• Partner closely with Marketing, Product Development, Manufacturing, Supply Chain, Procurement, Quality, Regulatory, Sales, and external suppliers.\n• Effectively communicate technical recommendations and influence decisions with both technical and non-technical stakeholders.\n• Support claims, demonstrations, and business cases to help drive project alignment and decision-making.\nCommercialize with Excellence\n\n• Plan and execute laboratory testing, pilot trials, manufacturing trials, and supplier qualifications.\n• Develop specifications, test methods, packaging standards, and technical documentation necessary for launch readiness.\n• Support successful scale-up and implementation across manufacturing facilities and supplier networks.\n\nWhat we look for\n\n• Bachelor's degree in Packaging Engineering, Mechanical Engineering, Chemical Engineering, Materials Science, or a related technical discipline.\n• 3+ years of experience within consumer packaged goods (CPG) in packaging development, product development, process development, or other related technical fields.\n• Ability to travel domestic and international as needed to manufacturing sites, suppliers, testing facilities, or business meetings.\n• Familiarity with package testing methodologies, packaging specifications, and design software tools.\n• Experience working with retailers, contract manufacturers, or global supplier networks.\n#LI-Hybrid\n\nWorkplace type:\n\nHybrid - This position will be located in our Pleasanton, CA office, and the individual will be expected to be in the office of 3 days a week.\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\n[U.S.]Additional Information:\n\nAt Clorox, we champion people to be well and thrive, starting with our own people. To help make this possible, we offer comprehensive, competitive benefits that prioritize all aspects of wellbeing and provide flexibility for our teammates’ unique needs. This includes robust health plans, a market-leading 401(k) program with a company match, flexible time off benefits (including half-day summer Fridays depending on location), inclusive fertility/adoption benefits, and more.\n\nWe are committed to fair and equitable pay and are transparent with current and future teammates about our full salary ranges. We use broad salary ranges that reflect the competitive market for similar jobs, provide sufficient opportunity for growth as you gain experience and expand responsibilities, while also allowing for differentiation based on performance. Based on the breadth of our ranges, most new hires will start at Clorox in the first half of the applicable range. Your starting pay will depend on job-related factors, including relevant skills, knowledge, experience and location. The applicable salary range for every role in the U.S. is based on your work location and is aligned to one of three zones according to the cost of labor in your area.\n\n–Zone A: $90,900 - $170,100\n\n–Zone B: $83,400 - $155,900\n\n–Zone C: $75,800 - $141,700\n\nAll ranges are subject to change in the future. Your recruiter can share more about the specific salary range for your location during the hiring process.\n\nThis job is also eligible for participation in Clorox’s incentive plans, subject to the terms of the applicable plan documents and policies.\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
       "salary": null,
@@ -153,7 +153,7 @@
       "location": "Pleasanton, CA - USA, United States of America",
       "state": "CA",
       "remote": true,
-      "postedAt": "Posted 2 Days Ago",
+      "postedAt": "Posted 3 Days Ago",
       "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
       "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Research & Development organization is at the heart of our Clorox business, taking new generations of consumer products from concept to reality. With such diverse roles as engineers, scientists, mechanical designers and packaging professionals, R&D is a community of technical leaders and managers actively involved in virtually every step in the lifecycle of our products, from initial concept to raw materials to final goods on store shelves. R&D is committed to leveraging the latest technology to bring consumers the high-quality, innovative products they expect and deserve.\n\nIn this role, you will:\n\nAs a Research & Development Co-op for The Clorox Company, you will gain hands-on experience solving real world challenges for some of the most trusted brands in consumer goods. You’ll work alongside a team of scientists and engineers located in Pleasanton, California to maintain a robust pipeline of innovative products for this fast-paced, exciting, and growing business. With a variety of assignments within the Clorox offices, labs, pilot plants and manufacturing facilities – you’ll step into a role where your ideas matter and your growth is prioritized. This is a full-time position, with the expectation that you will work 40 hours per week for a 6-month period.\n\nWhat we look for\n\nJob Responsibilities May Include:\n\n• Drive Innovation: Collaborate on developing packaging solutions that enhance consumer experience and product performance.\n• Get Hands-On Experience: Conduct real-world testing (drop, vibration, ship) and support production trials to bring new packaging concepts to life.\n• Build Technical Mastery: Learn how to define and execute testing protocols, develop SOPs, and apply engineering principles to solve complex packaging challenges.\n• Own the Technical Details: Create and manage packaging specifications, including fill weights, pallet configurations, and assembly diagrams which are critical inputs for successful product launches.\n• Collaborate Across Functions: Work with cross-functional teams to interpret data, meet project objectives, and drive efficiency while managing technical risk.\n• Accelerate Your Career: Gain exposure to Clorox’s innovation pipeline, mentorship from industry experts, and a chance to contribute to projects that could shape your future career aspirations.\n\nRequired Qualifications & Skills:\n\n• Junior or Senior in Packaging Engineering (or similar field) is preferred with a min GPA of 3.0 or higher\n• Knowledge of ASTM packaging testing methods\n• Working knowledge of packaging software (ArtiosCAD and CAPE)\n• Ability to learn fast, and demonstrate strong leadership and influencing skills\n• Excellent organization skills with the ability to handle multiple projects simultaneously and effectively\n• Confident self-starter, capable of working independently and cross-functionally with minimal supervision and direction in a fast-paced environment\n\nAdditional Information\n\nThe applicable pay range for this role in the U.S. is based on your work location according to the cost of labor in your area.\n\n*$22 - $33/hr\n\nAll ranges are subject to change in the future.\n\nWorkplace type:\n\nHybrid\n\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\nBenefits we offer to help you be well and thrive:\n\n• Competitive compensation\n\n• Generous 401(k) program in the US and similar programs in international\n\n• Health benefits and programs that support both your physical and mental well-being\n\n• Flexible work environment, depending on your role\n\n• Meaningful opportunities to keep learning and growing\n\n• Half-day Fridays, depending on your location\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
       "salary": null,
@@ -171,7 +171,7 @@
       "location": "Chicago, Illinois, United States of America",
       "state": "IL",
       "remote": false,
-      "postedAt": "Posted 2 Days Ago",
+      "postedAt": "Posted 3 Days Ago",
       "applyUrl": "https://conagrabrands.wd1.myworkdayjobs.com/Careers_US/job/Chicago-Illinois/Packaging-Engineer_Req-040195",
       "description": "Reporting to the Packaging Director, you will support the execution of packaging and commercialization projects in the Grocery and Snacks pilar, primarily focusing on cost savings initiatives. You will work on a broad range of packaging, product transition, supply chain, and business continuity initiatives, partnering with cross-functional teams to deliver practical solutions that support multiple brands and manufacturing locations.\n\nA Taste of Your Responsibilities\n\n• Lead and support transition projects involving packaging changes, supplier transitions, product updates, and manufacturing network changes.\n• Coordinate packaging activities across cross-functional teams including Operations, Procurement, Brand, Finance, Product Development, and Quality.\n• Support commercialization efforts to ensure packaging solutions are implemented successfully in manufacturing facilities.\n• Execute package evaluations, plant trials, and validation activities to support business initiatives.\n• Identify opportunities for packaging improvements, cost savings, risk reduction, and supply continuity.\n• Develop, maintain, and issue packaging specifications and technical documentation.\n• Analyze data and communicate project results, recommendations, and next steps to stakeholders.\n• Assist with troubleshooting packaging-related issues and support root cause investigations.\n• Maintain strong relationships with internal and external partners across North America.\n• Monitor packaging industry developments and emerging technologies that may benefit the business.\n• Support project planning efforts and maintain awareness of budget and timeline impacts.\n\nIngredients Required for Your Success\n\n• Bachelor's degree in Packaging, Engineering, or a related field.\n• Minimum of 3 years of packaging development and project experience in consumer-packaged goods, manufacturing, packaging, commercialization, operations, or supply chain.\n• Understanding of packaging materials, packaging systems, manufacturing environments, or commercialization processes.\n• Strong project management and organizational skills with experience managing multiple priorities.\n• Strong analytical and problem-solving skills.\n• Experience collaborating across cross-functional teams and communicating effectively with diverse audiences throughout the organization.\n• Understanding of business fundamentals and cost management principles.\n• Proficiency in Microsoft Office applications.\n• Willingness to travel independently up to 30%\n\nPhysical Requirements\n\nMore information about essential tasks and the facility will be shared during the hiring process. This role may require you to be in our manufacturing facilities. When visiting these sites, the physical requirements below may apply: You may be required to walk around the facility, climb stairs/ladders, kneel, or perform repetitive tasks that require hand-eye coordination. You may be required to lift or carry materials that can vary in weight and size. This is a manufacturing environment with large, moving equipment. Noise levels can be high, and temperatures may vary.\n\nDays in Chicago office: 4\n\nRelocation assistance is available for this role, if applicable.\n\n#LI-Onsite\n#LI-Associate\n#LI-MH1\n\nCompensation\n\nPay Range:$64,000-$95,000\n\nThe annual salary listed above is the expected offering for this position. An employee’s actual annual salary will be based on but not limited to: location, relevant experience/level and skillset, while balancing internal Conagra employees’ equity. Conagra Brands will comply with applicable law regarding minimum salaries for exempt employees.\n\nOur Benefits\n\nWe care about your total well-being and will support you with the following, subject to your location and role:\n\n• Health: Comprehensive healthcare plans, wellness incentive program, mental wellbeing support and fitness reimbursement\n\n• Wealth: Great pay, bonus incentive opportunity, matching 401(k) and stock purchase plan\n\n• Growth: Career development opportunities, employee resource groups, on-demand learning and tuition reimbursement\n\n• Balance: Paid-time off, parental leave, flexible work-schedules (subject to your location and role) and volunteer opportunities\n\nOur Company\n\nAt Conagra Brands, we have a rich heritage of making great food. We aspire to have the most impactful, energized and inclusive culture in food. As a member of our 18,000+ person team across 40+ locations, you are empowered to reach your potential, make an impact and own your career. We're in the business of building champions – within our people and our iconic brands like Birds Eye®, Slim Jim® and Reddi-Wip®.\n\nOur focus on innovation extends beyond making great food, it also reflects our commitment to embracing new solutions that positively impact our team, the communities we serve and the health of our planet. Foodies Welcome.\n\nConagra Brands is an equal opportunity employer and considers qualified applicants for employment without regard to sex, race, color, religion, ethnic or national origin, gender, sexual orientation, gender identity or expression, age, pregnancy, leave status, disability, veteran status, genetic information and/or any other characteristic or status protected by national, federal, state or local law. Reasonable accommodation may be made upon request.",
       "salary": null,
@@ -189,7 +189,7 @@
       "location": "USA - NJ - Camden, United States of America",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 3 Days Ago",
+      "postedAt": "Posted 4 Days Ago",
       "applyUrl": "https://campbellsoup.wd5.myworkdayjobs.com/ExternalCareers_GlobalSite/job/USA---NJ---Camden/Packaging-Engineer_Req-68328",
       "description": "Since 1869, we've connected people through food they love. We’re proud to be stewards of amazing brands that people trust. Our portfolio includes the iconic Campbell’s brand, as well as Cape Cod, Chunky, Goldfish, Kettle Brand, Lance, Late July, Pacific Foods, Pepperidge Farm, Prego, Pace, Rao’s Homemade, Snack Factory, Snyder’s of Hanover. Swanson, and V8.\n\nHere, you will make a difference every day. You will be supported to build a rewarding career with opportunities to grow, innovate and inspire. Make history with us.\n\nWhy Campbell’s…\n\n• Benefits begin on day one and include medical, dental, short and long-term disability, AD&D, and life insurance (for individual, families, and domestic partners).\n• Employees are eligible for our matching 401(k) plan and can enroll on the first day of employment with immediate vesting.\n• Campbell’s offers unlimited sick time along with paid time off and holiday pay.\n• If in WHQ – free access to the fitness center. Access to on-site day care (operated by Bright Horizons) and company store.\n• Giving back to the communities where our employees work and live is very important to Campbell’s. Our “Campbell’s Cares” program matches employee donations and/or volunteer activity up to $1,500 annually.\n• Campbell’s has a variety of Employee Resource Groups (ERGs) to support employees.\n\nHow you will make history here...\n\nThe Packaging Engineer position has the responsibility of working closely with internal and external teams and stakeholders to identify, develop, and implement new Packaging technologies and applications for the Italian & Frozen category. This includes, primary, secondary, and tertiary packaging and will require an understanding of multiple packaging materials, configurations, and processing technologies. The role partners with cross-functional business teams, including Marketing, CCID, and Supply Chain, to evaluate new technologies and applications against the needs of consumers, the brands, and manufacturing capabilities. The role requires coordination and execution of multiple complex and multi-disciplined projects with some supervision.\n\nWhat you will do\n\n....\n\n• Identify, evaluate, and develop packaging components and systems to meet business, manufacturing, customer, and consumer needs.\n\n• Identify and drive cost savings opportunities, looking both at individual component level as well as process improvements and manufacturing efficiency gains.\n\n• Execute package testing and evaluation, including production line trials, to validate packaging performance.\n\n• Provide support to manufacturing during the implementation of commercialization activities and packaging changes.\n\n• Write technical specifications for packaging components and final package.\n\n• Review technical drawings for packaging components and participate in the packaging artwork approval process.\n\nJOB COMPLEXITY\n\n• Leads and executes multiple simultaneous packaging projects, with some supervision, while building a working knowledge of technologies. This includes projects related to sustaining business base business, cost savings, continuous quality improvements, and innovation.\n\n• Builds cross-functional relationships to identify, evaluate, develop, and deliver packaging solutions.\n\n• Establishes, maintains, and leverages external network of packaging material and equipment vendors and co-manufacturing partners to identify Packaging trends and technology developments and evaluate them against the goals of the business.\n\nWhat you bring to the table...(Must have)\n\n• Bachelor’s degree in Packaging Engineering, Mechanical Engineering, or related field required.\n\n• 2+ years of experience in packaging development roles, ideally in high-volume food, consumer goods, or retail electronics industries. Co-op and / or internship experience strongly preferred.\n\n• Highly organized with great attention to detail and able to adapt quickly to changing priorities and unexpected requests.\n\n• Must be able to travel domestically and internationally up to 25% of the time.\n\nCompensation and Benefits\n\nThe target base salary range for this full-time, salaried position is between\n\n$95,200-$130,900\n\nIndividual base pay depends on work location and additional factors such as experience, job-related skills, and relevant education or training. Total pay may include other forms of compensation. In addition, we offer competitive health, dental, 401k and wellness benefits beginning on the first day of employment. Please ask your Talent Acquisition Partner for more information about our total rewards package.\n\nThe Company is committed to providing equal opportunity for employees and qualified applicants in all aspects of the employment relationship, including consideration for employment, without regard to race, color, sex, sexual orientation, gender identity, national origin, citizenship, marital status, protected veteran status, disability, age, religion, or any other classification protected by law.",
       "salary": null,
@@ -243,7 +243,7 @@
       "location": "USA - WI - Racine, United States of America",
       "state": "WI",
       "remote": true,
-      "postedAt": "Posted 5 Days Ago",
+      "postedAt": "Posted 6 Days Ago",
       "applyUrl": "https://scj.wd5.myworkdayjobs.com/External_Career_Site/job/USA---WI---Racine/Packaging-Co-Op-Internship_34262",
       "description": "SC Johnson has been leading with purpose for 140 years, building high-quality products and iconic brands found in homes, schools and businesses in virtually every country worldwide – including OFF!®, Raid®, Glade®, Windex®, Scrubbing Bubbles®, Ziploc®, Mrs. Meyer’s Clean Day®, method®, Autan®, Baygon®, Mr Muscle®, Duck®, Lysoform® and more.\n\nThe 13,000 people of our global, fifth-generation family company are committed to making the world a better place today and for future generations.\n\nAs a Packaging Intern in our Co-Op (Cooperative Education) program at SC Johnson, you’ll be involved in strategic projects that span a variety of product categories, packaging technologies and experiences. You’ll develop skills that will prepare you for a full-time career in Packaging Engineering. Program participants are evaluated and recruited for SC Johnson’s RD&E Rotational Program after graduation.\n\nWe are currently seeking Packaging students to fill Co-Op opportunities from either June-December 2027 or January-June 2028 .\n\nYour Packaging Co-Op experience will focus on developing key skills in supporting global new product launches within multiple Research, Development & Engineering (RD&E) divisions and project work that includes identification, testing, qualification, and specification of components to meet project objectives.\n\nINTERNSHIP PERKS & BENEFITS\n\nSC Johnson’s internships offer immersive experiences for top early career talent in our various business functions through hands-on, robust project work and comprehensive training programs. Through exposure to the company’s senior leaders, coaching and mentoring programs and networking opportunities, you’ll be set up with the support you need to thrive in our family company. As part of our internship experience, you’ll be considered in the priority pipeline for full-time roles at SC Johnson after you’ve completed your degree.\n\nIn addition to the real-world experience, you’ll gain through our internships, we’re pleased to offer interns several perks which help expose you to what it’s like to be part of a team working at SC Johnson full-time:\n\n• Housing: Subsidized housing is available in Milwaukee, Racine, or Chicago, helping interns to experience living in the areas surrounding our corporate and North America headquarters. SCJ does not provide daily transportation to your work location.\n• Company Store : You’ll have access to our on-site company stores (Racine locations) to purchase SCJ products at a discount.\n• Johnson Mutual Benefits Association (JMBA) Center: Visit the hub of SCJ recreation and fitness programs in Racine for 146 acres of outdoor activities at Armstrong Park and 50,000-square-feet of indoor space including the Raymond F. Farley Aquatic Center.\n• Events: Enjoy getting to know fellow interns and networking with SCJ team members throughout the summer at events that encourage camaraderie and connection.\n• Exposure to Senior Leaders: During your internship, you’ll connect directly with senior members of the organization to gain insights, ask questions, and present your project learnings.\n• Training: We provide a formalized training program that includes topics such as SAP training, P&L training and others necessitated by the specific project(s).\n• Coaching and Mentoring: From day one, you will receive support from an experienced manager and mentor to help answer any questions you may have along the way.\n• Scholarship Opportunity : The scholarship program supports students by offering comprehensive mentorship throughout their year in college following their internship, along with a financial scholarship to support their academic journey.\n• Flexibility to participate in Summer Hours, which allows you to complete your work week by noon on Friday.\n\nREQUIRED EXPERIENCE YOU’LL BRING\n\n• Must be enrolled and seeking bachelor’s degree in Packaging Sciences, Packaging Engineering, or a related dergee with a graduation date ideally set for December 2027 – June 2029.\n• Core Packaging courses must be complete.\n• Qualified candidates must be legally authorized to work in the United States without the need for current or future sponsorship for full-time employment.\n\nPREFERRED EXPERIENCE\n\nS AND SKILLS\n\n• Strong analytical, technical, problem solving and critical thinking skills.\n• Goal-oriented, results-driven, and intellectually curious.\n• Involved and assumes leadership roles in various school activities.\n• Excellent oral and written communication skills and presentation aptitude.\n• Good working knowledge of Microsoft Office Suite (Excel, PowerPoint, Word, Outlook).\n• Ability to work independently on assignments, complete hands-on learning, prioritize work, handle a variety of tasks or requests at once.\n• Time management and organizational skills.\n\nJOB REQUIREMENTS\n\n• Full time Monday- Friday.\n• 6-month Co-Op.\n• This position is not eligible for remote work.\n\nInclusion & Diversity\n\nWe’re a global business, with people from every culture, ethnicity, race, religion, gender identity, sexual orientation, age and ability. We recognize the breadth of human experience, and we work to celebrate it. It is our goal to build a diverse, inclusive and supportive work environment where all people can thrive.\n\nWe’re committed to ongoing efforts that help us attract, hire, and retain diverse talent who want to build a positive, inclusive environment. Read more about our ongoing initiatives at https://jobs.scjohnson.com/inclusion .\n\nBetter Together\n\nAt SC Johnson, we believe people achieve their best when they collaborate and work together in person. We value connection to strengthen teamwork, accelerate problem solving, and drive innovation.\n\nEqual Opportunity Employer\n\nThe policy of the Company is to ensure equal opportunity for all qualified applicants and employees without regard to race, color, religion, gender, marital status, sexual orientation, national origin, ancestry, age, gender identity, gender expression, disability, citizenship, pregnancy, veteran status, membership in any active or reserve component of the U.S. or state military forces, genetic history or information or any other category protected by law.\n\nAccommodation Requests\n\nIf you are an individual with a disability and you need an accommodation or other assistance during the application process, please call our Human Resources department at 262-260-3343 or email your request to SCJHR@scj.com . All qualified applicants are encouraged to apply. Download the EEO Know Your Rights poster for more information.",
       "salary": null,
@@ -267,6 +267,42 @@
       "salary": null,
       "niche": "food-beverage",
       "source": "workday"
+    },
+    {
+      "id": "amazon-3a0f7ae8d9e0dd50",
+      "sourceId": "10587435",
+      "hash": "3a0f7ae8d9e0dd50",
+      "company": "Amazon",
+      "companySlug": "amazon",
+      "title": "Sr. System Development Engineer, Robotics Delivery & Packaging Innovation (RDPI)",
+      "department": "System Development Engineering",
+      "location": "Westborough, Massachusetts, USA",
+      "state": "MA",
+      "remote": false,
+      "postedAt": "2026-10-23T00:00:00.000Z",
+      "applyUrl": "https://www.amazon.jobs/en/jobs/10587435/sr-system-development-engineer-robotics-delivery-packaging-innovation-rdpi",
+      "description": "Robotics Delivery & Packaging Innovation (RDPI) Global Engineering is looking for a System Development Engineer (SysDE) to join our New Product Introduction (NPI) team. Our mission is to eliminate operational complexity at the source, ensuring every RDPI automation solution is designed for deployability, reliability, and maintainability from Day One.\n\nAs a SysDE III on the NPI team, you will embed with Hardware Development programs from the Alpha phase to influence controls and system architecture *before* solutions are built. Rather than fixing deployment and reliability problems in the field, you will design them out, shaping the automation, firmware, and integration decisions that determine how easily a solution scales across our global network. You are a technical leader who owns the controls architecture of the systems you support, decomposes ambiguous problems into clear workstreams, and partners with Hardware Development, Technical Program Managers, and the Scale and AI teams to deliver solutions that deploy themselves and run with minimal human intervention.\n\nKey job responsibilities\n- Embed with NPI programs from Alpha through GA, influencing controls and system architecture for deployability, reliability, and maintainability.\n- Design standardized hardware/software interfaces and modular, reusable control patterns that reduce integration complexity across solutions.\n- Build and validate automation and commissioning frameworks (CI/CD for controls code, automated configuration validation, emulators) in partnership with the Scale team.\n- Lead reviews of architecture, design, and operations for your solutions, and contribute to reviews of partner-team systems.\n- Partner with Hardware Development, TPMs, and the AI team to incorporate self-service deployment and predictive capabilities into solutions from inception.\n- Mentor engineers, set engineering and operational excellence standards for the team, and contribute to the Operational Planning (OP) process.\n\nA day in the life\nYou work across industrial control platforms (Codesys, Allen-Bradley, Siemens, Beckhoff) and the networked field devices, firmware, and cloud/WMS interfaces. You architect the controls software for a new solution, design reusable control patterns and contribute it to our libraries, write and review structured-text and automation-tooling code, and partner with Hardware to shape a system before it's built. Lead design reviews that surface architectural and scalability risks early, and prototype frameworks, emulators, automated validation, CI/CD for controls code that become the foundation future solutions are built on. You build and engineer solutions that are correct by design.",
+      "salary": null,
+      "niche": "industrial",
+      "source": "amazon"
+    },
+    {
+      "id": "autoliv-508bca4710ac964d",
+      "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
+      "hash": "508bca4710ac964d",
+      "company": "Autoliv",
+      "companySlug": "autoliv",
+      "title": "Packaging Lead Engineer",
+      "department": null,
+      "location": "Ogden, Autoliv Americas - AAM, 84401, US",
+      "state": "UT",
+      "remote": false,
+      "postedAt": "2026-02-10T16:37:28-05:00",
+      "applyUrl": "https://careerunitedstates.autoliv.com/jobs/7208186-packaging-lead-engineer",
+      "description": "Packaging Lead Engineer\n\nIn this role you will be responsible for setting up the enterprise packaging strategy and technology roadmap while leading a group of engineers.\n\nDevelop, implement, and maintain comprehensive process standards and documentation to support all end-to-end packaging business and engineering workflows.\n\nEstablish packaging standards and lead execution of automation, returnable, and expendable plans while setting the standard on how Autoliv will achieve cost, quality, and sustainability goals. Assign workload to a team of engineers for new launch.\n\nShould you be interested in overseeing these tasks and aiming for enhanced performance standards, your role will involve :\n\nWhat you'll do\n\n• Establish and maintain packaging standards for automation, returnable, and expendable execution; publish controlled specifications and playbooks\n\n• Lead governance for exceptions/waivers; chair the standards review board and manage change control (ECO/ECN)\n\n• Define common footprints and automation execution standards; align with safety/quality and sustainability requirements.\n\n• Own enterprise packaging data architecture and tools (spec/PFEP, cartonization, labeling, image vaults): governance, permissions, and data-quality SLAs.\n\n• Standardize master data (part-to-pack links, dunnage IDs, test results, sustainability attributes) and audit routines; lead training and adoption.\n\n• Select/administer cartonization and labeling systems (GS1/AIAG compliant), including template libraries and formal change control.\n\n• Set/enforce ID standards (serialization, barcode/QR/RFID), labeling, and traceability checkpoints (ship/receive scans, gate checks).\n\n• Own the portfolio/roadmap for packaging materials, formats, and automation; prioritize pilots with success criteria and scale proven solutions.\n\n• Conduct market/technology scouting; partner with suppliers/startups to mature innovations into standards.\n\n• Develop KPIs/dashboards; monitor compliance and drive corrective actions with site leaders.\n\n• Mentor regional teams; build capability via training, playbooks, and office hours\n\n• Lead and set workload for a team of packaging engineers for new model launch and serialization projects\n\nWhat is required\n\n• BS in Packaging Engineering (preferred) or ME/IE\n\n• 7–10+ years in packaging or logistics engineering, including multi-site standards/systems ownership in automotive/Tier-1 or similar high-volume manufacturing.\n\n• Hands-on with PFEP/spec databases, cartonization (TOPS/Cape or WMS-native), labeling, and GS1/AIAG compliance.\n\n• Experience integrating packaging data with ERP/PLM/WMS (e.g., SAP/Oracle; Teamcenter/Windchill); strong Excel/BI; familiarity with APIs/MDM concepts.\n\n• Working knowledge of ISTA/ASTM transit testing, load-securement, and sustainability/EPR considerations.\n\n• CAD & Packaging: SolidWorks/NX/CATIA; ArtiosCAD for corrugated/dunnage; read drawings, GD&T, basic tolerance stacks.\n\nWhat’s in it for you\n\n• Attractive compensation package\n\n• Recognition awards, company events, family events, university discount options and many more perks.\n\n• Gender Pay Equality\n\nEqual opportunity employer\n\nAutoliv is proud to be an equal opportunity employer. Autoliv does not discriminate in any aspect of employment based on race, color, religion, national origin, ancestry, gender, sexual orientation, gender identify and/or expression, age, disability, or any other characteristic protected by federal, state, or local employment discrimination laws where Autoliv does business.",
+      "salary": null,
+      "niche": "automotive",
+      "source": "teamtailor"
     },
     {
       "id": "magna-26f4715d2a04aa8c",
@@ -369,12 +405,30 @@
       "location": "ORBIS Northwood Design Center, United States of America",
       "state": null,
       "remote": false,
-      "postedAt": "Posted 20 Days Ago",
+      "postedAt": "Posted 21 Days Ago",
       "applyUrl": "https://menasha.wd12.myworkdayjobs.com/MenashaCorp/job/ORBIS-Northwood-Design-Center/Custom-Packaging-Design-Engineer-Co-Op--Fall-2027-_R12881",
       "description": "Menasha Corporation Employees, please log-in to your Workday account to apply for positions.\n\nABOUT US (AND OUR EXCITING FUTURE)\n\nMenasha Corporation is all about possibilities. Our two businesses, Menasha Packaging and ORBIS Corporation, are leaders in their industries, providing corrugated and plastic packaging products and related services to major global companies.\n\nOur employees make the difference, proving that great ideas, collaboration and quality turn possibilities into success. Working at Menasha Corporation means that your insights provide cutting-edge solutions for our customers. If you like to make things happen and are passionate about what you do, you’re going to want to be here.\n\nJoin us and become part of the power behind possible.\n\nAbout The Opportunity\n\nThe ORBIShield Custom Packaging Design Engineer Co-Op at ORBIS Corporation will support the Custom Design/Engineering Team by assisting with the creation of packaging designs and prototypes based on customer specifications. This hands-on role offers students the opportunity to learn about materials and manufacturing processes, followed by in-depth training in design. By the end of the co-op, students will be proficient in SolidWorks, capable of creating and interpreting final prints, and equipped to manage a project from concept through execution. This position will run from June 2027 to December 2027. Areas of Learning/Responsibilities\n\n• Lead and manage assigned project/projects\n\n• Provide design samples to meet the needs and wants of our customers and sales team on a timely basis\n\n• Provide cost effective and manufacturable designs from concept to production\n\n• Provide technical skill, knowledge and judgment to ensure designs meets our customer's specific needs\n\n• Ensure the quality of design prior to manufacturing by fabricating a prototype for customer approval\n\n• Suggest ways to address issues discovered during assembly and overall manufacturing\n\n• Demonstrate commitment to safety and performs job duties in accordance with company safety policies and procedures\n\n• Seeks assistance or guidance from design team members or manager when necessary\n\nQualifications\n\n• Junior or Senior pursuing a Technical or Bachelor’s degree in Plastic Engineering Technology, Packaging Engineering or other related degree\n\n• Knowledge of plastic processing, mechanical engineering, and packaging engineering\n\n• Ability to interpret blueprints\n\n• Demonstrated ability to use a computer and Design software programs (AutoCAD/Solidworks)\n\n• Strong communication skills (written and verbal)\n\n• Knowledge of automotive/vehicle products\n\n• Ability to work both independently and in a team setting in a fast paced, high-volume environment\n\n• Ability to travel to Manufacturing plants\n\n• Accuracy and attention to detail\n\nAdditional Information Regarding this Role\n\n• The incumbent who fills this role will be required to report onsite to the Greenville, SC ORBIS Corporation location.\n\n• This is a 6-month continuous co-op position which requires the student to be currently enrolled in post-secondary education at the time of employment.\n\n• We are unable to sponsor individuals for work authorization at this time for intern and co-op positions.\n\nTwo companies, one vision.\n\nMenasha Corporation consists of two companies that are leading the way to a sustainable future with packaging and supply chain solutions. Founded in 1849 and headquartered in Neenah, Wisconsin, we employ over 7,500 employees in 112 facilities in North America and Europe.\n\nOur companies are leading corrugated and plastic packaging manufacturers and supply chain solution providers. Our Menasha Packaging Company is the largest independent provider of packaging and supply chain service solutions in North America, designing, printing, and fulfilling graphic packaging, display and merchandising solutions for over 1,800 brands, both in-store and online.\n\nOur ORBIS business believes there is a better way to optimize today’s supply chains, with reusable packaging products and services. Reusable containers, pallets, dunnage, bulk systems and metal racks improve the flow product all along the supply chain to reduce costs, enhance profitability and add sustainability.\n\nOur products and services are used by global, name-brand companies in the food, beverage, health and beauty, over-the-counter pharmaceutical, industrial, automotive, and electronics industries.\n\nCome build an exciting, rewarding career with us, where you’ll have opportunities to grow.\n\nThe possibilities are endless. The power is yours!\n\nMenasha Corporation and its subsidiaries and affiliates are equal opportunity employers. All qualified applicants will be provided with equal employment opportunities without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, protected veteran status, disability status, or genetic information.",
       "salary": null,
       "niche": "automotive",
       "source": "workday"
+    },
+    {
+      "id": "hershey-f3f6b41304fc5c2f",
+      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Engineer-Packaging-PA-17033/1433969200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "f3f6b41304fc5c2f",
+      "company": "The Hershey Company",
+      "companySlug": "hershey",
+      "title": "Engineer Packaging",
+      "department": null,
+      "location": "Hershey, PA, US",
+      "state": "PA",
+      "remote": false,
+      "postedAt": "Sat, 24 Oct 2026 7:00:00 GMT",
+      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Engineer-Packaging-PA-17033/1433969200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Location: Hershey, PA\nTravel: 10-20%\n\nWhy Hershey:\n\nAt The Hershey Company, our culture is rooted in purpose and inspired by Milton Hershey’s enduring vision that business should create opportunity for others. Through our commitment to corporate philanthropy, we create positive impact by supporting communities, helping children thrive, and operating as a business for good. This includes our deep and long standing partnership with Milton Hershey School, where we invest in education, workforce readiness, and hands on engagement to help students succeed beyond the classroom. Supported by strategic grantmaking, product donations, cross brand collaboration, and strong employee volunteerism, Hershey offers a place to work where making a difference—locally and globally—is part of how we do business every day.\n\nHow will you fit in the big picture?\n\nWorking independently this role focuses on the design, development, and optimization of packaging solutions that ensure product protection, functionality, and sustainability. The position involves managing tactical plans aligned with short-term business objectives and addressing moderate to complex challenges that impact multiple teams within the division. The role requires advanced expertise in executing processes and projects related to packaging, including material selection, structural design, and compliance with industry standards and within strategic guidelines. This role requires significant cross-functional collaboration, and has increased ownership and scope acting as primary packaging support for single plant, brand or category. This role collaborates with peers to improve ways of working and share BDP's.\n\nWhat will you do?\n\n• Design Packaging Solutions - The role designs, develops, and optimizes packaging solutions\nensuring product protection, performance, and sustainability. It applies engineering knowledge to\nmeet requirements. This delivers quality packaging.\n\n• Select and Qualify Materials - The role selects and qualifies packaging materials and components\nbased on product requirements and cost. It evaluates environmental impact and manufacturing\ncapabilities. This ensures optimal selections.\n\n• Apply Manufacturing Knowledge - The role applies strong manufacturing and equipment\nknowledge to ensure packaging meets production requirements. It validates designs for\nmanufacturability. This enables efficient production.\n\n• Support Product Development - The role supports product development through packaging\nengineering expertise. It contributes to specifications and testing. This advances development\nprogress.\n\n• Document Technical Work - The role documents technical work and maintains packaging specifications. It ensures records are accurate and accessible. This supports knowledge management.\n\nMinimum Requirements\n\n• 3+ Years of Packaging Engineering experience\n\n• Product Packaging - The technology of enclosing or protecting products for distribution, storage, sale, and use. Packaging also refers to the process of design, evaluation, and production of packages.\n\n• Problem Solving - Problem Solving is a step-by-step process of defining a problem, searching for information, and testing a series of solutions until the problem is solved. In involves critical thinking, analysis and persistence.\n\n• Data Integrity - Data Integrity refers to maintaining and assuring the accuracy and consistency of data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data.\n\n• Collaboration - Collaboration is working together in a cooperative effort to achieve a common goal. It is the promotion of teamwork and the linkage of intra and interdepartmental cooperation.\n\n• Planning - Ability to anticipate resource needs and then arrange, prioritize and shape activities to meet\nobjectives.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "successfactors"
     },
     {
       "id": "pepsico-730e93dff5db03e2",
@@ -397,24 +451,6 @@
       "source": "jibe"
     },
     {
-      "id": "amazon-3a0f7ae8d9e0dd50",
-      "sourceId": "10587435",
-      "hash": "3a0f7ae8d9e0dd50",
-      "company": "Amazon",
-      "companySlug": "amazon",
-      "title": "Sr. System Development Engineer, Robotics Delivery & Packaging Innovation (RDPI)",
-      "department": "System Development Engineering",
-      "location": "Westborough, Massachusetts, USA",
-      "state": "MA",
-      "remote": false,
-      "postedAt": "2026-10-23T00:00:00.000Z",
-      "applyUrl": "https://www.amazon.jobs/en/jobs/10587435/sr-system-development-engineer-robotics-delivery-packaging-innovation-rdpi",
-      "description": "Robotics Delivery & Packaging Innovation (RDPI) Global Engineering is looking for a System Development Engineer (SysDE) to join our New Product Introduction (NPI) team. Our mission is to eliminate operational complexity at the source, ensuring every RDPI automation solution is designed for deployability, reliability, and maintainability from Day One.\n\nAs a SysDE III on the NPI team, you will embed with Hardware Development programs from the Alpha phase to influence controls and system architecture *before* solutions are built. Rather than fixing deployment and reliability problems in the field, you will design them out, shaping the automation, firmware, and integration decisions that determine how easily a solution scales across our global network. You are a technical leader who owns the controls architecture of the systems you support, decomposes ambiguous problems into clear workstreams, and partners with Hardware Development, Technical Program Managers, and the Scale and AI teams to deliver solutions that deploy themselves and run with minimal human intervention.\n\nKey job responsibilities\n- Embed with NPI programs from Alpha through GA, influencing controls and system architecture for deployability, reliability, and maintainability.\n- Design standardized hardware/software interfaces and modular, reusable control patterns that reduce integration complexity across solutions.\n- Build and validate automation and commissioning frameworks (CI/CD for controls code, automated configuration validation, emulators) in partnership with the Scale team.\n- Lead reviews of architecture, design, and operations for your solutions, and contribute to reviews of partner-team systems.\n- Partner with Hardware Development, TPMs, and the AI team to incorporate self-service deployment and predictive capabilities into solutions from inception.\n- Mentor engineers, set engineering and operational excellence standards for the team, and contribute to the Operational Planning (OP) process.\n\nA day in the life\nYou work across industrial control platforms (Codesys, Allen-Bradley, Siemens, Beckhoff) and the networked field devices, firmware, and cloud/WMS interfaces. You architect the controls software for a new solution, design reusable control patterns and contribute it to our libraries, write and review structured-text and automation-tooling code, and partner with Hardware to shape a system before it's built. Lead design reviews that surface architectural and scalability risks early, and prototype frameworks, emulators, automated validation, CI/CD for controls code that become the foundation future solutions are built on. You build and engineer solutions that are correct by design.",
-      "salary": null,
-      "niche": "industrial",
-      "source": "amazon"
-    },
-    {
       "id": "amazon-0b5124c2c94ab6ff",
       "sourceId": "10587433",
       "hash": "0b5124c2c94ab6ff",
@@ -431,6 +467,60 @@
       "salary": null,
       "niche": "industrial",
       "source": "amazon"
+    },
+    {
+      "id": "hershey-221440fedbd74bcf",
+      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "221440fedbd74bcf",
+      "company": "The Hershey Company",
+      "companySlug": "hershey",
+      "title": "Staff Packaging Systems CI Engineer",
+      "department": null,
+      "location": "Hershey, PA, US",
+      "state": "PA",
+      "remote": true,
+      "postedAt": "Fri, 23 Oct 2026 0:00:00 GMT",
+      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Location: Hershey, PA preferred, open to remote\n\nUp to 70% Travel\n\nWhy Hershey\n\nAt The Hershey Company, we make more moments of goodness through some of the world's most iconic brands, including Hershey's, Reese's, Kit Kat®, Jolly Rancher, Twizzlers, Dot's Pretzels, Lesser Evil and more. Our team supports a global portfolio of over 90 brands, creating opportunities to shape strategies and drive impact across a breadth of businesses that few companies can offer. While many organizations focus on a handful of brands, Hershey provides exposure to a diverse portfolio of category-leading brands enjoyed by consumers around the world. What truly sets us apart is our legacy. Inspired by Milton Hershey's belief that business should create opportunity for others, we have been making a positive impact for more than a century through our commitment to communities, philanthropy, and our longstanding partnership with Milton Hershey School. When you join Hershey, you become part of a company where purpose, growth, and making a difference are woven into how we do business every day.\n\nHow will you fit in the big picture?\n\nThe Staff Packaging Systems CI Engineer advances Hershey's multi-year Enterprise Continuous Improvement plan by identifying, developing, and implementing packaging-system improvements across the manufacturing network. Working independently and through cross-functional teams, you will lead complex initiatives from concept through sustainable plant handoff to improve cost, capacity, quality, safety, and supply continuity across Hershey's Global Confectionery and Salty businesses.\n\nWhat will you do?\n\n• Lead packaging-system continuous-improvement projects from opportunity identification and loss analysis through design, testing, installation, startup, commissioning, training, and performance stabilization.\n\n• Develop project scopes, specifications, schedules, cost estimates, technical recommendations, and engineering deliverables for equipment selection, modifications, and layouts.\n\n• Plan and execute proof-of-principle tests, designed experiments, scale-up activities, manufacturing trials, and feasibility assessments; translate results into practical technical and financial recommendations.\n\n• Apply Lean, Six Sigma, TPM, packaging engineering, food science, and structured problem-solving methods to identify root causes and deliver sustainable solutions.\n\n• Manage project cost, schedule, resources, risk, suppliers, and communication while partnering with Manufacturing, R&D, Engineering, Finance, Quality and Regulatory Compliance, Marketing, contractors, and equipment suppliers.\n\n• Mentor engineers and technicians, provide clear technical documentation and training, and transfer improvements successfully to plant operations and maintenance teams.\n\nMinimum Requirements\n\nEducation\n\nBachelor's degree in Mechanical Engineering or a related engineering discipline. A master's degree is welcome.\n\nExperience\n\nMinimum 5 years of relevant packaging-systems engineering, process design, project management, troubleshooting, or continuous-improvement experience in a manufacturing environment.\n\n• Demonstrated ability to lead complex packaging or manufacturing improvement projects involving multiple unit operations and cross-functional stakeholders.\n\n• Working knowledge of food-manufacturing systems, sanitary design, Good Manufacturing Practices, manufacturing validation, equipment suppliers, and plant implementation.\n\n• Six Sigma Green Belt required; Six Sigma Black Belt preferred. Working knowledge of Lean manufacturing and TPM.\n\n• Strong project planning, technical analysis, written and verbal communication, and Microsoft Office skills.\n\n• Ability to travel up to 70%, support project work outside standard hours when needed, and work in manufacturing environments with regulated food allergens while following all site safety, food-safety, and allergen-control requirements.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health begin on Day 1.\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $118,880 to $148,600 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\n#LI-MH2\n#LI-Remote",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "successfactors"
+    },
+    {
+      "id": "eastman-4b8b753d4f38448c",
+      "sourceId": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "4b8b753d4f38448c",
+      "company": "Eastman",
+      "companySlug": "eastman",
+      "title": "Packaging Engineer",
+      "department": null,
+      "location": "Kingsport, TN, US, 37660",
+      "state": "TN",
+      "remote": false,
+      "postedAt": "Thu, 22 Oct 2026 7:00:00 GMT",
+      "applyUrl": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nDescription\n\nWe are seeking a highly experienced Senior Packaging Engineer with over 5 years of experience in the design and development of film- and paper-based flexible packaging solutions. This role demands deep technical knowledge of paper substrates, coatings, and sustainable barrier technologies, combined with strategic leadership to drive innovation, cost optimization, and environmental stewardship. The successful candidate will serve as a subject matter expert, collaborating closely with R&D, marketing, sales teams, and customers to deliver high-performance, sustainable paper-based packaging that meets regulatory and market requirements. This position sits within Eastman’s technology organization and provides support for our Coatings business organization.\n\nThe position reports through the Group Leader Coatings Applications Development, located in Kingsport, TN, USA and is part of a global team.\n\nResponsibilities\n\n• Provide technical leadership and mentorship on packaging properties, converting processes (e.g., lamination, metallization, printing, filling, sealing), performance testing and application requirements specific to film and paper-based solutions.\n• Lead customer facing projects regarding the design, development, and optimization of paper-based flexible packaging structures, including multi-layer laminates incorporating paper substrates, coatings, and sustainable barrier materials.\n• Drive innovation in sustainable paper packaging by evaluating new raw materials, bio-based coatings, and recyclable/compostable barrier technologies.\n• Develop and maintain detailed packaging specifications, technical documentation, and compliance requirements tailored to paper-based flexible packaging.\n• Engage the packaging value chain to discover needs across multiple applications and prioritize opportunities for development work\n• Influence decision makers at customers to adopt new packaging solutions\n• Monitor industry trends and regulatory developments related to paper-based packaging and sustainability to inform strategic decisions.\n• Partner with marketing and business development teams to deliver new business growth\n\nQualifications\n\n• Bachelor’s degree in Packaging Engineering, Materials Science, Chemical Engineering, or related field; advanced degree preferred.\n• Minimum 5 years of industry experience in flexible packaging design and development, with both paper and film-based packaging materials and solutions.\n• Willingness and ability to travel approximately 25%, mainly within North America is required\n• Deep technical understanding of paper substrates, coatings, barrier technologies, and converting processes.\n• Understanding of packaging requirements across different food packaging applications, including considerations for barrier, shelf life, regulatory compliance, and food safety.\n• Proven expertise in packaging performance testing related to film and paper-based materials.\n• Strong knowledge of sustainability principles, recyclable and compostable packaging standards, and regulatory compliance for paper-based packaging.\n• Experience engaging multiple points along the packaging value chain is highly desired\n• Excellent written and oral communication skills\n• Project leadership experience preferred including short-term and long-term project planning and participation on cross-functional team\n• Self-motivated and able to work both independently and as a team member with both internal and external partners\n\nNote:\n\nEastman will not accept applicants for this offered position who require visa sponsorship, including those whose status is F-1 visa OPT who subsequently would require ongoing visa sponsorship.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "successfactors"
+    },
+    {
+      "id": "eastman-5b779dc4cc6e2cdd",
+      "sourceId": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "5b779dc4cc6e2cdd",
+      "company": "Eastman",
+      "companySlug": "eastman",
+      "title": "Market Development Manager - Flexible Packaging",
+      "department": null,
+      "location": "Nationwide, US",
+      "state": null,
+      "remote": false,
+      "postedAt": "Wed, 21 Oct 2026 7:00:00 GMT",
+      "applyUrl": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nRole Profile\n\nThis role will be an MDM on an innovation platform within Eastman’s CASE division. The person in this role will be responsible for the development and execution of strategies to activate brands and the value chain for coated paper articles and flexible packaging used in the food service and consumer packaged goods (CPG) industries. This role requires up to 30% travel.\n\nKey Accountabilities\n\n• Earnings: Drive variable margin gains by closing new business initiatives.\n\n• Growth: Measure growth by launch effectiveness, projected revenue from Gate 5 launches, and new business from market development and innovation.\n\n• Talent Management: Provide marketing expertise and coaching to teams and manage personal career development.\n\nThis role is open to remote candidates.\n\nResponsibilities\n\n• Contributes to the development of Addressable Market Maps and offers through segment cross-functional teams\n\n• Leads front end discovery to articulate where to play and how to win options in prioritized markets\n\n• Responsible for determining the best path for specific initiatives surfaced from market strategy work, developing the plans for execution, executing the plan (either directly or indirectly) and monitoring its effectiveness\n\n• Leads or supports growth projects as a Marketing resource by using the EBME framework to make quality strategic choices on all initiatives; assists others as needed\n\n• Establishes and tracks metrics to ensure post launch efforts are contributing to the segment’s strategy and performance; provides recommendation to Marketing leaders if changes are needed\n\n• Enters new opportunities for initiatives into Leads Management (SFDC) so that leads can be properly managed and tracked as they are passed on to Sales\n\n• Make recommendations on potential growth initiatives in the market based on market trends and insights, as well as customer discovery\n\n• Creates understanding of value of Eastman offerings vs. alternatives by developing Economic Value Estimates (EVE™)\n\n• Develops transition plans and materials as well as provides coaching to Sales and other supporting functions in preparation for a new product launch\n\n• Communicates offers that tie to initiatives; offers may be new, existing, or revised\n\n• Draw conclusions from multiple sources to create insights that support growth projects\n\n• Networks and becomes an industry expert in assigned markets\n\n• Interfaces with leverage points through the value chain to identify potential product and application opportunities\n\nQualifications\n\n• Bachelor's Degree required; MBA or advanced education in strategic marketing required\n\n• 8+ years of experience in commercial, marketing, or product management roles\n\n• 5+ years experience launching new products in relevant markets (Preferred)\n\n• 5+ years working in marketing in the paper value chain, e.g., for a paper manufacturer or a converter / manufacturer of paper articles, engaging the flexible packaging and food service markets (Preferred)\n\n• Strong business and marketing acumen\n\n• Note : Eastman will not accept applicants for this offered position who require visa sponsorship, including those whose status is F-1 visa OPT who subsequently would require ongoing visa sponsorship.\n\nThe base salary range for this position is $140,000 to $192,500.\n\nAt Eastman, we are committed to transparency and integrity in our compensation practices. Eastman includes salary ranges in some job postings to provide clear compensation information and to be compliant with state laws that require disclosure. Not all postings display ranges due to factors like location, market conditions, or position specifics. Compensation is based on qualifications and experience. Candidates are encouraged to discuss their salary questions during the interview process.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "successfactors"
     },
     {
       "id": "mars-757d841813858a0d",
@@ -625,7 +715,7 @@
       "location": "Corporate - Springdale, Arkansas, United States of America",
       "state": "AR",
       "remote": false,
-      "postedAt": "Posted 3 Days Ago",
+      "postedAt": "Posted 4 Days Ago",
       "applyUrl": "https://tysonfoods.wd5.myworkdayjobs.com/TSN/job/Corporate---Springdale-Arkansas/Packaging-Engineer-I_R0492812-1",
       "description": "Job Details:\n\nJob Summary:\n\nThe Packaging Engineer I supports the development and execution of packaging solutions that ensure product integrity, meets business needs, and delivers value to consumers. This role is responsible for assisting in packaging design, testing, implementation, and optimization projects across Tyson’s product categories. Working closely with cross-functional teams, the engineer helps drive innovation, sustainability, and cost-efficiency in packaging while gaining foundational experience in food packaging development. The individual in this role will also support Supply Chain and BU function in manufacturing packages that meet customer and consumer expectation for character, cost, and quality in assigned product category.\n\nEssential Duties and Responsibilities:\n\n• Support assigned Business Unit and cross-functional teams (R&D, Marketing, Operations, Supply Chain, Procurement) with all package development needs for new products and packaging changes.\n\n• Manage multiple packaging development, technical application, sustainability, and cost reduction projects and/or programs.\n\n• Execute packaging trials and support line testing to validate performance and manufacturability. Collect and analyze packaging performance data to recommend improvements or cost-saving opportunities. Assists with the development of technological innovation in equipment, materials, processing or package design including packaging development specifications.\n\n• Assists with the development of intellectual property for new package platforms / designs when applicable\n\n• Work as a cross functional resource with Business Units, Insights/Innovation, Supply Chain Engineering, Product Development R&D, and Procurement to develop new packaging platforms to support product innovation\n\n• Develop and maintain excellent working relationships with operations/divisional management and external customers. Collaborate with suppliers to evaluate new packaging materials, formats, or technologies.\n\n• Serve as a technical resource to the organization in at least one area of expertise. Ensure packaging solutions comply with regulatory, safety, and quality requirements.\n\nEducation\n\nBachelor's, Master’s or a PhD degree in Packaging Engineering, or a related field of study, or a significant amount of equivalent, relevant, and practical work experience, is required.\n\nWork Experience:\n\n1+ year of relevant and practical work experience is required with a Bachelor's degree; no years of experience is required with a Master's+ degree; Additionally, previous experience with food packaging is a plus\n\nSpecial/Technical Skills:\n\nGood critical thinking, problem solving skills, and project management skills.\n\nRequires basic computer skills in Microsoft Office. Familiarity with Cape, Tops, ArtiosCad, CAD, Specright, etc. is a plus.\n\nCommunication Skills:\n\nGood verbal and written communication and presentation skills required. Must have the ability to effectively communicate with cross functional business partners.\n\nSupervisory:\n\nNone\n\nTravel:\n\n12+ domestic/international trips per year.\n\nSponsorship is unavailable for this position.\n\nAll professional team members are expected to demonstrate responsible use of approved AI tools, including safeguarding sensitive information, adhering to company policies, and validating AI-generated outputs. Individual Contributors should demonstrate the ability to integrate AI into daily work, improve efficiency through AI-enabled solutions, evaluate outputs critically, and apply professional judgment when using AI. People Leaders should demonstrate the ability to drive responsible AI adoption, enable effective use of approved solutions, identify opportunities to improve team performance through AI, and ensure accountability for the quality and accuracy of AI-supported outcomes.\n\nRelocation Assistance Eligible:\n\nYes\n\nWork Shift:\n\n1ST SHIFT (United States of America)\n\nCertain roles at Tyson require background checks. If you are offered a position that requires a background check you will be provided additional documentation to complete once an offer has been extended.\n\nHourly Applicants ONLY -You must complete the task after submitting your application to provide additional information to be considered for employment.\n\nThe successful candidate(s) must be willing and able to perform the physical requirements of the job with or without a reasonable accommodation.\n\nTyson is an Equal Opportunity Employer. All qualified applicants will be considered without regard to race, national origin, color, religion, age, genetics, sex, sexual orientation, gender identity, disability or veteran status.\n\nWe provide our team members and their families with paid time off; 401(k) plans; affordable health, life, dental, vision and prescription drug benefits; and more.\n\nIf you would like to learn more about your data privacy rights and how you may use that information, please read our Job Applicant Privacy Notice here .\n\nUnsolicited Assistance: Tyson Foods and its subsidiaries do not accept unsolicited support from external recruitment vendors for open positions within the United States. Any resumes or candidate profiles submitted by recruitment vendors or headhunters to any employee or applicant tracking system at Tyson Foods or its subsidiaries, without a valid written request and search agreement approved by HR, will be considered the property of Tyson Foods. No fees will be paid if the candidate is hired due to an unsolicited referral.",
       "salary": null,
@@ -643,7 +733,7 @@
       "location": "Allentown, Pennsylvania, USA, United States of America",
       "state": "PA",
       "remote": false,
-      "postedAt": "Posted 9 Days Ago",
+      "postedAt": "Posted 10 Days Ago",
       "applyUrl": "https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Allentown-Pennsylvania-USA/Director--Packaging-and-Manufacturing-Operations_R-01371268",
       "description": "Work Schedule\n\nStandard (Mon-Fri)\n\nEnvironmental Conditions\n\nOffice\n\nJob Description\n\nWhen you are part of the team at Thermo Fisher Scientific, you'll do important work, like helping customers in finding cures for cancer, protecting the environment or making sure our food is safe. Your work will have real-world impact, and you'll be supported in achieving your career goals.\n\nLocation/Division Specific Information\n\nClinical Trials Division (CTD) partners with pharmaceutical and biotech customers around the world to ensure the right patients get the right therapies in the right doses at the right time - a concept we internally embrace as “There is a Patient Waiting.” Our unique blend of services includes project management, packaging, distribution, transportation management and specialty logistics, ancillary supply management, clinical supply optimization, bio-repository storage and much more. Our more than 3000 employees in over 15 countries work hard every day knowing what they do matters.\n\nPosition Summary\n\nThe Director, Packaging and Manufacturing Operations is the senior operations leader accountable for safe, compliant, reliable and cost-effective execution of clinical packaging and labeling activities at the Allentown site. The role provides strategic and day-to-day leadership across primary and secondary packaging operations, managing technical operation team, and works closely with Quality, Project Management, Engineering, Operational Excellence, Finance and other site functions to deliver customer commitments while maintaining cGMP compliance and a strong safety and quality culture.\n\nThis leader translates site and division priorities into an operating strategy for the department; builds leadership capability; establishes capacity, staffing and capital plans; drives performance through tiered daily management and Practical Process Improvement (PPI); and owns escalation and recovery when safety, quality, delivery, cost or customer performance is at risk.\n\nAs a member of the Allentown Site Leadership Team, this role carries leadership responsibility beyond the Packaging and Manufacturing Operations function and is expected to actively shape the site’s culture, strategy and overall performance. The Director serves as a visible role model for leadership behaviors, drives cross-functional alignment and accountability, and plays a key role in advancing the site’s transformation and continuous improvement agenda. This leader is expected to challenge the status quo, strengthen organizational capability and help elevate the Allentown site to the next level of operational excellence, customer service and employee engagement.\n\nKey Responsibilities\n\nOperations Strategy & Execution\n\n• Provide overall leadership for Packaging and Labeling Operations across all shifts, with accountability for safety, quality, service, productivity, cost and schedule performance.\n\n• Translate site and business objectives into annual and multi-year departmental priorities, operating plans, resource requirements, budgets and measurable performance targets.\n\n• Ensure production plans, labor, equipment and support resources are aligned to customer demand, backlog, capacity constraints and financial commitments; lead recovery plans when performance deviates from plan.\n\n• Establish effective operating rhythms, including daily management boards, Gemba walks, performance reviews and escalation mechanisms that create visibility, accountability and timely decision-making.\n\nQuality, Compliance & Risk\n\n• Create and sustain a culture in which cGMP, SOP, data integrity, safety and regulatory requirements are embedded in daily operations and leadership behaviors.\n\n• Ensure timely investigation, escalation and resolution of quality events, deviations, rejects and recurring operational issues in partnership with Quality; verify that corrective and preventive actions are effective and sustainable.\n\n• Review and approve applicable SOPs, change controls and operational risk assessments; ensure risks, controls, owners and implementation plans are clearly defined.\n\n• Maintain inspection and audit readiness within the organization and ensure leaders and employees are appropriately trained and qualified for assigned responsibilities.\n\nPeople & Organizational Leadership\n\n• Lead, coach and develop managers and leaders; set clear expectations, goals and accountability while building succession plans and a strong pipeline of operations talent.\n\n• Develop staffing and organizational plans that match business demand, required capabilities and shift coverage; partner with Human Resources on workforce planning, performance management, employee relations and organizational effectiveness.\n\n• Build an inclusive, engaged and high-performing culture characterized by ownership, disciplined execution, collaboration and continuous learning.\n\n• Ensure consistent application of company policies and leadership standards throughout the organization.\n\nContinuous Improvement, Engineering & Capital\n\n• Own the operational excellence agenda for Packaging Operations and sponsor PPI/Lean initiatives that improve safety, quality, flow, right-first-time performance, labor productivity, equipment effectiveness, changeover performance and cost.\n\n• Use data and root-cause problem solving to identify systemic constraints and recurring losses; prioritize improvement work based on business and customer impact.\n\n• Define equipment, engineering and capital requirements needed to sustain compliance, increase capacity, improve reliability and enable business growth; develop business cases and ensure effective operational implementation.\n\n• Partner with Engineering and technical functions on equipment lifecycle, process capability, new or changed processes, and operational readiness for upcoming projects.\n\nCustomer, Financial & Cross-Functional Leadership\n\n• Partner with Project Management and other customer-facing functions to resolve operational questions, manage priorities and support dependable execution of client commitments.\n\n• Provide clear, timely communication to the General Manager and site leadership on performance, risks, constraints and required decisions; present routine performance reporting for safety, quality, delivery, productivity and cost.\n\n• Partner with Finance on budget management, backlog visibility, forecasting, productivity and capital planning; understand the operational drivers of site financial performance and take action to close gaps.\n\n• Act as a senior site leader and cross-functional partner, balancing departmental priorities with overall site performance and patient/customer needs.\n\n• Build strong, collaborative partnerships across site functions to drive alignment, enable effective decision-making, remove barriers and deliver shared site and business objectives.\n\n• Key Responsibilities\n\n• Bachelor's degree in engineering, science, operations, business or a related discipline required; advanced degree preferred.\n\n• 10+ years of progressive experience in pharmaceutical, biotechnology, medical device, food, chemical, cosmetics or other highly regulated manufacturing/packaging operations, with substantial experience in an FDA-regulated cGMP environment.\n\n• Demonstrated experience leading through managers in a complex, multi-shift operations environment with accountability for safety, quality, delivery, cost and people performance.\n\n• Experience leading Lean/PPI or comparable continuous improvement systems and delivering measurable, sustained operational improvement.\n\n• Experience with capacity planning, workforce planning, budgeting, capital planning and cross-functional execution. Clinical packaging/labeling experience is strongly preferred.\n\nKnowledge, Skills & Abilities\n\n• Deep working knowledge of cGMP operations, quality systems, SOP governance, change control, deviation/investigation practices, CAPA and inspection/audit readiness.\n\n• Strong operations leadership capability: converts strategy into priorities, establishes management systems, makes timely risk-based decisions and holds leaders accountable for results.\n\n• Demonstrated ability to lead and develop managers, build succession depth, manage performance and create an engaged, accountable organization.\n\n• Advanced problem-solving and continuous improvement capability, including use of data, root-cause analysis, standard work, visual management and Lean/PPI methods.\n\n• Strong business and financial acumen, including understanding of labor and capacity drivers, productivity, backlog, budgets, forecasts, capital investment and cost tradeoffs.\n\n• Ability to integrate competing customer and business priorities, manage ambiguity, and lead effectively through operational disruptions and change.\n\n• Excellent written, verbal and executive communication skills; able to communicate clearly with frontline teams, technical functions, customers and senior leadership.\n\n• Strong collaboration and influencing skills across Quality, Project Management, Engineering, Finance, HR, Supply Chain and other site/division partners.\n\n• Working knowledge of packaging operations and equipment, production metrics and process capability sufficient to challenge assumptions, identify risk and guide technical/operational decisions.\n\n• High standards of integrity, safety, quality, customer focus and personal accountability.\n\nPreferred Qualifications\n\n• Advanced degree in a relevant discipline.\n\n• Lean/Six Sigma, operations, packaging, quality, supply chain or related professional certification.\n\n• Experience in clinical trial supply packaging and labeling operations.\n\n• Experience leading significant capital, capacity expansion, technology implementation or operational transformation initiatives.\n\nPhysical Requirements\n\nThe position is primarily administrative and office-based but requires regular presence in operational areas. The role may require standing, walking, bending, reaching and talking, and occasionally exerting up to 20 pounds of force. Reasonable accommodation will be provided in accordance with applicable requirements.\n\nLeadership Expectations\n\nModel Thermo Fisher Scientific values and leadership behaviors, promote a culture of safety, quality, continuous improvement and customer focus, and reinforce the Clinical Trials Division commitment that “There is a Patient Waiting.”\n\nNote: This revised description is intended to clarify the scope and expectations of a Director-level Allentown Packaging Operations leader while retaining the core responsibilities reflected in the prior job description. Final HR review should confirm job architecture, required/preferred qualifications, reporting structure and any site-specific legal or physical-requirement language.",
       "salary": null,
@@ -705,78 +795,6 @@
       "source": "workday"
     },
     {
-      "id": "hershey-f3f6b41304fc5c2f",
-      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Engineer-Packaging-PA-17033/1433969200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "f3f6b41304fc5c2f",
-      "company": "The Hershey Company",
-      "companySlug": "hershey",
-      "title": "Engineer Packaging",
-      "department": null,
-      "location": "Hershey, PA, US",
-      "state": "PA",
-      "remote": false,
-      "postedAt": "Sat, 24 Oct 2026 7:00:00 GMT",
-      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Engineer-Packaging-PA-17033/1433969200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Location: Hershey, PA\nTravel: 10-20%\n\nWhy Hershey:\n\nAt The Hershey Company, our culture is rooted in purpose and inspired by Milton Hershey’s enduring vision that business should create opportunity for others. Through our commitment to corporate philanthropy, we create positive impact by supporting communities, helping children thrive, and operating as a business for good. This includes our deep and long standing partnership with Milton Hershey School, where we invest in education, workforce readiness, and hands on engagement to help students succeed beyond the classroom. Supported by strategic grantmaking, product donations, cross brand collaboration, and strong employee volunteerism, Hershey offers a place to work where making a difference—locally and globally—is part of how we do business every day.\n\nHow will you fit in the big picture?\n\nWorking independently this role focuses on the design, development, and optimization of packaging solutions that ensure product protection, functionality, and sustainability. The position involves managing tactical plans aligned with short-term business objectives and addressing moderate to complex challenges that impact multiple teams within the division. The role requires advanced expertise in executing processes and projects related to packaging, including material selection, structural design, and compliance with industry standards and within strategic guidelines. This role requires significant cross-functional collaboration, and has increased ownership and scope acting as primary packaging support for single plant, brand or category. This role collaborates with peers to improve ways of working and share BDP's.\n\nWhat will you do?\n\n• Design Packaging Solutions - The role designs, develops, and optimizes packaging solutions\nensuring product protection, performance, and sustainability. It applies engineering knowledge to\nmeet requirements. This delivers quality packaging.\n\n• Select and Qualify Materials - The role selects and qualifies packaging materials and components\nbased on product requirements and cost. It evaluates environmental impact and manufacturing\ncapabilities. This ensures optimal selections.\n\n• Apply Manufacturing Knowledge - The role applies strong manufacturing and equipment\nknowledge to ensure packaging meets production requirements. It validates designs for\nmanufacturability. This enables efficient production.\n\n• Support Product Development - The role supports product development through packaging\nengineering expertise. It contributes to specifications and testing. This advances development\nprogress.\n\n• Document Technical Work - The role documents technical work and maintains packaging specifications. It ensures records are accurate and accessible. This supports knowledge management.\n\nMinimum Requirements\n\n• 3+ Years of Packaging Engineering experience\n\n• Product Packaging - The technology of enclosing or protecting products for distribution, storage, sale, and use. Packaging also refers to the process of design, evaluation, and production of packages.\n\n• Problem Solving - Problem Solving is a step-by-step process of defining a problem, searching for information, and testing a series of solutions until the problem is solved. In involves critical thinking, analysis and persistence.\n\n• Data Integrity - Data Integrity refers to maintaining and assuring the accuracy and consistency of data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data.\n\n• Collaboration - Collaboration is working together in a cooperative effort to achieve a common goal. It is the promotion of teamwork and the linkage of intra and interdepartmental cooperation.\n\n• Planning - Ability to anticipate resource needs and then arrange, prioritize and shape activities to meet\nobjectives.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
-      "id": "hershey-221440fedbd74bcf",
-      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "221440fedbd74bcf",
-      "company": "The Hershey Company",
-      "companySlug": "hershey",
-      "title": "Staff Packaging Systems CI Engineer",
-      "department": null,
-      "location": "Hershey, PA, US",
-      "state": "PA",
-      "remote": true,
-      "postedAt": "Fri, 23 Oct 2026 0:00:00 GMT",
-      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Location: Hershey, PA preferred, open to remote\n\nUp to 70% Travel\n\nWhy Hershey\n\nAt The Hershey Company, we make more moments of goodness through some of the world's most iconic brands, including Hershey's, Reese's, Kit Kat®, Jolly Rancher, Twizzlers, Dot's Pretzels, Lesser Evil and more. Our team supports a global portfolio of over 90 brands, creating opportunities to shape strategies and drive impact across a breadth of businesses that few companies can offer. While many organizations focus on a handful of brands, Hershey provides exposure to a diverse portfolio of category-leading brands enjoyed by consumers around the world. What truly sets us apart is our legacy. Inspired by Milton Hershey's belief that business should create opportunity for others, we have been making a positive impact for more than a century through our commitment to communities, philanthropy, and our longstanding partnership with Milton Hershey School. When you join Hershey, you become part of a company where purpose, growth, and making a difference are woven into how we do business every day.\n\nHow will you fit in the big picture?\n\nThe Staff Packaging Systems CI Engineer advances Hershey's multi-year Enterprise Continuous Improvement plan by identifying, developing, and implementing packaging-system improvements across the manufacturing network. Working independently and through cross-functional teams, you will lead complex initiatives from concept through sustainable plant handoff to improve cost, capacity, quality, safety, and supply continuity across Hershey's Global Confectionery and Salty businesses.\n\nWhat will you do?\n\n• Lead packaging-system continuous-improvement projects from opportunity identification and loss analysis through design, testing, installation, startup, commissioning, training, and performance stabilization.\n\n• Develop project scopes, specifications, schedules, cost estimates, technical recommendations, and engineering deliverables for equipment selection, modifications, and layouts.\n\n• Plan and execute proof-of-principle tests, designed experiments, scale-up activities, manufacturing trials, and feasibility assessments; translate results into practical technical and financial recommendations.\n\n• Apply Lean, Six Sigma, TPM, packaging engineering, food science, and structured problem-solving methods to identify root causes and deliver sustainable solutions.\n\n• Manage project cost, schedule, resources, risk, suppliers, and communication while partnering with Manufacturing, R&D, Engineering, Finance, Quality and Regulatory Compliance, Marketing, contractors, and equipment suppliers.\n\n• Mentor engineers and technicians, provide clear technical documentation and training, and transfer improvements successfully to plant operations and maintenance teams.\n\nMinimum Requirements\n\nEducation\n\nBachelor's degree in Mechanical Engineering or a related engineering discipline. A master's degree is welcome.\n\nExperience\n\nMinimum 5 years of relevant packaging-systems engineering, process design, project management, troubleshooting, or continuous-improvement experience in a manufacturing environment.\n\n• Demonstrated ability to lead complex packaging or manufacturing improvement projects involving multiple unit operations and cross-functional stakeholders.\n\n• Working knowledge of food-manufacturing systems, sanitary design, Good Manufacturing Practices, manufacturing validation, equipment suppliers, and plant implementation.\n\n• Six Sigma Green Belt required; Six Sigma Black Belt preferred. Working knowledge of Lean manufacturing and TPM.\n\n• Strong project planning, technical analysis, written and verbal communication, and Microsoft Office skills.\n\n• Ability to travel up to 70%, support project work outside standard hours when needed, and work in manufacturing environments with regulated food allergens while following all site safety, food-safety, and allergen-control requirements.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health begin on Day 1.\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $118,880 to $148,600 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\n#LI-MH2\n#LI-Remote",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
-      "id": "eastman-4b8b753d4f38448c",
-      "sourceId": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "4b8b753d4f38448c",
-      "company": "Eastman",
-      "companySlug": "eastman",
-      "title": "Packaging Engineer",
-      "department": null,
-      "location": "Kingsport, TN, US, 37660",
-      "state": "TN",
-      "remote": false,
-      "postedAt": "Thu, 22 Oct 2026 7:00:00 GMT",
-      "applyUrl": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nDescription\n\nWe are seeking a highly experienced Senior Packaging Engineer with over 5 years of experience in the design and development of film- and paper-based flexible packaging solutions. This role demands deep technical knowledge of paper substrates, coatings, and sustainable barrier technologies, combined with strategic leadership to drive innovation, cost optimization, and environmental stewardship. The successful candidate will serve as a subject matter expert, collaborating closely with R&D, marketing, sales teams, and customers to deliver high-performance, sustainable paper-based packaging that meets regulatory and market requirements. This position sits within Eastman’s technology organization and provides support for our Coatings business organization.\n\nThe position reports through the Group Leader Coatings Applications Development, located in Kingsport, TN, USA and is part of a global team.\n\nResponsibilities\n\n• Provide technical leadership and mentorship on packaging properties, converting processes (e.g., lamination, metallization, printing, filling, sealing), performance testing and application requirements specific to film and paper-based solutions.\n• Lead customer facing projects regarding the design, development, and optimization of paper-based flexible packaging structures, including multi-layer laminates incorporating paper substrates, coatings, and sustainable barrier materials.\n• Drive innovation in sustainable paper packaging by evaluating new raw materials, bio-based coatings, and recyclable/compostable barrier technologies.\n• Develop and maintain detailed packaging specifications, technical documentation, and compliance requirements tailored to paper-based flexible packaging.\n• Engage the packaging value chain to discover needs across multiple applications and prioritize opportunities for development work\n• Influence decision makers at customers to adopt new packaging solutions\n• Monitor industry trends and regulatory developments related to paper-based packaging and sustainability to inform strategic decisions.\n• Partner with marketing and business development teams to deliver new business growth\n\nQualifications\n\n• Bachelor’s degree in Packaging Engineering, Materials Science, Chemical Engineering, or related field; advanced degree preferred.\n• Minimum 5 years of industry experience in flexible packaging design and development, with both paper and film-based packaging materials and solutions.\n• Willingness and ability to travel approximately 25%, mainly within North America is required\n• Deep technical understanding of paper substrates, coatings, barrier technologies, and converting processes.\n• Understanding of packaging requirements across different food packaging applications, including considerations for barrier, shelf life, regulatory compliance, and food safety.\n• Proven expertise in packaging performance testing related to film and paper-based materials.\n• Strong knowledge of sustainability principles, recyclable and compostable packaging standards, and regulatory compliance for paper-based packaging.\n• Experience engaging multiple points along the packaging value chain is highly desired\n• Excellent written and oral communication skills\n• Project leadership experience preferred including short-term and long-term project planning and participation on cross-functional team\n• Self-motivated and able to work both independently and as a team member with both internal and external partners\n\nNote:\n\nEastman will not accept applicants for this offered position who require visa sponsorship, including those whose status is F-1 visa OPT who subsequently would require ongoing visa sponsorship.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
-      "id": "eastman-5b779dc4cc6e2cdd",
-      "sourceId": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "5b779dc4cc6e2cdd",
-      "company": "Eastman",
-      "companySlug": "eastman",
-      "title": "Market Development Manager - Flexible Packaging",
-      "department": null,
-      "location": "Nationwide, US",
-      "state": null,
-      "remote": false,
-      "postedAt": "Wed, 21 Oct 2026 7:00:00 GMT",
-      "applyUrl": "https://jobs.eastman.com/job/Nationwide-Market-Development-Manager-Flexible-Packaging-CA/1369816200/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nRole Profile\n\nThis role will be an MDM on an innovation platform within Eastman’s CASE division. The person in this role will be responsible for the development and execution of strategies to activate brands and the value chain for coated paper articles and flexible packaging used in the food service and consumer packaged goods (CPG) industries. This role requires up to 30% travel.\n\nKey Accountabilities\n\n• Earnings: Drive variable margin gains by closing new business initiatives.\n\n• Growth: Measure growth by launch effectiveness, projected revenue from Gate 5 launches, and new business from market development and innovation.\n\n• Talent Management: Provide marketing expertise and coaching to teams and manage personal career development.\n\nThis role is open to remote candidates.\n\nResponsibilities\n\n• Contributes to the development of Addressable Market Maps and offers through segment cross-functional teams\n\n• Leads front end discovery to articulate where to play and how to win options in prioritized markets\n\n• Responsible for determining the best path for specific initiatives surfaced from market strategy work, developing the plans for execution, executing the plan (either directly or indirectly) and monitoring its effectiveness\n\n• Leads or supports growth projects as a Marketing resource by using the EBME framework to make quality strategic choices on all initiatives; assists others as needed\n\n• Establishes and tracks metrics to ensure post launch efforts are contributing to the segment’s strategy and performance; provides recommendation to Marketing leaders if changes are needed\n\n• Enters new opportunities for initiatives into Leads Management (SFDC) so that leads can be properly managed and tracked as they are passed on to Sales\n\n• Make recommendations on potential growth initiatives in the market based on market trends and insights, as well as customer discovery\n\n• Creates understanding of value of Eastman offerings vs. alternatives by developing Economic Value Estimates (EVE™)\n\n• Develops transition plans and materials as well as provides coaching to Sales and other supporting functions in preparation for a new product launch\n\n• Communicates offers that tie to initiatives; offers may be new, existing, or revised\n\n• Draw conclusions from multiple sources to create insights that support growth projects\n\n• Networks and becomes an industry expert in assigned markets\n\n• Interfaces with leverage points through the value chain to identify potential product and application opportunities\n\nQualifications\n\n• Bachelor's Degree required; MBA or advanced education in strategic marketing required\n\n• 8+ years of experience in commercial, marketing, or product management roles\n\n• 5+ years experience launching new products in relevant markets (Preferred)\n\n• 5+ years working in marketing in the paper value chain, e.g., for a paper manufacturer or a converter / manufacturer of paper articles, engaging the flexible packaging and food service markets (Preferred)\n\n• Strong business and marketing acumen\n\n• Note : Eastman will not accept applicants for this offered position who require visa sponsorship, including those whose status is F-1 visa OPT who subsequently would require ongoing visa sponsorship.\n\nThe base salary range for this position is $140,000 to $192,500.\n\nAt Eastman, we are committed to transparency and integrity in our compensation practices. Eastman includes salary ranges in some job postings to provide clear compensation information and to be compliant with state laws that require disclosure. Not all postings display ranges due to factors like location, market conditions, or position specifics. Compensation is based on qualifications and experience. Candidates are encouraged to discuss their salary questions during the interview process.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
       "id": "edwards-4b6017130683243d",
       "sourceId": "/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
       "hash": "4b6017130683243d",
@@ -787,7 +805,7 @@
       "location": "USA - California – Irvine, United States of America",
       "state": null,
       "remote": false,
-      "postedAt": "Posted 6 Days Ago",
+      "postedAt": "Posted 7 Days Ago",
       "applyUrl": "https://edwards.wd5.myworkdayjobs.com/EdwardsCareers/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
       "description": "Imagine how your ideas and expertise can change a patient’s life. Our Global Operations & Quality team plays a central part in ensuring our products are delivered to patients with cardiovascular disease. You’ll partner cross-functionally with manufacturing operations and sales teams, delivering thoughtful solutions to complex challenges all while developing your knowledge of the medical device industry. Whether your work includes strategic inventory planning, labeling, warehouse management, material handling, or any of our other supply chain opportunities, you will be making a meaningful contribution to our team and to patients all over the world.\n\nThis is an exciting opportunity with the World Wide Engineering team currently involved in cutting edge packaging design & development leveraging applied research in design, materials and modeling. As a Packaging Engineer you will work closely with other engineers to develop world-class capabilities and provide a competitive advantage to Edwards, through packaging design including component e.g. thermoform trays, injection molded parts, pouches and shelf & shipper boxes.\n\nHow you’ll make an impact:\n• Design innovative packaging concepts for complex projects, including new product launches and existing products throughout all stages of product development from concept to launch, including clinical trials, global and limited market releases, as well as key operations initiatives.\n• Develop protocols for, and implement, package design, packaging process validation, and package shelf life testing, as well as driving new packaging technologies and strategies with increased uncertainty and complexity, to improve time to market and advance the technology of package engineering at Edwards.\n• Develop plans for complex projects working closely with cross-functional team members and outside suppliers.\n• Validate new packaging equipment and packaging manufacturing processes to determine appropriate sourcing, purchasing, installation planning and specifications.\n• Provide guidance and coaching to lower level engineers.\n• Other incidental duties assigned by Leadership.\n\nWhat you’ll need (Required):\n• Bachelor's Degree in Engineering or Scientific field with minimum of 4 years either industry or industry/education experience or\n• Master's Degree or equivalent in Engineering or Scientific field with minimum of 3 years either industry or industry/education experience.\n\n• Proficiency with Microsoft Office Suite and working knowledge of CAD software.\n\nWhat else we look for (Preferred):\n\n• Ability to effectively manage multiple priorities and deliver results in a fast-paced, cross-functional environment.\n\n• Demonstrated ability to apply engineering principles, critical thinking, and sound technical judgment to solve complex engineering challenges.\n\n• Strong written and verbal communication and interpersonal skills, with the ability to collaborate effectively across technical and cross-functional teams (influence technical direction, resolve design, manufacturing, and quality challenges).\n\n• Demonstrated experience independently leading packaging development and validation activities for medical devices or other highly regulated products.\n\n• Strong understanding of design controls and the product development lifecycle for new product development.\n\n• Demonstrated ability to develop technically sound test strategies, protocols, acceptance criteria, and reports supporting packaging design verification, process validation, and shelf-life claims.\n\n• Working knowledge of applicable packaging standards and test methods, including ISO 11607 and relevant ASTM standards.\n• Experience with environmental conditioning and distribution simulation testing, including ASTM D4332 and ASTM D4169.\n\n• Knowledge of ASTM packaging lab test methods (e.g. peel strength, submersion leak, dye penetration, etc).\n\n• Proven experience with material selection and design of packaging systems, including thermoformed trays, flexible pouches, lidding materials, injection-molded components, and/or corrugated/paperboard cartons.\n\n• Strong supplier-management skills with the ability to provide technical direction and resolve design, manufacturing, and quality challenges.\n\n• Working knowledge of statistical methods and data analysis tools (e.g. Minitab).\n\n• Experience using Windchill PLM system or relevant PLM experience.\n\n• Adhere to all company rules and requirements (e.g., pandemic protocols, Environmental Health & Safety, & Quality rules/guidelines) and take adequate control measures in preventing injuries to themselves and others as well as to the protection of environment and prevention of pollution under their span of influence/control.\n\nAligning our overall business objectives with performance, we offer competitive salaries, performance-based incentives, and a wide variety of benefits programs to address the diverse individual needs of our employees and their families.\n\nFor California, the base pay range for this position is $108,000 - $153,000 (highly experienced).\n\nThe pay for the successful candidate will depend on various factors (e.g., qualifications, education, prior experience). Applications will be accepted while this position is posted on our Careers website.\n\nEdwards is an Equal Opportunity/Affirmative Action employer including protected Veterans and individuals with disabilities.",
       "salary": null,
@@ -822,21 +840,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 51,
+        "not a packaging role": 50,
         "warehouse/ops title": 1,
-        "plant process engineering": 6
+        "plant process engineering": 7
       }
     },
     {
       "company": "General Mills",
       "ats": "workday",
-      "scanned": 85,
+      "scanned": 84,
       "classifierPass": 3,
       "kept": 3,
       "fetched": 3,
       "classifierDrops": {
         "warehouse/ops title": 3,
-        "off-target function": 10,
+        "off-target function": 9,
         "not a packaging role": 69
       }
     },
@@ -863,19 +881,19 @@
       "classifierDrops": {
         "semiconductor/electronics packaging": 5,
         "warehouse/ops title": 2,
-        "not a packaging role": 39,
-        "off-target function": 14
+        "not a packaging role": 38,
+        "off-target function": 15
       }
     },
     {
       "company": "Kenvue",
       "ats": "workday",
-      "scanned": 52,
+      "scanned": 51,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 46,
+        "not a packaging role": 45,
         "warehouse/ops title": 1,
         "off-target function": 4
       }
@@ -883,91 +901,91 @@
     {
       "company": "Clorox",
       "ats": "workday",
-      "scanned": 66,
+      "scanned": 67,
       "classifierPass": 3,
       "kept": 3,
       "fetched": 3,
       "classifierDrops": {
-        "warehouse/ops title": 24,
-        "off-target function": 4,
-        "not a packaging role": 35
+        "warehouse/ops title": 25,
+        "not a packaging role": 36,
+        "off-target function": 3
       }
     },
     {
       "company": "Conagra Brands",
       "ats": "workday",
-      "scanned": 77,
+      "scanned": 78,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "off-target function": 4,
-        "warehouse/ops title": 11,
-        "plant process engineering": 5,
-        "not a packaging role": 56
+        "warehouse/ops title": 12,
+        "plant process engineering": 4,
+        "not a packaging role": 57
       }
     },
     {
       "company": "Campbell's",
       "ats": "workday",
-      "scanned": 202,
+      "scanned": 208,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 156,
-        "warehouse/ops title": 28,
+        "not a packaging role": 159,
+        "warehouse/ops title": 31,
         "off-target function": 16
       }
     },
     {
       "company": "Church & Dwight",
       "ats": "workday",
-      "scanned": 48,
+      "scanned": 46,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "warehouse/ops title": 5,
-        "not a packaging role": 41,
+        "not a packaging role": 39,
         "off-target function": 1
       }
     },
     {
       "company": "SC Johnson",
       "ats": "workday",
-      "scanned": 37,
+      "scanned": 39,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 33,
-        "off-target function": 3
+        "not a packaging role": 34,
+        "off-target function": 4
       }
     },
     {
       "company": "J.M. Smucker",
       "ats": "workday",
-      "scanned": 60,
+      "scanned": 57,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "off-target function": 6,
-        "not a packaging role": 52,
+        "not a packaging role": 49,
         "plant process engineering": 1
       }
     },
     {
       "company": "Silgan Containers",
       "ats": "workday",
-      "scanned": 70,
+      "scanned": 69,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 64,
-        "warehouse/ops title": 4,
+        "warehouse/ops title": 5,
+        "not a packaging role": 62,
         "off-target function": 2
       }
     },
@@ -1000,10 +1018,10 @@
     {
       "company": "Autoliv",
       "ats": "teamtailor",
-      "scanned": 46,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
+      "scanned": 47,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
       "classifierDrops": {
         "not a packaging role": 36,
         "warehouse/ops title": 1,
@@ -1019,8 +1037,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "electronics/mechanical packaging": 1,
-        "not a packaging role": 39
+        "not a packaging role": 38,
+        "off-target function": 2
       }
     },
     {
@@ -1044,9 +1062,9 @@
       "kept": 5,
       "fetched": 7,
       "classifierDrops": {
-        "not a packaging role": 73,
+        "not a packaging role": 75,
         "off-target function": 4,
-        "warehouse/ops title": 5,
+        "warehouse/ops title": 3,
         "plant process engineering": 3
       }
     },
@@ -1058,61 +1076,61 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 10,
-        "not a packaging role": 39,
-        "warehouse/ops title": 1
+        "off-target function": 8,
+        "warehouse/ops title": 2,
+        "not a packaging role": 40
       }
     },
     {
       "company": "PepsiCo",
       "ats": "jibe",
       "scanned": 10,
-      "classifierPass": 3,
+      "classifierPass": 4,
       "kept": 2,
-      "fetched": 3,
+      "fetched": 4,
       "classifierDrops": {
         "off-target function": 2,
         "semiconductor/electronics packaging": 2,
-        "not a packaging role": 3
+        "not a packaging role": 2
       }
     },
     {
       "company": "Unilever",
       "ats": "workday",
       "scanned": 41,
-      "classifierPass": 0,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
+      "fetched": 1,
       "classifierDrops": {
-        "off-target function": 5,
         "not a packaging role": 31,
-        "warehouse/ops title": 5
+        "off-target function": 5,
+        "warehouse/ops title": 4
       }
     },
     {
       "company": "Johnson & Johnson",
       "ats": "workday",
-      "scanned": 121,
+      "scanned": 118,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 95,
+        "not a packaging role": 91,
         "plant process engineering": 3,
         "packaging as commodity/category scope": 1,
-        "off-target function": 22
+        "off-target function": 23
       }
     },
     {
       "company": "Procter & Gamble",
       "ats": "phenom",
-      "scanned": 154,
+      "scanned": 152,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "off-target function": 15,
-        "not a packaging role": 138,
+        "not a packaging role": 136,
         "plant process engineering": 1
       }
     },
@@ -1132,13 +1150,13 @@
     {
       "company": "DuPont",
       "ats": "phenom",
-      "scanned": 118,
+      "scanned": 119,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 48,
         "not a packaging role": 67,
+        "off-target function": 49,
         "warehouse/ops title": 2,
         "semiconductor/electronics packaging": 1
       }
@@ -1146,26 +1164,26 @@
     {
       "company": "WK Kellogg Co",
       "ats": "phenom",
-      "scanned": 13,
+      "scanned": 16,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 12,
+        "not a packaging role": 15,
         "off-target function": 1
       }
     },
     {
       "company": "Mars",
       "ats": "phenom",
-      "scanned": 302,
+      "scanned": 298,
       "classifierPass": 5,
       "kept": 5,
       "fetched": 5,
       "classifierDrops": {
-        "not a packaging role": 203,
-        "warehouse/ops title": 28,
-        "off-target function": 66
+        "not a packaging role": 199,
+        "warehouse/ops title": 26,
+        "off-target function": 68
       }
     },
     {
@@ -1189,10 +1207,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "off-target function": 2,
         "not a packaging role": 17,
-        "off-target function": 1,
-        "warehouse/ops title": 1,
-        "plant process engineering": 1
+        "warehouse/ops title": 1
       }
     },
     {
@@ -1203,8 +1220,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 16,
         "off-target function": 3,
+        "not a packaging role": 16,
         "plant process engineering": 1
       }
     },
@@ -1221,12 +1238,12 @@
     {
       "company": "Berlin Packaging",
       "ats": "greenhouse",
-      "scanned": 18,
+      "scanned": 19,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 9,
+        "not a packaging role": 10,
         "warehouse/ops title": 9
       }
     },
@@ -1272,39 +1289,39 @@
     {
       "company": "Pfizer",
       "ats": "workday",
-      "scanned": 69,
+      "scanned": 70,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 68,
+        "not a packaging role": 69,
         "warehouse/ops title": 1
       }
     },
     {
       "company": "Baxter",
       "ats": "workday",
-      "scanned": 66,
+      "scanned": 65,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 58,
-        "warehouse/ops title": 6,
+        "not a packaging role": 56,
+        "warehouse/ops title": 7,
         "off-target function": 1
       }
     },
     {
       "company": "Stryker",
       "ats": "workday",
-      "scanned": 82,
+      "scanned": 81,
       "classifierPass": 3,
       "kept": 1,
       "fetched": 3,
       "classifierDrops": {
-        "not a packaging role": 69,
+        "not a packaging role": 67,
         "plant process engineering": 1,
-        "off-target function": 7,
+        "off-target function": 8,
         "warehouse/ops title": 2
       }
     },
@@ -1316,8 +1333,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "warehouse/ops title": 3,
         "not a packaging role": 50,
+        "warehouse/ops title": 3,
         "plant process engineering": 1,
         "off-target function": 3
       }
@@ -1325,13 +1342,13 @@
     {
       "company": "Tyson Foods",
       "ats": "workday",
-      "scanned": 34,
+      "scanned": 33,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 25,
-        "off-target function": 8
+        "not a packaging role": 23,
+        "off-target function": 9
       }
     },
     {
@@ -1353,48 +1370,48 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 46,
-        "off-target function": 5,
-        "warehouse/ops title": 3
+        "not a packaging role": 45,
+        "off-target function": 4,
+        "warehouse/ops title": 5
       }
     },
     {
       "company": "CHEP",
       "ats": "workday",
-      "scanned": 33,
+      "scanned": 34,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 23,
+        "not a packaging role": 24,
         "off-target function": 10
       }
     },
     {
       "company": "Thermo Fisher Scientific",
       "ats": "workday",
-      "scanned": 520,
+      "scanned": 525,
       "classifierPass": 8,
       "kept": 4,
       "fetched": 8,
       "classifierDrops": {
-        "not a packaging role": 457,
-        "off-target function": 44,
+        "not a packaging role": 461,
+        "off-target function": 43,
         "plant process engineering": 1,
-        "warehouse/ops title": 9,
+        "warehouse/ops title": 11,
         "semiconductor/electronics packaging": 1
       }
     },
     {
       "company": "BD",
       "ats": "workday",
-      "scanned": 99,
+      "scanned": 100,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 89,
-        "warehouse/ops title": 5,
+        "not a packaging role": 88,
+        "warehouse/ops title": 7,
         "plant process engineering": 2,
         "off-target function": 3
       }
@@ -1407,21 +1424,21 @@
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 16,
-        "warehouse/ops title": 2,
-        "off-target function": 11
+        "not a packaging role": 15,
+        "warehouse/ops title": 1,
+        "off-target function": 13
       }
     },
     {
       "company": "Eastman",
       "ats": "successfactors",
-      "scanned": 33,
+      "scanned": 34,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
         "off-target function": 4,
-        "not a packaging role": 25,
+        "not a packaging role": 26,
         "semiconductor/electronics packaging": 1,
         "plant process engineering": 1
       }
@@ -1429,25 +1446,26 @@
     {
       "company": "Molson Coors",
       "ats": "successfactors",
-      "scanned": 33,
+      "scanned": 31,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 27,
-        "off-target function": 6
+        "not a packaging role": 23,
+        "off-target function": 8
       }
     },
     {
       "company": "Reckitt",
       "ats": "successfactors",
-      "scanned": 29,
+      "scanned": 28,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 28,
-        "off-target function": 1
+        "not a packaging role": 25,
+        "semiconductor/electronics packaging": 1,
+        "off-target function": 2
       }
     },
     {
@@ -1471,9 +1489,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "not a packaging role": 27,
+        "off-target function": 3,
         "plant process engineering": 1,
-        "off-target function": 6,
-        "not a packaging role": 24,
         "semiconductor/electronics packaging": 1,
         "warehouse/ops title": 1
       }
@@ -1481,12 +1499,12 @@
     {
       "company": "Perrigo",
       "ats": "successfactors",
-      "scanned": 28,
+      "scanned": 29,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 25,
+        "not a packaging role": 26,
         "plant process engineering": 1,
         "off-target function": 2
       }
@@ -1494,12 +1512,12 @@
     {
       "company": "Edwards Lifesciences",
       "ats": "workday",
-      "scanned": 31,
+      "scanned": 28,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 26,
+        "not a packaging role": 23,
         "off-target function": 3,
         "warehouse/ops title": 1
       }
@@ -1520,27 +1538,27 @@
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
-      "scanned": 399,
+      "scanned": 395,
       "classifierPass": 3,
       "kept": 1,
       "fetched": 3,
       "classifierDrops": {
-        "not a packaging role": 246,
-        "off-target function": 146,
+        "not a packaging role": 241,
+        "off-target function": 147,
         "warehouse/ops title": 4
       }
     },
     {
       "company": "Sargento",
       "ats": "phenom",
-      "scanned": 58,
+      "scanned": 57,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 46,
         "off-target function": 9,
-        "warehouse/ops title": 3
+        "warehouse/ops title": 2
       }
     },
     {
