@@ -1,16 +1,16 @@
 {
-  "ingestedAt": "2026-11-16T21:49:27.916Z",
+  "ingestedAt": "2026-11-17T20:41:04.535Z",
   "total": 24,
   "stats": {
-    "scanned": 4647,
-    "classifierPass": 37,
+    "scanned": 4626,
+    "classifierPass": 38,
     "kept": 24,
     "classifierDrops": {
-      "not a BCM/DR role": 3713,
-      "generic IT title": 528,
-      "product/SRE resilience noise": 79,
-      "off-target function": 225,
-      "manufacturing capacity resiliency": 65
+      "not a BCM/DR role": 3690,
+      "generic IT title": 524,
+      "product/SRE resilience noise": 78,
+      "off-target function": 230,
+      "manufacturing capacity resiliency": 66
     }
   },
   "jobs": [
@@ -25,7 +25,7 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 7 Days Ago",
+      "postedAt": "Posted 8 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Sr-Manager-Information-Security---Cyber-Resiliency_R_1517750",
       "description": "Sr. Manager Information Security – Cyber Resiliency",
       "salary": null,
@@ -43,7 +43,7 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 7 Days Ago",
+      "postedAt": "Posted 8 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Information-Security-Specialist---Cyber-Resiliency_R_1517740",
       "description": "Information Security Specialist - Cyber Resiliency",
       "salary": null,
@@ -61,7 +61,7 @@
       "location": "New York, NY, United States",
       "state": "NY",
       "remote": false,
-      "postedAt": "2026-11-16",
+      "postedAt": "2026-11-17",
       "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210808026",
       "description": "Global Human Resources (HR) Business Resiliency’s mission is to continuously improve our businesses’ ability to provide outstanding products and services to customers during disruptions.\n\nAs a Business Resiliency Manager on the HR Business Resiliency team, you will report to the Global HR Business Resiliency Incident Management Lead and help lead HR incident management for the Americas. You will proactively engage HR stakeholders and firmwide partners to build strong working relationships, understand emerging risks, and support readiness before incidents occur. During an incident, you will coordinate response activities across HR and firmwide partners, support employee needs when required, assess evolving situations, and confidently guide stakeholders toward clear, timely decisions and actions.\n\nIn addition, you will provide guidance and governance as business stakeholders develop their Business Resiliency Plans and related artifacts in accordance with JPMorganChase Firmwide Business Resiliency (FBR) Standards. You will partner with process owners to ensure effective, compliant plans are documented and tested so HR operations can continue with minimal impact during disruptive events.\n\nThis role requires a visible, proactive leader who can influence across teams, communicate with confidence, and foster accountability while maintaining constructive relationships. You will work across the organization to identify, communicate, and mitigate resiliency-related risks, while fostering an inclusive team environment that inspires trust and development.\n\nJob Responsibilities\n\n• Maintain an alert posture for local, regional, and global crisis incidents identified and communicated by the Global Security Operations Center.\n\n• Lead and coordinate HR end to end Incident Management process from monitor/invoke to completion of post incident reporting for HR Business Resiliency Plan activations, and support wider firm events that require employee-support functions.\n\n• Proactively engage HR stakeholders and firmwide partners to understand business needs, identify emerging risks, clarify roles and expectations, and strengthen incident readiness.\n\n• Provide concise, executive-level incident updates and lead post-incident reviews to capture lessons learned and strengthen incident-management practices.\n\n• Build and maintain Business Resiliency expertise to support consistent program execution, provide confident direction to stakeholders, and develop knowledge of the supported HR functions.\n\n• Lead and coordinate business participation in resiliency testing, as required by HR objectives and FBR Standards, including tabletop exercises and physical testing.\n\n• Test and improve incident-management processes, practices, and tools with global partners to strengthen incident-management capabilities.\n\n• Promote the resiliency program by communicating policy or system changes clearly and concisely and offering additional support as needed.\n\n• Lead department-centric projects that build on your strengths or interests, develop new skills, and advance team objectives.\n\nRequired Qualifications, Capabilities, and Skills\n\n• Bachelor’s degree or equivalent relevant professional experience.\n\n• 7+ years of relevant experience in business resiliency and/or incident management.\n\n• Detail-oriented, with strong project-management and organizational skills.\n\n• Clear, concise verbal and written communication skills, including the ability to communicate with people at all levels of the organization.\n\n• Ability to work effectively both independently and as part of a team.\n\n• Demonstrated track record of meeting deadlines, delivering results, and taking accountability for an independent workload.\n\n• Strong relationship-building and networking skills across firm functions and geographies, with the ability to expand influence, knowledge, and collaboration with senior leaders.\n\n• Ability to promote continuous process improvement with a risk-and-controls mindset.\n\n• Ability to handle pressure and lead or assist with crisis management when needed.\n\n• Availability to support the business during disruptive events, including evenings, weekends, and holidays.\n\nPreferred qualifications\n\n, capabilities and skills\n\n• Business continuity and/or crisis management experience (accreditations are favorable e.g., Certiﬁed Business Continuity Professional (CBCP))\n\nBecome a key member of a global team focused on strengthening operational resilience and crisis management.\n\nBecome a key member of a global team focused on strengthening operational resilience and crisis management.\n\nVice President, Business Resiliency Manager, HR",
       "salary": null,
@@ -79,7 +79,7 @@
       "location": "Columbus, OH, United States",
       "state": "OH",
       "remote": false,
-      "postedAt": "2026-11-16",
+      "postedAt": "2026-11-17",
       "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799564",
       "description": "The Firmwide Resiliency Office (FRO), which is part of the Office of the Chief Financial Officer, is seeking a talented Resiliency Executive Director to join our team to lead engagement with lines of business and corporate functions to drive forward the Firmwide Resiliency strategic priorities. This is a great opportunity to use your stakeholder relationship skills and work with senior leaders throughout the firm.\n\nAs a Business Resiliency Relationship Manager in the Firmwide Resiliency Office, you will partner closely with FRO team members and engage the broader resiliency ecosystem. Additionally, you will align stakeholders, remove obstacles, surface insights via executive-ready narratives and analytics and deliver change at scale through disciplined change management and continuous improvement.\n\nJob Responsibilities:\n\n• Own the Firmwide Resiliency relationship with the Line of Business (LOB) through day-to-day partnership with the business, leading engagement, integration, and change management for resiliency\n\n• Drive risk articulation model and escalation protocol to the businesses, ensuring escalation to the right forums such as business control committees, steering committees, etc.\n\n• Manage change management for firmwide resiliency initiatives, ensuring LOB adoption and successful embedment of new capabilities, standards, and tooling.\n\n• Deepen partnership between the businesses and the Firmwide Resiliency Office; be the escalation and decision-making forum for LOB-specific resiliency issues.\n\n• Serve as the two-way translator: business context in, resiliency requirements out.\n\n• Work with the businesses to strengthen resiliency ownership to ensure regular senior-level review of essential services, third-party dependencies, resiliency assumptions, and kill-switch readiness.\n\nRequired Qualifications, Capabilities, and Skills:\n\n• 10 years of senior leadership experience owning firmwide resiliency initiatives and/or advising executives on strategy and risk.\n\n• Proven ability to run a coverage/relationship model (e.g., LOB champions), serve as a trusted escalation point, and influence outcomes without direct authority.\n\n• Strong change management expertise including driving adoption and embedment of new resiliency capabilities, standards, processes, and tooling across diverse stakeholders.\n\n• Strong understanding of operational resiliency concepts and ability to challenge practical viability of plans.\n\n• Excellent written and verbal communication skills with a track record of producing executive-ready materials, briefing senior stakeholders, and clearly framing issues, decisions, and escalation paths.\n\n• Strong analytical and problem-solving skills with attention to detail; ability to synthesize complex information into clear insights and action\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nRelationship Manager - Business Resiliency Office -Executive Director",
       "salary": null,
@@ -551,26 +551,29 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 158,
+      "scanned": 169,
       "classifierPass": 7,
       "kept": 2,
       "fetched": 7,
       "classifierDrops": {
-        "not a BCM/DR role": 136,
-        "generic IT title": 12,
+        "not a BCM/DR role": 143,
+        "generic IT title": 15,
         "product/SRE resilience noise": 1,
-        "off-target function": 2
+        "off-target function": 3
       }
     },
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 82,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday BMO 429 https://bmo.wd3.myworkdayjobs.com/wday/cxs/bmo/External/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "not a BCM/DR role": 75,
+        "generic IT title": 2,
+        "off-target function": 4
+      }
     },
     {
       "company": "PayPal",
@@ -585,30 +588,30 @@
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 336,
+      "scanned": 332,
       "classifierPass": 25,
       "kept": 17,
       "fetched": 25,
       "classifierDrops": {
-        "not a BCM/DR role": 210,
-        "generic IT title": 66,
-        "off-target function": 15,
-        "product/SRE resilience noise": 20
+        "not a BCM/DR role": 213,
+        "product/SRE resilience noise": 22,
+        "off-target function": 14,
+        "generic IT title": 58
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 142,
+      "scanned": 144,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 124,
+        "not a BCM/DR role": 126,
         "manufacturing capacity resiliency": 1,
-        "off-target function": 5,
         "product/SRE resilience noise": 4,
-        "generic IT title": 7
+        "off-target function": 4,
+        "generic IT title": 8
       }
     },
     {
@@ -644,15 +647,16 @@
     {
       "company": "UnitedHealth Group",
       "ats": "talentbrew",
-      "scanned": 87,
+      "scanned": 86,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 69,
+        "not a BCM/DR role": 71,
         "off-target function": 7,
-        "generic IT title": 8,
-        "product/SRE resilience noise": 2
+        "generic IT title": 5,
+        "manufacturing capacity resiliency": 1,
+        "product/SRE resilience noise": 1
       }
     },
     {
@@ -678,16 +682,12 @@
     {
       "company": "Target",
       "ats": "workday",
-      "scanned": 126,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 117,
-        "generic IT title": 3,
-        "off-target function": 4,
-        "product/SRE resilience noise": 2
-      }
+      "classifierDrops": {},
+      "error": "Workday Target 429 https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/jobs"
     },
     {
       "company": "Duke Energy",
@@ -717,21 +717,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 84,
-        "off-target function": 18,
-        "generic IT title": 8
+        "not a BCM/DR role": 82,
+        "off-target function": 19,
+        "generic IT title": 9
       }
     },
     {
       "company": "Waymo",
       "ats": "greenhouse",
-      "scanned": 370,
+      "scanned": 372,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
         "generic IT title": 56,
-        "not a BCM/DR role": 294,
+        "not a BCM/DR role": 296,
         "off-target function": 10,
         "product/SRE resilience noise": 6,
         "manufacturing capacity resiliency": 2
@@ -792,12 +792,12 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 58,
+      "scanned": 56,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 50,
+        "not a BCM/DR role": 48,
         "generic IT title": 4,
         "product/SRE resilience noise": 1,
         "off-target function": 3
@@ -806,26 +806,26 @@
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 357,
+      "scanned": 334,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 337,
-        "off-target function": 17,
-        "product/SRE resilience noise": 2,
-        "generic IT title": 1
+        "not a BCM/DR role": 308,
+        "off-target function": 22,
+        "generic IT title": 2,
+        "product/SRE resilience noise": 2
       }
     },
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 21,
+      "scanned": 26,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 10,
+        "not a BCM/DR role": 15,
         "generic IT title": 7,
         "off-target function": 4
       }
@@ -833,13 +833,13 @@
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2766,
+      "scanned": 2799,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 2178,
-        "generic IT title": 354,
+        "not a BCM/DR role": 2209,
+        "generic IT title": 356,
         "off-target function": 130,
         "manufacturing capacity resiliency": 62,
         "product/SRE resilience noise": 41
@@ -926,8 +926,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 6,
-        "not a BCM/DR role": 22
+        "not a BCM/DR role": 22,
+        "off-target function": 6
       }
     },
     {
