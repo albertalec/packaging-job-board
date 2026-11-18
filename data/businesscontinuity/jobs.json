@@ -1,15 +1,15 @@
 {
-  "ingestedAt": "2026-11-17T20:41:04.535Z",
-  "total": 24,
+  "ingestedAt": "2026-11-18T20:09:47.682Z",
+  "total": 25,
   "stats": {
-    "scanned": 4626,
-    "classifierPass": 38,
-    "kept": 24,
+    "scanned": 4651,
+    "classifierPass": 41,
+    "kept": 25,
     "classifierDrops": {
-      "not a BCM/DR role": 3690,
-      "generic IT title": 524,
-      "product/SRE resilience noise": 78,
-      "off-target function": 230,
+      "not a BCM/DR role": 3701,
+      "generic IT title": 527,
+      "product/SRE resilience noise": 83,
+      "off-target function": 233,
       "manufacturing capacity resiliency": 66
     }
   },
@@ -25,7 +25,7 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 8 Days Ago",
+      "postedAt": "Posted 9 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Sr-Manager-Information-Security---Cyber-Resiliency_R_1517750",
       "description": "Sr. Manager Information Security – Cyber Resiliency",
       "salary": null,
@@ -43,12 +43,30 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 8 Days Ago",
+      "postedAt": "Posted 9 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Information-Security-Specialist---Cyber-Resiliency_R_1517740",
       "description": "Information Security Specialist - Cyber Resiliency",
       "salary": null,
       "niche": "finance",
       "source": "workday"
+    },
+    {
+      "id": "jpmorgan-chase-4cdea91e248c86ec",
+      "sourceId": "210807501",
+      "hash": "4cdea91e248c86ec",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Business Resiliency Associate - Quality & Controls",
+      "department": null,
+      "location": "Tempe, AZ, United States",
+      "state": "AZ",
+      "remote": false,
+      "postedAt": "2026-11-17",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807501",
+      "description": "Join our Consumer & Community Banking Business Resiliency team and help shape smarter, stronger, more automated controls\n\nBusiness Resiliency Associate - Quality & Controls",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
     },
     {
       "id": "jpmorgan-chase-0094b5b4118a8324",
@@ -64,24 +82,6 @@
       "postedAt": "2026-11-17",
       "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210808026",
       "description": "Global Human Resources (HR) Business Resiliency’s mission is to continuously improve our businesses’ ability to provide outstanding products and services to customers during disruptions.\n\nAs a Business Resiliency Manager on the HR Business Resiliency team, you will report to the Global HR Business Resiliency Incident Management Lead and help lead HR incident management for the Americas. You will proactively engage HR stakeholders and firmwide partners to build strong working relationships, understand emerging risks, and support readiness before incidents occur. During an incident, you will coordinate response activities across HR and firmwide partners, support employee needs when required, assess evolving situations, and confidently guide stakeholders toward clear, timely decisions and actions.\n\nIn addition, you will provide guidance and governance as business stakeholders develop their Business Resiliency Plans and related artifacts in accordance with JPMorganChase Firmwide Business Resiliency (FBR) Standards. You will partner with process owners to ensure effective, compliant plans are documented and tested so HR operations can continue with minimal impact during disruptive events.\n\nThis role requires a visible, proactive leader who can influence across teams, communicate with confidence, and foster accountability while maintaining constructive relationships. You will work across the organization to identify, communicate, and mitigate resiliency-related risks, while fostering an inclusive team environment that inspires trust and development.\n\nJob Responsibilities\n\n• Maintain an alert posture for local, regional, and global crisis incidents identified and communicated by the Global Security Operations Center.\n\n• Lead and coordinate HR end to end Incident Management process from monitor/invoke to completion of post incident reporting for HR Business Resiliency Plan activations, and support wider firm events that require employee-support functions.\n\n• Proactively engage HR stakeholders and firmwide partners to understand business needs, identify emerging risks, clarify roles and expectations, and strengthen incident readiness.\n\n• Provide concise, executive-level incident updates and lead post-incident reviews to capture lessons learned and strengthen incident-management practices.\n\n• Build and maintain Business Resiliency expertise to support consistent program execution, provide confident direction to stakeholders, and develop knowledge of the supported HR functions.\n\n• Lead and coordinate business participation in resiliency testing, as required by HR objectives and FBR Standards, including tabletop exercises and physical testing.\n\n• Test and improve incident-management processes, practices, and tools with global partners to strengthen incident-management capabilities.\n\n• Promote the resiliency program by communicating policy or system changes clearly and concisely and offering additional support as needed.\n\n• Lead department-centric projects that build on your strengths or interests, develop new skills, and advance team objectives.\n\nRequired Qualifications, Capabilities, and Skills\n\n• Bachelor’s degree or equivalent relevant professional experience.\n\n• 7+ years of relevant experience in business resiliency and/or incident management.\n\n• Detail-oriented, with strong project-management and organizational skills.\n\n• Clear, concise verbal and written communication skills, including the ability to communicate with people at all levels of the organization.\n\n• Ability to work effectively both independently and as part of a team.\n\n• Demonstrated track record of meeting deadlines, delivering results, and taking accountability for an independent workload.\n\n• Strong relationship-building and networking skills across firm functions and geographies, with the ability to expand influence, knowledge, and collaboration with senior leaders.\n\n• Ability to promote continuous process improvement with a risk-and-controls mindset.\n\n• Ability to handle pressure and lead or assist with crisis management when needed.\n\n• Availability to support the business during disruptive events, including evenings, weekends, and holidays.\n\nPreferred qualifications\n\n, capabilities and skills\n\n• Business continuity and/or crisis management experience (accreditations are favorable e.g., Certiﬁed Business Continuity Professional (CBCP))\n\nBecome a key member of a global team focused on strengthening operational resilience and crisis management.\n\nBecome a key member of a global team focused on strengthening operational resilience and crisis management.\n\nVice President, Business Resiliency Manager, HR",
-      "salary": null,
-      "niche": "finance",
-      "source": "oracle"
-    },
-    {
-      "id": "jpmorgan-chase-d31ba36bca9f752f",
-      "sourceId": "210799564",
-      "hash": "d31ba36bca9f752f",
-      "company": "JPMorgan Chase",
-      "companySlug": "jpmorgan-chase",
-      "title": "Relationship Manager -  Business Resiliency Office -Executive Director",
-      "department": null,
-      "location": "Columbus, OH, United States",
-      "state": "OH",
-      "remote": false,
-      "postedAt": "2026-11-17",
-      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799564",
-      "description": "The Firmwide Resiliency Office (FRO), which is part of the Office of the Chief Financial Officer, is seeking a talented Resiliency Executive Director to join our team to lead engagement with lines of business and corporate functions to drive forward the Firmwide Resiliency strategic priorities. This is a great opportunity to use your stakeholder relationship skills and work with senior leaders throughout the firm.\n\nAs a Business Resiliency Relationship Manager in the Firmwide Resiliency Office, you will partner closely with FRO team members and engage the broader resiliency ecosystem. Additionally, you will align stakeholders, remove obstacles, surface insights via executive-ready narratives and analytics and deliver change at scale through disciplined change management and continuous improvement.\n\nJob Responsibilities:\n\n• Own the Firmwide Resiliency relationship with the Line of Business (LOB) through day-to-day partnership with the business, leading engagement, integration, and change management for resiliency\n\n• Drive risk articulation model and escalation protocol to the businesses, ensuring escalation to the right forums such as business control committees, steering committees, etc.\n\n• Manage change management for firmwide resiliency initiatives, ensuring LOB adoption and successful embedment of new capabilities, standards, and tooling.\n\n• Deepen partnership between the businesses and the Firmwide Resiliency Office; be the escalation and decision-making forum for LOB-specific resiliency issues.\n\n• Serve as the two-way translator: business context in, resiliency requirements out.\n\n• Work with the businesses to strengthen resiliency ownership to ensure regular senior-level review of essential services, third-party dependencies, resiliency assumptions, and kill-switch readiness.\n\nRequired Qualifications, Capabilities, and Skills:\n\n• 10 years of senior leadership experience owning firmwide resiliency initiatives and/or advising executives on strategy and risk.\n\n• Proven ability to run a coverage/relationship model (e.g., LOB champions), serve as a trusted escalation point, and influence outcomes without direct authority.\n\n• Strong change management expertise including driving adoption and embedment of new resiliency capabilities, standards, processes, and tooling across diverse stakeholders.\n\n• Strong understanding of operational resiliency concepts and ability to challenge practical viability of plans.\n\n• Excellent written and verbal communication skills with a track record of producing executive-ready materials, briefing senior stakeholders, and clearly framing issues, decisions, and escalation paths.\n\n• Strong analytical and problem-solving skills with attention to detail; ability to synthesize complex information into clear insights and action\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nRelationship Manager - Business Resiliency Office -Executive Director",
       "salary": null,
       "niche": "finance",
       "source": "oracle"
@@ -445,6 +445,24 @@
       "salary": null,
       "niche": null,
       "source": "greenhouse"
+    },
+    {
+      "id": "freddie-mac-73d2e7514596f450",
+      "sourceId": "/job/McLean-VA/Operational-Risk-Senior-Manager_JR17598",
+      "hash": "73d2e7514596f450",
+      "company": "Freddie Mac",
+      "companySlug": "freddie-mac",
+      "title": "Operational Risk Senior Manager",
+      "department": null,
+      "location": "McLean, VA, United States of America",
+      "state": "VA",
+      "remote": false,
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://freddiemac.wd5.myworkdayjobs.com/External/job/McLean-VA/Operational-Risk-Senior-Manager_JR17598",
+      "description": "At Freddie Mac, our mission of Making Home Possible is what motivates us, and it’s at the core of everything we do. Since our charter in 1970, we have made home possible for more than 90 million families across the country. Join an organization where your work contributes to a greater purpose.\n\nPosition Overview\n\nAre you eager to make an impact in a fast-paced, agile environment? Do you have strong experience in operational risk and controls, model risk, and reporting, along with analytical and interpersonal skills and knowledge of Single-Family Acquisitions (SFA) or mortgage markets?\n\nIf you are curious, passionate about learning, and customer-focused, apply for the Operational Risk Senior Manager to help lead SFA Risk Management.\n\nOur Impact:\n\nAs part of Freddie Mac’s Single Family Acquisitions (SFA) organization, Operational Risk Management (ORM) drives consistency, transparency, and effectiveness in nonfinancial risk across multiple domains, including People, Reporting, Transaction and Execution, Information, Technology, Third Party, Operational Resiliency, Model, and Physical Security and Safety Risks. This role will focus on Model risk including Model Development, Implementation, Performance, Use, and Governance risks. The role will also support Artificial Intelligence (AI) risk assessments.\n\nORM integrates:\n\n• Risk and control evaluations across the Single Family Acquisitions Division\n\n• Management reporting\n\n• Coordination and escalation management\n\nYour Impact:\n\nAs a SFA ORM Senior Manager, each workday is unique. Your impact will focus on the following key activities:\n\n• Evaluate and report on operational risks, controls, issues, and policies/procedures.\n\n• Document operational risks and controls as part of risk and control self-assessments.\n\n• Perform governance and oversight over model related issues.\n\n• Evaluate operational risk events related to models.\n\n• Support the business during Audits, Exams, and Process Design Reviews.\n\n• Escalate policy/standard non-compliance and at-risk timelines.\n\n• Manage and develop staff.\n\n• Evaluate applicability of corporate standards and FHFA directives against process risks and controls\n\n• Challenge status quo. Identify opportunities to improve and streamline processes, including reporting and process automation.\n\n• Periodically participate in operational risk-related projects that impact the SF Acquisitions division.\n\nQualifications\n\n• Minimum 10 years of relevant experience with a minimum of 5-6 years of operational risk management and/or audit experience\n\n• Bachelor’s Degree or equivalent\n\n• Extensive experience with risks and controls with a focus on Model and AI risks and controls\n\n• Strong Proficiency in MS Office Suite (Excel, PowerPoint, Word, Outlook)\n\n• Relationship Management skills including influencing others, facilitating meetings, engaging partners, building relationship networks, and resolving conflict\n\n• Relevant professional certifications (PMP, CPA, CISA, CIA, etc.) are a plus\n\nKeys to Success in this Role:\n\n• Results driven\n\n• Ability to motivate and inspire others.\n\n• Problem-solving, critical thinking, and analytical skills\n\n• Strong oral and written communication skills, including the ability to ask insightful questions\n\n• Naturally curious and passion for learning\n\n• Team player with a positive attitude\n\nCurrent Freddie Mac employees please apply through the internal career site.\n\nWe consider all applicants for all positions without regard to gender, race, color, religion, national origin, age, marital status, veteran status, sexual orientation, gender identity/expression, physical and mental disability, pregnancy, ethnicity, genetic information or any other protected categories under applicable federal, state or local laws. We will ensure that individuals are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.\n\nA safe and secure environment is critical to Freddie Mac’s business. This includes employee commitment to our acceptable use policy, applying a vigilance-first approach to work, supporting regulatory mandates, and using best practices to protect Freddie Mac from potential threats and risk. Employees exercise this responsibility by executing against policies and procedures and adhering to privacy & security obligations as required via training programs.\n\nCA Applicants: Qualified applications with arrest or conviction records will be considered for employment in accordance with the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act.\n\nNotice to External Search Firms: Freddie Mac partners with BountyJobs for contingency search business through outside firms. Resumes received outside the BountyJobs system will be considered unsolicited and Freddie Mac will not be obligated to pay a placement fee. If interested in learning more, please visit www.BountyJobs.com and register with our referral code: MAC.\n\nTime-type:Full time\n\nFLSA Status:Exempt\n\nFreddie Mac offers a comprehensive total rewards package to include competitive compensation and market-leading benefit programs. Information on these benefit programs is available on our Careers site.\n\nThis position has an annualized market-based salary range of $153,000 - $229,000 and is eligible to participate in the annual incentive program. The final salary offered will generally fall within this range and is dependent on various factors including but not limited to the responsibilities of the position, experience, skill set, internal pay equity and other relevant qualifications of the applicant.",
+      "salary": null,
+      "niche": "finance",
+      "source": "workday"
     }
   ],
   "reports": [
@@ -551,13 +569,13 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 169,
+      "scanned": 177,
       "classifierPass": 7,
       "kept": 2,
       "fetched": 7,
       "classifierDrops": {
-        "not a BCM/DR role": 143,
-        "generic IT title": 15,
+        "not a BCM/DR role": 148,
+        "generic IT title": 18,
         "product/SRE resilience noise": 1,
         "off-target function": 3
       }
@@ -565,12 +583,12 @@
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 82,
+      "scanned": 79,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 75,
+        "not a BCM/DR role": 72,
         "generic IT title": 2,
         "off-target function": 4
       }
@@ -588,29 +606,29 @@
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 332,
-      "classifierPass": 25,
+      "scanned": 335,
+      "classifierPass": 27,
       "kept": 17,
-      "fetched": 25,
+      "fetched": 27,
       "classifierDrops": {
-        "not a BCM/DR role": 213,
-        "product/SRE resilience noise": 22,
-        "off-target function": 14,
-        "generic IT title": 58
+        "not a BCM/DR role": 210,
+        "product/SRE resilience noise": 25,
+        "generic IT title": 57,
+        "off-target function": 16
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 144,
+      "scanned": 146,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "not a BCM/DR role": 126,
+        "off-target function": 6,
         "manufacturing capacity resiliency": 1,
         "product/SRE resilience noise": 4,
-        "off-target function": 4,
         "generic IT title": 8
       }
     },
@@ -652,11 +670,11 @@
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 71,
-        "off-target function": 7,
+        "not a BCM/DR role": 69,
+        "off-target function": 8,
         "generic IT title": 5,
         "manufacturing capacity resiliency": 1,
-        "product/SRE resilience noise": 1
+        "product/SRE resilience noise": 2
       }
     },
     {
@@ -707,7 +725,7 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {},
-      "error": "Workday Neuberger Berman 429 https://nb.wd1.myworkdayjobs.com/wday/cxs/nb/NBCareers/jobs"
+      "error": "Workday Neuberger Berman 520 https://nb.wd1.myworkdayjobs.com/wday/cxs/nb/NBCareers/jobs"
     },
     {
       "company": "Twilio",
@@ -725,13 +743,13 @@
     {
       "company": "Waymo",
       "ats": "greenhouse",
-      "scanned": 372,
+      "scanned": 375,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
         "generic IT title": 56,
-        "not a BCM/DR role": 296,
+        "not a BCM/DR role": 299,
         "off-target function": 10,
         "product/SRE resilience noise": 6,
         "manufacturing capacity resiliency": 2
@@ -740,12 +758,12 @@
     {
       "company": "Cockroach Labs",
       "ats": "greenhouse",
-      "scanned": 13,
+      "scanned": 12,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 11,
+        "not a BCM/DR role": 10,
         "off-target function": 2
       }
     },
@@ -762,12 +780,14 @@
     {
       "company": "Freddie Mac",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Freddie Mac 429 https://freddiemac.wd5.myworkdayjobs.com/wday/cxs/freddiemac/External/jobs"
+      "scanned": 18,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a BCM/DR role": 13,
+        "generic IT title": 4
+      }
     },
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
@@ -792,12 +812,12 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 56,
+      "scanned": 53,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 48,
+        "not a BCM/DR role": 45,
         "generic IT title": 4,
         "product/SRE resilience noise": 1,
         "off-target function": 3
@@ -806,12 +826,12 @@
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 334,
+      "scanned": 346,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 308,
+        "not a BCM/DR role": 320,
         "off-target function": 22,
         "generic IT title": 2,
         "product/SRE resilience noise": 2
@@ -833,16 +853,16 @@
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2799,
+      "scanned": 2786,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 2209,
-        "generic IT title": 356,
-        "off-target function": 130,
+        "not a BCM/DR role": 2200,
+        "generic IT title": 353,
+        "off-target function": 128,
         "manufacturing capacity resiliency": 62,
-        "product/SRE resilience noise": 41
+        "product/SRE resilience noise": 42
       }
     },
     {
@@ -908,12 +928,12 @@
     {
       "company": "MSU Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 15,
+      "scanned": 14,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 12,
+        "not a BCM/DR role": 11,
         "off-target function": 1,
         "generic IT title": 2
       }
@@ -921,12 +941,12 @@
     {
       "company": "Visions Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 28,
+      "scanned": 26,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 22,
+        "not a BCM/DR role": 20,
         "off-target function": 6
       }
     },
@@ -953,12 +973,12 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 60,
+      "scanned": 62,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 59,
+        "not a BCM/DR role": 61,
         "off-target function": 1
       }
     },

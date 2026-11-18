@@ -1,55 +1,109 @@
 {
-  "ingestedAt": "2026-11-17T20:37:04.894Z",
-  "total": 15,
+  "ingestedAt": "2026-11-18T20:06:05.856Z",
+  "total": 17,
   "stats": {
-    "scanned": 1736,
-    "classifierPass": 20,
-    "kept": 15,
+    "scanned": 1779,
+    "classifierPass": 22,
+    "kept": 17,
     "classifierDrops": {
-      "not a packaging role": 1253,
-      "warehouse/ops title": 77,
-      "plant process engineering": 15,
-      "off-target function": 363,
+      "warehouse/ops title": 78,
+      "off-target function": 387,
+      "not a packaging role": 1272,
+      "plant process engineering": 12,
       "semiconductor/electronics packaging": 7,
       "electronics/mechanical packaging": 1
     }
   },
   "jobs": [
     {
-      "id": "autoliv-508bca4710ac964d",
-      "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
-      "hash": "508bca4710ac964d",
-      "company": "Autoliv",
-      "companySlug": "autoliv",
-      "title": "Packaging Lead Engineer",
+      "id": "general-mills-a2dec98cbc20f033",
+      "sourceId": "/job/Minneapolis-MN/Associate-R-D-Principal-Packaging-Engineer---E-Commerce-Pet_10118268",
+      "hash": "a2dec98cbc20f033",
+      "company": "General Mills",
+      "companySlug": "general-mills",
+      "title": "Associate R&D Principal Packaging Engineer - E-Commerce Pet",
       "department": null,
-      "location": "Ogden, Autoliv Americas - AAM, 84401, US",
-      "state": "UT",
+      "location": "Minneapolis, MN",
+      "state": "MN",
       "remote": false,
-      "postedAt": "2026-02-10T16:37:28-05:00",
-      "applyUrl": "https://careerunitedstates.autoliv.com/jobs/7208186-packaging-lead-engineer",
-      "description": "Packaging Lead Engineer\n\nIn this role you will be responsible for setting up the enterprise packaging strategy and technology roadmap while leading a group of engineers.\n\nDevelop, implement, and maintain comprehensive process standards and documentation to support all end-to-end packaging business and engineering workflows.\n\nEstablish packaging standards and lead execution of automation, returnable, and expendable plans while setting the standard on how Autoliv will achieve cost, quality, and sustainability goals. Assign workload to a team of engineers for new launch.\n\nShould you be interested in overseeing these tasks and aiming for enhanced performance standards, your role will involve :\n\nWhat you'll do\n\n• Establish and maintain packaging standards for automation, returnable, and expendable execution; publish controlled specifications and playbooks\n\n• Lead governance for exceptions/waivers; chair the standards review board and manage change control (ECO/ECN)\n\n• Define common footprints and automation execution standards; align with safety/quality and sustainability requirements.\n\n• Own enterprise packaging data architecture and tools (spec/PFEP, cartonization, labeling, image vaults): governance, permissions, and data-quality SLAs.\n\n• Standardize master data (part-to-pack links, dunnage IDs, test results, sustainability attributes) and audit routines; lead training and adoption.\n\n• Select/administer cartonization and labeling systems (GS1/AIAG compliant), including template libraries and formal change control.\n\n• Set/enforce ID standards (serialization, barcode/QR/RFID), labeling, and traceability checkpoints (ship/receive scans, gate checks).\n\n• Own the portfolio/roadmap for packaging materials, formats, and automation; prioritize pilots with success criteria and scale proven solutions.\n\n• Conduct market/technology scouting; partner with suppliers/startups to mature innovations into standards.\n\n• Develop KPIs/dashboards; monitor compliance and drive corrective actions with site leaders.\n\n• Mentor regional teams; build capability via training, playbooks, and office hours\n\n• Lead and set workload for a team of packaging engineers for new model launch and serialization projects\n\nWhat is required\n\n• BS in Packaging Engineering (preferred) or ME/IE\n\n• 7–10+ years in packaging or logistics engineering, including multi-site standards/systems ownership in automotive/Tier-1 or similar high-volume manufacturing.\n\n• Hands-on with PFEP/spec databases, cartonization (TOPS/Cape or WMS-native), labeling, and GS1/AIAG compliance.\n\n• Experience integrating packaging data with ERP/PLM/WMS (e.g., SAP/Oracle; Teamcenter/Windchill); strong Excel/BI; familiarity with APIs/MDM concepts.\n\n• Working knowledge of ISTA/ASTM transit testing, load-securement, and sustainability/EPR considerations.\n\n• CAD & Packaging: SolidWorks/NX/CATIA; ArtiosCAD for corrugated/dunnage; read drawings, GD&T, basic tolerance stacks.\n\nWhat’s in it for you\n\n• Attractive compensation package\n\n• Recognition awards, company events, family events, university discount options and many more perks.\n\n• Gender Pay Equality\n\nEqual opportunity employer\n\nAutoliv is proud to be an equal opportunity employer. Autoliv does not discriminate in any aspect of employment based on race, color, religion, national origin, ancestry, gender, sexual orientation, gender identify and/or expression, age, disability, or any other characteristic protected by federal, state, or local employment discrimination laws where Autoliv does business.",
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers/job/Minneapolis-MN/Associate-R-D-Principal-Packaging-Engineer---E-Commerce-Pet_10118268",
+      "description": "Associate R&D Principal Packaging Engineer - E-Commerce Pet",
       "salary": null,
-      "niche": "automotive",
-      "source": "teamtailor"
+      "niche": "food-beverage",
+      "source": "workday"
     },
     {
-      "id": "general-motors-0ae755b64c8a7875",
-      "sourceId": "/job/Warren-Michigan-United-States-of-America/Mechanical---Packaging-Design-Release-Engineer---12V-Component-Shields_JR-202619941-1",
-      "hash": "0ae755b64c8a7875",
-      "company": "General Motors",
-      "companySlug": "general-motors",
-      "title": "Mechanical / Packaging Design Release Engineer – 12V Component Shields",
+      "id": "general-mills-210779dd8ea3811f",
+      "sourceId": "/job/Minneapolis-MN/Internship---Research---Development-Packaging-Engineer_10128711",
+      "hash": "210779dd8ea3811f",
+      "company": "General Mills",
+      "companySlug": "general-mills",
+      "title": "Internship - Research & Development Packaging Engineer",
       "department": null,
-      "location": "Warren, Michigan, United States of America",
-      "state": "MI",
+      "location": "Minneapolis, MN",
+      "state": "MN",
       "remote": false,
-      "postedAt": "Posted 12 Days Ago",
-      "applyUrl": "https://generalmotors.wd5.myworkdayjobs.com/Careers_GM/job/Warren-Michigan-United-States-of-America/Mechanical---Packaging-Design-Release-Engineer---12V-Component-Shields_JR-202619941-1",
-      "description": "Mechanical / Packaging Design Release Engineer – 12V Component Shields",
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers/job/Minneapolis-MN/Internship---Research---Development-Packaging-Engineer_10128711",
+      "description": "Internship - Research & Development Packaging Engineer",
       "salary": null,
-      "niche": "automotive",
+      "niche": "food-beverage",
       "source": "workday"
+    },
+    {
+      "id": "general-mills-4cb28e9a6c9e46a0",
+      "sourceId": "/job/Minneapolis-MN/Research---Development-Packaging-Engineer---Campus-Recruiting_10128726-1",
+      "hash": "4cb28e9a6c9e46a0",
+      "company": "General Mills",
+      "companySlug": "general-mills",
+      "title": "Research & Development Packaging Engineer - Campus Recruiting",
+      "department": null,
+      "location": "Minneapolis, MN",
+      "state": "MN",
+      "remote": false,
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://genmills.wd1.myworkdayjobs.com/GMI_External_Careers/job/Minneapolis-MN/Research---Development-Packaging-Engineer---Campus-Recruiting_10128726-1",
+      "description": "Research & Development Packaging Engineer - Campus Recruiting",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "workday"
+    },
+    {
+      "id": "colgate-8d4eecd8b2a7621a",
+      "sourceId": "https://jobs.colgate.com/job/Topeka-Packaging-Engineer-InternCo-Op-KS-66601/1432000100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "8d4eecd8b2a7621a",
+      "company": "Colgate-Palmolive",
+      "companySlug": "colgate",
+      "title": "Packaging Engineer Intern/Co-Op",
+      "department": null,
+      "location": "Topeka, KS, US",
+      "state": "KS",
+      "remote": true,
+      "postedAt": "Wed, 18 Nov 2026 8:00:00 GMT",
+      "applyUrl": "https://jobs.colgate.com/job/Topeka-Packaging-Engineer-InternCo-Op-KS-66601/1432000100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "No Relocation Assistance Offered\nJob Number #176250 - Topeka, Kansas, United States\n\nWho We Are\n\nColgate-Palmolive Company is a global consumer products company operating in over 200 countries specializing in Oral Care, Personal Care, Home Care, Skin Care, and Pet Nutrition. Our products are trusted in more households than any other brand in the world, making us a household name!\n\nJoin Colgate-Palmolive, a caring, innovative growth company reimagining a healthier future for people, their pets, and our planet. Guided by our core values—Caring, Inclusive, and Courageous—we foster a culture that inspires our people to achieve common goals. Together, let's build a brighter, healthier future for all.\n\nPosition Summary\n\nThe Packaging Engineering Intern/Co-op will support the development, qualification, and implementation of packaging solutions for pet food products at Hill’s Pet Nutrition. This role partners closely with cross-functional teams to deliver consumer-centric packaging that meets performance, quality, cost, and manufacturability requirements.\n\nPrincipal Duties and Responsibilities\n\nSupport packaging project execution\n\n• Assist packaging engineers in driving packaging projects to closure from concept through commercialization. Contribute to project documentation, timelines, and progress updates.\n\n• Support LCA (Life cycle assessment) on packaging solutions and provide recommendations.\n\n• Cross-functional collaboration: Work with Product Development, Marketing,Design, Supply Chain, and other functional groups to identify and develop packaging technologies.\n\n• Help ensure solutions meet key attributes such as cost targets, consumer usage/functionality, manufacturability, and compatibility of materials with product formulations.\n\nTechnical communication and reporting\n\n• Prepare and present clear technical summaries, packaging concepts, test results, and business impact to both technical and non-technical stakeholders.\n\n• Develop written reports, slide presentations, and supporting documentation.\n\nPackaging development, scale-up, and technology transfer\n\n• Support packaging development through pilot and manufacturing scale-up.\n\n• Partner with Quality, Product Development, and manufacturing site teams to: Ensure packaging equipment/material system specifications, functionality, and design are appropriate for intended use.\n\n• Confirm that packaging maintains product integrity and visual appeal under various shipping, handling, and display conditions.\n\nTesting, analysis, and recommendations\n\n• Monitor and/or conduct package testing (e.g., stability, transit, drop, compression, sealing, etc.).\n\n• Analyze test data and prepare reports including conclusions and recommendations for design or process changes.\n\n• Case/cube information, cost estimates, and savings estimates\n\nLaboratory and equipment understanding\n\n• Develop a working knowledge of Packaging Laboratory test equipment and capabilities.\n\n• Learn and apply standard operating procedures for equipment use and data collection.\n\nEducation & Qualifications\n\nCurrently enrolled in a Bachelor’s degree program in:\n\nPackaging Engineering / Packaging Science\n\nMaterials Science\n\nOr a closely related technical field\n\nMinimum GPA : 3.0 (on a 4.0 scale)\n\nStrong analytical, problem-solving, and communication skills\n\nAbility to work effectively in a cross-functional, team-oriented environment\n\nProficiency in Microsoft Office (Excel, PowerPoint, Word); familiarity with CAD or packaging-related software is a plus\n\nCompensation and Benefits\n\nSalary Range\n\n$26.00 - $38.00 USD\n\nPay is determined based on experience, qualifications, and location. Salaried employees may also be eligible for discretionary bonuses, profit-sharing, and long-term incentives for Executive-level roles.\n\nBenefits\n\nSalaried employees enjoy a comprehensive benefits package, including medical, dental, vision, basic life insurance, paid parental leave, disability coverage, and participation in the 401(k) retirement plan with company matching contributions subject to eligibility requirements. Additional benefits include a minimum of 15 vacation/PTO days (hourly employees receive a minimum of 120 hours) and 13 paid holidays (vacation days are prorated based on the employee's hire date within the calendar year). Paid sick leave is adjusted based on role and location in accordance with local laws. Detailed information regarding paid sick leave entitlements will be provided to employees upon hiring and may be subject to adjustments based on changes in legislation or company policies.\n\nOur Commitment to Inclusion\nOur journey begins with our people—developing strong talent with diverse backgrounds and perspectives to best serve our consumers around the world and fostering an inclusive environment where everyone feels a true sense of belonging. We are dedicated to ensuring that each individual can be their authentic self, is treated with respect, and is empowered by leadership to contribute meaningfully to our business.\n\nEqual Opportunity Employer\n\nColgate is an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity, sexual orientation, national origin, ethnicity, age, disability, marital status, veteran status (United States positions), or any other characteristic protected by law.\n\nReasonable accommodation during the application process is available for persons with disabilities. Please complete this request form should you require accommodation.\n\nFor additional Colgate terms and conditions, please click here .\n\n#LI-Hybrid",
+      "salary": null,
+      "niche": "cpg",
+      "source": "successfactors"
+    },
+    {
+      "id": "amazon-d99e3bd9fed374d5",
+      "sourceId": "10608177",
+      "hash": "d99e3bd9fed374d5",
+      "company": "Amazon",
+      "companySlug": "amazon",
+      "title": "System Development Engineer, Robotics Delivery & Packaging Innovation (RDPI), RDPI Hardware Solutions",
+      "department": "System Development Engineering",
+      "location": "Westborough, Massachusetts, USA",
+      "state": "MA",
+      "remote": false,
+      "postedAt": "2026-11-18T00:00:00.000Z",
+      "applyUrl": "https://www.amazon.jobs/en/jobs/10608177/system-development-engineer-robotics-delivery-packaging-innovation-rdpi-rdpi-hardware-solutions",
+      "description": "Robotics Delivery & Packaging Innovation (RDPI) Global Engineering is looking for a System Development Engineer (SysDE) to join our New Product Introduction (NPI) team. Our mission is to eliminate operational complexity at the source, ensuring every RDPI automation solution is designed for deployability, reliability, and maintainability from Day One.\n\nAs a SysDE II on the NPI team, you will work alongside Hardware Development programs from the Alpha phase to help shape controls and system design before solutions are built. Rather than fixing deployment and reliability problems in the field, you will help design them out — contributing to the automation, firmware, and integration decisions that determine how easily a solution scales across our global network. You are a builder who designs and delivers the controls software and tooling for the systems you support, works autonomously on well-scoped problems while seeking direction on ambiguous ones, and partners with Hardware Development, Technical Program Managers, and the Scale and AI teams to deliver solutions that deploy with minimal human intervention.\n\nThis role is a strong fit for an engineer who thinks software-first and wants to grow in the software development craft. You will deepen core software engineering practices — modern languages, testing, CI/CD, and AI-native, agentic development — and apply them to industrial controls and hardware domains.\n\nKey job responsibilities\n- Contribute to NPI programs from Alpha through GA, helping influence controls and system design for deployability, reliability, and maintainability.\n- Design and deliver standardized hardware/software interfaces and modular, reusable control patterns that reduce integration complexity, with guidance on the most ambiguous architectural decisions.\n- Build and validate automation and commissioning frameworks (CI/CD for controls code, automated configuration validation, emulators) in partnership with the Scale team.\n- Participate in reviews of architecture, design, and operations for your solutions, and incorporate feedback to raise the quality of your work.\n- Partner with Hardware Development, TPMs, and the AI team to incorporate self-service deployment and predictive capabilities into solutions.\n- Use AI-assisted and agentic development tools to increase the quality and velocity of your engineering work, and share what you learn with the team.\n- Apply and help improve engineering and operational excellence standards, and mentor interns and junior engineers as you grow.\n\nA day in the life\nYou work across industrial control platforms (Codesys, Allen-Bradley, Siemens, Beckhoff) and the networked field devices, firmware, and cloud/WMS interfaces around them. You design and build the controls software for a solution, contribute reusable control patterns to our libraries, write and review structured-text and automation-tooling code, and work with Hardware to improve a system before it's built. You take part in design reviews that surface architectural and scalability risks early, and you prototype frameworks, emulators, automated validation, and CI/CD for controls code that become the foundation future solutions are built on. You lean on AI and agentic development tools throughout — generating, testing, and troubleshooting code — so you can focus your judgment on building solutions that are correct by design.",
+      "salary": null,
+      "niche": "industrial",
+      "source": "amazon"
     },
     {
       "id": "sargento-3715ca5282755484",
@@ -68,64 +122,6 @@
       "salary": null,
       "niche": "food-beverage",
       "source": "phenom"
-    },
-    {
-      "id": "pepsico-730e93dff5db03e2",
-      "sourceId": "478512",
-      "hash": "730e93dff5db03e2",
-      "company": "PepsiCo",
-      "companySlug": "pepsico",
-      "title": "R&D Packaging Sr Principal Engineer",
-      "department": [
-        " R&D"
-      ],
-      "location": "Plano, Texas",
-      "state": "TX",
-      "remote": false,
-      "postedAt": "2026-10-23T20:47:00+0000",
-      "applyUrl": "https://www.pepsicojobs.com/main/jobs/478512",
-      "description": "Overview Job Title: R&D Packaging Sr Principal Engineer Employer: PepsiCo, Inc. Location: 7701 Legacy Drive, Plano, Collin, TX 75024 Responsibilities Food packaging design for multi-layer high barrier rigid containers. Food packaging design for multi-layer high barrier flexible pillow packages. Develop innovative packaging containers to be used in direct food contact applications. Package machine and system design for proprietary filling and sealing rigid canisters. Package machine and system design for conversion of proprietary flexible film-based packages. Conduct acceptance testing and manufacture plant validations of packaging systems and materials. #LI-DNI Qualifications Bachelor's degree (US or Foreign Equivalent) in Packaging Science, Mechanical Engineering, Chemical Engineering and 9 years of experience in packaging and packaging system design and development. Must have nine (9) years of experience developing, writing, and maintaining packaging material specifications. Must have eight (8) years of experience packaging design for multi-layer high barrier rigid containers and flexible film based barrier packs. Must have seven (7) years of experience identifying, analyzing, and improving existing packaging and processes to drive continuous improvement programs and competitive advantage for the business. Must have five (5) years of experience with the following: Packaging system design and development supporting the implementation of new packaging systems into a production environment; overseeing execution of Commissioning – Qualification – Validation processes during commercialization of new packaging technologies; developing project update documentation and updating Senior Management with program progress on a regular basis; identifying new technologies and assessing applicability to deliver differentiated packaging productivity, sustainability and innovation programs; and creating robust business case analysis supporting program justification and program sell in to senior leadership teams. 30% of domestic and international travel required to US, Europe, Asia, and Latin America. Salary: $130,728 - 176,500/ year QUALIFIED APPLICANTS: Visit http://www.pepsicojobs.com and search req ID # 478512 or job title. Click on matching job and follow directions to submit resume. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, protected veteran status, or disability status. PepsiCo is an equal opportunity employer. Minorities/Females/Disability/Protected Veteran. EEO Statement Our Company will consider for employment qualified applicants with criminal histories in a manner consistent with the requirements of the Fair Credit Reporting Act, and all other applicable laws, including but not limited to, San Francisco Police Code Sections 4901-4919, commonly referred to as the San Francisco Fair Chance Ordinance; and Chapter XVII, Article 9 of the Los Angeles Municipal Code, commonly referred to as the Fair Chance Initiative for Hiring Ordinance. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, or disability status. PepsiCo is an\n\nEqual Opportunity Employer\n\nFemale / Minority / Disability / Protected Veteran / Sexual Orientation / Gender Identity / Age If you'd like more information about your EEO rights as an applicant under the law, please download the available EEO is the Law & EEO is the Law Supplement documents. View PepsiCo EEO Policy. Please view our Pay Transparency Statement",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "jibe"
-    },
-    {
-      "id": "pepsico-f8db542f7ba52dd2",
-      "sourceId": "476791",
-      "hash": "f8db542f7ba52dd2",
-      "company": "PepsiCo",
-      "companySlug": "pepsico",
-      "title": "Associate Principal Engineer - Automation Packaging Engineering",
-      "department": [
-        " Supply Chain"
-      ],
-      "location": "Chicago, Illinois; Plano, Texas",
-      "state": "TX",
-      "remote": false,
-      "postedAt": "2026-09-23T17:18:00+0000",
-      "applyUrl": "https://www.pepsicojobs.com/main/jobs/476791",
-      "description": "Overview The Quaker Supply Chain & Transformation Engineering – Automation Engineer is accountable for executing projects aimed at transforming Quaker packaging operations. This role will also assist in development of the multi-year equipment and capital strategy, development & standardization of manufacturing capabilities, leading continuous improvement efforts. This role leads cross-functional collaboration of internal and external partners, as well as headquarters and field stakeholders. Responsibilities Lead scope development, design recommendations, and vendor selection for Quaker packaging projects. Lead continuous improvement and lessons-learned practices. Support project execution for new capacity production lines and productivity projects at 4 Quaker facilities and occasionally contract manufacturers. Develop, manage, and execute equipment installation and start-up plans while supervising outside contractors and vendors. Support development and execution of the multi-year equipment strategy and commercialization for the Quaker fleet across 4 facilities. Support and lead cross-functional teams consisting of Headquarters, Operations, Maintenance, R&D, Equipment Vendors, Systems Integrators, External Engineering and Construction Contractors. Apply Engineering principles to problem solving and managing unexpected changes. Partner with OEMs to continuously improve equipment offerings, upgrades, training, and maintenance initiatives. Supports and encourages knowledge development of peers and partners. Develop into a subject matter expert (SME) for Quaker’s packaging equipment.\n\nCompensation and Benefits\n\nThe expected compensation range for this position is between $93,500 - $156,450. Location confirmed job-related skills, experience, and education will be considered in setting actual starting salary. Your recruiter can share more about the specific salary range during the hiring process. Bonus based on performance and eligibility target payout is 10% of annual salary paid out annually. Paid time off subject to eligibility, including paid parental leave, vacation, sick, and bereavement. In addition to salary, PepsiCo offers a comprehensive benefits package to support our employees and their families, subject to elections and eligibility: Medical, Dental, Vision, Disability, Health, and Dependent Care Reimbursement Accounts, Employee Assistance Program (EAP), Insurance (Accident, Group Legal, Life), Defined Contribution Retirement Plan. Qualifications Adequately manage, communicate and mitigate project risks. BS in Engineering/Science in a relevant field (e.g. Mechanical, Electrical, Chemical, Industrial Engineering). 7+ years of relevant experience Technical Leadership Skills: Scope development Drawing review and approval Design review leadership Development of selection criteria and option evaluation Start-Up, Commissioning, & Post-Commission support of equipment and processes Vendor bid evaluation Strong technical curiosity with a desire to continuously learn. Solid understanding of manufacturing plant operations. Ability to manage multiple simultaneous projects and competing priorities Effective verbal and written communication skills with ability to communicate well to project stakeholders, senior leadership, and cross-functional partners Manufacturing & equipment development experience is preferred Ability to travel up to 40% EEO Statement Our Company will consider for employment qualified applicants with criminal histories in a manner consistent with the requirements of the Fair Credit Reporting Act, and all other applicable laws, including but not limited to, San Francisco Police Code Sections 4901-4919, commonly referred to as the San Francisco Fair Chance Ordinance; and Chapter XVII, Article 9 of the Los Angeles Municipal Code, commonly referred to as the Fair Chance Initiative for Hiring Ordinance. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, or disability status. PepsiCo is an\n\nEqual Opportunity Employer\n\nFemale / Minority / Disability / Protected Veteran / Sexual Orientation / Gender Identity / Age If you'd like more information about your EEO rights as an applicant under the law, please download the available EEO is the Law & EEO is the Law Supplement documents. View PepsiCo EEO Policy. Please view our Pay Transparency Statement.",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "jibe"
-    },
-    {
-      "id": "unilever-b287e149ad1edd63",
-      "sourceId": "/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
-      "hash": "b287e149ad1edd63",
-      "company": "Unilever",
-      "companySlug": "unilever",
-      "title": "Global Dove Skin Cleansing R&D Packaging Manager",
-      "department": null,
-      "location": "Trumbull, CT",
-      "state": "CT",
-      "remote": false,
-      "postedAt": "Posted 5 Days Ago",
-      "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
-      "description": "Global Dove Skin Cleansing R&D Packaging Manager",
-      "salary": null,
-      "niche": "cpg",
-      "source": "workday"
     },
     {
       "id": "mars-b0c10fcf25dfe6db",
@@ -182,6 +178,26 @@
       "source": "phenom"
     },
     {
+      "id": "pepsico-730e93dff5db03e2",
+      "sourceId": "478512",
+      "hash": "730e93dff5db03e2",
+      "company": "PepsiCo",
+      "companySlug": "pepsico",
+      "title": "R&D Packaging Sr Principal Engineer",
+      "department": [
+        " R&D"
+      ],
+      "location": "Plano, Texas",
+      "state": "TX",
+      "remote": false,
+      "postedAt": "2026-10-23T20:47:00+0000",
+      "applyUrl": "https://www.pepsicojobs.com/main/jobs/478512",
+      "description": "Overview Job Title: R&D Packaging Sr Principal Engineer Employer: PepsiCo, Inc. Location: 7701 Legacy Drive, Plano, Collin, TX 75024 Responsibilities Food packaging design for multi-layer high barrier rigid containers. Food packaging design for multi-layer high barrier flexible pillow packages. Develop innovative packaging containers to be used in direct food contact applications. Package machine and system design for proprietary filling and sealing rigid canisters. Package machine and system design for conversion of proprietary flexible film-based packages. Conduct acceptance testing and manufacture plant validations of packaging systems and materials. #LI-DNI Qualifications Bachelor's degree (US or Foreign Equivalent) in Packaging Science, Mechanical Engineering, Chemical Engineering and 9 years of experience in packaging and packaging system design and development. Must have nine (9) years of experience developing, writing, and maintaining packaging material specifications. Must have eight (8) years of experience packaging design for multi-layer high barrier rigid containers and flexible film based barrier packs. Must have seven (7) years of experience identifying, analyzing, and improving existing packaging and processes to drive continuous improvement programs and competitive advantage for the business. Must have five (5) years of experience with the following: Packaging system design and development supporting the implementation of new packaging systems into a production environment; overseeing execution of Commissioning – Qualification – Validation processes during commercialization of new packaging technologies; developing project update documentation and updating Senior Management with program progress on a regular basis; identifying new technologies and assessing applicability to deliver differentiated packaging productivity, sustainability and innovation programs; and creating robust business case analysis supporting program justification and program sell in to senior leadership teams. 30% of domestic and international travel required to US, Europe, Asia, and Latin America. Salary: $130,728 - 176,500/ year QUALIFIED APPLICANTS: Visit http://www.pepsicojobs.com and search req ID # 478512 or job title. Click on matching job and follow directions to submit resume. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, protected veteran status, or disability status. PepsiCo is an equal opportunity employer. Minorities/Females/Disability/Protected Veteran. EEO Statement Our Company will consider for employment qualified applicants with criminal histories in a manner consistent with the requirements of the Fair Credit Reporting Act, and all other applicable laws, including but not limited to, San Francisco Police Code Sections 4901-4919, commonly referred to as the San Francisco Fair Chance Ordinance; and Chapter XVII, Article 9 of the Los Angeles Municipal Code, commonly referred to as the Fair Chance Initiative for Hiring Ordinance. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, or disability status. PepsiCo is an\n\nEqual Opportunity Employer\n\nFemale / Minority / Disability / Protected Veteran / Sexual Orientation / Gender Identity / Age If you'd like more information about your EEO rights as an applicant under the law, please download the available EEO is the Law & EEO is the Law Supplement documents. View PepsiCo EEO Policy. Please view our Pay Transparency Statement",
+      "salary": null,
+      "niche": "food-beverage",
+      "source": "jibe"
+    },
+    {
       "id": "amazon-3a0f7ae8d9e0dd50",
       "sourceId": "10587435",
       "hash": "3a0f7ae8d9e0dd50",
@@ -218,24 +234,6 @@
       "source": "amazon"
     },
     {
-      "id": "eastman-4b8b753d4f38448c",
-      "sourceId": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "4b8b753d4f38448c",
-      "company": "Eastman",
-      "companySlug": "eastman",
-      "title": "Packaging Engineer",
-      "department": null,
-      "location": "Kingsport, TN, US, 37660",
-      "state": "TN",
-      "remote": false,
-      "postedAt": "Thu, 22 Oct 2026 7:00:00 GMT",
-      "applyUrl": "https://jobs.eastman.com/job/Kingsport-Packaging-Engineer-TN-37660/1432855700/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Founded in 1920, Eastman is a global specialty materials company that produces a broad range of products found in items people use every day. With the purpose of enhancing the quality of life in a material way, Eastman works with customers to deliver innovative products and solutions while maintaining a commitment to safety and sustainability. The company’s innovation-driven growth model takes advantage of world-class technology platforms, deep customer engagement, and differentiated application development to grow its leading positions in attractive end markets such as transportation, building and construction, and consumables. As a globally inclusive company, Eastman employs approximately 13,000 people around the world and serves customers in more than 100 countries. The company had 2025 revenue of approximately $8.8 billion and is headquartered in Kingsport, Tennessee, USA. For more information, visit  www.eastman.com .\n\nDescription\n\nWe are seeking a highly experienced Senior Packaging Engineer with over 5 years of experience in the design and development of film- and paper-based flexible packaging solutions. This role demands deep technical knowledge of paper substrates, coatings, and sustainable barrier technologies, combined with strategic leadership to drive innovation, cost optimization, and environmental stewardship. The successful candidate will serve as a subject matter expert, collaborating closely with R&D, marketing, sales teams, and customers to deliver high-performance, sustainable paper-based packaging that meets regulatory and market requirements. This position sits within Eastman’s technology organization and provides support for our Coatings business organization.\n\nThe position reports through the Group Leader Coatings Applications Development, located in Kingsport, TN, USA and is part of a global team.\n\nResponsibilities\n\n• Provide technical leadership and mentorship on packaging properties, converting processes (e.g., lamination, metallization, printing, filling, sealing), performance testing and application requirements specific to film and paper-based solutions.\n• Lead customer facing projects regarding the design, development, and optimization of paper-based flexible packaging structures, including multi-layer laminates incorporating paper substrates, coatings, and sustainable barrier materials.\n• Drive innovation in sustainable paper packaging by evaluating new raw materials, bio-based coatings, and recyclable/compostable barrier technologies.\n• Develop and maintain detailed packaging specifications, technical documentation, and compliance requirements tailored to paper-based flexible packaging.\n• Engage the packaging value chain to discover needs across multiple applications and prioritize opportunities for development work\n• Influence decision makers at customers to adopt new packaging solutions\n• Monitor industry trends and regulatory developments related to paper-based packaging and sustainability to inform strategic decisions.\n• Partner with marketing and business development teams to deliver new business growth\n\nQualifications\n\n• Bachelor’s degree in Packaging Engineering, Materials Science, Chemical Engineering, or related field; advanced degree preferred.\n• Minimum 5 years of industry experience in flexible packaging design and development, with both paper and film-based packaging materials and solutions.\n• Willingness and ability to travel approximately 25%, mainly within North America is required\n• Deep technical understanding of paper substrates, coatings, barrier technologies, and converting processes.\n• Understanding of packaging requirements across different food packaging applications, including considerations for barrier, shelf life, regulatory compliance, and food safety.\n• Proven expertise in packaging performance testing related to film and paper-based materials.\n• Strong knowledge of sustainability principles, recyclable and compostable packaging standards, and regulatory compliance for paper-based packaging.\n• Experience engaging multiple points along the packaging value chain is highly desired\n• Excellent written and oral communication skills\n• Project leadership experience preferred including short-term and long-term project planning and participation on cross-functional team\n• Self-motivated and able to work both independently and as a team member with both internal and external partners\n\nNote:\n\nEastman will not accept applicants for this offered position who require visa sponsorship, including those whose status is F-1 visa OPT who subsequently would require ongoing visa sponsorship.\n\nBenefits\n\nYour total rewards go far beyond a competitive salary. When you join Eastman, you gain access to an exceptional suite of programs designed to protect your health, grow your wealth, and fuel your career.\n\nCompensation & Incentives\n• Base pay plus performance-based incentive opportunities that let you share in our success.\n\nHealth & Wellness\n• Comprehensive medical, prescription-drug, and dental coverage—paired with a Health Savings Account option to help you save tax-free dollars for care today or in the future.\n• A robust menu of voluntary benefits—including vision, optional life, critical-illness protection, and more—so you can tailor coverage to fit your life.\n• Holistic wellness support: financial-planning tools, family-building assistance (adoption, pregnancy, and fertility resources), parental leave, and confidential Employee Assistance Program counseling.\n\nRetirement & Financial Strategies\n• 401(k) with a company match—plus an additional annual retirement contribution from Eastman to accelerate your long-term savings.\n\nTime Away\n• Eleven paid holidays, one personal day, paid time off, and paid vacation to recharge, celebrate, or handle life’s moments.\n\nGrowth & Development\n• Access to mentorship, learning resources, and leadership programs that empower you to thrive in your current role and chart the next steps in your career.\n\nAt Eastman, we invest in the whole you—so you can bring your best self to work every day and build a future you’re proud of.\n\nEastman Chemical Company is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, disability, pregnancy, veteran status or any other protected classes as designated by law.\n\nEastman is committed to creating a powerfully engaged workplace, where everyone can contribute to their fullest potential each day.",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
       "id": "mars-599d8bc6bc161058",
       "sourceId": "MARSGLOBALR169723EXTERNALENGLOBAL",
       "hash": "599d8bc6bc161058",
@@ -254,22 +252,24 @@
       "source": "phenom"
     },
     {
-      "id": "edwards-4b6017130683243d",
-      "sourceId": "/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
-      "hash": "4b6017130683243d",
-      "company": "Edwards Lifesciences",
-      "companySlug": "edwards",
-      "title": "Senior Engineer, Packaging",
-      "department": null,
-      "location": "USA - California – Irvine",
-      "state": null,
+      "id": "pepsico-f8db542f7ba52dd2",
+      "sourceId": "476791",
+      "hash": "f8db542f7ba52dd2",
+      "company": "PepsiCo",
+      "companySlug": "pepsico",
+      "title": "Associate Principal Engineer - Automation Packaging Engineering",
+      "department": [
+        " Supply Chain"
+      ],
+      "location": "Chicago, Illinois; Plano, Texas",
+      "state": "TX",
       "remote": false,
-      "postedAt": "Posted 4 Days Ago",
-      "applyUrl": "https://edwards.wd5.myworkdayjobs.com/EdwardsCareers/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
-      "description": "Senior Engineer, Packaging",
+      "postedAt": "2026-09-23T17:18:00+0000",
+      "applyUrl": "https://www.pepsicojobs.com/main/jobs/476791",
+      "description": "Overview The Quaker Supply Chain & Transformation Engineering – Automation Engineer is accountable for executing projects aimed at transforming Quaker packaging operations. This role will also assist in development of the multi-year equipment and capital strategy, development & standardization of manufacturing capabilities, leading continuous improvement efforts. This role leads cross-functional collaboration of internal and external partners, as well as headquarters and field stakeholders. Responsibilities Lead scope development, design recommendations, and vendor selection for Quaker packaging projects. Lead continuous improvement and lessons-learned practices. Support project execution for new capacity production lines and productivity projects at 4 Quaker facilities and occasionally contract manufacturers. Develop, manage, and execute equipment installation and start-up plans while supervising outside contractors and vendors. Support development and execution of the multi-year equipment strategy and commercialization for the Quaker fleet across 4 facilities. Support and lead cross-functional teams consisting of Headquarters, Operations, Maintenance, R&D, Equipment Vendors, Systems Integrators, External Engineering and Construction Contractors. Apply Engineering principles to problem solving and managing unexpected changes. Partner with OEMs to continuously improve equipment offerings, upgrades, training, and maintenance initiatives. Supports and encourages knowledge development of peers and partners. Develop into a subject matter expert (SME) for Quaker’s packaging equipment.\n\nCompensation and Benefits\n\nThe expected compensation range for this position is between $93,500 - $156,450. Location confirmed job-related skills, experience, and education will be considered in setting actual starting salary. Your recruiter can share more about the specific salary range during the hiring process. Bonus based on performance and eligibility target payout is 10% of annual salary paid out annually. Paid time off subject to eligibility, including paid parental leave, vacation, sick, and bereavement. In addition to salary, PepsiCo offers a comprehensive benefits package to support our employees and their families, subject to elections and eligibility: Medical, Dental, Vision, Disability, Health, and Dependent Care Reimbursement Accounts, Employee Assistance Program (EAP), Insurance (Accident, Group Legal, Life), Defined Contribution Retirement Plan. Qualifications Adequately manage, communicate and mitigate project risks. BS in Engineering/Science in a relevant field (e.g. Mechanical, Electrical, Chemical, Industrial Engineering). 7+ years of relevant experience Technical Leadership Skills: Scope development Drawing review and approval Design review leadership Development of selection criteria and option evaluation Start-Up, Commissioning, & Post-Commission support of equipment and processes Vendor bid evaluation Strong technical curiosity with a desire to continuously learn. Solid understanding of manufacturing plant operations. Ability to manage multiple simultaneous projects and competing priorities Effective verbal and written communication skills with ability to communicate well to project stakeholders, senior leadership, and cross-functional partners Manufacturing & equipment development experience is preferred Ability to travel up to 40% EEO Statement Our Company will consider for employment qualified applicants with criminal histories in a manner consistent with the requirements of the Fair Credit Reporting Act, and all other applicable laws, including but not limited to, San Francisco Police Code Sections 4901-4919, commonly referred to as the San Francisco Fair Chance Ordinance; and Chapter XVII, Article 9 of the Los Angeles Municipal Code, commonly referred to as the Fair Chance Initiative for Hiring Ordinance. All qualified applicants will receive consideration for employment without regard to age, race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, or disability status. PepsiCo is an\n\nEqual Opportunity Employer\n\nFemale / Minority / Disability / Protected Veteran / Sexual Orientation / Gender Identity / Age If you'd like more information about your EEO rights as an applicant under the law, please download the available EEO is the Law & EEO is the Law Supplement documents. View PepsiCo EEO Policy. Please view our Pay Transparency Statement.",
       "salary": null,
-      "niche": "pharma",
-      "source": "workday"
+      "niche": "food-beverage",
+      "source": "jibe"
     },
     {
       "id": "zimmer-biomet-5f5903eb7b294579",
@@ -288,6 +288,42 @@
       "salary": null,
       "niche": "pharma",
       "source": "phenom"
+    },
+    {
+      "id": "autoliv-508bca4710ac964d",
+      "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
+      "hash": "508bca4710ac964d",
+      "company": "Autoliv",
+      "companySlug": "autoliv",
+      "title": "Packaging Lead Engineer",
+      "department": null,
+      "location": "Ogden, Autoliv Americas - AAM, 84401, US",
+      "state": "UT",
+      "remote": false,
+      "postedAt": "2026-02-10T16:37:28-05:00",
+      "applyUrl": "https://careerunitedstates.autoliv.com/jobs/7208186-packaging-lead-engineer",
+      "description": "Packaging Lead Engineer\n\nIn this role you will be responsible for setting up the enterprise packaging strategy and technology roadmap while leading a group of engineers.\n\nDevelop, implement, and maintain comprehensive process standards and documentation to support all end-to-end packaging business and engineering workflows.\n\nEstablish packaging standards and lead execution of automation, returnable, and expendable plans while setting the standard on how Autoliv will achieve cost, quality, and sustainability goals. Assign workload to a team of engineers for new launch.\n\nShould you be interested in overseeing these tasks and aiming for enhanced performance standards, your role will involve :\n\nWhat you'll do\n\n• Establish and maintain packaging standards for automation, returnable, and expendable execution; publish controlled specifications and playbooks\n\n• Lead governance for exceptions/waivers; chair the standards review board and manage change control (ECO/ECN)\n\n• Define common footprints and automation execution standards; align with safety/quality and sustainability requirements.\n\n• Own enterprise packaging data architecture and tools (spec/PFEP, cartonization, labeling, image vaults): governance, permissions, and data-quality SLAs.\n\n• Standardize master data (part-to-pack links, dunnage IDs, test results, sustainability attributes) and audit routines; lead training and adoption.\n\n• Select/administer cartonization and labeling systems (GS1/AIAG compliant), including template libraries and formal change control.\n\n• Set/enforce ID standards (serialization, barcode/QR/RFID), labeling, and traceability checkpoints (ship/receive scans, gate checks).\n\n• Own the portfolio/roadmap for packaging materials, formats, and automation; prioritize pilots with success criteria and scale proven solutions.\n\n• Conduct market/technology scouting; partner with suppliers/startups to mature innovations into standards.\n\n• Develop KPIs/dashboards; monitor compliance and drive corrective actions with site leaders.\n\n• Mentor regional teams; build capability via training, playbooks, and office hours\n\n• Lead and set workload for a team of packaging engineers for new model launch and serialization projects\n\nWhat is required\n\n• BS in Packaging Engineering (preferred) or ME/IE\n\n• 7–10+ years in packaging or logistics engineering, including multi-site standards/systems ownership in automotive/Tier-1 or similar high-volume manufacturing.\n\n• Hands-on with PFEP/spec databases, cartonization (TOPS/Cape or WMS-native), labeling, and GS1/AIAG compliance.\n\n• Experience integrating packaging data with ERP/PLM/WMS (e.g., SAP/Oracle; Teamcenter/Windchill); strong Excel/BI; familiarity with APIs/MDM concepts.\n\n• Working knowledge of ISTA/ASTM transit testing, load-securement, and sustainability/EPR considerations.\n\n• CAD & Packaging: SolidWorks/NX/CATIA; ArtiosCAD for corrugated/dunnage; read drawings, GD&T, basic tolerance stacks.\n\nWhat’s in it for you\n\n• Attractive compensation package\n\n• Recognition awards, company events, family events, university discount options and many more perks.\n\n• Gender Pay Equality\n\nEqual opportunity employer\n\nAutoliv is proud to be an equal opportunity employer. Autoliv does not discriminate in any aspect of employment based on race, color, religion, national origin, ancestry, gender, sexual orientation, gender identify and/or expression, age, disability, or any other characteristic protected by federal, state, or local employment discrimination laws where Autoliv does business.",
+      "salary": null,
+      "niche": "automotive",
+      "source": "teamtailor"
+    },
+    {
+      "id": "unilever-b287e149ad1edd63",
+      "sourceId": "/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
+      "hash": "b287e149ad1edd63",
+      "company": "Unilever",
+      "companySlug": "unilever",
+      "title": "Global Dove Skin Cleansing R&D Packaging Manager",
+      "department": null,
+      "location": "Trumbull, CT",
+      "state": "CT",
+      "remote": false,
+      "postedAt": "Posted 6 Days Ago",
+      "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
+      "description": "Global Dove Skin Cleansing R&D Packaging Manager",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
     }
   ],
   "reports": [
@@ -304,12 +340,15 @@
     {
       "company": "General Mills",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday General Mills 429 https://genmills.wd1.myworkdayjobs.com/wday/cxs/genmills/GMI_External_Careers/jobs"
+      "scanned": 85,
+      "classifierPass": 4,
+      "kept": 3,
+      "fetched": 4,
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "off-target function": 7,
+        "not a packaging role": 70
+      }
     },
     {
       "company": "Sonoco",
@@ -430,7 +469,7 @@
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 19,
-        "warehouse/ops title": 1
+        "off-target function": 1
       }
     },
     {
@@ -442,32 +481,30 @@
       "fetched": 1,
       "classifierDrops": {
         "warehouse/ops title": 2,
-        "not a packaging role": 47,
-        "plant process engineering": 7,
+        "not a packaging role": 49,
+        "plant process engineering": 5,
         "off-target function": 3
       }
     },
     {
       "company": "General Motors",
       "ats": "workday",
-      "scanned": 40,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
-      "classifierDrops": {
-        "not a packaging role": 34,
-        "off-target function": 5
-      }
+      "scanned": 0,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday General Motors 429 https://generalmotors.wd5.myworkdayjobs.com/wday/cxs/generalmotors/Careers_GM/jobs"
     },
     {
       "company": "Magna",
       "ats": "workday",
-      "scanned": 70,
+      "scanned": 71,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 67,
+        "not a packaging role": 68,
         "plant process engineering": 1,
         "off-target function": 1
       }
@@ -490,9 +527,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 4,
-        "not a packaging role": 42,
-        "warehouse/ops title": 4
+        "off-target function": 6,
+        "not a packaging role": 39,
+        "warehouse/ops title": 5
       }
     },
     {
@@ -511,14 +548,13 @@
     {
       "company": "Unilever",
       "ats": "workday",
-      "scanned": 40,
+      "scanned": 44,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
         "warehouse/ops title": 4,
-        "not a packaging role": 32,
-        "plant process engineering": 1,
+        "not a packaging role": 37,
         "off-target function": 1
       }
     },
@@ -535,25 +571,25 @@
     {
       "company": "Procter & Gamble",
       "ats": "phenom",
-      "scanned": 157,
+      "scanned": 154,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 139,
+        "not a packaging role": 137,
         "plant process engineering": 2,
-        "off-target function": 16
+        "off-target function": 15
       }
     },
     {
       "company": "The Coca-Cola Company",
       "ats": "cws",
-      "scanned": 12,
+      "scanned": 11,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 11,
+        "not a packaging role": 10,
         "warehouse/ops title": 1
       }
     },
@@ -565,8 +601,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "warehouse/ops title": 2,
         "not a packaging role": 65,
+        "warehouse/ops title": 2,
         "off-target function": 52,
         "plant process engineering": 1
       }
@@ -586,14 +622,14 @@
     {
       "company": "Mars",
       "ats": "phenom",
-      "scanned": 345,
+      "scanned": 357,
       "classifierPass": 3,
       "kept": 3,
       "fetched": 3,
       "classifierDrops": {
-        "warehouse/ops title": 29,
-        "not a packaging role": 241,
-        "off-target function": 72
+        "not a packaging role": 238,
+        "warehouse/ops title": 30,
+        "off-target function": 86
       }
     },
     {
@@ -604,7 +640,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 20
+        "not a packaging role": 19,
+        "off-target function": 1
       }
     },
     {
@@ -615,9 +652,10 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 3,
-        "warehouse/ops title": 1,
-        "not a packaging role": 16
+        "off-target function": 5,
+        "not a packaging role": 12,
+        "warehouse/ops title": 2,
+        "semiconductor/electronics packaging": 1
       }
     },
     {
@@ -629,8 +667,7 @@
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 16,
-        "off-target function": 3,
-        "warehouse/ops title": 1
+        "off-target function": 4
       }
     },
     {
@@ -658,22 +695,22 @@
     {
       "company": "Ernest Packaging",
       "ats": "greenhouse",
-      "scanned": 36,
+      "scanned": 37,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 9,
+        "not a packaging role": 10,
         "off-target function": 27
       }
     },
     {
       "company": "Amazon",
       "ats": "amazon",
-      "scanned": 10,
-      "classifierPass": 3,
-      "kept": 3,
-      "fetched": 3,
+      "scanned": 11,
+      "classifierPass": 4,
+      "kept": 4,
+      "fetched": 4,
       "classifierDrops": {
         "semiconductor/electronics packaging": 5,
         "electronics/mechanical packaging": 1,
@@ -793,54 +830,52 @@
     {
       "company": "The Hershey Company",
       "ats": "successfactors",
-      "scanned": 23,
+      "scanned": 29,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 18,
-        "off-target function": 2,
+        "not a packaging role": 17,
+        "off-target function": 9,
         "warehouse/ops title": 3
       }
     },
     {
       "company": "Eastman",
       "ats": "successfactors",
-      "scanned": 28,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
+      "scanned": 27,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 23,
-        "off-target function": 3,
+        "not a packaging role": 24,
+        "off-target function": 2,
         "plant process engineering": 1
       }
     },
     {
       "company": "Molson Coors",
       "ats": "successfactors",
-      "scanned": 30,
+      "scanned": 26,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 22,
-        "off-target function": 7,
-        "semiconductor/electronics packaging": 1
+        "off-target function": 5,
+        "not a packaging role": 21
       }
     },
     {
       "company": "Reckitt",
       "ats": "successfactors",
-      "scanned": 30,
+      "scanned": 35,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 24,
-        "warehouse/ops title": 3,
-        "plant process engineering": 1,
-        "off-target function": 2
+        "not a packaging role": 29,
+        "off-target function": 4,
+        "warehouse/ops title": 2
       }
     },
     {
@@ -851,22 +886,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 30,
+        "not a packaging role": 31,
         "warehouse/ops title": 1,
-        "off-target function": 6
+        "off-target function": 5
       }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
-      "scanned": 31,
+      "scanned": 29,
       "classifierPass": 1,
-      "kept": 0,
+      "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 26,
-        "off-target function": 2,
-        "warehouse/ops title": 2
+        "not a packaging role": 27,
+        "off-target function": 1
       }
     },
     {
@@ -877,23 +911,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "off-target function": 1,
         "not a packaging role": 23,
-        "warehouse/ops title": 2,
+        "warehouse/ops title": 1,
         "plant process engineering": 1
       }
     },
     {
       "company": "Edwards Lifesciences",
       "ats": "workday",
-      "scanned": 28,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
-      "classifierDrops": {
-        "not a packaging role": 24,
-        "off-target function": 2,
-        "warehouse/ops title": 1
-      }
+      "scanned": 0,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday Edwards Lifesciences 429 https://edwards.wd5.myworkdayjobs.com/wday/cxs/edwards/EdwardsCareers/jobs"
     },
     {
       "company": "Medtronic",
@@ -908,27 +940,28 @@
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
-      "scanned": 380,
+      "scanned": 385,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 230,
-        "off-target function": 143,
-        "warehouse/ops title": 5
+        "not a packaging role": 235,
+        "plant process engineering": 1,
+        "warehouse/ops title": 6,
+        "off-target function": 141
       }
     },
     {
       "company": "Sargento",
       "ats": "phenom",
-      "scanned": 48,
+      "scanned": 50,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "warehouse/ops title": 3,
-        "not a packaging role": 37,
-        "off-target function": 7
+        "not a packaging role": 38,
+        "off-target function": 8,
+        "warehouse/ops title": 3
       }
     },
     {
