@@ -1,16 +1,16 @@
 {
-  "ingestedAt": "2026-11-18T20:09:47.682Z",
+  "ingestedAt": "2026-11-19T20:10:40.367Z",
   "total": 25,
   "stats": {
-    "scanned": 4651,
+    "scanned": 4636,
     "classifierPass": 41,
     "kept": 25,
     "classifierDrops": {
-      "not a BCM/DR role": 3701,
-      "generic IT title": 527,
-      "product/SRE resilience noise": 83,
-      "off-target function": 233,
-      "manufacturing capacity resiliency": 66
+      "not a BCM/DR role": 3692,
+      "generic IT title": 520,
+      "product/SRE resilience noise": 86,
+      "off-target function": 234,
+      "manufacturing capacity resiliency": 63
     }
   },
   "jobs": [
@@ -25,7 +25,7 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 9 Days Ago",
+      "postedAt": "Posted 10 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Sr-Manager-Information-Security---Cyber-Resiliency_R_1517750",
       "description": "Sr. Manager Information Security – Cyber Resiliency",
       "salary": null,
@@ -43,12 +43,48 @@
       "location": "Mount Laurel, New Jersey",
       "state": "NJ",
       "remote": false,
-      "postedAt": "Posted 9 Days Ago",
+      "postedAt": "Posted 10 Days Ago",
       "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/Information-Security-Specialist---Cyber-Resiliency_R_1517740",
       "description": "Information Security Specialist - Cyber Resiliency",
       "salary": null,
       "niche": "finance",
       "source": "workday"
+    },
+    {
+      "id": "jpmorgan-chase-1fdd9b000074531c",
+      "sourceId": "210809351",
+      "hash": "1fdd9b000074531c",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Product Director – Business Resiliency- Executive Director",
+      "department": null,
+      "location": "Columbus, OH, United States",
+      "state": "OH",
+      "remote": false,
+      "postedAt": "2026-11-18",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210809351",
+      "description": "Shape the future of the firmwide resiliency product as we rethink and rebuild a platform that can stand up to the rapidly evolving technology and threat landscape we face.\n\nAs a Product Director in Firmwide Resiliency Product Management, you will own the product strategy and delivery of the future state Resiliency product used by Business Resiliency and Technology Resiliency managers to plan for and respond to business disruptions as they are occurring in real time. You will be accountable for the delivery of an end to end integrated system by partnering with stakeholders from the Businesses and Functions and other firmwide teams such as Corporate Third Party Oversight, Cyber and Tech Controls. You will set an outcome driven roadmap, leverage AI and operate with a “speed-to-production” mindset, using iterative delivery approaches (e.g., Pizza POD model) to rapidly prototype, validate with users, and scale durable capabilities.\n\nJob responsibilities\n\n• Define and drive product strategy for a Resiliency Product pillar and manage a team of product owners through execution.\n• Lead customer discovery (research, workflow analysis, pain-point identification) to translate user needs into a prioritized roadmap and clear value proposition.\n• Lead AI enablement within the product, identifying high-impact use cases (e.g., NLP-driven insights, automation, decision support), shaping an AI integration strategy, and guiding responsible deployment with appropriate controls and monitoring.\n• Deliver iteratively using agile practices and small, empowered teams (e.g., Pizza POD), accelerating time-to-value through rapid prototyping, and continuous feedback loops.\n• Coaches and mentors the Resiliency Product team on best practices, such as solution generation, market research, prototyping methods, product adoption strategies, and product delivery, enabling them to effectively deliver on objectives.\n• Partners across line of defense to identify, validate, and scale reusable testing solutions and components, driving efficiency and scale.\n• Own and maintain the product backlog, ensuring epics, user stories, and acceptance criteria are well-defined, testable, and aligned to outcomes (and evolving approach as the firm evolves the software development lifecycle).\n• Establish and track success metrics (e.g., tester productivity, cycle time, coverage, control outcomes, reliability, risk posture, and cost) and use data to guide prioritization and investment decisions.\n• Act as the voice of the customer, partnering with stakeholders to evolve operational policies, process flows, procedures, tooling, and user communications where required to enable adoption.\n• Evaluate “build vs. partner vs. defer” decisions for emerging AI/ agentic capabilities and balancing speed, scalability, and risk.\n• Support go-to-market and change management including launch planning, training/ readiness, documentation, and post-launch support to drive adoption and measurable business impact.\nRequired qualifications, capabilities, and skills\n\n• Demonstrated experience owning and delivering a product(s) across the full product lifecycle (discovery, delivery, adoption, optimization), with accountability for outcomes and performance.\n• Hands-on experience delivering AI-enabled capabilities in production (e.g., NLP, intelligent automation, decision support), including model/ product iteration, monitoring, and stakeholder readiness.\n• Experience incorporating agentic patterns/ workflows into products (e.g., orchestration, tool-use, human-in-the-loop review) with an emphasis on control, transparency, and auditability.\n• Proven ability to deliver in an iterative, fast-paced model using short development cycles and small teams (e.g., Pizza POD), partnering tightly with design and engineering.\n• Strong stakeholder management across Engineering, UI/UX Design, Data, Resiliency, Compliance, and senior leadership-aligning outcomes, negotiating trade-offs, and driving timely decisions.\n• Proven track record leading large, complex initiatives impacting multiple stakeholders, with strong written/oral communication at a senior executive level.\n• Understanding of risk and controls concepts, in risk management, assessment, control evaluations, testing, or a related field.\n• 10 years of experience delivering products, projects, or technology applications at scale.\n• Strong knowledge of the product development lifecycle, technical design concepts, and data/ analytics fundamentals; ability to translate complex needs into clear requirements.\n• Experience driving organizational change and enabling adoption through communications, training, and operating model/process updates.\n\nPreferred qualifications\n\n, capabilities, and skills\n\n• Experience working in or closely with audit, compliance, risk management; strong understanding of internal controls.\n• Experience with modern data and analytics tools (e.g., Databricks, ThoughtSpot, Genie, Sigma, Prophecy, Python).\n\nShape the future of firmwide resiliency product as a Product Director.\n\nShape the future of firmwide resiliency product as a Product Director.\n\nProduct Director – Business Resiliency- Executive Director",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
+    {
+      "id": "jpmorgan-chase-2ba137cceca8ec6c",
+      "sourceId": "210809356",
+      "hash": "2ba137cceca8ec6c",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Product Director – Business Resiliency - Executive Director",
+      "department": null,
+      "location": "Jersey City, NJ, United States",
+      "state": "NJ",
+      "remote": false,
+      "postedAt": "2026-11-18",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210809356",
+      "description": "Shape the future of the firmwide resiliency product as we rethink and rebuild a platform that can stand up to the rapidly evolving technology and threat landscape we face.\n\nAs a Product Director in Firmwide Resiliency Product Management, you will own the product strategy and delivery of the future state Resiliency product used by Business Resiliency and Technology Resiliency managers to plan for and respond to business disruptions as they are occurring in real time. You will be accountable for the delivery of an end to end integrated system by partnering with stakeholders from the Businesses and Functions and other firmwide teams such as Corporate Third Party Oversight, Cyber and Tech Controls. You will set an outcome driven roadmap, leverage AI and operate with a “speed-to-production” mindset, using iterative delivery approaches (e.g., Pizza POD model) to rapidly prototype, validate with users, and scale durable capabilities.\n\nJob responsibilities\n\n• Define and drive product strategy for a Resiliency Product pillar and manage a team of product owners through execution.\n• Lead customer discovery (research, workflow analysis, pain-point identification) to translate user needs into a prioritized roadmap and clear value proposition.\n• Lead AI enablement within the product, identifying high-impact use cases (e.g., NLP-driven insights, automation, decision support), shaping an AI integration strategy, and guiding responsible deployment with appropriate controls and monitoring.\n• Deliver iteratively using agile practices and small, empowered teams (e.g., Pizza POD), accelerating time-to-value through rapid prototyping, and continuous feedback loops.\n• Coaches and mentors the Resiliency Product team on best practices, such as solution generation, market research, prototyping methods, product adoption strategies, and product delivery, enabling them to effectively deliver on objectives.\n• Partners across line of defense to identify, validate, and scale reusable testing solutions and components, driving efficiency and scale.\n• Own and maintain the product backlog, ensuring epics, user stories, and acceptance criteria are well-defined, testable, and aligned to outcomes (and evolving approach as the firm evolves the software development lifecycle).\n• Establish and track success metrics (e.g., tester productivity, cycle time, coverage, control outcomes, reliability, risk posture, and cost) and use data to guide prioritization and investment decisions.\n• Act as the voice of the customer, partnering with stakeholders to evolve operational policies, process flows, procedures, tooling, and user communications where required to enable adoption.\n• Evaluate “build vs. partner vs. defer” decisions for emerging AI/ agentic capabilities and balancing speed, scalability, and risk.\n• Support go-to-market and change management including launch planning, training/ readiness, documentation, and post-launch support to drive adoption and measurable business impact.\nRequired qualifications, capabilities, and skills\n\n• Demonstrated experience owning and delivering a product(s) across the full product lifecycle (discovery, delivery, adoption, optimization), with accountability for outcomes and performance.\n• Hands-on experience delivering AI-enabled capabilities in production (e.g., NLP, intelligent automation, decision support), including model/ product iteration, monitoring, and stakeholder readiness.\n• Experience incorporating agentic patterns/ workflows into products (e.g., orchestration, tool-use, human-in-the-loop review) with an emphasis on control, transparency, and auditability.\n• Proven ability to deliver in an iterative, fast-paced model using short development cycles and small teams (e.g., Pizza POD), partnering tightly with design and engineering.\n• Strong stakeholder management across Engineering, UI/UX Design, Data, Resiliency, Compliance, and senior leadership-aligning outcomes, negotiating trade-offs, and driving timely decisions.\n• Proven track record leading large, complex initiatives impacting multiple stakeholders, with strong written/oral communication at a senior executive level.\n• Understanding of risk and controls concepts, in risk management, assessment, control evaluations, testing, or a related field.\n• 10 years of experience delivering products, projects, or technology applications at scale.\n• Strong knowledge of the product development lifecycle, technical design concepts, and data/ analytics fundamentals; ability to translate complex needs into clear requirements.\n• Experience driving organizational change and enabling adoption through communications, training, and operating model/process updates.\n\nPreferred qualifications\n\n, capabilities, and skills\n\n• Experience working in or closely with audit, compliance, risk management; strong understanding of internal controls.\n• Experience with modern data and analytics tools (e.g., Databricks, ThoughtSpot, Genie, Sigma, Prophecy, Python).\n\nShape the future of firmwide resiliency product as a Product Director.\n\nShape the future of firmwide resiliency product as a Product Director.\n\nProduct Director – Business Resiliency - Executive Director",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
     },
     {
       "id": "jpmorgan-chase-4cdea91e248c86ec",
@@ -136,24 +172,6 @@
       "postedAt": "2026-11-03",
       "applyUrl": "https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/136205",
       "description": "The Operational Risk Department at Goldman Sachs is an independent risk management function responsible for developing and implementing a standardized framework to identify, measure, and monitor operational risk across the firm. AI Coverage is a specialized role within this framework, dedicated to strengthening the firm's oversight of operational risks arising from the firm's adoption and use of artificial intelligence. This professional will be responsible for continuously identifying, monitoring, measuring, and assessing operational risks associated with AI platforms, foundational models, agentic systems, and the infrastructure, vendors, and data that support them — ensuring the firm's AI footprint is built, operated, and governed in a manner consistent with the firm's operational resilience, third-party risk, and data governance frameworks, policies, and standards. The role is intentionally broad: the successful candidate may bring deep expertise in one of several adjacent risk disciplines, provided that expertise is grounded in direct experience evaluating or managing risk in AI, machine learning, or agentic technology environments.\n\nResponsibilities\n\nAI Resilience & Operational Continuity\n\n• Identify, monitor, and analyze operational risks arising from AI system resilience, including infrastructure unavailability, foundational model outages, non-deterministic behavior under stress, cascading multi-agent failures, model degradation from data drift, and unavailability of third-party hosted LLMs and MCP server ecosystems.\n\n• Ensure AI systems qualifying as dependent or Integral Assets to Important Business Services (IBSs) are mapped within Business Continuity Plans, subject to Impact Tolerance Statements, and supported by alternate workaround strategies (e.g., model fallback, alternate vendors).\n\n• Champion resilience-by-design principles (modularity, diversity, redundancy, adaptability) and challenge gaps in controls such as AI Model Version Pinning, AI System Observability, multi-data-center deployment, and circuit-breaker/fallback procedures.\n\n• Conduct evidence-based scenario analysis and support integrated/asset-based testing of AI-dependent IBSs, coordinating with 1LoD Engineering, TPRM, and business stakeholders to confirm the firm remains within impact tolerances (RTO/RPO/SLA) during disruption.\n\nAI Third-Party & Supply Chain Risk\n\n• Identify, monitor, and analyze operational risks from third-party AI services, externally hosted LLMs, and vendor-supplied foundation models, including information leakage, model tampering, MCP server supply chain compromise, and agent-mediated credential harvesting.\n\n• Oversee vendor due diligence, third-party model validation, and SLA enforcement for AI safety, performance, and Denial-of-Wallet monitoring, escalating contractual breaches.\n\n• Monitor the AI third-party control inventory (e.g., AI Data Leakage Prevention, MCP Server Security Governance, Agentic System Credential Protection Framework) for sufficiency and completeness.\n\nAI Data Governance\n\n• Apply the Firmwide Policy and Standard for Data Governance to AI use cases, ensuring Datasets used to train, fine-tune, ground (e.g., RAG/vector databases), or operate AI and agentic systems are inventoried, risk-tiered, and have clearly assigned Owners, Secondary Owners, and Senior Owners.\n\n• Challenge the adequacy of Data Quality controls (accuracy, completeness, timeliness) and Data Lineage documentation for datasets feeding AI model pipelines, particularly where data crosses divisional boundaries or lacks Data Contracts.\n\n• Assess whether Authoritative Data Sources (ADS) used by AI/ML systems meet governed-access, reconciliation, and change-management requirements, and escalate reliance on non-ADS or ungoverned data sources (e.g., unvetted training corpora, scraped data) as Data Defects or exceptions.\n\n• Review AI-related Data Defects and Data Requests for appropriate logging, remediation, and escalation per the Firmwide Standard for Data Defect and Data Request Management.\n\nCross-Cutting Risk Management\n\n• Conduct data analysis to identify trends in AI availability, observability telemetry, vendor performance, and data quality metrics; escalate concerns to senior management when warranted.\n\n• Facilitate Operational Risk Event reporting for AI resilience, third-party, and data-related incidents.\n\n• Contribute to divisional risk profile assessments, RCSA review and challenge, and New Activity reviews for AI model deployments, vendor engagements, and data sourcing changes.\n\n• Remain current on regulatory and industry developments (e.g., EU AI Act, NIST AI 600-1, FFIEC IT Booklet) impacting AI resilience, third-party, and data governance obligations.\n\n• Identify and drive initiatives to improve AI risk management practices across resilience, third-party, and data domains.\n\nQualifications\n\n• Strong understanding of operational resilience (BCP, impact tolerances, RTO/RPO), third-party risk management (vendor due diligence, SLA governance), and/or data governance (data lineage, data quality, ADS/PDE frameworks) — candidates need not have deep expertise in all three, but must demonstrate direct experience applying one or more of these disciplines to AI/ML systems .\n\n• Strong understanding of AI/ML architecture: foundation models, LLMs, RAG systems, agentic AI frameworks, MCP servers, vector databases, and model deployment infrastructure.\n\n• Experience with resilience-by-design, AI vendor/supply chain controls, or data quality control frameworks applied to AI pipelines.\n\n• Knowledge of relevant control frameworks (NIST 800-53, NIST AI 600-1, ISO 27001, EU AI Act) and/or the firm's Data Governance Policy/Standard.\n\n• 7+ years of relevant experience in operational risk, resilience/BCP, third-party risk management, data governance, a financial institution's technology division, or a technology company building/maintaining enterprise AI/ML systems.\n\n• Strong verbal and written communication skills with the ability to present with impact and influence.\n\n• Ability to work in a fast-paced environment with strong delivery focus; strong organizational skills; project management experience a plus.\n\n• Proficiency in Word, Excel, PowerPoint, SharePoint/OneDrive; SQL, graph databases, and Tableau a plus.\n\n• Relevant certifications such as CISA, CISM, CBCP/MBCI, CTPRP, or related AI/ML, data, and resilience certifications.\n\n• Bachelor's Degree in Computer Science, Cybersecurity, Business and Technology Management, Finance, Data Science, or related disciplines.\n\nThe Risk division is responsible for credit, market and operational risk, model risk, independent liquidity risk, and insurance throughout the firm.\n\nABOUT GOLDMAN SACHS\n\nAt Goldman Sachs, we commit our people, capital and ideas to help our clients, shareholders and the communities we serve to grow. Founded in 1869, we are a leading global investment banking, securities and investment management firm. Headquartered in New York, we maintain offices around the world.\n\nWe believe who you are makes you better at what you do. We're committed to fostering and advancing diversity and inclusion in our own workplace and beyond by ensuring every individual within our firm has a number of opportunities to grow professionally and personally, from our training and development opportunities and firmwide networks to benefits, wellness and personal finance offerings and mindfulness programs. Learn more about our culture, benefits, and people at GS.com/careers.\n\nWe’re committed to finding reasonable accommodations for candidates with special needs or disabilities during our recruiting process. Learn more: https://www.goldmansachs.com/careers/footer/disability-statement.html\n\n© The Goldman Sachs Group, Inc., 2023. All rights reserved.\n\nGoldman Sachs is an equal employment/affirmative action employer Female/Minority/Disability/Veteran/Sexual Orientation/Gender Identity\n\nRISK\n\nRISK\n\nRisk, Technology Operational Risk – CORE Engineering Risk, Vice President, Dallas",
-      "salary": null,
-      "niche": "finance",
-      "source": "oracle"
-    },
-    {
-      "id": "jpmorgan-chase-102c70d63d189129",
-      "sourceId": "210798794",
-      "hash": "102c70d63d189129",
-      "company": "JPMorgan Chase",
-      "companySlug": "jpmorgan-chase",
-      "title": "Executive Director - CTO Tech Resiliency Lead",
-      "department": null,
-      "location": "Jersey City, NJ, United States",
-      "state": "NJ",
-      "remote": false,
-      "postedAt": "2026-10-27",
-      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210798794",
-      "description": "As a member of the Technology Resiliency team within JPMorganChase Global Technology’s Chief Technology Office, you will help lead our global resiliency strategy, execution, and compliance. You will play a key role in driving continuous improvement of the Resiliency Operating Framework, ensuring alignment with firmwide standards and regulatory obligations.\n\nIn this role, you will also serve as a primary point of accountability for overseeing and coordinating the operational execution of technology and business resiliency activities. You will build strong partnerships with Application Owners, Site Reliability Engineering teams, Technology Resiliency Leads, and business stakeholders to deliver comprehensive resiliency coverage and ensure adherence to firmwide risk and control standards. Your work will directly support the firm’s ability to recover critical platforms and maintain continuity in the face of operational disruption.\n\nBring your skills and experience to our global team supporting application and product owners who are delivering new and emerging technologies across the firm—advancing innovation and competitive advantage.\n\nJob Responsibilities:\n\n• Oversee and coordinate the end-to-end execution of technology resiliency activities across CTO, ensuring alignment with firmwide policies and risk standards\n\n• Sets reuse-first expectations for enterprise-authorized AI adoption within the work environment across technology risk and controls operations to accelerate evidence synthesis, issue analysis, and executive reporting, with human-in-the-loop validation and appropriate handling of sensitive data.\n\n• Provide domain expertise as guidance to application and product owners, ensuring technologists understand applicable risk, control, and policy requirements\n\n• Coordinate and manage Technology Resiliency testing events, including planning, execution, and stakeholder communication for Maximum Exposure Point of Concentration (MEPC) testing across CTO products\n\n• Collaborate with stakeholders, including Application Owners, Product Owners, Engineers, Tech and Business Control Managers, and Software Reliability Engineers to ensure alignment and integration of resiliency practices across the firm.\n\n• Develop and maintain compliance reporting and dashboarding to provide clear visibility into resiliency metrics and objectives. Ensure timely and accurate communication to stakeholders and leadership, utilizing data from functional reports.\n\n• Support regulatory exams, audits, and 2nd Line compliance initiatives, ensuring functional reports are aligned with compliance requirements.\n\n• Establishes governance standards for AI-assisted workflows used in risk reporting and issue/action-plan management, ensuring traceability/auditability and alignment to security, resiliency, and regulatory expectations.\n\nRequired qualifications, capabilities, and skills\n\n• Strong understanding of IT security principles and best practices\n\n• Demonstrated experience in technology risk, controls, or resiliency functions within a large-scale, complex technology environment\n\n• Establishes governance standards for AI-assisted workflows used in risk reporting and issue/action-plan management, ensuring traceability/auditability and alignment to security, resiliency, and regulatory expectations.\n\n• Establishes governance standards for AI-assisted workflows used in risk reporting and issue/action-plan management, ensuring traceability/auditability and alignment to security, resiliency, and regulatory expectations.\n\n• Experience facilitating complex simulations and scenario-based exercises\n\n• Strong verbal and written communication skills, with proven ability to present to and engage senior management and executive stakeholders\n\n• Proven ability to build and sustain cross-functional partnerships across technology, business, and corporate functions, and influence stakeholders without direct authority\n\n• Strong critical thinking and analytical skills, with the ability to assess risk exposure, identify gaps, and drive remediation\n\n• Experience coordinating and managing technology testing or audit-related activities, including planning, execution, and reporting\n\n• Proven ability to lead teams and develop talent while managing multiple priorities in a fast-paced environment, with strong organizational skills and attention to detail\n\n• Experience with data analysis tools and techniques to support resiliency reporting and compliance monitoring\n\nPreferred qualifications\n\n, capabilities, and skills\n\n• Financial Services industry experience\n\n• Experience supporting transformation, resiliency uplift, or capability-building initiatives.\n\n• Familiarity with third-party resiliency, supplier risk, business service mapping, and dependency management frameworks.\n\n• Experience developing executive reporting, governance metrics, dashboards, and thematic insights.\n\nOpportunity to lead Technology Resiliency execution and governance in Global Technology's Chief Technology Office.\n\nOpportunity to lead Technology Resiliency execution and governance in Global Technology's Chief Technology Office.\n\nExecutive Director - CTO Tech Resiliency Lead",
       "salary": null,
       "niche": "finance",
       "source": "oracle"
@@ -445,24 +463,6 @@
       "salary": null,
       "niche": null,
       "source": "greenhouse"
-    },
-    {
-      "id": "freddie-mac-73d2e7514596f450",
-      "sourceId": "/job/McLean-VA/Operational-Risk-Senior-Manager_JR17598",
-      "hash": "73d2e7514596f450",
-      "company": "Freddie Mac",
-      "companySlug": "freddie-mac",
-      "title": "Operational Risk Senior Manager",
-      "department": null,
-      "location": "McLean, VA, United States of America",
-      "state": "VA",
-      "remote": false,
-      "postedAt": "Posted 30+ Days Ago",
-      "applyUrl": "https://freddiemac.wd5.myworkdayjobs.com/External/job/McLean-VA/Operational-Risk-Senior-Manager_JR17598",
-      "description": "At Freddie Mac, our mission of Making Home Possible is what motivates us, and it’s at the core of everything we do. Since our charter in 1970, we have made home possible for more than 90 million families across the country. Join an organization where your work contributes to a greater purpose.\n\nPosition Overview\n\nAre you eager to make an impact in a fast-paced, agile environment? Do you have strong experience in operational risk and controls, model risk, and reporting, along with analytical and interpersonal skills and knowledge of Single-Family Acquisitions (SFA) or mortgage markets?\n\nIf you are curious, passionate about learning, and customer-focused, apply for the Operational Risk Senior Manager to help lead SFA Risk Management.\n\nOur Impact:\n\nAs part of Freddie Mac’s Single Family Acquisitions (SFA) organization, Operational Risk Management (ORM) drives consistency, transparency, and effectiveness in nonfinancial risk across multiple domains, including People, Reporting, Transaction and Execution, Information, Technology, Third Party, Operational Resiliency, Model, and Physical Security and Safety Risks. This role will focus on Model risk including Model Development, Implementation, Performance, Use, and Governance risks. The role will also support Artificial Intelligence (AI) risk assessments.\n\nORM integrates:\n\n• Risk and control evaluations across the Single Family Acquisitions Division\n\n• Management reporting\n\n• Coordination and escalation management\n\nYour Impact:\n\nAs a SFA ORM Senior Manager, each workday is unique. Your impact will focus on the following key activities:\n\n• Evaluate and report on operational risks, controls, issues, and policies/procedures.\n\n• Document operational risks and controls as part of risk and control self-assessments.\n\n• Perform governance and oversight over model related issues.\n\n• Evaluate operational risk events related to models.\n\n• Support the business during Audits, Exams, and Process Design Reviews.\n\n• Escalate policy/standard non-compliance and at-risk timelines.\n\n• Manage and develop staff.\n\n• Evaluate applicability of corporate standards and FHFA directives against process risks and controls\n\n• Challenge status quo. Identify opportunities to improve and streamline processes, including reporting and process automation.\n\n• Periodically participate in operational risk-related projects that impact the SF Acquisitions division.\n\nQualifications\n\n• Minimum 10 years of relevant experience with a minimum of 5-6 years of operational risk management and/or audit experience\n\n• Bachelor’s Degree or equivalent\n\n• Extensive experience with risks and controls with a focus on Model and AI risks and controls\n\n• Strong Proficiency in MS Office Suite (Excel, PowerPoint, Word, Outlook)\n\n• Relationship Management skills including influencing others, facilitating meetings, engaging partners, building relationship networks, and resolving conflict\n\n• Relevant professional certifications (PMP, CPA, CISA, CIA, etc.) are a plus\n\nKeys to Success in this Role:\n\n• Results driven\n\n• Ability to motivate and inspire others.\n\n• Problem-solving, critical thinking, and analytical skills\n\n• Strong oral and written communication skills, including the ability to ask insightful questions\n\n• Naturally curious and passion for learning\n\n• Team player with a positive attitude\n\nCurrent Freddie Mac employees please apply through the internal career site.\n\nWe consider all applicants for all positions without regard to gender, race, color, religion, national origin, age, marital status, veteran status, sexual orientation, gender identity/expression, physical and mental disability, pregnancy, ethnicity, genetic information or any other protected categories under applicable federal, state or local laws. We will ensure that individuals are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.\n\nA safe and secure environment is critical to Freddie Mac’s business. This includes employee commitment to our acceptable use policy, applying a vigilance-first approach to work, supporting regulatory mandates, and using best practices to protect Freddie Mac from potential threats and risk. Employees exercise this responsibility by executing against policies and procedures and adhering to privacy & security obligations as required via training programs.\n\nCA Applicants: Qualified applications with arrest or conviction records will be considered for employment in accordance with the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act.\n\nNotice to External Search Firms: Freddie Mac partners with BountyJobs for contingency search business through outside firms. Resumes received outside the BountyJobs system will be considered unsolicited and Freddie Mac will not be obligated to pay a placement fee. If interested in learning more, please visit www.BountyJobs.com and register with our referral code: MAC.\n\nTime-type:Full time\n\nFLSA Status:Exempt\n\nFreddie Mac offers a comprehensive total rewards package to include competitive compensation and market-leading benefit programs. Information on these benefit programs is available on our Careers site.\n\nThis position has an annualized market-based salary range of $153,000 - $229,000 and is eligible to participate in the annual incentive program. The final salary offered will generally fall within this range and is dependent on various factors including but not limited to the responsibilities of the position, experience, skill set, internal pay equity and other relevant qualifications of the applicant.",
-      "salary": null,
-      "niche": "finance",
-      "source": "workday"
     }
   ],
   "reports": [
@@ -569,13 +569,13 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 177,
+      "scanned": 178,
       "classifierPass": 7,
       "kept": 2,
       "fetched": 7,
       "classifierDrops": {
         "not a BCM/DR role": 148,
-        "generic IT title": 18,
+        "generic IT title": 19,
         "product/SRE resilience noise": 1,
         "off-target function": 3
       }
@@ -583,13 +583,14 @@
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 79,
+      "scanned": 84,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 72,
-        "generic IT title": 2,
+        "not a BCM/DR role": 73,
+        "generic IT title": 3,
+        "product/SRE resilience noise": 3,
         "off-target function": 4
       }
     },
@@ -606,30 +607,30 @@
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 335,
-      "classifierPass": 27,
-      "kept": 17,
-      "fetched": 27,
+      "scanned": 340,
+      "classifierPass": 28,
+      "kept": 18,
+      "fetched": 28,
       "classifierDrops": {
-        "not a BCM/DR role": 210,
-        "product/SRE resilience noise": 25,
-        "generic IT title": 57,
-        "off-target function": 16
+        "not a BCM/DR role": 215,
+        "product/SRE resilience noise": 24,
+        "generic IT title": 58,
+        "off-target function": 15
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 146,
+      "scanned": 145,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 126,
-        "off-target function": 6,
+        "not a BCM/DR role": 125,
+        "off-target function": 7,
         "manufacturing capacity resiliency": 1,
         "product/SRE resilience noise": 4,
-        "generic IT title": 8
+        "generic IT title": 7
       }
     },
     {
@@ -665,14 +666,14 @@
     {
       "company": "UnitedHealth Group",
       "ats": "talentbrew",
-      "scanned": 86,
+      "scanned": 85,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "not a BCM/DR role": 69,
         "off-target function": 8,
-        "generic IT title": 5,
+        "generic IT title": 4,
         "manufacturing capacity resiliency": 1,
         "product/SRE resilience noise": 2
       }
@@ -725,31 +726,31 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {},
-      "error": "Workday Neuberger Berman 520 https://nb.wd1.myworkdayjobs.com/wday/cxs/nb/NBCareers/jobs"
+      "error": "Workday Neuberger Berman 429 https://nb.wd1.myworkdayjobs.com/wday/cxs/nb/NBCareers/jobs"
     },
     {
       "company": "Twilio",
       "ats": "greenhouse",
-      "scanned": 110,
+      "scanned": 106,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 82,
+        "not a BCM/DR role": 80,
         "off-target function": 19,
-        "generic IT title": 9
+        "generic IT title": 7
       }
     },
     {
       "company": "Waymo",
       "ats": "greenhouse",
-      "scanned": 375,
+      "scanned": 372,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "generic IT title": 56,
-        "not a BCM/DR role": 299,
+        "generic IT title": 57,
+        "not a BCM/DR role": 295,
         "off-target function": 10,
         "product/SRE resilience noise": 6,
         "manufacturing capacity resiliency": 2
@@ -780,14 +781,12 @@
     {
       "company": "Freddie Mac",
       "ats": "workday",
-      "scanned": 18,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
-      "classifierDrops": {
-        "not a BCM/DR role": 13,
-        "generic IT title": 4
-      }
+      "scanned": 0,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday Freddie Mac 429 https://freddiemac.wd5.myworkdayjobs.com/wday/cxs/freddiemac/External/jobs"
     },
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
@@ -826,42 +825,42 @@
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 346,
+      "scanned": 352,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 320,
-        "off-target function": 22,
-        "generic IT title": 2,
-        "product/SRE resilience noise": 2
+        "not a BCM/DR role": 322,
+        "off-target function": 23,
+        "generic IT title": 4,
+        "product/SRE resilience noise": 3
       }
     },
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 26,
+      "scanned": 29,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 15,
+        "not a BCM/DR role": 17,
         "generic IT title": 7,
-        "off-target function": 4
+        "off-target function": 5
       }
     },
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2786,
+      "scanned": 2771,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 2200,
-        "generic IT title": 353,
+        "not a BCM/DR role": 2193,
+        "generic IT title": 348,
         "off-target function": 128,
-        "manufacturing capacity resiliency": 62,
+        "manufacturing capacity resiliency": 59,
         "product/SRE resilience noise": 42
       }
     },
@@ -928,12 +927,12 @@
     {
       "company": "MSU Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 14,
+      "scanned": 16,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 11,
+        "not a BCM/DR role": 13,
         "off-target function": 1,
         "generic IT title": 2
       }
@@ -946,8 +945,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 20,
-        "off-target function": 6
+        "not a BCM/DR role": 21,
+        "off-target function": 5
       }
     },
     {
@@ -973,12 +972,12 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 62,
+      "scanned": 67,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 61,
+        "not a BCM/DR role": 66,
         "off-target function": 1
       }
     },
