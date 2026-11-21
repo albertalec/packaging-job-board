@@ -1,36 +1,54 @@
 {
-  "ingestedAt": "2026-11-20T19:42:58.560Z",
-  "total": 17,
+  "ingestedAt": "2026-11-21T18:47:56.875Z",
+  "total": 18,
   "stats": {
-    "scanned": 1834,
+    "scanned": 1700,
     "classifierPass": 21,
-    "kept": 17,
+    "kept": 18,
     "classifierDrops": {
-      "not a packaging role": 1296,
-      "off-target function": 413,
-      "plant process engineering": 15,
-      "warehouse/ops title": 82,
+      "not a packaging role": 1170,
+      "warehouse/ops title": 72,
+      "off-target function": 417,
+      "plant process engineering": 13,
       "semiconductor/electronics packaging": 6,
       "electronics/mechanical packaging": 1
     }
   },
   "jobs": [
     {
-      "id": "colgate-b557c88542f276b6",
-      "sourceId": "https://jobs.colgate.com/job/Piscataway-Sr_-Manager%2C-North-America-Packaging-NJ/1433178000/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "b557c88542f276b6",
-      "company": "Colgate-Palmolive",
-      "companySlug": "colgate",
-      "title": "Sr. Manager, North America Packaging",
+      "id": "hershey-221440fedbd74bcf",
+      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "221440fedbd74bcf",
+      "company": "The Hershey Company",
+      "companySlug": "hershey",
+      "title": "Staff Packaging Systems CI Engineer",
       "department": null,
-      "location": "Piscataway, NJ, US",
-      "state": "NJ",
+      "location": "Hershey, PA, US",
+      "state": "PA",
       "remote": true,
-      "postedAt": "Fri, 20 Nov 2026 8:00:00 GMT",
-      "applyUrl": "https://jobs.colgate.com/job/Piscataway-Sr_-Manager%2C-North-America-Packaging-NJ/1433178000/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "No Relocation Assistance Offered\nJob Number #174487 - Piscataway, New Jersey, United States\n\nWho We Are\n\nColgate-Palmolive Company is a global consumer products company operating in over 200 countries specializing in Oral Care, Personal Care, Home Care, Skin Care, and Pet Nutrition. Our products are trusted in more households than any other brand in the world, making us a household name!\n\nJoin Colgate-Palmolive, a caring, innovative growth company reimagining a healthier future for people, their pets, and our planet. Guided by our core values—Caring, Inclusive, and Courageous—we foster a culture that inspires our people to achieve common goals. Together, let's build a brighter, healthier future for all.\n\nCore Responsibilities\n\n• Lead North America Oral Care Packaging organization, including a team of both central and plant based Packaging Engineers as well as Design/Artwork Execution Managers. Providing both technical as well as organizational oversight\n\n• Supervise the development of packaging materials, which includes approving packaging designs, packaging specifications, master test plans, bills of materials, etc.\n\n• Engage with various NA Division Management teams. This includes Supply Chain and Commercial functions to align on and deliver expectations for packaging projects and KPIs\n\n• Assess and organize the team’s roles, assignments, project work, and capabilities to maximize efficiency to deliver the North America Oral Care commercial project grids\n\n• Accountable for ensuring that the NA OC Packaging team adheres to all global Oral Care standards\n\nRequired Qualifications\n\n• Bachelor's Degree in Packaging, Engineering, or Related Field\n\n• 10+ years experience in Packaging development and delivering projects to the market\n\n• Understanding of Packaging Development Processes and Systems\n\n• Ability to inspire, influence, and motivate cross-functional partners and stakeholders (internal and external) to develop and implement programs, enrolling teams in a clear vision\n\n• Strong business and strategic acumen, with the ability to manage ambiguity and balance the needs of multiple stakeholders across various functions and geographies.\n\n• Strong presentation skills, speaking ability and interpersonal skills\n\n• Data Savvy: Ability to use data, analytics and AI to support perspectives\n\nPreferred Qualifications\n\n• Experience in FMCG industry\n\n• Minimum of 3 years of team management experience\n\nCompensation and Benefits\n\nSalary Range\n\n$124,000.00 - $174,000.00 USD\n\nPay is determined based on experience, qualifications, and location. Salaried employees may also be eligible for discretionary bonuses, profit-sharing, and long-term incentives for Executive-level roles.\n\nBenefits\n\nSalaried employees enjoy a comprehensive benefits package, including medical, dental, vision, basic life insurance, paid parental leave, disability coverage, and participation in the 401(k) retirement plan with company matching contributions subject to eligibility requirements. Additional benefits include a minimum of 15 vacation/PTO days (hourly employees receive a minimum of 120 hours) and 13 paid holidays (vacation days are prorated based on the employee's hire date within the calendar year). Paid sick leave is adjusted based on role and location in accordance with local laws. Detailed information regarding paid sick leave entitlements will be provided to employees upon hiring and may be subject to adjustments based on changes in legislation or company policies.\n\nOur Commitment to Inclusion\nOur journey begins with our people—developing strong talent with diverse backgrounds and perspectives to best serve our consumers around the world and fostering an inclusive environment where everyone feels a true sense of belonging. We are dedicated to ensuring that each individual can be their authentic self, is treated with respect, and is empowered by leadership to contribute meaningfully to our business.\n\nEqual Opportunity Employer\n\nColgate is an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity, sexual orientation, national origin, ethnicity, age, disability, marital status, veteran status (United States positions), or any other characteristic protected by law.\n\nReasonable accommodation during the application process is available for persons with disabilities. Please complete this request form should you require accommodation.\n\nFor additional Colgate terms and conditions, please click here .\n\n#LI-Hybrid",
+      "postedAt": "Sat, 21 Nov 2026 8:00:00 GMT",
+      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Location: Hershey, PA preferred, open to remote\n\nUp to 70% Travel\n\nWhy Hershey\n\nAt The Hershey Company, we make more moments of goodness through some of the world's most iconic brands, including Hershey's, Reese's, Kit Kat®, Jolly Rancher, Twizzlers, Dot's Pretzels, Lesser Evil and more. Our team supports a global portfolio of over 90 brands, creating opportunities to shape strategies and drive impact across a breadth of businesses that few companies can offer. While many organizations focus on a handful of brands, Hershey provides exposure to a diverse portfolio of category-leading brands enjoyed by consumers around the world. What truly sets us apart is our legacy. Inspired by Milton Hershey's belief that business should create opportunity for others, we have been making a positive impact for more than a century through our commitment to communities, philanthropy, and our longstanding partnership with Milton Hershey School. When you join Hershey, you become part of a company where purpose, growth, and making a difference are woven into how we do business every day.\n\nHow will you fit in the big picture?\n\nThe Staff Packaging Systems CI Engineer advances Hershey's multi-year Enterprise Continuous Improvement plan by identifying, developing, and implementing packaging-system improvements across the manufacturing network. Working independently and through cross-functional teams, you will lead complex initiatives from concept through sustainable plant handoff to improve cost, capacity, quality, safety, and supply continuity across Hershey's Global Confectionery and Salty businesses.\n\nWhat will you do?\n\n• Lead packaging-system continuous-improvement projects from opportunity identification and loss analysis through design, testing, installation, startup, commissioning, training, and performance stabilization.\n\n• Develop project scopes, specifications, schedules, cost estimates, technical recommendations, and engineering deliverables for equipment selection, modifications, and layouts.\n\n• Plan and execute proof-of-principle tests, designed experiments, scale-up activities, manufacturing trials, and feasibility assessments; translate results into practical technical and financial recommendations.\n\n• Apply Lean, Six Sigma, TPM, packaging engineering, food science, and structured problem-solving methods to identify root causes and deliver sustainable solutions.\n\n• Manage project cost, schedule, resources, risk, suppliers, and communication while partnering with Manufacturing, R&D, Engineering, Finance, Quality and Regulatory Compliance, Marketing, contractors, and equipment suppliers.\n\n• Mentor engineers and technicians, provide clear technical documentation and training, and transfer improvements successfully to plant operations and maintenance teams.\n\nMinimum Requirements\n\nEducation\n\nBachelor's degree in Mechanical Engineering or a related engineering discipline. A master's degree is welcome.\n\nExperience\n\nMinimum 5 years of relevant packaging-systems engineering, process design, project management, troubleshooting, or continuous-improvement experience in a manufacturing environment.\n\n• Demonstrated ability to lead complex packaging or manufacturing improvement projects involving multiple unit operations and cross-functional stakeholders.\n\n• Working knowledge of food-manufacturing systems, sanitary design, Good Manufacturing Practices, manufacturing validation, equipment suppliers, and plant implementation.\n\n• Six Sigma Green Belt required; Six Sigma Black Belt preferred. Working knowledge of Lean manufacturing and TPM.\n\n• Strong project planning, technical analysis, written and verbal communication, and Microsoft Office skills.\n\n• Ability to travel up to 70%, support project work outside standard hours when needed, and work in manufacturing environments with regulated food allergens while following all site safety, food-safety, and allergen-control requirements.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health begin on Day 1.\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $118,880 to $148,600 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\n#IND\n\n#LI-MH2\n#LI-Remote",
       "salary": null,
-      "niche": "cpg",
+      "niche": "food-beverage",
+      "source": "successfactors"
+    },
+    {
+      "id": "hershey-98a1ef41ea2b12c9",
+      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Sr-Engineer-Packaging-PA-17033/1452755800/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "hash": "98a1ef41ea2b12c9",
+      "company": "The Hershey Company",
+      "companySlug": "hershey",
+      "title": "Sr Engineer Packaging",
+      "department": null,
+      "location": "Hershey, PA, US",
+      "state": "PA",
+      "remote": false,
+      "postedAt": "Fri, 20 Nov 2026 0:00:00 GMT",
+      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Sr-Engineer-Packaging-PA-17033/1452755800/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
+      "description": "Location: Hershey, PA\nTravel: 10-20%\n\nWhy Hershey:\n\nAt The Hershey Company, our culture is rooted in purpose and inspired by Milton Hershey’s enduring vision that business should create opportunity for others. Through our commitment to corporate philanthropy, we create positive impact by supporting communities, helping children thrive, and operating as a business for good. This includes our deep and long standing partnership with Milton Hershey School, where we invest in education, workforce readiness, and hands on engagement to help students succeed beyond the classroom. Supported by strategic grantmaking, product donations, cross brand collaboration, and strong employee volunteerism, Hershey offers a place to work where making a difference—locally and globally—is part of how we do business every day.\n\nHow will you fit in the big picture?\n\nWorking independently this role focuses on the design, development, and optimization of packaging solutions that ensure product protection, functionality, and sustainability. The position involves managing tactical plans aligned with short-term business objectives and addressing moderate to complex challenges that impact multiple teams within the division. The role requires advanced expertise in executing processes and projects related to packaging, including material selection, structural design, and compliance with industry standards and within strategic guidelines. This role requires significant cross-functional collaboration, and has increased ownership and scope acting as primary packaging support for single plant, brand or category. This role collaborates with peers to improve ways of working and share BDP's.\n\nWhat will you do?\n\n• Design Packaging Solutions - The role designs, develops, and optimizes packaging solutions\nensuring product protection, performance, and sustainability. It applies engineering knowledge to\nmeet requirements. This delivers quality packaging.\n\n• Select and Qualify Materials - The role selects and qualifies packaging materials and components\nbased on product requirements and cost. It evaluates environmental impact and manufacturing\ncapabilities. This ensures optimal selections.\n\n• Apply Manufacturing Knowledge - The role applies strong manufacturing and equipment\nknowledge to ensure packaging meets production requirements. It validates designs for\nmanufacturability. This enables efficient production.\n\n• Support Product Development - The role supports product development through packaging\nengineering expertise. It contributes to specifications and testing. This advances development\nprogress.\n\n• Document Technical Work - The role documents technical work and maintains packaging specifications. It ensures records are accurate and accessible. This supports knowledge management.\n\nMinimum Requirements\n\n• 3+ Years of Packaging Engineering experience\n\n• Product Packaging - The technology of enclosing or protecting products for distribution, storage, sale, and use. Packaging also refers to the process of design, evaluation, and production of packages.\n\n• Problem Solving - Problem Solving is a step-by-step process of defining a problem, searching for information, and testing a series of solutions until the problem is solved. In involves critical thinking, analysis and persistence.\n\n• Data Integrity - Data Integrity refers to maintaining and assuring the accuracy and consistency of data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data.\n\n• Collaboration - Collaboration is working together in a cooperative effort to achieve a common goal. It is the promotion of teamwork and the linkage of intra and interdepartmental cooperation.\n\n• Planning - Ability to anticipate resource needs and then arrange, prioritize and shape activities to meet\nobjectives.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nRequired. The anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at https://www.askhrbenefits.hersheys.com/ \" href=\" https://www.askHRbenefits.hersheys.com \" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Link www.askHRbenefits.hersheys.com \"> www.askHRbenefits.hersheys.com The Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws. The Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability. You can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\nThe anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws. The Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability. You can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.",
+      "salary": null,
+      "niche": "food-beverage",
       "source": "successfactors"
     },
     {
@@ -140,24 +158,6 @@
       "salary": null,
       "niche": "food-beverage",
       "source": "phenom"
-    },
-    {
-      "id": "amazon-6413bff4beb6a3ac",
-      "sourceId": "10595018",
-      "hash": "6413bff4beb6a3ac",
-      "company": "Amazon",
-      "companySlug": "amazon",
-      "title": "Packaging Engineer, Leo Customer Terminals",
-      "department": "Hardware Development",
-      "location": "Redmond, Washington, USA",
-      "state": "WA",
-      "remote": false,
-      "postedAt": "2026-11-03T00:00:00.000Z",
-      "applyUrl": "https://www.amazon.jobs/en/jobs/10595018/packaging-engineer-leo-customer-terminals",
-      "description": "Amazon Leo is Amazon’s low Earth orbit satellite network. Our mission is to deliver fast, reliable internet connectivity to customers beyond the reach of existing networks. From individual households to schools, hospitals, businesses, and government agencies, Amazon Leo will serve people and organizations operating in locations without reliable connectivity.\n\nAs a Packaging Engineer, you will be responsible for working with US and regional teams, closely monitoring and driving packaging engineering initiatives and processes from concept through mass production. You will be an integral part of executing packaging build strategies, including DFM innovation, new product development, execution efficiency, and best practice. You will be a critical escalation path for packaging process issues and work closely with China and US leadership teams to ensure cross-functional collaboration is effective.\n\nExport Control Requirement:\nDue to applicable export control laws and regulations, candidates must be a U.S. citizen or national, U.S. permanent resident (i.e., current Green Card holder), or lawfully admitted into the U.S. as a refugee or granted asylum.\n\nKey job responsibilities\n- Design, analyze, and document consumer-facing packaging components and assemblies that delight consumers at the lowest cost of ownership. Redefine what sustainable packaging can be.\n- Conduct tests and engineering studies to validate the robustness and proper performance of new packaging. Identify and reduce packaging risks.\n- Review and develop process, automation opportunities, and fixtures with contract manufacturers and packaging suppliers.\n- Bring clarity, and simplicity to complexity, probe assumptions, illuminate pitfalls, and foster shared understanding of packages and their related processes.\n- Travel domestically and internationally to supplier sites to collaborate with staff and keep teams moving.\n\nA day in the life\nIn a given day, you will:\n\n- Design, analyze, and document consumer-facing packaging components and assemblies that delight consumers at the lowest cost of ownership. Redefine what sustainable packaging can be.\n- Conduct tests and engineering studies to validate the robustness and proper performance of new packaging. Identify and reduce packaging risks.\n- Review and develop process, automation opportunities, and fixtures with contract manufacturers and packaging suppliers.\n- Bring clarity, and simplicity to complexity, probe assumptions, illuminate pitfalls, and foster shared understanding of packages and their related processes, balancing tradeoffs such as cost, size, and schedule.\n- Travel domestically and internationally to supplier sites to collaborate with staff and keep teams moving.\n\nAbout the team\nAmazon Leo is an initiative to increase global broadband access through a constellation of satellites in low Earth orbit (LEO). Its mission is to bring fast, affordable broadband to unserved and underserved communities around the world. Amazon Leo will help close the digital divide by delivering fast, affordable broadband to a wide range of customers, including consumers, businesses, government agencies, and other organizations operating in places without reliable connectivity.",
-      "salary": null,
-      "niche": "industrial",
-      "source": "amazon"
     },
     {
       "id": "mars-780226b7740a5916",
@@ -272,24 +272,6 @@
       "source": "jibe"
     },
     {
-      "id": "zimmer-biomet-5f5903eb7b294579",
-      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
-      "hash": "5f5903eb7b294579",
-      "company": "Zimmer Biomet",
-      "companySlug": "zimmer-biomet",
-      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
-      "department": "Research & Development",
-      "location": "Warsaw, Indiana, United States",
-      "state": "IN",
-      "remote": false,
-      "postedAt": "2026-08-27T00:00:00.000+0000",
-      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
-      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
-      "salary": null,
-      "niche": "pharma",
-      "source": "phenom"
-    },
-    {
       "id": "autoliv-508bca4710ac964d",
       "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
       "hash": "508bca4710ac964d",
@@ -318,12 +300,48 @@
       "location": "Trumbull, CT",
       "state": "CT",
       "remote": false,
-      "postedAt": "Posted 8 Days Ago",
+      "postedAt": "Posted 9 Days Ago",
       "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
       "description": "Global Dove Skin Cleansing R&D Packaging Manager",
       "salary": null,
       "niche": "cpg",
       "source": "workday"
+    },
+    {
+      "id": "unilever-453a5ee37bd1eb85",
+      "sourceId": "/job/Hoboken-US-HQ/Packaging-Manager-North-America---Rigids--PCR---Global-Molds-SME_R-1189586",
+      "hash": "453a5ee37bd1eb85",
+      "company": "Unilever",
+      "companySlug": "unilever",
+      "title": "Packaging Manager North America – Rigids, PCR & Global Molds SME",
+      "department": null,
+      "location": "Hoboken US HQ, United States of America",
+      "state": null,
+      "remote": false,
+      "postedAt": "Posted 4 Days Ago",
+      "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Hoboken-US-HQ/Packaging-Manager-North-America---Rigids--PCR---Global-Molds-SME_R-1189586",
+      "description": "Earlier this year, Unilever announced an agreement to combine its Foods business with McCormick & Company, creating a scaled global flavor powerhouse. The proposed combination would bring together iconic Foods brands, including Hellmann’s and Knorr, with McCormick’s portfolio to create a global leader across spices, seasonings, condiments and complementary food categories, supported by strong retail and foodservice platforms. McCormick brings more than 135 years of heritage, a presence in 150+ countries and territories, and a portfolio of trusted brands. The transaction remains subject to regulatory approvals and other customary closing conditions, with completion estimated for mid-2027.\n\nJob Title Packaging Manager North America – Rigids, PCR & Global Molds SME\n\nFunction Procurement\n\nWork Level and Grade WL2C\n\nReports to Packaging Director – North America & Global Rigids Lead, WL3X\n\nScope North America & Global\n\nCountry Location and Worksite Details Hoboken US HQ\n\nJOB PURPOSE\n\nThis role leads procurement for the North America rigid-packaging portfolio and PCR agenda, translating business, portfolio, regulatory and sustainability priorities into a multi-year commercial roadmap across approximately €110+ million managed spend. The role also serves as the Global Molds subject-matter expert, establishing sourcing standards, supplier strategies, should-cost models, asset governance and lifecycle-value approaches across injection and blow-molding applications. In close partnership with R&D, Engineering, Supply Chain, Quality, Finance, Legal, Sustainability, global portfolio teams and markets, the role delivers competitive sourcing, verified recycled-material supply, mold investment and health, innovation, supplier transitions and on-time industrialization.\n\nKEY RESPONSIBILITIES\n\n• Lead, develop and empower the North America Rigids, PCR and Global Molds Procurement team of two FTEs, including this Manager role, with one Assistant Manager reporting directly, responsible for approximately €110+ million managed spend.\n• Own the North America rigid-packaging, PCR and Global Molds procurement portfolio, translating business, growth, regulatory and sustainability priorities into a multi-year category strategy and value-creation roadmap.\n• Develop and execute sourcing strategies informed by resin and feedstock dynamics, conversion economics, should-cost models, supplier capability, regional demand, technology developments and regulatory requirements.\n• Lead supplier selection, negotiation, contracting and performance governance, delivering competitiveness, cash, working capital, innovation, quality, service and resilient supplier capacity.\n• Own the North America PCR sourcing and supplier-development roadmap, securing competitive and scalable recycled-material supply with robust chain-of-custody, certification, traceability, food-contact compliance, quality controls and performance standards.\n• Act as the Global Molds subject-matter expert, setting sourcing and ownership standards, supplier strategies, cost models and governance across mold design, build, qualification, maintenance, health, capacity, refurbishment, replacement and decommissioning.\n• Build strategic partnerships with resin suppliers, converters, recyclers and mold makers to unlock value engineering, specification optimization, technology adoption, cycle-time improvement, circularity and speed to market.\n• Partner with R&D, Engineering, Supply Chain, Quality, Finance, Legal, Sustainability, global portfolio teams and markets to govern mold investment, support innovation and trials, manage supplier transitions and deliver on-time industrialization and launches.\n\nREQUIRED QUALIFICATIONS\n\n• University degree with 7–10 years of relevant experience in Procurement, Supply Chain, Packaging or Engineering within an international FMCG or manufacturing environment, including strategic sourcing responsibility.\n• Demonstrated success leading regional packaging procurement strategies and complex sourcing programs, with experience operating at comparable spend and organizational scale.\n• Deep knowledge of rigid-packaging value chains, injection and blow molding, resins, PCR materials, packaging technologies, recycled-content compliance and circular-economy opportunities.\n• Strong technical and commercial understanding of mold design, manufacture, ownership models, qualification, maintenance, validation, capacity, cost drivers and lifecycle management.\n• Strong strategic-sourcing, negotiation and contracting capability, supported by financial acumen, should-cost modelling, market analysis, price forecasting and supplier-performance management.\n• Enterprise leadership mindset, with the ability to set clear priorities, lead through ambiguity and packaging-market change, balance strategic thinking with execution, build trusted senior stakeholder relationships and develop the Assistant Manager while contributing to broader procurement capability development.\n\nPREFERRED QUALIFICATIONS\n\n• Relevant technical, engineering, packaging or commercial postgraduate qualification.\n• Experience developing PCR supply markets, including certification, chain-of-custody, food-contact, regulatory, traceability, quality and supplier-performance requirements.\n• Experience leading global mold programs, tooling governance, supplier transitions, innovation or change programs across functions and geographies.\n\nWe welcome applicants from all walks of life and are committed to creating an environment where everyone can thrive/succeed. All applicants will receive fair and respectful consideration, and we actively support the growth and development of every employee.\n\nWe are committed to making reasonable adjustments to provide a positive, barrier-free recruitment journey. Should you require additional information or reasonable adjustments to allow you to present your best self during this process, please contact your Talent Partner.\n\n------------------------------------\n\nAt Unilever, inclusion is at the heart of everything we do . We welcome applicants from all walks of life and are committed to creating an environment where everyone can thrive/succeed. All applicants will receive fair and respectful consideration, and we actively support the growth and development of every employee.\n\nUnilever is an Equal Opportunity Employer/Protected Veterans/Persons with Disabilities.\n\nFor more information on your federal rights, please see Know Your Rights: Workplace Discrimination is Illegal\n\nEmployment is subject to verification of pre-screening tests, which may include drug screening, background check, credit check and DMV check.\n\nIf you are an individual with a disability in need of assistance at any time during our recruitment process, please contact us at NA.Accommodations@unilever.com . Please note: This email is reserved for individuals with disabilities in need of assistance and is not a means of inquiry about positions or application statuses. The Protected Veterans or Individuals with Disabilities AAP narratives are available for inspection by any employee or applicant for employment Monday through Friday during normal business hours at establishment.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "zimmer-biomet-5f5903eb7b294579",
+      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
+      "hash": "5f5903eb7b294579",
+      "company": "Zimmer Biomet",
+      "companySlug": "zimmer-biomet",
+      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
+      "department": "Research & Development",
+      "location": "Warsaw, Indiana, United States",
+      "state": "IN",
+      "remote": false,
+      "postedAt": "2026-08-27T00:00:00.000+0000",
+      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
+      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
+      "salary": null,
+      "niche": "pharma",
+      "source": "phenom"
     }
   ],
   "reports": [
@@ -450,15 +468,12 @@
     {
       "company": "Silgan Dispensing",
       "ats": "workday",
-      "scanned": 21,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a packaging role": 16,
-        "off-target function": 4,
-        "plant process engineering": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Silgan Dispensing 429 https://silgandispensing.wd501.myworkdayjobs.com/wday/cxs/silgandispensing/silgan/jobs"
     },
     {
       "company": "Aptar",
@@ -468,21 +483,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "warehouse/ops title": 3,
         "not a packaging role": 15,
+        "warehouse/ops title": 3,
         "off-target function": 2
       }
     },
     {
       "company": "Autoliv",
       "ats": "teamtailor",
-      "scanned": 58,
+      "scanned": 56,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "warehouse/ops title": 2,
-        "not a packaging role": 47,
+        "warehouse/ops title": 1,
+        "not a packaging role": 46,
         "plant process engineering": 5,
         "off-target function": 3
       }
@@ -500,12 +515,12 @@
     {
       "company": "Magna",
       "ats": "workday",
-      "scanned": 72,
+      "scanned": 73,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 69,
+        "not a packaging role": 70,
         "plant process engineering": 1,
         "off-target function": 1
       }
@@ -529,8 +544,8 @@
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 41,
-        "warehouse/ops title": 5,
-        "off-target function": 4
+        "off-target function": 4,
+        "warehouse/ops title": 5
       }
     },
     {
@@ -551,7 +566,7 @@
       "ats": "workday",
       "scanned": 44,
       "classifierPass": 2,
-      "kept": 1,
+      "kept": 2,
       "fetched": 2,
       "classifierDrops": {
         "warehouse/ops title": 3,
@@ -597,13 +612,13 @@
     {
       "company": "DuPont",
       "ats": "phenom",
-      "scanned": 123,
+      "scanned": 126,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 68,
-        "off-target function": 52,
+        "not a packaging role": 69,
+        "off-target function": 54,
         "warehouse/ops title": 2,
         "plant process engineering": 1
       }
@@ -611,26 +626,26 @@
     {
       "company": "WK Kellogg Co",
       "ats": "phenom",
-      "scanned": 30,
+      "scanned": 29,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 25,
-        "off-target function": 5
+        "off-target function": 4
       }
     },
     {
       "company": "Mars",
       "ats": "phenom",
-      "scanned": 385,
+      "scanned": 387,
       "classifierPass": 4,
       "kept": 4,
       "fetched": 4,
       "classifierDrops": {
-        "not a packaging role": 239,
-        "warehouse/ops title": 29,
-        "off-target function": 113
+        "not a packaging role": 233,
+        "warehouse/ops title": 28,
+        "off-target function": 122
       }
     },
     {
@@ -641,22 +656,19 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 18,
-        "warehouse/ops title": 2
+        "not a packaging role": 17,
+        "warehouse/ops title": 3
       }
     },
     {
       "company": "Sealed Air",
       "ats": "successfactors",
-      "scanned": 20,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a packaging role": 18,
-        "warehouse/ops title": 1,
-        "plant process engineering": 1
-      }
+      "classifierDrops": {},
+      "error": "SuccessFactors public JSON not available for Sealed Air"
     },
     {
       "company": "Amcor",
@@ -666,8 +678,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 17,
-        "off-target function": 3
+        "off-target function": 4,
+        "not a packaging role": 16
       }
     },
     {
@@ -707,14 +719,13 @@
     {
       "company": "Amazon",
       "ats": "amazon",
-      "scanned": 12,
-      "classifierPass": 5,
-      "kept": 5,
-      "fetched": 5,
+      "scanned": 10,
+      "classifierPass": 4,
+      "kept": 4,
+      "fetched": 4,
       "classifierDrops": {
         "semiconductor/electronics packaging": 5,
-        "electronics/mechanical packaging": 1,
-        "not a packaging role": 1
+        "electronics/mechanical packaging": 1
       }
     },
     {
@@ -730,14 +741,12 @@
     {
       "company": "Pfizer",
       "ats": "workday",
-      "scanned": 69,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a packaging role": 68,
-        "off-target function": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Pfizer 429 https://pfizer.wd1.myworkdayjobs.com/wday/cxs/pfizer/PfizerCareers/jobs"
     },
     {
       "company": "Baxter",
@@ -772,15 +781,12 @@
     {
       "company": "Tyson Foods",
       "ats": "workday",
-      "scanned": 36,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a packaging role": 27,
-        "off-target function": 8,
-        "warehouse/ops title": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Tyson Foods 429 https://tysonfoods.wd5.myworkdayjobs.com/wday/cxs/tysonfoods/TSN/jobs"
     },
     {
       "company": "Constellation Brands",
@@ -835,14 +841,14 @@
     {
       "company": "The Hershey Company",
       "ats": "successfactors",
-      "scanned": 27,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
+      "scanned": 29,
+      "classifierPass": 2,
+      "kept": 2,
+      "fetched": 2,
       "classifierDrops": {
-        "off-target function": 9,
         "not a packaging role": 16,
-        "warehouse/ops title": 2
+        "off-target function": 10,
+        "warehouse/ops title": 1
       }
     },
     {
@@ -853,21 +859,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 24,
-        "off-target function": 2,
+        "not a packaging role": 23,
+        "off-target function": 3,
         "plant process engineering": 1
       }
     },
     {
       "company": "Molson Coors",
       "ats": "successfactors",
-      "scanned": 29,
+      "scanned": 33,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "off-target function": 4,
-        "not a packaging role": 24
+        "not a packaging role": 26,
+        "off-target function": 6
       }
     },
     {
@@ -879,32 +885,31 @@
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 28,
-        "warehouse/ops title": 2
+        "off-target function": 2
       }
     },
     {
       "company": "E&J Gallo",
       "ats": "successfactors",
-      "scanned": 36,
+      "scanned": 30,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 29,
         "warehouse/ops title": 1,
-        "off-target function": 6
+        "not a packaging role": 22,
+        "off-target function": 7
       }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
-      "scanned": 29,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
+      "scanned": 34,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 25,
-        "warehouse/ops title": 2,
+        "not a packaging role": 33,
         "off-target function": 1
       }
     },
@@ -916,10 +921,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "not a packaging role": 24,
         "plant process engineering": 1,
-        "not a packaging role": 23,
-        "off-target function": 3,
-        "warehouse/ops title": 1
+        "off-target function": 3
       }
     },
     {
@@ -945,15 +949,15 @@
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
-      "scanned": 386,
+      "scanned": 392,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 232,
+        "not a packaging role": 240,
         "plant process engineering": 1,
-        "warehouse/ops title": 9,
-        "off-target function": 142
+        "warehouse/ops title": 8,
+        "off-target function": 141
       }
     },
     {
