@@ -1,20 +1,110 @@
 {
-  "ingestedAt": "2026-11-21T18:47:56.875Z",
-  "total": 18,
+  "ingestedAt": "2026-11-22T19:11:36.331Z",
+  "total": 21,
   "stats": {
-    "scanned": 1700,
-    "classifierPass": 21,
-    "kept": 18,
+    "scanned": 2375,
+    "classifierPass": 31,
+    "kept": 21,
     "classifierDrops": {
-      "not a packaging role": 1170,
-      "warehouse/ops title": 72,
-      "off-target function": 417,
-      "plant process engineering": 13,
+      "not a packaging role": 1741,
+      "plant process engineering": 25,
+      "off-target function": 459,
+      "warehouse/ops title": 112,
       "semiconductor/electronics packaging": 6,
       "electronics/mechanical packaging": 1
     }
   },
   "jobs": [
+    {
+      "id": "clorox-2b74cdb16e93fd4b",
+      "sourceId": "/job/Aberdeen-MD---USA/Packaging-Manager_JR23929",
+      "hash": "2b74cdb16e93fd4b",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Manager",
+      "department": null,
+      "location": "Aberdeen, MD - USA, United States of America",
+      "state": "MD",
+      "remote": false,
+      "postedAt": "Posted 16 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Aberdeen-MD---USA/Packaging-Manager_JR23929",
+      "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Packaging Department Manager is responsible for supporting, leading and coordinating with the team the business production needs in the packaging area. In this role, the Packaging Department Manager will serve operational team members focusing on daily management and coordination of production, crewing, safety, quality, costs, line efficiency, people development, and performance management.\n\nIn this role, you will:\n\n• Cultivate and drive a safety and quality mindset, culture as the TOP priority where people work together to address and act on unsafe behaviors, conditions. Ensuring all quality checks are completed acting on any variances to resolution protecting our customers and reducing plant impacts.\n• Fostering a skill progression system that builds the right technical, behavioral and leadership skills across the department.\n• Lead and enable effective use of Clorox systems, including SAP, EWM, and the Manufacturing Execution System (MES).\n• Manage and develop LSW for your department leaders through one on one connects, coaching, and training.\n• Lead Daily Management System Tier meetings and follow-up actions through team member engagement and training.\n• Develop and champion a Plan-Do-Check-Act (PDCA) approach that connects department initiatives to divisional objectives and leverages Clorox 10 Manufacturing Standards.\n• Actively working in conjunction and with team leadership and the Plant Operations Leader on strategic solutions and resource needs, while contributing to our people first culture.\n• Develop and strengthen working relationships with plant support teams to meet targets, goals, and department needs, including Operational Excellence, Maintenance Reliability Team, Quality and Engineering.\n• Support plant projects and department initiatives in partnership with Change Management, Plant Leadership, Engineering, outside contractors, and other stakeholders.\n• Manage head count, overtime, weekend requirements for department based on business and budgetary needs.\n• Partner and work with other department managers on overall team and plant needs, targets, labor, cost and operations day to day.\n• Provide support for a 24-hour 5-day operation, including periodic off-shift work, responding to plant calls, and taking action as needed.\n• Perform other duties as assigned by the manager.\n\nWhat we look for\n\n• 3+ years of experience in manufacturing and/or supply chain operations, preferably within a fast-paced manufacturing environment.\n• Demonstrated people leadership experience, including directly managing teams of 10 or more employees and driving engagement, accountability, and performance.\n• Proficiency with Microsoft Office applications, particularly Excel and PowerPoint, along with experience using Microsoft Teams and other business or manufacturing systems.\n• Bachelor’s degree in Engineering, Operations, Business, a technical discipline, or a related field, or an equivalent combination of education and relevant experience.\n• Strong team facilitation and consensus-building skills, with the ability to engage employees and stakeholders at various levels of the organization.\n• Proven ability to lead, influence, and collaborate across functions, including working effectively with plant associates, corporate partners, contractors, Engineering, Quality, and other operational teams.\n• Demonstrated ability to motivate, develop, and engage employees within a manufacturing or plant environment.\n• Excellent verbal and written communication skills, with the ability to communicate expectations, priorities, and performance effectively across teams and shifts.\n• Strong analytical, critical-thinking, and problem-solving skills, with the ability to identify issues, determine root causes, and drive sustainable solutions.\n• Strong operational experience with exposure to continuous-improvement methodologies such as World Class Manufacturing (WCM), Lean Manufacturing, Six Sigma, PDCA, or similar structured problem-solving approaches preferred.\n\nWorkplace type:\n\nOnsite\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\n[U.S.]Additional Information:\n\nAt Clorox, we champion people to be well and thrive, starting with our own people. To help make this possible, we offer comprehensive, competitive benefits that prioritize all aspects of wellbeing and provide flexibility for our teammates’ unique needs. This includes robust health plans, a market-leading 401(k) program with a company match, flexible time off benefits (including half-day summer Fridays depending on location), inclusive fertility/adoption benefits, and more.\n\nWe are committed to fair and equitable pay and are transparent with current and future teammates about our full salary ranges. We use broad salary ranges that reflect the competitive market for similar jobs, provide sufficient opportunity for growth as you gain experience and expand responsibilities, while also allowing for differentiation based on performance. Based on the breadth of our ranges, most new hires will start at Clorox in the first half of the applicable range. Your starting pay will depend on job-related factors, including relevant skills, knowledge, experience and location. The applicable salary range for every role in the U.S. is based on your work location and is aligned to one of three zones according to the cost of labor in your area.\n\n–Zone A: $90,900 - $170,100\n\n–Zone B: $83,400 - $155,900\n\n–Zone C: $75,800 - $141,700\n\nAll ranges are subject to change in the future. Your recruiter can share more about the specific salary range for your location during the hiring process.\n\nThis job is also eligible for participation in Clorox’s incentive plans, subject to the terms of the applicable plan documents and policies.\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-8928ce8b4994bcbd",
+      "sourceId": "/job/Parsons-WV---USA/Packaging-Lead-Operator_JR24053-1",
+      "hash": "8928ce8b4994bcbd",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Lead Operator",
+      "department": null,
+      "location": "Parsons, WV - USA, United States of America",
+      "state": "WV",
+      "remote": false,
+      "postedAt": "Posted 6 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Parsons-WV---USA/Packaging-Lead-Operator_JR24053-1",
+      "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Packaging Lead Operator provides day-to-day leadership and direction for Packaging operations, ensuring work is performed safely, efficiently, and according to established quality and production standards. This role leads through communication, training, coaching, troubleshooting, and accountability while serving as a key connection between Packaging employees and department Resource and management.\n\nStarting Hourly Rate: $31.11Hr\n\nIn this role, you will:\n\n• Lead the crew in maintaining safety as the highest priority and ensure compliance with safety, environmental, quality, and operating standards.\n• Packaging Lead will provide daily direction to packaging employees and coordinate staffing and work priorities to meet production requirements with coordination with the Packaging Resource.\n• Monitor production rates, downtime, material usage, quality, equipment performance, and housekeeping throughout the shift.\n• Ensure employees understand and consistently meet the expectations of their assigned positions.\n• Communicate production schedules, changeovers, equipment conditions, quality concerns, and other important information to the crew.\n• Lead effective shift exchanges and ensure clear communication between incoming and outgoing crews.\n• Troubleshoot Packaging equipment and coordinate with Maintenance and other departments to minimize downtime.\n• Support CILs, centerlines, equipment ownership, preventive maintenance, and continuous improvement activities.\n• Train, mentor, and develop Packaging employees and help maintain employee qualifications.\n• Provide timely and respectful coaching when employees are not meeting established safety, quality, operational, behavioral, or job-performance expectations.\n• Document repeated coaching events using the site's approved process, including the expectation discussed, factual observations, coaching provided, and required follow-up.\n• Communicate recurring coaching or performance concerns to the Packaging Resource or Packaging Manager for appropriate follow-up. Formal disciplinary decisions remain the responsibility of management.\n• Ensure production, downtime, material usage, and other required shift information is accurately documented and communicated.\n• Promote teamwork, accountability, ownership, and a positive working environment.\n\nWhat we look for\n\n• High school diploma or GED.\n• Manufacturing or production experience, preferably in Packaging.\n• Demonstrated leadership, communication, coaching, and problem-solving skills.\n• Ability to provide clear direction and hold others accountable to established expectations.\n• Ability to document workplace coaching and operational information clearly, factually, and professionally.\n• Ability to troubleshoot manufacturing equipment and respond effectively to operational issues.\n• Working knowledge of applicable computer systems and Microsoft Office.\n• Ability to work effectively with Operations, Maintenance, Quality, Warehouse, and site leadership.\n• Ability to work independently, prioritize multiple responsibilities, and adapt to changing production needs.\n\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\nBenefits we offer to help you be well and thrive:\n\n• Competitive compensation\n\n• Generous 401(k) program in the US and similar programs in international\n\n• Health benefits and programs that support both your physical and mental well-being\n\n• Flexible work environment, depending on your role\n\n• Meaningful opportunities to keep learning and growing\n\n• Half-day Fridays, depending on your location\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-8227aafff2600e08",
+      "sourceId": "/job/Forest-Park-GA---USA-West-Facility/Packaging-Engineer---Throughput---MES_JR23984-1",
+      "hash": "8227aafff2600e08",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Engineer - Throughput & MES",
+      "department": null,
+      "location": "Forest Park, GA - USA (West Facility)",
+      "state": "GA",
+      "remote": false,
+      "postedAt": "Posted 12 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Forest-Park-GA---USA-West-Facility/Packaging-Engineer---Throughput---MES_JR23984-1",
+      "description": "Packaging Engineer - Throughput & MES",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-675795c9ada846a0",
+      "sourceId": "/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
+      "hash": "675795c9ada846a0",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Clorox R&D Packaging Co-op (June 2027)",
+      "department": null,
+      "location": "Pleasanton, CA - USA, United States of America",
+      "state": "CA",
+      "remote": true,
+      "postedAt": "Posted 30 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
+      "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Research & Development organization is at the heart of our Clorox business, taking new generations of consumer products from concept to reality. With such diverse roles as engineers, scientists, mechanical designers and packaging professionals, R&D is a community of technical leaders and managers actively involved in virtually every step in the lifecycle of our products, from initial concept to raw materials to final goods on store shelves. R&D is committed to leveraging the latest technology to bring consumers the high-quality, innovative products they expect and deserve.\n\nIn this role, you will:\n\nAs a Research & Development Co-op for The Clorox Company, you will gain hands-on experience solving real world challenges for some of the most trusted brands in consumer goods. You’ll work alongside a team of scientists and engineers located in Pleasanton, California to maintain a robust pipeline of innovative products for this fast-paced, exciting, and growing business. With a variety of assignments within the Clorox offices, labs, pilot plants and manufacturing facilities – you’ll step into a role where your ideas matter and your growth is prioritized. This is a full-time position, with the expectation that you will work 40 hours per week for a 6-month period.\n\nWhat we look for\n\nJob Responsibilities May Include:\n\n• Drive Innovation: Collaborate on developing packaging solutions that enhance consumer experience and product performance.\n• Get Hands-On Experience: Conduct real-world testing (drop, vibration, ship) and support production trials to bring new packaging concepts to life.\n• Build Technical Mastery: Learn how to define and execute testing protocols, develop SOPs, and apply engineering principles to solve complex packaging challenges.\n• Own the Technical Details: Create and manage packaging specifications, including fill weights, pallet configurations, and assembly diagrams which are critical inputs for successful product launches.\n• Collaborate Across Functions: Work with cross-functional teams to interpret data, meet project objectives, and drive efficiency while managing technical risk.\n• Accelerate Your Career: Gain exposure to Clorox’s innovation pipeline, mentorship from industry experts, and a chance to contribute to projects that could shape your future career aspirations.\n\nRequired Qualifications & Skills:\n\n• Junior or Senior in Packaging Engineering (or similar field) is preferred with a min GPA of 3.0 or higher\n• Knowledge of ASTM packaging testing methods\n• Working knowledge of packaging software (ArtiosCAD and CAPE)\n• Ability to learn fast, and demonstrate strong leadership and influencing skills\n• Excellent organization skills with the ability to handle multiple projects simultaneously and effectively\n• Confident self-starter, capable of working independently and cross-functionally with minimal supervision and direction in a fast-paced environment\n\nAdditional Information\n\nThe applicable pay range for this role in the U.S. is based on your work location according to the cost of labor in your area.\n\n*$22 - $33/hr\n\nAll ranges are subject to change in the future.\n\nWorkplace type:\n\nHybrid\n\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\nBenefits we offer to help you be well and thrive:\n\n• Competitive compensation\n\n• Generous 401(k) program in the US and similar programs in international\n\n• Health benefits and programs that support both your physical and mental well-being\n\n• Flexible work environment, depending on your role\n\n• Meaningful opportunities to keep learning and growing\n\n• Half-day Fridays, depending on your location\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-059ae41f71ef8af6",
+      "sourceId": "/job/Pleasanton-CA---USA/R-D-Packaging-Scientist-1--Recent-Grad-Starting-in-2027-_23290",
+      "hash": "059ae41f71ef8af6",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "R&D Packaging Scientist 1 (Recent Grad Starting in 2027)",
+      "department": null,
+      "location": "Pleasanton, CA - USA, United States of America",
+      "state": "CA",
+      "remote": true,
+      "postedAt": "Posted 26 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/R-D-Packaging-Scientist-1--Recent-Grad-Starting-in-2027-_23290",
+      "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Research and Development organization is embedded within each of our Clorox businesses, taking new generations of consumer products from concept to reality. With such diverse roles as engineers, scientists, packaging experts, and technicians R&D is a community of technical leaders and managers actively involved in virtually every step in the lifecycle of our products, from initial concept to raw materials to final goods on store shelves. R&D is committed to leveraging the latest technology to bring consumers the high-quality, innovative products they expect and deserve.\n\nIn this role, you will:\n\nAs an R&D Packaging Scientist at Clorox you will enable superior packaging innovation that drives profitable growth, by delivering optimized packaging solutions that delight consumers, elevate brand equity and improve the consumer experience via sustainability and design. You’ll leverage an engineering mindset as you work with R&D Product and Process Development, Marketing, Sales, and Supply chain – to understand consumer needs, investigate future technologies, identify sustainable packaging opportunities, design and develop functional and cost-effective solutions while overcoming packaging technical hurdles. You’ll make a difference from day one, contributing to products used by millions of people while growing your technical and leadership skills working on some of the most trusted brands in the consumer goods industry. In this role you will:\n\n• Drive Innovation : Develop innovative packaging that delivers a superior consumer experience while meeting functional, regulatory, and brand requirements.\n• Execute with Technical Excellence: Apply engineering principles to solve complex packaging challenges by owning the end-to-end development of packaging solutions—from conceptual design, prototyping, mechanical and chemical performance testing, to consumer testing, lab validation (drop, vibration, ship tests), component tooling qualification and scale-up, production, manufacturing, and supply chain.\n• Own the Technical Details : Create and manage packaging specifications, including fill weights, pallet configurations, and cube information for each individual primary unit, secondary, tertiary, and display packaging components including creating assembly diagrams which are critical inputs for successful product launches.\n• Support Commercialization : Develop and apply SOPs, test methods, and best practices while leading pilot and production trials for new packaging components, analyze results, troubleshoot issues, and provide insights that enable smooth scale-up and successful product launches.\n• Collaborate Across Functions : Work with R&D, Sales, Marketing, and Supply Chain teams to interpret data, meet project objectives, and drive efficiency while managing technical risk.\n• Grow Your Career : Be part of a team that values playing to win, technical curiosity, and raising the bar where your contributions help shape the future of Packaging Innovation at Clorox.\n\nWhat we look for\n\n• Majors: • B.S. Packaging Engineering, B.S. Material Science Engineering, or B.S. Mechanical Engineering, M.S. Packaging Science\n\n• Requirements: • Graduating between December 2026 and August 2027\n• Minimum GPA of 3.0 or higher\n• Ability to work in a lab with various materials, including dust.\n• Fine motor skills to prototype samples\n• Knowledge of ASTM packaging testing methods\n• Working knowledge of packaging software (ArtiosCAD and TOPS)\n• Ability to learn fast, and demonstrate strong leadership and influencing skills\n• Excellent organization skills with the ability to manage multiple projects simultaneously and effectively\n• Confident self-starter, critical thinker, capable of working independently and cross-functionally with minimal supervision and direction in a fast-paced environment.\n\nWorkplace type:\n\nHybrid\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\n[U.S.]Additional Information:\n\nAt Clorox, we champion people to be well and thrive, starting with our own people. To help make this possible, we offer comprehensive, competitive benefits that prioritize all aspects of wellbeing and provide flexibility for our teammates’ unique needs. This includes robust health plans, a market-leading 401(k) program with a company match, flexible time off benefits (including half-day summer Fridays depending on location), inclusive fertility/adoption benefits, and more.\n\nWe are committed to fair and equitable pay and are transparent with current and future teammates about our full salary ranges. We use broad salary ranges that reflect the competitive market for similar jobs, provide sufficient opportunity for growth as you gain experience and expand responsibilities, while also allowing for differentiation based on performance. Based on the breadth of our ranges, most new hires will start at Clorox in the first half of the applicable range. Your starting pay will depend on job-related factors, including relevant skills, knowledge, experience and location. The applicable salary range for every role in the U.S. is based on your work location and is aligned to one of three zones according to the cost of labor in your area.\n\n–Zone A: $74,200 - $135,800\n\n–Zone B: $68,000 - $124,500\n\n–Zone C: $61,800 - $113,100\n\nAll ranges are subject to change in the future. Your recruiter can share more about the specific salary range for your location during the hiring process.\n\nThis job is also eligible for participation in Clorox’s incentive plans, subject to the terms of the applicable plan documents and policies.\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
     {
       "id": "hershey-221440fedbd74bcf",
       "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
@@ -29,24 +119,6 @@
       "postedAt": "Sat, 21 Nov 2026 8:00:00 GMT",
       "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Staff-Packaging-Systems-CI-Engineer-PA-17033/1443025100/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
       "description": "Location: Hershey, PA preferred, open to remote\n\nUp to 70% Travel\n\nWhy Hershey\n\nAt The Hershey Company, we make more moments of goodness through some of the world's most iconic brands, including Hershey's, Reese's, Kit Kat®, Jolly Rancher, Twizzlers, Dot's Pretzels, Lesser Evil and more. Our team supports a global portfolio of over 90 brands, creating opportunities to shape strategies and drive impact across a breadth of businesses that few companies can offer. While many organizations focus on a handful of brands, Hershey provides exposure to a diverse portfolio of category-leading brands enjoyed by consumers around the world. What truly sets us apart is our legacy. Inspired by Milton Hershey's belief that business should create opportunity for others, we have been making a positive impact for more than a century through our commitment to communities, philanthropy, and our longstanding partnership with Milton Hershey School. When you join Hershey, you become part of a company where purpose, growth, and making a difference are woven into how we do business every day.\n\nHow will you fit in the big picture?\n\nThe Staff Packaging Systems CI Engineer advances Hershey's multi-year Enterprise Continuous Improvement plan by identifying, developing, and implementing packaging-system improvements across the manufacturing network. Working independently and through cross-functional teams, you will lead complex initiatives from concept through sustainable plant handoff to improve cost, capacity, quality, safety, and supply continuity across Hershey's Global Confectionery and Salty businesses.\n\nWhat will you do?\n\n• Lead packaging-system continuous-improvement projects from opportunity identification and loss analysis through design, testing, installation, startup, commissioning, training, and performance stabilization.\n\n• Develop project scopes, specifications, schedules, cost estimates, technical recommendations, and engineering deliverables for equipment selection, modifications, and layouts.\n\n• Plan and execute proof-of-principle tests, designed experiments, scale-up activities, manufacturing trials, and feasibility assessments; translate results into practical technical and financial recommendations.\n\n• Apply Lean, Six Sigma, TPM, packaging engineering, food science, and structured problem-solving methods to identify root causes and deliver sustainable solutions.\n\n• Manage project cost, schedule, resources, risk, suppliers, and communication while partnering with Manufacturing, R&D, Engineering, Finance, Quality and Regulatory Compliance, Marketing, contractors, and equipment suppliers.\n\n• Mentor engineers and technicians, provide clear technical documentation and training, and transfer improvements successfully to plant operations and maintenance teams.\n\nMinimum Requirements\n\nEducation\n\nBachelor's degree in Mechanical Engineering or a related engineering discipline. A master's degree is welcome.\n\nExperience\n\nMinimum 5 years of relevant packaging-systems engineering, process design, project management, troubleshooting, or continuous-improvement experience in a manufacturing environment.\n\n• Demonstrated ability to lead complex packaging or manufacturing improvement projects involving multiple unit operations and cross-functional stakeholders.\n\n• Working knowledge of food-manufacturing systems, sanitary design, Good Manufacturing Practices, manufacturing validation, equipment suppliers, and plant implementation.\n\n• Six Sigma Green Belt required; Six Sigma Black Belt preferred. Working knowledge of Lean manufacturing and TPM.\n\n• Strong project planning, technical analysis, written and verbal communication, and Microsoft Office skills.\n\n• Ability to travel up to 70%, support project work outside standard hours when needed, and work in manufacturing environments with regulated food allergens while following all site safety, food-safety, and allergen-control requirements.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health begin on Day 1.\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nThe anticipated base salary range for this role is $118,880 to $148,600 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\n\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws.\n\nThe Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability.\nYou can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\n#IND\n\n#LI-MH2\n#LI-Remote",
-      "salary": null,
-      "niche": "food-beverage",
-      "source": "successfactors"
-    },
-    {
-      "id": "hershey-98a1ef41ea2b12c9",
-      "sourceId": "https://careers.thehersheycompany.com/job/Hershey-Sr-Engineer-Packaging-PA-17033/1452755800/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "98a1ef41ea2b12c9",
-      "company": "The Hershey Company",
-      "companySlug": "hershey",
-      "title": "Sr Engineer Packaging",
-      "department": null,
-      "location": "Hershey, PA, US",
-      "state": "PA",
-      "remote": false,
-      "postedAt": "Fri, 20 Nov 2026 0:00:00 GMT",
-      "applyUrl": "https://careers.thehersheycompany.com/job/Hershey-Sr-Engineer-Packaging-PA-17033/1452755800/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Location: Hershey, PA\nTravel: 10-20%\n\nWhy Hershey:\n\nAt The Hershey Company, our culture is rooted in purpose and inspired by Milton Hershey’s enduring vision that business should create opportunity for others. Through our commitment to corporate philanthropy, we create positive impact by supporting communities, helping children thrive, and operating as a business for good. This includes our deep and long standing partnership with Milton Hershey School, where we invest in education, workforce readiness, and hands on engagement to help students succeed beyond the classroom. Supported by strategic grantmaking, product donations, cross brand collaboration, and strong employee volunteerism, Hershey offers a place to work where making a difference—locally and globally—is part of how we do business every day.\n\nHow will you fit in the big picture?\n\nWorking independently this role focuses on the design, development, and optimization of packaging solutions that ensure product protection, functionality, and sustainability. The position involves managing tactical plans aligned with short-term business objectives and addressing moderate to complex challenges that impact multiple teams within the division. The role requires advanced expertise in executing processes and projects related to packaging, including material selection, structural design, and compliance with industry standards and within strategic guidelines. This role requires significant cross-functional collaboration, and has increased ownership and scope acting as primary packaging support for single plant, brand or category. This role collaborates with peers to improve ways of working and share BDP's.\n\nWhat will you do?\n\n• Design Packaging Solutions - The role designs, develops, and optimizes packaging solutions\nensuring product protection, performance, and sustainability. It applies engineering knowledge to\nmeet requirements. This delivers quality packaging.\n\n• Select and Qualify Materials - The role selects and qualifies packaging materials and components\nbased on product requirements and cost. It evaluates environmental impact and manufacturing\ncapabilities. This ensures optimal selections.\n\n• Apply Manufacturing Knowledge - The role applies strong manufacturing and equipment\nknowledge to ensure packaging meets production requirements. It validates designs for\nmanufacturability. This enables efficient production.\n\n• Support Product Development - The role supports product development through packaging\nengineering expertise. It contributes to specifications and testing. This advances development\nprogress.\n\n• Document Technical Work - The role documents technical work and maintains packaging specifications. It ensures records are accurate and accessible. This supports knowledge management.\n\nMinimum Requirements\n\n• 3+ Years of Packaging Engineering experience\n\n• Product Packaging - The technology of enclosing or protecting products for distribution, storage, sale, and use. Packaging also refers to the process of design, evaluation, and production of packages.\n\n• Problem Solving - Problem Solving is a step-by-step process of defining a problem, searching for information, and testing a series of solutions until the problem is solved. In involves critical thinking, analysis and persistence.\n\n• Data Integrity - Data Integrity refers to maintaining and assuring the accuracy and consistency of data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data.\n\n• Collaboration - Collaboration is working together in a cooperative effort to achieve a common goal. It is the promotion of teamwork and the linkage of intra and interdepartmental cooperation.\n\n• Planning - Ability to anticipate resource needs and then arrange, prioritize and shape activities to meet\nobjectives.\n\nBenefits and Perks\n\nAt Hershey, we offer competitive pay and a comprehensive total rewards package designed to support your wellbeing, financial security, and life outside of work.\n\n• Health & Wellbeing: Medical, dental, and vision coverage, plus wellness programs that support your physical and mental health\n\n• Financial Security: Competitive pay, annual incentive opportunities, and a 401(k) with company match\n\n• Time Off & Flexibility: Paid time off, company holidays, and flexible ways of working where applicable\n\n• Growth & Development: Career development programs, learning opportunities, and internal mobility\n\nBenefits may vary based on role, location, and eligibility.\n\nRequired. The anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at https://www.askhrbenefits.hersheys.com/ \" href=\" https://www.askHRbenefits.hersheys.com \" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Link www.askHRbenefits.hersheys.com \"> www.askHRbenefits.hersheys.com The Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws. The Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability. You can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.\n\nThe anticipated base salary range for this role is $92,160 to $115,200 per year. The actual base salary offered will depend on a variety of job‑related factors, including, but not limited to, experience, skill set, education, and training. In addition to a market-competitive base salary, our Total Rewards package includes performance‑based incentives and a comprehensive, competitive benefits package designed to support overall physical, mental, and financial well‑being (as applicable). Learn more about Hershey’s benefits and all the resources Hershey provides to support our employees’ physical, emotional, and financial well‑being by visiting the Hershey Digital Employee Experience at www.askHRbenefits.hersheys.com\nThe Hershey Company is an Equal Opportunity Employer. The policy of The Hershey Company is to extend opportunities to qualified applicants and employees on an equal basis regardless of an individual's race, color, gender, age, national origin, religion, citizenship status, marital status, sexual orientation, gender identity, transgender status, physical or mental disability, protected veteran status, genetic information, pregnancy, or any other categories protected by applicable federal, state or local laws. The Hershey Company is an Equal Opportunity Employer - Minority/Female/Disabled/Protected Veterans. You may request a reasonable accommodation if you are unable or limited in your ability to use or access our online application process as a result of a disability. You can request an accommodation via phone or email.To request an accommodation via phone, please call +1 877-804-1794 and leave a voicemail with your contact information. You may also email a request for accommodation to ApplicationHelp@hersheys.com. Please be sure to include “Accommodation Needed” in the subject line. This will ensure that your email is routed to the appropriate contact who will handle your request.",
       "salary": null,
       "niche": "food-beverage",
       "source": "successfactors"
@@ -272,6 +344,24 @@
       "source": "jibe"
     },
     {
+      "id": "zimmer-biomet-5f5903eb7b294579",
+      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
+      "hash": "5f5903eb7b294579",
+      "company": "Zimmer Biomet",
+      "companySlug": "zimmer-biomet",
+      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
+      "department": "Research & Development",
+      "location": "Warsaw, Indiana, United States",
+      "state": "IN",
+      "remote": false,
+      "postedAt": "2026-08-27T00:00:00.000+0000",
+      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
+      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
+      "salary": null,
+      "niche": "pharma",
+      "source": "phenom"
+    },
+    {
       "id": "autoliv-508bca4710ac964d",
       "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
       "hash": "508bca4710ac964d",
@@ -300,80 +390,54 @@
       "location": "Trumbull, CT",
       "state": "CT",
       "remote": false,
-      "postedAt": "Posted 9 Days Ago",
+      "postedAt": "Posted 10 Days Ago",
       "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
       "description": "Global Dove Skin Cleansing R&D Packaging Manager",
       "salary": null,
       "niche": "cpg",
       "source": "workday"
-    },
-    {
-      "id": "unilever-453a5ee37bd1eb85",
-      "sourceId": "/job/Hoboken-US-HQ/Packaging-Manager-North-America---Rigids--PCR---Global-Molds-SME_R-1189586",
-      "hash": "453a5ee37bd1eb85",
-      "company": "Unilever",
-      "companySlug": "unilever",
-      "title": "Packaging Manager North America – Rigids, PCR & Global Molds SME",
-      "department": null,
-      "location": "Hoboken US HQ, United States of America",
-      "state": null,
-      "remote": false,
-      "postedAt": "Posted 4 Days Ago",
-      "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Hoboken-US-HQ/Packaging-Manager-North-America---Rigids--PCR---Global-Molds-SME_R-1189586",
-      "description": "Earlier this year, Unilever announced an agreement to combine its Foods business with McCormick & Company, creating a scaled global flavor powerhouse. The proposed combination would bring together iconic Foods brands, including Hellmann’s and Knorr, with McCormick’s portfolio to create a global leader across spices, seasonings, condiments and complementary food categories, supported by strong retail and foodservice platforms. McCormick brings more than 135 years of heritage, a presence in 150+ countries and territories, and a portfolio of trusted brands. The transaction remains subject to regulatory approvals and other customary closing conditions, with completion estimated for mid-2027.\n\nJob Title Packaging Manager North America – Rigids, PCR & Global Molds SME\n\nFunction Procurement\n\nWork Level and Grade WL2C\n\nReports to Packaging Director – North America & Global Rigids Lead, WL3X\n\nScope North America & Global\n\nCountry Location and Worksite Details Hoboken US HQ\n\nJOB PURPOSE\n\nThis role leads procurement for the North America rigid-packaging portfolio and PCR agenda, translating business, portfolio, regulatory and sustainability priorities into a multi-year commercial roadmap across approximately €110+ million managed spend. The role also serves as the Global Molds subject-matter expert, establishing sourcing standards, supplier strategies, should-cost models, asset governance and lifecycle-value approaches across injection and blow-molding applications. In close partnership with R&D, Engineering, Supply Chain, Quality, Finance, Legal, Sustainability, global portfolio teams and markets, the role delivers competitive sourcing, verified recycled-material supply, mold investment and health, innovation, supplier transitions and on-time industrialization.\n\nKEY RESPONSIBILITIES\n\n• Lead, develop and empower the North America Rigids, PCR and Global Molds Procurement team of two FTEs, including this Manager role, with one Assistant Manager reporting directly, responsible for approximately €110+ million managed spend.\n• Own the North America rigid-packaging, PCR and Global Molds procurement portfolio, translating business, growth, regulatory and sustainability priorities into a multi-year category strategy and value-creation roadmap.\n• Develop and execute sourcing strategies informed by resin and feedstock dynamics, conversion economics, should-cost models, supplier capability, regional demand, technology developments and regulatory requirements.\n• Lead supplier selection, negotiation, contracting and performance governance, delivering competitiveness, cash, working capital, innovation, quality, service and resilient supplier capacity.\n• Own the North America PCR sourcing and supplier-development roadmap, securing competitive and scalable recycled-material supply with robust chain-of-custody, certification, traceability, food-contact compliance, quality controls and performance standards.\n• Act as the Global Molds subject-matter expert, setting sourcing and ownership standards, supplier strategies, cost models and governance across mold design, build, qualification, maintenance, health, capacity, refurbishment, replacement and decommissioning.\n• Build strategic partnerships with resin suppliers, converters, recyclers and mold makers to unlock value engineering, specification optimization, technology adoption, cycle-time improvement, circularity and speed to market.\n• Partner with R&D, Engineering, Supply Chain, Quality, Finance, Legal, Sustainability, global portfolio teams and markets to govern mold investment, support innovation and trials, manage supplier transitions and deliver on-time industrialization and launches.\n\nREQUIRED QUALIFICATIONS\n\n• University degree with 7–10 years of relevant experience in Procurement, Supply Chain, Packaging or Engineering within an international FMCG or manufacturing environment, including strategic sourcing responsibility.\n• Demonstrated success leading regional packaging procurement strategies and complex sourcing programs, with experience operating at comparable spend and organizational scale.\n• Deep knowledge of rigid-packaging value chains, injection and blow molding, resins, PCR materials, packaging technologies, recycled-content compliance and circular-economy opportunities.\n• Strong technical and commercial understanding of mold design, manufacture, ownership models, qualification, maintenance, validation, capacity, cost drivers and lifecycle management.\n• Strong strategic-sourcing, negotiation and contracting capability, supported by financial acumen, should-cost modelling, market analysis, price forecasting and supplier-performance management.\n• Enterprise leadership mindset, with the ability to set clear priorities, lead through ambiguity and packaging-market change, balance strategic thinking with execution, build trusted senior stakeholder relationships and develop the Assistant Manager while contributing to broader procurement capability development.\n\nPREFERRED QUALIFICATIONS\n\n• Relevant technical, engineering, packaging or commercial postgraduate qualification.\n• Experience developing PCR supply markets, including certification, chain-of-custody, food-contact, regulatory, traceability, quality and supplier-performance requirements.\n• Experience leading global mold programs, tooling governance, supplier transitions, innovation or change programs across functions and geographies.\n\nWe welcome applicants from all walks of life and are committed to creating an environment where everyone can thrive/succeed. All applicants will receive fair and respectful consideration, and we actively support the growth and development of every employee.\n\nWe are committed to making reasonable adjustments to provide a positive, barrier-free recruitment journey. Should you require additional information or reasonable adjustments to allow you to present your best self during this process, please contact your Talent Partner.\n\n------------------------------------\n\nAt Unilever, inclusion is at the heart of everything we do . We welcome applicants from all walks of life and are committed to creating an environment where everyone can thrive/succeed. All applicants will receive fair and respectful consideration, and we actively support the growth and development of every employee.\n\nUnilever is an Equal Opportunity Employer/Protected Veterans/Persons with Disabilities.\n\nFor more information on your federal rights, please see Know Your Rights: Workplace Discrimination is Illegal\n\nEmployment is subject to verification of pre-screening tests, which may include drug screening, background check, credit check and DMV check.\n\nIf you are an individual with a disability in need of assistance at any time during our recruitment process, please contact us at NA.Accommodations@unilever.com . Please note: This email is reserved for individuals with disabilities in need of assistance and is not a means of inquiry about positions or application statuses. The Protected Veterans or Individuals with Disabilities AAP narratives are available for inspection by any employee or applicant for employment Monday through Friday during normal business hours at establishment.",
-      "salary": null,
-      "niche": "cpg",
-      "source": "workday"
-    },
-    {
-      "id": "zimmer-biomet-5f5903eb7b294579",
-      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
-      "hash": "5f5903eb7b294579",
-      "company": "Zimmer Biomet",
-      "companySlug": "zimmer-biomet",
-      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
-      "department": "Research & Development",
-      "location": "Warsaw, Indiana, United States",
-      "state": "IN",
-      "remote": false,
-      "postedAt": "2026-08-27T00:00:00.000+0000",
-      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
-      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
-      "salary": null,
-      "niche": "pharma",
-      "source": "phenom"
     }
   ],
   "reports": [
     {
       "company": "Kimberly-Clark",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 54,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Kimberly-Clark 429 https://kimberlyclark.wd1.myworkdayjobs.com/wday/cxs/kimberlyclark/GLOBAL/jobs"
+      "classifierDrops": {
+        "not a packaging role": 49,
+        "plant process engineering": 3,
+        "off-target function": 2
+      }
     },
     {
       "company": "General Mills",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 89,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday General Mills 429 https://genmills.wd1.myworkdayjobs.com/wday/cxs/genmills/GMI_External_Careers/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "warehouse/ops title": 4,
+        "off-target function": 7,
+        "not a packaging role": 77
+      }
     },
     {
       "company": "Sonoco",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 92,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Sonoco 429 https://sonoco.wd1.myworkdayjobs.com/wday/cxs/sonoco/CorporateCareers/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 79,
+        "warehouse/ops title": 3,
+        "plant process engineering": 5,
+        "off-target function": 4
+      }
     },
     {
       "company": "3M",
@@ -388,22 +452,28 @@
     {
       "company": "Kenvue",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 61,
+      "classifierPass": 2,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Kenvue 429 https://kenvue.wd5.myworkdayjobs.com/wday/cxs/kenvue/kenvue/jobs"
+      "fetched": 2,
+      "classifierDrops": {
+        "not a packaging role": 56,
+        "warehouse/ops title": 1,
+        "off-target function": 2
+      }
     },
     {
       "company": "Clorox",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Clorox 429 https://clorox.wd1.myworkdayjobs.com/wday/cxs/clorox/Clorox/jobs"
+      "scanned": 64,
+      "classifierPass": 6,
+      "kept": 5,
+      "fetched": 6,
+      "classifierDrops": {
+        "warehouse/ops title": 17,
+        "off-target function": 5,
+        "not a packaging role": 36
+      }
     },
     {
       "company": "Conagra Brands",
@@ -468,12 +538,15 @@
     {
       "company": "Silgan Dispensing",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 21,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Silgan Dispensing 429 https://silgandispensing.wd501.myworkdayjobs.com/wday/cxs/silgandispensing/silgan/jobs"
+      "classifierDrops": {
+        "not a packaging role": 16,
+        "off-target function": 4,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Aptar",
@@ -515,12 +588,12 @@
     {
       "company": "Magna",
       "ats": "workday",
-      "scanned": 73,
+      "scanned": 72,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 70,
+        "not a packaging role": 69,
         "plant process engineering": 1,
         "off-target function": 1
       }
@@ -543,9 +616,9 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 41,
+        "not a packaging role": 42,
         "off-target function": 4,
-        "warehouse/ops title": 5
+        "warehouse/ops title": 4
       }
     },
     {
@@ -564,13 +637,13 @@
     {
       "company": "Unilever",
       "ats": "workday",
-      "scanned": 44,
+      "scanned": 41,
       "classifierPass": 2,
-      "kept": 2,
+      "kept": 1,
       "fetched": 2,
       "classifierDrops": {
         "warehouse/ops title": 3,
-        "not a packaging role": 38,
+        "not a packaging role": 35,
         "off-target function": 1
       }
     },
@@ -638,14 +711,14 @@
     {
       "company": "Mars",
       "ats": "phenom",
-      "scanned": 387,
+      "scanned": 385,
       "classifierPass": 4,
       "kept": 4,
       "fetched": 4,
       "classifierDrops": {
-        "not a packaging role": 233,
+        "not a packaging role": 232,
         "warehouse/ops title": 28,
-        "off-target function": 122
+        "off-target function": 121
       }
     },
     {
@@ -663,12 +736,15 @@
     {
       "company": "Sealed Air",
       "ats": "successfactors",
-      "scanned": 0,
+      "scanned": 20,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "SuccessFactors public JSON not available for Sealed Air"
+      "classifierDrops": {
+        "not a packaging role": 18,
+        "warehouse/ops title": 1,
+        "off-target function": 1
+      }
     },
     {
       "company": "Amcor",
@@ -741,42 +817,55 @@
     {
       "company": "Pfizer",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 69,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Pfizer 429 https://pfizer.wd1.myworkdayjobs.com/wday/cxs/pfizer/PfizerCareers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 68,
+        "off-target function": 1
+      }
     },
     {
       "company": "Baxter",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 74,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Baxter 429 https://baxter.wd1.myworkdayjobs.com/wday/cxs/baxter/Baxter/jobs"
+      "classifierDrops": {
+        "not a packaging role": 62,
+        "off-target function": 2,
+        "warehouse/ops title": 10
+      }
     },
     {
       "company": "Stryker",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 85,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Stryker 429 https://stryker.wd1.myworkdayjobs.com/wday/cxs/stryker/StrykerCareers/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 70,
+        "plant process engineering": 1,
+        "off-target function": 11,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "Catalent",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 54,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Catalent 429 https://catalent.wd1.myworkdayjobs.com/wday/cxs/catalent/External/jobs"
+      "classifierDrops": {
+        "plant process engineering": 2,
+        "not a packaging role": 47,
+        "off-target function": 1,
+        "warehouse/ops title": 4
+      }
     },
     {
       "company": "Tyson Foods",
@@ -841,25 +930,24 @@
     {
       "company": "The Hershey Company",
       "ats": "successfactors",
-      "scanned": 29,
-      "classifierPass": 2,
-      "kept": 2,
-      "fetched": 2,
+      "scanned": 30,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 16,
-        "off-target function": 10,
-        "warehouse/ops title": 1
+        "not a packaging role": 18,
+        "off-target function": 11
       }
     },
     {
       "company": "Eastman",
       "ats": "successfactors",
-      "scanned": 27,
+      "scanned": 28,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 23,
+        "not a packaging role": 24,
         "off-target function": 3,
         "plant process engineering": 1
       }
@@ -867,25 +955,25 @@
     {
       "company": "Molson Coors",
       "ats": "successfactors",
-      "scanned": 33,
+      "scanned": 32,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 26,
-        "off-target function": 6
+        "not a packaging role": 24,
+        "off-target function": 7
       }
     },
     {
       "company": "Reckitt",
       "ats": "successfactors",
-      "scanned": 30,
+      "scanned": 31,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 28,
-        "off-target function": 2
+        "off-target function": 3
       }
     },
     {
@@ -896,32 +984,32 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "warehouse/ops title": 1,
         "not a packaging role": 22,
+        "warehouse/ops title": 1,
         "off-target function": 7
       }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
-      "scanned": 34,
+      "scanned": 33,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 33,
+        "not a packaging role": 32,
         "off-target function": 1
       }
     },
     {
       "company": "Perrigo",
       "ats": "successfactors",
-      "scanned": 28,
+      "scanned": 26,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 24,
+        "not a packaging role": 22,
         "plant process engineering": 1,
         "off-target function": 3
       }
@@ -949,12 +1037,12 @@
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
-      "scanned": 392,
+      "scanned": 391,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 240,
+        "not a packaging role": 239,
         "plant process engineering": 1,
         "warehouse/ops title": 8,
         "off-target function": 141
