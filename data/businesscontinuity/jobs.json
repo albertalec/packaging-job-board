@@ -1,52 +1,51 @@
 {
-  "ingestedAt": "2026-11-22T19:17:18.936Z",
+  "ingestedAt": "2026-11-23T23:36:20.924Z",
   "total": 23,
   "stats": {
-    "scanned": 4727,
-    "classifierPass": 39,
+    "scanned": 4712,
+    "classifierPass": 37,
     "kept": 23,
     "classifierDrops": {
-      "not a BCM/DR role": 3771,
-      "generic IT title": 535,
-      "product/SRE resilience noise": 85,
-      "off-target function": 230,
-      "manufacturing capacity resiliency": 66,
-      "insurance underwriting": 1
+      "not a BCM/DR role": 3774,
+      "generic IT title": 528,
+      "product/SRE resilience noise": 78,
+      "off-target function": 229,
+      "manufacturing capacity resiliency": 66
     }
   },
   "jobs": [
     {
-      "id": "td-bank-98f1fd0b5a1f93cb",
-      "sourceId": "/job/New-York-New-York/Group-Risk-Specialist--US-_R_1513873",
-      "hash": "98f1fd0b5a1f93cb",
-      "company": "TD Bank",
-      "companySlug": "td-bank",
-      "title": "Group Risk Specialist- Risk Event Measurements (US)",
-      "department": null,
-      "location": "New York, New York, United States of America",
-      "state": "NY",
-      "remote": false,
-      "postedAt": "Posted 26 Days Ago",
-      "applyUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/New-York-New-York/Group-Risk-Specialist--US-_R_1513873",
-      "description": "Work Location:\n\nMount Laurel, New Jersey, United States of America\n\nHours:\n\n40\n\nPay Details:\n\n$91,000 - $145,600 USD\n\nTD is committed to providing fair and equitable compensation opportunities to all colleagues. Growth opportunities and skill development are defining features of the colleague experience at TD. Our compensation policies and practices have been designed to allow colleagues to progress through the salary range over time as they progress in their role. The base pay actually offered may vary based upon the candidate's skills and experience, job-related knowledge, geographic location, and other specific business and organizational needs.\n\nAs a candidate, you are encouraged to ask compensation related questions and have an open dialogue with your recruiter who can provide you more specific details for this role.\n\nLine of Business:\n\nRisk Management\n\nJob Description\n\nDepartment Overview:\n\nThe Risk Identification Catalog & Measurement (RICM) team is part of Enterprise Risk Management. The RICM team is responsible for the quarterly identification and assessment of Top, Emerging and Material risks. In addition, the team performs Risk Event Measurements on Significant risks to determine potential risk impacts across the Combined US Operations. Each of these Risk Events are developed via engagement with Business & Risk Subject Matter Experts, with impacts utilized for Enterprise Stress Testing purposes.\n\nThe Group Risk Specialist provides a comprehensive and diverse range of risk management expertise to business leaders. Leads and supports the implementation of appropriate risk frameworks and leading related management activities to mitigate enterprise and/or business-wide risk exposures for key business segment of the Bank or functional area. May provide oversight, commentary, and recommendations based on overall strategy and industry best practices.\n\nDepth & Scope:\n\n• Highly seasoned professional role requiring substantial knowledge/expertise in a complex field and knowledge of broader related areas\n• Integrates knowledge of the enterprise sub-function’s or business line’s overarching strategy in developing solutions across multiple functions or operations\n• Interprets internal/external business challenges and the industry environment, recommends course of action and best practices to improve products, processes or services\n• Acts as a technical expert/lead integrating cross-function understanding within their own field of specialty; may manage team(s) of related specialists\n• Leads cross-functional teams or projects with significant resource requirements, risk and/or complexity\n• Independently manages end-to-end functional programs\n• Solves or may lead others to solve complex problems; leads efforts or partners with others to develop new solutions\n• Uses sophisticated analytical thought to exercise judgement and identify solutions\n• Impacts the achievement of sub-function or business line objectives within the area they are accountable for\n• Work is guided by policies and industry standards/methods\n• Communicates difficult concepts; converts information to compelling business context and advice; influences and gains alignment across increasingly senior stakeholders\n• Works autonomously as the lead and guides others within area of expertise\n\nEducation & Experience:\n\n• Undergraduate degree or technical certificate and/or\n• 7+ years relevant experience\n• Advanced knowledge of risk management governance, programs, policies, practices, operating frameworks & reporting for business supported and/or area of discipline\n• Knowledge of risk management environment, standards, regulations and mitigation\n• Knowledge of current and emerging competitor and market trends\n• Ability to establish goals and objectives which support the strategic plan\n• Ability to lead, plan, implement, and evaluate program/project activities to ensure completion of initiatives\n• Skill in mentoring and coaching\n• Advanced skill in using analytical software tools, data analysis methods and reporting techniques\n• Skill in using computer applications including MS Office\n• Ability to communicate effectively in both oral and written form\n• Ability to work collaboratively and build relationships across teams and functions\n• Ability to work successfully as a member of a team and independently\n• Ability to exercise sound judgement in making decisions\n• Ability to analyze, organize and prioritize work while meeting multiple deadlines\n• Ability to handle confidential information with discretion\n\nPreferred Qualifications\n\n• Experience developing and executing Enterprise Risk Programs, ideally Stress Testing or Scenario Analysis.\n• Experience supporting Risk Transformation initiatives\n\nCustomer Accountabilities:\n\n• Leads the development and/or implementation of specific standards, policies and/or processes that identify, report on and mitigate operational (or all major) risk exposures within the business\n• Proactively analyzes potential risks and ensures escalation of key risks to appropriate areas and/or executive review with business executive findings and action plans to mitigate and manage these risks\n• Establishes and provides on-going analysis and reporting on operational risk and/or other major risk categories as applicable to own business or functional area, and reviews findings and action plans with business leaders to mitigate and manage key issues\n• Coordinates and/or guides activities relating to core operational risk disciplines/programs including, Risk & Control Self-Assessment, Business Continuity Management, Outsourcing & Vendor Management, Regulatory Compliance (e.g. CDIC, AML, Privacy, IDA, CBA, SOX, Basel etc.)\n• Supports enterprise-wide operational risk escalation, review and approval processes, data management, policies and risk assessment processes\n• Directs the development and monitoring of Key Risk Indicators and facilitate communication and resolution of risk issues among other business segments where applicable\n• May be accountable for managing ancillary operational risk areas (e.g. BCM/incident management, outsourcing/vendor management, fraud aggregation and assessment, Basel implementation/capital analysis, change management, Privacy, AML, LCM and other regulatory issues), in addition to core functions\n• May be responsible for providing support for other major risk areas (e.g. Market, Credit, Reputational and/or Regulatory risks etc.)\n• May be a point of contact for guidance in the monitoring/reporting of compliance, management, and strategic initiatives\n• Provides broad/deep commentary in support of the development/maintenance/oversight of policies/procedures/practices, as required\n\nShareholder Accountabilities:\n\n• Adheres to enterprise frameworks or methodologies that relate to activities for our business area\n• Ensures respective programs/policies/practices are well managed, meet business needs, comply with internal and external requirements, and align with business priorities\n• Consistently exercises discretion in managing correspondence, information and all matters of confidentiality; escalates issues where appropriate\n• Ensures business operations are in compliance with applicable internal and external requirements ( e.g. financial controls, segregation of duties, transaction approvals and physical control of assets)\n• Participates in cross-functional/enterprise/initiatives as a subject matter expert helping to identify risk/provide guidance for complex situations\n• Conducts internal and external research projects; supports the development/delivery of presentations/communications to management or broader audience\n• Conducts meaningful analysis at the functional or enterprise level using results to draw conclusions, make recommendations and assess the effectiveness of programs/policies/practices\n• Monitors service, productivity and assesses efficiency levels within own function and implements continuous process/performance improvements where opportunities exist\n• Leads/facilitates and/or implements actions/remediation plans to address performance/risk/governance issues\n• Actively manages relationships within and across various business lines, corporate and/or oversight functions and ensures alignment with enterprise and/or regulatory requirements\n• Keeps abreast of emerging issues, trends, and evolving regulatory requirements and assesses potential impacts\n• Maintains a culture of risk management and control, supported by effective processes in alignment with risk appetite\n\nEmployee/Team Accountabilities:\n\n• Participates fully as a member of the team, supports a positive work environment that promotes service to the business, quality, innovation and teamwork and ensures timely communication of issues/points of interest\n• Provides thought leadership and/or industry knowledge for own area of expertise in own area and participates in knowledge transfer within the team and business unit\n• Keeps current on emerging trends/developments and grows knowledge of the business, related tools and techniques\n• Participates in personal performance management and development activities, including cross training within own team\n• Keeps others informed and up-to-date about the status/progress of projects and/or all relevant or useful information related to day-to-day activities\n• Contributes to team development of skills and capabilities through mentorship of others, by sharing knowledge and experiences and leveraging best practices\n• Leads, motivates and develops relationships with internal and external business partners/stakeholders to develop productive working relationships\n• Contributes to a fair, positive and equitable environment that supports a diverse workforce\n• Acts as a brand ambassador for your business area/function and the bank, both internally and/or externally\n\nPhysical Requirements:\n\nNever: 0%; Occasional: 1-33%; Frequent: 34-66%; Continuous: 67-100%\n\n• Domestic Travel – Occasional\n• International Travel – Never\n• Performing sedentary work – Continuous\n• Performing multiple tasks – Continuous\n• Operating standard office equipment - Continuous\n• Responding quickly to sounds – Occasional\n• Sitting – Continuous\n• Standing – Occasional\n• Walking – Occasional\n• Moving safely in confined spaces – Occasional\n• Lifting/Carrying (under 25 lbs.) – Occasional\n• Lifting/Carrying (over 25 lbs.) – Never\n• Squatting – Occasional\n• Bending – Occasional\n• Kneeling – Never\n• Crawling – Never\n• Climbing – Never\n• Reaching overhead – Never\n• Reaching forward – Occasional\n• Pushing – Never\n• Pulling – Never\n• Twisting – Never\n• Concentrating for long periods of time – Continuous\n• Applying common sense to deal with problems involving standardized situations – Continuous\n• Reading, writing and comprehending instructions – Continuous\n• Adding, subtracting, multiplying and dividing – Continuous\n\nThe above statements are intended to describe the general nature and level of work being performed by people assigned to this job. They are not intended to be an exhaustive list of all responsibilities, duties and skills required. The listed or specified responsibilities & duties are considered essential functions for ADA purposes.\n\n#LI-USCorporate\n\nWho We Are\n\nTD is one of the world's leading global financial institutions and is the fifth largest bank in North America by branches/stores. Every day, we strive to make every interaction, product, and experience remarkably human and refreshingly simple for over 27 million households and businesses in Canada, the United States and around the world. More than 95,000 TD colleagues bring their skills, talent, and creativity to foster deeper relationships, ensure disciplined execution, and build a simpler, faster banking experience. TD is deeply committed to being a leader in client experience, that is why we believe that all colleagues, no matter where they work, are client facing. Together, we are reimagining what banking can be for our clients, colleagues and communities.\n\nOur Total Rewards Package\n\nOur Total Rewards package reflects the investments we make in our colleagues to help them and their families achieve their financial, physical and mental well-being goals. Total Rewards at TD includes base salary and variable compensation/incentive awards (e.g., eligibility for cash and/or equity incentive awards, generally through participation in an incentive plan) and several other key plans such as health and well-being benefits, savings and retirement programs, paid time off (including Vacation PTO, Flex PTO, and Holiday PTO), banking benefits and discounts, career development, and reward and recognition. Learn more\n\nAdditional Information:\nWe’re delighted that you’re considering building a career with TD. Through regular development conversations, training programs, and a competitive benefits plan, we’re committed to providing the support our colleagues need to thrive both at work and at home.\n\nColleague Development\n\nIf you’re interested in a specific career path or are looking to build certain skills, we want to help you succeed. You’ll have regular career, development, and performance conversations with your manager, as well as access to an online learning platform and a variety of mentoring programs to help you unlock future opportunities.\n\nIf you’re passionate about helping clients and building deep, lasting relationships, TD offers diverse career paths where you can grow your expertise and make a meaningful impact.\n\nWe're committed to your success and foster a respectful workplace where diverse perspectives are valued, everyone has fair opportunities to grow, and you can unlock your full potential to achieve your career goals. Here at TD, we hire and develop the best.\n\nTraining & Onboarding\nWe will provide training and onboarding sessions to ensure that you’ve got everything you need to succeed in your new role.\n\nInterview Process\nWe’ll reach out to candidates of interest to schedule an interview. We do our best to communicate outcomes to all applicants by email or phone call.\n\nAccommodation\n\nTD Bank is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, status as a protected veteran or any other characteristic protected under applicable federal, state, or local law.\n\nIf you are an applicant with a disability and need accommodations to complete the application process, please email TD Bank US Workplace Accommodations Program at USWAPTDO@td.com . Include your full name, best way to reach you and the accommodation needed to assist you with the applicant process.",
-      "salary": null,
-      "niche": "finance",
-      "source": "workday"
-    },
-    {
-      "id": "jpmorgan-chase-d31ba36bca9f752f",
-      "sourceId": "210799564",
-      "hash": "d31ba36bca9f752f",
+      "id": "jpmorgan-chase-69d301d419caf8c1",
+      "sourceId": "210811049",
+      "hash": "69d301d419caf8c1",
       "company": "JPMorgan Chase",
       "companySlug": "jpmorgan-chase",
-      "title": "Relationship Manager -  Business Resiliency Office -Executive Director",
+      "title": "Executive Director - Operational Resiliency Crisis Management",
       "department": null,
-      "location": "Columbus, OH, United States",
-      "state": "OH",
+      "location": "Washington, DC, United States",
+      "state": "WA",
       "remote": false,
-      "postedAt": "2026-11-20",
-      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799564",
-      "description": "The Firmwide Resiliency Office (FRO), which is part of the Office of the Chief Financial Officer, is seeking a talented Resiliency Executive Director to join our team to lead engagement with lines of business and corporate functions to drive forward the Firmwide Resiliency strategic priorities. This is a great opportunity to use your stakeholder relationship skills and work with senior leaders throughout the firm.\n\nAs a Business Resiliency Relationship Manager in the Firmwide Resiliency Office, you will partner closely with FRO team members and engage the broader resiliency ecosystem. Additionally, you will align stakeholders, remove obstacles, surface insights via executive-ready narratives and analytics and deliver change at scale through disciplined change management and continuous improvement.\n\nJob Responsibilities:\n\n• Own the Firmwide Resiliency relationship with the Line of Business (LOB) through day-to-day partnership with the business, leading engagement, integration, and change management for resiliency\n\n• Drive risk articulation model and escalation protocol to the businesses, ensuring escalation to the right forums such as business control committees, steering committees, etc.\n\n• Manage change management for firmwide resiliency initiatives, ensuring LOB adoption and successful embedment of new capabilities, standards, and tooling.\n\n• Deepen partnership between the businesses and the Firmwide Resiliency Office; be the escalation and decision-making forum for LOB-specific resiliency issues.\n\n• Serve as the two-way translator: business context in, resiliency requirements out.\n\n• Work with the businesses to strengthen resiliency ownership to ensure regular senior-level review of essential services, third-party dependencies, resiliency assumptions, and kill-switch readiness.\n\nRequired Qualifications, Capabilities, and Skills:\n\n• 10 years of senior leadership experience owning firmwide resiliency initiatives and/or advising executives on strategy and risk.\n\n• Proven ability to run a coverage/relationship model (e.g., LOB champions), serve as a trusted escalation point, and influence outcomes without direct authority.\n\n• Strong change management expertise including driving adoption and embedment of new resiliency capabilities, standards, processes, and tooling across diverse stakeholders.\n\n• Strong understanding of operational resiliency concepts and ability to challenge practical viability of plans.\n\n• Excellent written and verbal communication skills with a track record of producing executive-ready materials, briefing senior stakeholders, and clearly framing issues, decisions, and escalation paths.\n\n• Strong analytical and problem-solving skills with attention to detail; ability to synthesize complex information into clear insights and action\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nJoin our Firmwide Resiliency Office as a Business Resiliency Relationship Manager!\n\nRelationship Manager - Business Resiliency Office -Executive Director",
+      "postedAt": "2026-11-23",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210811049",
+      "description": "Lead crisis preparedness, response, and recovery—guiding senior leaders through outages, cyber incidents, and other major disruptions.\n\nExecutive Director - Operational Resiliency Crisis Management",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
+    {
+      "id": "jpmorgan-chase-9bd0e4abd1eeedeb",
+      "sourceId": "210748400",
+      "hash": "9bd0e4abd1eeedeb",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Infrastructure & Cloud Technology Operational Risk Director - Technology Operational Risk Management - Executive Director",
+      "department": null,
+      "location": "New York, NY, United States",
+      "state": "NY",
+      "remote": false,
+      "postedAt": "2026-11-23",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210748400",
+      "description": "Bring your Expertise to JPMorganChase. As part of Risk Management and Compliance, you are at the center of keeping JPMorganChase strong and resilient. You help the firm grow its business in a responsible way by anticipating new and emerging risks and using your expert judgement to solve real-world challenges that impact our company, customers and communities. Our culture in Risk Management and Compliance is all about thinking outside the box, challenging the status quo and striving to be best-in-class.\n\nAs a Technology Operational Risk Management Executive Director in Tech & Cyber Operational Risk Management team, you will provide independent oversight of operational risk for cloud and infrastructure platforms, tools, and supporting systems. You partner with technology and cybersecurity teams to review how solutions are developed, deployed, and operated, and you assess the effectiveness of processes and controls aligned to the CCOR Tech & Cyber framework. You proactively identify emerging technology and third-party risks and provide pragmatic recommendations that help us meet policy, regulatory, and industry expectations.\n\nJob responsibilities:\n\n• Perform independent reviews of global and regional technology and cybersecurity processes and controls supporting public and private cloud use\n\n• Assess operational risk for infrastructure and cloud platforms, tools, and supporting systems used to deliver technology services to the firm\n\n• Engage with infrastructure technology teams to build a clear understanding of the technology, data flows, and control environment\n\n• Evaluate third-party risks related to technology providers, services, and dependencies within your domain\n\n• Identify elevated risk concentrations globally and assess inherent risks and mitigating controls across relevant technology areas\n\n• Recommend control enhancements to align with JPMorganChase policies, regulatory requirements, and industry best practices\n\n• Track current technology trends, vulnerabilities, and emerging technologies to inform risk assessments and oversight priorities\n\n• Provide credible challenge and guidance to technology partners on control design, implementation, and operational effectiveness\n\n• Support the implementation and execution of the CCOR Tech & Cyber framework through consistent risk assessment and reporting\n\n• Participate in key technology governance forums and contribute to risk discussions and decisions\n\n• Document assessments, conclusions, and actions clearly to support transparency, auditability, and follow-through\n\nRequired qualifications, capabilities, and skills:\n\n• Subject matter expertise in infrastructure and cloud technology domains, including operational processes and control expectations\n\n• Demonstrated hands-on experience across enterprise infrastructure components (network, compute, storage, database, and messaging), in on-prem and cloud environments\n\n• Working knowledge of network engineering concepts such as routing and switching, DNS/DHCP, load balancing, firewalls/WAF, proxy, segmentation, and VPN/private connectivity\n\n• Experience with compute and virtualization, including Linux/Windows, private cloud, and cloud compute primitives, plus reliability and hardening controls\n\n• Knowledge of storage and data protection practices, including backup/restore, replication, retention, and disaster recovery\n\n• Working knowledge of database platforms, including relational and NoSQL services, encryption, access controls, performance, and lifecycle management\n\n• Hands-on experience with at least one major public cloud provider (AWS, GCP, or Azure) and awareness of multi-cloud considerations\n\n• Knowledge of cloud security and compliance practices, including IAM, encryption/key management, vulnerability management, and relevant control frameworks\n\n• Familiarity with infrastructure as code and automation (e.g., CloudFormation, ARM, Deployment Manager, Terraform, Ansible)\n\n• Familiarity with DevOps and CI/CD practices, including controls around change management, segregation of duties, and secure pipelines\n\n• Familiarity with monitoring, observability, and optimization practices, including logging/alerting, SLO/SLI concepts, and operational health reporting\n\nPreferred qualifications\n\n, capabilities, and skills:\n\n• Experience designing and managing scalable, secure, and highly available cloud solution architectures\n\n• Knowledge of cloud-native application design patterns, including microservices, containers, serverless, and event-driven architectures\n\nOversee cloud and infrastructure operational risk, assessing controls and emerging technology risks across the firm.\n\nOversee cloud and infrastructure operational risk, assessing controls and emerging technology risks across the firm.\n\nInfrastructure & Cloud Technology Operational Risk Director - Technology Operational Risk Management - Executive Director",
       "salary": null,
       "niche": "finance",
       "source": "oracle"
@@ -534,28 +533,28 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 165,
-      "classifierPass": 6,
-      "kept": 1,
-      "fetched": 6,
+      "scanned": 166,
+      "classifierPass": 5,
+      "kept": 0,
+      "fetched": 5,
       "classifierDrops": {
-        "not a BCM/DR role": 135,
-        "generic IT title": 19,
+        "not a BCM/DR role": 141,
+        "generic IT title": 16,
         "product/SRE resilience noise": 1,
-        "off-target function": 4
+        "off-target function": 3
       }
     },
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 79,
+      "scanned": 77,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 70,
+        "not a BCM/DR role": 69,
         "generic IT title": 2,
-        "product/SRE resilience noise": 3,
+        "product/SRE resilience noise": 2,
         "off-target function": 4
       }
     },
@@ -573,29 +572,29 @@
       "company": "JPMorgan Chase",
       "ats": "oracle",
       "scanned": 340,
-      "classifierPass": 26,
-      "kept": 17,
-      "fetched": 26,
+      "classifierPass": 27,
+      "kept": 18,
+      "fetched": 27,
       "classifierDrops": {
-        "not a BCM/DR role": 218,
-        "generic IT title": 66,
+        "not a BCM/DR role": 213,
+        "off-target function": 11,
         "product/SRE resilience noise": 21,
-        "off-target function": 9
+        "generic IT title": 68
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 144,
+      "scanned": 145,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 122,
-        "off-target function": 9,
+        "not a BCM/DR role": 124,
         "product/SRE resilience noise": 4,
+        "off-target function": 9,
         "manufacturing capacity resiliency": 1,
-        "generic IT title": 7
+        "generic IT title": 6
       }
     },
     {
@@ -631,14 +630,14 @@
     {
       "company": "UnitedHealth Group",
       "ats": "talentbrew",
-      "scanned": 85,
+      "scanned": 86,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 69,
+        "not a BCM/DR role": 71,
         "off-target function": 8,
-        "generic IT title": 5,
+        "generic IT title": 4,
         "product/SRE resilience noise": 2
       }
     },
@@ -655,17 +654,12 @@
     {
       "company": "AIG",
       "ats": "workday",
-      "scanned": 41,
-      "classifierPass": 2,
+      "scanned": 0,
+      "classifierPass": 0,
       "kept": 0,
-      "fetched": 2,
-      "classifierDrops": {
-        "not a BCM/DR role": 29,
-        "off-target function": 3,
-        "generic IT title": 3,
-        "product/SRE resilience noise": 3,
-        "insurance underwriting": 1
-      }
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday AIG 429 https://aig.wd1.myworkdayjobs.com/wday/cxs/aig/AIG/jobs"
     },
     {
       "company": "Target",
@@ -700,27 +694,27 @@
     {
       "company": "Twilio",
       "ats": "greenhouse",
-      "scanned": 109,
+      "scanned": 115,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 79,
-        "off-target function": 21,
-        "generic IT title": 9
+        "not a BCM/DR role": 82,
+        "off-target function": 22,
+        "generic IT title": 11
       }
     },
     {
       "company": "Waymo",
       "ats": "greenhouse",
-      "scanned": 363,
+      "scanned": 358,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "generic IT title": 58,
-        "not a BCM/DR role": 285,
-        "off-target function": 11,
+        "generic IT title": 56,
+        "not a BCM/DR role": 283,
+        "off-target function": 10,
         "product/SRE resilience noise": 5,
         "manufacturing capacity resiliency": 2
       }
@@ -728,12 +722,12 @@
     {
       "company": "Cockroach Labs",
       "ats": "greenhouse",
-      "scanned": 12,
+      "scanned": 11,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 10,
+        "not a BCM/DR role": 9,
         "off-target function": 2
       }
     },
@@ -780,12 +774,12 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 53,
+      "scanned": 51,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 46,
+        "not a BCM/DR role": 44,
         "generic IT title": 4,
         "product/SRE resilience noise": 1,
         "off-target function": 2
@@ -794,39 +788,39 @@
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 351,
+      "scanned": 363,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 324,
-        "product/SRE resilience noise": 4,
-        "off-target function": 20,
+        "not a BCM/DR role": 340,
+        "off-target function": 19,
+        "product/SRE resilience noise": 1,
         "generic IT title": 3
       }
     },
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 30,
+      "scanned": 31,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 18,
-        "generic IT title": 7,
+        "not a BCM/DR role": 20,
+        "generic IT title": 6,
         "off-target function": 5
       }
     },
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2845,
+      "scanned": 2857,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 2265,
+        "not a BCM/DR role": 2277,
         "generic IT title": 350,
         "off-target function": 125,
         "manufacturing capacity resiliency": 63,
@@ -909,13 +903,13 @@
     {
       "company": "Visions Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 25,
+      "scanned": 27,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 20,
-        "off-target function": 5
+        "off-target function": 7,
+        "not a BCM/DR role": 20
       }
     },
     {
