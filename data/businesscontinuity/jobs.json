@@ -1,19 +1,55 @@
 {
-  "ingestedAt": "2026-11-23T23:36:20.924Z",
-  "total": 23,
+  "ingestedAt": "2026-11-24T22:09:19.967Z",
+  "total": 26,
   "stats": {
-    "scanned": 4712,
-    "classifierPass": 37,
-    "kept": 23,
+    "scanned": 4888,
+    "classifierPass": 41,
+    "kept": 26,
     "classifierDrops": {
-      "not a BCM/DR role": 3774,
-      "generic IT title": 528,
+      "not a BCM/DR role": 3923,
+      "generic IT title": 547,
+      "off-target function": 233,
       "product/SRE resilience noise": 78,
-      "off-target function": 229,
       "manufacturing capacity resiliency": 66
     }
   },
   "jobs": [
+    {
+      "id": "jpmorgan-chase-3134fee5060e39fa",
+      "sourceId": "210810000",
+      "hash": "3134fee5060e39fa",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Business Resiliency Associate Incident Manager",
+      "department": null,
+      "location": "Columbus, OH, United States",
+      "state": "OH",
+      "remote": false,
+      "postedAt": "2026-11-24",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810000",
+      "description": "Bring your expertise to JPMorgan Chase. As part of a growing resiliency testing organization, you will play a key role in helping businesses strengthen preparedness, validate resiliency capabilities, and identify opportunities for continuous improvement through meaningful testing and simulation activities.\n\nAs an Associate Incident Manager in Business Resiliency, you will coordinate response activities for major incidents and disruptions affecting customers, employees, and lines of business. You will bring business, operations, technology, and corporate partners together to clarify impact, advance restoration, and deliver concise updates in a high-stakes environment. You will also strengthen readiness by supporting post-incident actions, playbooks, governance, metrics, and process improvements that reduce risk and improve execution.\n\nJob Responsibilities\n\n• Support the coordination of high-severity incidents, including Priority 1 and major issues, by helping establish and manage business bridge calls and situation rooms.\n\n• Synthesize fast-moving information into clear customer, employee, operational, and business impact statements.\n\n• Draft and maintain concise, executive-ready incident updates that communicate impact, restoration progress, risks, decisions, and next steps.\n\n• Apply sound judgment and escalation discipline to advance restoration while maintaining control requirements and stakeholder alignment.\n\n• Monitor incident tools, repositories, and partner channels to support timely triage, routing, documentation, action tracking, and follow-up.\n\n• Coordinate response activities for technical and non-technical disruptions, including technology failures, cybersecurity events, natural disasters, facilities issues, and third-party incidents.\n\n• Support cross-functional resiliency initiatives by defining scope, tracking milestones and dependencies, and reporting progress and risks.\n\n• Contribute to post-incident reviews and translate lessons learned into corrective actions with clear owners, due dates, and verification steps.\n\n• Analyze incident trends, operational data, and business metrics to identify friction points and recommend measurable improvements.\n\n• Identify practical AI and automation opportunities and partner with technology and data teams to support controlled, governed implementation.\n\n• Maintain playbooks, runbooks, training materials, and job aids so procedures remain current, clear, and usable during high-pressure events.\n\nRequired Qualifications, Capabilities and Skills\n\n• Bachelor's degree in Emergency Management, Meteorology, Atmospheric Sciences, Security, Business, Operations, or a related field.\n\n• One or more years of experience in crisis response, incident management, business resiliency, business continuity, operations, or a related function within a complex organization.\n\n• Experience working within an incident management framework under time pressure, including threat assessment support, stakeholder communications, and coordinated response.\n\n• Knowledge of contact center operations, customer behavior, and the technology ecosystem that supports technical and non-technical incident response.\n\n• Strong documentation, action tracking, operational follow-through, judgment, and escalation skills.\n\n• Project management and cross-functional coordination skills, with the ability to prioritize and manage multiple concurrent workstreams.\n\n• Process improvement experience, including workflow mapping, root cause analysis, change implementation, and outcome measurement.\n\n• Strong written and verbal communication skills, including preparation of concise senior-leader updates and facilitation across diverse stakeholders.\n\nPreferred Qualifications\n\n, Capabilities and Skills\n\n• Business resiliency or business continuity experience in a matrixed corporate environment, preferably within financial services.\n\n• PMP, PRINCE2, Agile, Scrum, Kanban, or ITIL certification or training.\n\n• Lean Six Sigma Yellow Belt, Green Belt, or higher, or demonstrated delivery of measurable operational improvements.\n\n• Proficiency in Microsoft Excel and PowerPoint, with experience defining dashboard requirements and operational metrics.\n\n• Experience using data, AI, or automation to improve the speed, accuracy, or consistency of operational processes.\n\nWork Schedule This role includes weekend rotation coverage as part of the normal schedule. Primary working hours are Monday through Friday, 8:00 a.m. to 5:00 p.m., with flexibility as needed to support incident response.\n\nLead major incidents, drive resiliency, manage risk-based escalations, and accelerate business recovery efforts.\n\nLead major incidents, drive resiliency, manage risk-based escalations, and accelerate business recovery efforts.\n\nBusiness Resiliency Associate Incident Manager",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
+    {
+      "id": "jpmorgan-chase-9284cb3c45c5241e",
+      "sourceId": "210810444",
+      "hash": "9284cb3c45c5241e",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Senior Lead Security Engineer, Technology Resiliency",
+      "department": null,
+      "location": "Wilmington, DE, United States",
+      "state": "DE",
+      "remote": false,
+      "postedAt": "2026-11-24",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810444",
+      "description": "Help strengthen the security and resilience of complex technology environments. In this hands-on engineering role, you’ll bring security knowledge and production reliability experience together to identify risks and help teams operate and recover technology safely.\n\nSenior Lead Security Engineer, Technology Resiliency",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
     {
       "id": "jpmorgan-chase-69d301d419caf8c1",
       "sourceId": "210811049",
@@ -154,6 +190,24 @@
       "postedAt": "2026-11-12",
       "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805823",
       "description": "Promote training programs, workforce planning, business continuity and budgeting for investment banking and credit risk teams.\n\nInvestment Bank and Wholesale Credit Risk - Business Manager - Vice President",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
+    {
+      "id": "jpmorgan-chase-41f00241b1460424",
+      "sourceId": "210795626",
+      "hash": "41f00241b1460424",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Lead Cybersecurity Architect - AI Enablement & Resiliency",
+      "department": null,
+      "location": "Jersey City, NJ, United States",
+      "state": "NJ",
+      "remote": false,
+      "postedAt": "2026-11-04",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210795626",
+      "description": "We’re hiring an experienced Lead Architect (VP) to help shape and govern AI/ML enablement platforms that drive enterprise adoption by ensuring they are designed, operated, and supported to meet availability, recoverability, and data protection requirements.\n\nThis is a high-impact role at the intersection of AI engineering, cloud infrastructure, and enterprise resiliency. You’ll partner across Lines of Business and platform/service teams to enable scalable, resilient, and responsible AI delivery.\n\nLead Cybersecurity Architect - AI Enablement & Resiliency",
       "salary": null,
       "niche": "finance",
       "source": "oracle"
@@ -303,24 +357,6 @@
       "source": "talentbrew"
     },
     {
-      "id": "spacex-2179f7660c898dae",
-      "sourceId": "8880609002",
-      "hash": "2179f7660c898dae",
-      "company": "SpaceX",
-      "companySlug": "spacex",
-      "title": "Business Operations Manager, Supply Chain Resilience (Starlink)",
-      "department": "Starlink - Supply Chain Business Ops",
-      "location": "Bastrop, TX",
-      "state": "TX",
-      "remote": false,
-      "postedAt": "2026-10-09T10:48:16-04:00",
-      "applyUrl": "https://boards.greenhouse.io/spacex/jobs/8880609002?gh_jid=8880609002",
-      "description": "SpaceX was founded under the belief that a future where humanity is out exploring the stars is fundamentally more exciting than one where we are not. Today SpaceX is actively developing the technologies to make this possible, with the ultimate goal of enabling human life on Mars.\n\nBUSINESS OPERATIONS MANAGER, SUPPLY CHAIN RESILIENCE (STARLINK)\n\nOne of the most ambitious missions that SpaceX has undertaken to date, Starlink is leveraging our experience in building rockets and spacecraft to deploy the world's most advanced broadband internet system and largest satellite constellation to provide fast, reliable internet to millions of users worldwide, connect humanity, and fund Mars colonization.\n\nStarlink Business Operations combines traditional planning and analysis with broader business decision-making and strategy, directly supporting SpaceX’s leadership. Business Operations is embedded in daily operations, supporting both near-term execution and long-term planning. Team members are expected to analyze data and provide recommendations and to lead cross-functional decision-making and implementation of the recommendations. Starlink Business Operations is lean and dynamic, operating with a fluid structure that favors high agency. We expect high performers to expand their scope across the program’s most critical bottlenecks.\n\nRESPONSIBILITIES\n\n• Own Starlink Supply Chain Resiliency and architect the end-to-end strtegy to secure global and domestic supply chain corridors and production continuity under extreme regional disruption and natural disaster scenarios\n\n• Rally the entire program around supply chain resilience as a primary KPI alongside growth, cash, and performance\n\n• Decouple from high-sensitivity regions by quantifying the rest-of-world frontier to secure technical and cost parity across emerging and domestic markets\n\n• Engineer the executive contingency playbook to safeguard operations during supply and geopolitical emergencies\n\n• Build first-principles models to identify critical-path choke points and quantify time-to-survive (TTS) and time-to-recover (TTR) metrics for every major assembly\n\n• Partner with hardware and manufacturing engineering to support aggressive design-out strategies that eliminate single-source dependencies and expand the global vendor landscape\n\nBASIC\n\nQUALIFICATIONS\n\n• Bachelor's degree in engineering, mathematics, computer science, data science, physics, or other quantitative field\n\n• 4+ years of experience in engineering, manufacturing, product management, operations, FP&A, consulting, banking, or entrepreneurship\n\n• 4+ years of experience in Excel or programming\n\nPREFERRED SKILLS AND\n\nEXPERIENCE\n\n• Evidence of exceptional ability, especially within an ambiguous environment\n\n• Quantitative dual degree in engineering field and economics or business field and/or equivalent professional experience\n\n• Demonstrated success driving tangible impact/influencing within a broader organization\n\n• Extreme sense of urgency and ownership; bias toward action and automation\n\n• Ability to read and interpret income statements, balance sheets, and cash flow statements\n\n• Strong proficiency in SQL and Python; ability to handle large datasets independently\n\n• Excellent analytical modeling skills (e.g., Excel, Power BI, Tableau, Looker)\n\n• Strong written and verbal communication skills, particularly with senior business leaders\n\nADDITIONAL REQUIRMENTS:\n\n• Must be available to work extended hours and weekends as needed\n\n• Willingness to travel to customer sites, other SpaceX locations, and events as needed\n\nITAR\n\nREQUIREMENTS\n\n• To conform to U.S. Government export regulations, applicant must be a (i) U.S. citizen or national, (ii) U.S. lawful, permanent resident (aka green card holder), (iii) Refugee under 8 U.S.C. § 1157, or (iv) Asylee under 8 U.S.C. § 1158, or be eligible to obtain the required authorizations from the U.S. Department of State. Learn more about the ITAR here .\n\nSpaceX is an Equal Opportunity Employer; employment with SpaceX is governed on the basis of merit, competence and qualifications and will not be influenced in any manner by race, color, religion, gender, national origin/ethnicity, veteran status, disability status, age, sexual orientation, gender identity, marital status, mental or physical disability or any other legally protected status.\n\nApplicants wishing to view a copy of SpaceX’s Affirmative Action Plan for veterans and individuals with disabilities, or applicants requiring reasonable accommodation to the application/interview process should reach out to EEOCompliance@spacex.com .",
-      "salary": null,
-      "niche": "finance",
-      "source": "greenhouse"
-    },
-    {
       "id": "jpmorgan-chase-f612637d2ee19323",
       "sourceId": "210782475",
       "hash": "f612637d2ee19323",
@@ -391,6 +427,24 @@
       "salary": null,
       "niche": "finance",
       "source": "oracle"
+    },
+    {
+      "id": "regions-bank-f55748abfdecce6c",
+      "sourceId": "/job/Hoover-AL---Riverchase-Operations-Center-Birmingham-AL/Business-Resilience-Engineer_R107043",
+      "hash": "f55748abfdecce6c",
+      "company": "Regions Bank",
+      "companySlug": "regions-bank",
+      "title": "Business Resilience Engineer",
+      "department": null,
+      "location": "3 Locations",
+      "state": null,
+      "remote": false,
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://regions.wd5.myworkdayjobs.com/Regions_Careers/job/Hoover-AL---Riverchase-Operations-Center-Birmingham-AL/Business-Resilience-Engineer_R107043",
+      "description": "Business Resilience Engineer",
+      "salary": null,
+      "niche": "finance",
+      "source": "workday"
     },
     {
       "id": "waymo-8938ecb8ed92fa0e",
@@ -483,12 +537,15 @@
     {
       "company": "Humana",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 56,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Humana 429 https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 46,
+        "generic IT title": 9,
+        "off-target function": 1
+      }
     },
     {
       "company": "Morgan Stanley",
@@ -533,13 +590,13 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 166,
+      "scanned": 170,
       "classifierPass": 5,
       "kept": 0,
       "fetched": 5,
       "classifierDrops": {
-        "not a BCM/DR role": 141,
-        "generic IT title": 16,
+        "not a BCM/DR role": 144,
+        "generic IT title": 17,
         "product/SRE resilience noise": 1,
         "off-target function": 3
       }
@@ -547,13 +604,13 @@
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 77,
-      "classifierPass": 0,
+      "scanned": 79,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
+      "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 69,
-        "generic IT title": 2,
+        "not a BCM/DR role": 71,
+        "generic IT title": 1,
         "product/SRE resilience noise": 2,
         "off-target function": 4
       }
@@ -571,15 +628,15 @@
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 340,
-      "classifierPass": 27,
-      "kept": 18,
-      "fetched": 27,
+      "scanned": 328,
+      "classifierPass": 30,
+      "kept": 21,
+      "fetched": 30,
       "classifierDrops": {
-        "not a BCM/DR role": 213,
-        "off-target function": 11,
-        "product/SRE resilience noise": 21,
-        "generic IT title": 68
+        "not a BCM/DR role": 203,
+        "off-target function": 12,
+        "product/SRE resilience noise": 20,
+        "generic IT title": 63
       }
     },
     {
@@ -591,10 +648,10 @@
       "fetched": 1,
       "classifierDrops": {
         "not a BCM/DR role": 124,
+        "generic IT title": 6,
         "product/SRE resilience noise": 4,
         "off-target function": 9,
-        "manufacturing capacity resiliency": 1,
-        "generic IT title": 6
+        "manufacturing capacity resiliency": 1
       }
     },
     {
@@ -620,12 +677,14 @@
     {
       "company": "Regions Bank",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Regions Bank 429 https://regions.wd5.myworkdayjobs.com/wday/cxs/regions/Regions_Careers/jobs"
+      "scanned": 22,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a BCM/DR role": 18,
+        "off-target function": 3
+      }
     },
     {
       "company": "UnitedHealth Group",
@@ -644,12 +703,14 @@
     {
       "company": "Travelers",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 59,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Travelers 429 https://travelers.wd5.myworkdayjobs.com/wday/cxs/travelers/External/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 47,
+        "generic IT title": 12
+      }
     },
     {
       "company": "AIG",
@@ -699,8 +760,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 82,
-        "off-target function": 22,
+        "not a BCM/DR role": 81,
+        "off-target function": 23,
         "generic IT title": 11
       }
     },
@@ -712,8 +773,8 @@
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "generic IT title": 56,
-        "not a BCM/DR role": 283,
+        "generic IT title": 57,
+        "not a BCM/DR role": 282,
         "off-target function": 10,
         "product/SRE resilience noise": 5,
         "manufacturing capacity resiliency": 2
@@ -754,12 +815,13 @@
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 12,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Horizon Blue Cross Blue Shield of New Jersey 429 https://bcbsnj.wd5.myworkdayjobs.com/wday/cxs/bcbsnj/hc/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 12
+      }
     },
     {
       "company": "Intermountain Health",
@@ -774,40 +836,40 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 51,
+      "scanned": 49,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 44,
+        "not a BCM/DR role": 43,
         "generic IT title": 4,
         "product/SRE resilience noise": 1,
-        "off-target function": 2
+        "off-target function": 1
       }
     },
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 363,
+      "scanned": 356,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 340,
-        "off-target function": 19,
-        "product/SRE resilience noise": 1,
-        "generic IT title": 3
+        "off-target function": 16,
+        "not a BCM/DR role": 337,
+        "product/SRE resilience noise": 2,
+        "generic IT title": 1
       }
     },
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 31,
+      "scanned": 33,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 20,
+        "not a BCM/DR role": 22,
         "generic IT title": 6,
         "off-target function": 5
       }
@@ -815,14 +877,14 @@
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2857,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
+      "scanned": 2855,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 2277,
-        "generic IT title": 350,
-        "off-target function": 125,
+        "not a BCM/DR role": 2274,
+        "generic IT title": 351,
+        "off-target function": 126,
         "manufacturing capacity resiliency": 63,
         "product/SRE resilience noise": 41
       }
@@ -850,12 +912,14 @@
     {
       "company": "Dick's Sporting Goods",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 17,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Dick's Sporting Goods 429 https://dickssportinggoods.wd1.myworkdayjobs.com/wday/cxs/dickssportinggoods/DSG/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 16,
+        "off-target function": 1
+      }
     },
     {
       "company": "RTX",
@@ -908,19 +972,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 7,
-        "not a BCM/DR role": 20
+        "not a BCM/DR role": 20,
+        "off-target function": 7
       }
     },
     {
       "company": "SchoolsFirst Federal Credit Union",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 12,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday SchoolsFirst Federal Credit Union 429 https://schoolsfirstfcu.wd115.myworkdayjobs.com/wday/cxs/schoolsfirstfcu/Careers/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 9,
+        "generic IT title": 3
+      }
     },
     {
       "company": "BECU",
@@ -935,24 +1001,25 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 69,
+      "scanned": 68,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 68,
+        "not a BCM/DR role": 67,
         "off-target function": 1
       }
     },
     {
       "company": "American Electric Power",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 14,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday American Electric Power 429 https://aep.wd1.myworkdayjobs.com/wday/cxs/aep/AEPCareerSite/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 14
+      }
     }
   ]
 }
