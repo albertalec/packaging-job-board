@@ -1,19 +1,37 @@
 {
-  "ingestedAt": "2026-11-24T22:09:19.967Z",
-  "total": 26,
+  "ingestedAt": "2026-11-25T21:17:35.808Z",
+  "total": 25,
   "stats": {
-    "scanned": 4888,
+    "scanned": 4813,
     "classifierPass": 41,
-    "kept": 26,
+    "kept": 25,
     "classifierDrops": {
-      "not a BCM/DR role": 3923,
-      "generic IT title": 547,
-      "off-target function": 233,
-      "product/SRE resilience noise": 78,
+      "not a BCM/DR role": 3864,
+      "generic IT title": 533,
+      "off-target function": 237,
+      "product/SRE resilience noise": 72,
       "manufacturing capacity resiliency": 66
     }
   },
   "jobs": [
+    {
+      "id": "jpmorgan-chase-2199cefc353814b6",
+      "sourceId": "210810508",
+      "hash": "2199cefc353814b6",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Product Manager – Firmwide Resiliency Product - Vice President",
+      "department": null,
+      "location": "Jersey City, NJ, United States",
+      "state": "NJ",
+      "remote": false,
+      "postedAt": "2026-11-25",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810508",
+      "description": "Help shape a product that enables teams to respond to business disruptions as they unfold. You’ll work across the firm to improve the tools and experiences that support business and technology resiliency.\n\nJob summary\nAs a Product Director on the Firmwide Resiliency Product Management team, you will lead the evolution of a product that helps resiliency managers plan for and respond to business disruptions. You will partner with teams across the firm to deliver an integrated experience and turn user needs into a clear, outcome-focused roadmap. You will use iterative delivery and approved artificial intelligence tools to test ideas, learn from users, and scale effective capabilities.\n\nJob responsibilities\n\n• Lead cross-functional teams through the product development lifecycle, improve the resiliency manager experience, and deliver against product roadmaps.\n• Track roadmap progress, identify delivery risks, and escalate concerns.\n• Partner with technology teams to integrate intelligent assistance and automation into the product experience.\n• Deliver iteratively through rapid prototyping, user feedback, and small, empowered teams.\n• Build and maintain long-term roadmaps with business, function, and other firmwide stakeholders.\n• Partner with technology leads and product owners to modernize the product and deliver roadmap-aligned solutions.\n• Translate stakeholder strategy and requirements into actionable work for product owners and development teams, including user stories and acceptance criteria.\n• Provide subject matter expertise and impact analysis for control-related initiatives, supporting implementation across relevant teams.\n• Manage concurrent workstreams to improve outcomes, identify solutions, and mitigate issues.\n• Partner with program management colleagues to provide accurate progress updates and present roadmaps, solutions, and status to senior stakeholders.\nRequired qualifications, capabilities, and skills\n\n• At least 5 years of product management experience, including ownership of products across discovery, delivery, adoption, and optimization.\n• Experience translating complex user needs into clear technical requirements using agile methods and work-management tools.\n• Experience delivering iteratively with design and engineering teams, using prototyping and user feedback to improve products.\n• Experience leading customer discovery, including research, workflow analysis, and pain-point identification, and using findings to inform a prioritized roadmap.\n• Experience incorporating artificial intelligence capabilities into products, such as workflow orchestration or decision support, with attention to controls, transparency, and auditability.\n• Experience managing product backlogs, including defining epics, user stories, and testable acceptance criteria.\n• Experience establishing success metrics and using data to guide prioritization and investment decisions.\n• Experience supporting product launches and change management, including readiness, training, documentation, or post-launch support.\n• Strong written and verbal communication skills, including the ability to communicate with varied stakeholder groups.\n• Experience managing multiple workstreams and adapting to changing priorities while meeting deadlines.\n\nPreferred qualifications\n\n, capabilities, and skills\n\n• Familiarity with data analytics or artificial intelligence tools such as GitHub Copilot, Claude Code, Tableau, Alteryx, or Python.\n• Experience in financial services, auditing, compliance, or consulting, with an understanding of risk and controls management.\n• Familiarity with compliance or regulatory requirements relevant to consumer banking.\n\nLead the evolution of a resiliency product that helps teams prepare for, manage, and respond to business disruptions.\n\nLead the evolution of a resiliency product that helps teams prepare for, manage, and respond to business disruptions.\n\nProduct Manager – Firmwide Resiliency Product - Vice President",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
     {
       "id": "jpmorgan-chase-3134fee5060e39fa",
       "sourceId": "210810000",
@@ -411,42 +429,6 @@
       "source": "oracle"
     },
     {
-      "id": "jpmorgan-chase-abd278530c704c6f",
-      "sourceId": "210725512",
-      "hash": "abd278530c704c6f",
-      "company": "JPMorgan Chase",
-      "companySlug": "jpmorgan-chase",
-      "title": "Technical Project Manager - Risk, Controls, and Resiliency",
-      "department": null,
-      "location": "Jersey City, NJ, United States",
-      "state": "NJ",
-      "remote": false,
-      "postedAt": "2026-09-23",
-      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210725512",
-      "description": "Join our dynamic team to innovate and drive technology advancements, contributing to significant business growth and client success.\n\nAs a Technical Project Manager III in Commercial & Investment Bank - Securities Service Technology Project Execution team, you will help lead complex technology projects and programs that promote business goals and create value for clients, employees, and stakeholders. Applying a broad knowledge of technical principles, practices, and theories is essential to developing innovative solutions, along with leveraging analytical reasoning and adaptability skills to navigate through ambiguity and change. Your strong communication abilities will enable you to effectively collaborate with cross-functional teams and manage stakeholder relationships, ensuring alignment on project objectives and governance. By optimizing resources and managing risks, you will contribute to the successful delivery of high-impact projects that shape the future of the firm.\n\nAs a member of Securities Service Technology Project Execution team, you will execute projects on modernization and AWS cloud adoption. You will work with application development, Global Technology Infrastructure team, SRE / Production Management, Information Security Management, Engineer & Architects, and cross-functional teams to deliver on project requirements.\n\nJob responsibilities\n\n• Develop and execute end-to-end project plans that translate technical and operational objectives into clear scope, milestones, resourcing, and timelines.\n\n• Drive delivery across multiple concurrent projects, prioritizing work and unblocking teams to achieve measurable outcomes.\n\n• Identify and mitigate delivery, technology, and operational risks by implementing actionable risk management strategies.\n\n• Maintain a portfolio of projects and operational risk metrics, including key risk indicators aligned to cybersecurity, vulnerability, recovery, resiliency, and capacity.\n\n• Uses enterprise-authorized AI capabilities within the work environment to accelerate project planning and risk synthesis (e.g., drafting plans, RAID, and status narratives), validating outputs and handling data according to sensitivity requirements.\n\n• Promotes reuse-first, AI-assisted practices for project governance artifacts and reporting, ensuring human review and alignment to delivery standards.\n\n• Monitor dashboards and reporting to surface trends, escalate issues, and drive corrective actions with partner teams.\n\n• Writes clear, evidence-based investigations and status updates that support governance and monthly leadership reviews.\n\n• Partners with application development, infrastructure, site reliability and production management, and information security to deliver infrastructure and application requirements.\n\n• Facilitates modernization efforts that improve how applications are designed, managed, and operated, including cloud adoption initiatives.\n\n• Tracks project costs and progress for hardware and software upgrades, ensuring transparency of delivery and spend.\n\n• Influences stakeholders and decision makers to resolve trade-offs, adapt plans, and maintain alignment to goals and controls.\n\n• Supports evaluation of relevant platforms, tools, and vendor products to enable effective implementation decisions.\n\nRequired qualifications, capabilities, and skills\n\n• 3+ years of experience or equivalent expertise in technical program or project management leading complex technology projects.\n\n• Demonstrated ability to lead through the full project lifecycle, including adapting to change and influencing decision makers.\n\n• Proven stakeholder management skills, with a track record of building productive working relationships across teams.\n\n• Strong technical fluency, with familiarity in relevant platforms, software tools, and technologies used by engineering and infrastructure teams such as M365, Jira, Confluence, Verum, and ServiceNow.\n\n• Experience identifying, tracking, and mitigating project risks and delivery roadblocks.\n\n• Experience developing and maintaining project plans, including scope, timelines, and resource coordination.\n\n• Ability to manage multiple priorities with strong organization, communication, and follow-through.\n\n• Experience producing clear project reporting, including status updates and written investigations.\n\n• Experience working in the Technology industry, or software engineering\n\n• Ability to review and validate AI-assisted plans, risks, and recommendations before use, escalating when uncertain and following data handling expectations.\n\n• Demonstrated experience using enterprise-authorized AI capabilities within the work environment to support technical program management workflows with strong validation habits and awareness of data sensitivity.\n\nPreferred qualifications\n\n, capabilities, and skills\n\n• Experience managing operational risk controls and resiliency-related initiatives (for example, recovery, vulnerability, and capacity measures).\n\n• Financial services experience with comfort operating in a complex, highly governed environment.\n\n• Experience partnering with global teams in a global delivery environment.\n\nLead transformative tech projects, leveraging analytical skills and technical knowledge for high-impact results.\n\nLead transformative tech projects, leveraging analytical skills and technical knowledge for high-impact results.\n\nTechnical Project Manager - Risk, Controls, and Resiliency",
-      "salary": null,
-      "niche": "finance",
-      "source": "oracle"
-    },
-    {
-      "id": "regions-bank-f55748abfdecce6c",
-      "sourceId": "/job/Hoover-AL---Riverchase-Operations-Center-Birmingham-AL/Business-Resilience-Engineer_R107043",
-      "hash": "f55748abfdecce6c",
-      "company": "Regions Bank",
-      "companySlug": "regions-bank",
-      "title": "Business Resilience Engineer",
-      "department": null,
-      "location": "3 Locations",
-      "state": null,
-      "remote": false,
-      "postedAt": "Posted 30+ Days Ago",
-      "applyUrl": "https://regions.wd5.myworkdayjobs.com/Regions_Careers/job/Hoover-AL---Riverchase-Operations-Center-Birmingham-AL/Business-Resilience-Engineer_R107043",
-      "description": "Business Resilience Engineer",
-      "salary": null,
-      "niche": "finance",
-      "source": "workday"
-    },
-    {
       "id": "waymo-8938ecb8ed92fa0e",
       "sourceId": "8143380",
       "hash": "8938ecb8ed92fa0e",
@@ -537,15 +519,12 @@
     {
       "company": "Humana",
       "ats": "workday",
-      "scanned": 56,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 46,
-        "generic IT title": 9,
-        "off-target function": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Humana 429 https://humana.wd5.myworkdayjobs.com/wday/cxs/humana/Humana_External_Career_Site/jobs"
     },
     {
       "company": "Morgan Stanley",
@@ -590,67 +569,69 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 170,
-      "classifierPass": 5,
+      "scanned": 177,
+      "classifierPass": 4,
       "kept": 0,
-      "fetched": 5,
+      "fetched": 4,
       "classifierDrops": {
-        "not a BCM/DR role": 144,
-        "generic IT title": 17,
-        "product/SRE resilience noise": 1,
-        "off-target function": 3
+        "not a BCM/DR role": 152,
+        "generic IT title": 16,
+        "off-target function": 5
       }
     },
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 79,
+      "scanned": 85,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 71,
-        "generic IT title": 1,
+        "not a BCM/DR role": 77,
+        "generic IT title": 2,
         "product/SRE resilience noise": 2,
-        "off-target function": 4
+        "off-target function": 3
       }
     },
     {
       "company": "PayPal",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 82,
+      "classifierPass": 2,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday PayPal 429 https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs"
+      "fetched": 2,
+      "classifierDrops": {
+        "not a BCM/DR role": 56,
+        "off-target function": 10,
+        "generic IT title": 14
+      }
     },
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 328,
+      "scanned": 324,
       "classifierPass": 30,
       "kept": 21,
       "fetched": 30,
       "classifierDrops": {
-        "not a BCM/DR role": 203,
-        "off-target function": 12,
-        "product/SRE resilience noise": 20,
-        "generic IT title": 63
+        "not a BCM/DR role": 207,
+        "off-target function": 10,
+        "product/SRE resilience noise": 15,
+        "generic IT title": 62
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 145,
+      "scanned": 149,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 124,
-        "generic IT title": 6,
+        "not a BCM/DR role": 128,
+        "off-target function": 10,
+        "generic IT title": 5,
         "product/SRE resilience noise": 4,
-        "off-target function": 9,
         "manufacturing capacity resiliency": 1
       }
     },
@@ -677,25 +658,23 @@
     {
       "company": "Regions Bank",
       "ats": "workday",
-      "scanned": 22,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
-      "classifierDrops": {
-        "not a BCM/DR role": 18,
-        "off-target function": 3
-      }
+      "scanned": 0,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday Regions Bank 429 https://regions.wd5.myworkdayjobs.com/wday/cxs/regions/Regions_Careers/jobs"
     },
     {
       "company": "UnitedHealth Group",
       "ats": "talentbrew",
-      "scanned": 86,
+      "scanned": 87,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 71,
-        "off-target function": 8,
+        "not a BCM/DR role": 73,
+        "off-target function": 7,
         "generic IT title": 4,
         "product/SRE resilience noise": 2
       }
@@ -703,14 +682,12 @@
     {
       "company": "Travelers",
       "ats": "workday",
-      "scanned": 59,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 47,
-        "generic IT title": 12
-      }
+      "classifierDrops": {},
+      "error": "Workday Travelers 429 https://travelers.wd5.myworkdayjobs.com/wday/cxs/travelers/External/jobs"
     },
     {
       "company": "AIG",
@@ -755,14 +732,14 @@
     {
       "company": "Twilio",
       "ats": "greenhouse",
-      "scanned": 115,
+      "scanned": 110,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 81,
-        "off-target function": 23,
-        "generic IT title": 11
+        "not a BCM/DR role": 80,
+        "off-target function": 21,
+        "generic IT title": 9
       }
     },
     {
@@ -774,8 +751,8 @@
       "fetched": 2,
       "classifierDrops": {
         "generic IT title": 57,
-        "not a BCM/DR role": 282,
-        "off-target function": 10,
+        "not a BCM/DR role": 283,
+        "off-target function": 9,
         "product/SRE resilience noise": 5,
         "manufacturing capacity resiliency": 2
       }
@@ -815,13 +792,12 @@
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
       "ats": "workday",
-      "scanned": 12,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 12
-      }
+      "classifierDrops": {},
+      "error": "Workday Horizon Blue Cross Blue Shield of New Jersey 429 https://bcbsnj.wd5.myworkdayjobs.com/wday/cxs/bcbsnj/hc/jobs"
     },
     {
       "company": "Intermountain Health",
@@ -850,13 +826,13 @@
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 356,
+      "scanned": 362,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 16,
-        "not a BCM/DR role": 337,
+        "not a BCM/DR role": 346,
+        "off-target function": 13,
         "product/SRE resilience noise": 2,
         "generic IT title": 1
       }
@@ -864,12 +840,12 @@
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 33,
+      "scanned": 34,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 22,
+        "not a BCM/DR role": 23,
         "generic IT title": 6,
         "off-target function": 5
       }
@@ -877,14 +853,14 @@
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2855,
+      "scanned": 2875,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 2274,
+        "not a BCM/DR role": 2288,
         "generic IT title": 351,
-        "off-target function": 126,
+        "off-target function": 132,
         "manufacturing capacity resiliency": 63,
         "product/SRE resilience noise": 41
       }
@@ -912,14 +888,12 @@
     {
       "company": "Dick's Sporting Goods",
       "ats": "workday",
-      "scanned": 17,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 16,
-        "off-target function": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Dick's Sporting Goods 429 https://dickssportinggoods.wd1.myworkdayjobs.com/wday/cxs/dickssportinggoods/DSG/jobs"
     },
     {
       "company": "RTX",
@@ -954,12 +928,12 @@
     {
       "company": "MSU Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 16,
+      "scanned": 18,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 13,
+        "not a BCM/DR role": 15,
         "off-target function": 1,
         "generic IT title": 2
       }
@@ -967,26 +941,24 @@
     {
       "company": "Visions Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 27,
+      "scanned": 25,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 20,
+        "not a BCM/DR role": 18,
         "off-target function": 7
       }
     },
     {
       "company": "SchoolsFirst Federal Credit Union",
       "ats": "workday",
-      "scanned": 12,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 9,
-        "generic IT title": 3
-      }
+      "classifierDrops": {},
+      "error": "Workday SchoolsFirst Federal Credit Union 429 https://schoolsfirstfcu.wd115.myworkdayjobs.com/wday/cxs/schoolsfirstfcu/Careers/jobs"
     },
     {
       "company": "BECU",
@@ -1001,25 +973,24 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 68,
+      "scanned": 67,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 67,
+        "not a BCM/DR role": 66,
         "off-target function": 1
       }
     },
     {
       "company": "American Electric Power",
       "ats": "workday",
-      "scanned": 14,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 14
-      }
+      "classifierDrops": {},
+      "error": "Workday American Electric Power 429 https://aep.wd1.myworkdayjobs.com/wday/cxs/aep/AEPCareerSite/jobs"
     }
   ]
 }
