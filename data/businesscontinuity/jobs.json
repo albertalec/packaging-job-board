@@ -1,16 +1,16 @@
 {
-  "ingestedAt": "2026-11-25T21:17:35.808Z",
+  "ingestedAt": "2026-11-26T21:09:27.760Z",
   "total": 25,
   "stats": {
-    "scanned": 4813,
-    "classifierPass": 41,
+    "scanned": 4860,
+    "classifierPass": 40,
     "kept": 25,
     "classifierDrops": {
-      "not a BCM/DR role": 3864,
-      "generic IT title": 533,
-      "off-target function": 237,
-      "product/SRE resilience noise": 72,
-      "manufacturing capacity resiliency": 66
+      "not a BCM/DR role": 3912,
+      "generic IT title": 524,
+      "off-target function": 242,
+      "product/SRE resilience noise": 75,
+      "manufacturing capacity resiliency": 67
     }
   },
   "jobs": [
@@ -569,42 +569,39 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 177,
-      "classifierPass": 4,
+      "scanned": 184,
+      "classifierPass": 5,
       "kept": 0,
-      "fetched": 4,
+      "fetched": 5,
       "classifierDrops": {
-        "not a BCM/DR role": 152,
-        "generic IT title": 16,
-        "off-target function": 5
+        "not a BCM/DR role": 153,
+        "generic IT title": 20,
+        "off-target function": 6
       }
     },
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 85,
+      "scanned": 84,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 77,
+        "not a BCM/DR role": 73,
         "generic IT title": 2,
-        "product/SRE resilience noise": 2,
-        "off-target function": 3
+        "off-target function": 6,
+        "product/SRE resilience noise": 2
       }
     },
     {
       "company": "PayPal",
       "ats": "workday",
-      "scanned": 82,
-      "classifierPass": 2,
+      "scanned": 0,
+      "classifierPass": 0,
       "kept": 0,
-      "fetched": 2,
-      "classifierDrops": {
-        "not a BCM/DR role": 56,
-        "off-target function": 10,
-        "generic IT title": 14
-      }
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday PayPal 429 https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs"
     },
     {
       "company": "JPMorgan Chase",
@@ -615,22 +612,22 @@
       "fetched": 30,
       "classifierDrops": {
         "not a BCM/DR role": 207,
-        "off-target function": 10,
-        "product/SRE resilience noise": 15,
-        "generic IT title": 62
+        "off-target function": 12,
+        "product/SRE resilience noise": 16,
+        "generic IT title": 59
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 149,
+      "scanned": 155,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 128,
+        "not a BCM/DR role": 132,
         "off-target function": 10,
-        "generic IT title": 5,
+        "generic IT title": 7,
         "product/SRE resilience noise": 4,
         "manufacturing capacity resiliency": 1
       }
@@ -668,7 +665,7 @@
     {
       "company": "UnitedHealth Group",
       "ats": "talentbrew",
-      "scanned": 87,
+      "scanned": 88,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
@@ -676,6 +673,7 @@
         "not a BCM/DR role": 73,
         "off-target function": 7,
         "generic IT title": 4,
+        "manufacturing capacity resiliency": 1,
         "product/SRE resilience noise": 2
       }
     },
@@ -702,12 +700,16 @@
     {
       "company": "Target",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 128,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Target 429 https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 120,
+        "generic IT title": 2,
+        "product/SRE resilience noise": 3,
+        "off-target function": 3
+      }
     },
     {
       "company": "Duke Energy",
@@ -732,26 +734,26 @@
     {
       "company": "Twilio",
       "ats": "greenhouse",
-      "scanned": 110,
+      "scanned": 113,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 80,
+        "not a BCM/DR role": 82,
         "off-target function": 21,
-        "generic IT title": 9
+        "generic IT title": 10
       }
     },
     {
       "company": "Waymo",
       "ats": "greenhouse",
-      "scanned": 358,
+      "scanned": 356,
       "classifierPass": 2,
       "kept": 2,
       "fetched": 2,
       "classifierDrops": {
-        "generic IT title": 57,
-        "not a BCM/DR role": 283,
+        "generic IT title": 56,
+        "not a BCM/DR role": 282,
         "off-target function": 9,
         "product/SRE resilience noise": 5,
         "manufacturing capacity resiliency": 2
@@ -812,27 +814,23 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 49,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 43,
-        "generic IT title": 4,
-        "product/SRE resilience noise": 1,
-        "off-target function": 1
-      }
+      "classifierDrops": {},
+      "error": "Workday Roche 429 https://roche.wd3.myworkdayjobs.com/wday/cxs/roche/rog-a2o-gene/jobs"
     },
     {
       "company": "AbbVie",
       "ats": "smartrecruiters",
-      "scanned": 362,
+      "scanned": 371,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 346,
-        "off-target function": 13,
+        "not a BCM/DR role": 348,
+        "off-target function": 20,
         "product/SRE resilience noise": 2,
         "generic IT title": 1
       }
@@ -840,26 +838,26 @@
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 34,
+      "scanned": 33,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a BCM/DR role": 23,
-        "generic IT title": 6,
+        "generic IT title": 5,
         "off-target function": 5
       }
     },
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2875,
+      "scanned": 2889,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 2288,
-        "generic IT title": 351,
+        "not a BCM/DR role": 2297,
+        "generic IT title": 356,
         "off-target function": 132,
         "manufacturing capacity resiliency": 63,
         "product/SRE resilience noise": 41
@@ -973,24 +971,25 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 67,
+      "scanned": 65,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 66,
+        "not a BCM/DR role": 64,
         "off-target function": 1
       }
     },
     {
       "company": "American Electric Power",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 16,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday American Electric Power 429 https://aep.wd1.myworkdayjobs.com/wday/cxs/aep/AEPCareerSite/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 16
+      }
     }
   ]
 }

@@ -1,37 +1,199 @@
 {
-  "ingestedAt": "2026-11-25T21:13:24.154Z",
-  "total": 15,
+  "ingestedAt": "2026-11-26T21:04:05.429Z",
+  "total": 25,
   "stats": {
-    "scanned": 1684,
-    "classifierPass": 20,
-    "kept": 15,
+    "scanned": 2893,
+    "classifierPass": 40,
+    "kept": 25,
     "classifierDrops": {
-      "not a packaging role": 1123,
-      "off-target function": 445,
-      "plant process engineering": 13,
-      "warehouse/ops title": 75,
-      "semiconductor/electronics packaging": 7,
+      "not a packaging role": 2127,
+      "plant process engineering": 33,
+      "off-target function": 528,
+      "warehouse/ops title": 151,
+      "semiconductor/electronics packaging": 13,
       "electronics/mechanical packaging": 1
     }
   },
   "jobs": [
     {
-      "id": "molson-coors-cf6c9972df1ace74",
-      "sourceId": "https://jobs.molsoncoors.com/job/Milwaukee-Sr_-Strategic-Project-Engineer-Packaging-WI-53201/1459405733/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "hash": "cf6c9972df1ace74",
-      "company": "Molson Coors",
-      "companySlug": "molson-coors",
-      "title": "Sr. Strategic Project Engineer-Packaging",
+      "id": "3m-511ec818e6bf4ba9",
+      "sourceId": "/job/US-Minnesota-Maplewood/Packaging-Engineer_R01172701",
+      "hash": "511ec818e6bf4ba9",
+      "company": "3M",
+      "companySlug": "3m",
+      "title": "Packaging Engineer",
       "department": null,
-      "location": "Milwaukee, WI, US",
-      "state": "WI",
-      "remote": true,
-      "postedAt": "Fri, 20 Nov 2026 0:00:00 GMT",
-      "applyUrl": "https://jobs.molsoncoors.com/job/Milwaukee-Sr_-Strategic-Project-Engineer-Packaging-WI-53201/1459405733/?feedId=null&utm_source=J2WRSS&utm_medium=rss&utm_campaign=J2W_RSS",
-      "description": "Requisition ID: 40590\n\nCheers to creating an incredible tomorrow!\n\nAt Molson Coors, we tackle big challenges and defy the status quo. With a proud legacy of excellence, an incredible portfolio of beer, seltzers, spirits, and non-alcohol brands, and a bold vision for our future... we're on the path to transforming the beverage industry. That requires remarkable individuals who are curious, tenacious, and never afraid to fail forward.\n\nWe seek, value and respect everyone’s unique perspectives and experiences knowing that we are stronger together. We collaborate as a team and celebrate each other’s successes.\n\nHere’s to crafting careers and creating new legacies.\n\nThe Crafted Highlights\n\nIn the role of Sr. Strategic Project Engineer – Packaging in Milwaukee, WI, you will lead the development of long-range capital strategies for packaging and warehouse investments across North America. You will also lead front end project development, including business case analysis, alternative development and evaluation, concept development, and preliminary capital budgeting to ensure investments are technically sound, financially justified, and aligned with long-term business objectives.\n\nReporting to the Sr. Director, Capital Planning, Packaging, Controls & Warehouse Execution, you will serve as a recognized subject matter expert for major Integrated Supply Chain initiatives.\n\nWhat You'll Be Brewing\n\n• Lead the development of strategic capital initiatives across Packaging and Warehouse operations.\n\n• Develop and support 3-year and 10-year capital strategies.\n\n• Identify and develop capital improvement opportunities that reduce COGS across Packaging and Warehouse operations, including labor, maintenance, waste and line/equipment efficiency\n\n• Establish scope, schedules, budgets, risk assessments, and business cases.\n\n• Evaluate breakthrough programs, technologies, and process improvements.\n\n• Provide technical leadership and packaging expertise.\n\n• Assess emerging technologies and manufacturing approaches.\n\nKey Ingredients\n\n• You have 15+ years of relevant experience in capital project development, packaging engineering, manufacturing, supply chain operations, or the beverage industry.\n\n• You possess a Bachelor's Degree in Engineering or a related technical discipline.\n\n• A Master's Degree or Postgraduate Degree is preferred.\n\n• Experience developing large-scale strategic capital projects.\n\n• Deep expertise in high-speed packaging systems, warehouse operations, industrial automation, and beverage manufacturing processes.\n\n• Strong communication and stakeholder management skills.\n\n• You build relationships and collaborate to achieve desired outcomes.\n\n• You act with integrity and accountability while driving results.\n\n• You have a thirst for learning and are always looking for ways to learn and help others grow.\n\nBeverage Bonuses\n\n• Flexible work programs that support work-life balance including a hybrid work model of 4 days in the office.\n\n• We care about our People and Planet and have challenged ourselves with stretch goals around our key priorities.\n\n• We care about our communities and play our part to make a difference.\n\n• Engagement with Employee Resource Groups.\n\n• Ability to grow and develop your career centered around First Choice Learning opportunities.\n\n• Participation in our Total Rewards program.\n\n• On site Pub, access to brand clothing and swag, top events and free beer and beverages!\n\n• Work within a fast-paced and innovative company.\n\nMolson Coors is an equal opportunity employer. We invite applications from candidates of all backgrounds, race, color, religion, sex, national origin, age, disability, veteran status or any other characteristic. If you have a disability and believe you need a reasonable accommodation during the application or recruitment processes, please e-mail jobs@molsoncoors.com .\n\nPay and Benefits:\n\nAt Molson Coors, we’re committed to paying people fairly and equitably for the work they do.\n\nJob Posting Total Rewards Offerings : $129,900.00 - $170,500.00 (posting salary range) + 20 % target short term incentive + $12,500 + 400 Non-Qualified Stock Options target long term incentive + $23,000 on average spent on benefits per employee, including but not limited to health, dental, vision, retirement with above market employer match, wellness incentives and EAP + paid time off (including holidays, vacation days and sick days).\n\nThe posting range provided above for salary is what we, in good faith, believe we would pay for this role at the time of this posting. We ultimately pay based on a number of non-discriminatory factors that inform pay decisions including but not limited to the required work location, previous work experience, skill set and internal equity.",
+      "location": "US, Minnesota, Maplewood",
+      "state": "MN",
+      "remote": false,
+      "postedAt": "Posted 16 Days Ago",
+      "applyUrl": "https://3m.wd1.myworkdayjobs.com/Search/job/US-Minnesota-Maplewood/Packaging-Engineer_R01172701",
+      "description": "Packaging Engineer",
+      "salary": null,
+      "niche": "industrial",
+      "source": "workday"
+    },
+    {
+      "id": "3m-895d8496abe4e67b",
+      "sourceId": "/job/US-Minnesota-Maplewood/Packaging-Engineer_R01174541",
+      "hash": "895d8496abe4e67b",
+      "company": "3M",
+      "companySlug": "3m",
+      "title": "Packaging Engineer",
+      "department": null,
+      "location": "US, Minnesota, Maplewood",
+      "state": "MN",
+      "remote": false,
+      "postedAt": "Posted 2 Days Ago",
+      "applyUrl": "https://3m.wd1.myworkdayjobs.com/Search/job/US-Minnesota-Maplewood/Packaging-Engineer_R01174541",
+      "description": "Packaging Engineer",
+      "salary": null,
+      "niche": "industrial",
+      "source": "workday"
+    },
+    {
+      "id": "3m-161dabcee071cf90",
+      "sourceId": "/job/US-Minnesota-Maplewood/Senior-Packaging-Engineer_R01174256",
+      "hash": "161dabcee071cf90",
+      "company": "3M",
+      "companySlug": "3m",
+      "title": "Senior Packaging Engineer",
+      "department": null,
+      "location": "US, Minnesota, Maplewood",
+      "state": "MN",
+      "remote": false,
+      "postedAt": "Posted 2 Days Ago",
+      "applyUrl": "https://3m.wd1.myworkdayjobs.com/Search/job/US-Minnesota-Maplewood/Senior-Packaging-Engineer_R01174256",
+      "description": "Senior Packaging Engineer",
+      "salary": null,
+      "niche": "industrial",
+      "source": "workday"
+    },
+    {
+      "id": "3m-3eab977844e2fdce",
+      "sourceId": "/job/US-Minnesota-Maplewood/Internship---Spring-2027---Fall-2027-Packaging-Solutions-Co-op_R01171453",
+      "hash": "3eab977844e2fdce",
+      "company": "3M",
+      "companySlug": "3m",
+      "title": "Internship - Spring 2027 / Fall 2027 Packaging Solutions Co-op",
+      "department": null,
+      "location": "US, Minnesota, Maplewood, United States of America",
+      "state": "MN",
+      "remote": false,
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://3m.wd1.myworkdayjobs.com/Search/job/US-Minnesota-Maplewood/Internship---Spring-2027---Fall-2027-Packaging-Solutions-Co-op_R01171453",
+      "description": "Job Description\n\nInternship - Spring 2027 / Fall 2027 Packaging Solutions Co-op\n\nCollaborate with Innovative 3Mers Around the World\n\nChoosing where to start and grow your career has a major impact on your professional and personal life, so it’s equally important you know that the company that you choose to work at, and its leaders, will support and guide you. With a wide variety of people, global locations, technologies and products, 3M is a place where you can collaborate with other curious, creative 3Mers.\n\nAn internship is a temporary position within 3M. Packaging Solutions Co-ops typically work a full-time schedule throughout a 20-22 week assignment. This position is limited to working 899 hours per service credit year. 3M provides eligible interns with a housing and transportation stipend in accordance with current policy.\n\nThis position provides an opportunity to transition from other private, public, government or military experience to a 3M career.\n\nApplications on this requisition are reviewed and filled on a rolling basis; it is in a candidate’s best interest to apply as soon as possible. Interested candidates should include a resume as part of their application.\n\nThe Impact You’ll Make in this Role\n\nAs a Packaging Solutions Co-op , you will have the opportunity to tap into your curiosity and collaborate with some of the most innovative people around the world. Here, you will make an impact by:\n\n• Developing and implementing creative and innovative package solutions that span across all three business groups in collaboration with cross-functional team members\n• Supporting the modification and improvement of existing package designs, methods and/or solutions\n• Performing and coordinating package testing according to established protocols\n• Working with suppliers of packaging materials and/or contract packaging vendors to obtain price/cost estimates, sample/material needs, and design requirements\n• Creating, maintaining, obtaining, and analyzing packaging data that enables improvements in the packaging implementation and optimization process\n\nYour Skills and Expertise\n\nTo set you up for success in this role from day one, 3M requires (at a minimum) the following qualifications:\n\n• Currently pursuing a bachelor’s degree from an accredited institution\n• Completed at a minimum of sophomore year (4 semesters) by the start of the internship\n\nAdditional qualifications that could help you succeed even further in this role include:\n\n• Currently pursuing a bachelor’s degree or higher in in Package Engineering, Packaging Science, or Supply Chain from an accredited institution\n• Completion of Package Materials and Package Design & Development curriculum\n• Current cumulative GPA of 3.0 or higher on a 4.0 scale\n• Previous experience in the packaging industry\n\nWork location:\n\n• Work location: This role follows an on-site working model, requiring the employee to work at least four days a week at the 3M Center in Maplewood, MN.\n• Relocation: 3M provides eligible interns with a housing and transportation stipend in accordance with current policy.\n\nMust be legally authorized to work in country of employment without sponsorship for employment visa status (e.g., H1B status).\n\nSupporting Your Well-being\n\n3M offers many programs to help you live your best life – both physically and financially. To ensure competitive pay and benefits, 3M regularly benchmarks with other companies that are comparable in size and scope.\n\nChat with Max\n\nFor assistance with searching through our current job openings or for more information about all things 3M, visit Max, our virtual recruiting assistant on 3M.com/careers.\n\nAll US-based 3M full time employees will need to sign an employee agreement as a condition of employment with 3M. This agreement lays out key terms on using 3M Confidential Information and Trade Secrets. It also has provisions discussing conflicts of interest and how inventions are assigned. Employees that are Job Grade 7 or equivalent and above may also have obligations to not compete against 3M or solicit its employees or customers, both during their employment, and for a period after they leave 3M.\n\nLearn more about 3M’s creative solutions to the world’s problems at www.3M.com or on Instagram, Facebook, and LinkedIn @3M.\n\nResponsibilities of this position include that corporate policies, procedures and security standards are complied with while performing assigned duties.\n\nSafety is a core value at 3M. All employees are expected to contribute to a strong Environmental Health and Safety (EHS) culture by following safety policies, identifying hazards, and engaging in continuous improvement.\n\nPay & Benefits Overview: https://www.3m.com/3M/en_US/careers-us/working-at-3m/benefits/\n\n3M does not discriminate in hiring or employment on the basis of race, color, sex, national origin, religion, age, disability, veteran status, or any other characteristic protected by applicable law.\n\nPlease note: your application may not be considered if you do not provide your education and work history, either by: 1) uploading a resume, or 2) entering the information into the application fields directly.\n\n3M Global Terms of Use and Privacy Statement\n\nCarefully read these Terms of Use before using this website. Your access to and use of this website and application for a job at 3M are conditioned on your acceptance and compliance with these terms.\n\nPlease click on the following links and select the country where you are applying for employment to review the applicable Terms of Use (link here) and Privacy Policy (link here) . Before submitting your application, you will be asked to confirm your agreement with the terms.",
+      "salary": null,
+      "niche": "industrial",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-2b74cdb16e93fd4b",
+      "sourceId": "/job/Aberdeen-MD---USA/Packaging-Manager_JR23929",
+      "hash": "2b74cdb16e93fd4b",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Manager",
+      "department": null,
+      "location": "Aberdeen, MD - USA, United States of America",
+      "state": "MD",
+      "remote": false,
+      "postedAt": "Posted 20 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Aberdeen-MD---USA/Packaging-Manager_JR23929",
+      "description": "Clorox is the place that’s committed to growth – for our people and our brands. Guided by our purpose and values, and with people at the center of everything we do, we believe every one of us can make a positive impact on consumers, communities, and teammates. Join our team. #CloroxIsThePlace\n\nYour role at Clorox\n\nThe Packaging Department Manager is responsible for supporting, leading and coordinating with the team the business production needs in the packaging area. In this role, the Packaging Department Manager will serve operational team members focusing on daily management and coordination of production, crewing, safety, quality, costs, line efficiency, people development, and performance management.\n\nIn this role, you will:\n\n• Cultivate and drive a safety and quality mindset, culture as the TOP priority where people work together to address and act on unsafe behaviors, conditions. Ensuring all quality checks are completed acting on any variances to resolution protecting our customers and reducing plant impacts.\n• Fostering a skill progression system that builds the right technical, behavioral and leadership skills across the department.\n• Lead and enable effective use of Clorox systems, including SAP, EWM, and the Manufacturing Execution System (MES).\n• Manage and develop LSW for your department leaders through one on one connects, coaching, and training.\n• Lead Daily Management System Tier meetings and follow-up actions through team member engagement and training.\n• Develop and champion a Plan-Do-Check-Act (PDCA) approach that connects department initiatives to divisional objectives and leverages Clorox 10 Manufacturing Standards.\n• Actively working in conjunction and with team leadership and the Plant Operations Leader on strategic solutions and resource needs, while contributing to our people first culture.\n• Develop and strengthen working relationships with plant support teams to meet targets, goals, and department needs, including Operational Excellence, Maintenance Reliability Team, Quality and Engineering.\n• Support plant projects and department initiatives in partnership with Change Management, Plant Leadership, Engineering, outside contractors, and other stakeholders.\n• Manage head count, overtime, weekend requirements for department based on business and budgetary needs.\n• Partner and work with other department managers on overall team and plant needs, targets, labor, cost and operations day to day.\n• Provide support for a 24-hour 5-day operation, including periodic off-shift work, responding to plant calls, and taking action as needed.\n• Perform other duties as assigned by the manager.\n\nWhat we look for\n\n• 3+ years of experience in manufacturing and/or supply chain operations, preferably within a fast-paced manufacturing environment.\n• Demonstrated people leadership experience, including directly managing teams of 10 or more employees and driving engagement, accountability, and performance.\n• Proficiency with Microsoft Office applications, particularly Excel and PowerPoint, along with experience using Microsoft Teams and other business or manufacturing systems.\n• Bachelor’s degree in Engineering, Operations, Business, a technical discipline, or a related field, or an equivalent combination of education and relevant experience.\n• Strong team facilitation and consensus-building skills, with the ability to engage employees and stakeholders at various levels of the organization.\n• Proven ability to lead, influence, and collaborate across functions, including working effectively with plant associates, corporate partners, contractors, Engineering, Quality, and other operational teams.\n• Demonstrated ability to motivate, develop, and engage employees within a manufacturing or plant environment.\n• Excellent verbal and written communication skills, with the ability to communicate expectations, priorities, and performance effectively across teams and shifts.\n• Strong analytical, critical-thinking, and problem-solving skills, with the ability to identify issues, determine root causes, and drive sustainable solutions.\n• Strong operational experience with exposure to continuous-improvement methodologies such as World Class Manufacturing (WCM), Lean Manufacturing, Six Sigma, PDCA, or similar structured problem-solving approaches preferred.\n\nWorkplace type:\n\nOnsite\nOur values-based culture connects to our purpose and empowers people to be their best, professionally and personally. We serve a diverse consumer base which is why we believe teams that reflect our consumers bring fresh perspectives, drive innovation, and help us stay attuned to the world around us. That’s why we foster an inclusive culture where every person can feel respected, valued, and fully able to participate, and ultimately able to thrive. Learn more .\n\n[U.S.]Additional Information:\n\nAt Clorox, we champion people to be well and thrive, starting with our own people. To help make this possible, we offer comprehensive, competitive benefits that prioritize all aspects of wellbeing and provide flexibility for our teammates’ unique needs. This includes robust health plans, a market-leading 401(k) program with a company match, flexible time off benefits (including half-day summer Fridays depending on location), inclusive fertility/adoption benefits, and more.\n\nWe are committed to fair and equitable pay and are transparent with current and future teammates about our full salary ranges. We use broad salary ranges that reflect the competitive market for similar jobs, provide sufficient opportunity for growth as you gain experience and expand responsibilities, while also allowing for differentiation based on performance. Based on the breadth of our ranges, most new hires will start at Clorox in the first half of the applicable range. Your starting pay will depend on job-related factors, including relevant skills, knowledge, experience and location. The applicable salary range for every role in the U.S. is based on your work location and is aligned to one of three zones according to the cost of labor in your area.\n\n–Zone A: $90,900 - $170,100\n\n–Zone B: $83,400 - $155,900\n\n–Zone C: $75,800 - $141,700\n\nAll ranges are subject to change in the future. Your recruiter can share more about the specific salary range for your location during the hiring process.\n\nThis job is also eligible for participation in Clorox’s incentive plans, subject to the terms of the applicable plan documents and policies.\n\nPlease apply directly to our job postings and do not submit your resume to any person via text message. Clorox does not conduct text-based interviews and encourages you to be cautious of anyone posing as a Clorox recruiter via unsolicited texts during these uncertain times.\n\nTo all recruitment agencies: Clorox (and its brand families) does not accept agency resumes. Please do not forward resumes to Clorox employees, including any members of our leadership team. Clorox is not responsible for any fees related to unsolicited resumes.",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-8928ce8b4994bcbd",
+      "sourceId": "/job/Parsons-WV---USA/Packaging-Lead-Operator_JR24053-1",
+      "hash": "8928ce8b4994bcbd",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Lead Operator",
+      "department": null,
+      "location": "Parsons, WV - USA",
+      "state": "WV",
+      "remote": false,
+      "postedAt": "Posted 10 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Parsons-WV---USA/Packaging-Lead-Operator_JR24053-1",
+      "description": "Packaging Lead Operator",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-8227aafff2600e08",
+      "sourceId": "/job/Forest-Park-GA---USA-West-Facility/Packaging-Engineer---Throughput---MES_JR23984-1",
+      "hash": "8227aafff2600e08",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Packaging Engineer - Throughput & MES",
+      "department": null,
+      "location": "Forest Park, GA - USA (West Facility)",
+      "state": "GA",
+      "remote": false,
+      "postedAt": "Posted 16 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Forest-Park-GA---USA-West-Facility/Packaging-Engineer---Throughput---MES_JR23984-1",
+      "description": "Packaging Engineer - Throughput & MES",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-675795c9ada846a0",
+      "sourceId": "/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
+      "hash": "675795c9ada846a0",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "Clorox R&D Packaging Co-op (June 2027)",
+      "department": null,
+      "location": "Pleasanton, CA - USA",
+      "state": "CA",
+      "remote": false,
+      "postedAt": "Posted 30+ Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
+      "description": "Clorox R&D Packaging Co-op (June 2027)",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "clorox-059ae41f71ef8af6",
+      "sourceId": "/job/Pleasanton-CA---USA/R-D-Packaging-Scientist-1--Recent-Grad-Starting-in-2027-_23290",
+      "hash": "059ae41f71ef8af6",
+      "company": "Clorox",
+      "companySlug": "clorox",
+      "title": "R&D Packaging Scientist 1 (Recent Grad Starting in 2027)",
+      "department": null,
+      "location": "Pleasanton, CA - USA",
+      "state": "CA",
+      "remote": false,
+      "postedAt": "Posted 30 Days Ago",
+      "applyUrl": "https://clorox.wd1.myworkdayjobs.com/Clorox/job/Pleasanton-CA---USA/R-D-Packaging-Scientist-1--Recent-Grad-Starting-in-2027-_23290",
+      "description": "R&D Packaging Scientist 1 (Recent Grad Starting in 2027)",
+      "salary": null,
+      "niche": "cpg",
+      "source": "workday"
+    },
+    {
+      "id": "conagra-0946e7bb432acfb7",
+      "sourceId": "/job/Omaha-Nebraska/Senior-Packaging-Engineer_Req-038774",
+      "hash": "0946e7bb432acfb7",
+      "company": "Conagra Brands",
+      "companySlug": "conagra",
+      "title": "Senior Packaging Engineer",
+      "department": null,
+      "location": "Omaha, Nebraska",
+      "state": "NE",
+      "remote": false,
+      "postedAt": "Posted 16 Days Ago",
+      "applyUrl": "https://conagrabrands.wd1.myworkdayjobs.com/Careers_US/job/Omaha-Nebraska/Senior-Packaging-Engineer_Req-038774",
+      "description": "Senior Packaging Engineer",
       "salary": null,
       "niche": "food-beverage",
-      "source": "successfactors"
+      "source": "workday"
     },
     {
       "id": "mars-757d841813858a0d",
@@ -236,6 +398,24 @@
       "source": "jibe"
     },
     {
+      "id": "zimmer-biomet-5f5903eb7b294579",
+      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
+      "hash": "5f5903eb7b294579",
+      "company": "Zimmer Biomet",
+      "companySlug": "zimmer-biomet",
+      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
+      "department": "Research & Development",
+      "location": "Warsaw, Indiana, United States",
+      "state": "IN",
+      "remote": false,
+      "postedAt": "2026-08-27T00:00:00.000+0000",
+      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
+      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
+      "salary": null,
+      "niche": "pharma",
+      "source": "phenom"
+    },
+    {
       "id": "autoliv-508bca4710ac964d",
       "sourceId": "176f61f1-f4dd-4c31-817b-8cc03fd9b482",
       "hash": "508bca4710ac964d",
@@ -254,52 +434,55 @@
       "source": "teamtailor"
     },
     {
-      "id": "unilever-b287e149ad1edd63",
-      "sourceId": "/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
-      "hash": "b287e149ad1edd63",
-      "company": "Unilever",
-      "companySlug": "unilever",
-      "title": "Global Dove Skin Cleansing R&D Packaging Manager",
+      "id": "johnson-johnson-bee7d75a0f2e7a50",
+      "sourceId": "/job/Gurabo-Puerto-Rico-United-States-of-America/Packaging-Maintenance-Engineer_R-110941",
+      "hash": "bee7d75a0f2e7a50",
+      "company": "Johnson & Johnson",
+      "companySlug": "johnson-johnson",
+      "title": "Packaging Maintenance Engineer",
       "department": null,
-      "location": "Trumbull, CT",
-      "state": "CT",
+      "location": "Gurabo, Puerto Rico, United States of America",
+      "state": null,
       "remote": false,
-      "postedAt": "Posted 13 Days Ago",
-      "applyUrl": "https://unilever.wd3.myworkdayjobs.com/Unilever_Experienced_Professionals/job/Trumbull-CT/Global-Dove-Skin-Cleansing-R-D-Packaging-Manager_R-1190554",
-      "description": "Global Dove Skin Cleansing R&D Packaging Manager",
+      "postedAt": "Posted 8 Days Ago",
+      "applyUrl": "https://jj.wd5.myworkdayjobs.com/JJ/job/Gurabo-Puerto-Rico-United-States-of-America/Packaging-Maintenance-Engineer_R-110941",
+      "description": "Packaging Maintenance Engineer",
       "salary": null,
-      "niche": "cpg",
+      "niche": "pharma",
       "source": "workday"
     },
     {
-      "id": "zimmer-biomet-5f5903eb7b294579",
-      "sourceId": "ZBUZBRUS12258EXTERNALENUS",
-      "hash": "5f5903eb7b294579",
-      "company": "Zimmer Biomet",
-      "companySlug": "zimmer-biomet",
-      "title": "2027 Spring and Summer Co-Op, Packaging Engineering",
-      "department": "Research & Development",
-      "location": "Warsaw, Indiana, United States",
-      "state": "IN",
+      "id": "edwards-4b6017130683243d",
+      "sourceId": "/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
+      "hash": "4b6017130683243d",
+      "company": "Edwards Lifesciences",
+      "companySlug": "edwards",
+      "title": "Senior Engineer, Packaging",
+      "department": null,
+      "location": "USA - California – Irvine, United States of America",
+      "state": null,
       "remote": false,
-      "postedAt": "2026-08-27T00:00:00.000+0000",
-      "applyUrl": "https://career8.successfactors.com/careers?company=zimmerin01&loginFlowRequired=true&career_os=job_listing&career_ns=job_application&career_job_req_id=12258&_s.crb=25fvCmbM9Lad2rza%252fxJs%252fNp1mhY1RYUVrVIMdAiM2RI%253d",
-      "description": "Seeking a motivated individual to support the design, development, and processing of implant and instrument packaging. Contribute to manufacturability, prototype generation, and product evaluation. Ideal for students pursuing a Bachelor’s in Packaging Science or Engineering, available full-time during co-op terms.",
+      "postedAt": "Posted 13 Days Ago",
+      "applyUrl": "https://edwards.wd5.myworkdayjobs.com/EdwardsCareers/job/USA---California--Irvine/Senior-Engineer--Packaging_Req-51595-1",
+      "description": "Imagine how your ideas and expertise can change a patient’s life. Our Global Operations & Quality team plays a central part in ensuring our products are delivered to patients with cardiovascular disease. You’ll partner cross-functionally with manufacturing operations and sales teams, delivering thoughtful solutions to complex challenges all while developing your knowledge of the medical device industry. Whether your work includes strategic inventory planning, labeling, warehouse management, material handling, or any of our other supply chain opportunities, you will be making a meaningful contribution to our team and to patients all over the world.\n\nThis is an exciting opportunity with the World Wide Engineering team currently involved in cutting edge packaging design & development leveraging applied research in design, materials and modeling. As a Packaging Engineer you will work closely with other engineers to develop world-class capabilities and provide a competitive advantage to Edwards, through packaging design including component e.g. thermoform trays, injection molded parts, pouches and shelf & shipper boxes.\n\nHow you’ll make an impact:\n• Design innovative packaging concepts for complex projects, including new product launches and existing products throughout all stages of product development from concept to launch, including clinical trials, global and limited market releases, as well as key operations initiatives.\n• Develop protocols for, and implement, package design, packaging process validation, and package shelf life testing, as well as driving new packaging technologies and strategies with increased uncertainty and complexity, to improve time to market and advance the technology of package engineering at Edwards.\n• Develop plans for complex projects working closely with cross-functional team members and outside suppliers.\n• Validate new packaging equipment and packaging manufacturing processes to determine appropriate sourcing, purchasing, installation planning and specifications.\n• Provide guidance and coaching to lower level engineers.\n• Other incidental duties assigned by Leadership.\n\nWhat you’ll need (Required):\n• Bachelor's Degree in Engineering or Scientific field with minimum of 4 years either industry or industry/education experience or\n• Master's Degree or equivalent in Engineering or Scientific field with minimum of 3 years either industry or industry/education experience.\n\n• Proficiency with Microsoft Office Suite and working knowledge of CAD software.\n\nWhat else we look for (Preferred):\n\n• Ability to effectively manage multiple priorities and deliver results in a fast-paced, cross-functional environment.\n\n• Demonstrated ability to apply engineering principles, critical thinking, and sound technical judgment to solve complex engineering challenges.\n\n• Strong written and verbal communication and interpersonal skills, with the ability to collaborate effectively across technical and cross-functional teams (influence technical direction, resolve design, manufacturing, and quality challenges).\n\n• Demonstrated experience independently leading packaging development and validation activities for medical devices or other highly regulated products.\n\n• Strong understanding of design controls and the product development lifecycle for new product development.\n\n• Demonstrated ability to develop technically sound test strategies, protocols, acceptance criteria, and reports supporting packaging design verification, process validation, and shelf-life claims.\n\n• Working knowledge of applicable packaging standards and test methods, including ISO 11607 and relevant ASTM standards.\n• Experience with environmental conditioning and distribution simulation testing, including ASTM D4332 and ASTM D4169.\n\n• Knowledge of ASTM packaging lab test methods (e.g. peel strength, submersion leak, dye penetration, etc).\n\n• Proven experience with material selection and design of packaging systems, including thermoformed trays, flexible pouches, lidding materials, injection-molded components, and/or corrugated/paperboard cartons.\n\n• Strong supplier-management skills with the ability to provide technical direction and resolve design, manufacturing, and quality challenges.\n\n• Working knowledge of statistical methods and data analysis tools (e.g. Minitab).\n\n• Experience using Windchill PLM system or relevant PLM experience.\n\n• Adhere to all company rules and requirements (e.g., pandemic protocols, Environmental Health & Safety, & Quality rules/guidelines) and take adequate control measures in preventing injuries to themselves and others as well as to the protection of environment and prevention of pollution under their span of influence/control.\n\nAligning our overall business objectives with performance, we offer competitive salaries, performance-based incentives, and a wide variety of benefits programs to address the diverse individual needs of our employees and their families.\n\nFor California, the base pay range for this position is $108,000 - $153,000 (highly experienced).\n\nThe pay for the successful candidate will depend on various factors (e.g., qualifications, education, prior experience). Applications will be accepted while this position is posted on our Careers website.\n\nEdwards is an Equal Opportunity/Affirmative Action employer including protected Veterans and individuals with disabilities.",
       "salary": null,
       "niche": "pharma",
-      "source": "phenom"
+      "source": "workday"
     }
   ],
   "reports": [
     {
       "company": "Kimberly-Clark",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 50,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Kimberly-Clark 429 https://kimberlyclark.wd1.myworkdayjobs.com/wday/cxs/kimberlyclark/GLOBAL/jobs"
+      "classifierDrops": {
+        "not a packaging role": 46,
+        "plant process engineering": 2,
+        "off-target function": 2
+      }
     },
     {
       "company": "General Mills",
@@ -314,52 +497,70 @@
     {
       "company": "Sonoco",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 85,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Sonoco 429 https://sonoco.wd1.myworkdayjobs.com/wday/cxs/sonoco/CorporateCareers/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 75,
+        "warehouse/ops title": 1,
+        "plant process engineering": 5,
+        "off-target function": 3
+      }
     },
     {
       "company": "3M",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday 3M 429 https://3m.wd1.myworkdayjobs.com/wday/cxs/3m/Search/jobs"
+      "scanned": 66,
+      "classifierPass": 8,
+      "kept": 4,
+      "fetched": 8,
+      "classifierDrops": {
+        "warehouse/ops title": 2,
+        "semiconductor/electronics packaging": 3,
+        "off-target function": 15,
+        "not a packaging role": 38
+      }
     },
     {
       "company": "Kenvue",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 62,
+      "classifierPass": 3,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Kenvue 429 https://kenvue.wd5.myworkdayjobs.com/wday/cxs/kenvue/kenvue/jobs"
+      "fetched": 3,
+      "classifierDrops": {
+        "not a packaging role": 54,
+        "warehouse/ops title": 1,
+        "off-target function": 4
+      }
     },
     {
       "company": "Clorox",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Clorox 429 https://clorox.wd1.myworkdayjobs.com/wday/cxs/clorox/Clorox/jobs"
+      "scanned": 64,
+      "classifierPass": 6,
+      "kept": 5,
+      "fetched": 6,
+      "classifierDrops": {
+        "warehouse/ops title": 17,
+        "off-target function": 4,
+        "not a packaging role": 37
+      }
     },
     {
       "company": "Conagra Brands",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Conagra Brands 429 https://conagrabrands.wd1.myworkdayjobs.com/wday/cxs/conagrabrands/Careers_US/jobs"
+      "scanned": 76,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "off-target function": 3,
+        "plant process engineering": 5,
+        "not a packaging role": 52,
+        "warehouse/ops title": 15
+      }
     },
     {
       "company": "Campbell's",
@@ -374,12 +575,15 @@
     {
       "company": "Church & Dwight",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 42,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Church & Dwight 429 https://churchdwight.wd1.myworkdayjobs.com/wday/cxs/churchdwight/chdcareers/jobs"
+      "classifierDrops": {
+        "warehouse/ops title": 6,
+        "not a packaging role": 35,
+        "off-target function": 1
+      }
     },
     {
       "company": "SC Johnson",
@@ -394,22 +598,29 @@
     {
       "company": "J.M. Smucker",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 54,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday J.M. Smucker 429 https://smucker.wd5.myworkdayjobs.com/wday/cxs/smucker/US_External_Careers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 48,
+        "off-target function": 4,
+        "warehouse/ops title": 1,
+        "plant process engineering": 1
+      }
     },
     {
       "company": "Silgan Containers",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 67,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Silgan Containers 429 https://silgancontainers.wd1.myworkdayjobs.com/wday/cxs/silgancontainers/silgan/jobs"
+      "classifierDrops": {
+        "not a packaging role": 55,
+        "warehouse/ops title": 10,
+        "off-target function": 2
+      }
     },
     {
       "company": "Silgan Dispensing",
@@ -432,21 +643,21 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 3,
+        "not a packaging role": 14,
         "warehouse/ops title": 4,
-        "not a packaging role": 13
+        "off-target function": 2
       }
     },
     {
       "company": "Autoliv",
       "ats": "teamtailor",
-      "scanned": 56,
+      "scanned": 55,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
         "warehouse/ops title": 1,
-        "not a packaging role": 46,
+        "not a packaging role": 45,
         "plant process engineering": 5,
         "off-target function": 3
       }
@@ -464,12 +675,16 @@
     {
       "company": "Magna",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
+      "scanned": 72,
+      "classifierPass": 1,
       "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Magna 429 https://magna.wd3.myworkdayjobs.com/wday/cxs/magna/Magna/jobs"
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 68,
+        "plant process engineering": 1,
+        "off-target function": 1,
+        "warehouse/ops title": 1
+      }
     },
     {
       "company": "Menasha",
@@ -490,8 +705,8 @@
       "fetched": 0,
       "classifierDrops": {
         "warehouse/ops title": 3,
-        "not a packaging role": 43,
-        "off-target function": 4
+        "not a packaging role": 42,
+        "off-target function": 5
       }
     },
     {
@@ -512,12 +727,12 @@
       "company": "Unilever",
       "ats": "workday",
       "scanned": 46,
-      "classifierPass": 3,
-      "kept": 1,
-      "fetched": 3,
+      "classifierPass": 2,
+      "kept": 0,
+      "fetched": 2,
       "classifierDrops": {
         "warehouse/ops title": 6,
-        "not a packaging role": 34,
+        "not a packaging role": 35,
         "off-target function": 2,
         "plant process engineering": 1
       }
@@ -525,23 +740,26 @@
     {
       "company": "Johnson & Johnson",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Johnson & Johnson 429 https://jj.wd5.myworkdayjobs.com/wday/cxs/jj/JJ/jobs"
+      "scanned": 120,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 105,
+        "plant process engineering": 2,
+        "off-target function": 12
+      }
     },
     {
       "company": "Procter & Gamble",
       "ats": "phenom",
-      "scanned": 150,
+      "scanned": 147,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "off-target function": 14,
-        "not a packaging role": 134,
+        "not a packaging role": 131,
         "plant process engineering": 2
       }
     },
@@ -560,14 +778,14 @@
     {
       "company": "DuPont",
       "ats": "phenom",
-      "scanned": 131,
+      "scanned": 130,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a packaging role": 74,
         "warehouse/ops title": 2,
-        "off-target function": 54,
+        "off-target function": 53,
         "plant process engineering": 1
       }
     },
@@ -586,14 +804,14 @@
     {
       "company": "Mars",
       "ats": "phenom",
-      "scanned": 411,
+      "scanned": 408,
       "classifierPass": 4,
       "kept": 4,
       "fetched": 4,
       "classifierDrops": {
-        "not a packaging role": 232,
-        "warehouse/ops title": 31,
-        "off-target function": 144
+        "warehouse/ops title": 33,
+        "not a packaging role": 226,
+        "off-target function": 145
       }
     },
     {
@@ -604,23 +822,24 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 17,
+        "not a packaging role": 18,
         "off-target function": 1,
-        "warehouse/ops title": 2
+        "warehouse/ops title": 1
       }
     },
     {
       "company": "Sealed Air",
       "ats": "successfactors",
-      "scanned": 21,
+      "scanned": 20,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "semiconductor/electronics packaging": 2,
+        "not a packaging role": 14,
+        "off-target function": 1,
         "warehouse/ops title": 2,
-        "not a packaging role": 17,
-        "plant process engineering": 1,
-        "off-target function": 1
+        "plant process engineering": 1
       }
     },
     {
@@ -631,8 +850,8 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 16,
-        "off-target function": 4
+        "not a packaging role": 15,
+        "off-target function": 5
       }
     },
     {
@@ -694,42 +913,54 @@
     {
       "company": "Pfizer",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 73,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Pfizer 429 https://pfizer.wd1.myworkdayjobs.com/wday/cxs/pfizer/PfizerCareers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 72,
+        "off-target function": 1
+      }
     },
     {
       "company": "Baxter",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 66,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Baxter 429 https://baxter.wd1.myworkdayjobs.com/wday/cxs/baxter/Baxter/jobs"
+      "classifierDrops": {
+        "not a packaging role": 55,
+        "off-target function": 2,
+        "warehouse/ops title": 9
+      }
     },
     {
       "company": "Stryker",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 86,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Stryker 429 https://stryker.wd1.myworkdayjobs.com/wday/cxs/stryker/StrykerCareers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 70,
+        "off-target function": 14,
+        "warehouse/ops title": 2
+      }
     },
     {
       "company": "Catalent",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 64,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Catalent 429 https://catalent.wd1.myworkdayjobs.com/wday/cxs/catalent/External/jobs"
+      "classifierDrops": {
+        "plant process engineering": 2,
+        "not a packaging role": 56,
+        "off-target function": 3,
+        "warehouse/ops title": 3
+      }
     },
     {
       "company": "Tyson Foods",
@@ -744,12 +975,15 @@
     {
       "company": "Constellation Brands",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 40,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Constellation Brands 429 https://cbrands.wd5.myworkdayjobs.com/wday/cxs/cbrands/CBI_External_Careers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 36,
+        "off-target function": 3,
+        "semiconductor/electronics packaging": 1
+      }
     },
     {
       "company": "Target",
@@ -784,24 +1018,28 @@
     {
       "company": "BD",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday BD 429 https://bdx.wd1.myworkdayjobs.com/wday/cxs/bdx/EXTERNAL_CAREER_SITE_USA/jobs"
-    },
-    {
-      "company": "The Hershey Company",
-      "ats": "successfactors",
-      "scanned": 25,
+      "scanned": 100,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
+        "not a packaging role": 88,
+        "plant process engineering": 2,
+        "off-target function": 4,
+        "warehouse/ops title": 6
+      }
+    },
+    {
+      "company": "The Hershey Company",
+      "ats": "successfactors",
+      "scanned": 27,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {
+        "not a packaging role": 17,
         "warehouse/ops title": 1,
-        "off-target function": 6,
-        "not a packaging role": 18
+        "off-target function": 9
       }
     },
     {
@@ -820,13 +1058,13 @@
     {
       "company": "Molson Coors",
       "ats": "successfactors",
-      "scanned": 31,
-      "classifierPass": 1,
-      "kept": 1,
-      "fetched": 1,
+      "scanned": 30,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
       "classifierDrops": {
-        "off-target function": 6,
-        "not a packaging role": 23,
+        "not a packaging role": 25,
+        "off-target function": 4,
         "warehouse/ops title": 1
       }
     },
@@ -838,34 +1076,35 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 26,
-        "semiconductor/electronics packaging": 1,
-        "off-target function": 1
+        "not a packaging role": 23,
+        "warehouse/ops title": 3,
+        "off-target function": 1,
+        "semiconductor/electronics packaging": 1
       }
     },
     {
       "company": "E&J Gallo",
       "ats": "successfactors",
-      "scanned": 31,
+      "scanned": 33,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a packaging role": 24,
+        "not a packaging role": 27,
         "warehouse/ops title": 1,
-        "off-target function": 6
+        "off-target function": 5
       }
     },
     {
       "company": "Colgate-Palmolive",
       "ats": "successfactors",
-      "scanned": 35,
+      "scanned": 36,
       "classifierPass": 1,
       "kept": 0,
       "fetched": 1,
       "classifierDrops": {
-        "not a packaging role": 33,
-        "off-target function": 1
+        "off-target function": 4,
+        "not a packaging role": 31
       }
     },
     {
@@ -876,20 +1115,22 @@
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "off-target function": 4,
         "not a packaging role": 22,
+        "off-target function": 4,
         "plant process engineering": 1
       }
     },
     {
       "company": "Edwards Lifesciences",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Edwards Lifesciences 429 https://edwards.wd5.myworkdayjobs.com/wday/cxs/edwards/EdwardsCareers/jobs"
+      "scanned": 34,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a packaging role": 31,
+        "off-target function": 2
+      }
     },
     {
       "company": "Medtronic",
@@ -904,14 +1145,14 @@
     {
       "company": "Zimmer Biomet",
       "ats": "phenom",
-      "scanned": 394,
+      "scanned": 374,
       "classifierPass": 2,
       "kept": 1,
       "fetched": 2,
       "classifierDrops": {
-        "not a packaging role": 238,
-        "warehouse/ops title": 7,
-        "off-target function": 147
+        "not a packaging role": 223,
+        "warehouse/ops title": 5,
+        "off-target function": 144
       }
     },
     {
@@ -930,12 +1171,14 @@
     {
       "company": "GSK",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 13,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday GSK 429 https://gsk.wd5.myworkdayjobs.com/wday/cxs/gsk/GSKCareers/jobs"
+      "classifierDrops": {
+        "not a packaging role": 11,
+        "off-target function": 2
+      }
     }
   ]
 }
