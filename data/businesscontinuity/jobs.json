@@ -1,19 +1,38 @@
 {
-  "ingestedAt": "2026-11-26T21:09:27.760Z",
-  "total": 25,
+  "ingestedAt": "2026-11-27T20:53:22.335Z",
+  "total": 26,
   "stats": {
-    "scanned": 4860,
-    "classifierPass": 40,
-    "kept": 25,
+    "scanned": 4957,
+    "classifierPass": 39,
+    "kept": 26,
     "classifierDrops": {
-      "not a BCM/DR role": 3912,
-      "generic IT title": 524,
-      "off-target function": 242,
-      "product/SRE resilience noise": 75,
-      "manufacturing capacity resiliency": 67
+      "not a BCM/DR role": 3953,
+      "product/SRE resilience noise": 77,
+      "off-target function": 238,
+      "generic IT title": 568,
+      "manufacturing capacity resiliency": 67,
+      "insurance underwriting": 15
     }
   },
   "jobs": [
+    {
+      "id": "jpmorgan-chase-54ebd193eb49c1ff",
+      "sourceId": "210811913",
+      "hash": "54ebd193eb49c1ff",
+      "company": "JPMorgan Chase",
+      "companySlug": "jpmorgan-chase",
+      "title": "Securities Services Operations Resiliency Manager, Vice President",
+      "department": null,
+      "location": "United States",
+      "state": null,
+      "remote": false,
+      "postedAt": "2026-11-27",
+      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210811913",
+      "description": "J.P. Morgan Corporate & Investment Bank (CIB) is a global leader across banking, wholesale payments, markets and securities services. The world’s most important corporations, governments and institutions entrust us with their business in more than 100 countries. With $21.4 trillion in assets and 49,000 employees globally, the CIB provides strategic advice, raise capital, manage risk and extend liquidity in markets around the world. J.P. Morgan Securities Services, a division of the Corporate & Investment Bank, is a unique combination of related, complementary businesses, working together to provide our clients with seamless end-to-end solutions across the spectrum of custody and fund services, trading services and data solutions, all with the objective of helping our clients succeed.\n\nAs a Securities Services Operations resiliency Manager within the Operational Resiliency team, you will be responsible for the end-to-end delivery of resiliency for the Securities Services business. Operational Resiliency is of strategic importance to the firm, with a heightened focus on preparation for real world threats driven by cyber and geopolitical risks, as well as elevated regulatory scrutiny across Essential Services. Your team covers the following core disciplines: incident management, regulation, governance, planning and testing, as well as client and industry engagement. You will focus on the incident management discipline and will report into the Global Head of Resiliency for Securities Services.\n\nIn this role, you will be an execution focused professional with proven experience of delivery within Securities Services environment to join the global incident management function. You will collaborate and build partnerships across Operations, Product, Technology, Controls, and the CIB Operational Resiliency Team to lead the business response to major disruptions across systems, third parties, as well as site & staff. Your role requires a sound knowledge of the Securities Services business and understanding of client behaviors to lead the business response for major incidents and crisis events across Securities Services in the Americas.\n\nJob Responsibilities\n\n• Lead the regional coordination of the Business Incident Management response across Securities Services Operations, Product and Technology.\n• Responsible for invoking and facilitating the Incident Management Team (IMT), drafting and distributing the IMT meeting communications and tracking response actions through to completion.\n• Cross Line of Business engagement – represent Securities Services operations during major incidents within other Lines of Business which may have cross impacts to Securities Services.\n• Monitor impacts of site & staff incidents in region and be prepared to assist in the Securities Services response and communicate the Essential Service impacts.\n• Exercise judgement for escalation to business heads, CIB Resiliency, and regional Crisis Management Team heads where appropriate.\n• Ensure communication and handover to equivalent EMEA and APAC regional leads for incidents which extend beyond US Close of Day.\n• Partner with Technology and Operations to ensure relevant Post Incident Reports and Crisis After Action Reviews are completed, with remediation actions tracked to conclusion.\n• Assist with control activities to maintain the capability, including IMT plan review, membership reviews, training, and exercises.\n• Drive process and management for monthly MIS to monitor volume, impacts and threes of disruptions and completion of regional IMT control activities.\n• Lead regional and global Securities Services Incident and Crisis Management projects and initiatives.\nRequired Qualifications, Capabilities, and Skills\n\n• Must have a proven knowledge and understanding of Securities Services, with a sound understanding of one or more areas within Custody, Fund Services or Transfer Agency.\n• Ability to build strong working relationships with numerous business and technology partners.\n• Excellent verbal and written communication skills with the ability to summarize complex issues into succinct and accurate messages to senior stakeholders.\n• A proactive self-starter who takes ownership of deadlines and deliver results, with accountability and responsibility for independent workload.\n• Ability to handle pressured situations and to collate, analyze and communicate information, and prioritize tasks.\n• Flexibility to support the business during disruptive events that span regions.\n• Ability to work independently and multitask in a fast-paced environment.\n\nPreferred Qualifications\n\n, Capabilities, and Skills\n\n• Experience in incident and crisis management, although training and coaching can be provided.\n• Working knowledge of key technology platforms supporting Securities Services.\n• Understanding of client segments and behaviors.\n• Understanding of Custody market infrastructure, including agent banks and FMIs.\n• Understanding of regulatory obligations within Securities Services.\n\nManage end-to-end delivery of resiliency for the Securities Services business.\n\nManage end-to-end delivery of resiliency for the Securities Services business.\n\nSecurities Services Operations Resiliency Manager, Vice President",
+      "salary": null,
+      "niche": "finance",
+      "source": "oracle"
+    },
     {
       "id": "jpmorgan-chase-2199cefc353814b6",
       "sourceId": "210810508",
@@ -64,24 +83,6 @@
       "postedAt": "2026-11-24",
       "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810444",
       "description": "Help strengthen the security and resilience of complex technology environments. In this hands-on engineering role, you’ll bring security knowledge and production reliability experience together to identify risks and help teams operate and recover technology safely.\n\nSenior Lead Security Engineer, Technology Resiliency",
-      "salary": null,
-      "niche": "finance",
-      "source": "oracle"
-    },
-    {
-      "id": "jpmorgan-chase-69d301d419caf8c1",
-      "sourceId": "210811049",
-      "hash": "69d301d419caf8c1",
-      "company": "JPMorgan Chase",
-      "companySlug": "jpmorgan-chase",
-      "title": "Executive Director - Operational Resiliency Crisis Management",
-      "department": null,
-      "location": "Washington, DC, United States",
-      "state": "WA",
-      "remote": false,
-      "postedAt": "2026-11-23",
-      "applyUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210811049",
-      "description": "Lead crisis preparedness, response, and recovery—guiding senior leaders through outages, cyber incidents, and other major disruptions.\n\nExecutive Director - Operational Resiliency Crisis Management",
       "salary": null,
       "niche": "finance",
       "source": "oracle"
@@ -463,6 +464,24 @@
       "salary": null,
       "niche": null,
       "source": "greenhouse"
+    },
+    {
+      "id": "freddie-mac-10b52bac15840fe4",
+      "sourceId": "/job/McLean-VA/Operational-Resilience-Senior-Analyst_JR17788",
+      "hash": "10b52bac15840fe4",
+      "company": "Freddie Mac",
+      "companySlug": "freddie-mac",
+      "title": "Operational Resilience Senior Analyst",
+      "department": null,
+      "location": "McLean, VA",
+      "state": "VA",
+      "remote": false,
+      "postedAt": "Posted 4 Days Ago",
+      "applyUrl": "https://freddiemac.wd5.myworkdayjobs.com/External/job/McLean-VA/Operational-Resilience-Senior-Analyst_JR17788",
+      "description": "Operational Resilience Senior Analyst",
+      "salary": null,
+      "niche": "finance",
+      "source": "workday"
     }
   ],
   "reports": [
@@ -529,12 +548,16 @@
     {
       "company": "Morgan Stanley",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 144,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Morgan Stanley 429 https://ms.wd5.myworkdayjobs.com/wday/cxs/ms/External/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 121,
+        "product/SRE resilience noise": 4,
+        "off-target function": 4,
+        "generic IT title": 15
+      }
     },
     {
       "company": "Capital One",
@@ -569,29 +592,25 @@
     {
       "company": "TD Bank",
       "ats": "workday",
-      "scanned": 184,
-      "classifierPass": 5,
+      "scanned": 179,
+      "classifierPass": 4,
       "kept": 0,
-      "fetched": 5,
+      "fetched": 4,
       "classifierDrops": {
-        "not a BCM/DR role": 153,
-        "generic IT title": 20,
-        "off-target function": 6
+        "not a BCM/DR role": 152,
+        "generic IT title": 19,
+        "off-target function": 4
       }
     },
     {
       "company": "BMO",
       "ats": "workday",
-      "scanned": 84,
-      "classifierPass": 1,
+      "scanned": 0,
+      "classifierPass": 0,
       "kept": 0,
-      "fetched": 1,
-      "classifierDrops": {
-        "not a BCM/DR role": 73,
-        "generic IT title": 2,
-        "off-target function": 6,
-        "product/SRE resilience noise": 2
-      }
+      "fetched": 0,
+      "classifierDrops": {},
+      "error": "Workday BMO 429 https://bmo.wd3.myworkdayjobs.com/wday/cxs/bmo/External/jobs"
     },
     {
       "company": "PayPal",
@@ -606,26 +625,26 @@
     {
       "company": "JPMorgan Chase",
       "ats": "oracle",
-      "scanned": 324,
+      "scanned": 322,
       "classifierPass": 30,
       "kept": 21,
       "fetched": 30,
       "classifierDrops": {
-        "not a BCM/DR role": 207,
-        "off-target function": 12,
-        "product/SRE resilience noise": 16,
-        "generic IT title": 59
+        "not a BCM/DR role": 202,
+        "off-target function": 15,
+        "generic IT title": 58,
+        "product/SRE resilience noise": 17
       }
     },
     {
       "company": "Goldman Sachs",
       "ats": "oracle",
-      "scanned": 155,
+      "scanned": 154,
       "classifierPass": 1,
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 132,
+        "not a BCM/DR role": 131,
         "off-target function": 10,
         "generic IT title": 7,
         "product/SRE resilience noise": 4,
@@ -670,8 +689,8 @@
       "kept": 1,
       "fetched": 1,
       "classifierDrops": {
-        "not a BCM/DR role": 73,
-        "off-target function": 7,
+        "not a BCM/DR role": 72,
+        "off-target function": 8,
         "generic IT title": 4,
         "manufacturing capacity resiliency": 1,
         "product/SRE resilience noise": 2
@@ -680,12 +699,14 @@
     {
       "company": "Travelers",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 58,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Travelers 429 https://travelers.wd5.myworkdayjobs.com/wday/cxs/travelers/External/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 46,
+        "generic IT title": 12
+      }
     },
     {
       "company": "AIG",
@@ -700,16 +721,12 @@
     {
       "company": "Target",
       "ats": "workday",
-      "scanned": 128,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 120,
-        "generic IT title": 2,
-        "product/SRE resilience noise": 3,
-        "off-target function": 3
-      }
+      "classifierDrops": {},
+      "error": "Workday Target 429 https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/jobs"
     },
     {
       "company": "Duke Energy",
@@ -734,13 +751,13 @@
     {
       "company": "Twilio",
       "ats": "greenhouse",
-      "scanned": 113,
+      "scanned": 114,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 82,
-        "off-target function": 21,
+        "not a BCM/DR role": 85,
+        "off-target function": 19,
         "generic IT title": 10
       }
     },
@@ -774,22 +791,28 @@
     {
       "company": "The Hartford",
       "ats": "workday",
-      "scanned": 0,
+      "scanned": 68,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday The Hartford 429 https://thehartford.wd5.myworkdayjobs.com/wday/cxs/thehartford/Careers_External/jobs"
+      "classifierDrops": {
+        "not a BCM/DR role": 37,
+        "generic IT title": 15,
+        "insurance underwriting": 15,
+        "product/SRE resilience noise": 1
+      }
     },
     {
       "company": "Freddie Mac",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Freddie Mac 429 https://freddiemac.wd5.myworkdayjobs.com/wday/cxs/freddiemac/External/jobs"
+      "scanned": 19,
+      "classifierPass": 1,
+      "kept": 1,
+      "fetched": 1,
+      "classifierDrops": {
+        "not a BCM/DR role": 13,
+        "generic IT title": 5
+      }
     },
     {
       "company": "Horizon Blue Cross Blue Shield of New Jersey",
@@ -814,22 +837,26 @@
     {
       "company": "Roche",
       "ats": "workday",
-      "scanned": 0,
-      "classifierPass": 0,
-      "kept": 0,
-      "fetched": 0,
-      "classifierDrops": {},
-      "error": "Workday Roche 429 https://roche.wd3.myworkdayjobs.com/wday/cxs/roche/rog-a2o-gene/jobs"
-    },
-    {
-      "company": "AbbVie",
-      "ats": "smartrecruiters",
-      "scanned": 371,
+      "scanned": 49,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 348,
+        "not a BCM/DR role": 43,
+        "generic IT title": 4,
+        "product/SRE resilience noise": 1,
+        "off-target function": 1
+      }
+    },
+    {
+      "company": "AbbVie",
+      "ats": "smartrecruiters",
+      "scanned": 369,
+      "classifierPass": 0,
+      "kept": 0,
+      "fetched": 0,
+      "classifierDrops": {
+        "not a BCM/DR role": 346,
         "off-target function": 20,
         "product/SRE resilience noise": 2,
         "generic IT title": 1
@@ -838,25 +865,25 @@
     {
       "company": "Jamf",
       "ats": "greenhouse",
-      "scanned": 33,
+      "scanned": 32,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
         "not a BCM/DR role": 23,
-        "generic IT title": 5,
-        "off-target function": 5
+        "off-target function": 5,
+        "generic IT title": 4
       }
     },
     {
       "company": "SpaceX",
       "ats": "greenhouse",
-      "scanned": 2889,
+      "scanned": 2890,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 2297,
+        "not a BCM/DR role": 2298,
         "generic IT title": 356,
         "off-target function": 132,
         "manufacturing capacity resiliency": 63,
@@ -926,12 +953,12 @@
     {
       "company": "MSU Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 18,
+      "scanned": 17,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 15,
+        "not a BCM/DR role": 14,
         "off-target function": 1,
         "generic IT title": 2
       }
@@ -939,12 +966,12 @@
     {
       "company": "Visions Federal Credit Union",
       "ats": "ultipro",
-      "scanned": 25,
+      "scanned": 24,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 18,
+        "not a BCM/DR role": 17,
         "off-target function": 7
       }
     },
@@ -971,25 +998,24 @@
     {
       "company": "Navy Federal Credit Union",
       "ats": "oracle",
-      "scanned": 65,
+      "scanned": 63,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
       "classifierDrops": {
-        "not a BCM/DR role": 64,
+        "not a BCM/DR role": 62,
         "off-target function": 1
       }
     },
     {
       "company": "American Electric Power",
       "ats": "workday",
-      "scanned": 16,
+      "scanned": 0,
       "classifierPass": 0,
       "kept": 0,
       "fetched": 0,
-      "classifierDrops": {
-        "not a BCM/DR role": 16
-      }
+      "classifierDrops": {},
+      "error": "Workday American Electric Power 429 https://aep.wd1.myworkdayjobs.com/wday/cxs/aep/AEPCareerSite/jobs"
     }
   ]
 }
